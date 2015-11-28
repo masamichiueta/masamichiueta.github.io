@@ -1,0 +1,85 @@
+/* Navigation Bar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: block;
+  width: 100%;
+  height: 4rem;
+  z-index: 9999;
+  color: #fff;
+}
+
+.navbar-list {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.navbar-item {
+  position: relative;
+  float: left;
+  margin-bottom: 0;
+}
+
+.navbar-link {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin-right: 35px;
+  text-decoration: none;
+  line-height: 4.0rem;
+  color: #fff;
+}
+
+.navbar-link.active {
+  color: #33C3F0;
+}
+
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+section {
+  padding: 8rem 0 7rem;
+  text-align: center;
+}
+
+.section-heading,
+.section-description {
+  margin-bottom: 1.2rem;
+}
+
+/* Hero
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hero {
+  background-image: url('../images/hero.jpeg');
+  background-size: cover;
+  color: #fff;
+  padding-bottom: 5rem;
+}
+
+
+/* About
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.about {
+  background-size: cover;
+  padding-bottom: 5rem;
+}
+
+
+/* Bigger than Phone */
+@media (min-width: 550px) {
+
+}
+
+/* Bigger than Tablet */
+@media (min-width: 750px) {
+
+}
+
+/* Bigger than PC */
+@media (min-width: 1000px) {
+
+}
