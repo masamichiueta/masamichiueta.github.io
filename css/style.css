@@ -37,8 +37,36 @@ nav {
 }
 
 .navbar-link.active {
-  color: rgb(25, 127, 195);
+  color: #197fc3;
 }
+
+
+/* Button
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  color: #197fc3;
+  border-color: #197fc3;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #fff;
+  background-color: #197fc3;
+  border-color: #197fc3;
+}
+
 
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -47,9 +75,8 @@ section {
   text-align: center;
 }
 
-.section-heading,
-.section-description {
-  margin-bottom: 5.0rem;
+.section-heading {
+  margin-bottom: 7rem;
 }
 
 /* Hero
@@ -73,7 +100,7 @@ section {
 }
 
 .hero .hero-heading {
-  padding-top: 4.0rem;
+  padding-top: 4rem;
 }
 
 .hero .links {
@@ -94,8 +121,16 @@ section {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .section-heading.creative-heading {
-  color: rgb(25, 127, 195);
+  color: #197fc3;
   font-weight: 600;
+}
+
+.each-creative {
+  margin-bottom: 6rem
+}
+
+.creative-title {
+  color: #3d3d3d
 }
 
 .creative-icon {
@@ -105,7 +140,14 @@ section {
   border-radius: 5px;
 }
 
+.creative-icon.livereport-icon {
+  border: 1px #eee solid;
+}
 
+.creative-description {
+  margin-bottom: 1.2rem;
+  color: #3d3d3d
+}
 
 
 
@@ -130,5 +172,10 @@ section {
 
 /* Bigger than PC */
 @media (min-width: 1000px) {
+  .creative-description {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 }
