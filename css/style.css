@@ -76,7 +76,34 @@ section {
 }
 
 .section-heading {
+  font-weight: 600;
   margin-bottom: 7rem;
+}
+
+.section-heading:after {
+  display: block;
+  content: '';
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background: #3d3d3d;
+  margin: 24px auto 0;
+}
+
+.section-heading.blue {
+  color: #197fc3;
+}
+
+.section-heading.blue:after {
+  background: #197fc3;
+}
+
+.section-heading.white {
+  color: #fff;
+}
+
+.section-heading.white:after {
+  background: #fff;
 }
 
 /* Hero
@@ -119,12 +146,6 @@ section {
 
 /* Creative
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.section-heading.creative-heading {
-  color: #197fc3;
-  font-weight: 600;
-}
-
 .each-creative {
   margin-bottom: 6rem
 }
@@ -157,6 +178,22 @@ section {
   background-color: #323a45;
   color: #fff;
   padding-bottom: 5rem;
+}
+
+.about-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.footer {
+  min-width: 300px;
+  background-color: #323a45;
+  text-align: center;
+}
+
+.footer p {
+  color: #747c83;
 }
 
 
