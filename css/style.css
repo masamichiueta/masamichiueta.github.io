@@ -127,21 +127,54 @@ section {
 }
 
 .hero .hero-heading {
-  padding-top: 9rem;
+  padding: 9rem 0 7rem 0;
 }
 
-.hero .links {
-  padding: 2rem 0 0 0;
+
+.hero .sns li {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 0 3rem;
 }
-.hero .links a{
+
+.hero .sns li:first-child {
+  margin: 0;
+}
+
+.hero .sns a {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-transition: all cubic-bezier(.645, .045, .355, 1) .3s;
+  transition: all cubic-bezier(.645, .045, .355, 1) .3s;
+}
+
+.hero .sns a i {
   color: #fff;
-  text-decoration: none;
-  padding: 0 1rem;
+  line-height: 44px;
+  -webkit-transition: all cubic-bezier(.645, .045, .355, 1) .3s;
+  transition: all cubic-bezier(.645, .045, .355, 1) .3s;
 }
 
-.hero .links a:hover{
-  text-decoration: underline;
+.hero .sns .twitter:hover {
+  background: #59adeb;
+  border-color: #59adeb;
 }
+
+.hero .sns .github:hover {
+  background: #333333;
+  border-color: #333333;
+}
+
+.hero .sns .dribbble:hover {
+  background: #e9508a;
+  border-color: #e9508a;
+}
+
+
 
 
 /* Creative
