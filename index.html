@@ -34,24 +34,43 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <nav>
-    <div class="container">
-      <div class="navbar-item">
-        <a class="navbar-link" href="#hero">Masamichi Ueta</a>
-      </div>
-      <ul class="navbar-list">
-        <li class="navbar-item">
-          <a class="navbar-link" href="#creative">Creative</a>
+    <div class="dynamic-navbar">
+      <ul class="dn-list">
+        <li class="dn-item dn-menuicon">
+          <label class="dn-menuicon-label">
+            <span class="dn-menuicon-bread dn-menuicon-bread-top">
+              <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+            </span>
+            <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+              <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+            </span>
+          </label>
         </li>
-        <li class="navbar-item">
-          <a class="navbar-link" href="#about">About</a>
-        </li>
-        <li class="navbar-item">
-          <a class="navbar-link" href="http://qiita.com/micchyboy">Tech Notes</a>
-        </li>
-        <li class="navbar-item">
-          <a class="navbar-link" href="http://giraffebook.hatenablog.com">Design Notes</a>
+        <li class="dn-item dn-logo">
+          <a href="#hero">MU</a>
         </li>
       </ul>
+    </div>
+    <div class="container">
+      <div class="static-navbar">
+        <div class="sn-item">
+          <a href="#hero">Masamichi Ueta</a>
+        </div>
+        <ul class="sn-list">
+          <li class="sn-item">
+            <a href="#creative">Creative</a>
+          </li>
+          <li class="sn-item">
+            <a href="#about">About</a>
+          </li>
+          <li class="sn-item">
+            <a href="http://qiita.com/micchyboy">Tech Notes</a>
+          </li>
+          <li class="sn-item">
+            <a href="http://giraffebook.hatenablog.com">Design Notes</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
   <section id="hero" class="hero">
