@@ -1,5 +1,20 @@
 /* Navigation Bar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+html.ac-gn-noscroll {
+    margin-top: 0 !important
+}
+
+html.ac-gn-noscroll, html.ac-gn-noscroll body {
+    overflow: hidden !important;
+    height: 100% !important
+}
+
+html.ac-gn-noscroll-long {
+    overflow-y: scroll !important
+}
+*/
+
 nav {
   position: absolute;
   top: 0;
@@ -15,12 +30,43 @@ nav {
 }
 
 /* dynamic navbar */
-.dn-list {
+#nav {
+  max-height: none;
+  -webkit-transition: background 0.35s linear, height 0.35s ease-in;
+  transition: background 0.35s linear, height 0.35s ease-in;
+}
+
+#dn-menustate {
+  display: none;
+}
+    
+#dn-menustate:checked ~ #nav, 
+#dn-menustate:target ~ #nav {
+  height: 100%;
+  background: #000;
+  -webkit-transition: background 0.35s linear, height 0.35s ease-in 200ms;
+  transition: background 0.35s linear, height 0.35s ease-in 200ms;
+}
+
+/*
+#dn-menustate:checked ~ #nav .sn-list, 
+#dn-menustate:target ~ #nav .sn-list {
+  visibility: visible;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+#nav .sn-list:after {
+  display: none;
+}
+*/
+
+#nav .dn-list {
   list-style: none;
   margin-bottom: 0;
 }
 
-.dn-item {
+#nav .dn-item {
   margin-bottom: 0;
   display: inline-block;
   position: relative;
@@ -29,7 +75,7 @@ nav {
   vertical-align: top;
 }
 
-.dn-menuicon {
+#nav .dn-menuicon {
   display: block;
   position: absolute;
   z-index: 2;
@@ -39,7 +85,7 @@ nav {
   border-bottom: none;
 }
 
-.dn-menuicon-label {
+#nav .dn-menuicon-label {
   display: block;
   position: absolute;
   z-index: 3;
@@ -52,7 +98,19 @@ nav {
   -webkit-tap-highlight-color: transparent;
 }
 
-.dn-menuicon-bread {
+#nav .dn-menuicon-label:hover, #nav .dn-menuicon-label:focus,
+#nav .dn-menuicon-label:active {
+  opacity: .65;
+}
+
+#dn-menustate:checked ~ #nav .dn-menuicon-label,
+#dn-menustate:target ~ #nav .dn-menuicon-label {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#nav .dn-menuicon-bread {
   position: absolute;
   z-index: 3;
   top: 0;
@@ -63,7 +121,7 @@ nav {
   transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.dn-menuicon-bread-top {
+#nav .dn-menuicon-bread-top {
   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   -webkit-transform: rotate(0);
@@ -72,7 +130,16 @@ nav {
   z-index: 4;
 }
 
-.dn-menuicon-bread-bottom {
+#dn-menustate:checked ~ #nav .dn-menuicon-bread-top,
+#dn-menustate:target ~ #nav .dn-menuicon-bread-top {
+  -webkit-transition: -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav .dn-menuicon-bread-bottom {
   -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   -webkit-transform: rotate(0);
@@ -80,7 +147,16 @@ nav {
   transform: rotate(0);
 }
 
-.dn-menuicon-bread-crust {
+#dn-menustate:checked ~ #nav .dn-menuicon-bread-bottom,
+#dn-menustate:target ~ #nav .dn-menuicon-bread-bottom {
+  -webkit-transition: -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition: transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav .dn-menuicon-bread-crust {
   display: block;
   width: 17px;
   height: 1px;
@@ -92,7 +168,7 @@ nav {
   transition: transform 0.2s;
 }
 
-.dn-menuicon-bread-crust-top {
+#nav .dn-menuicon-bread-crust-top {
   top: 23px;
   -webkit-transition: -webkit-transform 0.2s 0.2s;
   transition: transform 0.2s 0.2s;
@@ -101,14 +177,77 @@ nav {
   transform: translateY(-3px);
 }
 
-.dn-menuicon-bread-crust-bottom {
+#dn-menustate:checked ~ #nav .dn-menuicon-bread-crust-top,
+#dn-menustate:target ~ #nav .dn-menuicon-bread-crust-top {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+}
+
+#nav .dn-menuicon-bread-crust-bottom {
   bottom: 23px;
   -webkit-transform: translateY(3px);
   -ms-transform: translateY(3px);
   transform: translateY(3px);
 }
 
-.dn-logo {
+#dn-menustate:checked ~ #nav .dn-menuicon-bread-crust-bottom,
+#dn-menustate:target ~ #nav .dn-menuicon-bread-crust-bottom {
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+#nav .dn-menuanchor {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  z-index: 10;
+}
+
+#nav .dn-menuanchor:focus {
+  outline-offset: -8px;
+  width: 48px;
+  height: 48px;
+}
+
+#nav .dn-menuanchor-close {
+  display: none;
+}
+
+#nav .dn-menuanchor-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+#dn-menustate:checked ~ #nav .dn-menuanchor-open,
+#dn-menustate:target ~ #nav .dn-menuanchor-open {
+  display: none;
+}
+
+#dn-menustate:checked ~ #nav .dn-menuanchor-close,
+#dn-menustate:target ~ #nav .dn-menuanchor-close {
+  display: block;
+}
+
+#nav .dn-logo {
   display: block;
   position: absolute;
   width: 48px;
@@ -119,7 +258,7 @@ nav {
   z-index: 1;
 }
 
-.dn-logo a{
+#nav .dn-logo a{
   font-size: 14px;
   font-weight: 400;
   letter-spacing: normal;
@@ -129,23 +268,23 @@ nav {
 }
 
 /* static navbar */
-.static-navbar {
+#nav .static-navbar {
   display: none;
 }
 
-.sn-list {
+#nav .sn-list {
   list-style: none;
   margin-bottom: 0;
   float: right;
 }
 
-.sn-item {
+#nav .sn-item {
   position: relative;
   float: left;
   margin-bottom: 0;
 }
 
-.sn-item a {
+#nav .sn-item a {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: normal;
@@ -155,7 +294,7 @@ nav {
   color: #fff;
 }
 
-.sn-item a:hover {
+#nav .sn-item a:hover {
   color: #197fc3;
 }
 
@@ -360,11 +499,15 @@ section {
 
   /* Navigation Bar
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .dynamic-navbar {
+  #nav .dynamic-navbar {
     display: none;
   }
   
-  .static-navbar {
+  #nav .dn-menuicon {
+    display: none;
+  }
+  
+  #nav .static-navbar {
     display: block;
   }
 }

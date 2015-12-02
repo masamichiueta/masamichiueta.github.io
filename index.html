@@ -33,11 +33,12 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <nav>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
     <div class="dynamic-navbar">
       <ul class="dn-list">
         <li class="dn-item dn-menuicon">
-          <label class="dn-menuicon-label">
+          <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
             <span class="dn-menuicon-bread dn-menuicon-bread-top">
               <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
             </span>
@@ -45,34 +46,37 @@
               <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
             </span>
           </label>
+          <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span class="dn-menuanchor-label">Open Menu</span> </a>
+				<a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span class="dn-menuanchor-label">Close Menu</span> </a>
         </li>
         <li class="dn-item dn-logo">
-          <a href="#hero">MU</a>
+          <a href="#">MU</a>
         </li>
       </ul>
     </div>
     <div class="container">
       <div class="static-navbar">
         <div class="sn-item">
-          <a href="#hero">Masamichi Ueta</a>
+          <a href="#">Masamichi Ueta</a>
         </div>
         <ul class="sn-list">
-          <li class="sn-item">
+          <li class="sn-item sn-item-menu">
             <a href="#creative">Creative</a>
           </li>
-          <li class="sn-item">
+          <li class="sn-item sn-item-menu">
             <a href="#about">About</a>
           </li>
-          <li class="sn-item">
+          <li class="sn-item sn-item-menu">
             <a href="http://qiita.com/micchyboy">Tech Notes</a>
           </li>
-          <li class="sn-item">
+          <li class="sn-item sn-item-menu">
             <a href="http://giraffebook.hatenablog.com">Design Notes</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
   <section id="hero" class="hero">
     <div class="overlay"></div>
     <div class="container">
