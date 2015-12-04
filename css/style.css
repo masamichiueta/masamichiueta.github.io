@@ -27,22 +27,28 @@ html.ac-gn-noscroll-long {
   height: 48px;
   z-index: 9999;
   color: #fff;
-}
-
-/* dynamic navbar */
-#nav {
   max-height: none;
   -webkit-transition: background 0.35s linear, height 0.35s ease-in;
   transition: background 0.35s linear, height 0.35s ease-in;
 }
 
+.nav-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* dynamic navbar */
 #dn-menustate {
   display: none;
 }
     
 #dn-menustate:checked ~ #nav, 
 #dn-menustate:target ~ #nav {
-  height: 100%;
+  height: 118px;
   background: #000;
   -webkit-transition: background 0.35s linear, height 0.35s ease-in 200ms;
   transition: background 0.35s linear, height 0.35s ease-in 200ms;
@@ -499,6 +505,10 @@ section {
 
   /* Navigation Bar
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .nav-container {
+    width: 80%; 
+  }
+    
   #nav .dynamic-navbar {
     display: none;
   }
