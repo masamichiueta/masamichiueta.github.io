@@ -1,3 +1,38 @@
+/* Util
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+/* Button
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  color: #197fc3;
+  border-color: #197fc3;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #fff;
+  background-color: #197fc3;
+  border-color: #197fc3;
+}
+
+
+
 /* Navigation Bar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #nav {
@@ -347,33 +382,6 @@
 
 #nav .sn-item a:hover {
   color: #197fc3;
-}
-
-
-/* Button
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-  color: #197fc3;
-  border-color: #197fc3;
-}
-
-.button:hover,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
-.button:focus,
-button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
-  color: #fff;
-  background-color: #197fc3;
-  border-color: #197fc3;
 }
 
 
