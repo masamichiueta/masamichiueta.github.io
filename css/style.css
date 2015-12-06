@@ -1,20 +1,5 @@
 /* Navigation Bar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-html.ac-gn-noscroll {
-    margin-top: 0 !important
-}
-
-html.ac-gn-noscroll, html.ac-gn-noscroll body {
-    overflow: hidden !important;
-    height: 100% !important
-}
-
-html.ac-gn-noscroll-long {
-    overflow-y: scroll !important
-}
-*/
-
 #nav {
   position: absolute;
   top: 0;
@@ -41,7 +26,8 @@ html.ac-gn-noscroll-long {
   box-sizing: border-box;
 }
 
-/* dynamic navbar */
+/* dynamic navbar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 #dn-menustate {
   display: none;
 }
@@ -50,22 +36,9 @@ html.ac-gn-noscroll-long {
 #dn-menustate:target ~ #nav {
   height: 118px;
   background: #000;
-  -webkit-transition: background 0.35s linear, height 0.35s ease-in 200ms;
-  transition: background 0.35s linear, height 0.35s ease-in 200ms;
+  -webkit-transition: background 0.35s linear, height 0.35s ease-in;
+  transition: background 0.35s linear, height 0.35s ease-in;
 }
-
-/*
-#dn-menustate:checked ~ #nav .sn-list, 
-#dn-menustate:target ~ #nav .sn-list {
-  visibility: visible;
-  -webkit-transition-delay: 0s;
-  transition-delay: 0s;
-}
-
-#nav .sn-list:after {
-  display: none;
-}
-*/
 
 #nav .dn-list {
   list-style: none;
@@ -273,28 +246,102 @@ html.ac-gn-noscroll-long {
   color: #fff;
 }
 
-/* static navbar */
+/* static navbar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 #nav .static-navbar {
+  overflow: hidden;
+}
+
+#nav .sn-logo {
   display: none;
 }
 
-#nav .sn-list {
-  list-style: none;
-  margin-bottom: 0;
-  float: right;
+#dn-menustate ~ #nav .sn-list {
+  visibility: hidden;
 }
 
-#nav .sn-item {
-  position: relative;
-  float: left;
-  margin-bottom: 0;
+#dn-menustate:checked ~ #nav .sn-list, 
+#dn-menustate:target ~ #nav .sn-list {
+  visibility: visible;
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+  -webkit-animation-name: slidein-animation;
+  animation-name: slidein-animation;
+  -webkit-animation-duration: 350ms;
+  animation-duration: 350ms;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
 }
+
+#nav .sn-list {
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  position: relative;
+  top: 48px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+#nav .sn-item-menu {
+  display: inline-block;
+}
+
+@-webkit-keyframes slidein-animation {
+  0% {
+      opacity: 0
+  }
+
+  1% {
+      -webkit-transform: translateX(160px);
+      transform: translateX(160px)
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      transform: translateX(0)
+  }
+}
+
+@keyframes slidein-animation {
+  0% {
+      opacity: 0
+  }
+
+  1% {
+      -webkit-transform: translateX(160px);
+      transform: translateX(160px)
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+      transform: translateX(0)
+  }
+}
+
+/*
+#dn-menustate:checked ~ #nav .sn-item-menu,
+#dn-menustate:target ~ #nav .sn-item-menu {
+  -webkit-animation-name: slidein-animation;
+  animation-name: slidein-animation;
+  -webkit-animation-duration: 350ms;
+  animation-duration: 350ms;
+  -webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  animation-delay: 10000ms;
+  -webkit-animation-delay: 10000ms;
+}
+*/
 
 #nav .sn-item a {
+  display: inline-block;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: normal;
-  margin-right: 35px;
+  margin-right: 24px;
   text-decoration: none;
   line-height: 48px;
   color: #fff;
@@ -508,18 +555,41 @@ section {
   .nav-container {
     width: 80%; 
   }
-    
-  #nav .dynamic-navbar {
-    display: none;
-  }
   
+  #nav .dynamic-navbar,
   #nav .dn-menuicon {
     display: none;
   }
   
-  #nav .static-navbar {
+  #nav .sn-logo {
     display: block;
   }
+  
+  #dn-menustate ~ #nav .sn-list {
+    visibility: visible;
+  }
+  
+  #nav .sn-list {
+    position: relative;
+    top: 0px;
+    list-style: none;
+    padding-bottom: 0;
+    float: right;
+    overflow: visible;
+    white-space: normal;
+  }
+
+  #nav .sn-item {
+    position: relative;
+    float: left;
+    margin-bottom: 0;
+  }
+
+  #nav .sn-item-menu,
+  #nav .sn-item a  {
+    display: block;
+  }
+  
 }
 
 
