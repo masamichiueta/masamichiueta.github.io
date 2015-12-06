@@ -14,7 +14,7 @@ $(function() {
         //Add notransition class temporary
         nav.addClass('notransition');
         menustate.prop('checked', false);
-        nav.offsetHeight;
+        nav[0].offsetHeight;
         nav.removeClass('notransition');
       } 
       
@@ -24,7 +24,7 @@ $(function() {
         //Add notransition class temporary
         nav.addClass('notransition');
         window.location.hash = '#';
-        nav.offsetHeight;
+        nav[0].offsetHeight;
         nav.removeClass('notransition');
       }
     }
