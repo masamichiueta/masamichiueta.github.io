@@ -6,23 +6,26 @@ $(function() {
     if ($('.sn-logo').css('display') === 'block') {
       
       var menustate = $('#dn-menustate');
+      var nav = $('#nav')
       
       //CheckBox
       if (menustate.prop('checked')) {
         
         //Add notransition class temporary
-        $('#nav').addClass('notransition');
+        nav.addClass('notransition');
         menustate.prop('checked', false);
-//         $('#nav').removeClass('notransition');
+        nav.offsetHeight;
+        nav.removeClass('notransition');
       } 
       
       //Anchor
       if (window.location.hash === '#dn-menustate') {
         
         //Add notransition class temporary
-        $('#nav').addClass('notransition');
+        nav.addClass('notransition');
         window.location.hash = '#';
-//         $('#nav').removeClass('notransition');
+        nav.offsetHeight;
+        nav.removeClass('notransition');
       }
     }
     
