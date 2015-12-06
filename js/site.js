@@ -13,7 +13,7 @@ $(function() {
         //Add notransition class temporary
         $('#nav').addClass('notransition');
         menustate.prop('checked', false);
-        $('#nav').removeClass('notransition');
+//         $('#nav').removeClass('notransition');
       } 
       
       //Anchor
@@ -22,7 +22,7 @@ $(function() {
         //Add notransition class temporary
         $('#nav').addClass('notransition');
         window.location.hash = '#';
-        $('#nav').removeClass('notransition');
+//         $('#nav').removeClass('notransition');
       }
     }
     
