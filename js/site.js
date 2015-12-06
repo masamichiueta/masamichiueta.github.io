@@ -6,7 +6,7 @@ $(function() {
     if ($('.sn-logo').css('display') === 'block') {
       
       var menustate = $('#dn-menustate');
-      var nav = $('#nav')
+      var nav = $('#nav');
       
       //CheckBox
       if (menustate.prop('checked')) {
