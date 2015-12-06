@@ -322,7 +322,6 @@
   }
 }
 
-/*
 #dn-menustate:checked ~ #nav .sn-item-menu,
 #dn-menustate:target ~ #nav .sn-item-menu {
   -webkit-animation-name: slidein-animation;
@@ -331,10 +330,9 @@
   animation-duration: 350ms;
   -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
-  animation-delay: 10000ms;
-  -webkit-animation-delay: 10000ms;
+  animation-delay: 350ms;
+  -webkit-animation-delay: 350ms;
 }
-*/
 
 #nav .sn-item a {
   display: inline-block;
