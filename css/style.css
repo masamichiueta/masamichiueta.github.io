@@ -107,6 +107,9 @@ input[type="button"]:focus {
   width: 48px;
   height: 48px;
   cursor: pointer;
+  opacity: 1;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=$ieopacity)';
+  filter: alpha(opacity=100);
   -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   -webkit-tap-highlight-color: transparent;
@@ -115,6 +118,8 @@ input[type="button"]:focus {
 #nav .dn-menuicon-label:hover, #nav .dn-menuicon-label:focus,
 #nav .dn-menuicon-label:active {
   opacity: .65;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=$ieopacity)';
+  filter: alpha(opacity=65);
 }
 
 #dn-menustate:checked ~ #nav .dn-menuicon-label,
@@ -272,13 +277,25 @@ input[type="button"]:focus {
   z-index: 1;
 }
 
-#nav .dn-logo a{
+#nav .dn-logo a {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: normal;
   text-decoration: none;
   line-height: 48px;
   color: #fff;
+  opacity: 1;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=$ieopacity)';
+  filter: alpha(opacity=100);
+  -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+#nav .dn-logo a:hover {
+  opacity: 0.65;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=$ieopacity)';
+  filter: alpha(opacity=65);
 }
 
 /* static navbar
