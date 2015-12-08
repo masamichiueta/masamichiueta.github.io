@@ -12,8 +12,8 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  color: #197fc3;
-  border-color: #197fc3;
+  color: #398ECA;
+  border-color: #398ECA;
 }
 
 .button:hover,
@@ -27,8 +27,8 @@ input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
   color: #fff;
-  background-color: #197fc3;
-  border-color: #197fc3;
+  background-color: #398ECA;
+  border-color: #398ECA;
 }
 
 
@@ -398,7 +398,7 @@ input[type="button"]:focus {
 }
 
 #nav .sn-item a:hover {
-  color: #197fc3;
+  color: #398ECA;
 }
 
 
@@ -425,11 +425,11 @@ section {
 }
 
 .section-heading.blue {
-  color: #197fc3;
+  color: #398ECA;
 }
 
 .section-heading.blue:after {
-  background: #197fc3;
+  background: #398ECA;
 }
 
 .section-heading.white {
@@ -443,7 +443,7 @@ section {
 
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.hero {
+.hero { 
   background-image: url('../images/hero.jpg');
   background-size: cover;
   background-position: center center;
@@ -456,7 +456,7 @@ section {
 }
 
 .hero .overlay {
-  background-color: rgba(25, 127, 195, 0.8);
+  background-color: rgba(57, 142, 202, 0.8);
   position: absolute;
   top: 0;
   left: 0;
