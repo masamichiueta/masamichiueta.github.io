@@ -18,3 +18,7 @@ This project uses npm.
 ###Watch scss 
 
 `npm run watch-css`
+
+###Run local server
+
+`npm run ws`
