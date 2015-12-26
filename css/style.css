@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* Variables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* mixin
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Util
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .notransition {
@@ -370,7 +372,9 @@ section {
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .hero {
-  background: url("../images/hero.jpg") no-repeat center center;
+  background-image: url("../images/hero.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
   max-height: 600px;
@@ -384,7 +388,7 @@ section {
       min-height: 600px; } }
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 144dppx) {
     .hero {
-      background: url("../images/hero_2x.jpg"); } }
+      background-image: url("../images/hero_2x.jpg"); } }
   .hero .overlay {
     background-color: rgba(57, 142, 202, 0.8);
     height: 100%;

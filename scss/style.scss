@@ -539,7 +539,9 @@ section {
 /* Hero
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .hero {
-  background: url('../images/hero.jpg') no-repeat center center;
+  background-image: url('../images/hero.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
 	color: #fff;
 	max-height: 600px;
@@ -554,7 +556,7 @@ section {
 	}
 	
 	@include retina {
-  	background: url('../images/hero_2x.jpg');
+  	background-image: url('../images/hero_2x.jpg');
 	}
 	
 	.overlay {
