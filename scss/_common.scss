@@ -1,0 +1,44 @@
+$main-color: #398ECA;
+$sub-color: #323a45;
+$text-color: #3d3d3d;
+$footer-text-color: #747c83;
+$white-color: #fff;
+
+$twitter-color: #59adeb;
+$github-color: #333333;
+
+$section-line-height: 4px;
+$section-line-width: 24px;
+
+$creative-icon-height: 60px;
+$sns-icon-height: 44px;
+$about-img-height: 200px;
+
+$phone-width: 550px;
+$tablet-width: 750px;
+$pc-width: 1000px;
+
+
+@mixin phablet {
+  @media only screen and (min-width: $phone-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $pc-width) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 144dppx) {
+    @content;
+  }
+}

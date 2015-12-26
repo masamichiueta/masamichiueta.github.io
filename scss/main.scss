@@ -1,0 +1,236 @@
+@import "common";
+@import "navbar";
+
+
+/* Util
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+
+/* Button
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  border-color: $main-color;
+  color: $main-color;
+  
+  &:hover,
+  &:focus {
+    background-color: $main-color;
+    border-color: $main-color;
+    color: $white-color;
+  }
+}
+
+
+
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+section {
+  padding: 8rem 0 7rem;
+  text-align: center;
+}
+
+.section-heading {
+  font-weight: 600;
+  margin-bottom: 7rem;
+  
+  &:after {
+    background: #3d3d3d;
+    border-radius: round($section-line-height/2);
+    content: '';
+    display: block;
+    height: $section-line-height;
+    margin: 24px auto 0;
+    width: $section-line-width;
+  }
+  
+  &.blue {
+    color: $main-color;
+    
+    &:after {
+      background: $main-color;
+    }
+  }
+  
+  &.white {
+    color: $white-color;
+    
+    &:after {
+      background: $white-color;
+    }
+  }
+}
+
+
+/* Hero
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hero {
+  background-image: url('../images/hero.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	color: #fff;
+	max-height: 600px;
+	min-height: 450px;
+	padding: 0;
+	position: relative;
+	
+	@include tablet {
+    height: 100vh;
+    max-height: none;
+    min-height: 600px;
+	}
+	
+	@include retina {
+  	background-image: url('../images/hero_2x.jpg');
+	}
+	
+	.overlay {
+  	background-color: rgba(57, 142, 202, 0.8);
+  	height: 100%;
+  	left: 0;
+  	position: absolute;
+  	top: 0;
+  	width: 100%;
+	}
+}
+
+.hero-content {
+  margin: 0;
+  padding: 14rem 0 0 0;
+  
+  @include tablet {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+.sns {
+  
+  li {
+    display: inline-block;
+    margin: 0 0 0 3rem;
+    vertical-align: middle;
+    
+    &:first-child {
+      margin: 0;
+    }
+  }
+  
+  a {
+    border-radius: 50%;
+  	border: 1px solid #fff;
+  	display: block;
+  	height: $sns-icon-height;
+  	text-align: center;
+  	-webkit-transition: all cubic-bezier(.645, .045, .355, 1) .3s;
+  	transition: all cubic-bezier(.645, .045, .355, 1) .3s;
+  	width: $sns-icon-height;
+  	
+  	i {
+    	color: #fff;
+      line-height: $sns-icon-height;
+      -webkit-transition: all cubic-bezier(.645, .045, .355, 1) .3s;
+      transition: all cubic-bezier(.645, .045, .355, 1) .3s;
+  	}
+  }
+  
+  .twitter {
+    
+    &:hover {
+      background: $twitter-color;
+      border-color: $twitter-color;
+    }
+        
+  }
+  
+  .github {
+    
+    &:hover {
+      background: $github-color;
+      border-color: $github-color;
+    }
+    
+  }
+  
+}
+
+
+/* Creative
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.each-creative {
+  margin-bottom: 6rem;
+  
+  @include tablet {
+    margin-bottom: 10rem;
+  }
+}
+
+.creative-title {
+  color: $text-color;
+}
+
+.creative-icon {
+  border-radius: 5px;
+  height: $creative-icon-height;
+  vertical-align: middle;
+  width: $creative-icon-height;
+  
+  &.livereport-icon {
+    border: 1px #eee solid;
+  }
+}
+
+
+.creative-description {
+  margin-bottom: 1.2rem;
+  color: $text-color;
+  
+  @include tablet {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* About
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.about {
+  background-color: $sub-color;
+  color: $white-color;
+  padding-bottom: 5rem;
+}
+
+.about-img {
+  border-radius: 50%;
+  height: $about-img-height;
+  width: $about-img-height;
+}
+
+
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.footer {
+  min-width: 300px;
+  background-color: $sub-color;
+  text-align: center;
+  
+  p {
+    color: $footer-text-color;
+    padding-top: 1em;
+  }
+}
