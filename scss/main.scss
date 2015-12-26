@@ -42,7 +42,7 @@ section {
   margin-bottom: 7rem;
   
   &:after {
-    background: #3d3d3d;
+    background: $text-color;
     border-radius: round($section-line-height/2);
     content: '';
     display: block;
@@ -76,7 +76,7 @@ section {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-	color: #fff;
+	color: $white-color;
 	max-height: 600px;
 	min-height: 450px;
 	padding: 0;
@@ -132,7 +132,7 @@ section {
   
   a {
     border-radius: 50%;
-  	border: 1px solid #fff;
+  	border: 1px solid $white-color;
   	display: block;
   	height: $sns-icon-height;
   	text-align: center;
@@ -141,7 +141,7 @@ section {
   	width: $sns-icon-height;
   	
   	i {
-    	color: #fff;
+    	color: $white-color;
       line-height: $sns-icon-height;
       -webkit-transition: all cubic-bezier(.645, .045, .355, 1) .3s;
       transition: all cubic-bezier(.645, .045, .355, 1) .3s;
