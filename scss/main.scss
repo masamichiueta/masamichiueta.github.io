@@ -166,6 +166,14 @@ section {
     
   }
   
+  .medium {
+    
+    &:hover {
+      background: $medium-color;
+      border-color: $medium-color;
+    }
+  }
+  
 }
 
 

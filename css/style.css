@@ -437,6 +437,10 @@ section {
   background: #333333;
   border-color: #333333; }
 
+.sns .medium:hover {
+  background: #00ab6b;
+  border-color: #00ab6b; }
+
 /* Creative
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .each-creative {
