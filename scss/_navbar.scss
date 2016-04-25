@@ -1,43 +1,33 @@
-@import "common";
-
-$nav-background-color: rgba(0, 0, 0, 0.6);
-
-$navbar-height: 48px;
-$navbar-height-open: 118px;
-
-$crust-width: 17px;
-$crust-height: 1px;
-
-$navbar-animation-duration: 0.35s;
+@import "variables";
 
 /* Navigation Bar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #dn-menustate {
   display: none;
-  
+
   ~ #nav {
     .sn-list {
       visibility: hidden;
-      
+
       @include tablet {
         visibility: visible;
       }
     }
   }
-  
+
   &:checked ~ #nav,
   &:target ~ #nav {
     background: #000;
   	height: $navbar-height-open;
   	-webkit-transition: background $navbar-animation-duration linear, height $navbar-animation-duration ease-in;
   	transition: background $navbar-animation-duration linear, height $navbar-animation-duration ease-in;
-  	
+
   	.dn-menuicon-label {
     	-webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
       transform: rotate(90deg);
   	}
-  	
+
   	.dn-menuicon-bread-top {
     	-webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -45,7 +35,7 @@ $navbar-animation-duration: 0.35s;
       -webkit-transition: -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
       transition: transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   	}
-  	
+
   	.dn-menuicon-bread-bottom {
       -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
@@ -53,7 +43,7 @@ $navbar-animation-duration: 0.35s;
       -webkit-transition: -webkit-transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
       transition: transform 0.25s 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   	}
-  	
+
   	.dn-menuicon-bread-crust-top {
     	-webkit-transform: translateY(0);
       -ms-transform: translateY(0);
@@ -61,7 +51,7 @@ $navbar-animation-duration: 0.35s;
       -webkit-transition-delay: 0;
       transition-delay: 0;
   	}
-  	
+
   	.dn-menuicon-bread-crust-bottom {
       -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
@@ -69,15 +59,15 @@ $navbar-animation-duration: 0.35s;
       -webkit-transition: -webkit-transform 0.2s;
       transition: transform 0.2s;
   	}
-  	
+
   	.dn-menuanchor-open {
     	display: none;
   	}
-  	
+
   	.dn-menuanchor-close {
     	display: block;
   	}
-  	
+
   	.sn-list {
     	-webkit-animation-duration: $navbar-animation-duration;
     	animation-duration: $navbar-animation-duration;
@@ -89,7 +79,7 @@ $navbar-animation-duration: 0.35s;
     	transition-delay: $navbar-animation-duration;
     	visibility: visible;
   	}
-  	
+
   	.sn-item-menu {
     	-webkit-animation-duration: $navbar-animation-duration;
       animation-duration: $navbar-animation-duration;
@@ -119,7 +109,7 @@ $navbar-animation-duration: 0.35s;
 	transition: background $navbar-animation-duration linear, height $navbar-animation-duration ease-in;
 	width: 100%;
 	z-index: 9999;
-	
+
 	.nav-container {
   	box-sizing: border-box;
   	margin: 0 auto;
@@ -127,23 +117,23 @@ $navbar-animation-duration: 0.35s;
   	padding: 0 20px;
   	position: relative;
   	width: 100%;
-  	
+
   	@include tablet {
-      width: 80%; 
+      width: 80%;
   	}
   }
-  
+
   .dynamic-navbar {
     @include tablet {
       display: none;
     }
   }
-   
+
   .dn-list {
     list-style: none;
     margin-bottom: 0;
   }
-   
+
   .dn-item {
     display: inline-block;
     height: $navbar-height;
@@ -152,7 +142,7 @@ $navbar-animation-duration: 0.35s;
     vertical-align: top;
     z-index: 1;
   }
-  
+
   .dn-menuicon {
     border-bottom: none;
     display: block;
@@ -161,12 +151,12 @@ $navbar-animation-duration: 0.35s;
     top: 0;
     width: $navbar-height;
     z-index: 2;
-    
+
     @include tablet {
       display: none;
     }
   }
-  
+
   .dn-menuicon-label {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
@@ -181,7 +171,7 @@ $navbar-animation-duration: 0.35s;
     transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     width: $navbar-height;
     z-index: 3;
-    
+
     &:hover,
     &:focus,
     &:active {
@@ -190,7 +180,7 @@ $navbar-animation-duration: 0.35s;
       opacity: .65;
     }
   }
-  
+
   .dn-menuicon-bread {
     height: $navbar-height;
     left: 0;
@@ -201,8 +191,8 @@ $navbar-animation-duration: 0.35s;
     width: $navbar-height;
     z-index: 3;
   }
-  
-  .dn-menuicon-bread-top {    
+
+  .dn-menuicon-bread-top {
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0);
@@ -210,15 +200,15 @@ $navbar-animation-duration: 0.35s;
     transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     z-index: 4;
   }
-  
+
   .dn-menuicon-bread-bottom {
     -webkit-transform: rotate(0);
-    -ms-transform: rotate(0);    
+    -ms-transform: rotate(0);
     transform: rotate(0);
     -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transition: transform 0.25s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   }
-  
+
   .dn-menuicon-bread-crust {
     background: #fff;
     display: block;
@@ -230,7 +220,7 @@ $navbar-animation-duration: 0.35s;
     width: $crust-width;
     z-index: 1;
   }
-  
+
   .dn-menuicon-bread-crust-top {
     top: round($navbar-height/2 - 1);
     -webkit-transform: translateY(-3px);
@@ -239,14 +229,14 @@ $navbar-animation-duration: 0.35s;
     -webkit-transition: -webkit-transform 0.2s 0.2s;
     transition: transform 0.2s 0.2s;
   }
-  
+
   .dn-menuicon-bread-crust-bottom {
     bottom: round($navbar-height/2 - 1);
     -webkit-transform: translateY(3px);
     -ms-transform: translateY(3px);
     transform: translateY(3px);
   }
-  
+
   .dn-menuanchor {
     color: #fff;
   	height: 1px;
@@ -255,18 +245,18 @@ $navbar-animation-duration: 0.35s;
   	top: 0;
   	width: 1px;
   	z-index: 10;
-  	
+
   	&:focus {
     	height: $navbar-height;
     	outline-offset: -8px;
       width: $navbar-height;
   	}
   }
-  
+
   .dn-menuanchor-close {
     display: none;
   }
-  
+
   .dn-menuanchor-label {
     border: 0;
     -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
@@ -281,7 +271,7 @@ $navbar-animation-duration: 0.35s;
     top: 0;
     width: 1px;
   }
-  
+
   .dn-logo {
     display: block;
     left: 50%;
@@ -291,7 +281,7 @@ $navbar-animation-duration: 0.35s;
     top: 0;
     width: $navbar-height;
     z-index: 1;
-    
+
     a {
       color: #fff;
       -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=$ieopacity)';
@@ -305,27 +295,27 @@ $navbar-animation-duration: 0.35s;
     	-webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     	transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     	-webkit-tap-highlight-color: transparent;
-    	
-    	&:hover {      	
+
+    	&:hover {
         -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=$ieopacity)';
         filter: alpha(opacity=65);
         opacity: 0.65;
     	}
     }
   }
-  
+
   .static-navbar {
     overflow: hidden;
   }
-  
+
   .sn-logo {
     display: none;
-    
+
     @include tablet {
       display: block;
     }
   }
-  
+
   .sn-list {
     -webkit-overflow-scrolling: touch;
   	margin-bottom: 0;
@@ -335,7 +325,8 @@ $navbar-animation-duration: 0.35s;
   	position: relative;
   	top: $navbar-height;
   	white-space: nowrap;
-  	
+    padding-left: 0;
+
   	@include tablet {
     	float: right;
     	list-style: none;
@@ -346,17 +337,17 @@ $navbar-animation-duration: 0.35s;
     	white-space: normal;
   	}
   }
-  
+
   .sn-item-menu {
     display: inline-block;
-    
+
     @include tablet {
       display: block;
     }
   }
-  
+
   .sn-item {
-    
+
     @include tablet {
       float: left;
       margin-bottom: 0;
@@ -372,21 +363,21 @@ $navbar-animation-duration: 0.35s;
       line-height: $navbar-height;
       margin-right: 24px;
       text-decoration: none;
-      
+
       @include tablet {
         display: block;
       }
-      
+
       &:hover {
         color: $main-color;
       }
     }
-    
+
   }
-  
-  
+
+
 }
- 
+
 
 @-webkit-keyframes slidein-animation {
   0% {
@@ -421,4 +412,3 @@ $navbar-animation-duration: 0.35s;
       transform: translateX(0)
   }
 }
-

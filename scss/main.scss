@@ -1,6 +1,12 @@
-@import "common";
+@import "variables";
+@import "utilities";
 @import "navbar";
 
+body {
+  font-weight: 400;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+}
 
 /* Util
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -8,26 +14,6 @@
   -webkit-transition: none !important;
   transition: none !important;
 }
-
-
-/* Button
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-  border-color: $main-color;
-  color: $main-color;
-  
-  &:hover,
-  &:focus {
-    background-color: $main-color;
-    border-color: $main-color;
-    color: $white-color;
-  }
-}
-
 
 
 /* Sections
@@ -40,7 +26,7 @@ section {
 .section-heading {
   font-weight: 600;
   margin-bottom: 7rem;
-  
+
   &:after {
     background: $text-color;
     border-radius: round($section-line-height/2);
@@ -50,18 +36,18 @@ section {
     margin: 24px auto 0;
     width: $section-line-width;
   }
-  
+
   &.blue {
     color: $main-color;
-    
+
     &:after {
       background: $main-color;
     }
   }
-  
+
   &.white {
     color: $white-color;
-    
+
     &:after {
       background: $white-color;
     }
@@ -81,17 +67,17 @@ section {
 	min-height: 450px;
 	padding: 0;
 	position: relative;
-	
+
 	@include tablet {
     height: 100vh;
     max-height: none;
     min-height: 600px;
 	}
-	
+
 	@include retina {
   	background-image: url('../images/hero_2x.jpg');
 	}
-	
+
 	.overlay {
   	background-color: rgba(57, 142, 202, 0.8);
   	height: 100%;
@@ -105,7 +91,7 @@ section {
 .hero-content {
   margin: 0;
   padding: 14rem 0 0 0;
-  
+
   @include tablet {
     margin-bottom: 0;
     margin-top: 0;
@@ -119,17 +105,17 @@ section {
 }
 
 .sns {
-  
+
   li {
     display: inline-block;
     margin: 0 0 0 3rem;
     vertical-align: middle;
-    
+
     &:first-child {
       margin: 0;
     }
   }
-  
+
   a {
     border-radius: 50%;
   	border: 1px solid $white-color;
@@ -139,7 +125,7 @@ section {
   	-webkit-transition: all cubic-bezier(.645, .045, .355, 1) .3s;
   	transition: all cubic-bezier(.645, .045, .355, 1) .3s;
   	width: $sns-icon-height;
-  	
+
   	i {
     	color: $white-color;
       line-height: $sns-icon-height;
@@ -147,33 +133,33 @@ section {
       transition: all cubic-bezier(.645, .045, .355, 1) .3s;
   	}
   }
-  
+
   .twitter {
-    
+
     &:hover {
       background: $twitter-color;
       border-color: $twitter-color;
     }
-        
+
   }
-  
+
   .github {
-    
+
     &:hover {
       background: $github-color;
       border-color: $github-color;
     }
-    
+
   }
-  
+
   .medium {
-    
+
     &:hover {
       background: $medium-color;
       border-color: $medium-color;
     }
   }
-  
+
 }
 
 
@@ -181,7 +167,7 @@ section {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .each-creative {
   margin-bottom: 6rem;
-  
+
   @include tablet {
     margin-bottom: 10rem;
   }
@@ -196,7 +182,7 @@ section {
   height: $creative-icon-height;
   vertical-align: middle;
   width: $creative-icon-height;
-  
+
   &.bordered {
     border: 1px #eee solid;
   }
@@ -206,7 +192,7 @@ section {
 .creative-description {
   margin-bottom: 1.2rem;
   color: $text-color;
-  
+
   @include tablet {
     max-width: 60%;
     margin-left: auto;
@@ -236,7 +222,7 @@ section {
   min-width: 300px;
   background-color: $sub-color;
   text-align: center;
-  
+
   p {
     color: $footer-text-color;
     padding-top: 1em;
