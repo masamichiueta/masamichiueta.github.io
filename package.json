@@ -22,6 +22,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "bootstrap": "^4.0.0-alpha.2",
+    "del": "^2.2.0",
     "font-awesome": "^4.6.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
