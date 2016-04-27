@@ -6,6 +6,10 @@
   "scripts": {
     "start": "gulp",
     "sass": "gulp sass",
+    "js": "gulp js",
+    "fonts": "gulp fonts",
+    "watch": "gulp watch",
+    "clean": "gulp clean",
     "build": "gulp build",
     "serve": "gulp serve"
   },

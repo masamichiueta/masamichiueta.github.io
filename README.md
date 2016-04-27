@@ -3,7 +3,7 @@ Personal Web Site
 
 ##npm
 
-This project uses npm.
+This project uses npm and gulp.
 
 `brew install node`
 
@@ -11,14 +11,5 @@ This project uses npm.
 
 `npm install`
 
-###Compile scss
-
-`npm run build-css`
-
-###Watch scss 
-
-`npm run watch-css`
-
-###Run local server
-
-`npm run ws`
+###Check run script
+`npm run`

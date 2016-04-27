@@ -7,31 +7,38 @@ var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     concat = require('gulp-concat'),
     runSequence = require('run-sequence'),
-    connect = require('gulp-connect');
+    connect = require('gulp-connect'),
+    del = require('del');
+
+gulp.task('clean', function(callback) {
+  return del(['./css', './fonts', './js'], callback);
+});
 
 gulp.task('site-sass', function() {
-  gulp.src('./scss/main.scss')
-      .pipe(sourcemaps.init())
-      .pipe(plumber())
-      .pipe(sass())
-      .pipe(rename('style.css'))
-      .pipe(sourcemaps.write('./maps'))
-      .pipe(gulp.dest('./css'));
+  return gulp.src('./assets/scss/main.scss')
+             .pipe(sourcemaps.init())
+             .pipe(plumber())
+             .pipe(sass())
+             .pipe(rename('style.css'))
+             .pipe(sourcemaps.write('./maps'))
+             .pipe(gulp.dest('./css'));
 });
 
 gulp.task('vendor-sass', function() {
-  gulp.src(['./node_modules/bootstrap/scss/bootstrap.scss', './node_modules/font-awesome/scss/font-awesome.scss'])
-      .pipe(sourcemaps.init())
-      .pipe(sass())
-      .pipe(concat('vendor.css'))
-      .pipe(sourcemaps.write('./maps'))
-      .pipe(gulp.dest('./css'));
+  return gulp.src(['./node_modules/bootstrap/scss/bootstrap.scss', './node_modules/font-awesome/scss/font-awesome.scss'])
+             .pipe(sourcemaps.init())
+             .pipe(plumber())
+             .pipe(sass())
+             .pipe(concat('vendor.css'))
+             .pipe(sourcemaps.write('./maps'))
+             .pipe(gulp.dest('./css'));
 });
 
 gulp.task('css-autoprefixer', function() {
-  gulp.src('./css/*.css')
-      .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
-      .pipe(gulp.dest('./css'));
+  return gulp.src('./css/*.css')
+             .pipe(plumber())
+             .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+             .pipe(gulp.dest('./css'));
 });
 
 gulp.task('sass', function(callback) {
@@ -39,26 +46,39 @@ gulp.task('sass', function(callback) {
 });
 
 gulp.task('vendor-js', function() {
-  gulp.src(['./node_modules/jquery/dist/jquery.js', './node_modules/tether/dist/js/tether.js', './node_modules/bootstrap/dist/js/bootstrap.js'])
-      .pipe(sourcemaps.init())
-      .pipe(concat('vendor.js'))
-      .pipe(sourcemaps.write('./maps'))
-      .pipe(gulp.dest('./js'));
+  return gulp.src(['./node_modules/jquery/dist/jquery.js', './node_modules/tether/dist/js/tether.js', './node_modules/bootstrap/dist/js/bootstrap.js'])
+             .pipe(sourcemaps.init())
+             .pipe(concat('vendor.js'))
+             .pipe(sourcemaps.write('./maps'))
+             .pipe(gulp.dest('./js'));
 });
 
+gulp.task('site-js', function() {
+  return gulp.src('./assets/js/**/*.js')
+             .pipe(sourcemaps.init())
+             .pipe(concat('site.js'))
+             .pipe(sourcemaps.write('./maps'))
+             .pipe(gulp.dest('./js'));
+});
+
+gulp.task('js', ['vendor-js', 'site-js']);
+
 gulp.task('fonts', function() {
-  gulp.src('./node_modules/font-awesome/fonts/*')
-      .pipe(gulp.dest('./fonts'));
+  return gulp.src('./node_modules/font-awesome/fonts/*')
+             .pipe(gulp.dest('./fonts'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./scss/**/*.scss', ['sass']);
+  return gulp.watch('./assets/scss/**/*.scss', ['sass']);
+  return gulp.watch('./assets/js/**/*.js', ['js']);
 });
 
-gulp.task('build', ['sass', 'vendor-js', 'fonts']);
+gulp.task('build', function(callback) {
+  runSequence('clean', ['sass', 'js', 'fonts'], callback);
+});
 
 gulp.task('serve', ['build', 'watch'], function() {
-  connect.server({
+  return connect.server({
     root: './',
     livereload: true,
     https: false
