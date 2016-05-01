@@ -75,76 +75,10 @@
   position: relative;
 }
 
-.sns {
-
-  li {
-    display: inline-block;
-    margin: 0 0 0 2rem;
-    vertical-align: middle;
-
-    &:first-child {
-      margin: 0;
-    }
-  }
-
-  a {
-    border-radius: 50%;
-  	border: 1px solid $white-color;
-  	display: block;
-  	height: $sns-icon-height;
-  	text-align: center;
-  	-webkit-transition: all cubic-bezier(.645, .045, .355, 1) .3s;
-  	transition: all cubic-bezier(.645, .045, .355, 1) .3s;
-  	width: $sns-icon-height;
-
-  	i {
-    	color: $white-color;
-      line-height: $sns-icon-height;
-      -webkit-transition: all cubic-bezier(.645, .045, .355, 1) .3s;
-      transition: all cubic-bezier(.645, .045, .355, 1) .3s;
-  	}
-  }
-
-  .twitter {
-
-    &:hover {
-      background: $twitter-color;
-      border-color: $twitter-color;
-    }
-
-  }
-
-  .github {
-
-    &:hover {
-      background: $github-color;
-      border-color: $github-color;
-    }
-
-  }
-
-  .medium {
-
-    &:hover {
-      background: $medium-color;
-      border-color: $medium-color;
-    }
-  }
-
-  .qiita {
-
-    &:hover {
-      background: $qiita-color;
-      border-color: $qiita-color;
-    }
-  }
-
-}
-
 
 /* Creative
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.each-creative {
+.creative-item {
   margin-bottom: 6rem;
 
   @include tablet {
@@ -161,10 +95,6 @@
   height: $creative-icon-height;
   vertical-align: middle;
   width: $creative-icon-height;
-
-  &.bordered {
-    border: 1px #eee solid;
-  }
 }
 
 

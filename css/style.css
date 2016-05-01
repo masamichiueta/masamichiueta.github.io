@@ -432,48 +432,12 @@ section {
   transform: translateY(-50%);
   position: relative; }
 
-.sns li {
-  display: inline-block;
-  margin: 0 0 0 2rem;
-  vertical-align: middle; }
-  .sns li:first-child {
-    margin: 0; }
-
-.sns a {
-  border-radius: 50%;
-  border: 1px solid #fff;
-  display: block;
-  height: 44px;
-  text-align: center;
-  transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s;
-  width: 44px; }
-  .sns a i {
-    color: #fff;
-    line-height: 44px;
-    transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s; }
-
-.sns .twitter:hover {
-  background: #59adeb;
-  border-color: #59adeb; }
-
-.sns .github:hover {
-  background: #333333;
-  border-color: #333333; }
-
-.sns .medium:hover {
-  background: #00ab6b;
-  border-color: #00ab6b; }
-
-.sns .qiita:hover {
-  background: #4cb10d;
-  border-color: #4cb10d; }
-
 /* Creative
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.each-creative {
+.creative-item {
   margin-bottom: 6rem; }
   @media only screen and (min-width: 750px) {
-    .each-creative {
+    .creative-item {
       margin-bottom: 10rem; } }
 
 .creative-title {
@@ -484,8 +448,6 @@ section {
   height: 60px;
   vertical-align: middle;
   width: 60px; }
-  .creative-icon.bordered {
-    border: 1px #eee solid; }
 
 .creative-description {
   margin-bottom: 1.2rem;
