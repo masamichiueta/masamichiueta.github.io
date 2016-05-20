@@ -109,6 +109,18 @@
   }
 }
 
+/* Social
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.social {
+  background-color: $main-color;
+  color: $white-color;
+  padding-bottom: 6rem;
+
+  @include tablet {
+    padding-bottom: 10rem;
+  }
+}
+
 
 /* About
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -136,6 +148,22 @@
   min-width: 300px;
   background-color: $sub-color;
   text-align: center;
+
+  .social-list {
+    margin-bottom: 0;
+
+    > li {
+      margin-bottom: 0;
+
+      > a {
+        color: $footer-text-color;
+
+        &:hover {
+          color: $white-color;
+        }
+      }
+    }
+  }
 
   p {
     color: $footer-text-color;

@@ -458,6 +458,16 @@ section {
       margin-left: auto;
       margin-right: auto; } }
 
+/* Social
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.social {
+  background-color: #398ECA;
+  color: #fff;
+  padding-bottom: 6rem; }
+  @media only screen and (min-width: 750px) {
+    .social {
+      padding-bottom: 10rem; } }
+
 /* About
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .about {
@@ -480,6 +490,14 @@ section {
   min-width: 300px;
   background-color: #323a45;
   text-align: center; }
+  .footer .social-list {
+    margin-bottom: 0; }
+    .footer .social-list > li {
+      margin-bottom: 0; }
+      .footer .social-list > li > a {
+        color: #747c83; }
+        .footer .social-list > li > a:hover {
+          color: #fff; }
   .footer p {
     color: #747c83;
     padding-top: 1em; }
