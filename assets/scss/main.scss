@@ -1,3 +1,5 @@
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
 @import "variables";
 @import "utilities";
 @import "navbar";
@@ -81,7 +83,7 @@
 .creative-item {
   margin-bottom: 6rem;
 
-  @include tablet {
+  @include media-breakpoint-up(md) {
     margin-bottom: 10rem;
   }
 }
@@ -102,7 +104,7 @@
   margin-bottom: 1.2rem;
   color: $text-color;
 
-  @include tablet {
+  @include media-breakpoint-up(md) {
     max-width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -116,7 +118,7 @@
   color: $white-color;
   padding-bottom: 6rem;
 
-  @include tablet {
+  @include media-breakpoint-up(md) {
     padding-bottom: 10rem;
   }
 }
@@ -136,7 +138,7 @@
   width: $about-img-height;
   margin-bottom: 3rem;
 
-  @include tablet {
+  @include media-breakpoint-up(md) {
     margin-bottom: 0;
   }
 }

@@ -8,7 +8,7 @@
   display: none; }
   #dn-menustate ~ #nav .sn-list {
     visibility: hidden; }
-    @media only screen and (min-width: 750px) {
+    @media (min-width: 768px) {
       #dn-menustate ~ #nav .sn-list {
         visibility: visible; } }
   #dn-menustate:checked ~ #nav,
@@ -94,10 +94,10 @@
     padding: 0 20px;
     position: relative;
     width: 100%; }
-    @media only screen and (min-width: 750px) {
+    @media (min-width: 768px) {
       #nav .nav-container {
         width: 80%; } }
-  @media only screen and (min-width: 750px) {
+  @media (min-width: 768px) {
     #nav .dynamic-navbar {
       display: none; } }
   #nav .dn-list {
@@ -118,7 +118,7 @@
     top: 0;
     width: 48px;
     z-index: 2; }
-    @media only screen and (min-width: 750px) {
+    @media (min-width: 768px) {
       #nav .dn-menuicon {
         display: none; } }
   #nav .dn-menuicon-label {
@@ -239,7 +239,7 @@
     overflow: hidden; }
   #nav .sn-logo {
     display: none; }
-    @media only screen and (min-width: 750px) {
+    @media (min-width: 768px) {
       #nav .sn-logo {
         display: block; } }
   #nav .sn-list {
@@ -252,7 +252,7 @@
     top: 48px;
     white-space: nowrap;
     padding-left: 0; }
-    @media only screen and (min-width: 750px) {
+    @media (min-width: 768px) {
       #nav .sn-list {
         float: right;
         list-style: none;
@@ -263,10 +263,10 @@
         white-space: normal; } }
   #nav .sn-item-menu {
     display: inline-block; }
-    @media only screen and (min-width: 750px) {
+    @media (min-width: 768px) {
       #nav .sn-item-menu {
         display: block; } }
-  @media only screen and (min-width: 750px) {
+  @media (min-width: 768px) {
     #nav .sn-item {
       float: left;
       margin-bottom: 0;
@@ -280,7 +280,7 @@
     line-height: 48px;
     margin-right: 24px;
     text-decoration: none; }
-    @media only screen and (min-width: 750px) {
+    @media (min-width: 768px) {
       #nav .sn-item a {
         display: block; } }
     #nav .sn-item a:hover {
@@ -435,7 +435,7 @@ section {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .creative-item {
   margin-bottom: 6rem; }
-  @media only screen and (min-width: 750px) {
+  @media (min-width: 768px) {
     .creative-item {
       margin-bottom: 10rem; } }
 
@@ -451,7 +451,7 @@ section {
 .creative-description {
   margin-bottom: 1.2rem;
   color: #3d3d3d; }
-  @media only screen and (min-width: 750px) {
+  @media (min-width: 768px) {
     .creative-description {
       max-width: 60%;
       margin-left: auto;
@@ -463,7 +463,7 @@ section {
   background-color: #398ECA;
   color: #fff;
   padding-bottom: 6rem; }
-  @media only screen and (min-width: 750px) {
+  @media (min-width: 768px) {
     .social {
       padding-bottom: 10rem; } }
 
@@ -479,7 +479,7 @@ section {
   height: 200px;
   width: 200px;
   margin-bottom: 3rem; }
-  @media only screen and (min-width: 750px) {
+  @media (min-width: 768px) {
     .about-img {
       margin-bottom: 0; } }
 

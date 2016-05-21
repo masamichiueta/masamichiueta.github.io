@@ -9,7 +9,7 @@
     .sn-list {
       visibility: hidden;
 
-      @include tablet {
+      @include media-breakpoint-up(md) {
         visibility: visible;
       }
     }
@@ -118,13 +118,13 @@
   	position: relative;
   	width: 100%;
 
-  	@include tablet {
+  	@include media-breakpoint-up(md) {
       width: 80%;
   	}
   }
 
   .dynamic-navbar {
-    @include tablet {
+    @include media-breakpoint-up(md) {
       display: none;
     }
   }
@@ -152,7 +152,7 @@
     width: $navbar-height;
     z-index: 2;
 
-    @include tablet {
+    @include media-breakpoint-up(md) {
       display: none;
     }
   }
@@ -311,7 +311,7 @@
   .sn-logo {
     display: none;
 
-    @include tablet {
+    @include media-breakpoint-up(md) {
       display: block;
     }
   }
@@ -327,7 +327,7 @@
   	white-space: nowrap;
     padding-left: 0;
 
-  	@include tablet {
+  	@include media-breakpoint-up(md) {
     	float: right;
     	list-style: none;
     	overflow: visible;
@@ -341,14 +341,14 @@
   .sn-item-menu {
     display: inline-block;
 
-    @include tablet {
+    @include media-breakpoint-up(md) {
       display: block;
     }
   }
 
   .sn-item {
 
-    @include tablet {
+    @include media-breakpoint-up(md) {
       float: left;
       margin-bottom: 0;
       position: relative;
@@ -364,7 +364,7 @@
       margin-right: 24px;
       text-decoration: none;
 
-      @include tablet {
+      @include media-breakpoint-up(md) {
         display: block;
       }
 
