@@ -34,48 +34,50 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
-  <nav id="nav">
-    <div class="nav-container">
-      <div class="dynamic-navbar">
-        <ul class="dn-list">
-          <li class="dn-item dn-menuicon">
-            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
-              <span class="dn-menuicon-bread dn-menuicon-bread-top">
-                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
-              </span>
-              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
-                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
-              </span>
-            </label>
-            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span class="dn-menuanchor-label">Open Menu</span> </a>
-  				<a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span class="dn-menuanchor-label">Close Menu</span> </a>
-          </li>
-          <li class="dn-item dn-logo">
-            <a href="#">MU</a>
-          </li>
-        </ul>
-      </div>
-      <div class="static-navbar">
-        <div class="sn-item sn-logo">
-          <a href="#">Masamichi Ueta</a>
+  <header>
+    <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+    <nav id="nav">
+      <div class="nav-container">
+        <div class="dynamic-navbar">
+          <ul class="dn-list">
+            <li class="dn-item dn-menuicon">
+              <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+                <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                  <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+                </span>
+                <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                  <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+                </span>
+              </label>
+              <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span class="dn-menuanchor-label">Open Menu</span> </a>
+    				<a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span class="dn-menuanchor-label">Close Menu</span> </a>
+            </li>
+            <li class="dn-item dn-logo">
+              <a href="#">MU</a>
+            </li>
+          </ul>
         </div>
-        <ul class="sn-list">
-          <li class="sn-item sn-item-menu">
-            <a href="#creative">Creative</a>
-          </li>
-          <li class="sn-item sn-item-menu">
-            <a href="#about" >About</a>
-          </li>
-          <li class="sn-item sn-item-menu">
-            <a target="_blank" href="//uetamasamichi.com/blog/" >Blog</a>
-          </li>
-        </ul>
+        <div class="static-navbar">
+          <div class="sn-item sn-logo">
+            <a href="#">Masamichi Ueta</a>
+          </div>
+          <ul class="sn-list">
+            <li class="sn-item sn-item-menu">
+              <a href="#creative">Creative</a>
+            </li>
+            <li class="sn-item sn-item-menu">
+              <a href="#about" >About</a>
+            </li>
+            <li class="sn-item sn-item-menu">
+              <a target="_blank" href="//uetamasamichi.com/blog/" >Blog</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <section id="hero" class="hero">
+  <section id="hero" class="hero text-xs-center">
     <div class="overlay"></div>
     <div class="hero-content">
       <div class="container">
@@ -84,7 +86,7 @@
     </div>
   </section>
 
-  <section id="creative" class="creative">
+  <section id="creative" class="creative text-xs-center">
     <h2 class="section-heading blue">Creative</h2>
     <div class="creative-item">
       <div class="container">
@@ -171,7 +173,7 @@
     </div>
   </section>
 
-  <section id="about" class="about">
+  <section id="about" class="about text-xs-center">
     <div class="container">
       <h2 class="section-heading white">About</h2>
       <div class="row">
@@ -188,7 +190,7 @@ I am an enthusiast of app development and design, and love being creative.</p>
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer text-xs-center">
     <div class="container">
       <div>
         <ul class="list-inline social-list">
@@ -209,6 +211,9 @@ I am an enthusiast of app development and design, and love being creative.</p>
           </li>
           <li class="list-inline-item">
             <a target="_blank" href="//qiita.com/micchyboy"><i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="//uetamasamichi.com/blog/feed.xml"><i class="fa fa-rss fa-lg"></i></a>
           </li>
         </ul>
         <p>© 2011-2016 Masamichi Ueta</p>

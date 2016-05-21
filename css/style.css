@@ -375,8 +375,7 @@ hr {
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 section {
-  padding: 6rem 0 7rem;
-  text-align: center; }
+  padding: 6rem 0 7rem; }
 
 /* Sections
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -473,7 +472,7 @@ section {
 .about {
   background-color: #323a45;
   color: #fff;
-  padding-bottom: 20rem; }
+  padding-bottom: 18rem; }
 
 .about-img {
   border-radius: 50%;
@@ -489,7 +488,7 @@ section {
 .footer {
   min-width: 300px;
   background-color: #323a45;
-  text-align: center; }
+  padding: 2rem 0; }
   .footer .social-list {
     margin-bottom: 0; }
     .footer .social-list > li {
