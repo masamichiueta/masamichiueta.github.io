@@ -23,23 +23,22 @@
     "url": "https://github.com/micchyboy1023/micchyboy1023.github.io/issues"
   },
   "homepage": "https://github.com/micchyboy1023/micchyboy1023.github.io#readme",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
-    "autoprefixer": "^6.3.6",
-    "bootstrap": "^4.0.0-alpha.2",
-    "del": "^2.2.0",
-    "font-awesome": "^4.6.1",
+    "autoprefixer": "^6.4.0",
+    "bootstrap": "^4.0.0-alpha.3",
+    "del": "^2.2.2",
+    "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^3.2.2",
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.1.0",
+    "gulp-postcss": "^6.1.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.1",
+    "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.0.0-alpha",
-    "jquery": "^2.2.3",
-    "run-sequence": "^1.1.5",
-    "tether": "^1.2.4"
+    "jquery": "^2.2.4",
+    "run-sequence": "^1.2.2",
+    "tether": "^1.3.4"
   }
 }
