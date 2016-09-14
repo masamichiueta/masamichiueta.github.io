@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v4.0.0-alpha.3 (http://getbootstrap.com)
+ * Bootstrap v4.0.0-alpha.4 (http://getbootstrap.com)
  * Copyright 2011-2016 The Bootstrap Authors
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -1564,14 +1564,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .has-success .form-control-feedback,
 .has-success .form-control-label,
-.has-success .radio,
-.has-success .checkbox,
-.has-success .radio-inline,
-.has-success .checkbox-inline,
-.has-success.radio label,
-.has-success.checkbox label,
-.has-success.radio-inline label,
-.has-success.checkbox-inline label,
+.has-success .form-check-label,
+.has-success .form-check-inline,
 .has-success .custom-control {
   color: #5cb85c; }
 
@@ -1591,14 +1585,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .has-warning .form-control-feedback,
 .has-warning .form-control-label,
-.has-warning .radio,
-.has-warning .checkbox,
-.has-warning .radio-inline,
-.has-warning .checkbox-inline,
-.has-warning.radio label,
-.has-warning.checkbox label,
-.has-warning.radio-inline label,
-.has-warning.checkbox-inline label,
+.has-warning .form-check-label,
+.has-warning .form-check-inline,
 .has-warning .custom-control {
   color: #f0ad4e; }
 
@@ -1618,14 +1606,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .has-danger .form-control-feedback,
 .has-danger .form-control-label,
-.has-danger .radio,
-.has-danger .checkbox,
-.has-danger .radio-inline,
-.has-danger .checkbox-inline,
-.has-danger.radio label,
-.has-danger.checkbox label,
-.has-danger.radio-inline label,
-.has-danger.checkbox-inline label,
+.has-danger .form-check-label,
+.has-danger .form-check-inline,
 .has-danger .custom-control {
   color: #d9534f; }
 
@@ -3167,7 +3149,6 @@ input[type="button"].btn-block {
     -moz-column-gap: 1.25rem;
          column-gap: 1.25rem; }
     .card-columns .card {
-      display: inline-block;
       width: 100%; } }
 
 .breadcrumb {
@@ -3339,7 +3320,7 @@ a.tag:focus, a.tag:hover {
   border-radius: 0; }
 
 .alert {
-  padding: 15px;
+  padding: 1rem;
   margin-bottom: 1rem;
   border: 1px solid transparent;
   border-radius: 0.25rem; }
@@ -3351,11 +3332,11 @@ a.tag:focus, a.tag:hover {
   font-weight: bold; }
 
 .alert-dismissible {
-  padding-right: 35px; }
+  padding-right: 2rem; }
   .alert-dismissible .close {
     position: relative;
-    top: -2px;
-    right: -21px;
+    top: -.125rem;
+    right: -1rem;
     color: inherit; }
 
 .alert-success {
@@ -3538,11 +3519,6 @@ base::-moz-progress-bar,
 @media screen and (min-width: 0\0) {
   .progress-danger .progress-bar {
     background-color: #d9534f; } }
-
-.media {
-  margin-top: 15px; }
-  .media:first-child {
-    margin-top: 0; }
 
 .media,
 .media-body {
@@ -4233,9 +4209,6 @@ button.close {
   .carousel-indicators {
     bottom: 20px; } }
 
-.bg-inverse {
-  background-color: #373a3c; }
-
 .bg-faded {
   background-color: #f7f7f9; }
 
@@ -4273,6 +4246,13 @@ a.bg-warning:focus, a.bg-warning:hover {
 
 a.bg-danger:focus, a.bg-danger:hover {
   background-color: #c9302c !important; }
+
+.bg-inverse {
+  color: #fff !important;
+  background-color: #373a3c !important; }
+
+a.bg-inverse:focus, a.bg-inverse:hover {
+  background-color: #1f2021 !important; }
 
 .clearfix::after {
   content: "";
@@ -4619,37 +4599,37 @@ a.bg-danger:focus, a.bg-danger:hover {
   color: #818a91 !important; }
 
 a.text-muted:focus, a.text-muted:hover {
-  color: #687077; }
+  color: #687077 !important; }
 
 .text-primary {
   color: #0275d8 !important; }
 
 a.text-primary:focus, a.text-primary:hover {
-  color: #025aa5; }
+  color: #025aa5 !important; }
 
 .text-success {
   color: #5cb85c !important; }
 
 a.text-success:focus, a.text-success:hover {
-  color: #449d44; }
+  color: #449d44 !important; }
 
 .text-info {
   color: #5bc0de !important; }
 
 a.text-info:focus, a.text-info:hover {
-  color: #31b0d5; }
+  color: #31b0d5 !important; }
 
 .text-warning {
   color: #f0ad4e !important; }
 
 a.text-warning:focus, a.text-warning:hover {
-  color: #ec971f; }
+  color: #ec971f !important; }
 
 .text-danger {
   color: #d9534f !important; }
 
 a.text-danger:focus, a.text-danger:hover {
-  color: #c9302c; }
+  color: #c9302c !important; }
 
 .text-hide {
   font: 0/0 a;
