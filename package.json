@@ -26,7 +26,7 @@
   "devDependencies": {},
   "dependencies": {
     "autoprefixer": "^6.4.1",
-    "bootstrap": "^4.0.0-alpha.4",
+    "bootstrap": "^4.0.0-alpha.5",
     "del": "^2.2.2",
     "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
