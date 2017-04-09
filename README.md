@@ -1,7 +1,7 @@
 # micchyboy1023.github.io
 Personal Web Site
 
-##npm
+## npm
 
 This project uses npm and gulp.
 
@@ -11,5 +11,5 @@ This project uses npm and gulp.
 
 `npm install`
 
-###Check run script
-`npm run`
+### Check run script
+`npm build-css`
