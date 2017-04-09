@@ -9,7 +9,7 @@
     .sn-list {
       visibility: hidden;
 
-      @include media-breakpoint-up(md) {
+      @media (min-width: 768px) {
         visibility: visible;
       }
     }
@@ -87,13 +87,13 @@
 	z-index: 9999;
 
   .container {
-    @include media-breakpoint-down(md) {
+    @media (max-width: 991px) {
       max-width: 720px;
     }
   }
 
   .dynamic-navbar {
-    @include media-breakpoint-up(md) {
+    @media (min-width: 768px) {
       display: none;
     }
   }
@@ -121,7 +121,7 @@
     width: $navbar-height;
     z-index: 2;
 
-    @include media-breakpoint-up(md) {
+    @media (min-width: 768px) {
       display: none;
     }
   }
@@ -262,7 +262,7 @@
   .sn-logo {
     display: none;
 
-    @include media-breakpoint-up(md) {
+    @media (min-width: 768px) {
       display: block;
     }
   }
@@ -278,7 +278,7 @@
   	white-space: nowrap;
     padding-left: 0;
 
-  	@include media-breakpoint-up(md) {
+  	@media (min-width: 768px) {
     	float: right;
     	list-style: none;
     	overflow: visible;
@@ -292,14 +292,14 @@
   .sn-item-menu {
     display: inline-block;
 
-    @include media-breakpoint-up(md) {
+    @media (min-width: 768px) {
       display: block;
     }
   }
 
   .sn-item {
 
-    @include media-breakpoint-up(md) {
+    @media (min-width: 768px) {
       float: left;
       margin-bottom: 0;
       position: relative;
@@ -315,7 +315,7 @@
       margin-right: 24px;
       text-decoration: none;
 
-      @include media-breakpoint-up(md) {
+      @media (min-width: 768px) {
         display: block;
       }
 

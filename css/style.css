@@ -1,5 +1,6 @@
 @charset "UTF-8";
 .notransition {
+  -webkit-transition: none !important;
   transition: none !important; }
 
 /* Navigation Bar
@@ -158,8 +159,7 @@
     display: none; }
   #nav .dn-menuanchor-label {
     border: 0;
-    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
-            clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
     clip: rect(1px 1px 1px 1px);
     clip: rect(1px, 1px, 1px, 1px);
     height: 1px;
@@ -355,7 +355,7 @@ section {
   min-height: 600px;
   padding: 0;
   position: relative; }
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 144), (min-resolution: 144dppx) {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 144dppx) {
     .hero {
       background-image: url("../images/hero_2x.jpg"); } }
   .hero .overlay {
@@ -371,6 +371,8 @@ section {
   margin-top: 0;
   padding: 0;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: relative; }
 
