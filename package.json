@@ -16,10 +16,9 @@
     "url": "https://github.com/micchyboy1023/micchyboy1023.github.io/issues"
   },
   "homepage": "https://github.com/micchyboy1023/micchyboy1023.github.io#readme",
-  "devDependencies": {
-    "http-server": "^0.9.0",
-    "node-sass": "^4.5.2",
-    "nodemon": "^1.11.0"
-  },
-  "dependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "4.0.0-beta",
+    "node-sass": "^4.5.3"
+  }
 }

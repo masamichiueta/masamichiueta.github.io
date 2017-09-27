@@ -1,7 +1,14 @@
-@import "variables";
-
 /* Navigation Bar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$nav-background-color: rgba(0, 0, 0, 0.6);
+$navbar-height: 48px;
+$navbar-height-open: 118px;
+$crust-width: 17px;
+$crust-height: 1px;
+$navbar-animation-duration: 0.35s;
+
+
 #dn-menustate {
   display: none;
 
@@ -73,7 +80,7 @@
 
 #nav {
   background: $nav-background-color;
-  color: $white-color;
+  color: #fff;
 	display: block;
 	height: $navbar-height;
 	left: 0;
@@ -169,7 +176,7 @@
   }
 
   .dn-menuicon-bread-crust {
-    background: $white-color;
+    background: #fff;
     display: block;
     height: $crust-height;
     left: round(($navbar-height - $crust-width)/2);
@@ -191,7 +198,7 @@
   }
 
   .dn-menuanchor {
-    color: $white-color;
+    color: #fff;
   	height: 1px;
   	left: 0;
   	position: absolute;
@@ -306,7 +313,7 @@
     }
 
     a {
-      color: $white-color;
+      color: #fff;
       display: inline-block;
       font-size: 14px;
       font-weight: 400;
@@ -322,7 +329,7 @@
       &:hover,
       &:focus,
       &:active {
-        color: $main-color;
+        opacity: 0.8;
       }
     }
   }

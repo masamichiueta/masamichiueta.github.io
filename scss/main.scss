@@ -1,58 +1,29 @@
-@import "variables";
-@import "utilities";
+@import 'node_modules/bootstrap/scss/bootstrap';
+// @import "variables";
+
 @import "navbar";
-@import "normalize";
+// @import "normalize";
 
-/* Sections
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.section-heading {
-  margin-bottom: 7rem;
-
-  &:after {
-    background: $text-color;
-    border-radius: round($section-line-height/2);
-    content: '';
-    display: block;
-    height: $section-line-height;
-    margin: 24px auto 0;
-    width: $section-line-width;
-  }
-
-  &.blue {
-    color: $main-color;
-
-    &:after {
-      background: $main-color;
-    }
-  }
-
-  &.white {
-    color: $white-color;
-
-    &:after {
-      background: $white-color;
-    }
-  }
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
+.position-relative {
+  position: relative;
+}
 
-/* Hero
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .hero {
   background-image: url('../images/hero.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-	color: $white-color;
+	color: $white;
   height: 100vh;
   max-height: none;
   min-height: 600px;
 	padding: 0;
 	position: relative;
-
-	@include retina {
-  	background-image: url('../images/hero_2x.jpg');
-	}
 
 	.overlay {
   	background-color: rgba(57, 142, 202, 0.8);
@@ -64,109 +35,12 @@
 	}
 }
 
-.hero-content {
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  position: relative;
-}
-
-
-/* Creative
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.creative-item {
-  margin-bottom: 6rem;
-
-  @media (min-width: 768px) {
-    margin-bottom: 10rem;
-  }
-}
-
-.creative-title {
-  color: $sub-color;
-}
-
-.creative-icon {
+.works-icon {
   border-radius: 5px;
-  height: $creative-icon-height;
-  vertical-align: middle;
-  width: $creative-icon-height;
-}
-
-
-.creative-description {
-  margin-bottom: 1.2rem;
-  color: $text-color;
-
-  @media (min-width: 768px) {
-    max-width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* Social
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.social {
-  background-color: $main-color;
-  color: $white-color;
-  padding-bottom: 6rem;
-
-  @media (min-width: 768px) {
-    padding-bottom: 10rem;
-  }
-}
-
-
-/* About
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.about {
-  background-color: $sub-color;
-  color: $white-color;
-  padding-bottom: 18rem;
+  height: 60px;
+  width: 60px;
 }
 
 .about-img {
   border-radius: 50%;
-  height: $about-img-height;
-  width: $about-img-height;
-  margin-bottom: 3rem;
-
-  @media (min-width: 768px) {
-    margin-bottom: 0;
-  }
-}
-
-
-/* Footer
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.footer {
-  min-width: 300px;
-  background-color: $sub-color;
-  padding: 2rem 0;
-
-  .social-list {
-    margin-bottom: 0;
-
-    > li {
-      margin: 0 0.5rem 0;
-
-      > a {
-        color: $footer-text-color;
-
-        &:hover {
-          color: $white-color;
-        }
-      }
-    }
-  }
-
-  p {
-    color: $footer-text-color;
-    padding-top: 1em;
-  }
 }
