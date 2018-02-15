@@ -1,7 +1,7 @@
 {
   "name": "micchyboy1023.github.io",
   "version": "1.0.0",
-  "description": "I'm Masamichi. Design Thinker, Design Engineer in Japan",
+  "description": "Design Thinker, Design Engineer in Japan",
   "main": "index.js",
   "scripts": {
     "build-css": "node-sass --include-path scss scss/main.scss css/style.css"
