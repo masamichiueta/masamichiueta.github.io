@@ -18,7 +18,7 @@
   "homepage": "https://github.com/micchyboy1023/micchyboy1023.github.io#readme",
   "devDependencies": {},
   "dependencies": {
-    "bootstrap": "4.0.0-beta",
+    "bootstrap": "4.0.0",
     "node-sass": "^4.5.3"
   }
 }
