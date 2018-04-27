@@ -18,6 +18,6 @@
   "homepage": "https://github.com/micchyboy1023/micchyboy1023.github.io#readme",
   "devDependencies": {},
   "dependencies": {
-    "node-sass": "^4.8.3"
+    "node-sass": "^4.9.0"
   }
 }
