@@ -261,13 +261,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  height: 100vh;
-  max-height: none;
+  height: 600px;
   min-height: 600px;
   padding: 0;
   position: relative; }
   .hero .overlay {
-    background-color: rgba(57, 142, 202, 0.8);
+    background-color: #252b33;
+    opacity: .35;
     height: 100%;
     left: 0;
     position: absolute;
