@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://micchyboy1023.github.io/css/style.css">
+  <link rel="stylesheet" href="/blog/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/blog/development/2015/12/27/start-sass-by-npm.html">
+  <link rel="alternate" type="application/rss+xml" title="micchyboy - Blog" href="http://localhost:4000/blog/feed.xml">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3655474149264343",
+      enable_page_level_ads: true
+    });
+  </script>
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>npmでミニマムに始めるSass | micchyboy - Blog</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="npmでミニマムに始めるSass" />
+<meta name="author" content="micchyboy" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="This post was originally posted in Qiita at 12/27 2015." />
+<meta property="og:description" content="This post was originally posted in Qiita at 12/27 2015." />
+<link rel="canonical" href="http://localhost:4000/blog/development/2015/12/27/start-sass-by-npm.html" />
+<meta property="og:url" content="http://localhost:4000/blog/development/2015/12/27/start-sass-by-npm.html" />
+<meta property="og:site_name" content="micchyboy - Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-12-27T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"This post was originally posted in Qiita at 12/27 2015.","author":{"@type":"Person","name":"micchyboy"},"@type":"BlogPosting","url":"http://localhost:4000/blog/development/2015/12/27/start-sass-by-npm.html","headline":"npmでミニマムに始めるSass","dateModified":"2015-12-27T00:00:00+09:00","datePublished":"2015-12-27T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/development/2015/12/27/start-sass-by-npm.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=482236818644387";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <header>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
+    <div class="container">
+      <div class="dynamic-navbar">
+        <ul class="dn-list">
+          <li class="dn-item dn-menuicon">
+            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+              <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+              </span>
+              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+              </span>
+            </label>
+            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span class="dn-menuanchor-label">Open Menu</span> </a>
+  				<a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span class="dn-menuanchor-label">Close Menu</span> </a>
+          </li>
+          <li class="dn-item dn-logo">
+            <a href="http://localhost:4000/">MU</a>
+          </li>
+        </ul>
+      </div>
+      <div class="static-navbar">
+        <div class="sn-item sn-logo">
+          <a href="http://localhost:4000/">micchyboy</a>
+        </div>
+        <ul class="sn-list">
+          <li class="sn-item sn-item-menu">
+            <a href="http://localhost:4000/#works">Works</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="http://localhost:4000/#about" >About</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="/blog/" >Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+    
+<section class="blog-hero background-image-none text-center">
+  <div class="overlay background-color-main"></div>
+
+  <div class="d-flex align-items-center justify-content-between h-100 position-relative">
+    <div class="container">
+      <h1 itemprop="name headline">npmでミニマムに始めるSass</h1>
+      <p><time datetime="2015-12-27T00:00:00+09:00" itemprop="datePublished">2015/12/27</time></p>
+    </div>
+  </div>
+</section>
+
+<section class="post-content py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+
+          <div class="article-body" itemprop="articleBody">
+            <blockquote>
+  <p>This post was originally posted in <a href="http://qiita.com/micchyboy/items/0074f002d8f1663577a2">Qiita</a> at 12/27 2015.</p>
+</blockquote>
+
+<hr />
+
+<p><a href="https://github.com/micchyboy1023">GitHub Pages</a>でいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。</p>
+
+<p>sassを使おうとして、調べるとgemでsassをインストールして始めるという記事が見つかります。</p>
+<ul>
+  <li><a href="http://qiita.com/ritukiii/items/67b3c50002b48c6186d6">CSSのメタ言語Sass(SCSS)、LESSの完全入門</a></li>
+</ul>
+
+<p>また、Compassというものも出てきたりします。</p>
+<ul>
+  <li><a href="http://liginc.co.jp/designer/archives/11623#a30">CSSの常識が変わる！「Compass」の基礎から応用まで！</a></li>
+</ul>
+
+<p>またフロントエンドの環境などについて知っていたりすると、gruntやgulpといったタスクランナーも使えるんじゃないかと思ったりして、それらでsassを使う方法も出てきたりします。</p>
+<ul>
+  <li><a href="http://qiita.com/yokoh9/items/0a69dd5f8753c1ea54f5">gulp インストール～基本設定の備忘録（windows）</a></li>
+</ul>
+
+<p>ふむふむ、といった感じで記事を読んだりするのですが、やらないといけないことやルール、覚えないといけないことが多くて、結局どうするのがいいのだろうと迷ってしまいました。</p>
+
+<p>gruntやgulpは確かに便利ですが、ミニマムに始めるにはちょっとやることが多い気がしたり、一週間後に見た時にどうやるか忘れてる自信もあります。
+ミニマムにやる方法を調べる中たどり着いたのが、npmのrun scriptを使うという方法です。</p>
+<ul>
+  <li><a href="http://t32k.me/mol/log/npm-run-script/">Grunt/Gulpで憔悴したおっさんの話</a></li>
+  <li><a href="https://medium.com/@brianhan/watch-compile-your-sass-with-npm-9ba2b878415b#.qcwi0gu2w">Watch &amp; Compile your Sass with npm.</a></li>
+</ul>
+
+<h1 id="npm">npm</h1>
+<p>npmについては以下の記事がわかりやすいです。</p>
+<ul>
+  <li><a href="http://qiita.com/megane42/items/2ab6ffd866c3f2fda066">npm とか bower とか一体何なんだよ！Javascript 界隈の文脈を理解しよう</a></li>
+</ul>
+
+<p>npmはnode.jsで書かれたツールのパッケージマネージャで、gruntやbowerもnpmでインストールします。<a href="http://t32k.me/mol/log/npm-run-script/">Grunt/Gulpで憔悴したおっさんの話</a>によると、”Node.js/npmに関する知識とかUNIXに関する知識は、数ヶ月で変わることもない＂ので、npmでやるのが簡単そうです。</p>
+
+<p><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3655474149264343" data-ad-slot="9606645212"></ins></p>
+
+<h1 id="始める">始める</h1>
+<p>先に大まかな流れを書くと以下のようになります。
+npmのみを使うので、シンプルです。</p>
+
+<ul>
+  <li>nodeをインストールする</li>
+  <li>npmでsassのコンパイルに必要なツール、ファイルの監視に必要なツールをインストールする</li>
+  <li>npm run scriptでsassをコンパイルする</li>
+</ul>
+
+<p>では、サンプルを用いて詳細を書きます。</p>
+
+<h2 id="環境">環境</h2>
+<p>使用している環境は以下です。</p>
+<ul>
+  <li>OS: OSX 10.11.2 El Capitan</li>
+  <li>パッケージマネージャ: homebrew 0.9.5</li>
+</ul>
+
+<h2 id="nodejsのインストール">node.jsのインストール</h2>
+
+<p>homebrewでnode.jsをインストールします。
+<code class="highlighter-rouge">$ brew install node</code></p>
+
+<h2 id="プロジェクトを作る">プロジェクトを作る</h2>
+<p>例として、Webサイト用のディレクトリをデスクトップに作成します。ここでは、mysiteというディレクトリにします。</p>
+
+<p><code class="highlighter-rouge">$ mkdir ~/Desktop/mysite &amp;&amp; cd ~/Desktop/mysite</code></p>
+
+<p>npmの初期設定を行います。
+<code class="highlighter-rouge">$ npm init</code></p>
+
+<p>いろいろ聞かれますが、とりあえずエンター。</p>
+
+<p>sass用のディレクトリ scss 、sassをコンパイルした後にcssを出力する用のディレクトリ cssを作成します。
+<code class="highlighter-rouge">$ mkdir scss css</code></p>
+
+<p>ソースをgitで管理する場合に、npmを使用した際に作成されるnode_moduleは不必要なので、gitで管理しないように.gitignoreを作成します。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ touch .gitignore
+</code></pre></div></div>
+
+<p>.gitignoreに関しては、GitHubによって公開されている<a href="https://github.com/github/gitignore/blob/master/Node.gitignore">.gitignoreリポジトリのNode.gitignore</a>を参考にするといいと思います。</p>
+
+<p>次にscssファイルを作成します。</p>
+
+<p><code class="highlighter-rouge">$ touch style.scss</code></p>
+
+<p>以上でプロジェクトの構成は終了です。</p>
+
+<h2 id="npmでツールをインストールする">npmでツールをインストールする</h2>
+
+<p>sassのコンパイルに必要なツール node-sass と、ファイルの更新管理に使用するツール nodemon をnpmでインストールします。</p>
+
+<p><code class="highlighter-rouge">$ npm install -D node-sass nodemon</code></p>
+
+<h2 id="sassをコンパイルする">sassをコンパイルする</h2>
+
+<p>npmを使用するとpackage.jsonというファイルができていますが、その中のscriptsの部分に、sassコンパイル用のscript, 監視用のscriptを記述します。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+  "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
+  "watch-css": "nodemon -e scss -x \"npm run build-css\""
+}
+</code></pre></div></div>
+
+<p>build-css, watch-cssの部分を npm run の後に書くことで、コマンドを実行できます。</p>
+
+<p>npm run build-css コマンドを実行すると scss/style.scss が css/style.css にコンパイルされ、 npm run watch-css コマンドを実行するとscssの変更が監視されます。</p>
+
+<p>style.scssにコードを書いて、コンパイルします。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$my-color: #3d3d3d;
+
+body {
+  color: $my-color;
+}
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">$ npm run build-css</code></p>
+
+<p>これで、css/style.css が作成され、以下のようなファイルができると思います。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>body {
+  color: #3d3d3d;
+}
+</code></pre></div></div>
+
+<h1 id="シンプルに">シンプルに</h1>
+
+<p>上記のように、nodeの使い方以外を知らなくても、sassを使用する環境を整えることができ、比較的シンプルなのではないかと思っています。
+sassライフが捗りそうです。</p>
+
+<h1 id="おまけ">おまけ</h1>
+<p>nodeを使えばローカルサーバーも簡単に立ち上げられます。</p>
+
+<p><a href="https://www.npmjs.com/package/local-web-server">local-web-server</a>を使用します。</p>
+
+<p><code class="highlighter-rouge">$ npm install -D local-web-server</code></p>
+
+<p>package.json</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+  "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
+  "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+  "ws": "ws"
+}
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">$ npm run ws</code></p>
+
+          </div>
+          <div class="pt-5">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="micchyboy">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>          
+          </div>
+        </article>
+      </div>
+    </div>
+    <!-- blog -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3655474149264343"
+         data-ad-slot="3735741647"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</section>
+
+
+
+    <div class="container">
+  <hr />
+</div>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <div class="py-4">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="//twitter.com/micchyboy">Twitter</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//github.com/micchyboy1023">Github</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//medium.com/@micchyboy">Medium</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//note.mu/micchyboy">note</a>
+        </li>
+      </ul>
+      <p>© 2018 micchyboy</p>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://micchyboy1023.github.io/js/site.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-21581479-6', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+
+</html>
