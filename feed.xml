@@ -5,8 +5,8 @@
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.io/blog/</link>
     <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Apr 2018 23:30:51 +0900</pubDate>
-    <lastBuildDate>Mon, 30 Apr 2018 23:30:51 +0900</lastBuildDate>
+    <pubDate>Mon, 30 Apr 2018 23:50:49 +0900</pubDate>
+    <lastBuildDate>Mon, 30 Apr 2018 23:50:49 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
     
       <item>
@@ -134,8 +134,8 @@
 ジオラマの動画を載せておきます。&lt;/p&gt;
 
 &lt;h3 id=&quot;プラレール博2018-in-tokyo-ジオラマ&quot;&gt;プラレール博2018 in TOKYO ジオラマ&lt;/h3&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/dL70ysdyJHs&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TnYbDgW9YAI&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe class=&quot;w-100&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/dL70ysdyJHs&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe class=&quot;w-100&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TnYbDgW9YAI&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;上履きの写真スポットや
 &lt;img src=&quot;/blog/assets/posts/2018-04-28/2.jpg&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;&lt;/p&gt;
