@@ -5,9 +5,123 @@
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.io/blog/</link>
     <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 May 2018 00:55:27 +0900</pubDate>
-    <lastBuildDate>Sat, 05 May 2018 00:55:27 +0900</lastBuildDate>
+    <pubDate>Sun, 06 May 2018 08:58:51 +0900</pubDate>
+    <lastBuildDate>Sun, 06 May 2018 08:58:51 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分轄する</title>
+        <description>&lt;p&gt;開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分轄しました。&lt;/p&gt;
+
+&lt;p&gt;分轄した目的としては、&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;レイヤー分轄の明確化&lt;/li&gt;
+  &lt;li&gt;ビルド時間の短縮&lt;/li&gt;
+  &lt;li&gt;依存関係の整理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;の3点がメインです。&lt;/p&gt;
+
+&lt;p&gt;Embedded Framework(Cocoa Touch Framework)の導入方法や説明はこちらの記事が参考になります。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/mono0926/items/e29cd17789fd1d1548aa&quot;&gt;Embedded Framework使いこなし術&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ビフォーアフター&quot;&gt;ビフォーアフター&lt;/h2&gt;
+
+&lt;h3 id=&quot;ビフォー&quot;&gt;ビフォー&lt;/h3&gt;
+
+&lt;p&gt;分轄前は、アプリ用のターゲットが1つあり、そのフォルダ以下にグループを作ってソースファイルを分轄していました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/1.png&quot; alt=&quot;1&quot; title=&quot;1&quot; /&gt;
+&lt;img src=&quot;/blog/assets/posts/2018-05-06/2.png&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;アフター&quot;&gt;アフター&lt;/h3&gt;
+
+&lt;p&gt;分轄後は、以下の4つのフレームワークを追加して、それぞれのフレームワークにソースを振り分けて行きました。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;アプリ
+    &lt;ul&gt;
+      &lt;li&gt;iOSアプリ&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;API
+    &lt;ul&gt;
+      &lt;li&gt;APIとのやりとりを担当する。Modelに依存。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Common
+    &lt;ul&gt;
+      &lt;li&gt;Foundation系のExtensionやロガーのように全体で使うような汎用機能。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Model
+    &lt;ul&gt;
+      &lt;li&gt;CoreDataのエンティティや、データモデルのクラス・構造体。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Storage
+    &lt;ul&gt;
+      &lt;li&gt;CoreDataやKeychain, iCloudへデータを保存する。Model, APIに依存。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/3.png&quot; alt=&quot;3&quot; title=&quot;3&quot; /&gt;
+&lt;img src=&quot;/blog/assets/posts/2018-05-06/4.png&quot; alt=&quot;4&quot; title=&quot;4&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;分轄時のポイント&quot;&gt;分轄時のポイント&lt;/h2&gt;
+
+&lt;h3 id=&quot;フレームワークごとの依存関係を考える&quot;&gt;フレームワークごとの依存関係を考える&lt;/h3&gt;
+
+&lt;p&gt;当たり前ですが、フレームワークに分轄することで、フレームワーク同士の依存関係が明確になるので、相互依存などならないように、どこにどのソース・クラスを入れて行くかというのを考えました。&lt;/p&gt;
+
+&lt;p&gt;色々と試行錯誤した結果、上記4つのフレームワークに分割して、依存関係を整理しました。&lt;/p&gt;
+
+&lt;h3 id=&quot;アクセス修飾子をつける&quot;&gt;アクセス修飾子をつける&lt;/h3&gt;
+
+&lt;p&gt;全てのソースを1つのターゲット対象にしていた時は、アクセス修飾子を特につけずに全てデフォルトの&lt;code class=&quot;highlighter-rouge&quot;&gt;internal&lt;/code&gt;にしていたのですが、フレームワークに分割すると&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;にしないと参照先のターゲットからは参照できないので、アクセス修飾子も整理しました。&lt;/p&gt;
+
+&lt;p&gt;フレームワークを参照しているのに、クラスがないというようなエラーが出たりして、一瞬理由がわからなくなったことがあったのですが、アクセス修飾子が原因でした。&lt;/p&gt;
+
+&lt;h3 id=&quot;フレームワークごとにフラグを追加する&quot;&gt;フレームワークごとにフラグを追加する&lt;/h3&gt;
+
+&lt;p&gt;デバッグフラグや独自の開発環境用フラグを利用して、実行時の挙動やテスト環境用ビルドなどを行っていますが、こちらもフレームワークごとに追加する必要があります。&lt;/p&gt;
+
+&lt;p&gt;フレームワークのターゲットを選択し、&lt;code class=&quot;highlighter-rouge&quot;&gt;Build Settings&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;Other Swift Flags&lt;/code&gt;から追加します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/5.png&quot; alt=&quot;5&quot; title=&quot;5&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;coredataの初期化処理を変更する&quot;&gt;CoreDataの初期化処理を変更する&lt;/h3&gt;
+
+&lt;p&gt;CoreData周りの初期化処理には、&lt;code class=&quot;highlighter-rouge&quot;&gt;NSPersistentContainer&lt;/code&gt;を使用していますが、モデル定義ファイル &lt;code class=&quot;highlighter-rouge&quot;&gt;.xcdatamodeld&lt;/code&gt;は、上記フレームワークのうち&lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt;の中に入れました。&lt;/p&gt;
+
+&lt;p&gt;そのため、&lt;code class=&quot;highlighter-rouge&quot;&gt;NSPersistentContainer&lt;/code&gt;を初期化する際には、&lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt;の中の定義ファイルを明示的に指定する必要があります。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;let modelURL = Bundle(for: Modelの中のクラス.self).url(forResource: &quot;定義ファイル名&quot;, withExtension: &quot;momd&quot;)!
+let mom = NSManagedObjectModel(contentsOf: modelURL)!
+let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managedObjectModel: mom)
+        
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;この辺は、&lt;code class=&quot;highlighter-rouge&quot;&gt;Bundle.main&lt;/code&gt;を使ってリソースを読み込んでいた部分でも注意する必要があると思います。&lt;/p&gt;
+
+&lt;h2 id=&quot;分割した感想&quot;&gt;分割した感想&lt;/h2&gt;
+
+&lt;p&gt;ビルド時間が早くなったかというと、早くなった気もします。まだそこまで大きくもないので、もっと大規模になるともっと実感できそうです。&lt;/p&gt;
+
+&lt;p&gt;レイヤー分割が明確になり、テストしやすくなったり、役割が明確になったり、依存関係がはっきりしたりという点がよかったと感じています。&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 06 May 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/blog/development/2018/05/06/embedded-framework.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/development/2018/05/06/embedded-framework.html</guid>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>ゴールデンウィークのUSJにはエクスプレスパスが最強でした</title>
@@ -524,54 +638,6 @@
         <pubDate>Sun, 18 Mar 2018 00:00:00 +0900</pubDate>
         <link>https://micchyboy1023.github.io/blog/design/2018/03/18/teacha-ios.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/design/2018/03/18/teacha-ios.html</guid>
-        
-        
-        <category>design</category>
-        
-      </item>
-    
-      <item>
-        <title>Twitterアイコンにおすすめ！スヌーピーのアイコンをゲットできるサイトの紹介</title>
-        <description>&lt;h1 id=&quot;スヌーピーキャラクターを作ろう&quot;&gt;スヌーピーキャラクターを作ろう&lt;/h1&gt;
-
-&lt;p&gt;最近アイコンを変更しようと思いまして、色々と探してみた結果、スヌーピーキャラクターを作れるサイトを発見しました！&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.peanutizeme.com/jp/&quot;&gt;http://www.peanutizeme.com/jp/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block; text-align:center;&quot; data-ad-layout=&quot;in-article&quot; data-ad-format=&quot;fluid&quot; data-ad-client=&quot;ca-pub-3655474149264343&quot; data-ad-slot=&quot;9606645212&quot;&gt;&lt;/ins&gt;&lt;/p&gt;
-
-&lt;p&gt;こちらのサイトで、スヌーピーのキャラクターを自作して、画像をダウンロードすることができます。&lt;/p&gt;
-
-&lt;p&gt;Twitterのアイコンを新しく作ってみました！
-こんな感じです。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-03-17/icon1.png&quot; alt=&quot;icon1&quot; title=&quot;icon1&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;作成方法&quot;&gt;作成方法&lt;/h2&gt;
-
-&lt;p&gt;新規作成を選んでスヌーピー風にするか、キャラクター風にするかを選択します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-03-17/1.png&quot; alt=&quot;1&quot; title=&quot;1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;その後は各パーツを選んでいきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-03-17/2.png&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-03-17/3.png&quot; alt=&quot;3&quot; title=&quot;3&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-03-17/4.png&quot; alt=&quot;4&quot; title=&quot;4&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-03-17/5.png&quot; alt=&quot;5&quot; title=&quot;5&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-03-17/6.png&quot; alt=&quot;6&quot; title=&quot;6&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-03-17/7.png&quot; alt=&quot;7&quot; title=&quot;7&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-03-17/8.png&quot; alt=&quot;8&quot; title=&quot;8&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-03-17/9.png&quot; alt=&quot;9&quot; title=&quot;9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;完成すると画像をダウンロードできます。&lt;/p&gt;
-
-&lt;p&gt;ぜひ、可愛い自作のアイコンを作ってみてください。&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 17 Mar 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/design/2018/03/17/peanuts-icon.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/design/2018/03/17/peanuts-icon.html</guid>
         
         
         <category>design</category>
