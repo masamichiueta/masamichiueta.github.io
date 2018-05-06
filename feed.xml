@@ -5,18 +5,18 @@
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.io/blog/</link>
     <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 May 2018 20:07:41 +0900</pubDate>
-    <lastBuildDate>Sun, 06 May 2018 20:07:41 +0900</lastBuildDate>
+    <pubDate>Sun, 06 May 2018 20:36:26 +0900</pubDate>
+    <lastBuildDate>Sun, 06 May 2018 20:36:26 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
     
       <item>
-        <title>Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分轄する</title>
-        <description>&lt;p&gt;開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分轄しました。&lt;/p&gt;
+        <title>Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する</title>
+        <description>&lt;p&gt;開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分割しました。&lt;/p&gt;
 
-&lt;p&gt;分轄した目的としては、&lt;/p&gt;
+&lt;p&gt;分割した目的としては、&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;レイヤー分轄の明確化&lt;/li&gt;
+  &lt;li&gt;レイヤー分割の明確化&lt;/li&gt;
   &lt;li&gt;ビルド時間の短縮&lt;/li&gt;
   &lt;li&gt;依存関係の整理&lt;/li&gt;
 &lt;/ul&gt;
@@ -31,14 +31,14 @@
 
 &lt;h3 id=&quot;ビフォー&quot;&gt;ビフォー&lt;/h3&gt;
 
-&lt;p&gt;分轄前は、アプリ用のターゲットが1つあり、そのフォルダ以下にグループを作ってソースファイルを分轄していました。&lt;/p&gt;
+&lt;p&gt;分割前は、アプリ用のターゲットが1つあり、そのフォルダ以下にグループを作ってソースファイルを分割していました。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/1.png&quot; alt=&quot;1&quot; title=&quot;1&quot; /&gt;
 &lt;img src=&quot;/blog/assets/posts/2018-05-06/2.png&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;アフター&quot;&gt;アフター&lt;/h3&gt;
 
-&lt;p&gt;分轄後は、以下の4つのフレームワークを追加して、それぞれのフレームワークにソースを振り分けて行きました。&lt;/p&gt;
+&lt;p&gt;分割後は、以下の4つのフレームワークを追加して、それぞれのフレームワークにソースを振り分けて行きました。&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;アプリ
@@ -71,11 +71,11 @@
 &lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/3.png&quot; alt=&quot;3&quot; title=&quot;3&quot; /&gt;
 &lt;img src=&quot;/blog/assets/posts/2018-05-06/4.png&quot; alt=&quot;4&quot; title=&quot;4&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;分轄時のポイント&quot;&gt;分轄時のポイント&lt;/h2&gt;
+&lt;h2 id=&quot;分割時のポイント&quot;&gt;分割時のポイント&lt;/h2&gt;
 
 &lt;h3 id=&quot;フレームワークごとの依存関係を考える&quot;&gt;フレームワークごとの依存関係を考える&lt;/h3&gt;
 
-&lt;p&gt;当たり前ですが、フレームワークに分轄することで、フレームワーク同士の依存関係が明確になるので、相互依存などならないように、どこにどのソース・クラスを入れて行くかというのを考えました。&lt;/p&gt;
+&lt;p&gt;当たり前ですが、フレームワークに分割することで、フレームワーク同士の依存関係が明確になるので、相互依存などならないように、どこにどのソース・クラスを入れて行くかというのを考えました。&lt;/p&gt;
 
 &lt;p&gt;色々と試行錯誤した結果、上記4つのフレームワークに分割して、依存関係を整理しました。&lt;/p&gt;
 
