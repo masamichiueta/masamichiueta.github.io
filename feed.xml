@@ -3,10 +3,10 @@
   <channel>
     <title>micchyboy - Blog</title>
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
-    <link>http://localhost:4000/blog/</link>
-    <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 May 2018 23:33:15 +0900</pubDate>
-    <lastBuildDate>Sun, 06 May 2018 23:33:15 +0900</lastBuildDate>
+    <link>https://micchyboy1023.github.io/blog/</link>
+    <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 07 May 2018 20:42:36 +0900</pubDate>
+    <lastBuildDate>Mon, 07 May 2018 20:42:36 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
     
       <item>
@@ -115,8 +115,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 </description>
         <pubDate>Sun, 06 May 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/development/2018/05/06/embedded-framework.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/development/2018/05/06/embedded-framework.html</guid>
+        <link>https://micchyboy1023.github.io/blog/development/2018/05/06/embedded-framework.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/development/2018/05/06/embedded-framework.html</guid>
         
         
         <category>development</category>
@@ -205,8 +205,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;ぜひUSJに行かれるかたは、エクスプレスパスを買ってみてはいかがでしょうか？&lt;/p&gt;
 </description>
         <pubDate>Fri, 04 May 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/family/2018/05/04/universal-studio-japan.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/05/04/universal-studio-japan.html</guid>
+        <link>https://micchyboy1023.github.io/blog/family/2018/05/04/universal-studio-japan.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/05/04/universal-studio-japan.html</guid>
         
         
         <category>family</category>
@@ -292,8 +292,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;皆さんも一度自分のライフスタイルに合わせて、本当に必要なものを見直して不要なものは断捨離してみてはいかがでしょうか？&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 May 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/family/2018/05/01/minimalization.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/05/01/minimalization.html</guid>
+        <link>https://micchyboy1023.github.io/blog/family/2018/05/01/minimalization.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/05/01/minimalization.html</guid>
         
         
         <category>family</category>
@@ -330,8 +330,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;なので、テントやレジャーシートを持って行って、とにかくのんびりと過ごして贅沢に時間を使うのがおすすめです。&lt;/p&gt;
 </description>
         <pubDate>Mon, 30 Apr 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/family/2018/04/30/rinko-park.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/04/30/rinko-park.html</guid>
+        <link>https://micchyboy1023.github.io/blog/family/2018/04/30/rinko-park.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/30/rinko-park.html</guid>
         
         
         <category>family</category>
@@ -381,8 +381,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 </description>
         <pubDate>Sun, 29 Apr 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/family/2018/04/29/drive-recorder.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/04/29/drive-recorder.html</guid>
+        <link>https://micchyboy1023.github.io/blog/family/2018/04/29/drive-recorder.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/29/drive-recorder.html</guid>
         
         
         <category>family</category>
@@ -449,8 +449,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;丸亀うどんもあるので地下1階はおすすめです！&lt;/p&gt;
 </description>
         <pubDate>Sat, 28 Apr 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/family/2018/04/28/plarail-ex-2018.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/04/28/plarail-ex-2018.html</guid>
+        <link>https://micchyboy1023.github.io/blog/family/2018/04/28/plarail-ex-2018.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/28/plarail-ex-2018.html</guid>
         
         
         <category>family</category>
@@ -526,8 +526,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 </description>
         <pubDate>Wed, 18 Apr 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</guid>
+        <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</guid>
         
         
         <category>cryptocurrency</category>
@@ -559,8 +559,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;入場者には、ドクターイエローの中間車もしくはテコロのバーティがもらえるようです。&lt;/p&gt;
 </description>
         <pubDate>Mon, 16 Apr 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/family/2018/04/16/plarail-ex-2018.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/04/16/plarail-ex-2018.html</guid>
+        <link>https://micchyboy1023.github.io/blog/family/2018/04/16/plarail-ex-2018.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/16/plarail-ex-2018.html</guid>
         
         
         <category>family</category>
@@ -600,8 +600,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 </description>
         <pubDate>Mon, 19 Mar 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/apple/2018/03/19/wwdc2018-page.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/apple/2018/03/19/wwdc2018-page.html</guid>
+        <link>https://micchyboy1023.github.io/blog/apple/2018/03/19/wwdc2018-page.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/apple/2018/03/19/wwdc2018-page.html</guid>
         
         
         <category>apple</category>
@@ -636,8 +636,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;興味のある方は、ぜひお願いいたします！&lt;/p&gt;
 </description>
         <pubDate>Sun, 18 Mar 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/blog/design/2018/03/18/teacha-ios.html</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/design/2018/03/18/teacha-ios.html</guid>
+        <link>https://micchyboy1023.github.io/blog/design/2018/03/18/teacha-ios.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/design/2018/03/18/teacha-ios.html</guid>
         
         
         <category>design</category>
