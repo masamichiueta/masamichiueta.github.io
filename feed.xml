@@ -3,10 +3,10 @@
   <channel>
     <title>micchyboy - Blog</title>
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
-    <link>https://micchyboy1023.github.io/blog/</link>
-    <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 07 May 2018 23:01:15 +0900</pubDate>
-    <lastBuildDate>Mon, 07 May 2018 23:01:15 +0900</lastBuildDate>
+    <link>http://localhost:4000/blog/</link>
+    <atom:link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 08 May 2018 21:23:44 +0900</pubDate>
+    <lastBuildDate>Tue, 08 May 2018 21:23:44 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
     
       <item>
@@ -22,9 +22,9 @@
 &lt;p&gt;とのこと。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://affiliate.project-regain.io/link.php?intro=66c9fff20f8ba39db4a1c8567baeb9d2&amp;amp;addrid=cc1dfd03c7a4e8257993db4fa52e2630&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;
-&lt;img border=&quot;0&quot; width=&quot;300&quot; height=&quot;300&quot; alt=&quot;&quot; src=&quot;https://affiliate.project-regain.io/img/regain/300x300_en.png&quot; /&gt;
+&lt;img border=&quot;0&quot; width=&quot;300&quot; height=&quot;300&quot; alt=&quot;REGAIN&quot; src=&quot;https://affiliate.project-regain.io/img/regain/300x300_en.png&quot; /&gt;
 &lt;/a&gt;
-&lt;img src=&quot;https://affiliate.project-regain.io/impression.php?intro=66c9fff20f8ba39db4a1c8567baeb9d2&amp;amp;addrid=cc1dfd03c7a4e8257993db4fa52e2630&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://affiliate.project-regain.io/impression.php?intro=66c9fff20f8ba39db4a1c8567baeb9d2&amp;amp;addrid=cc1dfd03c7a4e8257993db4fa52e2630&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;REGAIN&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;上記ページからアクセスできます。&lt;/p&gt;
 
@@ -36,7 +36,7 @@
 
 &lt;p&gt;少額なので気にせず放置していましたが、4月16日にきちんと配当がもらえていました。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-07/1.png&quot; alt=&quot;1&quot; title=&quot;1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-07/1.png&quot; alt=&quot;REGAIN 配当&quot; title=&quot;REGAIN 配当&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0.02881500REG&lt;/code&gt;に対して、&lt;code class=&quot;highlighter-rouge&quot;&gt;0.00048985BTC&lt;/code&gt;が付与されていました。&lt;/p&gt;
 
@@ -48,13 +48,13 @@
 &lt;p&gt;REGAIN（リゲイン）からのメールでは、配当を再投資して複利効果を最大化しましょうと強調されていたので、配当は再投資しておきました。
 まんまと乗せられている感はありつつも、少額なので気にせずそのまま乗せられてみるのもいいかなと思っています。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-07/2.png&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-07/2.png&quot; alt=&quot;REGAI 配当　再投資&quot; title=&quot;REGAIN 配当　再投資&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;また、5月にどうなるかはレポートしたいと思います。5/15は来週ですね。&lt;/p&gt;
 </description>
         <pubDate>Mon, 07 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/07/project-regain.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/07/project-regain.html</guid>
+        <link>http://localhost:4000/blog/cryptocurrency/2018/05/07/project-regain.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/cryptocurrency/2018/05/07/project-regain.html</guid>
         
         
         <category>cryptocurrency</category>
@@ -85,8 +85,8 @@
 
 &lt;p&gt;分割前は、アプリ用のターゲットが1つあり、そのフォルダ以下にグループを作ってソースファイルを分割していました。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/1.png&quot; alt=&quot;1&quot; title=&quot;1&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-05-06/2.png&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/1.png&quot; alt=&quot;groups&quot; title=&quot;groups&quot; /&gt;
+&lt;img src=&quot;/blog/assets/posts/2018-05-06/2.png&quot; alt=&quot;targets&quot; title=&quot;targets&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;アフター&quot;&gt;アフター&lt;/h3&gt;
 
@@ -120,8 +120,8 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/3.png&quot; alt=&quot;3&quot; title=&quot;3&quot; /&gt;
-&lt;img src=&quot;/blog/assets/posts/2018-05-06/4.png&quot; alt=&quot;4&quot; title=&quot;4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/3.png&quot; alt=&quot;embedded frameworks&quot; title=&quot;embedded frameworks&quot; /&gt;
+&lt;img src=&quot;/blog/assets/posts/2018-05-06/4.png&quot; alt=&quot;targets&quot; title=&quot;targets&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;分割時のポイント&quot;&gt;分割時のポイント&lt;/h2&gt;
 
@@ -143,7 +143,7 @@
 
 &lt;p&gt;フレームワークのターゲットを選択し、&lt;code class=&quot;highlighter-rouge&quot;&gt;Build Settings&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;Other Swift Flags&lt;/code&gt;から追加します。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/5.png&quot; alt=&quot;5&quot; title=&quot;5&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-06/5.png&quot; alt=&quot;Build Setting Other Swift Flags&quot; title=&quot;Build Setting Other Swift Flags&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;coredataの初期化処理を変更する&quot;&gt;CoreDataの初期化処理を変更する&lt;/h3&gt;
 
@@ -167,8 +167,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 </description>
         <pubDate>Sun, 06 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/development/2018/05/06/embedded-framework.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/development/2018/05/06/embedded-framework.html</guid>
+        <link>http://localhost:4000/blog/development/2018/05/06/embedded-framework.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/development/2018/05/06/embedded-framework.html</guid>
         
         
         <category>development</category>
@@ -181,14 +181,14 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 &lt;p&gt;5月4日、ゴールデンウィーク真っ只中に家族でUSJに行ってきました！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-04/1.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-04/1.jpg&quot; alt=&quot;USJ&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;予想通り、めちゃくちゃ混んでいました笑
 高速道路はそうでもなかったのですが、パーク内はすごい人でした。&lt;/p&gt;
 
 &lt;p&gt;パーク内はイースターのデコレーションがされていて、某夢の国を彷彿とさせるかのような仕上がりでした！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-04/2.jpg&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-04/2.jpg&quot; alt=&quot;USJ&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;めちゃくちゃ混む中、エクスプレスパスを使用するとかなり快適にアトラクションに乗れたので書いておきたいと思います。&lt;/p&gt;
 
@@ -229,11 +229,11 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 &lt;p&gt;アトラクションにはスムーズに乗れるので、それ以外の時間は、ゆっくり食事を楽しんだり、子供のアトラクションに普通に並んで乗ったりと、家族全員で楽しむことができました。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-04/3.jpg&quot; alt=&quot;3&quot; title=&quot;3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-04/3.jpg&quot; alt=&quot;&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;ハリーポッターエリアにもスムーズに入場できます。息子は機関車と一緒に写真が取れて満足そうでした。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-04/4.jpg&quot; alt=&quot;4&quot; title=&quot;4&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-04/4.jpg&quot; alt=&quot;USJ ハリーポッター&quot; title=&quot;USJ ハリーポッター&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;面白かったアトラクション&quot;&gt;面白かったアトラクション&lt;/h2&gt;
 
@@ -257,8 +257,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;ぜひUSJに行かれるかたは、エクスプレスパスを買ってみてはいかがでしょうか？&lt;/p&gt;
 </description>
         <pubDate>Fri, 04 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/family/2018/05/04/universal-studio-japan.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/05/04/universal-studio-japan.html</guid>
+        <link>http://localhost:4000/blog/family/2018/05/04/universal-studio-japan.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/05/04/universal-studio-japan.html</guid>
         
         
         <category>family</category>
@@ -344,8 +344,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;皆さんも一度自分のライフスタイルに合わせて、本当に必要なものを見直して不要なものは断捨離してみてはいかがでしょうか？&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/family/2018/05/01/minimalization.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/05/01/minimalization.html</guid>
+        <link>http://localhost:4000/blog/family/2018/05/01/minimalization.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/05/01/minimalization.html</guid>
         
         
         <category>family</category>
@@ -360,16 +360,16 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 &lt;p&gt;臨港公園はパシフィコ横浜の裏の海岸沿いにあります。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-04-30/1.png&quot; alt=&quot;1&quot; title=&quot;1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-04-30/1.png&quot; alt=&quot;臨港公園&quot; title=&quot;臨港公園&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;海が近くて景観もよく、みなとみらいの中でも家族で行くならかなりオススメのスポットです。&lt;/p&gt;
 
-&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/BiLZa6THRSH/&quot; data-instgrm-version=&quot;8&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/BiLZa6THRSH/&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;Picnic #picnic&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;A post shared by &lt;a href=&quot;https://www.instagram.com/micchyboy/&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; micchyboy&lt;/a&gt; (@micchyboy) on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-04-30T02:37:25+00:00&quot;&gt;Apr 29, 2018 at 7:37pm PDT&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote class=&quot;instagram-media&quot; data-instgrm-captioned=&quot;&quot; data-instgrm-permalink=&quot;https://www.instagram.com/p/BiLZa6THRSH/&quot; data-instgrm-version=&quot;8&quot; style=&quot; background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);&quot;&gt;&lt;div style=&quot;padding:8px;&quot;&gt; &lt;div style=&quot; background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;&quot;&gt; &lt;div style=&quot; background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;&quot;&gt;&lt;/div&gt;&lt;/div&gt; &lt;p style=&quot; margin:8px 0 0 0; padding:0 4px;&quot;&gt; &lt;a href=&quot;https://www.instagram.com/p/BiLZa6THRSH/&quot; style=&quot; color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;&quot; target=&quot;_blank&quot;&gt;Picnic #picnic&lt;/a&gt;&lt;/p&gt; &lt;p style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;&quot;&gt;A post shared by &lt;a href=&quot;https://www.instagram.com/micchyboy1023/&quot; style=&quot; color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;&quot; target=&quot;_blank&quot;&gt; micchyboy1023&lt;/a&gt; (@micchyboy1023) on &lt;time style=&quot; font-family:Arial,sans-serif; font-size:14px; line-height:17px;&quot; datetime=&quot;2018-04-30T02:37:25+00:00&quot;&gt;Apr 29, 2018 at 7:37pm PDT&lt;/time&gt;&lt;/p&gt;&lt;/div&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; defer=&quot;&quot; src=&quot;//www.instagram.com/embed.js&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;海のこんな感じで晴れの日は一面見渡すことができます。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-04-30/2.jpg&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-04-30/2.jpg&quot; alt=&quot;臨港公園&quot; title=&quot;臨港公園&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;オススメの楽しみ方&quot;&gt;オススメの楽しみ方&lt;/h2&gt;
 
@@ -377,13 +377,13 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 &lt;p&gt;公園自体比較的広い芝生の広場という感じなので、フリスビーやボール遊びをしている家族連れが多いです。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-04-30/3.jpg&quot; alt=&quot;3&quot; title=&quot;3&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-04-30/3.jpg&quot; alt=&quot;臨港公園&quot; title=&quot;臨港公園&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;なので、テントやレジャーシートを持って行って、とにかくのんびりと過ごして贅沢に時間を使うのがおすすめです。&lt;/p&gt;
 </description>
         <pubDate>Mon, 30 Apr 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/family/2018/04/30/rinko-park.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/30/rinko-park.html</guid>
+        <link>http://localhost:4000/blog/family/2018/04/30/rinko-park.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/04/30/rinko-park.html</guid>
         
         
         <category>family</category>
@@ -433,8 +433,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 </description>
         <pubDate>Sun, 29 Apr 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/family/2018/04/29/drive-recorder.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/29/drive-recorder.html</guid>
+        <link>http://localhost:4000/blog/family/2018/04/29/drive-recorder.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/04/29/drive-recorder.html</guid>
         
         
         <category>family</category>
@@ -458,7 +458,7 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 途中の道でもプラレール博会場までのプラカードを持った方々がいたので、迷うことはありませんでした。&lt;/p&gt;
 
 &lt;p&gt;到着して入場の列に並んだのですが、すごい人でした。
-&lt;img src=&quot;/blog/assets/posts/2018-04-28/1.jpg&quot; alt=&quot;1&quot; title=&quot;1&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/assets/posts/2018-04-28/1.jpg&quot; alt=&quot;プレレール博inTokyo2018&quot; title=&quot;プレレール博inTokyo2018&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;結局入場できたのは、10時50分くらい。約1時間待ちました。&lt;/p&gt;
 
@@ -481,10 +481,10 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;iframe class=&quot;w-100&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/TnYbDgW9YAI&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;上履きの写真スポットや
-&lt;img src=&quot;/blog/assets/posts/2018-04-28/2.jpg&quot; alt=&quot;2&quot; title=&quot;2&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/assets/posts/2018-04-28/2.jpg&quot; alt=&quot;プレレール博inTokyo2018&quot; title=&quot;プレレール博inTokyo2018&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;踏切も
-&lt;img src=&quot;/blog/assets/posts/2018-04-28/3.jpg&quot; alt=&quot;3&quot; title=&quot;3&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/assets/posts/2018-04-28/3.jpg&quot; alt=&quot;プレレール博inTokyo2018&quot; title=&quot;プレレール博inTokyo2018&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;その他、プラレール釣りやあみだくじなどなど、チケットを利用するアトラクションがたくさんありましたが、混んでいたので全ては体験できませんでした。&lt;/p&gt;
 
@@ -501,8 +501,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;丸亀うどんもあるので地下1階はおすすめです！&lt;/p&gt;
 </description>
         <pubDate>Sat, 28 Apr 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/family/2018/04/28/plarail-ex-2018.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/28/plarail-ex-2018.html</guid>
+        <link>http://localhost:4000/blog/family/2018/04/28/plarail-ex-2018.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/04/28/plarail-ex-2018.html</guid>
         
         
         <category>family</category>
@@ -578,8 +578,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 </description>
         <pubDate>Wed, 18 Apr 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</guid>
+        <link>http://localhost:4000/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</guid>
         
         
         <category>cryptocurrency</category>
@@ -611,8 +611,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 &lt;p&gt;入場者には、ドクターイエローの中間車もしくはテコロのバーティがもらえるようです。&lt;/p&gt;
 </description>
         <pubDate>Mon, 16 Apr 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/family/2018/04/16/plarail-ex-2018.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/16/plarail-ex-2018.html</guid>
+        <link>http://localhost:4000/blog/family/2018/04/16/plarail-ex-2018.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/family/2018/04/16/plarail-ex-2018.html</guid>
         
         
         <category>family</category>
@@ -652,8 +652,8 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
 
 </description>
         <pubDate>Mon, 19 Mar 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/apple/2018/03/19/wwdc2018-page.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/apple/2018/03/19/wwdc2018-page.html</guid>
+        <link>http://localhost:4000/blog/apple/2018/03/19/wwdc2018-page.html</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/apple/2018/03/19/wwdc2018-page.html</guid>
         
         
         <category>apple</category>
