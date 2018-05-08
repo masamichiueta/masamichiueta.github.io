@@ -5,8 +5,8 @@
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.io/blog/</link>
     <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 May 2018 00:44:53 +0900</pubDate>
-    <lastBuildDate>Wed, 09 May 2018 00:44:53 +0900</lastBuildDate>
+    <pubDate>Wed, 09 May 2018 00:57:07 +0900</pubDate>
+    <lastBuildDate>Wed, 09 May 2018 00:57:07 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
     
       <item>
@@ -83,6 +83,13 @@ pip install bitmex-market-maker
 &lt;p&gt;実際に本番環境でもそのうちやってみたいので、設定のチューニングや結果などはこれから試してみようと思います。&lt;/p&gt;
 
 &lt;p&gt;ちなみに、10分ほど放置していると、-50%とかになっていました笑&lt;/p&gt;
+
+&lt;h2 id=&quot;終了する&quot;&gt;終了する&lt;/h2&gt;
+
+&lt;p&gt;Botを終了するには, crtl + Cを押します。
+終了すると、オーダーが全てキャンセルされました。&lt;/p&gt;
+
+&lt;p&gt;ポジションは残ったままだったので、本番環境で実際にやる場合は注意が必要です。&lt;/p&gt;
 </description>
         <pubDate>Tue, 08 May 2018 00:00:00 +0900</pubDate>
         <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/08/bitmex-bot-sample.html</link>
