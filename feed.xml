@@ -5,9 +5,93 @@
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.io/blog/</link>
     <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 May 2018 21:29:04 +0900</pubDate>
-    <lastBuildDate>Tue, 08 May 2018 21:29:04 +0900</lastBuildDate>
+    <pubDate>Wed, 09 May 2018 00:44:53 +0900</pubDate>
+    <lastBuildDate>Wed, 09 May 2018 00:44:53 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました</title>
+        <description>&lt;h1 id=&quot;bitmex-ビットコインfxの自動取引botのサンプル&quot;&gt;BitMEX ビットコインFXの自動取引Botのサンプル&lt;/h1&gt;
+
+&lt;p&gt;最近流行りのビットコインFXボットでも作ってみようかと調べていたところ、BitMEXのボットのサンプルコード &lt;strong&gt;sample-market-maker&lt;/strong&gt; があったので、動かしてみました。&lt;/p&gt;
+
+&lt;p&gt;Webページからリンクされていて、GitHubのリポジトリも公式のものでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/BitMEX/sample-market-maker&quot;&gt;https://github.com/BitMEX/sample-market-maker&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;pythonの知識があり、README.mdのGetting Startedを読めば、動かせるかと思います。&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
+
+&lt;h3 id=&quot;testnet-bitmexにアカウントを作る&quot;&gt;Testnet BitMEXにアカウントを作る&lt;/h3&gt;
+
+&lt;p&gt;どうやらBitMEXのテスト環境があるようで、ますそちらにアカウントを作成します。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://testnet.bitmex.com/app&quot;&gt;Testnet BitMEX Account&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;その後、テスト環境で使うビットコインもどき&lt;code class=&quot;highlighter-rouge&quot;&gt;TBTC&lt;/code&gt;をウォレットに送信します。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://testnet.bitmex.com/app/deposit&quot;&gt;deposit some TBTC&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;どうやら送り放題のようですね！&lt;/p&gt;
+
+&lt;h3 id=&quot;環境構築&quot;&gt;環境構築&lt;/h3&gt;
+
+&lt;p&gt;私はpythonのバージョン管理に、&lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt;と&lt;a href=&quot;https://github.com/pyenv/pyenv-virtualenv&quot;&gt;pyenv-virtualenv&lt;/a&gt;を使っています。&lt;/p&gt;
+
+&lt;p&gt;bitmex-market-makerは、python3.5以降をサポートしているようなので、pyenvで3.6.5をインストールします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv install 3.6.5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;その後、pyenv-virtualenvで、bitmex-market-maker用の環境を作ります。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv virtualenv 3.6.5 bitmex
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;bitmex-market-maker用のディレクトリを作って、pipでbitmex-market-makerをインストールします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir bitmex
+cd bitmex
+pyenv local bitmex
+pip install bitmex-market-maker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;その後、market-makerをセットアップします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;marketmaker setup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;すると、&lt;code class=&quot;highlighter-rouge&quot;&gt;market_maker&lt;/code&gt;フォルダと、&lt;code class=&quot;highlighter-rouge&quot;&gt;settings.py&lt;/code&gt;が生成されます。&lt;/p&gt;
+
+&lt;h2 id=&quot;とりあえず実行して見る&quot;&gt;とりあえず実行して見る&lt;/h2&gt;
+
+&lt;p&gt;API KeyとSecret Keyを生成します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-08/key.png&quot; alt=&quot;API Key and Secret Key&quot; title=&quot;API Key and Secret Key&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;キーを生成したら、settings.pyのAPI_KEYとAPI_SECRETにコピーします。
+そして、ボットを実行します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;marketmaker XBTUSD
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ボットを実行するとデフォルトの設定にしたがって、オーダーが自動的に実行されていきます。&lt;/p&gt;
+
+&lt;p&gt;BitMEXの仕様や画面に慣れていないので、いまいちわからないことが多いですが、とりあえずBotを実行することはできました。&lt;/p&gt;
+
+&lt;p&gt;実際に本番環境でもそのうちやってみたいので、設定のチューニングや結果などはこれから試してみようと思います。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、10分ほど放置していると、-50%とかになっていました笑&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 May 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/08/bitmex-bot-sample.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/08/bitmex-bot-sample.html</guid>
+        
+        
+        <category>cryptocurrency</category>
+        
+      </item>
     
       <item>
         <title>仮想通貨ICO REGAIN（リゲイン）の4月配当をもらえました</title>
@@ -616,47 +700,6 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         
         
         <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>WWDC2018のページが公開されました</title>
-        <description>&lt;h1 id=&quot;wwdc2018&quot;&gt;WWDC2018&lt;/h1&gt;
-
-&lt;p&gt;wwdc2018のサイトが公開されていますね！&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/wwdc/?cid=wwdc18-e-jajp-0001&quot;&gt;wwdc2018&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-03-19/wwdc2018.png&quot; alt=&quot;wwdc2018&quot; title=&quot;wwdc2018&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;image - &lt;a href=&quot;https://developer.apple.com/wwdc/?cid=wwdc18-e-jajp-0001&quot;&gt;apple&lt;/a&gt; *&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;今年のテーマは、macOSとiOSのoUIなのでしょうか？
-6月4日（月）〜6月8日（金）までサンノゼのthe McEnery Convention Centerで開催されるようです！&lt;/p&gt;
-
-&lt;p&gt;去年のwwdc2017と同じ場所のようですね。&lt;/p&gt;
-
-&lt;p&gt;今年もハードウェアが発表されるのか、楽しみです！&lt;/p&gt;
-
-&lt;h2 id=&quot;参加するには抽選に申し込む&quot;&gt;参加するには抽選に申し込む&lt;/h2&gt;
-
-&lt;p&gt;参加される方は、抽選に申し込む必要があります。&lt;/p&gt;
-
-&lt;p&gt;参加費だけで1599ドル（約16万）で、渡航費など含めると、全部で60万くらい？しますね。&lt;/p&gt;
-
-&lt;p&gt;wwdc2015に参加しましたが、現地の雰囲気はやはり最高なので、行く価値はあると思います。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、抽選に当選すると自動的に購入になり、かつID登録されるので、転売などはできません。
-複数申し込んだ場合も、両方当たった場合は、両方購入することになるので、ご注意ください。&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 19 Mar 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/apple/2018/03/19/wwdc2018-page.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/apple/2018/03/19/wwdc2018-page.html</guid>
-        
-        
-        <category>apple</category>
         
       </item>
     
