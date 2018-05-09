@@ -5,8 +5,8 @@
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.io/blog/</link>
     <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 May 2018 10:53:47 +0900</pubDate>
-    <lastBuildDate>Wed, 09 May 2018 10:53:47 +0900</lastBuildDate>
+    <pubDate>Wed, 09 May 2018 19:19:45 +0900</pubDate>
+    <lastBuildDate>Wed, 09 May 2018 19:19:45 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
     
       <item>
@@ -95,6 +95,18 @@ pip install bitmex-market-maker
         <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/08/bitmex-bot-sample.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/08/bitmex-bot-sample.html</guid>
         
+        <category>仮想通貨</category>
+        
+        <category>bitmex</category>
+        
+        <category>ビットコイン</category>
+        
+        <category>bitcoin</category>
+        
+        <category>bot</category>
+        
+        <category>ボット</category>
+        
         
         <category>cryptocurrency</category>
         
@@ -146,6 +158,22 @@ pip install bitmex-market-maker
         <pubDate>Mon, 07 May 2018 00:00:00 +0900</pubDate>
         <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/07/project-regain.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/cryptocurrency/2018/05/07/project-regain.html</guid>
+        
+        <category>仮想通貨</category>
+        
+        <category>regain</category>
+        
+        <category>リゲイン</category>
+        
+        <category>ico</category>
+        
+        <category>bitcoin</category>
+        
+        <category>ビットコイン</category>
+        
+        <category>mining</category>
+        
+        <category>マイニング</category>
         
         
         <category>cryptocurrency</category>
@@ -261,6 +289,16 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         <link>https://micchyboy1023.github.io/blog/development/2018/05/06/embedded-framework.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/development/2018/05/06/embedded-framework.html</guid>
         
+        <category>ios</category>
+        
+        <category>swift</category>
+        
+        <category>embedded framework</category>
+        
+        <category>xcode</category>
+        
+        <category>apple</category>
+        
         
         <category>development</category>
         
@@ -351,6 +389,14 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         <link>https://micchyboy1023.github.io/blog/family/2018/05/04/universal-studio-japan.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/05/04/universal-studio-japan.html</guid>
         
+        <category>usj</category>
+        
+        <category>ユニバーサルスタジオジャパン</category>
+        
+        <category>エクスプレスパス</category>
+        
+        <category>ゴールデンウィーク</category>
+        
         
         <category>family</category>
         
@@ -438,6 +484,14 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         <link>https://micchyboy1023.github.io/blog/family/2018/05/01/minimalization.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/05/01/minimalization.html</guid>
         
+        <category>mercari</category>
+        
+        <category>メルカリ</category>
+        
+        <category>ライフスタイル</category>
+        
+        <category>断捨離</category>
+        
         
         <category>family</category>
         
@@ -475,6 +529,14 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         <pubDate>Mon, 30 Apr 2018 00:00:00 +0900</pubDate>
         <link>https://micchyboy1023.github.io/blog/family/2018/04/30/rinko-park.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/30/rinko-park.html</guid>
+        
+        <category>みなとみらい</category>
+        
+        <category>臨港公園</category>
+        
+        <category>横浜</category>
+        
+        <category>お出かけ</category>
         
         
         <category>family</category>
@@ -526,6 +588,10 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         <pubDate>Sun, 29 Apr 2018 00:00:00 +0900</pubDate>
         <link>https://micchyboy1023.github.io/blog/family/2018/04/29/drive-recorder.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/29/drive-recorder.html</guid>
+        
+        <category>ドライブレコーダー</category>
+        
+        <category>BRISE</category>
         
         
         <category>family</category>
@@ -594,6 +660,10 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         <pubDate>Sat, 28 Apr 2018 00:00:00 +0900</pubDate>
         <link>https://micchyboy1023.github.io/blog/family/2018/04/28/plarail-ex-2018.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/28/plarail-ex-2018.html</guid>
+        
+        <category>プラレール</category>
+        
+        <category>プラレール博</category>
         
         
         <category>family</category>
@@ -672,6 +742,12 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</guid>
         
+        <category>ledger nano s</category>
+        
+        <category>ファームウェア</category>
+        
+        <category>ripple</category>
+        
         
         <category>cryptocurrency</category>
         
@@ -704,6 +780,10 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         <pubDate>Mon, 16 Apr 2018 00:00:00 +0900</pubDate>
         <link>https://micchyboy1023.github.io/blog/family/2018/04/16/plarail-ex-2018.html</link>
         <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/16/plarail-ex-2018.html</guid>
+        
+        <category>プラレール</category>
+        
+        <category>プラレール博</category>
         
         
         <category>family</category>
