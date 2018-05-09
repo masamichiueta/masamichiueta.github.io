@@ -5,9 +5,121 @@
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.io/blog/</link>
     <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 May 2018 19:19:45 +0900</pubDate>
-    <lastBuildDate>Wed, 09 May 2018 19:19:45 +0900</lastBuildDate>
+    <pubDate>Wed, 09 May 2018 22:09:31 +0900</pubDate>
+    <lastBuildDate>Wed, 09 May 2018 22:09:31 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロクアット)の紹介</title>
+        <description>&lt;h1 id=&quot;皮膚や肌の悩みを匿名で相談できるアプリloquatロクアットの紹介&quot;&gt;皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロクアット)の紹介&lt;/h1&gt;
+
+&lt;p&gt;皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロクアット)を紹介します。&lt;/p&gt;
+
+&lt;p&gt;皮膚や肌に関してお悩みをお持ちの方はたくさんいるのではないでしょうか？&lt;/p&gt;
+
+&lt;p&gt;私もニキビや口唇ヘルペス、シミができたりと悩むことが多いです。子供も小さいので肌がかぶれたりできものができたりと色々大変で皮膚科に行くことが多いです。&lt;/p&gt;
+
+&lt;p&gt;そこでよく使っているのがLoquat(ロクアット)という皮膚や肌の悩みを匿名で相談できるアプリです。&lt;/p&gt;
+
+&lt;h2 id=&quot;loquatロクアット&quot;&gt;Loquat(ロクアット)&lt;/h2&gt;
+
+&lt;p&gt;Loquat(ロクアット)は皮膚や肌の悩みを匿名で相談できるアプリです。&lt;/p&gt;
+
+&lt;p&gt;Webサイト
+&lt;a href=&quot;https://loquat.io&quot;&gt;https://loquat.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Loquat(ロクアット)は以下のような特徴があります。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;匿名で相談できる&lt;/li&gt;
+  &lt;li&gt;スマホでどこからでも相談できる&lt;/li&gt;
+  &lt;li&gt;皮膚科専門医に相談できる&lt;/li&gt;
+  &lt;li&gt;24時間以内に回答が届く&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;匿名で相談できるというのがいいですね。皮膚や肌の悩みは、なかなか人に相談できないものですし、皮膚科に行って先生に見られるのも恥ずかしいという方もいるのではないでしょうか？&lt;/p&gt;
+
+&lt;p&gt;また、アプリをダウンロードすればスマホでどこからでも相談できるというのも便利です。時間がない方、少しだけ相談したい方など簡単に利用ができるのではないでしょうか。&lt;/p&gt;
+
+&lt;p&gt;Loquat(ロクアット)はこんな人に向いています。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;皮膚科に行きたいけど忙しくて時間がない方&lt;/li&gt;
+  &lt;li&gt;肌が弱い小さいお子様をお持ちの方&lt;/li&gt;
+  &lt;li&gt;病院が遠くて、なかなか足を運べない方&lt;/li&gt;
+  &lt;li&gt;病院に行くほどでもないけど、少し気になる症状がある方&lt;/li&gt;
+  &lt;li&gt;セカンドオピニオンが聞きたい方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;アプリ&quot;&gt;アプリ&lt;/h2&gt;
+
+&lt;p&gt;現在はiOSアプリのみ提供されています。
+iOSアプリはこちらからダウンロードできます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/jp/app/loquat-pi-funo-naomiwo-shou/id1161117472?mt=8&quot;&gt;Loquat 皮膚や肌の悩みを匿名で相談できるアプリ&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;1まずアプリを起動します&quot;&gt;1.まず、アプリを起動します。&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-09/1.png&quot; alt=&quot;Loquat起動&quot; title=&quot;Loquat起動&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2利用規約プライバシーポリシーに同意すると相談画面が表示されます&quot;&gt;2.利用規約・プライバシーポリシーに同意すると、相談画面が表示されます。&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-09/2.png&quot; alt=&quot;Loquat相談画面&quot; title=&quot;Loquat相談画面&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;3相談するボタンを押すと相談入力画面が表示されます&quot;&gt;3.相談するボタンを押すと、相談入力画面が表示されます。&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-09/3.png&quot; alt=&quot;Loquat相談入力画面&quot; title=&quot;Loquat相談入力画面&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;4-相談内容を入力して送信します&quot;&gt;4. 相談内容を入力して送信します。&lt;/h3&gt;
+
+&lt;p&gt;相談を送信するにはチケットが必要ですので、購入しましょう。2018年5月9日では、チケット1枚360円ですね。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-09/4.png&quot; alt=&quot;Loquat相談入力画面&quot; title=&quot;Loquat相談入力画面&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5-相談を送信すると回答が届くまで待ちます&quot;&gt;5. 相談を送信すると、回答が届くまで待ちます。&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-09/5.png&quot; alt=&quot;Loquat回答待ち&quot; title=&quot;Loquat回答待ち&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6回答が届くと皮膚科専門医からの回答を見ることができます&quot;&gt;6.回答が届くと、皮膚科専門医からの回答を見ることができます。&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-09/6.png&quot; alt=&quot;Loquat回答&quot; title=&quot;Loquat回答&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;注意点&quot;&gt;注意点&lt;/h2&gt;
+
+&lt;p&gt;こちらのサービスは医療・健康情報提供サービスであり、ユーザーに対する診療行為（医師法に規定するもの及び社会通念上これと同視できるものを含む）に該当するものではありません。利用者は自身の判断に基づき、必要に応じて医療機関への相談等を行う必要があります。&lt;/p&gt;
+
+&lt;p&gt;ただ、ちょっと相談してみたいとか、症状の可能性を知りたいとか、皮膚科に行く前に軽く相談してみようという方にはいいサービスだと思うので、&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;皮膚科に行きたいけど忙しくて時間がない方&lt;/li&gt;
+  &lt;li&gt;肌が弱い小さいお子様をお持ちの方&lt;/li&gt;
+  &lt;li&gt;病院が遠くて、なかなか足を運べない方&lt;/li&gt;
+  &lt;li&gt;病院に行くほどでもないけど、少し気になる症状がある方&lt;/li&gt;
+  &lt;li&gt;セカンドオピニオンが聞きたい方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ぜひ活用しましょう！&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 May 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/blog/apps/2018/05/09/loquat-app.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/apps/2018/05/09/loquat-app.html</guid>
+        
+        <category>皮膚</category>
+        
+        <category>相談</category>
+        
+        <category>肌</category>
+        
+        <category>Loquat</category>
+        
+        <category>ロクアット</category>
+        
+        <category>診療</category>
+        
+        
+        <category>apps</category>
+        
+      </item>
     
       <item>
         <title>BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました</title>
@@ -750,43 +862,6 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         
         
         <category>cryptocurrency</category>
-        
-      </item>
-    
-      <item>
-        <title>プラレール博 in TOKYO 2018のチケットを購入しました</title>
-        <description>&lt;h1 id=&quot;プラレール博-in-tokyo-2018&quot;&gt;プラレール博 in TOKYO 2018&lt;/h1&gt;
-
-&lt;p&gt;今年もプラレール博が開催されるようです。
-&lt;a href=&quot;http://www.takaratomy.co.jp/event/eventlist2/pla2018-tokyo.html&quot;&gt;プラレール博 in TOKYO 2018&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;場所は、池袋サンシャインシティ！
-楽しみですね。&lt;/p&gt;
-
-&lt;p&gt;先日セブンイレブンで、チケットを購入しました。
-前売り券を購入しておく方が、当日購入するよりも安くお得です。&lt;/p&gt;
-
-&lt;h2 id=&quot;チケットの購入方法&quot;&gt;チケットの購入方法&lt;/h2&gt;
-
-&lt;p&gt;チケットは、インターネットでは買えないようですね。
-私はセブンイレブンで購入しました。&lt;/p&gt;
-
-&lt;p&gt;セブンイレブンでは、大人1枚・子ども1枚　計2枚のお得なセットチケットが販売されています。&lt;/p&gt;
-
-&lt;p&gt;私はこのセットチケットと、大人1枚の合わせて3枚を2300円で購入しました。&lt;/p&gt;
-
-&lt;p&gt;入場者には、ドクターイエローの中間車もしくはテコロのバーティがもらえるようです。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 16 Apr 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/family/2018/04/16/plarail-ex-2018.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/family/2018/04/16/plarail-ex-2018.html</guid>
-        
-        <category>プラレール</category>
-        
-        <category>プラレール博</category>
-        
-        
-        <category>family</category>
         
       </item>
     
