@@ -47,11 +47,6 @@ layout: default
             {% endfor %}
           </ul>
         </div>
-      </div>
-      <div class="col-12 col-md-3 order-last order-md-2 mt-5 mt-md-0">
-          {% include sidebar.html %}
-      </div>
-      <div class="col-12 order-md-3">
         <!-- Pagination links -->
         {% if paginator.total_pages > 1 %}
         <div class="pagination d-flex justify-content-center">
@@ -79,13 +74,9 @@ layout: default
         </div>
         {% endif %}
       </div>
+      <div class="col-12 col-md-3 mt-5 mt-md-0">
+          {% include sidebar.html %}
+      </div>
     </div>
   </div>
 </section>
-
-<!-- blog_text -->
-<ins class="adsbygoogle"
-  style="display:block"
-  data-ad-client="ca-pub-3655474149264343"
-  data-ad-slot="3735741647"
-  data-ad-format="auto"></ins>
