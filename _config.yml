@@ -1,0 +1,39 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: micchyboy
+description: ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。
+
+url: https://micchyboy1023.github.io
+twitter_username: micchyboy1023
+github_username:  micchyboy1023
+author: micchyboy
+lang: ja_JP
+
+paginate: 10
+
+# Build settings
+markdown: kramdown
+future: true
+
+category_slugs:
+  cryptocurrency: "仮想通貨"
+  development: "開発"
+  family: "家族"
+  design: "デザイン"
+  gadget: "ガジェット"
+  apps: "アプリ"
+
+plugins:
+  - jekyll-gist
+  - jekyll-default-layout
+  - jekyll-github-metadata
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-category-pages
+  - jekyll-sitemap

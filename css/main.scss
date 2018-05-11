@@ -1,0 +1,105 @@
+---
+---
+
+@charset "utf-8";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "syntax-highlighting";
+@import "navbar";
+
+.notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.hero {
+  background-image: url('../assets/layouts/hero.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	color: #fff;
+  height: 600px;
+  min-height: 600px;
+	padding: 0;
+	position: relative;
+
+	.overlay {
+  	background-color: #252b33;
+    opacity: .35;
+  	height: 100%;
+  	left: 0;
+  	position: absolute;
+  	top: 0;
+  	width: 100%;
+	}
+}
+
+.works-icon {
+  border-radius: 5px;
+  height: 60px;
+  width: 60px;
+}
+
+.about-img {
+  border-radius: 50%;
+}
+
+pre,
+code {
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  word-break: break-all;
+}
+
+.background-image-none {
+  background-image: none;
+}
+
+.background-color-main {
+  background-color: #398ECA !important;
+  opacity: 1.0 !important;
+}
+
+.media-img {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  height: 300px;
+  min-height: 300px;
+}
+
+.post-content {
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 3rem;
+		margin-bottom: 1.5rem;
+	}
+}

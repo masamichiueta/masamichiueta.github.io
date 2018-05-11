@@ -6,14 +6,17 @@ layout: default
   <div class="overlay"></div>
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1>Make the world move forward by code and design.</h1>
+      <h1>{{ page.category | slug2name }}</h1>
+      <h2>micchyboy blog</h2>
     </div>
   </div>
 </section>
 
+{% assign paginator = page.paginator %}
+
 <section class="py-5">
   <div class="container">
-    
+
     <!-- blog_text -->
     <ins class="adsbygoogle"
     style="display:block"
@@ -28,10 +31,10 @@ layout: default
             {% for post in paginator.posts %}
               <li class="pb-4 pt-4">
                 <a href="{{ post.url | prepend: site.url }}">
-                  <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}<span class="ml-2">{{ post.categories | first | slug2name }}</span></small>                  
+                  <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}</small>                    
                   <h3>{{ post.title }}</h3>
                   {% if post.hero-image %}
-                  <div class="my-4 media-img rounded" style="background-image: url({{ site.url }}/assets/posts/{{ post.date | date: "%Y-%m-%d" }}/{{ post.hero-image }})">
+                  <div alt="{{post.title}}" class="my-4 media-img rounded" style="background-image: url({{ site.url }}/assets/posts/{{ post.date | date: "%Y-%m-%d" }}/{{ post.hero-image }})">
                   </div>
                   {% endif %}
                   {% if post.tags %}
@@ -65,7 +68,7 @@ layout: default
             {% if page == paginator.page %}
               <em class="mr-3">{{ page }}</em>
             {% elsif page == 1 %}
-              <a class="mr-3" href="{{ site.url }}">{{ page }}</a>
+              <a class="mr-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">{{ page }}</a>
             {% else %}
               <a class="mr-3" href="{{ site.paginate_path | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
             {% endif %}
