@@ -67,7 +67,7 @@ layout: default
           {% endfor %}
 
           {% if paginator.next_page %}
-            <a class="mr-3" href="{{ paginator.next_page_path | replace: '//', '/' }}">次 &raquo;</a>
+            <a href="{{ paginator.next_page_path | replace: '//', '/' }}">次 &raquo;</a>
           {% else %}
             <span>次 &raquo;</span>
           {% endif %}
