@@ -5,9 +5,122 @@
     <description>ソフトウェアエンジニア micchyboyのエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.io/blog/</link>
     <atom:link href="https://micchyboy1023.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 May 2018 22:14:49 +0900</pubDate>
-    <lastBuildDate>Wed, 09 May 2018 22:14:49 +0900</lastBuildDate>
+    <pubDate>Fri, 11 May 2018 11:51:40 +0900</pubDate>
+    <lastBuildDate>Fri, 11 May 2018 11:51:40 +0900</lastBuildDate>
     <generator>Jekyll v3.8.0</generator>
+    
+      <item>
+        <title>ついに！ZOZOSUIT（ゾゾスーツ）が届いたので計測してみた</title>
+        <description>&lt;h1 id=&quot;zozosuitが届きました&quot;&gt;ZOZOSUITが届きました&lt;/h1&gt;
+
+&lt;p&gt;ついに我が家に&lt;strong&gt;ZOZOSUIT&lt;/strong&gt;が届きました。ヤマトのネコポスでした。&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ついにZOZOSUIT届いた！ &lt;a href=&quot;https://t.co/vkPXkHAoDU&quot;&gt;pic.twitter.com/vkPXkHAoDU&lt;/a&gt;&lt;/p&gt;&amp;mdash; micchyboy (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/994739333033672704?ref_src=twsrc%5Etfw&quot;&gt;2018年5月11日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;ZOZOSUITを注文したのは、発表された当日の11月22日だったので、約半年かかりました！
+その間センサー方式からマーカー方式へと仕様変更があったりと、中の方々は大変だったようですが、とにかく無事入手することができてよかったです。&lt;/p&gt;
+
+&lt;p&gt;新しいZOZOSUITが発表された際に来たメールでは、&lt;strong&gt;5月9日〜5月17日にお届け予定&lt;/strong&gt;となっていたので、予定通りという感じです。&lt;/p&gt;
+
+&lt;p&gt;早速開けると、お詫びの紙が入っていました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-11/zozosuit2.jpg&quot; alt=&quot;ZOZOSUIT&quot; title=&quot;ZOZOSUIT&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;送料も無料ですし、そもそもPBを買うために注文したので、あまり気にしていません。&lt;/p&gt;
+
+&lt;p&gt;中にはスーツ本体と、スマホスタンドが入っていました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-11/zozosuit3.jpg&quot; alt=&quot;ZOZOSUIT&quot; title=&quot;ZOZOSUIT&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;早速計測&quot;&gt;早速計測&lt;/h2&gt;
+
+&lt;p&gt;早速着用して計測しました！&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ZOZOSUITで計測した &lt;a href=&quot;https://t.co/f7GUS2zopZ&quot;&gt;pic.twitter.com/f7GUS2zopZ&lt;/a&gt;&lt;/p&gt;&amp;mdash; micchyboy (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/994756473656721408?ref_src=twsrc%5Etfw&quot;&gt;2018年5月11日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;ZOZOTOWNアプリで計測しましたが、概ねスムーズに計測できました。&lt;/p&gt;
+
+&lt;p&gt;70cmの机と、2m以上離れるための空間を作るのがけっこう大変でした。&lt;/p&gt;
+
+&lt;p&gt;最初リビングでトライしたのですが、私の位置を認識してくれず断念し、自分の部屋で行いました。&lt;/p&gt;
+
+&lt;p&gt;背景が関係しているのでしょうか？&lt;/p&gt;
+
+&lt;p&gt;計測時には時計回りに12回撮影するのですが、ずれないようにと思い結構緊張しました。
+音声ガイダンスが優しくガイドしてくれるので、大丈夫だと思います。&lt;/p&gt;
+
+&lt;h2 id=&quot;pb注文&quot;&gt;PB注文&lt;/h2&gt;
+
+&lt;p&gt;アプリではその流れでZOZOの服を注文できるようになっています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-11/zozosuit5.png&quot; alt=&quot;ZOZO&quot; title=&quot;ZOZO&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Tシャツだけの注文やデニムパンツだけの注文は今のところできないようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/posts/2018-05-11/zozosuit6.png&quot; alt=&quot;ZOZO&quot; title=&quot;ZOZO&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;とりあえず、Tシャツとデニムパンツを注文しました。&lt;/p&gt;
+
+&lt;h2 id=&quot;zozosuit&quot;&gt;ZOZOSUIT&lt;/h2&gt;
+
+&lt;p&gt;残念ながらセンサー方式のZOZOSUITは手に入れられなかったのですが、自分のサイズが簡単に計測できるならどちらでも良い派です。&lt;/p&gt;
+
+&lt;p&gt;マーカー方式なら&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;洗濯可能 → 家族で使い回しやすい&lt;/li&gt;
+  &lt;li&gt;電池切れなし　→ 何度でも計測できる。体型データを適当に更新していける&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;などの利点があると思います。&lt;/p&gt;
+
+&lt;p&gt;スタートトゥデイの前澤社長も&lt;em&gt;体重計や体温計のように一家に一台の存在にします&lt;/em&gt;と言っていて、確かに一家に一台あると便利ですよね。&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ZOZOSUITは、街頭やコラボ企業経由等、圧倒的な速度で世界中で無料で配りまくり、体重計や体温計のように一家に一台の存在にします。そして、世界中のお客様の体型を最も知り尽くした企業となり、そのデータを元に一人一人にピッタリの服を提供する、世界でも類を見ないファッション企業を目指します。 &lt;a href=&quot;https://t.co/xNvquY2TJ1&quot;&gt;pic.twitter.com/xNvquY2TJ1&lt;/a&gt;&lt;/p&gt;&amp;mdash; Yusaku Maezawa 前澤友作 (@yousuck2020) &lt;a href=&quot;https://twitter.com/yousuck2020/status/933170052018323457?ref_src=twsrc%5Etfw&quot;&gt;2017年11月22日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;我が家でも私と妻の両方計測して、PBを購入したいと思います。&lt;/p&gt;
+
+&lt;p&gt;まぁ、一言でいうと、まさにファッション革命ですね！&lt;/p&gt;
+
+&lt;h3 id=&quot;技術的な点での感想&quot;&gt;技術的な点での感想&lt;/h3&gt;
+
+&lt;p&gt;以前のセンサー方式は、発表後の記事を見ていてもかなり独自の技術っぽい感じがしていて、他の企業が参入するのはなかなか難しそうな技術だと思っていました。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.itmedia.co.jp/news/articles/1712/07/news011.html&quot;&gt;「ZOZOSUIT」を作った謎のスタートアップの正体&lt;/a&gt; IT media&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ニュージーランドのソフトセンサー開発企業StretchSenseという企業と共同開発していました。&lt;/p&gt;
+
+&lt;p&gt;新しくなったマーカー方式は、スーツについたマーカーをカメラで認識し、画像処理によってサイズを計測するという、ほぼほぼソフトウェアによる計測方式になりました。&lt;/p&gt;
+
+&lt;p&gt;つまり、画像認識案件になったということで、早速有志によるマーカー認識方法が公開されるなど、早速ハックがなされております。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/ksasao/bc9c548d5e38932f2d0d11912ba541d0&quot;&gt;ZOZOSUITのマーカーのIDを読み取るコード&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;他の企業も同じ方式で計測ツールを出す可能性はあるなと思いつつ、そもそもこの方式でできたのだから時間の問題だったということも言えますね。まぁ私が心配しても関係ないことですし、競合が出るのはユーザーとしてはいいことだと思います。&lt;/p&gt;
+
+&lt;p&gt;今後、エンジニアや研究者の中で、ZOZOSUITを利用して面白いもの作った！みたいなのが色々出てくると思いますが、どうなるでしょうか。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 11 May 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/blog/gadget/2018/05/11/zozosuit.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/gadget/2018/05/11/zozosuit.html</guid>
+        
+        <category>ZOZOSUIT</category>
+        
+        <category>ゾゾスーツ</category>
+        
+        <category>ZOZO</category>
+        
+        <category>ZOZOTOWN</category>
+        
+        
+        <category>gadget</category>
+        
+      </item>
     
       <item>
         <title>皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロクアット)の紹介</title>
@@ -236,16 +349,10 @@ pip install bitmex-market-maker
 
 &lt;p&gt;とのこと。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://affiliate.project-regain.io/link.php?intro=66c9fff20f8ba39db4a1c8567baeb9d2&amp;amp;addrid=cc1dfd03c7a4e8257993db4fa52e2630&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;
-&lt;img border=&quot;0&quot; width=&quot;300&quot; height=&quot;300&quot; alt=&quot;REGAIN&quot; src=&quot;https://affiliate.project-regain.io/img/regain/300x300_en.png&quot; /&gt;
-&lt;/a&gt;
-&lt;img src=&quot;https://affiliate.project-regain.io/impression.php?intro=66c9fff20f8ba39db4a1c8567baeb9d2&amp;amp;addrid=cc1dfd03c7a4e8257993db4fa52e2630&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;REGAIN&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;上記ページからアクセスできます。&lt;/p&gt;
-
 &lt;p&gt;ホワイトペーパーには、第1段階のクラウドセール購入で、&lt;code class=&quot;highlighter-rouge&quot;&gt;1REG 4000ドル（約45万円)&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;1REGあたり0.034BTC/月（報酬見込み）&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;月利8.5%&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;年利102%&lt;/code&gt;と書いてありまして、こんなに本当にもらえるのか？という感じでした。&lt;/p&gt;
 
-&lt;p&gt;もらえないとか詐欺だったら危ないなと思ったので、遊びの感覚で当時のレートで2万円くらいでICOに参加してみました。まぁ、本当にお試しという感覚です。&lt;/p&gt;
+&lt;p&gt;もらえないとか詐欺だったら危ないなと思ったので、遊びの感覚で当時のレートで2万円くらいでICOに参加してみました。まぁ、本当にお試しという感覚です。
+詐欺だったら、残念！という感じですかね。&lt;/p&gt;
 
 &lt;h2 id=&quot;配当がもらえました&quot;&gt;配当がもらえました&lt;/h2&gt;
 
@@ -779,89 +886,6 @@ let container = NSPersistentContainer(name: &quot;コンテナ名&quot;, managed
         
         
         <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>Ledger Nano Sのファームウェア1.4.2へアップグレードする方法</title>
-        <description>&lt;h1 id=&quot;ledger-nano-s-ファームウェア142&quot;&gt;Ledger Nano S ファームウェア1.4.2&lt;/h1&gt;
-
-&lt;p&gt;Ledger Nano Sのファームウェア1.4.2が公開されたようです。&lt;/p&gt;
-
-&lt;p&gt;インストール方法は公式ページを読めばわかります。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://support.ledgerwallet.com/hc/en-us/articles/360002731113&quot;&gt;https://support.ledgerwallet.com/hc/en-us/articles/360002731113&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;英語だとわからない方のために、日本語で簡単に書いておきます。&lt;/p&gt;
-
-&lt;h2 id=&quot;1-現在のファームウェアのバージョンを確認する&quot;&gt;1. 現在のファームウェアのバージョンを確認する&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Ledger Nano Sを接続して、Settings &amp;gt; Device &amp;gt; Firmwareからファームウェアのバージョンを確認します。バージョンが1.3より小さい場合は、24個のリカバリーフレーズが必要になります。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;2-ledger-managerを起動する&quot;&gt;2. Ledger Managerを起動する&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Ledger Managerを起動して、Ledger Nano Sを接続し、PINコードを入力します。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-アプリをアンインストールする&quot;&gt;3. アプリをアンインストールする&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Ledger Managerでアプリケーションをアンインストールします。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;4-ファームウェアをダウンロードしてインストールする&quot;&gt;4. ファームウェアをダウンロードして、インストールする&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Ledger Managerのサイドバーの&lt;code class=&quot;highlighter-rouge&quot;&gt;FIRMWARES&lt;/code&gt;を選択します。&lt;/li&gt;
-  &lt;li&gt;1.4.2が表示されるので、インストールボタンを押します。&lt;/li&gt;
-  &lt;li&gt;Ledger Nano Sに&lt;code class=&quot;highlighter-rouge&quot;&gt;Allow Ledger manager?&lt;/code&gt;が表示されるので、右のボタンを押します。&lt;/li&gt;
-  &lt;li&gt;インストールが開始されます。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5ファームウェアアップデートを実行する&quot;&gt;5.ファームウェアアップデートを実行する&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Ledger Nano Sに&lt;code class=&quot;highlighter-rouge&quot;&gt;Update Firmware&lt;/code&gt;の文字と、ファームウェアのバージョン、identifierが表示されるので、確認します。&lt;/li&gt;
-  &lt;li&gt;右ボタンを押して、アップデートを実行します。&lt;/li&gt;
-  &lt;li&gt;ファームウェアのバージョンが1.3.1以下の場合、#6を、1.4.1以上の場合、#7を実行します。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;6-ledger-nano-sを再起動する&quot;&gt;6. Ledger Nano Sを再起動する&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Ledger Nano SをUSBから抜いて、左ボタンを押しながら挿し直します。&lt;/li&gt;
-  &lt;li&gt;BootLoaderが表示されます。&lt;/li&gt;
-  &lt;li&gt;アップデートが終わるまで待ちます。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;7-mcuバージョンファームウェアバージョンを確認します&quot;&gt;7. MCUバージョン、ファームウェアバージョンを確認します&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Settings &amp;gt; Device &amp;gt; Firmware から、MCUのバージョン、ファームウェアのバージョンを確認します。&lt;/li&gt;
-  &lt;li&gt;MCUが1.5, ファームウェアが1.4.2になっていればオッケーです。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;8-アプリを再インストールする&quot;&gt;8. アプリを再インストールする&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;3でアンインストールしたアプリを再度インストールします。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;以上で終了です。
-ファームウェアアップデートはセキュリティに関わるので、ぜひ早めにアップデートしましょう。&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 18 Apr 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/blog/cryptocurrency/2018/04/18/ledger-firmware-update-1.4.2.html</guid>
-        
-        <category>ledger nano s</category>
-        
-        <category>ファームウェア</category>
-        
-        <category>ripple</category>
-        
-        
-        <category>cryptocurrency</category>
         
       </item>
     
