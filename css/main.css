@@ -300,11 +300,11 @@
   #nav .dn-logo {
     display: block;
     left: 50%;
-    margin-left: -24px;
+    margin-left: -50px;
     position: absolute;
     text-align: center;
     top: 0;
-    width: 48px;
+    width: 100px;
     z-index: 1; }
     #nav .dn-logo a {
       color: #fff;
@@ -385,6 +385,9 @@
 
 .position-relative {
   position: relative; }
+
+.top {
+  margin-top: 40px; }
 
 .hero {
   background-image: url("../assets/layouts/hero.jpg");
