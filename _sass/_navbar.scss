@@ -234,11 +234,11 @@ $navbar-animation-duration: 0.35s;
   .dn-logo {
     display: block;
     left: 50%;
-    margin-left: - round($navbar-height/2);
+    margin-left: - 50px;
     position: absolute;
     text-align: center;
     top: 0;
-    width: $navbar-height;
+    width: 100px;
     z-index: 1;
 
     a {
