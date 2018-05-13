@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>iOSの写真アプリのような画面遷移とインタラクションを実装する | micchyboy</title>
+<meta name="generator" content="Jekyll v3.8.1" />
+<meta property="og:title" content="iOSの写真アプリのような画面遷移とインタラクションを実装する" />
+<meta name="author" content="micchyboy" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="iOSの写真アプリのような画面遷移とインタラクションを実装する" />
+<meta property="og:description" content="iOSの写真アプリのような画面遷移とインタラクションを実装する" />
+<link rel="canonical" href="https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html" />
+<meta property="og:url" content="https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html" />
+<meta property="og:site_name" content="micchyboy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-13T00:00:00+09:00" />
+<script type="application/ld+json">
+{"description":"iOSの写真アプリのような画面遷移とインタラクションを実装する","author":{"@type":"Person","name":"micchyboy"},"@type":"BlogPosting","url":"https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html","headline":"iOSの写真アプリのような画面遷移とインタラクションを実装する","dateModified":"2018-05-13T00:00:00+09:00","datePublished":"2018-05-13T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html">
+  <link rel="alternate" type="application/rss+xml" title="micchyboy" href="https://micchyboy1023.github.io/feed.xml">
+  <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-3655474149264343",
+         enable_page_level_ads: true,
+         overlays: {bottom: true}
+    });
+  </script>
+</head>
+
+
+  <body>
+    <header>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
+    <div class="container">
+      <div class="dynamic-navbar">
+        <ul class="dn-list">
+          <li class="dn-item dn-menuicon">
+            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+              <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+              </span>
+              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+              </span>
+            </label>
+            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span class="dn-menuanchor-label">Open Menu</span> </a>
+  				<a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span class="dn-menuanchor-label">Close Menu</span> </a>
+          </li>
+          <li class="dn-item dn-logo">
+            <a href="https://micchyboy1023.github.io/">micchyboy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="static-navbar">
+        <div class="sn-item sn-logo">
+          <a href="https://micchyboy1023.github.io/">micchyboy</a>
+        </div>
+        <ul class="sn-list">
+            <li class="sn-item sn-item-menu">
+                <a href="https://micchyboy1023.github.io/" >Blog</a>
+              </li>
+          <li class="sn-item sn-item-menu">
+            <a href="https://micchyboy1023.github.io/about.html">About</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//twitter.com/micchyboy1023" target="_blank">Twitter</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//github.com/micchyboy1023" target="_blank">Github</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//medium.com/@micchyboy1023" target="_blank">Medium</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+<section class="hero text-center" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2018-05-13/cover.png)">
+  <div class="overlay"></div>
+
+  <div class="d-flex align-items-center justify-content-between h-100 position-relative">
+    <div class="container">
+      <h1 itemprop="name headline">iOSの写真アプリのような画面遷移とインタラクションを実装する</h1>
+    </div>
+  </div>
+</section>
+
+<section class="post-content py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="article-body" itemprop="articleBody">
+            <p class="text-muted"><time datetime="2018-05-13T00:00:00+09:00" itemprop="datePublished">2018/5/13</time><span class="ml-3">開発</span></p>
+            
+            <p>
+              <small>タグ</small>
+              
+              <span class="badge badge-light">iOS</span>
+              
+              <span class="badge badge-light">Swift</span>
+              
+              <span class="badge badge-light">写真</span>
+              
+              <span class="badge badge-light">画面遷移</span>
+              
+              <span class="badge badge-light">インタラクション</span>
+              
+            </p>
+            
+            <h1 id="iosの写真アプリの画面遷移">iOSの写真アプリの画面遷移</h1>
+
+<p>iOSの写真アプリの画面遷移は使いやすいなと思っています。</p>
+
+<p>写真一覧から写真をタップするとズームして、下に少し引っ張ると戻れるというやつです。</p>
+
+<video width="320" controls="">
+  <source src="https://micchyboy1023.github.io/assets/posts/2018-05-13/iosphoto.mov" type="video/mp4" />
+</video>
+
+<p>この画面遷移とインタラクションをコピーして実装してみました。</p>
+
+<h1 id="この記事でできるもの">この記事でできるもの</h1>
+
+<p>サンプルコードはGitHubのリポジトリに置いてあります。
+<a href="https://github.com/micchyboy1023/SimplePhotoViewer">micchyboy1023/SimplePhotoViewer</a></p>
+
+<video width="320" controls="">
+  <source src="https://micchyboy1023.github.io/assets/posts/2018-05-13/simplephotoviewer.mov" type="video/mp4" />
+</video>
+
+<h1 id="実装">実装</h1>
+
+<p>いくつかのステップに分けて解説します。</p>
+
+<ol>
+  <li>ViewControllerの構成を考える</li>
+  <li>ズームするアニメーションを実装する</li>
+  <li>パンジェスチャーで戻るインタラクティブな画面遷移を実装する</li>
+</ol>
+
+<h2 id="1viewcontrollerの構成を考える">1.ViewControllerの構成を考える</h2>
+
+<p>ざっくりViewControllerを図示するとこんな感じです。</p>
+
+<p><img src="https://micchyboy1023.github.io/assets/posts/2018-05-13/viewcontrollers.png" alt="ViewControllers" title="ViewControllers" /></p>
+
+<p>登場する<code class="highlighter-rouge">ViewController</code>は4つです。</p>
+
+<ol>
+  <li>写真一覧を表示する<code class="highlighter-rouge">CollectionViewController</code></li>
+  <li>写真のページングを行う<code class="highlighter-rouge">PageViewController</code></li>
+  <li>2のページで表示する画像の拡大縮小を行う<code class="highlighter-rouge">ZoomImageViewController</code></li>
+  <li>2のページをラップするコンテナの<code class="highlighter-rouge">ContainerViewController</code></li>
+</ol>
+
+<p>4はなくてもいいのですが、<code class="highlighter-rouge">UIPageViewController</code>の上にツールバーを置いたりしたいときに、Storyboard上では置けないため、一旦4をコンテナにします。</p>
+
+<p>1のCollectionViewのセルをタップすると画面遷移して、遷移後は<code class="highlighter-rouge">UIPageViewController</code>を使って画像のページングを行います。
+2の<code class="highlighter-rouge">UIPageViewController</code>は、<code class="highlighter-rouge">UIPageViewControllerDelegate</code>で3の<code class="highlighter-rouge">ViewController</code>のインスタンスを作って、画面として表示します。</p>
+
+<p>実際のストーリーボードは<code class="highlighter-rouge">UITabBarController</code>や<code class="highlighter-rouge">UINavigationController</code>があるのでこんな感じです。</p>
+
+<p><img src="https://micchyboy1023.github.io/assets/posts/2018-05-13/cover.png" alt="Storyboard" title="Storyboard" /></p>
+
+<h2 id="2-ズームするアニメーションを実装する">2. ズームするアニメーションを実装する</h2>
+
+<p>アニメーションは、カスタムアニメーションを実装する際に実装する<code class="highlighter-rouge">UIViewControllerTransitioningDelegate</code>と<code class="highlighter-rouge">UIViewControllerAnimatedTransitioning</code>を使って実現します。</p>
+
+<p>ズームするアニメーションは、2つのクラスを使います。</p>
+
+<ul>
+  <li><code class="highlighter-rouge">ZoomTransitionController</code>: <code class="highlighter-rouge">UIViewControllerTransitioningDelegate</code>または、<code class="highlighter-rouge">UINavigationControllerDelegate</code>を実装していて、画面遷移を管理する</li>
+  <li><code class="highlighter-rouge">ZoomAnimator</code>: <code class="highlighter-rouge">UIViewControllerAnimatedTransitioning</code>を実装していて、ズームするロジックを担当する</li>
+</ul>
+
+<p><code class="highlighter-rouge">ZoomTransitionController</code>が<code class="highlighter-rouge">ZoomAnimator</code>をプロパティとして持っています。</p>
+
+<p><code class="highlighter-rouge">ZoomTransitionController</code>と<code class="highlighter-rouge">ZoomAnimator</code>を別のクラスにしているのは、<code class="highlighter-rouge">ZoomTransitionController</code>が、インタラクティブな遷移とそうでない遷移を管理するためです。<code class="highlighter-rouge">ZoomAnimator</code>はインタラクティブではない遷移となります。</p>
+
+<h3 id="zoomanimator">ZoomAnimator</h3>
+
+<p><code class="highlighter-rouge">ZoomAnimator</code>は、ズームアニメーションのロジックを担当します。つまり、ズーム対象の<code class="highlighter-rouge">UIImageView</code>を取得し、遷移元のフレームから遷移先のフレームへとアニメーションを行います。</p>
+
+<p>遷移時の画像とそのフレームを取得にはデリゲートを使います。このデリゲートは遷移元・遷移先となる<code class="highlighter-rouge">ViewController</code>が実装します。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">protocol</span> <span class="kt">ZoomAnimatorDelegate</span><span class="p">:</span> <span class="kd">class</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span>
+    <span class="kd">func</span> <span class="nf">transitionDidEndWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span>
+    <span class="kd">func</span> <span class="nf">referenceImageView</span><span class="p">(</span><span class="k">for</span> <span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImageView</span><span class="p">?</span>
+    <span class="kd">func</span> <span class="nf">referenceImageViewFrameInTransitioningView</span><span class="p">(</span><span class="k">for</span> <span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span><span class="p">?</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">ZoomAnimator</code>は、以下のプロパティを持ちます。</p>
+
+<ul>
+  <li>遷移元のデリゲート: fromDelegate</li>
+  <li>遷移先のデリゲート: toDelegate</li>
+  <li>一覧からズームインして詳細を表示しているのか、詳細からズームアウトして一覧を表示しているのかを判定: isPresenting</li>
+  <li>アニメーション時の画像: transitionImageView</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">ZoomAnimator</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
+    
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">fromDelegate</span><span class="p">:</span> <span class="kt">ZoomAnimatorDelegate</span><span class="p">?</span>
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">toDelegate</span><span class="p">:</span> <span class="kt">ZoomAnimatorDelegate</span><span class="p">?</span>
+
+    <span class="k">var</span> <span class="nv">transitionImageView</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">isPresenting</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span></code></pre></figure>
+
+<p>ここからは、ズームのアニメーションを記述していきます。
+まず、<code class="highlighter-rouge">UIViewControllerAnimatedTransitioning</code>の2つのメソッドはこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="kt">ZoomAnimator</span><span class="p">:</span> <span class="kt">UIViewControllerAnimatedTransitioning</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">transitionDuration</span><span class="p">(</span><span class="n">using</span> <span class="nv">transitionContext</span><span class="p">:</span> <span class="kt">UIViewControllerContextTransitioning</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">TimeInterval</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">isPresenting</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mf">0.5</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mf">0.25</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">animateTransition</span><span class="p">(</span><span class="n">using</span> <span class="nv">transitionContext</span><span class="p">:</span> <span class="kt">UIViewControllerContextTransitioning</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">isPresenting</span> <span class="p">{</span>
+            <span class="nf">animateZoomInTransition</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">transitionContext</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nf">animateZoomOutTransition</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">transitionContext</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">transitionDuration</code>の方はアニメーションの長さです。
+<code class="highlighter-rouge">animateTransition</code>が実際にアニメーションを行うところになります。ここで、ズームインなのか、ズームアウトなのかを判定して、メソッドを切り替えます。</p>
+
+<h4 id="アニメーションロジック">アニメーションロジック</h4>
+<p>次に実際のアニメーション部分を実装していきます。</p>
+
+<p>ロジックとしては、以下のような流れです。</p>
+
+<ul>
+  <li>遷移元、遷移先の画像を非表示にする</li>
+  <li>遷移元の画像から、アニメーション用の画像を作成する</li>
+  <li>遷移先の画像のフレームを計算する</li>
+  <li>アニメーション用の画像を、遷移元のフレームから遷移先のフレームへとアニメーションする</li>
+</ul>
+
+<h5 id="ズームイン">ズームイン</h5>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">fileprivate</span> <span class="kd">func</span> <span class="nf">animateZoomInTransition</span><span class="p">(</span><span class="n">using</span> <span class="nv">transitionContext</span><span class="p">:</span> <span class="kt">UIViewControllerContextTransitioning</span><span class="p">)</span> <span class="p">{</span>
+        
+    <span class="k">let</span> <span class="nv">containerView</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="n">containerView</span>
+    
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">toVC</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="nf">viewController</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">to</span><span class="p">),</span>
+        <span class="k">let</span> <span class="nv">fromVC</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="nf">viewController</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">from</span><span class="p">),</span>
+
+        <span class="c1">// 遷移元の画像を取得する</span>
+        <span class="k">let</span> <span class="nv">fromReferenceImageView</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="p">),</span>
+
+        <span class="c1">// 遷移先の画像を取得する</span>
+        <span class="k">let</span> <span class="nv">toReferenceImageView</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="p">),</span>
+
+        <span class="c1">// 遷移元の画像のフレームを取得する</span>
+        <span class="k">let</span> <span class="nv">fromReferenceImageViewFrame</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageViewFrameInTransitioningView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+    <span class="p">}</span>
+    
+    <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+    
+    <span class="n">toVC</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">// 遷移先の画像を見えなくしておく</span>
+    <span class="n">toReferenceImageView</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">containerView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">toVC</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+    
+    <span class="k">let</span> <span class="nv">referenceImage</span> <span class="o">=</span> <span class="n">fromReferenceImageView</span><span class="o">.</span><span class="n">image</span><span class="o">!</span>
+    
+    <span class="c1">// ズームの遷移に使用する画像を生成する</span>
+    <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">transitionImageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">referenceImage</span><span class="p">)</span>
+        <span class="n">transitionImageView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">scaleAspectFill</span>
+        <span class="n">transitionImageView</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">transitionImageView</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">fromReferenceImageViewFrame</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span> <span class="o">=</span> <span class="n">transitionImageView</span>
+        <span class="n">containerView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">transitionImageView</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// 遷移元の画像を見えなくする</span>
+    <span class="n">fromReferenceImageView</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+    
+    <span class="c1">// アニメーション後の画像のフレームを計算する</span>
+    <span class="k">let</span> <span class="nv">finalTransitionSize</span> <span class="o">=</span> <span class="nf">calculateZoomInImageFrame</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">referenceImage</span><span class="p">,</span> <span class="nv">forView</span><span class="p">:</span> <span class="n">toVC</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+    
+    <span class="kt">UIView</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">withDuration</span><span class="p">:</span> <span class="nf">transitionDuration</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">transitionContext</span><span class="p">),</span>
+                    <span class="nv">delay</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="nv">usingSpringWithDamping</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+                    <span class="nv">initialSpringVelocity</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIViewAnimationOptions</span><span class="o">.</span><span class="n">transitionCrossDissolve</span><span class="p">],</span>
+                    <span class="nv">animations</span><span class="p">:</span> <span class="p">{</span>
+
+                    <span class="c1">// アニメーション用の画像のフレームを変更する</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span><span class="p">?</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">finalTransitionSize</span>
+                    <span class="n">toVC</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.0</span>
+                    <span class="n">fromVC</span><span class="o">.</span><span class="n">tabBarController</span><span class="p">?</span><span class="o">.</span><span class="n">tabBar</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="p">},</span>
+                    <span class="nv">completion</span><span class="p">:</span> <span class="p">{</span> <span class="n">completed</span> <span class="k">in</span>
+
+                    <span class="c1">// アニメーション用の画像を取り除く</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span><span class="p">?</span><span class="o">.</span><span class="nf">removeFromSuperview</span><span class="p">()</span>
+
+                    <span class="c1">// 遷移元、遷移先の画像を表示する</span>
+                    <span class="n">toReferenceImageView</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+                    <span class="n">fromReferenceImageView</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+                    
+                    <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span> <span class="o">=</span> <span class="kc">nil</span>
+                    
+                    <span class="n">transitionContext</span><span class="o">.</span><span class="nf">completeTransition</span><span class="p">(</span><span class="o">!</span><span class="n">transitionContext</span><span class="o">.</span><span class="n">transitionWasCancelled</span><span class="p">)</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionDidEndWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionDidEndWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+    <span class="p">})</span>
+<span class="p">}</span></code></pre></figure>
+
+<h5 id="ズームアウト">ズームアウト</h5>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">fileprivate</span> <span class="kd">func</span> <span class="nf">animateZoomOutTransition</span><span class="p">(</span><span class="n">using</span> <span class="nv">transitionContext</span><span class="p">:</span> <span class="kt">UIViewControllerContextTransitioning</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">containerView</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="n">containerView</span>
+    
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">toVC</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="nf">viewController</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">UITransitionContextViewControllerKey</span><span class="o">.</span><span class="n">to</span><span class="p">),</span>
+        <span class="k">let</span> <span class="nv">fromVC</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="nf">viewController</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="kt">UITransitionContextViewControllerKey</span><span class="o">.</span><span class="n">from</span><span class="p">),</span>
+        <span class="k">let</span> <span class="nv">fromReferenceImageView</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="p">),</span>
+        <span class="k">let</span> <span class="nv">toReferenceImageView</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="p">),</span>
+        <span class="k">let</span> <span class="nv">fromReferenceImageViewFrame</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageViewFrameInTransitioningView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="p">),</span>
+        <span class="k">let</span> <span class="nv">toReferenceImageViewFrame</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageViewFrameInTransitioningView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span>
+    <span class="p">}</span>
+    
+    <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+    
+    <span class="n">toReferenceImageView</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+    
+    <span class="k">let</span> <span class="nv">referenceImage</span> <span class="o">=</span> <span class="n">fromReferenceImageView</span><span class="o">.</span><span class="n">image</span><span class="o">!</span>
+    
+    <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">transitionImageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">referenceImage</span><span class="p">)</span>
+        <span class="n">transitionImageView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">scaleAspectFill</span>
+        <span class="n">transitionImageView</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">transitionImageView</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">fromReferenceImageViewFrame</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span> <span class="o">=</span> <span class="n">transitionImageView</span>
+        <span class="n">containerView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">transitionImageView</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="n">containerView</span><span class="o">.</span><span class="nf">insertSubview</span><span class="p">(</span><span class="n">toVC</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="nv">belowSubview</span><span class="p">:</span> <span class="n">fromVC</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+    <span class="n">fromReferenceImageView</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">true</span>
+    
+    <span class="k">let</span> <span class="nv">finalTransitionSize</span> <span class="o">=</span> <span class="n">toReferenceImageViewFrame</span>
+    
+    <span class="kt">UIView</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="nv">withDuration</span><span class="p">:</span> <span class="nf">transitionDuration</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="n">transitionContext</span><span class="p">),</span>
+                    <span class="nv">delay</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="nv">options</span><span class="p">:</span> <span class="p">[],</span>
+                    <span class="nv">animations</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="n">fromVC</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span><span class="p">?</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">finalTransitionSize</span>
+                    <span class="n">toVC</span><span class="o">.</span><span class="n">tabBarController</span><span class="p">?</span><span class="o">.</span><span class="n">tabBar</span><span class="o">.</span><span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="p">},</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">{</span> <span class="n">completed</span> <span class="k">in</span>
+        
+        <span class="k">self</span><span class="o">.</span><span class="n">transitionImageView</span><span class="p">?</span><span class="o">.</span><span class="nf">removeFromSuperview</span><span class="p">()</span>
+        <span class="n">toReferenceImageView</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="n">fromReferenceImageView</span><span class="o">.</span><span class="n">isHidden</span> <span class="o">=</span> <span class="kc">false</span>
+        
+        <span class="n">transitionContext</span><span class="o">.</span><span class="nf">completeTransition</span><span class="p">(</span><span class="o">!</span><span class="n">transitionContext</span><span class="o">.</span><span class="n">transitionWasCancelled</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionDidEndWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionDidEndWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+
+    <span class="p">})</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>以上でアニメーションのロジックは完成です。</p>
+
+<h3 id="zoomtransitioncontroller">ZoomTransitionController</h3>
+
+<p><code class="highlighter-rouge">ZoomTransitionController</code>は<code class="highlighter-rouge">ZoomAnimator</code>が遷移元・遷移先をデリゲートとして参照するために、同じプロパティを持ちます。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">ZoomTransitionController</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
+    
+    <span class="k">let</span> <span class="nv">animator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span>
+
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">fromDelegate</span><span class="p">:</span> <span class="kt">ZoomAnimatorDelegate</span><span class="p">?</span>
+    <span class="k">weak</span> <span class="k">var</span> <span class="nv">toDelegate</span><span class="p">:</span> <span class="kt">ZoomAnimatorDelegate</span><span class="p">?</span>
+
+    <span class="o">...</span>
+      </code></pre></figure>
+
+<p><code class="highlighter-rouge">ZoomTransitionController</code>が遷移開始時に<code class="highlighter-rouge">ZoomAnimator</code>を返します。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="kt">ZoomTransitionController</span><span class="p">:</span> <span class="kt">UIViewControllerTransitioningDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">animationController</span><span class="p">(</span><span class="n">forPresented</span> <span class="nv">presented</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">presenting</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewControllerAnimatedTransitioning</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">isPresenting</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">fromDelegate</span> <span class="o">=</span> <span class="n">fromDelegate</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">toDelegate</span> <span class="o">=</span> <span class="n">toDelegate</span>
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">animator</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">animationController</span><span class="p">(</span><span class="n">forDismissed</span> <span class="nv">dismissed</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewControllerAnimatedTransitioning</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">isPresenting</span> <span class="o">=</span> <span class="kc">false</span>
+        <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">fromDelegate</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">toDelegate</span> <span class="o">=</span> <span class="n">tmp</span>
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">animator</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">ZoomTransitionController</span><span class="p">:</span> <span class="kt">UINavigationControllerDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">navigationController</span><span class="p">(</span><span class="n">_</span> <span class="nv">navigationController</span><span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="n">animationControllerFor</span> <span class="nv">operation</span><span class="p">:</span> <span class="kt">UINavigationControllerOperation</span><span class="p">,</span> <span class="n">from</span> <span class="nv">fromVC</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="n">to</span> <span class="nv">toVC</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewControllerAnimatedTransitioning</span><span class="p">?</span> <span class="p">{</span>
+        
+        <span class="k">if</span> <span class="n">operation</span> <span class="o">==</span> <span class="o">.</span><span class="n">push</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">isPresenting</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">fromDelegate</span> <span class="o">=</span> <span class="n">fromDelegate</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">toDelegate</span> <span class="o">=</span> <span class="n">toDelegate</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">isPresenting</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">fromDelegate</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">fromDelegate</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">toDelegate</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">animator</span><span class="o">.</span><span class="n">toDelegate</span> <span class="o">=</span> <span class="n">tmp</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">animator</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>これで、ズームのアニメーションの設定は完了しました。</p>
+
+<p>あとは、<code class="highlighter-rouge">ViewController</code>で<code class="highlighter-rouge">ZoomTransitionController</code>を使って、実際にズームの遷移を行います。</p>
+
+<h3 id="viewcontroller">ViewController</h3>
+
+<p><code class="highlighter-rouge">ZoomTransitionController</code>を使うために、<code class="highlighter-rouge">ContainerViewController</code>は<code class="highlighter-rouge">ZoomTransitionController</code>をプロパティに持ちます。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">PhotoPageContainerViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">UIGestureRecognizerDelegate</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">transitionController</span> <span class="o">=</span> <span class="kt">ZoomTransitionController</span><span class="p">()</span>
+  <span class="o">...</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">CollectionView</code>側では、セルがタップされた時にセグエを実行して画面遷移を実行します。画面遷移時には、<code class="highlighter-rouge">prepare</code>でデリゲートの設定を行います。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">override</span> <span class="kd">func</span> <span class="nf">prepare</span><span class="p">(</span><span class="k">for</span> <span class="nv">segue</span><span class="p">:</span> <span class="kt">UIStoryboardSegue</span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">segue</span><span class="o">.</span><span class="n">identifier</span> <span class="o">==</span> <span class="s">"ShowPhotoPageView"</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">nav</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">navigationController</span>
+        <span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="n">segue</span><span class="o">.</span><span class="n">destination</span> <span class="k">as!</span> <span class="kt">PhotoPageContainerViewController</span>
+
+        <span class="c1">// ナビゲーションコントローラーのデリゲートをZoomTransitionControllerに設定</span>
+        <span class="n">nav</span><span class="p">?</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">vc</span><span class="o">.</span><span class="n">transitionController</span>
+        <span class="n">vc</span><span class="o">.</span><span class="n">transitionController</span><span class="o">.</span><span class="n">fromDelegate</span> <span class="o">=</span> <span class="k">self</span>
+        <span class="n">vc</span><span class="o">.</span><span class="n">transitionController</span><span class="o">.</span><span class="n">toDelegate</span> <span class="o">=</span> <span class="n">vc</span>
+
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>これで、<code class="highlighter-rouge">UINavigationController</code>の画面遷移が起こった時に<code class="highlighter-rouge">ZoomTransitionController</code>で設定した画面遷移が実行されるようになりました。</p>
+
+<p>残るは、<code class="highlighter-rouge">ZoomAnimatorDelegate</code>を各画面で実装して、遷移元・遷移先の画像とフレームを<code class="highlighter-rouge">ZoomAnimator</code>に教えてあげれば完了です。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// CollectionView側</span>
+<span class="kd">extension</span> <span class="kt">CollectionViewController</span><span class="p">:</span> <span class="kt">ZoomAnimatorDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="p">{</span>
+        
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">transitionDidEndWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// CollectionViewのCellの位置を調整する</span>
+        <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="nf">cellForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">selectedIndexPath</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">PhotoCollectionViewCell</span>
+        
+        <span class="k">let</span> <span class="nv">cellFrame</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">frame</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">cellFrame</span><span class="o">.</span><span class="n">minY</span> <span class="o">&lt;</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">contentInset</span><span class="o">.</span><span class="n">top</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="nf">scrollToItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">selectedIndexPath</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">cellFrame</span><span class="o">.</span><span class="n">maxY</span> <span class="o">&gt;</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">contentInset</span><span class="o">.</span><span class="n">bottom</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="nf">scrollToItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">selectedIndexPath</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">bottom</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">referenceImageView</span><span class="p">(</span><span class="k">for</span> <span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImageView</span><span class="p">?</span> <span class="p">{</span>
+        <span class="c1">// CollectionViewの画像を返す</span>
+        <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="nf">cellForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">selectedIndexPath</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">PhotoCollectionViewCell</span>
+        <span class="k">return</span> <span class="n">cell</span><span class="o">.</span><span class="n">imageView</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">referenceImageViewFrameInTransitioningView</span><span class="p">(</span><span class="k">for</span> <span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span><span class="p">?</span> <span class="p">{</span>
+        <span class="c1">// CollectionViewの画像のフレームを返す</span>
+        
+        <span class="k">let</span> <span class="nv">cell</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="nf">cellForItem</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">selectedIndexPath</span><span class="p">)</span> <span class="k">as!</span> <span class="kt">PhotoCollectionViewCell</span>
+        
+        <span class="k">let</span> <span class="nv">cellFrame</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="nf">convert</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">frame</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">cellFrame</span><span class="o">.</span><span class="n">minY</span> <span class="o">&lt;</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">contentInset</span><span class="o">.</span><span class="n">top</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">cellFrame</span><span class="o">.</span><span class="n">minX</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">contentInset</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="n">cellFrame</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="n">cellFrame</span><span class="o">.</span><span class="n">height</span> <span class="o">-</span> <span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">collectionView</span><span class="o">.</span><span class="n">contentInset</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span> <span class="n">cellFrame</span><span class="o">.</span><span class="n">minY</span><span class="p">))</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">cellFrame</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="kt">ContainerViewController</span><span class="p">:</span> <span class="kt">ZoomAnimatorDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">transitionDidEndWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">referenceImageView</span><span class="p">(</span><span class="k">for</span> <span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIImageView</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">currentViewController</span><span class="o">.</span><span class="n">imageView</span>
+    <span class="p">}</span>
+    
+    <span class="kd">func</span> <span class="nf">referenceImageViewFrameInTransitioningView</span><span class="p">(</span><span class="k">for</span> <span class="nv">zoomAnimator</span><span class="p">:</span> <span class="kt">ZoomAnimator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CGRect</span><span class="p">?</span> <span class="p">{</span>        
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">currentViewController</span><span class="o">.</span><span class="n">scrollView</span><span class="o">.</span><span class="nf">convert</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">currentViewController</span><span class="o">.</span><span class="n">imageView</span><span class="o">.</span><span class="n">frame</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">currentViewController</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>これで、ズームイン・ズームアウトのアニメーションができるようになりました。</p>
+
+<h2 id="3-パンジェスチャーで戻るインタラクティブな画面遷移を実装する">3. パンジェスチャーで戻るインタラクティブな画面遷移を実装する</h2>
+
+<p>iOSの写真アプリのように下に引っ張って写真一覧に戻るには、パンジェスチャーによるインタラクティブな画面遷移を実装する必要があります。</p>
+
+<p>今回は、<code class="highlighter-rouge">ContainerViewController</code>に<code class="highlighter-rouge">UIPanGestureRecognizer</code>をつけて、下に引っ張る動作を検出し、インタラクティブな画面遷移を実行します。</p>
+
+<h3 id="ios写真アプリのインタラクティブな遷移">iOS写真アプリのインタラクティブな遷移</h3>
+
+<p>iOS写真アプリのインタラクティブな遷移は</p>
+
+<ul>
+  <li>写真をズームしていないときに下に引っ張ると、写真が徐々に小さくなる。最小サイズが存在する</li>
+  <li>写真を下に引っ張ると指の位置に写真が付いてくる</li>
+  <li>写真を下に引っ張る量に応じて背景が透けていく</li>
+  <li>上に向けて指を離すと写真がもとの位置に戻る</li>
+</ul>
+
+<p>なかなか難しそうですよね。これを一つずつ実装していきます。</p>
+
+<h3 id="全体像">全体像</h3>
+
+<p>まず実装の全体像です。</p>
+
+<ol>
+  <li>インタラクティブな画面遷移のアニメーションを担当する新しいクラス<code class="highlighter-rouge">ZoomDismissalInteractionController</code>を導入します。</li>
+  <li>先ほど実装した<code class="highlighter-rouge">ZoomTransitionController</code>には、インタラクティブな画面遷移を実行できるように<code class="highlighter-rouge">ZoomDismissalInteractionController</code>とデリゲートメソッドを追加します。</li>
+  <li>パンジェスチャーを使ってインタラクティブな画面遷移を実行するのは、<code class="highlighter-rouge">PageViewController</code>になります。そのため、<code class="highlighter-rouge">PageViewController</code>には<code class="highlighter-rouge">UIPanGestureRecognizer</code>を付けます。</li>
+</ol>
+
+<h3 id="zoomdismissalinteractioncontroller">ZoomDismissalInteractionController</h3>
+
+<p><code class="highlighter-rouge">ZoomDismissalInteractionController</code>は<code class="highlighter-rouge">UIViewControllerInteractiveTransitioning</code>を実装していて、インタラクティブな画面遷移のロジックを担当します。</p>
+
+<p><code class="highlighter-rouge">ZoomDismissalInteractionController</code>は、ユーザーがパンジェスチャーを行うたびに呼ばれるメソッドを持っていて、現在のパンジェスチャーの状態によって写真のアニメーションを制御していきます。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">ZoomDismissalInteractionController</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
+  <span class="o">...</span>
+
+  <span class="c1">// パンジェスチャーが実行されるたびに呼ばれる</span>
+  <span class="kd">func</span> <span class="nf">didPanWith</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="kt">UIPanGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// 遷移元の画像の中心点</span>
+    <span class="k">let</span> <span class="nv">anchorPoint</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">fromReferenceImageViewFrame</span><span class="o">.</span><span class="n">midX</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">fromReferenceImageViewFrame</span><span class="o">.</span><span class="n">midY</span><span class="p">)</span>
+
+    <span class="c1">// 現在の画像の移動量</span>
+    <span class="k">let</span> <span class="nv">translatedPoint</span> <span class="o">=</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="nf">translation</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">fromReferenceImageView</span><span class="p">)</span>
+    
+    <span class="c1">// 画像の縦方向の移動量</span>
+    <span class="k">let</span> <span class="nv">verticalDelta</span> <span class="o">=</span> <span class="n">translatedPoint</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">translatedPoint</span><span class="o">.</span><span class="n">y</span>
+
+    <span class="c1">// 背景の透明度</span>
+    <span class="k">let</span> <span class="nv">backgroundAlpha</span> <span class="o">=</span> <span class="nf">backgroundAlphaFor</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="n">fromVC</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="nv">withPanningVerticalDelta</span><span class="p">:</span> <span class="n">verticalDelta</span><span class="p">)</span>
+
+    <span class="c1">// 画像のスケール</span>
+    <span class="k">let</span> <span class="nv">scale</span> <span class="o">=</span> <span class="nf">scaleFor</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="n">fromVC</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="nv">withPanningVerticalDelta</span><span class="p">:</span> <span class="n">verticalDelta</span><span class="p">)</span>
+
+    <span class="c1">// パンジェスチャーの量に応じて画像のサイズを変える    </span>
+    <span class="n">transitionImageView</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="kt">CGAffineTransform</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="n">scale</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">scale</span><span class="p">)</span>
+
+    <span class="c1">// アニメーションに使用する画像の位置を計算する</span>
+    <span class="k">let</span> <span class="nv">newCenter</span> <span class="o">=</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="n">anchorPoint</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">translatedPoint</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="n">anchorPoint</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">translatedPoint</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">transitionImageView</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">scale</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
+    <span class="n">transitionImageView</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">newCenter</span>
+
+    <span class="c1">// インタラクティブな遷移をスケールに応じて更新する   </span>
+    <span class="n">transitionContext</span><span class="o">.</span><span class="nf">updateInteractiveTransition</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">scale</span><span class="p">)</span>
+
+    <span class="c1">// ユーザーがパンジェスチャーを終了した時</span>
+    <span class="k">if</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="o">.</span><span class="n">ended</span> <span class="p">{</span>
+            
+        <span class="k">let</span> <span class="nv">velocity</span> <span class="o">=</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="nf">velocity</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">fromVC</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+
+        <span class="c1">// 上方向に話した場合、遷移をキャンセルする            </span>
+        <span class="k">if</span> <span class="n">velocity</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">newCenter</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">anchorPoint</span><span class="o">.</span><span class="n">y</span> <span class="p">{</span>
+
+          <span class="c1">// キャンセルの処理</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 画面遷移アニメーションを実行する</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">ZoomDismissalInteractionController</span><span class="p">:</span> <span class="kt">UIViewControllerInteractiveTransitioning</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">startInteractiveTransition</span><span class="p">(</span><span class="n">_</span> <span class="nv">transitionContext</span><span class="p">:</span> <span class="kt">UIViewControllerContextTransitioning</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Contextの取得や画像の取得などを行い、アニメーションを設定する</span>
+
+      <span class="k">self</span><span class="o">.</span><span class="n">transitionContext</span> <span class="o">=</span> <span class="n">transitionContext</span>
+        
+      <span class="k">let</span> <span class="nv">containerView</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="n">containerView</span>
+      
+      <span class="c1">// 遷移元、遷移先の画像やフレームを取得する</span>
+      <span class="k">guard</span> <span class="k">let</span> <span class="nv">animator</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">animator</span> <span class="k">as?</span> <span class="kt">ZoomAnimator</span><span class="p">,</span>
+          <span class="k">let</span> <span class="nv">fromVC</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="nf">viewController</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">from</span><span class="p">),</span>
+          <span class="k">let</span> <span class="nv">toVC</span> <span class="o">=</span> <span class="n">transitionContext</span><span class="o">.</span><span class="nf">viewController</span><span class="p">(</span><span class="nv">forKey</span><span class="p">:</span> <span class="o">.</span><span class="n">to</span><span class="p">),</span>
+          <span class="k">let</span> <span class="nv">fromReferenceImageViewFrame</span> <span class="o">=</span> <span class="n">animator</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageViewFrameInTransitioningView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">animator</span><span class="p">),</span>
+          <span class="k">let</span> <span class="nv">toReferenceImageViewFrame</span> <span class="o">=</span> <span class="n">animator</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageViewFrameInTransitioningView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">animator</span><span class="p">),</span>
+          <span class="k">let</span> <span class="nv">fromReferenceImageView</span> <span class="o">=</span> <span class="n">animator</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">referenceImageView</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">animator</span><span class="p">)</span>
+          <span class="k">else</span> <span class="p">{</span>
+              <span class="k">return</span>
+      <span class="p">}</span>
+      
+      <span class="n">animator</span><span class="o">.</span><span class="n">fromDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="n">animator</span><span class="p">)</span>
+      <span class="n">animator</span><span class="o">.</span><span class="n">toDelegate</span><span class="p">?</span><span class="o">.</span><span class="nf">transitionWillStartWith</span><span class="p">(</span><span class="nv">zoomAnimator</span><span class="p">:</span> <span class="n">animator</span><span class="p">)</span>
+      
+      <span class="k">self</span><span class="o">.</span><span class="n">fromReferenceImageViewFrame</span> <span class="o">=</span> <span class="n">fromReferenceImageViewFrame</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">toReferenceImageViewFrame</span> <span class="o">=</span> <span class="n">toReferenceImageViewFrame</span>
+      
+      <span class="k">let</span> <span class="nv">referenceImage</span> <span class="o">=</span> <span class="n">fromReferenceImageView</span><span class="o">.</span><span class="n">image</span><span class="o">!</span>
+      
+      <span class="n">containerView</span><span class="o">.</span><span class="nf">insertSubview</span><span class="p">(</span><span class="n">toVC</span><span class="o">.</span><span class="n">view</span><span class="p">,</span> <span class="nv">belowSubview</span><span class="p">:</span> <span class="n">fromVC</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">animator</span><span class="o">.</span><span class="n">transitionImageView</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+          <span class="k">let</span> <span class="nv">transitionImageView</span> <span class="o">=</span> <span class="kt">UIImageView</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">referenceImage</span><span class="p">)</span>
+          <span class="n">transitionImageView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">scaleAspectFill</span>
+          <span class="n">transitionImageView</span><span class="o">.</span><span class="n">clipsToBounds</span> <span class="o">=</span> <span class="kc">true</span>
+          <span class="n">transitionImageView</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">fromReferenceImageViewFrame</span>
+          <span class="n">animator</span><span class="o">.</span><span class="n">transitionImageView</span> <span class="o">=</span> <span class="n">transitionImageView</span>
+          <span class="n">containerView</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">transitionImageView</span><span class="p">)</span>
+      <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="zoomtransitioncontrollerにzoomdismissalinteractioncontrollerとデリゲートメソッドを追加する">ZoomTransitionControllerにZoomDismissalInteractionControllerとデリゲートメソッドを追加する</h3>
+
+<p><code class="highlighter-rouge">ZoomDismissalInteractionController</code>をプロパティに追加し、インタラクティブな画面遷移の時は、こちらの画面遷移ロジックを使用するようにします。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">ZoomTransitionController</span><span class="p">:</span> <span class="kt">NSObject</span> <span class="p">{</span>
+
+    <span class="c1">// 追加</span>
+    <span class="k">let</span> <span class="nv">interactionController</span><span class="p">:</span> <span class="kt">ZoomDismissalInteractionController</span>
+
+    <span class="c1">// 追加</span>
+    <span class="k">var</span> <span class="nv">isInteractive</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
+
+    <span class="c1">// 追加　ZoomDismissalInteractionControllerのdidPanWithを画面から呼び出すためのラッパー</span>
+    <span class="kd">func</span> <span class="nf">didPanWith</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="kt">UIPanGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">interactionController</span><span class="o">.</span><span class="nf">didPanWith</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="n">gestureRecognizer</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>また、インタラクティブな画面遷移を実装するには、<code class="highlighter-rouge">UIViewControllerTransitioningDelegate</code>もしくは、<code class="highlighter-rouge">UINavigationControllerDelegate</code>のメソッドを追加実装する必要があります。</p>
+
+<ul>
+  <li>UIViewControllerTransitioningDelegate
+    <ul>
+      <li><code class="highlighter-rouge">func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -&gt; UIViewControllerInteractiveTransitioning?</code></li>
+      <li><code class="highlighter-rouge">func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -&gt; UIViewControllerInteractiveTransitioning?</code></li>
+    </ul>
+  </li>
+  <li>UINavigationControllerDelegate
+    <ul>
+      <li><code class="highlighter-rouge">func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -&gt; UIViewControllerInteractiveTransitioning?</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>上記のメソッドを<code class="highlighter-rouge">ZoomTransitionController</code>に実装していきます。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">extension</span> <span class="kt">ZoomTransitionController</span><span class="p">:</span> <span class="kt">UIViewControllerTransitioningDelegate</span> <span class="p">{</span>
+    <span class="o">...</span>
+
+    <span class="c1">// 追加</span>
+    <span class="kd">func</span> <span class="nf">interactionControllerForDismissal</span><span class="p">(</span><span class="n">using</span> <span class="nv">animator</span><span class="p">:</span> <span class="kt">UIViewControllerAnimatedTransitioning</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewControllerInteractiveTransitioning</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="o">!</span><span class="k">self</span><span class="o">.</span><span class="n">isInteractive</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">nil</span>
+        <span class="p">}</span>
+        
+        <span class="k">self</span><span class="o">.</span><span class="n">interactionController</span><span class="o">.</span><span class="n">animator</span> <span class="o">=</span> <span class="n">animator</span>
+        <span class="k">return</span> <span class="k">self</span><span class="o">.</span><span class="n">interactionController</span>
+    <span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<p>以上でインタラクティブな画面遷移のベースはできました。あとは実際に画面からジェスチャーを利用してこの画面遷移を実行するだけです。</p>
+
+<h3 id="uipangesgurerecognizerを付けて実際にインタラクティブな画面遷移を実行する">UIPanGesgureRecognizerを付けて、実際にインタラクティブな画面遷移を実行する</h3>
+
+<p>ズームされた画像を下に引っ張って戻れるようにするには、<code class="highlighter-rouge">PageViewController</code>に<code class="highlighter-rouge">UIPanGestureRecognizer</code>を付けて、パンジェスチャーを認識できるようにする必要があります。</p>
+
+<p><code class="highlighter-rouge">ContainerViewController</code>から<code class="highlighter-rouge">PageViewController</code>に<code class="highlighter-rouge">UIPanGestureRecognizer</code>を付けます。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">ContainerViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">UIGestureRecognizerDelegate</span> <span class="p">{</span>
+  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">...</span>
+
+    <span class="k">self</span><span class="o">.</span><span class="n">panGestureRecognizer</span> <span class="o">=</span> <span class="kt">UIPanGestureRecognizer</span><span class="p">(</span><span class="nv">target</span><span class="p">:</span> <span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kd">#selector(</span><span class="nf">didPanWith(gestureRecognizer:)</span><span class="kd">)</span><span class="p">)</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">panGestureRecognizer</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">pageViewController</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addGestureRecognizer</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">panGestureRecognizer</span><span class="p">)</span>
+
+    <span class="o">...</span>
+    
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>これで<code class="highlighter-rouge">PageViewController</code>がパンジェスチャーを認識できるようになりました。</p>
+
+<p>パンジェスチャーの処理部分の流れです。</p>
+
+<ol>
+  <li>処理開始時にインタラクティブな遷移である設定を行う</li>
+  <li>パンジェスチャーの実行時は、<code class="highlighter-rouge">ZoomTransitionController</code>の<code class="highlighter-rouge">didPanWith</code>メソッドを読んでインタラクティブな処理を行う</li>
+  <li>ジェスチャーが終わったら終了時の設定を行い、<code class="highlighter-rouge">ZoomTransitionController</code>で画面遷移を行う</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift">    <span class="kd">@objc</span> <span class="kd">func</span> <span class="nf">didPanWith</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="kt">UIPanGestureRecognizer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">gestureRecognizer</span><span class="o">.</span><span class="n">state</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">began</span><span class="p">:</span>
+            <span class="c1">// 1</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">currentViewController</span><span class="o">.</span><span class="n">scrollView</span><span class="o">.</span><span class="n">isScrollEnabled</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">transitionController</span><span class="o">.</span><span class="n">isInteractive</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">navigationController</span><span class="p">?</span><span class="o">.</span><span class="nf">popViewController</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="k">case</span> <span class="o">.</span><span class="nv">ended</span><span class="p">:</span>
+            <span class="c1">// 3.</span>
+            <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">transitionController</span><span class="o">.</span><span class="n">isInteractive</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">currentViewController</span><span class="o">.</span><span class="n">scrollView</span><span class="o">.</span><span class="n">isScrollEnabled</span> <span class="o">=</span> <span class="kc">true</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">transitionController</span><span class="o">.</span><span class="n">isInteractive</span> <span class="o">=</span> <span class="kc">false</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">transitionController</span><span class="o">.</span><span class="nf">didPanWith</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="n">gestureRecognizer</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="k">default</span><span class="p">:</span>
+            <span class="c1">// 2.</span>
+            <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">transitionController</span><span class="o">.</span><span class="n">isInteractive</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">transitionController</span><span class="o">.</span><span class="nf">didPanWith</span><span class="p">(</span><span class="nv">gestureRecognizer</span><span class="p">:</span> <span class="n">gestureRecognizer</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p>以上でインタラクティブな画面遷移の設定が完了しました。</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>記事中では全てのソースコードを載せていないのでわかりにくいところもあったかもしれませんが、ぜひ実際にサンプルを動かしてみてください。
+この動きを実現するために結構試行錯誤した結果なので、参考になるのではと思います。</p>
+
+<p><a href="https://github.com/micchyboy1023/SimplePhotoViewer">micchyboy1023/SimplePhotoViewer</a></p>
+
+<p>サンプルでは、タップすると全画面にしたり、ナビゲーションバーの表示・非表示を制御したり、画像のズームを制御したりなど、色々と説明していない部分も実装してあります。</p>
+
+<p>ズームする画像の動きはライブラリを使えばすぐ実装できますが、自分で実装してみると学びも多いと思います。</p>
+
+<p>実際のiOSの写真アプリは</p>
+
+<ul>
+  <li>画像のピンチアウトで一覧に戻ったり、</li>
+  <li>画像を上に引っ張ると画像の撮影位置、メモリーズが出てきたり</li>
+</ul>
+
+<p>とさらに複雑なことをしていて、ビューの構成がさらに複雑なのだと思います。
+さらに研究を重ねていきたいと思います。</p>
+
+<p>こちらの画面遷移は私が開発しているアプリ</p>
+
+<ul>
+  <li><a href="https://loquat.io">Loquat</a></li>
+  <li><a href="https://itunes.apple.com/jp/app/chidori-o-qini-rurinoo-jiuwo/id882285374?mt=8">Chidori</a></li>
+</ul>
+
+<p>などで使用しているので、ぜひ使ってみてください！</p>
+
+          </div>
+          <div class="pt-5">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="micchyboy1023">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>          
+          </div>
+        </article>
+        <hr />
+        <div>
+        <h3>オススメ記事</h3>
+          <ul class="list-unstyled pb-5">
+          
+          
+          
+
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2018/05/06/embedded-framework.html">
+                  <small class="decoration-none text-muted">2018/5/6<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する</h3>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2017/10/05/high-sierra-login.html">
+                  <small class="decoration-none text-muted">2017/10/5<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">macOS 10.13 High Sierraのログイン画面で、Othersが表示されるのを直す方法</h3>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2016/12/11/iOS-MVVM.html">
+                  <small class="decoration-none text-muted">2016/12/11<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">iOSでMVVM（バインディングを使わない）</h3>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2016/09/23/iOS-Redux-Architecture-with-coredata.html">
+                  <small class="decoration-none text-muted">2016/9/23<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">iOS Redux Architecture with CoreData</h3>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2016/06/14/wwdc2016-keynote-summary.html">
+                  <small class="decoration-none text-muted">2016/6/14<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">WWDC2016 Keynote Summary</h3>
+                  
+                  <div alt="WWDC2016 Keynote Summary" class="my-4 media-img rounded" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2016-06-14/2016-06-14.jpg)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2016/05/22/apple-id-corp.html">
+                  <small class="decoration-none text-muted">2016/5/22<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">How to register iOS Developer Program as a Corporation in Japan?</h3>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2016/03/18/how-is-your-today.html">
+                  <small class="decoration-none text-muted">2016/3/18<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">How is your today?</h3>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2015/12/27/start-sass-by-npm.html">
+                  <small class="decoration-none text-muted">2015/12/27<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">npmでミニマムに始めるSass</h3>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2015/11/25/install-cocoapods-to-elcapitan.html">
+                  <small class="decoration-none text-muted">2015/11/25<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">OS X 10.10.11 El Capitan にCocoaPodsをインストールする</h3>
+                  
+                  <div alt="OS X 10.10.11 El Capitan にCocoaPodsをインストールする" class="my-4 media-img rounded" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2015-11-25/2015-11-25.jpg)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-md-3">
+          <div class="mb-4">
+    <h5 class="mt-0 mb-2">運営者プロフィール</h5>
+    <div class="ml-2">
+        <div class="w-50 py-3">
+            <img class="rounded-circle" src="https://micchyboy1023.github.io/assets/layouts/about.png" alt="micchyboy"/>
+        </div>
+        <h6 class="mt-0 mb-2">micchyboy</h6>
+        <p>ソフトウェアエンジニアです。ソフトウェアエンジニアリング、アプリ開発、仮想通貨、家族、ガジェット、Apple関係のことについて書いています。</p>
+    </div>
+</div>
+<div class="mb-4">
+    <h5 class="mt-0 mb-2">カテゴリー</h5>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+        <a class="nav-link py-1" href="https://micchyboy1023.github.io/">全て(39)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/design/index.html">デザイン(7)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/development/index.html">開発(10)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/family/index.html">家族(11)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/apple/index.html">apple(3)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/gadget/index.html">ガジェット(2)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/cryptocurrency/index.html">仮想通貨(5)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/apps/index.html">アプリ(1)</a>
+        </li>
+        
+        </ul>
+</div>
+<div class="mb-4">
+    <h5 class="mt-3 mb-2">新着記事</h5>
+    <ul class="nav flex-column">
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html">iOSの写真アプリのような画面遷移とインタラクションを実装する</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://micchyboy1023.github.io/gadget/2018/05/11/zozosuit.html">ついに！ZOZOSUIT（ゾゾスーツ）が届いたので計測してみた</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://micchyboy1023.github.io/apps/2018/05/09/loquat-app.html">皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロクアット)の紹介</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://micchyboy1023.github.io/cryptocurrency/2018/05/08/bitmex-bot-sample.html">BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://micchyboy1023.github.io/cryptocurrency/2018/05/07/project-regain.html">仮想通貨ICO REGAIN（リゲイン）の4月配当をもらえました</a>
+        </li>
+        
+    </ul>
+</div>
+<div class="mb-4">
+    <h5 class="mt-3 mb-2">Twitter</h5>
+    <a class="twitter-timeline" href="https://twitter.com/micchyboy1023?ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets by micchyboy1023</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</a>
+</div>
+<div class="mb-4">
+    <a href="https://signup.bitbanktrade.jp/invite/B9090YTOL">
+        <img src="https://micchyboy1023.github.io/assets/layouts/bitbank.png" alt="bitbank"/>
+    </a>
+</div>
+<div>
+    <a href="https://bitflyer.jp?bf=srgylfz5" target="_blank"><img src="https://bitflyer.jp/Images/Affiliate/affi_04_300x250.gif?201709" alt="bitFlyer ビットコインを始めるなら安心・安全な取引所で"></a>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <div class="container">
+  <hr />
+</div>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <div class="py-4">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://micchyboy1023.github.io/">Blog</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://micchyboy1023.github.io/about.html">About</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//twitter.com/micchyboy1023">Twitter</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//github.com/micchyboy1023">Github</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//medium.com/@micchyboy1023">Medium</a>
+        </li>
+      </ul>
+      <p>© 2018 micchyboy</p>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="/js/site.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-21581479-6', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </body>
+</html>

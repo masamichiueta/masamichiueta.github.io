@@ -124,7 +124,9 @@
               
             </p>
             
-            <p>開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分割しました。</p>
+            <p><em>この投稿はQiitaに投稿したものと同じです。<a href="https://qiita.com/micchyboy1023/items/db84ca3d0d23a37d8866">Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する</a></em></p>
+
+<p>開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分割しました。</p>
 
 <p>分割した目的としては、</p>
 
@@ -212,11 +214,10 @@
 
 <p>そのため、<code class="highlighter-rouge">NSPersistentContainer</code>を初期化する際には、<code class="highlighter-rouge">Model</code>の中の定義ファイルを明示的に指定する必要があります。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let modelURL = Bundle(for: Modelの中のクラス.self).url(forResource: "定義ファイル名", withExtension: "momd")!
-let mom = NSManagedObjectModel(contentsOf: modelURL)!
-let container = NSPersistentContainer(name: "コンテナ名", managedObjectModel: mom)
-        
-</code></pre></div></div>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">modelURL</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="kt">Modelの中のクラス</span><span class="o">.</span><span class="k">self</span><span class="p">)</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"定義ファイル名"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"momd"</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">mom</span> <span class="o">=</span> <span class="kt">NSManagedObjectModel</span><span class="p">(</span><span class="nv">contentsOf</span><span class="p">:</span> <span class="n">modelURL</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">container</span> <span class="o">=</span> <span class="kt">NSPersistentContainer</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"コンテナ名"</span><span class="p">,</span> <span class="nv">managedObjectModel</span><span class="p">:</span> <span class="n">mom</span><span class="p">)</span>
+        </code></pre></figure>
 
 <p>この辺は、<code class="highlighter-rouge">Bundle.main</code>を使ってリソースを読み込んでいた部分でも注意する必要があると思います。</p>
 
@@ -240,6 +241,26 @@ let container = NSPersistentContainer(name: "コンテナ名", managedObjectMode
           
           
 
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a href="https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html">
+                  <small class="decoration-none text-muted">2018/5/13<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">iOSの写真アプリのような画面遷移とインタラクションを実装する</h3>
+                  
+                  <div alt="iOSの写真アプリのような画面遷移とインタラクションを実装する" class="my-4 media-img rounded" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2018-05-13/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
           
             
 
@@ -581,7 +602,7 @@ let container = NSPersistentContainer(name: "コンテナ名", managedObjectMode
     <h5 class="mt-0 mb-2">カテゴリー</h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-        <a class="nav-link py-1" href="https://micchyboy1023.github.io/">全て(38)</a>
+        <a class="nav-link py-1" href="https://micchyboy1023.github.io/">全て(39)</a>
         </li>
         
         <li class="nav-item">
@@ -591,7 +612,7 @@ let container = NSPersistentContainer(name: "コンテナ名", managedObjectMode
         
         <li class="nav-item">
             
-                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/development/index.html">開発(9)</a>
+                <a class="nav-link  py-1" href="https://micchyboy1023.github.io/category/development/index.html">開発(10)</a>
         </li>
         
         <li class="nav-item">
@@ -626,6 +647,10 @@ let container = NSPersistentContainer(name: "コンテナ名", managedObjectMode
     <ul class="nav flex-column">
         
         <li class="nav-item">
+            <a class="nav-link py-1" href="https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html">iOSの写真アプリのような画面遷移とインタラクションを実装する</a>
+        </li>
+        
+        <li class="nav-item">
             <a class="nav-link py-1" href="https://micchyboy1023.github.io/gadget/2018/05/11/zozosuit.html">ついに！ZOZOSUIT（ゾゾスーツ）が届いたので計測してみた</a>
         </li>
         
@@ -639,10 +664,6 @@ let container = NSPersistentContainer(name: "コンテナ名", managedObjectMode
         
         <li class="nav-item">
             <a class="nav-link py-1" href="https://micchyboy1023.github.io/cryptocurrency/2018/05/07/project-regain.html">仮想通貨ICO REGAIN（リゲイン）の4月配当をもらえました</a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link py-1" href="https://micchyboy1023.github.io/development/2018/05/06/embedded-framework.html">Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する</a>
         </li>
         
     </ul>
