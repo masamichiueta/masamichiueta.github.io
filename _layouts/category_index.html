@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign categorypath = page.category | urlencode %}
+
 <section class="hero text-center">
   <div class="overlay"></div>
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
@@ -56,7 +58,8 @@ layout: default
             {% elsif page == 1 %}
               <a class="mr-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">{{ page }}</a>
             {% else %}
-              <a class="mr-3" href="{{ site.paginate_path | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+              {% assign nextpage = '/category/' | urlencode | append: categorypath | append: site.paginate_path | replace: '//', '/' | replace: ':num', page %}
+              <a class="mr-3" href="{{nextpage}}">{{ page }}</a>
             {% endif %}
           {% endfor %}
 

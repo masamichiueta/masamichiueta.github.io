@@ -13,6 +13,8 @@ tags:
 - apple
 ---
 
+*この投稿はQiitaに投稿したものと同じです。[Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する](https://qiita.com/micchyboy1023/items/db84ca3d0d23a37d8866)*
+
 開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分割しました。
 
 分割した目的としては、
@@ -85,12 +87,13 @@ CoreData周りの初期化処理には、`NSPersistentContainer`を使用して�
 
 そのため、`NSPersistentContainer`を初期化する際には、`Model`の中の定義ファイルを明示的に指定する必要があります。
 
-```
+{% highlight swift %}
+
 let modelURL = Bundle(for: Modelの中のクラス.self).url(forResource: "定義ファイル名", withExtension: "momd")!
 let mom = NSManagedObjectModel(contentsOf: modelURL)!
 let container = NSPersistentContainer(name: "コンテナ名", managedObjectModel: mom)
         
-```
+{% endhighlight %}
 
 この辺は、`Bundle.main`を使ってリソースを読み込んでいた部分でも注意する必要があると思います。
 
