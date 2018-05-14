@@ -458,3 +458,10 @@ a {
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   margin-top: 3rem;
   margin-bottom: 1.5rem; }
+
+.card-no-border {
+  border: 0px; }
+
+.card-footer-works {
+  background-color: #fff;
+  border-top: 0px; }
