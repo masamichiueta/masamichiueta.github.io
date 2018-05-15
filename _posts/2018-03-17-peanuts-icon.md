@@ -4,6 +4,7 @@ title: "Twitterアイコンにおすすめ！スヌーピーのアイコンを�
 description: "Twitterアイコンにおすすめ！スヌーピーのアイコンをゲットできるサイトの紹介"
 date: 2018-03-17
 hero-image: "cover.png"
+hero-caption: <a href="http://www.peanutizeme.com">peanutizeme Webサイト</a>よりスクリーンショット
 categories: design
 lang: ja_JP
 tags:

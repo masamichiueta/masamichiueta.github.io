@@ -4,6 +4,7 @@ title: "仮想通貨を安全に保存！ハードウェアウォレット Ledge
 description: "仮想通貨を安全に保存！ハードウェアウォレット Ledger Nano Sの使い方"
 date: 2018-02-11
 hero-image: "cover.png"
+hero-caption: <a href="https://www.ledgerwallet.com">Ledger Wallet Webサイト</a>よりスクリーンショット
 categories: cryptocurrency
 lang: ja_JP
 tags:

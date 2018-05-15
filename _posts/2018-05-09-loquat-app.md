@@ -4,7 +4,8 @@ title: "皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロ�
 description: "皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロクアット)の紹介"
 date: 2018-05-09
 categories: apps
-hero-image: "cover.png"
+hero-image: cover.png
+hero-caption: <a href="https://loquat.io/">Loquat Webサイト</a>よりスクリーンショット
 lang: ja_JP
 tags:
 - 皮膚

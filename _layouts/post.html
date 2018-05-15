@@ -13,6 +13,11 @@ layout: default
       <h1 itemprop="name headline">{{ page.title }}</h1>
     </div>
   </div>
+  <span class="text-left text-dark">
+    {% if page.hero-caption %}
+    <small>画像出典：{{page.hero-caption}}</small>
+    {% endif %}
+  </span>
 </section>
 
 <section class="post-content py-5">

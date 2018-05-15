@@ -5,6 +5,7 @@ description: "仮想通貨ICO REGAIN（リゲイン）の4月配当をもらえ�
 date: 2018-05-07
 categories: cryptocurrency
 hero-image: "cover.png"
+hero-caption: <a href="https://project-regain.io">REGAIN Webサイト</a>よりスクリーンショット
 lang: ja_JP
 tags:
 - 仮想通貨

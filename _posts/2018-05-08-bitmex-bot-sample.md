@@ -5,6 +5,7 @@ description: "BitMEX ビットコインFXの自動取引Botのサンプルを動
 date: 2018-05-08
 categories: cryptocurrency
 hero-image: "cover.png"
+hero-caption: <a href="https://www.bitmex.com">BitMEX Webサイト</a>よりスクリーンショット
 lang: ja_JP
 tags: 
 - 仮想通貨
