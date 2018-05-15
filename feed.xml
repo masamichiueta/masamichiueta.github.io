@@ -5,8 +5,8 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 May 2018 12:01:02 +0900</pubDate>
-    <lastBuildDate>Tue, 15 May 2018 12:01:02 +0900</lastBuildDate>
+    <pubDate>Wed, 16 May 2018 00:52:54 +0900</pubDate>
+    <lastBuildDate>Wed, 16 May 2018 00:52:54 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -1071,68 +1071,6 @@ pip install bitmex-market-maker
       </item>
     
       <item>
-        <title>仮想通貨ICO REGAIN（リゲイン）の4月配当をもらえました</title>
-        <description>&lt;h1 id=&quot;プロジェクトregainリゲイン&quot;&gt;プロジェクトREGAIN（リゲイン）&lt;/h1&gt;
-
-&lt;p&gt;仮想通貨ICOにも何か参加してみたいと思っていたところ、「マイニングします！」というシンプルなプロジェクトREGAIN（リゲイン）を見つけたので、去年の年末のクラウドセールで参加していました。&lt;/p&gt;
-
-&lt;p&gt;REGAIN（リゲイン）の目的は&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ユーザー主導のビットコイン市場を取り戻し、ビットコイン市場の安定を実現します&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;とのこと。&lt;/p&gt;
-
-&lt;p&gt;ホワイトペーパーには、第1段階のクラウドセール購入で、&lt;code class=&quot;highlighter-rouge&quot;&gt;1REG 4000ドル（約45万円)&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;1REGあたり0.034BTC/月（報酬見込み）&lt;/code&gt;、&lt;code class=&quot;highlighter-rouge&quot;&gt;月利8.5%&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;年利102%&lt;/code&gt;と書いてありまして、こんなに本当にもらえるのか？という感じでした。&lt;/p&gt;
-
-&lt;p&gt;もらえないとか詐欺だったら危ないなと思ったので、遊びの感覚で当時のレートで2万円くらいでICOに参加してみました。まぁ、本当にお試しという感覚です。
-詐欺だったら、残念！という感じですかね。&lt;/p&gt;
-
-&lt;h2 id=&quot;配当がもらえました&quot;&gt;配当がもらえました&lt;/h2&gt;
-
-&lt;p&gt;少額なので気にせず放置していましたが、4月16日にきちんと配当がもらえていました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-07/1.png&quot; alt=&quot;REGAIN 配当&quot; title=&quot;REGAIN 配当&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;0.02881500REG&lt;/code&gt;に対して、&lt;code class=&quot;highlighter-rouge&quot;&gt;0.00048985BTC&lt;/code&gt;が付与されていました。&lt;/p&gt;
-
-&lt;p&gt;届いたメールによると、4月は半分月らしく、&lt;code class=&quot;highlighter-rouge&quot;&gt;1REG&lt;/code&gt;あたり&lt;code class=&quot;highlighter-rouge&quot;&gt;0.017BTC&lt;/code&gt;の配当のようです。4/1〜4/15までの配当という計算ですかね？
-5月からは、&lt;code class=&quot;highlighter-rouge&quot;&gt;1REG&lt;/code&gt;あたり&lt;code class=&quot;highlighter-rouge&quot;&gt;0.034BTC&lt;/code&gt;になるとこのこと。&lt;/p&gt;
-
-&lt;p&gt;こちらはまた確認してレポートしていきたいと思いますが、配当は無事されました。&lt;/p&gt;
-
-&lt;p&gt;REGAIN（リゲイン）からのメールでは、配当を再投資して複利効果を最大化しましょうと強調されていたので、配当は再投資しておきました。
-まんまと乗せられている感はありつつも、少額なので気にせずそのまま乗せられてみるのもいいかなと思っています。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-07/2.png&quot; alt=&quot;REGAI 配当　再投資&quot; title=&quot;REGAIN 配当　再投資&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;また、5月にどうなるかはレポートしたいと思います。5/15は来週ですね。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 07 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/cryptocurrency/2018/05/07/project-regain.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/05/07/project-regain.html</guid>
-        
-        <category>仮想通貨</category>
-        
-        <category>regain</category>
-        
-        <category>リゲイン</category>
-        
-        <category>ico</category>
-        
-        <category>bitcoin</category>
-        
-        <category>ビットコイン</category>
-        
-        <category>mining</category>
-        
-        <category>マイニング</category>
-        
-        
-        <category>cryptocurrency</category>
-        
-      </item>
-    
-      <item>
         <title>Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する</title>
         <description>&lt;p&gt;&lt;em&gt;この投稿はQiitaに投稿したものと同じです。&lt;a href=&quot;https://qiita.com/micchyboy1023/items/db84ca3d0d23a37d8866&quot;&gt;Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
@@ -1490,6 +1428,61 @@ pip install bitmex-market-maker
         <category>横浜</category>
         
         <category>お出かけ</category>
+        
+        
+        <category>family</category>
+        
+      </item>
+    
+      <item>
+        <title>おすすめのドライブレコーダー BRISIE ドライブレコーダーを導入しました。</title>
+        <description>&lt;h1 id=&quot;brisie-ドライブレコーダーを導入しました&quot;&gt;BRISIE ドライブレコーダーを導入しました&lt;/h1&gt;
+
+&lt;p&gt;ついにドライブレコーダーを導入しました！
+導入したのは、BRISEのドライブレコーダーです。&lt;/p&gt;
+
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B07B45ZGDK&amp;amp;linkId=6666d95b1db28dd341d9ea79467dbc13&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;タイムセールで購入し、3880円で購入しました。&lt;/p&gt;
+
+&lt;p&gt;こちらのドライブレコーダーを使用するには、microsdカードも必要ですので、同時に購入しました。&lt;/p&gt;
+
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B06XSV23T1&amp;amp;linkId=9a0289bdd67272eb6df3c53c4dbca84e&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;性能&quot;&gt;性能&lt;/h2&gt;
+
+&lt;p&gt;購入した理由としては、以下の3点に対応していたからです。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;様々な温度下で使用可能&quot;&gt;様々な温度下で使用可能&lt;/h3&gt;
+&lt;p&gt;内部回路から熱を逃がす金属フレームの設計により、電源接続時は-20℃～70℃、またバッテリー駆動(駐車モニター用)の場合は、0℃～70℃の動作温度で使用可能です。&lt;/p&gt;
+
+&lt;h3 id=&quot;エンジン連動&quot;&gt;エンジン連動&lt;/h3&gt;
+&lt;p&gt;エンジンを入れると自動的に電源がONになり，切ると自動的に電源がOFFになります。電源の入れ忘れなどもなく、常に万が一の事故に備えることができます。&lt;/p&gt;
+
+&lt;h3 id=&quot;取り付け簡単工具不要&quot;&gt;取り付け簡単/工具不要&lt;/h3&gt;
+&lt;p&gt;シガーソケットから電源を繋いで、両面テープ（吸盤）から保護フィルムをはがし、フロントガラスに取り付けるだけ、とても簡単です！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;Webページから抜粋&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;使用感&quot;&gt;使用感&lt;/h2&gt;
+
+&lt;p&gt;早速取り付けてみましたが、エンジンを起動すると自動で録画が始まるので、とても安心です。&lt;/p&gt;
+
+&lt;p&gt;やはりドライブレコーダーは必要だと思っていましたが、やっぱりあると安心感が違いますね！
+こちらの商品はAmazonのレビューも評価が高いので、導入を検討されている方、いいのではないでしょうか？&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 29 Apr 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/family/2018/04/29/drive-recorder.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/04/29/drive-recorder.html</guid>
+        
+        <category>ドライブレコーダー</category>
+        
+        <category>BRISE</category>
         
         
         <category>family</category>
