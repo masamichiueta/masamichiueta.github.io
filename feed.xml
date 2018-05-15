@@ -5,9 +5,50 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 May 2018 15:45:48 +0900</pubDate>
-    <lastBuildDate>Mon, 14 May 2018 15:45:48 +0900</lastBuildDate>
+    <pubDate>Tue, 15 May 2018 12:01:02 +0900</pubDate>
+    <lastBuildDate>Tue, 15 May 2018 12:01:02 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>XRPのウォレットの残高を確認するアプリを作りました</title>
+        <description>&lt;h1 id=&quot;xrpのウォレットの残高を確認するアプリ&quot;&gt;XRPのウォレットの残高を確認するアプリ&lt;/h1&gt;
+
+&lt;p&gt;Ledger Nanoでリップルを保有している人が簡単に確認できるようにXRPのウォレットの残高を確認するアプリを作りました。&lt;/p&gt;
+
+&lt;video width=&quot;320&quot; controls=&quot;&quot;&gt;
+  &lt;source src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-15/xrp.mov&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;p&gt;※ムービー中のアドレスは取引所のものです。&lt;/p&gt;
+
+&lt;p&gt;Ledger Nanoで保有している人はいわゆるガチホの人が多いのかなと思っています。いちいちWebサイトでアドレス入力して確認するのも面倒だったので作ってしまいました。&lt;/p&gt;
+
+&lt;p&gt;入力したアドレスはiPhoneのキーチェーンというセキュアな所に保存され、サーバーなどには保存されません。&lt;/p&gt;
+
+&lt;p&gt;使っているのは公式のリップルのAPI, BitbankのパブリックAPI、CoincheckのパブリックAPIです。&lt;/p&gt;
+
+&lt;p&gt;AppStoreでは公開していませんが、ソースはGitHubで公開していて、Xcodeを使っていて開発者ライセンスを持っている人であればiPhoneにインストールできます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/micchyboy1023/XRP&quot;&gt;GitHub XRP&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 May 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/cryptocurrency/2018/05/15/xrp-balance-checker.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/05/15/xrp-balance-checker.html</guid>
+        
+        <category>仮想通貨</category>
+        
+        <category>リップル</category>
+        
+        <category>XRP</category>
+        
+        <category>アプリ</category>
+        
+        <category>iOS</category>
+        
+        
+        <category>cryptocurrency</category>
+        
+      </item>
     
       <item>
         <title>iOSの写真アプリのような画面遷移とインタラクションを実装する</title>
@@ -1449,61 +1490,6 @@ pip install bitmex-market-maker
         <category>横浜</category>
         
         <category>お出かけ</category>
-        
-        
-        <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>おすすめのドライブレコーダー BRISIE ドライブレコーダーを導入しました。</title>
-        <description>&lt;h1 id=&quot;brisie-ドライブレコーダーを導入しました&quot;&gt;BRISIE ドライブレコーダーを導入しました&lt;/h1&gt;
-
-&lt;p&gt;ついにドライブレコーダーを導入しました！
-導入したのは、BRISEのドライブレコーダーです。&lt;/p&gt;
-
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B07B45ZGDK&amp;amp;linkId=6666d95b1db28dd341d9ea79467dbc13&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;タイムセールで購入し、3880円で購入しました。&lt;/p&gt;
-
-&lt;p&gt;こちらのドライブレコーダーを使用するには、microsdカードも必要ですので、同時に購入しました。&lt;/p&gt;
-
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B06XSV23T1&amp;amp;linkId=9a0289bdd67272eb6df3c53c4dbca84e&quot;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&quot;性能&quot;&gt;性能&lt;/h2&gt;
-
-&lt;p&gt;購入した理由としては、以下の3点に対応していたからです。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;様々な温度下で使用可能&quot;&gt;様々な温度下で使用可能&lt;/h3&gt;
-&lt;p&gt;内部回路から熱を逃がす金属フレームの設計により、電源接続時は-20℃～70℃、またバッテリー駆動(駐車モニター用)の場合は、0℃～70℃の動作温度で使用可能です。&lt;/p&gt;
-
-&lt;h3 id=&quot;エンジン連動&quot;&gt;エンジン連動&lt;/h3&gt;
-&lt;p&gt;エンジンを入れると自動的に電源がONになり，切ると自動的に電源がOFFになります。電源の入れ忘れなどもなく、常に万が一の事故に備えることができます。&lt;/p&gt;
-
-&lt;h3 id=&quot;取り付け簡単工具不要&quot;&gt;取り付け簡単/工具不要&lt;/h3&gt;
-&lt;p&gt;シガーソケットから電源を繋いで、両面テープ（吸盤）から保護フィルムをはがし、フロントガラスに取り付けるだけ、とても簡単です！&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;em&gt;Webページから抜粋&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;使用感&quot;&gt;使用感&lt;/h2&gt;
-
-&lt;p&gt;早速取り付けてみましたが、エンジンを起動すると自動で録画が始まるので、とても安心です。&lt;/p&gt;
-
-&lt;p&gt;やはりドライブレコーダーは必要だと思っていましたが、やっぱりあると安心感が違いますね！
-こちらの商品はAmazonのレビューも評価が高いので、導入を検討されている方、いいのではないでしょうか？&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 29 Apr 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/family/2018/04/29/drive-recorder.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/04/29/drive-recorder.html</guid>
-        
-        <category>ドライブレコーダー</category>
-        
-        <category>BRISE</category>
         
         
         <category>family</category>
