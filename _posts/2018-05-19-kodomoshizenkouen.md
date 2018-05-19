@@ -4,6 +4,7 @@ title: "横浜周辺の週末子供とお出かけスポット！こども自然
 description: "横浜周辺の週末子供とお出かけスポット！こども自然公園（大池公園）の紹介"
 date: 2018-05-19
 categories: family
+hero-image: "kodomoshizenkouen.jpg"
 lang: ja_JP
 tags:
 - 横浜
