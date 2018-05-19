@@ -8,7 +8,7 @@ hero-image: "contributions.png"
 lang: ja_JP
 tags:
 - GitHub
-- Git
+- git
 ---
 
 # GitHubのコミットログ一覧を表示する
