@@ -5,8 +5,8 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>http://localhost:4000http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 May 2018 00:14:58 +0900</pubDate>
-    <lastBuildDate>Sun, 20 May 2018 00:14:58 +0900</lastBuildDate>
+    <pubDate>Sun, 20 May 2018 00:18:16 +0900</pubDate>
+    <lastBuildDate>Sun, 20 May 2018 00:18:16 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -25,7 +25,7 @@
 &lt;p&gt;毎日コミットすることはできませんでしたが、けっこう草を生やすことができました！&lt;/p&gt;
 
 &lt;p&gt;以前から活動していたチーム活動がなくなってしまいプライベートリポジトリをGitLabに移行したので、記念に作っておきました。
-現在私のアカウントに草は生えておりません。&lt;/p&gt;
+&lt;strong&gt;現在私のアカウントに草は生えておりません。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;会社でGitHubを使用するようになったので、個人ではパブリックなリポジトリへの貢献を増やしていきたいと思います。&lt;/p&gt;
 </description>
