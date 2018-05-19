@@ -3,11 +3,44 @@
   <channel>
     <title>micchyboy</title>
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
-    <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
-    <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 May 2018 21:48:44 +0900</pubDate>
-    <lastBuildDate>Sat, 19 May 2018 21:48:44 +0900</lastBuildDate>
+    <link>http://localhost:4000http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 20 May 2018 00:14:58 +0900</pubDate>
+    <lastBuildDate>Sun, 20 May 2018 00:14:58 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator</title>
+        <description>&lt;h1 id=&quot;githubのコミットログ一覧を表示する&quot;&gt;GitHubのコミットログ一覧を表示する&lt;/h1&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Hi 👋&lt;br /&gt;&lt;br /&gt;I made a simple tool to generate an image of all your Github contributions! So you can tweet it ✨&lt;br /&gt;&lt;br /&gt;Check it out here: &lt;a href=&quot;https://t.co/boeScBUOza&quot;&gt;https://t.co/boeScBUOza&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Disclaimer: It’s still very raw. Just wanted something for myself, but feel free to send PRs and submit issues ♥️ &lt;a href=&quot;https://t.co/wgVLK7t0w4&quot;&gt;pic.twitter.com/wgVLK7t0w4&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sallar 👨🏻‍💻 (@sallar) &lt;a href=&quot;https://twitter.com/sallar/status/991307546978930688?ref_src=twsrc%5Etfw&quot;&gt;2018年5月1日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;GitHubのコミットログ一覧を表示する&lt;strong&gt;GitHub Contributions Chart Generator&lt;/strong&gt;です。&lt;/p&gt;
+
+&lt;p&gt;2015年の終わり頃から、GitHubに毎日コミットしようという自分ルールを作って実践してきたので、ログを作って見ました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-20/contributions.png&quot; alt=&quot;GitHub Contribution&quot; title=&quot;GitHub Contribution&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;毎日コミットすることはできませんでしたが、けっこう草を生やすことができました！&lt;/p&gt;
+
+&lt;p&gt;以前から活動していたチーム活動がなくなってしまいプライベートリポジトリをGitLabに移行したので、記念に作っておきました。
+現在私のアカウントに草は生えておりません。&lt;/p&gt;
+
+&lt;p&gt;会社でGitHubを使用するようになったので、個人ではパブリックなリポジトリへの貢献を増やしていきたいと思います。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 20 May 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/development/2018/05/20/github-commit-history.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/2018/05/20/github-commit-history.html</guid>
+        
+        <category>GitHub</category>
+        
+        <category>Git</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>横浜周辺の週末子供とお出かけスポット！こども自然公園（大池公園）の紹介</title>
@@ -22,7 +55,7 @@
 
 &lt;p&gt;公園の中心には大きな池がありまして、亀やカモが泳いでいたり、釣りをしている人がいます。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-19/kodomoshizenkouen.jpg&quot; alt=&quot;こども自然公園（大池公園）&quot; title=&quot;こども自然公園（大池公園）&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-19/kodomoshizenkouen.jpg&quot; alt=&quot;こども自然公園（大池公園）&quot; title=&quot;こども自然公園（大池公園）&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;春にはこの池周辺に桜が咲いて、花見にぴったりですよ！&lt;/p&gt;
 
@@ -32,8 +65,8 @@
 
 &lt;p&gt;こちら&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-19/toridenomori.jpg&quot; alt=&quot;とりでの森&quot; title=&quot;とりでの森&quot; /&gt;
-&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-19/toridenomori2.jpg&quot; alt=&quot;とりでの森&quot; title=&quot;とりでの森&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-19/toridenomori.jpg&quot; alt=&quot;とりでの森&quot; title=&quot;とりでの森&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-19/toridenomori2.jpg&quot; alt=&quot;とりでの森&quot; title=&quot;とりでの森&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;斜面一面がアスレチックになっています。&lt;/p&gt;
 
@@ -45,14 +78,14 @@
 
 &lt;p&gt;&lt;a href=&quot;http://www.hama-midorinokyokai.or.jp/zoo/makigahara/&quot;&gt;まきが原ちびっこ動物園&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-19/makigaharadoubutsuen.jpg&quot; alt=&quot;まきが原ちびっこ動物園&quot; title=&quot;まきが原ちびっこ動物園&quot; /&gt;
-&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-19/makigaharadoubutsuen2.jpg&quot; alt=&quot;まきが原ちびっこ動物園&quot; title=&quot;まきが原ちびっこ動物園&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-19/makigaharadoubutsuen.jpg&quot; alt=&quot;まきが原ちびっこ動物園&quot; title=&quot;まきが原ちびっこ動物園&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-19/makigaharadoubutsuen2.jpg&quot; alt=&quot;まきが原ちびっこ動物園&quot; title=&quot;まきが原ちびっこ動物園&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;触れ合える日や時間は決まっているので、事前にWebサイトで確認することをオススメします。&lt;/p&gt;
 </description>
         <pubDate>Sat, 19 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/family/2018/05/19/kodomoshizenkouen.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/05/19/kodomoshizenkouen.html</guid>
+        <link>http://localhost:4000/family/2018/05/19/kodomoshizenkouen.html</link>
+        <guid isPermaLink="true">http://localhost:4000/family/2018/05/19/kodomoshizenkouen.html</guid>
         
         <category>横浜</category>
         
@@ -106,8 +139,8 @@
 
 </description>
         <pubDate>Fri, 18 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/family/2018/05/18/amazon.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/05/18/amazon.html</guid>
+        <link>http://localhost:4000/family/2018/05/18/amazon.html</link>
+        <guid isPermaLink="true">http://localhost:4000/family/2018/05/18/amazon.html</guid>
         
         <category>Amazon</category>
         
@@ -129,7 +162,7 @@
 &lt;p&gt;Ledger Nanoでリップルを保有している人が簡単に確認できるようにXRPのウォレットの残高を確認するアプリを作りました。&lt;/p&gt;
 
 &lt;video width=&quot;320&quot; controls=&quot;&quot;&gt;
-  &lt;source src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-15/xrp.mov&quot; type=&quot;video/mp4&quot; /&gt;
+  &lt;source src=&quot;http://localhost:4000/assets/posts/2018-05-15/xrp.mov&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
 &lt;p&gt;※ムービー中のアドレスは取引所のものです。&lt;/p&gt;
@@ -145,8 +178,8 @@
 &lt;p&gt;&lt;a href=&quot;https://github.com/micchyboy1023/XRP&quot;&gt;GitHub XRP&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/cryptocurrency/2018/05/15/xrp-balance-checker.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/05/15/xrp-balance-checker.html</guid>
+        <link>http://localhost:4000/cryptocurrency/2018/05/15/xrp-balance-checker.html</link>
+        <guid isPermaLink="true">http://localhost:4000/cryptocurrency/2018/05/15/xrp-balance-checker.html</guid>
         
         <category>仮想通貨</category>
         
@@ -172,7 +205,7 @@
 &lt;p&gt;写真一覧から写真をタップするとズームして、下に少し引っ張ると戻れるというやつです。&lt;/p&gt;
 
 &lt;video width=&quot;320&quot; controls=&quot;&quot;&gt;
-  &lt;source src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-13/iosphoto.mov&quot; type=&quot;video/mp4&quot; /&gt;
+  &lt;source src=&quot;http://localhost:4000/assets/posts/2018-05-13/iosphoto.mov&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
 &lt;p&gt;この画面遷移とインタラクションをコピーして実装してみました。&lt;/p&gt;
@@ -183,7 +216,7 @@
 &lt;a href=&quot;https://github.com/micchyboy1023/SimplePhotoViewer&quot;&gt;micchyboy1023/SimplePhotoViewer&lt;/a&gt;&lt;/p&gt;
 
 &lt;video width=&quot;320&quot; controls=&quot;&quot;&gt;
-  &lt;source src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-13/simplephotoviewer.mov&quot; type=&quot;video/mp4&quot; /&gt;
+  &lt;source src=&quot;http://localhost:4000/assets/posts/2018-05-13/simplephotoviewer.mov&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
 &lt;h1 id=&quot;実装&quot;&gt;実装&lt;/h1&gt;
@@ -200,7 +233,7 @@
 
 &lt;p&gt;ざっくりViewControllerを図示するとこんな感じです。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-13/viewcontrollers.png&quot; alt=&quot;ViewControllers&quot; title=&quot;ViewControllers&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-13/viewcontrollers.png&quot; alt=&quot;ViewControllers&quot; title=&quot;ViewControllers&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;登場する&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController&lt;/code&gt;は4つです。&lt;/p&gt;
 
@@ -218,7 +251,7 @@
 
 &lt;p&gt;実際のストーリーボードは&lt;code class=&quot;highlighter-rouge&quot;&gt;UITabBarController&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;UINavigationController&lt;/code&gt;があるのでこんな感じです。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-13/cover.png&quot; alt=&quot;Storyboard&quot; title=&quot;Storyboard&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-13/cover.png&quot; alt=&quot;Storyboard&quot; title=&quot;Storyboard&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;2-ズームするアニメーションを実装する&quot;&gt;2. ズームするアニメーションを実装する&lt;/h2&gt;
 
@@ -837,8 +870,8 @@
 &lt;p&gt;などで使用しているので、ぜひ使ってみてください！&lt;/p&gt;
 </description>
         <pubDate>Sun, 13 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/05/13/ios-photo-zoom-app.html</guid>
+        <link>http://localhost:4000/development/2018/05/13/ios-photo-zoom-app.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/2018/05/13/ios-photo-zoom-app.html</guid>
         
         <category>iOS</category>
         
@@ -871,13 +904,13 @@
 
 &lt;p&gt;早速開けると、お詫びの紙が入っていました。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-11/zozosuit2.jpg&quot; alt=&quot;ZOZOSUIT&quot; title=&quot;ZOZOSUIT&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-11/zozosuit2.jpg&quot; alt=&quot;ZOZOSUIT&quot; title=&quot;ZOZOSUIT&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;送料も無料ですし、そもそもPBを買うために注文したので、あまり気にしていません。&lt;/p&gt;
 
 &lt;p&gt;中にはスーツ本体と、スマホスタンドが入っていました。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-11/zozosuit3.jpg&quot; alt=&quot;ZOZOSUIT&quot; title=&quot;ZOZOSUIT&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-11/zozosuit3.jpg&quot; alt=&quot;ZOZOSUIT&quot; title=&quot;ZOZOSUIT&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;早速計測&quot;&gt;早速計測&lt;/h2&gt;
 
@@ -901,11 +934,11 @@
 
 &lt;p&gt;アプリではその流れでZOZOの服を注文できるようになっています。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-11/zozosuit5.png&quot; alt=&quot;ZOZO&quot; title=&quot;ZOZO&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-11/zozosuit5.png&quot; alt=&quot;ZOZO&quot; title=&quot;ZOZO&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Tシャツだけの注文やデニムパンツだけの注文は今のところできないようです。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-11/zozosuit6.png&quot; alt=&quot;ZOZO&quot; title=&quot;ZOZO&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-11/zozosuit6.png&quot; alt=&quot;ZOZO&quot; title=&quot;ZOZO&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;とりあえず、Tシャツとデニムパンツを注文しました。&lt;/p&gt;
 
@@ -952,8 +985,8 @@
 &lt;p&gt;今後、エンジニアや研究者の中で、ZOZOSUITを利用して面白いもの作った！みたいなのが色々出てくると思いますが、どうなるでしょうか。&lt;/p&gt;
 </description>
         <pubDate>Fri, 11 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/gadget/2018/05/11/zozosuit.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/gadget/2018/05/11/zozosuit.html</guid>
+        <link>http://localhost:4000/gadget/2018/05/11/zozosuit.html</link>
+        <guid isPermaLink="true">http://localhost:4000/gadget/2018/05/11/zozosuit.html</guid>
         
         <category>ZOZOSUIT</category>
         
@@ -1019,29 +1052,29 @@ iOSアプリはこちらからダウンロードできます。&lt;/p&gt;
 
 &lt;h3 id=&quot;1まずアプリを起動します&quot;&gt;1.まず、アプリを起動します。&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-09/1.png&quot; alt=&quot;Loquat起動&quot; title=&quot;Loquat起動&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-09/1.png&quot; alt=&quot;Loquat起動&quot; title=&quot;Loquat起動&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;2利用規約プライバシーポリシーに同意すると相談画面が表示されます&quot;&gt;2.利用規約・プライバシーポリシーに同意すると、相談画面が表示されます。&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-09/2.png&quot; alt=&quot;Loquat相談画面&quot; title=&quot;Loquat相談画面&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-09/2.png&quot; alt=&quot;Loquat相談画面&quot; title=&quot;Loquat相談画面&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;3相談するボタンを押すと相談入力画面が表示されます&quot;&gt;3.相談するボタンを押すと、相談入力画面が表示されます。&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-09/3.png&quot; alt=&quot;Loquat相談入力画面&quot; title=&quot;Loquat相談入力画面&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-09/3.png&quot; alt=&quot;Loquat相談入力画面&quot; title=&quot;Loquat相談入力画面&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;4-相談内容を入力して送信します&quot;&gt;4. 相談内容を入力して送信します。&lt;/h3&gt;
 
 &lt;p&gt;相談を送信するにはチケットが必要ですので、購入しましょう。2018年5月9日では、チケット1枚360円ですね。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-09/4.png&quot; alt=&quot;Loquat相談入力画面&quot; title=&quot;Loquat相談入力画面&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-09/4.png&quot; alt=&quot;Loquat相談入力画面&quot; title=&quot;Loquat相談入力画面&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;5-相談を送信すると回答が届くまで待ちます&quot;&gt;5. 相談を送信すると、回答が届くまで待ちます。&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-09/5.png&quot; alt=&quot;Loquat回答待ち&quot; title=&quot;Loquat回答待ち&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-09/5.png&quot; alt=&quot;Loquat回答待ち&quot; title=&quot;Loquat回答待ち&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;6回答が届くと皮膚科専門医からの回答を見ることができます&quot;&gt;6.回答が届くと、皮膚科専門医からの回答を見ることができます。&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-09/6.png&quot; alt=&quot;Loquat回答&quot; title=&quot;Loquat回答&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-09/6.png&quot; alt=&quot;Loquat回答&quot; title=&quot;Loquat回答&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;注意点&quot;&gt;注意点&lt;/h2&gt;
 
@@ -1060,8 +1093,8 @@ iOSアプリはこちらからダウンロードできます。&lt;/p&gt;
 &lt;p&gt;ぜひ活用しましょう！&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/apps/2018/05/09/loquat-app.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/apps/2018/05/09/loquat-app.html</guid>
+        <link>http://localhost:4000/apps/2018/05/09/loquat-app.html</link>
+        <guid isPermaLink="true">http://localhost:4000/apps/2018/05/09/loquat-app.html</guid>
         
         <category>皮膚</category>
         
@@ -1139,7 +1172,7 @@ pip install bitmex-market-maker
 
 &lt;p&gt;API KeyとSecret Keyを生成します。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-08/key.png&quot; alt=&quot;API Key and Secret Key&quot; title=&quot;API Key and Secret Key&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-08/key.png&quot; alt=&quot;API Key and Secret Key&quot; title=&quot;API Key and Secret Key&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;キーを生成したら、settings.pyのAPI_KEYとAPI_SECRETにコピーします。
 そして、ボットを実行します。&lt;/p&gt;
@@ -1163,8 +1196,8 @@ pip install bitmex-market-maker
 &lt;p&gt;ポジションは残ったままだったので、本番環境で実際にやる場合は注意が必要です。&lt;/p&gt;
 </description>
         <pubDate>Tue, 08 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/cryptocurrency/2018/05/08/bitmex-bot-sample.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/05/08/bitmex-bot-sample.html</guid>
+        <link>http://localhost:4000/cryptocurrency/2018/05/08/bitmex-bot-sample.html</link>
+        <guid isPermaLink="true">http://localhost:4000/cryptocurrency/2018/05/08/bitmex-bot-sample.html</guid>
         
         <category>仮想通貨</category>
         
@@ -1209,8 +1242,8 @@ pip install bitmex-market-maker
 
 &lt;p&gt;分割前は、アプリ用のターゲットが1つあり、そのフォルダ以下にグループを作ってソースファイルを分割していました。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/1.png&quot; alt=&quot;groups&quot; title=&quot;groups&quot; /&gt;
-&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/2.png&quot; alt=&quot;targets&quot; title=&quot;targets&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-06/1.png&quot; alt=&quot;groups&quot; title=&quot;groups&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-06/2.png&quot; alt=&quot;targets&quot; title=&quot;targets&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;アフター&quot;&gt;アフター&lt;/h3&gt;
 
@@ -1244,8 +1277,8 @@ pip install bitmex-market-maker
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/3.png&quot; alt=&quot;embedded frameworks&quot; title=&quot;embedded frameworks&quot; /&gt;
-&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/4.png&quot; alt=&quot;targets&quot; title=&quot;targets&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-06/3.png&quot; alt=&quot;embedded frameworks&quot; title=&quot;embedded frameworks&quot; /&gt;
+&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-06/4.png&quot; alt=&quot;targets&quot; title=&quot;targets&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;分割時のポイント&quot;&gt;分割時のポイント&lt;/h2&gt;
 
@@ -1267,7 +1300,7 @@ pip install bitmex-market-maker
 
 &lt;p&gt;フレームワークのターゲットを選択し、&lt;code class=&quot;highlighter-rouge&quot;&gt;Build Settings&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;Other Swift Flags&lt;/code&gt;から追加します。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/5.png&quot; alt=&quot;Build Setting Other Swift Flags&quot; title=&quot;Build Setting Other Swift Flags&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-06/5.png&quot; alt=&quot;Build Setting Other Swift Flags&quot; title=&quot;Build Setting Other Swift Flags&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;coredataの初期化処理を変更する&quot;&gt;CoreDataの初期化処理を変更する&lt;/h3&gt;
 
@@ -1290,8 +1323,8 @@ pip install bitmex-market-maker
 
 </description>
         <pubDate>Sun, 06 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/development/2018/05/06/embedded-framework.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/05/06/embedded-framework.html</guid>
+        <link>http://localhost:4000/development/2018/05/06/embedded-framework.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/2018/05/06/embedded-framework.html</guid>
         
         <category>ios</category>
         
@@ -1314,14 +1347,14 @@ pip install bitmex-market-maker
 
 &lt;p&gt;5月4日、ゴールデンウィーク真っ只中に家族でUSJに行ってきました！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-04/1.jpg&quot; alt=&quot;USJ&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-04/1.jpg&quot; alt=&quot;USJ&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;予想通り、めちゃくちゃ混んでいました笑
 高速道路はそうでもなかったのですが、パーク内はすごい人でした。&lt;/p&gt;
 
 &lt;p&gt;パーク内はイースターのデコレーションがされていて、某夢の国を彷彿とさせるかのような仕上がりでした！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-04/2.jpg&quot; alt=&quot;USJ&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-04/2.jpg&quot; alt=&quot;USJ&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;めちゃくちゃ混む中、エクスプレスパスを使用するとかなり快適にアトラクションに乗れたので書いておきたいと思います。&lt;/p&gt;
 
@@ -1362,11 +1395,11 @@ pip install bitmex-market-maker
 
 &lt;p&gt;アトラクションにはスムーズに乗れるので、それ以外の時間は、ゆっくり食事を楽しんだり、子供のアトラクションに普通に並んで乗ったりと、家族全員で楽しむことができました。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-04/3.jpg&quot; alt=&quot;&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-04/3.jpg&quot; alt=&quot;&quot; title=&quot;USJ&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;ハリーポッターエリアにもスムーズに入場できます。息子は機関車と一緒に写真が取れて満足そうでした。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-04/4.jpg&quot; alt=&quot;USJ ハリーポッター&quot; title=&quot;USJ ハリーポッター&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/posts/2018-05-04/4.jpg&quot; alt=&quot;USJ ハリーポッター&quot; title=&quot;USJ ハリーポッター&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;面白かったアトラクション&quot;&gt;面白かったアトラクション&lt;/h2&gt;
 
@@ -1390,8 +1423,8 @@ pip install bitmex-market-maker
 &lt;p&gt;ぜひUSJに行かれるかたは、エクスプレスパスを買ってみてはいかがでしょうか？&lt;/p&gt;
 </description>
         <pubDate>Fri, 04 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/family/2018/05/04/universal-studio-japan.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/05/04/universal-studio-japan.html</guid>
+        <link>http://localhost:4000/family/2018/05/04/universal-studio-japan.html</link>
+        <guid isPermaLink="true">http://localhost:4000/family/2018/05/04/universal-studio-japan.html</guid>
         
         <category>usj</category>
         
@@ -1400,101 +1433,6 @@ pip install bitmex-market-maker
         <category>エクスプレスパス</category>
         
         <category>ゴールデンウィーク</category>
-        
-        
-        <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>ライフスタイルの変化に合わせてメルカリで断捨離してみた</title>
-        <description>&lt;p&gt;こんにちは。今日は、仕事したり、子供ができて学生時代から比べてライフスタイルが変化したので、これまで持っていたものをメルカリで断捨離した経緯について書きたいと思います。&lt;/p&gt;
-
-&lt;p&gt;去年から今年にかけて売ったものとしては、&lt;/p&gt;
-
-&lt;p&gt;Mac, iPhone, Apple TV, Windows 8.1,  PC周辺機器, スピーカー, 時計, 音楽機材, Tシャツ, パーカー, ライダースジャケット, 靴, 本, ミュージシャングッズ, バイク用品, コンロ,  ぬいぐるみ, などなど多岐に渡ります。&lt;/p&gt;
-
-&lt;p&gt;断捨離した大きな理由としては、以下の3つになります。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;子供のもの購入の優先度が高くなり、自分の価値観が変わった&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;使わないものが増えた&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;メルカリ、cashなど簡単にものを売れるツールがある&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;1-子供のもの購入の優先度が高くなり自分の価値観が変わった&quot;&gt;1. 子供のもの購入の優先度が高くなり、自分の価値観が変わった&lt;/h2&gt;
-
-&lt;p&gt;まずはこれです。子供ができてから、自分の服やものを買うよりも子供のものを買うことの方が自分の中で優先度が高くなりました。&lt;/p&gt;
-
-&lt;p&gt;もちろん、これは自分のものを全く買わないということではなく、iPhoneやMacなど自分に必要なものは買いつつ、余分なものは買わなくなりました。&lt;/p&gt;
-
-&lt;p&gt;また、昔からファンのミュージシャンのグッズや、コレクションしていたものについても、なぜか熱気がなくなってしまい不要に思えるようになってしまいました。&lt;/p&gt;
-
-&lt;h2 id=&quot;2-使わないものが増えた&quot;&gt;2. 使わないものが増えた&lt;/h2&gt;
-
-&lt;p&gt;あとは、昔は使っていたものや着ていた服で、1年以上使っていないものが割とある状態でした。&lt;/p&gt;
-
-&lt;p&gt;仕事では割とシンプルな服を着ていて同じものがローテーションになっているのと、休日も子供を出かけたりするためちょっと嗜む程度にやっていた趣味の機材などは全然使わなくなっていました。&lt;/p&gt;
-
-&lt;p&gt;断捨離したものはメルカリやcashで現金化しましたが、不要と判断したものの基準は&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1年以上使用しなかったもの&lt;/li&gt;
-  &lt;li&gt;新しいものに買い換えるもの&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;です。&lt;/p&gt;
-
-&lt;h2 id=&quot;3-メルカリ-cashなど簡単にものを売れるツールがある&quot;&gt;3. メルカリ, cashなど簡単にものを売れるツールがある&lt;/h2&gt;
-
-&lt;p&gt;メルカリ, cashなど簡単にすぐ出品できるツールが出てきて、使っていないけれど価値があるものを売りやすくなりました。&lt;/p&gt;
-
-&lt;p&gt;不必要になったPCや周辺機器、音楽機材、ミュージシャングッズなど、ほぼほぼ全てメルカリで売ることができました。&lt;/p&gt;
-
-&lt;p&gt;特に、ミュージシャンとお揃いのレアなパーカーや、Apple関連商品は比較的高値で売ることができました。&lt;/p&gt;
-
-&lt;p&gt;メルカリは売るときに自分で値段をつける仕組みですが、つけた値段が低すぎるとすぐ売れてしまうので、一度値段を調べることをお勧めします。&lt;/p&gt;
-
-&lt;p&gt;上にも書きましたが、売ったもの一覧です。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mac: iMac, MacBookの2台ありましたが、現在の使用方法としてMacBookで十分と判断し、iMacを売りました。&lt;/li&gt;
-  &lt;li&gt;iPhone: MVNO、SIMフリーへの移行のため、古いiPhoneを売りiPhone Xを購入しました&lt;/li&gt;
-  &lt;li&gt;Apple TV: Apple TV 第3世代を売り,Apple TV 4Kに買い換えました。&lt;/li&gt;
-  &lt;li&gt;Windows 8.1: BootcampにインストールしていたWindowsは使わなくなっていたので、Windowsのインストールディスク、ライセンスキーを売りました。&lt;/li&gt;
-  &lt;li&gt;PC周辺機器: USBハブやマウス、キーボード、モニターなど、使用いないものは売りました。MacBookで十分でした。&lt;/li&gt;
-  &lt;li&gt;スピーカー: いい音質を求めて昔購入しましたが、特に音質へのこだわりもなくなったので売りました。&lt;/li&gt;
-  &lt;li&gt;時計: Apple Watchで十分のため、学生時代のDIESELの時計を売りました。&lt;/li&gt;
-  &lt;li&gt;音楽機材: オーディオインターフェースやエフェクターなど売りました。&lt;/li&gt;
-  &lt;li&gt;Tシャツ, パーカー, ライダースジャケット, 靴: 特定のファン層には需要のあるライブTシャツ、レアものパーカーや、皮のライダース、革靴など着用しなくなったものを売りました。&lt;/li&gt;
-  &lt;li&gt;本: 読んだけどイマイチだったものや、中古として需要がありそうな本を売りました。&lt;/li&gt;
-  &lt;li&gt;ミュージシャングッズ: 特定のファン層には需要のあるミュージシャングッズを売りました。&lt;/li&gt;
-  &lt;li&gt;バイク用品: バイクのタンクバッグを売りました。&lt;/li&gt;
-  &lt;li&gt;コンロ: 学生時代に購入した取り付け式コンロは、現在の家には不要なので売りました。&lt;/li&gt;
-  &lt;li&gt;ぬいぐるみ: 知り合いにもらったぬいぐるみは、邪魔だったので売りました。案外売れました。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;紹介したように、メルカリだと結構色々なものが売れました。こういうプラットフォームができたのは非常にありがたいですね。&lt;/p&gt;
-
-&lt;p&gt;皆さんも一度自分のライフスタイルに合わせて、本当に必要なものを見直して不要なものは断捨離してみてはいかがでしょうか？&lt;/p&gt;
-</description>
-        <pubDate>Tue, 01 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/family/2018/05/01/minimalization.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/05/01/minimalization.html</guid>
-        
-        <category>mercari</category>
-        
-        <category>メルカリ</category>
-        
-        <category>ライフスタイル</category>
-        
-        <category>断捨離</category>
         
         
         <category>family</category>
