@@ -2,7 +2,7 @@
 layout: post
 title: "GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator"
 description: "GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator"
-date: 2018-05-20
+date: 2018-05-20 00:00
 categories: development
 hero-image: "contributions.png"
 lang: ja_JP
