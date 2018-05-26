@@ -5,9 +5,63 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 20 May 2018 23:40:03 +0900</pubDate>
-    <lastBuildDate>Sun, 20 May 2018 23:40:03 +0900</lastBuildDate>
+    <pubDate>Sun, 27 May 2018 06:35:15 +0900</pubDate>
+    <lastBuildDate>Sun, 27 May 2018 06:35:15 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>横浜お出かけスポット！横浜中華街にあるヨコハマおもしろ水族館に行ってきました</title>
+        <description>&lt;h1 id=&quot;ヨコハマおもしろ水族館&quot;&gt;ヨコハマおもしろ水族館&lt;/h1&gt;
+
+&lt;p&gt;横浜中華街にある、ヨコハマおもしろ水族館に行ってきました！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/cover.jpg&quot; alt=&quot;横浜中華街&quot; title=&quot;横浜中華街&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;みなとみらい線の横浜中華街駅を出て中華街に入り、進んでいくとありました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/suizokukan1.jpg&quot; alt=&quot;ヨコハマおもしろ水族館&quot; title=&quot;ヨコハマおもしろ水族館&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;入場料は、&lt;strong&gt;大人1400円&lt;/strong&gt;ですが、クーポンを持っていたため&lt;strong&gt;1000円&lt;/strong&gt;でした。&lt;/p&gt;
+
+&lt;p&gt;中に入るとこんな感じです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/suizokukan2.jpg&quot; alt=&quot;ヨコハマおもしろ水族館&quot; title=&quot;ヨコハマおもしろ水族館&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;全体的に、レトロというか、中華風なのか？という雰囲気でした。
+水族館自体はビルの3階のみで、中はそんなに広くないですが、それぞれの展示にクイズがあったり、餌やりを間近でみれたりと、子供が楽しむにはちょうどいい感じでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/suizokukan3.jpg&quot; alt=&quot;ヨコハマおもしろ水族館&quot; title=&quot;ヨコハマおもしろ水族館&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;子供広場の方にいくと、水槽が入った滑り台やジャングルジムがあり、遊具で遊ぶこともできます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/suizokukan4.jpg&quot; alt=&quot;ヨコハマおもしろ水族館&quot; title=&quot;ヨコハマおもしろ水族館&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;珍しいダイオウグソクムシが展示されていたりとなかなかコアな水族館で楽しめました。&lt;/p&gt;
+
+&lt;h2 id=&quot;山下公園で休憩&quot;&gt;山下公園で休憩&lt;/h2&gt;
+
+&lt;p&gt;水族館の後は、山下公園が近いのでそこでのんびりと休憩しました。&lt;/p&gt;
+
+&lt;p&gt;ドラゴンボートレースというイベントが開催されていましたね。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/dragonboart.jpg&quot; alt=&quot;ドラゴンボートレース&quot; title=&quot;ドラゴンボートレース&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 May 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/family/2018/05/26/yokohama-omorhiso-suziokukan.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/05/26/yokohama-omorhiso-suziokukan.html</guid>
+        
+        <category>横浜中華街</category>
+        
+        <category>ヨコハマおもしろ水族館</category>
+        
+        <category>水族館</category>
+        
+        <category>DRAGON BOART RACE</category>
+        
+        
+        <category>family</category>
+        
+      </item>
     
       <item>
         <title>江ノ電に乗って江ノ島にいったら富士山が見えた</title>
@@ -1235,131 +1289,6 @@ pip install bitmex-market-maker
         
         
         <category>cryptocurrency</category>
-        
-      </item>
-    
-      <item>
-        <title>Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する</title>
-        <description>&lt;p&gt;&lt;em&gt;この投稿はQiitaに投稿したものと同じです。&lt;a href=&quot;https://qiita.com/micchyboy1023/items/db84ca3d0d23a37d8866&quot;&gt;Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分割しました。&lt;/p&gt;
-
-&lt;p&gt;分割した目的としては、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;レイヤー分割の明確化&lt;/li&gt;
-  &lt;li&gt;ビルド時間の短縮&lt;/li&gt;
-  &lt;li&gt;依存関係の整理&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;の3点がメインです。&lt;/p&gt;
-
-&lt;p&gt;Embedded Framework(Cocoa Touch Framework)の導入方法や説明はこちらの記事が参考になります。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/mono0926/items/e29cd17789fd1d1548aa&quot;&gt;Embedded Framework使いこなし術&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;ビフォーアフター&quot;&gt;ビフォーアフター&lt;/h2&gt;
-
-&lt;h3 id=&quot;ビフォー&quot;&gt;ビフォー&lt;/h3&gt;
-
-&lt;p&gt;分割前は、アプリ用のターゲットが1つあり、そのフォルダ以下にグループを作ってソースファイルを分割していました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/1.png&quot; alt=&quot;groups&quot; title=&quot;groups&quot; /&gt;
-&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/2.png&quot; alt=&quot;targets&quot; title=&quot;targets&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;アフター&quot;&gt;アフター&lt;/h3&gt;
-
-&lt;p&gt;分割後は、以下の4つのフレームワークを追加して、それぞれのフレームワークにソースを振り分けて行きました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;アプリ
-    &lt;ul&gt;
-      &lt;li&gt;iOSアプリ&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;API
-    &lt;ul&gt;
-      &lt;li&gt;APIとのやりとりを担当する。Modelに依存。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Common
-    &lt;ul&gt;
-      &lt;li&gt;Foundation系のExtensionやロガーのように全体で使うような汎用機能。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Model
-    &lt;ul&gt;
-      &lt;li&gt;CoreDataのエンティティや、データモデルのクラス・構造体。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Storage
-    &lt;ul&gt;
-      &lt;li&gt;CoreDataやKeychain, iCloudへデータを保存する。Model, APIに依存。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/3.png&quot; alt=&quot;embedded frameworks&quot; title=&quot;embedded frameworks&quot; /&gt;
-&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/4.png&quot; alt=&quot;targets&quot; title=&quot;targets&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;分割時のポイント&quot;&gt;分割時のポイント&lt;/h2&gt;
-
-&lt;h3 id=&quot;フレームワークごとの依存関係を考える&quot;&gt;フレームワークごとの依存関係を考える&lt;/h3&gt;
-
-&lt;p&gt;当たり前ですが、フレームワークに分割することで、フレームワーク同士の依存関係が明確になるので、相互依存などならないように、どこにどのソース・クラスを入れて行くかというのを考えました。&lt;/p&gt;
-
-&lt;p&gt;色々と試行錯誤した結果、上記4つのフレームワークに分割して、依存関係を整理しました。&lt;/p&gt;
-
-&lt;h3 id=&quot;アクセス修飾子をつける&quot;&gt;アクセス修飾子をつける&lt;/h3&gt;
-
-&lt;p&gt;全てのソースを1つのターゲット対象にしていた時は、アクセス修飾子を特につけずに全てデフォルトの&lt;code class=&quot;highlighter-rouge&quot;&gt;internal&lt;/code&gt;にしていたのですが、フレームワークに分割すると&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;にしないと参照先のターゲットからは参照できないので、アクセス修飾子も整理しました。&lt;/p&gt;
-
-&lt;p&gt;フレームワークを参照しているのに、クラスがないというようなエラーが出たりして、一瞬理由がわからなくなったことがあったのですが、アクセス修飾子が原因でした。&lt;/p&gt;
-
-&lt;h3 id=&quot;フレームワークごとにフラグを追加する&quot;&gt;フレームワークごとにフラグを追加する&lt;/h3&gt;
-
-&lt;p&gt;デバッグフラグや独自の開発環境用フラグを利用して、実行時の挙動やテスト環境用ビルドなどを行っていますが、こちらもフレームワークごとに追加する必要があります。&lt;/p&gt;
-
-&lt;p&gt;フレームワークのターゲットを選択し、&lt;code class=&quot;highlighter-rouge&quot;&gt;Build Settings&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;Other Swift Flags&lt;/code&gt;から追加します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-06/5.png&quot; alt=&quot;Build Setting Other Swift Flags&quot; title=&quot;Build Setting Other Swift Flags&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;coredataの初期化処理を変更する&quot;&gt;CoreDataの初期化処理を変更する&lt;/h3&gt;
-
-&lt;p&gt;CoreData周りの初期化処理には、&lt;code class=&quot;highlighter-rouge&quot;&gt;NSPersistentContainer&lt;/code&gt;を使用していますが、モデル定義ファイル &lt;code class=&quot;highlighter-rouge&quot;&gt;.xcdatamodeld&lt;/code&gt;は、上記フレームワークのうち&lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt;の中に入れました。&lt;/p&gt;
-
-&lt;p&gt;そのため、&lt;code class=&quot;highlighter-rouge&quot;&gt;NSPersistentContainer&lt;/code&gt;を初期化する際には、&lt;code class=&quot;highlighter-rouge&quot;&gt;Model&lt;/code&gt;の中の定義ファイルを明示的に指定する必要があります。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;modelURL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Modelの中のクラス&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;forResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;定義ファイル名&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;withExtension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;momd&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;mom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSManagedObjectModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;contentsOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modelURL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSPersistentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;コンテナ名&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;managedObjectModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;この辺は、&lt;code class=&quot;highlighter-rouge&quot;&gt;Bundle.main&lt;/code&gt;を使ってリソースを読み込んでいた部分でも注意する必要があると思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;分割した感想&quot;&gt;分割した感想&lt;/h2&gt;
-
-&lt;p&gt;ビルド時間が早くなったかというと、早くなった気もします。まだそこまで大きくもないので、もっと大規模になるともっと実感できそうです。&lt;/p&gt;
-
-&lt;p&gt;レイヤー分割が明確になり、テストしやすくなったり、役割が明確になったり、依存関係がはっきりしたりという点がよかったと感じています。&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 06 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/development/2018/05/06/embedded-framework.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/05/06/embedded-framework.html</guid>
-        
-        <category>ios</category>
-        
-        <category>swift</category>
-        
-        <category>embedded framework</category>
-        
-        <category>xcode</category>
-        
-        <category>apple</category>
-        
-        
-        <category>development</category>
         
       </item>
     
