@@ -5,9 +5,95 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 27 May 2018 06:35:15 +0900</pubDate>
-    <lastBuildDate>Sun, 27 May 2018 06:35:15 +0900</lastBuildDate>
+    <pubDate>Tue, 29 May 2018 00:17:50 +0900</pubDate>
+    <lastBuildDate>Tue, 29 May 2018 00:17:50 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Ripple（リップル）のCTO Stefan Thomasが立ち上げたCoil社について調べてみました</title>
+        <description>&lt;p&gt;5月14日、Ripple（リップル）社の元CTO Stefan Thomasがツイートを投稿しました。&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Excited to launch &lt;a href=&quot;https://twitter.com/Coil_?ref_src=twsrc%5Etfw&quot;&gt;@Coil_&lt;/a&gt;, a new startup building &lt;a href=&quot;https://twitter.com/hashtag/micropayment?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#micropayment&lt;/a&gt; applications on &lt;a href=&quot;https://twitter.com/hashtag/XRP?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#XRP&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/Interledger?ref_src=twsrc%5Etfw&quot;&gt;@Interledger&lt;/a&gt;. We&amp;#39;re creating a new business model for the web! &lt;a href=&quot;https://t.co/X0WWxmulLQ&quot;&gt;https://t.co/X0WWxmulLQ&lt;/a&gt;&lt;br /&gt;1/5&lt;/p&gt;&amp;mdash; Stefan Thomas (@justmoon) &lt;a href=&quot;https://twitter.com/justmoon/status/996012724235759616?ref_src=twsrc%5Etfw&quot;&gt;2018年5月14日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;この投稿を見て、XRPを使った新しいサービスがローンチされたのかなと思ったのですが、よくよく読むと、Stefan Thomas氏自身がCoilという会社を立ち上げてmicropaymentに関する事業を展開していくということで、面白そうなので、Coilについて調べてみました。&lt;/p&gt;
+
+&lt;h1 id=&quot;coilとは&quot;&gt;Coilとは&lt;/h1&gt;
+
+&lt;p&gt;Coilとは一言でいうと、&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;XRPとInterLedgerを使ってWebをマネタイズするためのプラットフォーム&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;のようです。&lt;/p&gt;
+
+&lt;p&gt;CoilのMediumの記事に詳しく書かれています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/coil/coil-building-a-new-business-model-for-the-web-d33124358b6&quot;&gt;Coil: Building a New Business Model for the Web&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;一部引用して和訳しておきます。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;the Internet’s “original sin”, the fact that on the web there isn’t an obvious way to make money outside of workarounds like advertising, paywalls, or selling user data.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;インターネットの原罪は、広告・課金・ユーザーデータを売る以外に収益を得る方法がWebにないことだ。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I will be stepping down as CTO of Ripple to set up a new company called Coil. Coil will use Interledger to make the web a more vibrant market for apps and content&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;私(Stephan Thomas)はリップルのCTOを辞めて、Coilという会社を作る。CoilはInterlederを使ってウェブをアプリやコンテンツにとってより魅力的なマーケットにする&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Coil’s first product will be a flat-rate subscription for consumers which will allow them to support creators, breeze past paywalls, see less ads, and unlock additional features and content&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Coilの最初の製品は、クリエイターをサポートし、課金を無くし、広告を減らし、さらなるコンテンツを顧客に提供する。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Coil will be the first company to pay out to any website using Web Monetization&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;CoilはIWeb Monetizationを使ってどんなウェブサイトでもマネタイズする最初の企業です。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;と以上のように、CoilとはWebサイトをマネタイズするための新しい支払いの仕組みを作る会社のようですね。&lt;/p&gt;
+
+&lt;p&gt;広告、課金以外のマネタイズ手法、楽しみですね！&lt;/p&gt;
+
+&lt;h1 id=&quot;stephan-thomasの一連のツイートの和訳&quot;&gt;Stephan Thomasの一連のツイートの和訳&lt;/h1&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;XRPとinterledger上に少額決済を実現するスタートアップCoilのローンチにワクワクしている。ウェブの新しいビジネスモデルを作っていく。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/RbBzMQMhzR&quot;&gt;https://t.co/RbBzMQMhzR&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001065580571459584?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;.&lt;a href=&quot;https://twitter.com/EthanZ?ref_src=twsrc%5Etfw&quot;&gt;@ethanz&lt;/a&gt;が言うように、ウェブの原罪はマネタイズの手法が組み込まれていないことだ。だからウェブ上に構築されたモデルはほとんどが広告だった。しかし広告がマネタイズの答えではないことを我々は知っている。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/oDejBKquiD&quot;&gt;https://t.co/oDejBKquiD&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001077886357393408?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;決済技術が未熟だったからこうなった。しかし、我々が構築したXRPとinterledgerの技術によって、非中央集権で、秒間数兆のトランザクションを処理できるようになった。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/zuTBqXIP8y&quot;&gt;https://t.co/zuTBqXIP8y&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001078633329377282?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;この技術を使って、&lt;a href=&quot;https://twitter.com/Coil?ref_src=twsrc%5Etfw&quot;&gt;@Coil&lt;/a&gt; の最初のプロダクトは、定額課金によって、クリエイターをサポートし、有料の壁をなくし、より少ない広告を実現し、さらなる機能やコンテンツを追加できるようにするものだ。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/jh1b1oQyTf&quot;&gt;https://t.co/jh1b1oQyTf&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001079792806969344?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;.&lt;a href=&quot;https://twitter.com/Ripple?ref_src=twsrc%5Etfw&quot;&gt;@Ripple&lt;/a&gt;の金銭的技術的支援を受けられることを幸運に思っている。&lt;a href=&quot;https://twitter.com/Coil?ref_src=twsrc%5Etfw&quot;&gt;@Coil&lt;/a&gt;がより健全なインターネットを実現するためのすべてが揃っている。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/KhuwavaEfh&quot;&gt;https://t.co/KhuwavaEfh&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001080434606751746?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Tue, 29 May 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/cryptocurrency/2018/05/29/coil-xrp.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/05/29/coil-xrp.html</guid>
+        
+        <category>Ripple</category>
+        
+        <category>リップル</category>
+        
+        <category>XRP</category>
+        
+        <category>Coil</category>
+        
+        
+        <category>cryptocurrency</category>
+        
+      </item>
     
       <item>
         <title>横浜お出かけスポット！横浜中華街にあるヨコハマおもしろ水族館に行ってきました</title>
@@ -1186,109 +1272,6 @@ iOSアプリはこちらからダウンロードできます。&lt;/p&gt;
         
         
         <category>apps</category>
-        
-      </item>
-    
-      <item>
-        <title>BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました</title>
-        <description>&lt;h1 id=&quot;bitmex-ビットコインfxの自動取引botのサンプル&quot;&gt;BitMEX ビットコインFXの自動取引Botのサンプル&lt;/h1&gt;
-
-&lt;p&gt;最近流行りのビットコインFXボットでも作ってみようかと調べていたところ、BitMEXのボットのサンプルコード &lt;strong&gt;sample-market-maker&lt;/strong&gt; があったので、動かしてみました。&lt;/p&gt;
-
-&lt;p&gt;Webページからリンクされていて、GitHubのリポジトリも公式のものでした。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/BitMEX/sample-market-maker&quot;&gt;https://github.com/BitMEX/sample-market-maker&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;pythonの知識があり、README.mdのGetting Startedを読めば、動かせるかと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h2&gt;
-
-&lt;h3 id=&quot;testnet-bitmexにアカウントを作る&quot;&gt;Testnet BitMEXにアカウントを作る&lt;/h3&gt;
-
-&lt;p&gt;どうやらBitMEXのテスト環境があるようで、ますそちらにアカウントを作成します。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://testnet.bitmex.com/app&quot;&gt;Testnet BitMEX Account&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;その後、テスト環境で使うビットコインもどき&lt;code class=&quot;highlighter-rouge&quot;&gt;TBTC&lt;/code&gt;をウォレットに送信します。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://testnet.bitmex.com/app/deposit&quot;&gt;deposit some TBTC&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;どうやら送り放題のようですね！&lt;/p&gt;
-
-&lt;h3 id=&quot;環境構築&quot;&gt;環境構築&lt;/h3&gt;
-
-&lt;p&gt;私はpythonのバージョン管理に、&lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt;と&lt;a href=&quot;https://github.com/pyenv/pyenv-virtualenv&quot;&gt;pyenv-virtualenv&lt;/a&gt;を使っています。&lt;/p&gt;
-
-&lt;p&gt;bitmex-market-makerは、python3.5以降をサポートしているようなので、pyenvで3.6.5をインストールします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv install 3.6.5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;その後、pyenv-virtualenvで、bitmex-market-maker用の環境を作ります。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyenv virtualenv 3.6.5 bitmex
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;bitmex-market-maker用のディレクトリを作って、pipでbitmex-market-makerをインストールします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir bitmex
-cd bitmex
-pyenv local bitmex
-pip install bitmex-market-maker
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;その後、market-makerをセットアップします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;marketmaker setup
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;すると、&lt;code class=&quot;highlighter-rouge&quot;&gt;market_maker&lt;/code&gt;フォルダと、&lt;code class=&quot;highlighter-rouge&quot;&gt;settings.py&lt;/code&gt;が生成されます。&lt;/p&gt;
-
-&lt;h2 id=&quot;とりあえず実行して見る&quot;&gt;とりあえず実行して見る&lt;/h2&gt;
-
-&lt;p&gt;API KeyとSecret Keyを生成します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-08/key.png&quot; alt=&quot;API Key and Secret Key&quot; title=&quot;API Key and Secret Key&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;キーを生成したら、settings.pyのAPI_KEYとAPI_SECRETにコピーします。
-そして、ボットを実行します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;marketmaker XBTUSD
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;ボットを実行するとデフォルトの設定にしたがって、オーダーが自動的に実行されていきます。&lt;/p&gt;
-
-&lt;p&gt;BitMEXの仕様や画面に慣れていないので、いまいちわからないことが多いですが、とりあえずBotを実行することはできました。&lt;/p&gt;
-
-&lt;p&gt;実際に本番環境でもそのうちやってみたいので、設定のチューニングや結果などはこれから試してみようと思います。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、10分ほど放置していると、-50%とかになっていました笑&lt;/p&gt;
-
-&lt;h2 id=&quot;終了する&quot;&gt;終了する&lt;/h2&gt;
-
-&lt;p&gt;Botを終了するには, crtl + Cを押します。
-終了すると、オーダーが全てキャンセルされました。&lt;/p&gt;
-
-&lt;p&gt;ポジションは残ったままだったので、本番環境で実際にやる場合は注意が必要です。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 08 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/cryptocurrency/2018/05/08/bitmex-bot-sample.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/05/08/bitmex-bot-sample.html</guid>
-        
-        <category>仮想通貨</category>
-        
-        <category>bitmex</category>
-        
-        <category>ビットコイン</category>
-        
-        <category>bitcoin</category>
-        
-        <category>bot</category>
-        
-        <category>ボット</category>
-        
-        
-        <category>cryptocurrency</category>
         
       </item>
     
