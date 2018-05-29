@@ -5,9 +5,108 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 29 May 2018 00:47:28 +0900</pubDate>
-    <lastBuildDate>Tue, 29 May 2018 00:47:28 +0900</lastBuildDate>
+    <pubDate>Wed, 30 May 2018 00:05:40 +0900</pubDate>
+    <lastBuildDate>Wed, 30 May 2018 00:05:40 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>JekyllでSEO対策をする方法</title>
+        <description>&lt;h1 id=&quot;jekyllでseo対策をする&quot;&gt;JekyllでSEO対策をする&lt;/h1&gt;
+
+&lt;p&gt;グーグルやヤフーの検索でブログをヒットさせるには、SEOを行う必要がります。
+今回はJekyllのSEO対策について書きます。&lt;/p&gt;
+
+&lt;p&gt;よくブログで使われるワードプレスは最初からSEOに最適化された状態ですが、JekyllでもSEO対策を行うことが出来ます。&lt;/p&gt;
+
+&lt;h2 id=&quot;グーグルの検索で上位に表示されるには&quot;&gt;グーグルの検索で上位に表示されるには&lt;/h2&gt;
+
+&lt;p&gt;様々な検索エンジンがありますが、グーグルが寡占状態です。つまり、ブログのページがグーグルの検索インデックスに登録され、グーグル検索で上位に表示されるようにする必要があります。&lt;/p&gt;
+
+&lt;p&gt;JekyllにはSEOを簡単にしてくれるいくつかのプラグインがあります。プラグインとその他のSEO対策についてまとめました。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-seo-tag&lt;/code&gt;プラグイン&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-sitemap&lt;/code&gt;プラグイン&lt;/li&gt;
+  &lt;li&gt;画像のオルトタグ&lt;/li&gt;
+  &lt;li&gt;レスポンシブ&lt;/li&gt;
+  &lt;li&gt;スピード&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;1-jekyll-seo-tagプラグイン&quot;&gt;1. &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-seo-tag&lt;/code&gt;プラグイン&lt;/h2&gt;
+
+&lt;p&gt;Jekyllには、SEO用の設定を作ってくれる&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-seo-tag&lt;/code&gt;というプラグインがあります。&lt;/p&gt;
+
+&lt;p&gt;こちらの記事に詳しく書いてあります。
+&lt;a href=&quot;https://help.github.com/articles/search-engine-optimization-for-github-pages/&quot;&gt;Search engine optimization for GitHub Pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使い方としては、&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-seo-tag&lt;/code&gt;を追加します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plugins:
+  - jekyll-seo-tag
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;そして、&lt;code class=&quot;highlighter-rouge&quot;&gt;head&lt;/code&gt;タグを記入しているところに、&lt;code class=&quot;highlighter-rouge&quot;&gt;seo&lt;/code&gt;プラグインを記述します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    
+    {% include head.html %}
+    {% seo %}
+    
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これで、タイトルや見出しなど、headタグで必要なSEO対策が行われます。&lt;/p&gt;
+
+&lt;h2 id=&quot;2-jekyll-sitemapプラグイン&quot;&gt;2. &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-sitemap&lt;/code&gt;プラグイン&lt;/h2&gt;
+
+&lt;p&gt;グーグルにブログのページがインデックス登録されるためには、サイトマップは重要な要素です。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-sitemap&lt;/code&gt;プラグインを使うことで、サイトマップが記述された&lt;code class=&quot;highlighter-rouge&quot;&gt;sitemap.xml&lt;/code&gt;を自動生成することが出来ます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-sitemap&quot;&gt;jekyll-sitemap&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-sitemap&lt;/code&gt;プラグインを使うには、&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-sitemap&lt;/code&gt;を追加します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;plugins:
+  - jekyll-sitemap
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;そして、jekyllをビルドすると&lt;code class=&quot;highlighter-rouge&quot;&gt;sitemap.xml&lt;/code&gt;が生成されます。&lt;/p&gt;
+
+&lt;h2 id=&quot;3-画像のオルトタグ&quot;&gt;3. 画像のオルトタグ&lt;/h2&gt;
+
+&lt;p&gt;画像のオルトタグは、画像がない場合に表示されるテキストです。オルトタグはクローリング時にロードされるので、画像に記述しておく方がキーワードが多くなり上位に表示されやすくなります。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;img alt=&quot;jekyll seo&quot; title=&quot;Jekyll SEO&quot; src=&quot;/images/jekyll-seo.jpg&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;4-レスポンシブ&quot;&gt;4. レスポンシブ&lt;/h2&gt;
+
+&lt;p&gt;グーグルはレスポンシブなサイトでモバイルでも見やすいかということをSEOのランキングのパラメータに設定しています。
+サイトがモバイルに対応しているかどうかは、 &lt;a href=&quot;https://search.google.com/test/mobile-friendly?utm_source=mft&amp;amp;utm_medium=redirect&amp;amp;utm_campaign=mft-redirect&quot;&gt;Mobile Friendly Test&lt;/a&gt;というサイトで確認することが出来ます。&lt;/p&gt;
+
+&lt;p&gt;Jekyllのテーマは、モバイルに対応しているものがほとんどなので、非対応なものを使わない限りは大丈夫かと思います。&lt;/p&gt;
+
+&lt;h2 id=&quot;5-スピード&quot;&gt;5. スピード&lt;/h2&gt;
+
+&lt;p&gt;ランキング上位に表示されるにはページのロードスピードも重要です。
+Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎたりするのは注意しましょう。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 30 May 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/05/30/jekyll-seo.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/05/30/jekyll-seo.html</guid>
+        
+        <category>Jekyll</category>
+        
+        <category>SEO</category>
+        
+        <category>ブログ</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>いよいよ来週！AppleのイベントWWDC2018で発表されそうなことまとめ</title>
@@ -1133,119 +1232,6 @@
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>ついに！ZOZOSUIT（ゾゾスーツ）が届いたので計測してみた</title>
-        <description>&lt;h1 id=&quot;zozosuitが届きました&quot;&gt;ZOZOSUITが届きました&lt;/h1&gt;
-
-&lt;p&gt;ついに我が家に&lt;strong&gt;ZOZOSUIT&lt;/strong&gt;が届きました。ヤマトのネコポスでした。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ついにZOZOSUIT届いた！ &lt;a href=&quot;https://t.co/vkPXkHAoDU&quot;&gt;pic.twitter.com/vkPXkHAoDU&lt;/a&gt;&lt;/p&gt;&amp;mdash; micchyboy (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/994739333033672704?ref_src=twsrc%5Etfw&quot;&gt;2018年5月11日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;ZOZOSUITを注文したのは、発表された当日の11月22日だったので、約半年かかりました！
-その間センサー方式からマーカー方式へと仕様変更があったりと、中の方々は大変だったようですが、とにかく無事入手することができてよかったです。&lt;/p&gt;
-
-&lt;p&gt;新しいZOZOSUITが発表された際に来たメールでは、&lt;strong&gt;5月9日〜5月17日にお届け予定&lt;/strong&gt;となっていたので、予定通りという感じです。&lt;/p&gt;
-
-&lt;p&gt;早速開けると、お詫びの紙が入っていました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-11/zozosuit2.jpg&quot; alt=&quot;ZOZOSUIT&quot; title=&quot;ZOZOSUIT&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;送料も無料ですし、そもそもPBを買うために注文したので、あまり気にしていません。&lt;/p&gt;
-
-&lt;p&gt;中にはスーツ本体と、スマホスタンドが入っていました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-11/zozosuit3.jpg&quot; alt=&quot;ZOZOSUIT&quot; title=&quot;ZOZOSUIT&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;早速計測&quot;&gt;早速計測&lt;/h2&gt;
-
-&lt;p&gt;早速着用して計測しました！&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ZOZOSUITで計測した &lt;a href=&quot;https://t.co/f7GUS2zopZ&quot;&gt;pic.twitter.com/f7GUS2zopZ&lt;/a&gt;&lt;/p&gt;&amp;mdash; micchyboy (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/994756473656721408?ref_src=twsrc%5Etfw&quot;&gt;2018年5月11日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;ZOZOTOWNアプリで計測しましたが、概ねスムーズに計測できました。&lt;/p&gt;
-
-&lt;p&gt;70cmの机と、2m以上離れるための空間を作るのがけっこう大変でした。&lt;/p&gt;
-
-&lt;p&gt;最初リビングでトライしたのですが、私の位置を認識してくれず断念し、自分の部屋で行いました。&lt;/p&gt;
-
-&lt;p&gt;背景が関係しているのでしょうか？&lt;/p&gt;
-
-&lt;p&gt;計測時には時計回りに12回撮影するのですが、ずれないようにと思い結構緊張しました。
-音声ガイダンスが優しくガイドしてくれるので、大丈夫だと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;pb注文&quot;&gt;PB注文&lt;/h2&gt;
-
-&lt;p&gt;アプリではその流れでZOZOの服を注文できるようになっています。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-11/zozosuit5.png&quot; alt=&quot;ZOZO&quot; title=&quot;ZOZO&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Tシャツだけの注文やデニムパンツだけの注文は今のところできないようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-11/zozosuit6.png&quot; alt=&quot;ZOZO&quot; title=&quot;ZOZO&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;とりあえず、Tシャツとデニムパンツを注文しました。&lt;/p&gt;
-
-&lt;h2 id=&quot;zozosuit&quot;&gt;ZOZOSUIT&lt;/h2&gt;
-
-&lt;p&gt;残念ながらセンサー方式のZOZOSUITは手に入れられなかったのですが、自分のサイズが簡単に計測できるならどちらでも良い派です。&lt;/p&gt;
-
-&lt;p&gt;マーカー方式なら&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;洗濯可能 → 家族で使い回しやすい&lt;/li&gt;
-  &lt;li&gt;電池切れなし　→ 何度でも計測できる。体型データを適当に更新していける&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;などの利点があると思います。&lt;/p&gt;
-
-&lt;p&gt;スタートトゥデイの前澤社長も&lt;em&gt;体重計や体温計のように一家に一台の存在にします&lt;/em&gt;と言っていて、確かに一家に一台あると便利ですよね。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ZOZOSUITは、街頭やコラボ企業経由等、圧倒的な速度で世界中で無料で配りまくり、体重計や体温計のように一家に一台の存在にします。そして、世界中のお客様の体型を最も知り尽くした企業となり、そのデータを元に一人一人にピッタリの服を提供する、世界でも類を見ないファッション企業を目指します。 &lt;a href=&quot;https://t.co/xNvquY2TJ1&quot;&gt;pic.twitter.com/xNvquY2TJ1&lt;/a&gt;&lt;/p&gt;&amp;mdash; Yusaku Maezawa 前澤友作 (@yousuck2020) &lt;a href=&quot;https://twitter.com/yousuck2020/status/933170052018323457?ref_src=twsrc%5Etfw&quot;&gt;2017年11月22日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;我が家でも私と妻の両方計測して、PBを購入したいと思います。&lt;/p&gt;
-
-&lt;p&gt;まぁ、一言でいうと、まさにファッション革命ですね！&lt;/p&gt;
-
-&lt;h3 id=&quot;技術的な点での感想&quot;&gt;技術的な点での感想&lt;/h3&gt;
-
-&lt;p&gt;以前のセンサー方式は、発表後の記事を見ていてもかなり独自の技術っぽい感じがしていて、他の企業が参入するのはなかなか難しそうな技術だと思っていました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.itmedia.co.jp/news/articles/1712/07/news011.html&quot;&gt;「ZOZOSUIT」を作った謎のスタートアップの正体&lt;/a&gt; IT media&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ニュージーランドのソフトセンサー開発企業StretchSenseという企業と共同開発していました。&lt;/p&gt;
-
-&lt;p&gt;新しくなったマーカー方式は、スーツについたマーカーをカメラで認識し、画像処理によってサイズを計測するという、ほぼほぼソフトウェアによる計測方式になりました。&lt;/p&gt;
-
-&lt;p&gt;つまり、画像認識案件になったということで、早速有志によるマーカー認識方法が公開されるなど、早速ハックがなされております。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://gist.github.com/ksasao/bc9c548d5e38932f2d0d11912ba541d0&quot;&gt;ZOZOSUITのマーカーのIDを読み取るコード&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;他の企業も同じ方式で計測ツールを出す可能性はあるなと思いつつ、そもそもこの方式でできたのだから時間の問題だったということも言えますね。まぁ私が心配しても関係ないことですし、競合が出るのはユーザーとしてはいいことだと思います。&lt;/p&gt;
-
-&lt;p&gt;今後、エンジニアや研究者の中で、ZOZOSUITを利用して面白いもの作った！みたいなのが色々出てくると思いますが、どうなるでしょうか。&lt;/p&gt;
-</description>
-        <pubDate>Fri, 11 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/gadget/2018/05/11/zozosuit.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/gadget/2018/05/11/zozosuit.html</guid>
-        
-        <category>ZOZOSUIT</category>
-        
-        <category>ゾゾスーツ</category>
-        
-        <category>ZOZO</category>
-        
-        <category>ZOZOTOWN</category>
-        
-        
-        <category>gadget</category>
         
       </item>
     
