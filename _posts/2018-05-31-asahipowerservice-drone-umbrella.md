@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "手で持たないドローン日傘　free Parasolアサヒパワーサービスが開発"
-description: "手で持たないドローン日傘　free Parasolアサヒパワーサービスが開発"
+description: "ニュースを見ていて面白いと思ったガジェットがありました。アサヒパワーサービスが手で持たないドローン日傘を開発したようです。"
 date: 2018-05-31 00:00
 categories: gadget
 lang: ja_JP

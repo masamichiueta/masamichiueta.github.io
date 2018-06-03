@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "仮想通貨を安全に保存！ハードウェアウォレット Ledger Nano Sの使い方"
-description: "仮想通貨を安全に保存！ハードウェアウォレット Ledger Nano Sの使い方"
+description: "仮想通貨のウォレットは何を使っていますか？取引所のウォレットにそのまま仮想通貨を置いておくのも管理が楽でいいのですが、取引所の破綻やハッキングなどどうしても取引所リスクを考えてしまいます。先日もZaifで不正出金があったというニュースがありました。"
 date: 2018-02-11
 hero-image: "cover.png"
 hero-caption: <a href="https://www.ledgerwallet.com">Ledger Wallet Webサイト</a>よりスクリーンショット

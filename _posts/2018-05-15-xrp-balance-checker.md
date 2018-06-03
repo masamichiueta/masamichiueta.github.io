@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "XRPのウォレットの残高を確認するアプリを作りました"
-description: "XRPのウォレットの残高を確認するアプリを作りました"
+description: "Ledger Nanoでリップルを保有している人が簡単に確認できるようにXRPのウォレットの残高を確認するアプリを作りました。Ledger Nanoで保有している人はいわゆるガチホの人が多いのかなと思っています。いちいちWebサイトでアドレス入力して確認するのも面倒だったので作ってしまいました。"
 date: 2018-05-15
 categories: cryptocurrency
 hero-image: "cover.png"

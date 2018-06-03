@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました"
-description: "BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました"
+description: "最近流行りのビットコインFXボットでも作ってみようかと調べていたところ、BitMEXのボットのサンプルコード sample-market-makerがあったので、動かしてみました。"
 date: 2018-05-08
 categories: cryptocurrency
 hero-image: "cover.png"

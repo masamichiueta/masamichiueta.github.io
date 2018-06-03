@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JekyllでSEO対策をする方法"
-description: "JekyllでSEO対策をする方法"
+description: "グーグルやヤフーの検索でブログをヒットさせるには、SEOを行う必要がります。今回はJekyllのSEO対策について書きます。よくブログで使われるワードプレスは最初からSEOに最適化された状態ですが、JekyllでもSEO対策を行うことが出来ます。"
 date: 2018-05-30 00:00
 categories: development
 lang: ja_JP

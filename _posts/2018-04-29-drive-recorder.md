@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "おすすめのドライブレコーダー BRISIE ドライブレコーダーを導入しました。"
-description: "おすすめのドライブレコーダー BRISIE ドライブレコーダーを導入しました"
+description: "ついにドライブレコーダーを導入しました！導入したのは、BRISEのドライブレコーダーです。タイムセールで購入し、3880円で購入しました。"
 date: 2018-04-29
 categories: family
 hero-image: "cover.jpg"

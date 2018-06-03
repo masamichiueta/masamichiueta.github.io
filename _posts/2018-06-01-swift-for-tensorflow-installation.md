@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Swift for TensorFlowをインストールして試してみる"
-description: "Swift for TensorFlowをインストールして試してみる"
+description: "先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！"
 date: 2018-06-01
 categories: development
 hero-image: cover.png
