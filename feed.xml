@@ -5,9 +5,38 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Jun 2018 17:59:08 +0900</pubDate>
-    <lastBuildDate>Sun, 03 Jun 2018 17:59:08 +0900</lastBuildDate>
+    <pubDate>Sun, 03 Jun 2018 22:38:12 +0900</pubDate>
+    <lastBuildDate>Sun, 03 Jun 2018 22:38:12 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>WWDC2018キーノートまとめ</title>
+        <description>&lt;h1 id=&quot;wwdc2018-キーノートまとめ&quot;&gt;WWDC2018 キーノートまとめ&lt;/h1&gt;
+
+&lt;p&gt;こちらにまとめていく予定です。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 05 Jun 2018 02:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/05/wwdc2018-keynote.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/05/wwdc2018-keynote.html</guid>
+        
+        <category>WWDC2018</category>
+        
+        <category>Apple</category>
+        
+        <category>アップル</category>
+        
+        <category>iOS</category>
+        
+        <category>macOS</category>
+        
+        <category>watchOS</category>
+        
+        <category>tvOS</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>子育てハック　子供2人（3歳0歳）の私が子供が生まれてから買ってよかったもの</title>
@@ -662,39 +691,6 @@ Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎ�
         
         
         <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator</title>
-        <description>&lt;h1 id=&quot;githubのコミットログ一覧を表示する&quot;&gt;GitHubのコミットログ一覧を表示する&lt;/h1&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Hi 👋&lt;br /&gt;&lt;br /&gt;I made a simple tool to generate an image of all your Github contributions! So you can tweet it ✨&lt;br /&gt;&lt;br /&gt;Check it out here: &lt;a href=&quot;https://t.co/boeScBUOza&quot;&gt;https://t.co/boeScBUOza&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Disclaimer: It’s still very raw. Just wanted something for myself, but feel free to send PRs and submit issues ♥️ &lt;a href=&quot;https://t.co/wgVLK7t0w4&quot;&gt;pic.twitter.com/wgVLK7t0w4&lt;/a&gt;&lt;/p&gt;&amp;mdash; Sallar 👨🏻‍💻 (@sallar) &lt;a href=&quot;https://twitter.com/sallar/status/991307546978930688?ref_src=twsrc%5Etfw&quot;&gt;2018年5月1日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;GitHubのコミットログ一覧を表示する&lt;strong&gt;GitHub Contributions Chart Generator&lt;/strong&gt;です。&lt;/p&gt;
-
-&lt;p&gt;2015年の終わり頃から、GitHubに毎日コミットしようという自分ルールを作って実践してきたので、ログを作って見ました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-20/contributions.png&quot; alt=&quot;GitHub Contribution&quot; title=&quot;GitHub Contribution&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;毎日コミットすることはできませんでしたが、けっこう草を生やすことができました！&lt;/p&gt;
-
-&lt;p&gt;以前から活動していたチーム活動がなくなってしまいプライベートリポジトリをGitLabに移行したので、記念に作っておきました。
-&lt;strong&gt;現在私のアカウントに草は生えておりません。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;会社でGitHubを使用するようになったので、個人ではパブリックなリポジトリへの貢献を増やしていきたいと思います。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 20 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/development/2018/05/20/github-commit-history.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/05/20/github-commit-history.html</guid>
-        
-        <category>GitHub</category>
-        
-        <category>git</category>
-        
-        
-        <category>development</category>
         
       </item>
     
