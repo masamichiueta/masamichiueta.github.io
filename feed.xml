@@ -5,15 +5,52 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Jun 2018 18:12:44 +0900</pubDate>
-    <lastBuildDate>Tue, 05 Jun 2018 18:12:44 +0900</lastBuildDate>
+    <pubDate>Tue, 05 Jun 2018 18:48:01 +0900</pubDate>
+    <lastBuildDate>Tue, 05 Jun 2018 18:48:01 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
         <title>WWDC2018キーノートまとめ</title>
         <description>&lt;h1 id=&quot;wwdc2018-キーノートまとめ&quot;&gt;WWDC2018 キーノートまとめ&lt;/h1&gt;
 
-&lt;p&gt;こちらにまとめていく予定です。&lt;/p&gt;
+&lt;h2 id=&quot;ios-12&quot;&gt;iOS 12&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;パフォーマンスの向上&lt;/li&gt;
+  &lt;li&gt;ARKit2 マルチユーザーに対応&lt;/li&gt;
+  &lt;li&gt;Measureアプリが追加、ARでもののサイズを測れる&lt;/li&gt;
+  &lt;li&gt;Siriが色々アップデート&lt;/li&gt;
+  &lt;li&gt;株価、ニュース、ボイスメモアプリのリデザイン&lt;/li&gt;
+  &lt;li&gt;iBooksがApple Bookに変更、リデザイン&lt;/li&gt;
+  &lt;li&gt;通知のグループ化が可能になった&lt;/li&gt;
+  &lt;li&gt;どれくらいiPhoneを使用しているかがわかるようになった、アプリごとの使用時間を決めて制限することも可能&lt;/li&gt;
+  &lt;li&gt;Animojiにキャラが追加&lt;/li&gt;
+  &lt;li&gt;MeMojiで自分の顔文字を追加することができるように&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;watchos-5&quot;&gt;watchOS 5&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;ヨガやハイキングなど新しいアクティビティの追加&lt;/li&gt;
+  &lt;li&gt;ウォッチ同士でトランシーバーが可能に&lt;/li&gt;
+  &lt;li&gt;通知が強化&lt;/li&gt;
+  &lt;li&gt;ウェブビューが表示できるようになった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;tvos-12&quot;&gt;tvOS 12&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;音がよくなった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;macos-1014-mojaveモハーヴェ&quot;&gt;macOS 10.14 Mojave（モハーヴェ）&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ダークモードが追加された&lt;/li&gt;
+  &lt;li&gt;デスクトップのファイルを整理するStack&lt;/li&gt;
+  &lt;li&gt;Finderの新しい表示 ギャラリービュー&lt;/li&gt;
+  &lt;li&gt;News, 株価, ボイスメモ, ホームアプリが追加&lt;/li&gt;
+  &lt;li&gt;CreateMLという機械学習モデル作成フレームワークが追加された&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;あんまりすごい発表はなかったですかねぇ。&lt;/p&gt;
 </description>
         <pubDate>Tue, 05 Jun 2018 02:00:00 +0900</pubDate>
         <link>https://micchyboy1023.github.io/development/2018/06/05/wwdc2018-keynote.html</link>
