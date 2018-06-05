@@ -5,8 +5,8 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Jun 2018 22:46:52 +0900</pubDate>
-    <lastBuildDate>Sun, 03 Jun 2018 22:46:52 +0900</lastBuildDate>
+    <pubDate>Tue, 05 Jun 2018 18:12:44 +0900</pubDate>
+    <lastBuildDate>Tue, 05 Jun 2018 18:12:44 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -32,6 +32,58 @@
         <category>watchOS</category>
         
         <category>tvOS</category>
+        
+        
+        <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>ASP.NET Coreでエラーメッセージを日本語にする方法</title>
+        <description>&lt;p&gt;ASP.NET CoreでWebアプリを開発していますが、デフォルトのバリデーションの仕組みを使うとエラーメッセージが英語になってしまい困っていました。&lt;/p&gt;
+
+&lt;p&gt;モデルクラスのプロパティに全部のパターンを日本語で書くとか途方もないことをしたくないと思っていたところ、解決する方法を見つけました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/h0ge/items/b7ffd65d0f11ac6382fd&quot;&gt;ASP.NET Coreでエラーメッセージを日本語で表示する&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;元ネタはこちらの記事のようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/mvpawardprogram/2017/05/09/aspnetcore-mvc-error-message/&quot;&gt;Customization And Localization Of ASP.NET Core MVC Default Validation Error Messages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;エラーメッセージはこんな感じでローカライズしました。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RequiredAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}は必須項目です&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MaxLengthAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}は{1}文字以内で入力してください&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MinLengthAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}は{1}文字以上で入力してください&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EmailAddressAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}の形式が正しくありません。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CompareAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}と{1}が一致しません。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;StringLengthAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}は{1}文字以上{2}文字以下で入力してください。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Tue, 05 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/05/asp-dotnet-core-error-japanese.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/05/asp-dotnet-core-error-japanese.html</guid>
+        
+        <category>ASP.NET Core</category>
+        
+        <category>C#</category>
+        
+        <category>ASP.NET</category>
+        
+        <category>ローカライズ</category>
+        
+        <category>日本語化</category>
         
         
         <category>development</category>
@@ -666,28 +718,6 @@ Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎ�
         <category>水族館</category>
         
         <category>DRAGON BOART RACE</category>
-        
-        
-        <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>江ノ電に乗って江ノ島にいったら富士山が見えた</title>
-        <description>&lt;p&gt;今日は非常に天気がよkくて、江ノ電に乗って江ノ島にいったら富士山が見えました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-20/enoshima.jpg&quot; alt=&quot;江ノ島&quot; title=&quot;江ノ島&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;いい景色でした。
-晴れの日に行ってみるのはどうでしょうか？&lt;/p&gt;
-</description>
-        <pubDate>Sun, 20 May 2018 23:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/family/2018/05/20/enoshima.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/05/20/enoshima.html</guid>
-        
-        <category>江ノ電</category>
-        
-        <category>江ノ島</category>
         
         
         <category>family</category>
