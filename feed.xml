@@ -5,9 +5,51 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Jun 2018 18:48:01 +0900</pubDate>
-    <lastBuildDate>Tue, 05 Jun 2018 18:48:01 +0900</lastBuildDate>
+    <pubDate>Wed, 06 Jun 2018 12:00:42 +0900</pubDate>
+    <lastBuildDate>Wed, 06 Jun 2018 12:00:42 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>ffmpegを使ってmovファイルをgifに変換する</title>
+        <description>&lt;h1 id=&quot;movをgifに変換する&quot;&gt;movをgifに変換する&lt;/h1&gt;
+
+&lt;p&gt;アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、&lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt;を使用すると簡単にmovをgifに変更できました。&lt;/p&gt;
+
+&lt;p&gt;まずffmpegをインストールします&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ffmpeg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;インストールするとffmpegが使用できるようになるので、&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ffmpeg -i [input file].mov -r [frame rate] [output file].gif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;例えば、&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ffmpeg -i screen.mov -r 24 screen.gif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;のようにうつと、ffmpegがmovをgifに変換してくれます。&lt;/p&gt;
+
+&lt;p&gt;ffmpegの使い方はこちらのページが参考になります。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tech.ckme.co.jp/ffmpeg_basic.shtml&quot;&gt;ffmpegの最も基本的な使い方&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html</guid>
+        
+        <category>ffmpeg</category>
+        
+        <category>mov</category>
+        
+        <category>gif</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>WWDC2018キーノートまとめ</title>
@@ -704,60 +746,6 @@ Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎ�
         
         
         <category>cryptocurrency</category>
-        
-      </item>
-    
-      <item>
-        <title>横浜お出かけスポット！横浜中華街にあるヨコハマおもしろ水族館に行ってきました</title>
-        <description>&lt;h1 id=&quot;ヨコハマおもしろ水族館&quot;&gt;ヨコハマおもしろ水族館&lt;/h1&gt;
-
-&lt;p&gt;横浜中華街にある、ヨコハマおもしろ水族館に行ってきました！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/cover.jpg&quot; alt=&quot;横浜中華街&quot; title=&quot;横浜中華街&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;みなとみらい線の横浜中華街駅を出て中華街に入り、進んでいくとありました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/suizokukan1.jpg&quot; alt=&quot;ヨコハマおもしろ水族館&quot; title=&quot;ヨコハマおもしろ水族館&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;入場料は、&lt;strong&gt;大人1400円&lt;/strong&gt;ですが、クーポンを持っていたため&lt;strong&gt;1000円&lt;/strong&gt;でした。&lt;/p&gt;
-
-&lt;p&gt;中に入るとこんな感じです。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/suizokukan2.jpg&quot; alt=&quot;ヨコハマおもしろ水族館&quot; title=&quot;ヨコハマおもしろ水族館&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;全体的に、レトロというか、中華風なのか？という雰囲気でした。
-水族館自体はビルの3階のみで、中はそんなに広くないですが、それぞれの展示にクイズがあったり、餌やりを間近でみれたりと、子供が楽しむにはちょうどいい感じでした。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/suizokukan3.jpg&quot; alt=&quot;ヨコハマおもしろ水族館&quot; title=&quot;ヨコハマおもしろ水族館&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;子供広場の方にいくと、水槽が入った滑り台やジャングルジムがあり、遊具で遊ぶこともできます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/suizokukan4.jpg&quot; alt=&quot;ヨコハマおもしろ水族館&quot; title=&quot;ヨコハマおもしろ水族館&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;珍しいダイオウグソクムシが展示されていたりとなかなかコアな水族館で楽しめました。&lt;/p&gt;
-
-&lt;h2 id=&quot;山下公園で休憩&quot;&gt;山下公園で休憩&lt;/h2&gt;
-
-&lt;p&gt;水族館の後は、山下公園が近いのでそこでのんびりと休憩しました。&lt;/p&gt;
-
-&lt;p&gt;ドラゴンボートレースというイベントが開催されていましたね。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-26/dragonboart.jpg&quot; alt=&quot;ドラゴンボートレース&quot; title=&quot;ドラゴンボートレース&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 26 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/family/2018/05/26/yokohama-omorhiso-suziokukan.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/05/26/yokohama-omorhiso-suziokukan.html</guid>
-        
-        <category>横浜中華街</category>
-        
-        <category>ヨコハマおもしろ水族館</category>
-        
-        <category>水族館</category>
-        
-        <category>DRAGON BOART RACE</category>
-        
-        
-        <category>family</category>
         
       </item>
     

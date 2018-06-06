@@ -6,26 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>WWDC2016 Keynote Summary | micchyboy</title>
+<title>ffmpegを使ってmovファイルをgifに変換する | micchyboy</title>
 <meta name="generator" content="Jekyll v3.8.1" />
-<meta property="og:title" content="WWDC2016 Keynote Summary" />
+<meta property="og:title" content="ffmpegを使ってmovファイルをgifに変換する" />
 <meta name="author" content="micchyboy" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="WWDC2016 Keynote Summary" />
-<meta property="og:description" content="WWDC2016 Keynote Summary" />
-<link rel="canonical" href="https://micchyboy1023.github.io/development/2016/06/14/wwdc2016-keynote-summary.html" />
-<meta property="og:url" content="https://micchyboy1023.github.io/development/2016/06/14/wwdc2016-keynote-summary.html" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。" />
+<meta property="og:description" content="アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。" />
+<link rel="canonical" href="https://micchyboy1023.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html" />
+<meta property="og:url" content="https://micchyboy1023.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html" />
 <meta property="og:site_name" content="micchyboy" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-06-14T00:00:00+09:00" />
+<meta property="article:published_time" content="2018-06-06T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"WWDC2016 Keynote Summary","author":{"@type":"Person","name":"micchyboy"},"@type":"BlogPosting","url":"https://micchyboy1023.github.io/development/2016/06/14/wwdc2016-keynote-summary.html","headline":"WWDC2016 Keynote Summary","dateModified":"2016-06-14T00:00:00+09:00","datePublished":"2016-06-14T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://micchyboy1023.github.io/development/2016/06/14/wwdc2016-keynote-summary.html"},"@context":"http://schema.org"}</script>
+{"description":"アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。","author":{"@type":"Person","name":"micchyboy"},"@type":"BlogPosting","url":"https://micchyboy1023.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html","headline":"ffmpegを使ってmovファイルをgifに変換する","dateModified":"2018-06-06T00:00:00+09:00","datePublished":"2018-06-06T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://micchyboy1023.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://micchyboy1023.github.io/development/2016/06/14/wwdc2016-keynote-summary.html">
+  <link rel="canonical" href="https://micchyboy1023.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html">
   <link rel="alternate" type="application/rss+xml" title="micchyboy" href="https://micchyboy1023.github.io/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -91,12 +91,12 @@
 
 
     
-<section class="hero text-center" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2016-06-14/2016-06-14.jpg)">
-  <div class="overlay"></div>
+<section class="hero background-image-none text-center">
+  <div class="overlay background-color-main"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">WWDC2016 Keynote Summary</h1>
+      <h1 itemprop="name headline">ffmpegを使ってmovファイルをgifに変換する</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -110,233 +110,45 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2016-06-14T00:00:00+09:00" itemprop="datePublished">2016/6/14</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2018-06-06T00:00:00+09:00" itemprop="datePublished">2018/6/6</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">Apple</span>
+              <span class="badge badge-light">ffmpeg</span>
               
-              <span class="badge badge-light">WWDC</span>
+              <span class="badge badge-light">mov</span>
+              
+              <span class="badge badge-light">gif</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="micchyboy1023">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <h1 id="hello-wwdc16">Hello, WWDC16</h1>
+            <h1 id="movをgifに変換する">movをgifに変換する</h1>
 
-<ul>
-  <li>27th year</li>
-  <li>13 million developers</li>
-  <li>74 countries</li>
-  <li>70% first attendees</li>
-</ul>
+<p>アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、<code class="highlighter-rouge">ffmpeg</code>を使用すると簡単にmovをgifに変更できました。</p>
 
-<h2 id="app-store">App Store</h2>
+<p>まずffmpegをインストールします</p>
 
-<ul>
-  <li>2 million apps</li>
-  <li>130 billion times downloads</li>
-  <li>15 billion dollars for developers</li>
-</ul>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install ffmpeg
+</code></pre></div></div>
 
-<p><ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3655474149264343" data-ad-slot="9606645212"></ins></p>
+<p>インストールするとffmpegが使用できるようになるので、</p>
 
-<h2 id="4-apple-platforms">4 Apple Platforms</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg -i [input file].mov -r [frame rate] [output file].gif
+</code></pre></div></div>
 
-<ol>
-  <li>watchOS</li>
-  <li>tvOS</li>
-  <li>OS X</li>
-  <li>iOS</li>
-</ol>
+<p>例えば、</p>
 
-<h1 id="watchos-3">watchOS 3</h1>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg -i screen.mov -r 24 screen.gif
+</code></pre></div></div>
 
-<ul>
-  <li>performance update</li>
-  <li>launch dock by side button</li>
-  <li>Control center</li>
-  <li>Scribble
-    <ul>
-      <li>hand writing text input</li>
-    </ul>
-  </li>
-  <li>new watch faces
-    <ul>
-      <li>change watch faces by swipe</li>
-    </ul>
-  </li>
-  <li>Emergency call by side button</li>
-  <li>Activity sharing</li>
-  <li>mode for wheel chair users</li>
-  <li>new app “Breathe”</li>
-  <li>Apple Pay in Apple</li>
-  <li>SpriteKit &amp;  SceneKit</li>
-  <li>Crown &amp; Touch events</li>
-  <li>
-    <p>CloudKit</p>
-  </li>
-  <li>Developer Preview from Today, coming in fall</li>
-</ul>
+<p>のようにうつと、ffmpegがmovをgifに変換してくれます。</p>
 
-<h2 id="tvos">tvOS</h2>
+<p>ffmpegの使い方はこちらのページが参考になります。</p>
 
-<ul>
-  <li>1300 video channels</li>
-  <li>6000 apps</li>
-  <li>new Remote app</li>
-  <li>Siri searches youtube</li>
-  <li>Single sign on</li>
-  <li>dark mode</li>
-  <li>download sync</li>
-  <li>ReplayKit, PhotoKit, HomeKit</li>
-  <li>Developer Preview from Today, coming in fall</li>
-</ul>
-
-<h2 id="os-x">OS X</h2>
-<ul>
-  <li>OS X to macOS</li>
-  <li>name is Sierra</li>
-</ul>
-
-<ol>
-  <li>Continuity
-    <ul>
-      <li>Auto Unlock, unlock by close iPhone or Apple Watch</li>
-      <li>Universal Clipboard, copy and paste between mac and iPhone</li>
-    </ul>
-  </li>
-  <li>iCloud
-    <ul>
-      <li>Desktop iCloud sync</li>
-    </ul>
-  </li>
-  <li>Apple Pay
-    <ul>
-      <li>Apple Pay on the Web</li>
-      <li>Pay with Apple Pay button</li>
-    </ul>
-  </li>
-  <li>Tabs
-    <ul>
-      <li>All apps can use tab</li>
-    </ul>
-  </li>
-  <li>Picture in picture</li>
-  <li>Siri</li>
-</ol>
-
-<ul>
-  <li>Developer Preview from Today, coming in all</li>
-</ul>
-
-<h2 id="ios-10">iOS 10</h2>
-<ul>
-  <li>biggest iOS release ever, 10 big features
-    <ol>
-      <li>Experience</li>
-    </ol>
-    <ul>
-      <li>Redesigned lock screen</li>
-      <li>Rich notification
-        <ul>
-          <li>3D Touch shortcuts</li>
-        </ul>
-      </li>
-      <li>Control center, swipe to music</li>
-      <li>Widgets on lock screen and home screen
-    2. Siri</li>
-      <li>Siri API released, SiriKit</li>
-      <li>Messaging</li>
-      <li>Ride booking</li>
-      <li>Photo search</li>
-      <li>Workouts</li>
-      <li>Payments</li>
-      <li>VoIP calling</li>
-      <li>Car Play
-    3. QuickType</li>
-      <li>intelligent suggestions</li>
-      <li>current location</li>
-      <li>contact information</li>
-      <li>intelligent scheduling</li>
-      <li>calendar availability</li>
-      <li>recent address</li>
-      <li>lookup
-    4. Photos</li>
-      <li>Places view</li>
-      <li>Advanced Computer vision
-        <ul>
-          <li>Face recognition</li>
-          <li>Object &amp; Scene recognition</li>
-          <li>Memories
-            <ul>
-              <li>movies are created automatically
-                <ol>
-                  <li>Maps</li>
-                </ol>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>All new design</li>
-      <li>Proactive
-        <ul>
-          <li>map suggests places</li>
-          <li>Enhanced search</li>
-          <li>new design navigation</li>
-          <li>Map extensions, add extension to map
-            <ol>
-              <li>Music</li>
-            </ol>
-          </li>
-        </ul>
-      </li>
-      <li>All new design
-    7. News
-    8. HomeKit</li>
-      <li>new Home app</li>
-      <li>Access HomeKit devices from home app</li>
-      <li>Home app can be accessed by Siri, and Control center
-    9. Phone</li>
-      <li>Voicemail transcription</li>
-      <li>VoIP API
-        <ul>
-          <li>Lock screen</li>
-          <li>Recents</li>
-          <li>Contacts
-            <ol>
-              <li>Messages</li>
-            </ol>
-          </li>
-        </ul>
-      </li>
-      <li>Rich links</li>
-      <li>inline camera &amp; photos</li>
-      <li>3x bigger emoji</li>
-      <li>emoji tap highlight</li>
-      <li>Bubble effects</li>
-      <li>Invisible link, show text, photo by swiping</li>
-      <li>handwritten text</li>
-      <li>full screen effects</li>
-      <li>iMessage app store
-        <ul>
-          <li>Stickers</li>
-        </ul>
-      </li>
-      <li>Notes collaboration</li>
-      <li>Developer Preview from Today, public beta in July.</li>
-    </ul>
-  </li>
-  <li>Swift Playgrounds
-    <ul>
-      <li>run swift code on iPad</li>
-      <li>Developer Preview from Today, coming in fall</li>
-      <li>Free</li>
-    </ul>
-  </li>
-</ul>
+<p><a href="http://tech.ckme.co.jp/ffmpeg_basic.shtml">ffmpegの最も基本的な使い方</a></p>
 
           </div>
           <div class="pt-5">
@@ -356,18 +168,6 @@
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://micchyboy1023.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html">
-                  <small class="decoration-none text-muted">2018/6/6<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">ffmpegを使ってmovファイルをgifに変換する</h3>
-                  <p class="text-dark">アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。</p>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -725,6 +525,24 @@
                   <small class="decoration-none text-muted">2016/12/11<span class="ml-2">開発</span></small>                    
                   <h3 class="mt-0">iOSでMVVM（バインディングを使わない）</h3>
                   <p class="text-dark">iOSでMVVMアーキテクチャを採用した開発に取り組んでいます。MVVMと言っても、RxSwiftやReactiveKitのようにReactive Programmingを実現するためのフレームワークは用いずに、単純な形にすることを目標に考えた方法について記載します。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://micchyboy1023.github.io/development/2016/09/23/iOS-Redux-Architecture-with-coredata.html">
+                  <small class="decoration-none text-muted">2016/9/23<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">iOS Redux Architecture with CoreData</h3>
+                  <p class="text-dark">I started to lean Redux architecture recently.Redux is super simple and easy to understand.</p>
                   
                 </a>
               </li>
