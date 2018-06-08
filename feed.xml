@@ -5,9 +5,52 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Jun 2018 17:59:31 +0900</pubDate>
-    <lastBuildDate>Thu, 07 Jun 2018 17:59:31 +0900</lastBuildDate>
+    <pubDate>Fri, 08 Jun 2018 18:39:27 +0900</pubDate>
+    <lastBuildDate>Fri, 08 Jun 2018 18:39:27 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Swift4.2ではEnumを一覧で取得できるようになった</title>
+        <description>&lt;h1 id=&quot;swift42ではenumを一覧で取得できるようになった&quot;&gt;Swift4.2ではEnumを一覧で取得できるようになった&lt;/h1&gt;
+
+&lt;p&gt;WWDC2018の&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2018/401/&quot;&gt;What’s new in Swift&lt;/a&gt;でSwift4.2のアップデートが発表されていました。&lt;/p&gt;
+
+&lt;p&gt;Swift4.2では、&lt;code class=&quot;highlighter-rouge&quot;&gt;CaseIterable&lt;/code&gt; プロトコルをEnumに指定することで、&lt;code class=&quot;highlighter-rouge&quot;&gt;allCases&lt;/code&gt;というプロパティが使用できるようになり、Enumの一覧を取得できるようになったようです。&lt;/p&gt;
+
+&lt;p&gt;Swift Evolutionはこちら&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/apple/swift-evolution/blob/master/proposals/0194-derived-collection-of-enum-cases.md&quot;&gt;Derived Collection of Enum Cases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enumの一覧をループで回すのは、結構やりたい時があって、ビデオのようにEnumの全ケースを入れたArrayを定義するということをやることがありましたが、これは便利ですね。&lt;/p&gt;
+
+&lt;p&gt;例&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Gait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CaseIterable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trot&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;canter&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gallop&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jog&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gait&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Gait&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allCases&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Fri, 08 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/08/whats-new-swift42.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/08/whats-new-swift42.html</guid>
+        
+        <category>Swift</category>
+        
+        <category>Enum</category>
+        
+        <category>iOS</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて</title>
@@ -672,92 +715,6 @@ Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎ�
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>いよいよ来週！AppleのイベントWWDC2018で発表されそうなことまとめ</title>
-        <description>&lt;p&gt;いよいよAppleの開発者向け会議&lt;strong&gt;WWDC2018(World Wide Developer Conference)&lt;/strong&gt;が来週となりました！&lt;/p&gt;
-
-&lt;p&gt;今年のWWDCで発表されそうなことを噂からまとめてみました。&lt;/p&gt;
-
-&lt;h1 id=&quot;uiのアップデート&quot;&gt;UIのアップデート&lt;/h1&gt;
-
-&lt;p&gt;WWDCのページを見ると、立体的なUIのE部品がならんでいます。これはWWDC2018でiOSやmacOSのUIが変更されることを暗示しているのでしょうか？&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-29/cover.png&quot; alt=&quot;WWDC2018&quot; title=&quot;WWDC2018&quot; /&gt;
-画像出展:&lt;a href=&quot;https://developer.apple.com/wwdc/&quot;&gt;Apple&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;iOS7が出たのが今から5年前の2013年。&lt;/p&gt;
-
-&lt;p&gt;当時はフラットデザインがかなり流行っていたころで、アップルもそれに追従する形でフラットデザインへと移行しました。
-今思うと、iOS6以前はとてもダサく見えるので不思議です。。&lt;/p&gt;
-
-&lt;p&gt;その後OSのアップデートを繰り返し、iOS11になりました。&lt;/p&gt;
-
-&lt;p&gt;iOS7以降、基本的な部品は変わっていませんが、最近のアップルのデザインの特徴としては、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;大きくて太い文字&lt;/li&gt;
-  &lt;li&gt;ハンドルを使って引っ張りあげたり下げたりする半モーダル画面&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;などが挙げられます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-29/map.png&quot; alt=&quot;map&quot; title=&quot;map&quot; /&gt;
-&lt;em&gt;マップの例&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;特にUI部品の重なりは多用されているように見えるので、今年のWWDCでは&lt;strong&gt;Z軸（重なり）を使ったUIフレームワーク&lt;/strong&gt;へとアップデートされる可能性があるのではないでしょうか？&lt;/p&gt;
-
-&lt;h1 id=&quot;ios12-watchos5-macos1014tvosなど&quot;&gt;iOS12, watchOS5, macOS10.14、tvOSなど&lt;/h1&gt;
-
-&lt;p&gt;iOSはもちろん、その他のプラットフォームのOSもアップデートされるでしょう。&lt;/p&gt;
-
-&lt;p&gt;噂によると、前に述べたUIのアップデートがなければ、今年のアップデートは安定性の向上など、比較的地味な発表で終わる可能性が高いようです。&lt;/p&gt;
-
-&lt;h1 id=&quot;ハードウェア&quot;&gt;ハードウェア&lt;/h1&gt;
-
-&lt;h2 id=&quot;airpower&quot;&gt;AirPower&lt;/h2&gt;
-
-&lt;p&gt;昨年iPhoneXと同時に発表されたAirPowerですがWWDCで発売がアナウンスされるのはないでしょうか？&lt;/p&gt;
-
-&lt;p&gt;AirPodsの無線充電ケースも発表されそうですね！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-29/airpower.png&quot; alt=&quot;AirPower&quot; title=&quot;AirPower&quot; /&gt;
-画像出展:&lt;a href=&quot;https://www.apple.com/jp/iphone-x/&quot;&gt;Apple&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;新型macbook-macbook-pro&quot;&gt;新型MacBook, MacBook Pro&lt;/h2&gt;
-
-&lt;p&gt;昨年のWWDCではMacBook ProやiMac Proなど、新しいハードウェアも数々発表されました。
-今年もMacBookがアップデートされるかもしれません。&lt;/p&gt;
-
-&lt;h2 id=&quot;homepodが日本へ&quot;&gt;HomePodが日本へ&lt;/h2&gt;
-
-&lt;p&gt;HomePodがようやく日本で発売されるかもしれません。
-少し前にHomePodに日本語対応が追加されていたようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.gizmodo.jp/2018/05/homepod-japanese-language.html&quot;&gt;HomePodの対応言語に日本語が追加。これはひょっとすると…&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;いずれにせよ、来週わかります。楽しみですね！&lt;/p&gt;
-</description>
-        <pubDate>Tue, 29 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/gadget/2018/05/29/wwdc2018-prediction.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/gadget/2018/05/29/wwdc2018-prediction.html</guid>
-        
-        <category>Apple</category>
-        
-        <category>アップル</category>
-        
-        <category>WWDC</category>
-        
-        <category>iOS</category>
-        
-        <category>wawtchOS</category>
-        
-        <category>macOS</category>
-        
-        
-        <category>gadget</category>
         
       </item>
     
