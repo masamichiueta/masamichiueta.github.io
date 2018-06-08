@@ -6,26 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator | micchyboy</title>
+<title>WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて | micchyboy</title>
 <meta name="generator" content="Jekyll v3.8.1" />
-<meta property="og:title" content="GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator" />
+<meta property="og:title" content="WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて" />
 <meta name="author" content="micchyboy" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generatorです。2015年の終わり頃から、GitHubに毎日コミットしようという自分ルールを作って実践してきたので、ログを作って見ました。" />
-<meta property="og:description" content="GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generatorです。2015年の終わり頃から、GitHubに毎日コミットしようという自分ルールを作って実践してきたので、ログを作って見ました。" />
-<link rel="canonical" href="https://micchyboy1023.github.io/development/2018/05/20/github-commit-history.html" />
-<meta property="og:url" content="https://micchyboy1023.github.io/development/2018/05/20/github-commit-history.html" />
+<meta name="description" content="ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。" />
+<meta property="og:description" content="ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。" />
+<link rel="canonical" href="https://micchyboy1023.github.io/development/2018/06/07/create-ml-wwdc2018.html" />
+<meta property="og:url" content="https://micchyboy1023.github.io/development/2018/06/07/create-ml-wwdc2018.html" />
 <meta property="og:site_name" content="micchyboy" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-05-20T00:00:00+09:00" />
+<meta property="article:published_time" content="2018-06-07T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generatorです。2015年の終わり頃から、GitHubに毎日コミットしようという自分ルールを作って実践してきたので、ログを作って見ました。","author":{"@type":"Person","name":"micchyboy"},"@type":"BlogPosting","url":"https://micchyboy1023.github.io/development/2018/05/20/github-commit-history.html","headline":"GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator","dateModified":"2018-05-20T00:00:00+09:00","datePublished":"2018-05-20T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://micchyboy1023.github.io/development/2018/05/20/github-commit-history.html"},"@context":"http://schema.org"}</script>
+{"description":"ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。","author":{"@type":"Person","name":"micchyboy"},"@type":"BlogPosting","url":"https://micchyboy1023.github.io/development/2018/06/07/create-ml-wwdc2018.html","headline":"WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて","dateModified":"2018-06-07T00:00:00+09:00","datePublished":"2018-06-07T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://micchyboy1023.github.io/development/2018/06/07/create-ml-wwdc2018.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://micchyboy1023.github.io/development/2018/05/20/github-commit-history.html">
+  <link rel="canonical" href="https://micchyboy1023.github.io/development/2018/06/07/create-ml-wwdc2018.html">
   <link rel="alternate" type="application/rss+xml" title="micchyboy" href="https://micchyboy1023.github.io/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -91,12 +91,12 @@
 
 
     
-<section class="hero text-center" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2018-05-20/contributions.png)">
-  <div class="overlay"></div>
+<section class="hero background-image-none text-center">
+  <div class="overlay background-color-main"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator</h1>
+      <h1 itemprop="name headline">WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -110,36 +110,94 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2018-05-20T00:00:00+09:00" itemprop="datePublished">2018/5/20</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2018-06-07T00:00:00+09:00" itemprop="datePublished">2018/6/7</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">GitHub</span>
+              <span class="badge badge-light">WWDC2018</span>
               
-              <span class="badge badge-light">git</span>
+              <span class="badge badge-light">WWDC</span>
+              
+              <span class="badge badge-light">CreateML</span>
+              
+              <span class="badge badge-light">人工知能</span>
+              
+              <span class="badge badge-light">機械学習</span>
+              
+              <span class="badge badge-light">マシーンラーニング</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="micchyboy1023">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <h1 id="githubのコミットログ一覧を表示する">GitHubのコミットログ一覧を表示する</h1>
+            <h1 id="create-ml">Create ML</h1>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Hi 👋<br /><br />I made a simple tool to generate an image of all your Github contributions! So you can tweet it ✨<br /><br />Check it out here: <a href="https://t.co/boeScBUOza">https://t.co/boeScBUOza</a><br /><br />Disclaimer: It’s still very raw. Just wanted something for myself, but feel free to send PRs and submit issues ♥️ <a href="https://t.co/wgVLK7t0w4">pic.twitter.com/wgVLK7t0w4</a></p>&mdash; Sallar 👨🏻‍💻 (@sallar) <a href="https://twitter.com/sallar/status/991307546978930688?ref_src=twsrc%5Etfw">2018年5月1日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>WWDC2018で、機械学習モデルをmacOS Mojave上で簡単に作成することができるフレームワーク <code class="highlighter-rouge">Create ML</code>が発表されました。</p>
 
-<p>GitHubのコミットログ一覧を表示する<strong>GitHub Contributions Chart Generator</strong>です。</p>
+<p>セッションのビデオはこちら</p>
 
-<p>2015年の終わり頃から、GitHubに毎日コミットしようという自分ルールを作って実践してきたので、ログを作って見ました。</p>
+<p><a href="https://developer.apple.com/videos/play/wwdc2018/703/">Introducing Create ML</a></p>
 
-<p><img src="https://micchyboy1023.github.io/assets/posts/2018-05-20/contributions.png" alt="GitHub Contribution" title="GitHub Contribution" /></p>
+<h2 id="何ができる">何ができる？</h2>
 
-<p>毎日コミットすることはできませんでしたが、けっこう草を生やすことができました！</p>
+<p>セッションのビデオでは、</p>
 
-<p>以前から活動していたチーム活動がなくなってしまいプライベートリポジトリをGitLabに移行したので、記念に作っておきました。
-<strong>現在私のアカウントに草は生えておりません。</strong></p>
+<ul>
+  <li>画像の分類</li>
+  <li>テキストの判定</li>
+  <li>テーブルデータ(csvなど）によるデータの推測</li>
+</ul>
 
-<p>会社でGitHubを使用するようになったので、個人ではパブリックなリポジトリへの貢献を増やしていきたいと思います。</p>
+<p>のモデル作成と実際の分類のデモが行われていました。</p>
+
+<h2 id="画像認識用学習モデルの作成">画像認識用学習モデルの作成</h2>
+
+<h3 id="transfer-learning">Transfer Learning</h3>
+
+<p>注目はTransfer Learningというところで、Appleが事前に学習させたモデルを利用することで、</p>
+
+<ul>
+  <li>モデルサイズの縮小</li>
+  <li>モデル作成時間の短縮</li>
+</ul>
+
+<p>が可能になったようです。</p>
+
+<p>また、Playground上でモデルを作成するデモもありました。
+画像のファイルをフォルダごと突っ込むことで学習させていましたが、ファイル名やフォルダ名がラベルになるようですね。</p>
+
+<h3 id="モデルの作り方">モデルの作り方</h3>
+
+<p>デモでは以下のようなSwiftスクリプトでモデルが作成されていました。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="cp">#!/usr/bin/swift</span>
+
+<span class="kd">import</span> <span class="kt">Foundation</span>
+<span class="kd">import</span> <span class="kt">CreateML</span>
+
+<span class="c1">// Specify Data</span>
+<span class="k">let</span> <span class="nv">trainDirectory</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/Users/createml/Desktop/Fruits"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">testDirectory</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/Users/createml/Desktop/TestFruits"</span><span class="p">)</span>
+
+<span class="c1">// Create Model</span>
+<span class="k">let</span> <span class="nv">model</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">MLImageClassifier</span><span class="p">(</span><span class="nv">trainingData</span><span class="p">:</span> <span class="o">.</span><span class="nf">labeledDirectories</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">trainDirectory</span><span class="p">))</span>
+
+<span class="c1">// Evaluate Model</span>
+<span class="k">let</span> <span class="nv">evaluation</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="nf">evaluation</span><span class="p">(</span><span class="nv">on</span><span class="p">:</span> <span class="o">.</span><span class="nf">labeledDirectories</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">testDirectory</span><span class="p">))</span>
+
+<span class="c1">// Save Model</span>
+<span class="k">try</span> <span class="n">model</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/Users/createml/Desktop/FruitClassifier.mlmodel"</span><span class="p">))</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">$ swift fruitClassifier.swift</code></p>
+
+<p>以上のような形で、モデルが作成できるようです。</p>
+
+<h2 id="テキストのラベリング">テキストのラベリング</h2>
+
+<p>セッションのデモでは、ユーザーが入力したテキストから、そのテキストがネガティブかポジティブかを判定するデモがありました。
+SNS系のアプリで、コメントを制御する時に便利そうですね！</p>
+
 
           </div>
           <div class="pt-5">
@@ -177,18 +235,6 @@
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://micchyboy1023.github.io/development/2018/06/07/create-ml-wwdc2018.html">
-                  <small class="decoration-none text-muted">2018/6/7<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて</h3>
-                  <p class="text-dark"></p>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -330,6 +376,21 @@
 
             
 
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://micchyboy1023.github.io/development/2018/05/20/github-commit-history.html">
+                  <small class="decoration-none text-muted">2018/5/20<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator</h3>
+                  <p class="text-dark">GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generatorです。2015年の終わり頃から、GitHubに毎日コミットしようという自分ルールを作って実践してきたので、ログを作って見ました。</p>
+                  
+                  <div alt="GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator" class="my-4 media-img rounded" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2018-05-20/contributions.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
             
           
             

@@ -5,9 +5,143 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 08 Jun 2018 22:26:48 +0900</pubDate>
-    <lastBuildDate>Fri, 08 Jun 2018 22:26:48 +0900</lastBuildDate>
+    <pubDate>Fri, 08 Jun 2018 22:51:48 +0900</pubDate>
+    <lastBuildDate>Fri, 08 Jun 2018 22:51:48 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Swift4.2ではEnumを一覧で取得できるようになった</title>
+        <description>&lt;h1 id=&quot;swift42ではenumを一覧で取得できるようになった&quot;&gt;Swift4.2ではEnumを一覧で取得できるようになった&lt;/h1&gt;
+
+&lt;p&gt;WWDC2018の&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2018/401/&quot;&gt;What’s new in Swift&lt;/a&gt;でSwift4.2のアップデートが発表されていました。&lt;/p&gt;
+
+&lt;p&gt;Swift4.2では、&lt;code class=&quot;highlighter-rouge&quot;&gt;CaseIterable&lt;/code&gt; プロトコルをEnumに指定することで、&lt;code class=&quot;highlighter-rouge&quot;&gt;allCases&lt;/code&gt;というプロパティが使用できるようになり、Enumの一覧を取得できるようになったようです。&lt;/p&gt;
+
+&lt;p&gt;Swift Evolutionはこちら&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/apple/swift-evolution/blob/master/proposals/0194-derived-collection-of-enum-cases.md&quot;&gt;Derived Collection of Enum Cases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enumの一覧をループで回すのは、結構やりたい時があって、ビデオのようにEnumの全ケースを入れたArrayを定義するということをやることがありましたが、これは便利ですね。&lt;/p&gt;
+
+&lt;p&gt;例&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Gait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CaseIterable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trot&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;canter&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gallop&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jog&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gait&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Gait&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;allCases&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;gait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Fri, 08 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/08/whats-new-swift42.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/08/whats-new-swift42.html</guid>
+        
+        <category>Swift</category>
+        
+        <category>Enum</category>
+        
+        <category>iOS</category>
+        
+        
+        <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて</title>
+        <description>&lt;h1 id=&quot;create-ml&quot;&gt;Create ML&lt;/h1&gt;
+
+&lt;p&gt;WWDC2018で、機械学習モデルをmacOS Mojave上で簡単に作成することができるフレームワーク &lt;code class=&quot;highlighter-rouge&quot;&gt;Create ML&lt;/code&gt;が発表されました。&lt;/p&gt;
+
+&lt;p&gt;セッションのビデオはこちら&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2018/703/&quot;&gt;Introducing Create ML&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;何ができる&quot;&gt;何ができる？&lt;/h2&gt;
+
+&lt;p&gt;セッションのビデオでは、&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;画像の分類&lt;/li&gt;
+  &lt;li&gt;テキストの判定&lt;/li&gt;
+  &lt;li&gt;テーブルデータ(csvなど）によるデータの推測&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;のモデル作成と実際の分類のデモが行われていました。&lt;/p&gt;
+
+&lt;h2 id=&quot;画像認識用学習モデルの作成&quot;&gt;画像認識用学習モデルの作成&lt;/h2&gt;
+
+&lt;h3 id=&quot;transfer-learning&quot;&gt;Transfer Learning&lt;/h3&gt;
+
+&lt;p&gt;注目はTransfer Learningというところで、Appleが事前に学習させたモデルを利用することで、&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;モデルサイズの縮小&lt;/li&gt;
+  &lt;li&gt;モデル作成時間の短縮&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;が可能になったようです。&lt;/p&gt;
+
+&lt;p&gt;また、Playground上でモデルを作成するデモもありました。
+画像のファイルをフォルダごと突っ込むことで学習させていましたが、ファイル名やフォルダ名がラベルになるようですね。&lt;/p&gt;
+
+&lt;h3 id=&quot;モデルの作り方&quot;&gt;モデルの作り方&lt;/h3&gt;
+
+&lt;p&gt;デモでは以下のようなSwiftスクリプトでモデルが作成されていました。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#!/usr/bin/swift&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foundation&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CreateML&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Specify Data&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;trainDirectory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileURLWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Users/createml/Desktop/Fruits&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;testDirectory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileURLWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Users/createml/Desktop/TestFruits&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create Model&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MLImageClassifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;trainingData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;labeledDirectories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trainDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Evaluate Model&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;evaluation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;evaluation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;labeledDirectories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;testDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Save Model&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileURLWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Users/createml/Desktop/FruitClassifier.mlmodel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ swift fruitClassifier.swift&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;以上のような形で、モデルが作成できるようです。&lt;/p&gt;
+
+&lt;h2 id=&quot;テキストのラベリング&quot;&gt;テキストのラベリング&lt;/h2&gt;
+
+&lt;p&gt;セッションのデモでは、ユーザーが入力したテキストから、そのテキストがネガティブかポジティブかを判定するデモがありました。
+SNS系のアプリで、コメントを制御する時に便利そうですね！&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 07 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/07/create-ml-wwdc2018.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/07/create-ml-wwdc2018.html</guid>
+        
+        <category>WWDC2018</category>
+        
+        <category>WWDC</category>
+        
+        <category>CreateML</category>
+        
+        <category>人工知能</category>
+        
+        <category>機械学習</category>
+        
+        <category>マシーンラーニング</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>ffmpegを使ってmovファイルをgifに変換する</title>
@@ -574,178 +708,6 @@ Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎ�
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>いよいよ来週！AppleのイベントWWDC2018で発表されそうなことまとめ</title>
-        <description>&lt;p&gt;いよいよAppleの開発者向け会議&lt;strong&gt;WWDC2018(World Wide Developer Conference)&lt;/strong&gt;が来週となりました！&lt;/p&gt;
-
-&lt;p&gt;今年のWWDCで発表されそうなことを噂からまとめてみました。&lt;/p&gt;
-
-&lt;h1 id=&quot;uiのアップデート&quot;&gt;UIのアップデート&lt;/h1&gt;
-
-&lt;p&gt;WWDCのページを見ると、立体的なUIのE部品がならんでいます。これはWWDC2018でiOSやmacOSのUIが変更されることを暗示しているのでしょうか？&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-29/cover.png&quot; alt=&quot;WWDC2018&quot; title=&quot;WWDC2018&quot; /&gt;
-画像出展:&lt;a href=&quot;https://developer.apple.com/wwdc/&quot;&gt;Apple&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;iOS7が出たのが今から5年前の2013年。&lt;/p&gt;
-
-&lt;p&gt;当時はフラットデザインがかなり流行っていたころで、アップルもそれに追従する形でフラットデザインへと移行しました。
-今思うと、iOS6以前はとてもダサく見えるので不思議です。。&lt;/p&gt;
-
-&lt;p&gt;その後OSのアップデートを繰り返し、iOS11になりました。&lt;/p&gt;
-
-&lt;p&gt;iOS7以降、基本的な部品は変わっていませんが、最近のアップルのデザインの特徴としては、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;大きくて太い文字&lt;/li&gt;
-  &lt;li&gt;ハンドルを使って引っ張りあげたり下げたりする半モーダル画面&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;などが挙げられます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-29/map.png&quot; alt=&quot;map&quot; title=&quot;map&quot; /&gt;
-&lt;em&gt;マップの例&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;特にUI部品の重なりは多用されているように見えるので、今年のWWDCでは&lt;strong&gt;Z軸（重なり）を使ったUIフレームワーク&lt;/strong&gt;へとアップデートされる可能性があるのではないでしょうか？&lt;/p&gt;
-
-&lt;h1 id=&quot;ios12-watchos5-macos1014tvosなど&quot;&gt;iOS12, watchOS5, macOS10.14、tvOSなど&lt;/h1&gt;
-
-&lt;p&gt;iOSはもちろん、その他のプラットフォームのOSもアップデートされるでしょう。&lt;/p&gt;
-
-&lt;p&gt;噂によると、前に述べたUIのアップデートがなければ、今年のアップデートは安定性の向上など、比較的地味な発表で終わる可能性が高いようです。&lt;/p&gt;
-
-&lt;h1 id=&quot;ハードウェア&quot;&gt;ハードウェア&lt;/h1&gt;
-
-&lt;h2 id=&quot;airpower&quot;&gt;AirPower&lt;/h2&gt;
-
-&lt;p&gt;昨年iPhoneXと同時に発表されたAirPowerですがWWDCで発売がアナウンスされるのはないでしょうか？&lt;/p&gt;
-
-&lt;p&gt;AirPodsの無線充電ケースも発表されそうですね！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-05-29/airpower.png&quot; alt=&quot;AirPower&quot; title=&quot;AirPower&quot; /&gt;
-画像出展:&lt;a href=&quot;https://www.apple.com/jp/iphone-x/&quot;&gt;Apple&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;新型macbook-macbook-pro&quot;&gt;新型MacBook, MacBook Pro&lt;/h2&gt;
-
-&lt;p&gt;昨年のWWDCではMacBook ProやiMac Proなど、新しいハードウェアも数々発表されました。
-今年もMacBookがアップデートされるかもしれません。&lt;/p&gt;
-
-&lt;h2 id=&quot;homepodが日本へ&quot;&gt;HomePodが日本へ&lt;/h2&gt;
-
-&lt;p&gt;HomePodがようやく日本で発売されるかもしれません。
-少し前にHomePodに日本語対応が追加されていたようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.gizmodo.jp/2018/05/homepod-japanese-language.html&quot;&gt;HomePodの対応言語に日本語が追加。これはひょっとすると…&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;いずれにせよ、来週わかります。楽しみですね！&lt;/p&gt;
-</description>
-        <pubDate>Tue, 29 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/gadget/2018/05/29/wwdc2018-prediction.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/gadget/2018/05/29/wwdc2018-prediction.html</guid>
-        
-        <category>Apple</category>
-        
-        <category>アップル</category>
-        
-        <category>WWDC</category>
-        
-        <category>iOS</category>
-        
-        <category>wawtchOS</category>
-        
-        <category>macOS</category>
-        
-        
-        <category>gadget</category>
-        
-      </item>
-    
-      <item>
-        <title>Ripple（リップル）のCTO Stefan Thomasが立ち上げたCoil社について調べてみました</title>
-        <description>&lt;p&gt;5月14日、Ripple（リップル）社の元CTO Stefan Thomasがツイートを投稿しました。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Excited to launch &lt;a href=&quot;https://twitter.com/Coil_?ref_src=twsrc%5Etfw&quot;&gt;@Coil_&lt;/a&gt;, a new startup building &lt;a href=&quot;https://twitter.com/hashtag/micropayment?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#micropayment&lt;/a&gt; applications on &lt;a href=&quot;https://twitter.com/hashtag/XRP?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#XRP&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/Interledger?ref_src=twsrc%5Etfw&quot;&gt;@Interledger&lt;/a&gt;. We&amp;#39;re creating a new business model for the web! &lt;a href=&quot;https://t.co/X0WWxmulLQ&quot;&gt;https://t.co/X0WWxmulLQ&lt;/a&gt;&lt;br /&gt;1/5&lt;/p&gt;&amp;mdash; Stefan Thomas (@justmoon) &lt;a href=&quot;https://twitter.com/justmoon/status/996012724235759616?ref_src=twsrc%5Etfw&quot;&gt;2018年5月14日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;この投稿を見て、XRPを使った新しいサービスがローンチされたのかなと思ったのですが、よくよく読むと、Stefan Thomas氏自身がCoilという会社を立ち上げてmicropaymentに関する事業を展開していくということで、面白そうなので、Coilについて調べてみました。&lt;/p&gt;
-
-&lt;h1 id=&quot;coilとは&quot;&gt;Coilとは&lt;/h1&gt;
-
-&lt;p&gt;Coilとは一言でいうと、&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;XRPとInterLedgerを使ってWebをマネタイズするためのプラットフォーム&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;のようです。&lt;/p&gt;
-
-&lt;p&gt;CoilのMediumの記事に詳しく書かれています。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/coil/coil-building-a-new-business-model-for-the-web-d33124358b6&quot;&gt;Coil: Building a New Business Model for the Web&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一部引用して和訳しておきます。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;the Internet’s “original sin”, the fact that on the web there isn’t an obvious way to make money outside of workarounds like advertising, paywalls, or selling user data.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;インターネットの原罪は、広告・課金・ユーザーデータを売る以外に収益を得る方法がWebにないことだ。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I will be stepping down as CTO of Ripple to set up a new company called Coil. Coil will use Interledger to make the web a more vibrant market for apps and content&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;私(Stefan Thomas)はリップルのCTOを辞めて、Coilという会社を作る。CoilはInterlederを使ってウェブをアプリやコンテンツにとってより魅力的なマーケットにする&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Coil’s first product will be a flat-rate subscription for consumers which will allow them to support creators, breeze past paywalls, see less ads, and unlock additional features and content&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Coilの最初の製品は、クリエイターをサポートし、課金を無くし、広告を減らし、さらなるコンテンツを顧客に提供する。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Coil will be the first company to pay out to any website using Web Monetization&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;CoilはIWeb Monetizationを使ってどんなウェブサイトでもマネタイズする最初の企業です。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;と以上のように、CoilとはWebサイトをマネタイズするための新しい支払いの仕組みを作る会社のようですね。&lt;/p&gt;
-
-&lt;p&gt;広告、課金以外のマネタイズ手法、楽しみですね！&lt;/p&gt;
-
-&lt;h1 id=&quot;stefan-thomasの一連のツイートの和訳&quot;&gt;Stefan Thomasの一連のツイートの和訳&lt;/h1&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;XRPとinterledger上に少額決済を実現するスタートアップCoilのローンチにワクワクしている。ウェブの新しいビジネスモデルを作っていく。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/RbBzMQMhzR&quot;&gt;https://t.co/RbBzMQMhzR&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001065580571459584?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;.&lt;a href=&quot;https://twitter.com/EthanZ?ref_src=twsrc%5Etfw&quot;&gt;@ethanz&lt;/a&gt;が言うように、ウェブの原罪はマネタイズの手法が組み込まれていないことだ。だからウェブ上に構築されたモデルはほとんどが広告だった。しかし広告がマネタイズの答えではないことを我々は知っている。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/oDejBKquiD&quot;&gt;https://t.co/oDejBKquiD&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001077886357393408?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;決済技術が未熟だったからこうなった。しかし、我々が構築したXRPとinterledgerの技術によって、非中央集権で、秒間数兆のトランザクションを処理できるようになった。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/zuTBqXIP8y&quot;&gt;https://t.co/zuTBqXIP8y&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001078633329377282?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;この技術を使って、&lt;a href=&quot;https://twitter.com/Coil?ref_src=twsrc%5Etfw&quot;&gt;@Coil&lt;/a&gt; の最初のプロダクトは、定額課金によって、クリエイターをサポートし、有料の壁をなくし、より少ない広告を実現し、さらなる機能やコンテンツを追加できるようにするものだ。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/jh1b1oQyTf&quot;&gt;https://t.co/jh1b1oQyTf&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001079792806969344?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;.&lt;a href=&quot;https://twitter.com/Ripple?ref_src=twsrc%5Etfw&quot;&gt;@Ripple&lt;/a&gt;の金銭的技術的支援を受けられることを幸運に思っている。&lt;a href=&quot;https://twitter.com/Coil?ref_src=twsrc%5Etfw&quot;&gt;@Coil&lt;/a&gt;がより健全なインターネットを実現するためのすべてが揃っている。&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/KhuwavaEfh&quot;&gt;https://t.co/KhuwavaEfh&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1001080434606751746?ref_src=twsrc%5Etfw&quot;&gt;2018年5月28日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-</description>
-        <pubDate>Mon, 28 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/cryptocurrency/2018/05/28/coil-xrp.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/05/28/coil-xrp.html</guid>
-        
-        <category>Ripple</category>
-        
-        <category>リップル</category>
-        
-        <category>XRP</category>
-        
-        <category>Coil</category>
-        
-        
-        <category>cryptocurrency</category>
         
       </item>
     
