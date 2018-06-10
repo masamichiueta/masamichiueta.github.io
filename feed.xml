@@ -5,9 +5,139 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jun 2018 17:35:21 +0900</pubDate>
-    <lastBuildDate>Sat, 09 Jun 2018 17:35:21 +0900</lastBuildDate>
+    <pubDate>Sun, 10 Jun 2018 18:26:35 +0900</pubDate>
+    <lastBuildDate>Sun, 10 Jun 2018 18:26:35 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>スマートコントラクトプラットフォームCodiusでReactアプリを実行してみた</title>
+        <description>&lt;p&gt;元ネタはこちら
+&lt;a href=&quot;https://medium.com/codius/running-a-simple-react-app-on-the-codius-smart-contract-platform-7ddefce8cb06&quot;&gt;Running a simple React app on the Codius smart contract platform&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;codiusとは&quot;&gt;Codiusとは&lt;/h1&gt;
+
+&lt;p&gt;Codiusとは、&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ripple Labsにより開発が始まり2015年6月に打ち切りとなっていた、Ripple(XRP)に対応したスマートコントラクト
+らしいです。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://crypto-times.jp/xrp_smartcontract_revive/&quot;&gt;Ripple Labsによって開発されたスマートコントラクトのプロトコル Codiusが復活&lt;/a&gt;から引用。&lt;/p&gt;
+
+&lt;p&gt;公式サイトでは、以下のように書かれています。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Codius is an open hosting protocol. It makes it very easy to upload a program, whether you want it to run on one host or thousands.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Codiusはオープンなホスティングプロトコルです。Coidusを使うと、ホスティング先の数に関わらずプログラムのホスティングが非常に簡単になります。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;つまり、中央集権的に1つのサーバーでプログラムをホスティングするのではなく、非中央集権的にあらゆる環境でホスティングできますよということですね。&lt;/p&gt;
+
+&lt;h1 id=&quot;codiusのセットアップ&quot;&gt;Codiusのセットアップ&lt;/h1&gt;
+
+&lt;p&gt;Codiusはオープンソースで、開発者用ツールもすぐにインストールすることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/codius&quot;&gt;codius&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Codius&lt;/code&gt;をインストールするには、以下の3つが必要です。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NodeJS version8.9.4以上&lt;/li&gt;
+  &lt;li&gt;XRPウォレット&lt;/li&gt;
+  &lt;li&gt;Moneyd&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Codiusを実行するには、先に&lt;code class=&quot;highlighter-rouge&quot;&gt;Moneyd&lt;/code&gt;を実行する必要があるようです。&lt;/p&gt;
+
+&lt;p&gt;こちらの記事&lt;a href=&quot;https://medium.com/interledger-blog/joining-the-live-ilp-network-eab123a73665&quot;&gt;Joining the Live ILP Network&lt;/a&gt;を参考に&lt;code class=&quot;highlighter-rouge&quot;&gt;Moneyd&lt;/code&gt;の実行していきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Moneydをライブ環境で実行するにあたり、35XRP以上入ったウォレットが必要です。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;今回は開発用のテスト環境で行ってみます。&lt;/p&gt;
+
+&lt;h2 id=&quot;moneydの実行&quot;&gt;Moneydの実行&lt;/h2&gt;
+
+&lt;p&gt;以下のコマンドを実行します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g moneyd moneyd-uplink-xrp
+moneyd xrp:configure
+moneyd xrp:start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;xrp:configureの際にはXRPの秘密鍵を入力します。&lt;/p&gt;
+
+&lt;p&gt;これで、ILPネットワークに接続できました。&lt;/p&gt;
+
+&lt;h2 id=&quot;codiusの実行&quot;&gt;Codiusの実行&lt;/h2&gt;
+
+&lt;h3 id=&quot;manifestの作成&quot;&gt;Manifestの作成&lt;/h3&gt;
+
+&lt;p&gt;Codiusを実行するには、Manifestを作成する必要があるようです。今回は、CodisuのサンプルからReactアプリを動かすManifestを使ってみます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/codius/examples&quot;&gt;codius/examples&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;manifest&quot;: {
+    &quot;name&quot;: &quot;my-codius-create-react-app&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;machine&quot;: &quot;small&quot;,
+    &quot;port&quot;: &quot;3000&quot;,
+    &quot;containers&quot;: [{
+      &quot;id&quot;: &quot;app&quot;,
+      &quot;image&quot;: &quot;androswong418/example-pod-1@sha256:8933bced1637e7d3b08c4aa50b96a45aef0b63f504f595bb890f57253af68b11&quot;
+    }]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これを、&lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app-manifest.json&lt;/code&gt;というファイルで保存します。
+このDockerコンテナは、Facebookの&lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt;のイメージのようです。&lt;/p&gt;
+
+&lt;h3 id=&quot;manifestのアップロード&quot;&gt;Manifestのアップロード&lt;/h3&gt;
+
+&lt;p&gt;Manifestを作成したら、&lt;code class=&quot;highlighter-rouge&quot;&gt;codius&lt;/code&gt;のコマンドを使用してManifestをアップロードします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;codius upload ./create-react-app-manifest.json --duration 200
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;アップロードが完了すると、以下のようなメッセージが表示されます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Successfully Uploaded Pods to:
+{ 
+  url:  'http://hogehoge.local.codius.org:3000/',
+ manifestHash: 'hogehoge',
+  host: 'hogehoge',
+  expiry: 'xxxx-xx-xxTxx:xx:xx.xxxZ',
+  expirationDate: 'xx-xx-xxxx xx:xx:xx -0700',
+  expires: 'in 2 minutes',
+  pricePaid: 'xxx' 
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;に表示されたURLにアクセスすると、Reactアプリが実行されています！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-10/cover.png&quot; alt=&quot;React on Codius&quot; title=&quot;React on Codius&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 10 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/cryptocurrency/2018/06/10/ripple-codius-trial.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/06/10/ripple-codius-trial.html</guid>
+        
+        <category>Codius</category>
+        
+        <category>Ripple</category>
+        
+        <category>XRP</category>
+        
+        <category>React</category>
+        
+        
+        <category>cryptocurrency</category>
+        
+      </item>
     
       <item>
         <title>よこすかYYのりものフェスタ2018に行ってきました</title>
@@ -618,47 +748,6 @@ $R2: TensorFlow.Tensor&amp;lt;Float&amp;gt; = [32.0, 48.0]
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>手で持たないドローン日傘　free Parasolアサヒパワーサービスが開発</title>
-        <description>&lt;p&gt;ニュースを見ていて面白いと思ったガジェットがありました。&lt;/p&gt;
-
-&lt;p&gt;アサヒパワーサービスが手で持たないドローン日傘を開発したようです。&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/oICMTi1gd4A&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;説明によると&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;ドローンにシートを装着したドローン傘で日差しを遮る&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;特定のマークを追尾する自動操縦仕様&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;価格は3万円程度を予定、2019年にも商用化する&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;とのことです。&lt;/p&gt;
-
-&lt;p&gt;ついに自動で追従してくれる傘を使える日がくると思うと楽しみですね！&lt;/p&gt;
-</description>
-        <pubDate>Thu, 31 May 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/gadget/2018/05/31/asahipowerservice-drone-umbrella.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/gadget/2018/05/31/asahipowerservice-drone-umbrella.html</guid>
-        
-        <category>ドローン</category>
-        
-        <category>傘</category>
-        
-        <category>アサヒパワーサービス</category>
-        
-        
-        <category>gadget</category>
         
       </item>
     
