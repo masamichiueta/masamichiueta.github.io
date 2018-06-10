@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "よこすかYYのりものフェスタ2018に行ってきました"
-description: ""
+description: "横須賀駅で6月9日~6月10日に開催されている「よこすかYYのりものフェスタ2018」に行ってきました。"
 date: 2018-06-09
 categories: family
 hero-image: cover.jpg
