@@ -5,6 +5,7 @@ description: "Codiusとは、Ripple Labsにより開発が始まり2015年6月�
 らしいです。Codiusはオープンなホスティングプロトコルです。Coidusを使うと、ホスティング先の数に関わらずプログラムのホスティングが非常に簡単になります。"
 date: 2018-06-10
 hero-image: cover.png
+image: /assets/posts/2018-06-10/cover.png
 categories: cryptocurrency
 lang: ja_JP
 tags:
