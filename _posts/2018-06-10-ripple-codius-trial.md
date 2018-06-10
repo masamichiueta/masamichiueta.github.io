@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  "スマートコントラクトプラットフォームCodiusでReactアプリを実行してみた"
-description: ""
-date: 2018-06-09
+description: "Codiusとは、Ripple Labsにより開発が始まり2015年6月に打ち切りとなっていた、Ripple(XRP)に対応したスマートコントラクト
+らしいです。Codiusはオープンなホスティングプロトコルです。Coidusを使うと、ホスティング先の数に関わらずプログラムのホスティングが非常に簡単になります。"
+date: 2018-06-10
+hero-image: cover.png
 categories: cryptocurrency
 lang: ja_JP
 tags:
@@ -59,17 +61,21 @@ Codiusを実行するには、先に`Moneyd`を実行する必要があるよう
 
 ```
 npm install -g moneyd moneyd-uplink-xrp
-moneyd --testnet xrp:configure
-moneyd --testnet xrp:start
+moneyd xrp:configure
+moneyd xrp:start
 ```
 
-これで、テスト環境のILPネットワークに接続できました。
+xrp:configureの際にはXRPの秘密鍵を入力します。
+
+これで、ILPネットワークに接続できました。
 
 ## Codiusの実行
 
 ### Manifestの作成
 
-Codiusを実行するには、Manifestを作成する必要があるようです。今回は、元ネタのMediumの記事から引用させていただきます。
+Codiusを実行するには、Manifestを作成する必要があるようです。今回は、CodisuのサンプルからReactアプリを動かすManifestを使ってみます。
+
+[codius/examples](https://github.com/codius/examples)
 
 ```
 {
@@ -86,7 +92,7 @@ Codiusを実行するには、Manifestを作成する必要があるようです
 }
 ```
 
-これを、`example-manifest.json`というファイルで保存します。
+これを、`create-react-app-manifest.json`というファイルで保存します。
 このDockerコンテナは、Facebookの`create-react-app`のイメージのようです。
 
 
@@ -95,5 +101,24 @@ Codiusを実行するには、Manifestを作成する必要があるようです
 Manifestを作成したら、`codius`のコマンドを使用してManifestをアップロードします。
 
 ```
-codius upload ./example-manifest.json --duration 200
+codius upload ./create-react-app-manifest.json --duration 200
 ```
+
+アップロードが完了すると、以下のようなメッセージが表示されます。
+
+```
+Successfully Uploaded Pods to:
+{ 
+  url:  'http://hogehoge.local.codius.org:3000/',
+ manifestHash: 'hogehoge',
+  host: 'hogehoge',
+  expiry: 'xxxx-xx-xxTxx:xx:xx.xxxZ',
+  expirationDate: 'xx-xx-xxxx xx:xx:xx -0700',
+  expires: 'in 2 minutes',
+  pricePaid: 'xxx' 
+}
+```
+
+`url`に表示されたURLにアクセスすると、Reactアプリが実行されています！
+
+![React on Codius]({{ site.url }}/assets/posts/2018-06-10/cover.png "React on Codius")
