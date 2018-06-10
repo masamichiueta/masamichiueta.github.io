@@ -6,26 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Ripple（リップル）のCTO Stefan Thomasが立ち上げたCoil社について調べてみました | micchyboy</title>
+<title>XRPペーパーウォレットの作り方 | micchyboy</title>
 <meta name="generator" content="Jekyll v3.8.1" />
-<meta property="og:title" content="Ripple（リップル）のCTO Stefan Thomasが立ち上げたCoil社について調べてみました" />
+<meta property="og:title" content="XRPペーパーウォレットの作り方" />
 <meta name="author" content="micchyboy" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="5月14日、Ripple（リップル）社の元CTO Stefan Thomasがツイートを投稿しました。この投稿を見て、XRPを使った新しいサービスがローンチされたのかなと思ったのですが、よくよく読むと、Stefan Thomas氏自身がCoilという会社を立ち上げてmicropaymentに関する事業を展開していくということで、面白そうなので、Coilについて調べてみました。" />
-<meta property="og:description" content="5月14日、Ripple（リップル）社の元CTO Stefan Thomasがツイートを投稿しました。この投稿を見て、XRPを使った新しいサービスがローンチされたのかなと思ったのですが、よくよく読むと、Stefan Thomas氏自身がCoilという会社を立ち上げてmicropaymentに関する事業を展開していくということで、面白そうなので、Coilについて調べてみました。" />
-<link rel="canonical" href="https://micchyboy1023.github.io/cryptocurrency/2018/05/28/coil-xrp.html" />
-<meta property="og:url" content="https://micchyboy1023.github.io/cryptocurrency/2018/05/28/coil-xrp.html" />
+<meta name="description" content="XRPのウォレットを作る方法を紹介します。今回作成するのは、ペーパーウォレットです。ペーパーウォレットとは、ウォレットのアドレスと秘密鍵を紙に印刷して保管するウォレットです。" />
+<meta property="og:description" content="XRPのウォレットを作る方法を紹介します。今回作成するのは、ペーパーウォレットです。ペーパーウォレットとは、ウォレットのアドレスと秘密鍵を紙に印刷して保管するウォレットです。" />
+<link rel="canonical" href="https://micchyboy1023.github.io/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html" />
+<meta property="og:url" content="https://micchyboy1023.github.io/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html" />
 <meta property="og:site_name" content="micchyboy" />
+<meta property="og:image" content="https://micchyboy1023.github.io/assets/posts/2018-06-11/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-05-28T00:00:00+09:00" />
+<meta property="article:published_time" content="2018-06-11T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"5月14日、Ripple（リップル）社の元CTO Stefan Thomasがツイートを投稿しました。この投稿を見て、XRPを使った新しいサービスがローンチされたのかなと思ったのですが、よくよく読むと、Stefan Thomas氏自身がCoilという会社を立ち上げてmicropaymentに関する事業を展開していくということで、面白そうなので、Coilについて調べてみました。","author":{"@type":"Person","name":"micchyboy"},"@type":"BlogPosting","url":"https://micchyboy1023.github.io/cryptocurrency/2018/05/28/coil-xrp.html","headline":"Ripple（リップル）のCTO Stefan Thomasが立ち上げたCoil社について調べてみました","dateModified":"2018-05-28T00:00:00+09:00","datePublished":"2018-05-28T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://micchyboy1023.github.io/cryptocurrency/2018/05/28/coil-xrp.html"},"@context":"http://schema.org"}</script>
+{"description":"XRPのウォレットを作る方法を紹介します。今回作成するのは、ペーパーウォレットです。ペーパーウォレットとは、ウォレットのアドレスと秘密鍵を紙に印刷して保管するウォレットです。","author":{"@type":"Person","name":"micchyboy"},"@type":"BlogPosting","url":"https://micchyboy1023.github.io/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html","image":"https://micchyboy1023.github.io/assets/posts/2018-06-11/cover.png","headline":"XRPペーパーウォレットの作り方","dateModified":"2018-06-11T00:00:00+09:00","datePublished":"2018-06-11T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://micchyboy1023.github.io/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://micchyboy1023.github.io/cryptocurrency/2018/05/28/coil-xrp.html">
+  <link rel="canonical" href="https://micchyboy1023.github.io/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html">
   <link rel="alternate" type="application/rss+xml" title="micchyboy" href="https://micchyboy1023.github.io/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -91,17 +92,15 @@
 
 
     
-<section class="hero text-center" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2018-05-28/cover.png)">
+<section class="hero text-center" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2018-06-11/cover.png)">
   <div class="overlay"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">Ripple（リップル）のCTO Stefan Thomasが立ち上げたCoil社について調べてみました</h1>
+      <h1 itemprop="name headline">XRPペーパーウォレットの作り方</h1>
     </div>
   </div>
   <span class="text-left text-dark">
-    
-    <small>画像出典：<a href="https://medium.com/coil/coil-building-a-new-business-model-for-the-web-d33124358b6">Coilの記事</a>よりスクリーンショット</small>
     
   </span>
 </section>
@@ -112,89 +111,72 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2018-05-28T00:00:00+09:00" itemprop="datePublished">2018/5/28</time><span class="ml-3">仮想通貨</span></p>
+            <p class="text-muted"><time datetime="2018-06-11T00:00:00+09:00" itemprop="datePublished">2018/6/11</time><span class="ml-3">仮想通貨</span></p>
             
             <p>
               <small>タグ</small>
+              
+              <span class="badge badge-light">XRP</span>
               
               <span class="badge badge-light">Ripple</span>
               
               <span class="badge badge-light">リップル</span>
               
-              <span class="badge badge-light">XRP</span>
+              <span class="badge badge-light">ウォレット</span>
               
-              <span class="badge badge-light">Coil</span>
+              <span class="badge badge-light">ペーパーウォレット</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="micchyboy1023">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <p>5月14日、Ripple（リップル）社の元CTO Stefan Thomasがツイートを投稿しました。</p>
+            <h1 id="xrpウォレットの作り方">XRPウォレットの作り方</h1>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr">Excited to launch <a href="https://twitter.com/Coil_?ref_src=twsrc%5Etfw">@Coil_</a>, a new startup building <a href="https://twitter.com/hashtag/micropayment?src=hash&amp;ref_src=twsrc%5Etfw">#micropayment</a> applications on <a href="https://twitter.com/hashtag/XRP?src=hash&amp;ref_src=twsrc%5Etfw">#XRP</a> and <a href="https://twitter.com/Interledger?ref_src=twsrc%5Etfw">@Interledger</a>. We&#39;re creating a new business model for the web! <a href="https://t.co/X0WWxmulLQ">https://t.co/X0WWxmulLQ</a><br />1/5</p>&mdash; Stefan Thomas (@justmoon) <a href="https://twitter.com/justmoon/status/996012724235759616?ref_src=twsrc%5Etfw">2018年5月14日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>XRPのウォレットを作る方法を紹介します。</p>
 
-<p>この投稿を見て、XRPを使った新しいサービスがローンチされたのかなと思ったのですが、よくよく読むと、Stefan Thomas氏自身がCoilという会社を立ち上げてmicropaymentに関する事業を展開していくということで、面白そうなので、Coilについて調べてみました。</p>
+<p>今回作成するのは、ペーパーウォレットです。</p>
 
-<h1 id="coilとは">Coilとは</h1>
+<p>ペーパーウォレットとは、ウォレットのアドレスと秘密鍵を紙に印刷して保管するウォレットです。</p>
 
-<p>Coilとは一言でいうと、</p>
+<p>紙ではなくて、例えば秘密鍵をUSBファイルに保存して、インターネットに接続されていない安全な場所に保管しておいても大丈夫でしょう。</p>
 
-<p><strong>XRPとInterLedgerを使ってWebをマネタイズするためのプラットフォーム</strong></p>
+<p>では早速作成していきましょう。</p>
 
-<p>のようです。</p>
+<h1 id="ツールをダウンロードする">ツールをダウンロードする</h1>
 
-<p>CoilのMediumの記事に詳しく書かれています。</p>
+<p>今回は、Octillionという会社が提供している、<code class="highlighter-rouge">generate-ripple-wallet</code>というツールを使います。</p>
 
-<p><a href="https://medium.com/coil/coil-building-a-new-business-model-for-the-web-d33124358b6">Coil: Building a New Business Model for the Web</a></p>
+<p>[generate-ripple-wallet](https://github.com/OctillionSA/generate-ripple-wallet)</p>
 
-<p>一部引用して和訳しておきます。</p>
+<p>上のページにアクセスして、ファイルをダウンロードします。</p>
 
-<blockquote>
-  <p>the Internet’s “original sin”, the fact that on the web there isn’t an obvious way to make money outside of workarounds like advertising, paywalls, or selling user data.</p>
-</blockquote>
+<p><img src="https://micchyboy1023.github.io/assets/posts/2018-06-11/download.png" alt="Download" title="Download" /></p>
 
-<p><strong>インターネットの原罪は、広告・課金・ユーザーデータを売る以外に収益を得る方法がWebにないことだ。</strong></p>
+<p>ファイルをダウンロードしなくても、Web上に提供されているアプリを使用すればウォレットを生成できるのですが、インターネットに繋がれたところで生成するのもセキュリティ的に微妙なので、オフラインで作成するためにダウンロードします。</p>
 
-<blockquote>
-  <p>I will be stepping down as CTO of Ripple to set up a new company called Coil. Coil will use Interledger to make the web a more vibrant market for apps and content</p>
-</blockquote>
+<h1 id="ツールを開く">ツールを開く</h1>
 
-<p><strong>私(Stefan Thomas)はリップルのCTOを辞めて、Coilという会社を作る。CoilはInterlederを使ってウェブをアプリやコンテンツにとってより魅力的なマーケットにする</strong></p>
+<p>ダウンロードしたら、zipを回答して、<code class="highlighter-rouge">index.html</code>を開きます。</p>
 
-<blockquote>
-  <p>Coil’s first product will be a flat-rate subscription for consumers which will allow them to support creators, breeze past paywalls, see less ads, and unlock additional features and content</p>
-</blockquote>
+<p><img src="https://micchyboy1023.github.io/assets/posts/2018-06-11/html.png" alt="html" title="html" /></p>
 
-<p><strong>Coilの最初の製品は、クリエイターをサポートし、課金を無くし、広告を減らし、さらなるコンテンツを顧客に提供する。</strong></p>
+<p><code class="highlighter-rouge">index.html</code>を開くと、以下のような画面が表示されるので、右下の<code class="highlighter-rouge">Generate</code>ボタンを押します。</p>
 
-<blockquote>
-  <p>Coil will be the first company to pay out to any website using Web Monetization</p>
-</blockquote>
+<p><img src="https://micchyboy1023.github.io/assets/posts/2018-06-11/generate-ripple-wallet.png" alt="generate-ripple-wallet" title="generate-ripple-wallet" /></p>
 
-<p><strong>CoilはIWeb Monetizationを使ってどんなウェブサイトでもマネタイズする最初の企業です。</strong></p>
+<p>すると、Ripple addressにウォレットのアドレスが、Ripple secretに秘密鍵が表示されます。</p>
 
-<p>と以上のように、CoilとはWebサイトをマネタイズするための新しい支払いの仕組みを作る会社のようですね。</p>
+<p>ここで生成された秘密鍵は、紙に書いて安全な場所に保管するか、USBメモリにテキストファイルとして保存して安全な場所に保管してください。</p>
 
-<p>広告、課金以外のマネタイズ手法、楽しみですね！</p>
+<h1 id="ウォレットのアクティベーション">ウォレットのアクティベーション</h1>
 
-<h1 id="stefan-thomasの一連のツイートの和訳">Stefan Thomasの一連のツイートの和訳</h1>
+<p>以上でウォレットは作成できましたが、XRPのウォレットを使えるようにするには、<strong>ウォレットに20XRP以上を送金してウォレットをアクティベートする必要があります</strong>。</p>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">XRPとinterledger上に少額決済を実現するスタートアップCoilのローンチにワクワクしている。ウェブの新しいビジネスモデルを作っていく。<a href="https://twitter.com/hashtag/xrp?src=hash&amp;ref_src=twsrc%5Etfw">#xrp</a> <a href="https://twitter.com/hashtag/ripple?src=hash&amp;ref_src=twsrc%5Etfw">#ripple</a> <a href="https://t.co/RbBzMQMhzR">https://t.co/RbBzMQMhzR</a></p>&mdash; Masamichi Ueta (@micchyboy1023) <a href="https://twitter.com/micchyboy1023/status/1001065580571459584?ref_src=twsrc%5Etfw">2018年5月28日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>20XRPはウォレットを使うための手数料のようなもので、ウォレットに送られた20XRPは、送金することはできません。</p>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">.<a href="https://twitter.com/EthanZ?ref_src=twsrc%5Etfw">@ethanz</a>が言うように、ウェブの原罪はマネタイズの手法が組み込まれていないことだ。だからウェブ上に構築されたモデルはほとんどが広告だった。しかし広告がマネタイズの答えではないことを我々は知っている。<a href="https://twitter.com/hashtag/xrp?src=hash&amp;ref_src=twsrc%5Etfw">#xrp</a> <a href="https://twitter.com/hashtag/ripple?src=hash&amp;ref_src=twsrc%5Etfw">#ripple</a> <a href="https://t.co/oDejBKquiD">https://t.co/oDejBKquiD</a></p>&mdash; Masamichi Ueta (@micchyboy1023) <a href="https://twitter.com/micchyboy1023/status/1001077886357393408?ref_src=twsrc%5Etfw">2018年5月28日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>生成したアドレスに20XRP以上を送金してウォレットの生成は完了となります。</p>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">決済技術が未熟だったからこうなった。しかし、我々が構築したXRPとinterledgerの技術によって、非中央集権で、秒間数兆のトランザクションを処理できるようになった。<a href="https://twitter.com/hashtag/xrp?src=hash&amp;ref_src=twsrc%5Etfw">#xrp</a> <a href="https://twitter.com/hashtag/ripple?src=hash&amp;ref_src=twsrc%5Etfw">#ripple</a> <a href="https://t.co/zuTBqXIP8y">https://t.co/zuTBqXIP8y</a></p>&mdash; Masamichi Ueta (@micchyboy1023) <a href="https://twitter.com/micchyboy1023/status/1001078633329377282?ref_src=twsrc%5Etfw">2018年5月28日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">この技術を使って、<a href="https://twitter.com/Coil?ref_src=twsrc%5Etfw">@Coil</a> の最初のプロダクトは、定額課金によって、クリエイターをサポートし、有料の壁をなくし、より少ない広告を実現し、さらなる機能やコンテンツを追加できるようにするものだ。<a href="https://twitter.com/hashtag/xrp?src=hash&amp;ref_src=twsrc%5Etfw">#xrp</a> <a href="https://twitter.com/hashtag/ripple?src=hash&amp;ref_src=twsrc%5Etfw">#ripple</a> <a href="https://t.co/jh1b1oQyTf">https://t.co/jh1b1oQyTf</a></p>&mdash; Masamichi Ueta (@micchyboy1023) <a href="https://twitter.com/micchyboy1023/status/1001079792806969344?ref_src=twsrc%5Etfw">2018年5月28日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">.<a href="https://twitter.com/Ripple?ref_src=twsrc%5Etfw">@Ripple</a>の金銭的技術的支援を受けられることを幸運に思っている。<a href="https://twitter.com/Coil?ref_src=twsrc%5Etfw">@Coil</a>がより健全なインターネットを実現するためのすべてが揃っている。<a href="https://twitter.com/hashtag/xrp?src=hash&amp;ref_src=twsrc%5Etfw">#xrp</a> <a href="https://twitter.com/hashtag/ripple?src=hash&amp;ref_src=twsrc%5Etfw">#ripple</a> <a href="https://t.co/KhuwavaEfh">https://t.co/KhuwavaEfh</a></p>&mdash; Masamichi Ueta (@micchyboy1023) <a href="https://twitter.com/micchyboy1023/status/1001080434606751746?ref_src=twsrc%5Etfw">2018年5月28日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<p>簡単ですね！</p>
 
           </div>
           <div class="pt-5">
@@ -214,21 +196,6 @@
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://micchyboy1023.github.io/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html">
-                  <small class="decoration-none text-muted">2018/6/11<span class="ml-2">仮想通貨</span></small>                    
-                  <h3 class="mt-0">XRPペーパーウォレットの作り方</h3>
-                  <p class="text-dark">XRPのウォレットを作る方法を紹介します。今回作成するのは、ペーパーウォレットです。ペーパーウォレットとは、ウォレットのアドレスと秘密鍵を紙に印刷して保管するウォレットです。</p>
-                  
-                  <div alt="XRPペーパーウォレットの作り方" class="my-4 media-img rounded" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2018-06-11/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -340,6 +307,21 @@
 
             
 
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://micchyboy1023.github.io/cryptocurrency/2018/05/28/coil-xrp.html">
+                  <small class="decoration-none text-muted">2018/5/28<span class="ml-2">仮想通貨</span></small>                    
+                  <h3 class="mt-0">Ripple（リップル）のCTO Stefan Thomasが立ち上げたCoil社について調べてみました</h3>
+                  <p class="text-dark">5月14日、Ripple（リップル）社の元CTO Stefan Thomasがツイートを投稿しました。この投稿を見て、XRPを使った新しいサービスがローンチされたのかなと思ったのですが、よくよく読むと、Stefan Thomas氏自身がCoilという会社を立ち上げてmicropaymentに関する事業を展開していくということで、面白そうなので、Coilについて調べてみました。</p>
+                  
+                  <div alt="Ripple（リップル）のCTO Stefan Thomasが立ち上げたCoil社について調べてみました" class="my-4 media-img rounded" style="background-image: url(https://micchyboy1023.github.io/assets/posts/2018-05-28/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
             
           
             
