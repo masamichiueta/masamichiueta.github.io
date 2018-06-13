@@ -5,9 +5,63 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jun 2018 23:03:15 +0900</pubDate>
-    <lastBuildDate>Sun, 10 Jun 2018 23:03:15 +0900</lastBuildDate>
+    <pubDate>Wed, 13 Jun 2018 09:59:03 +0900</pubDate>
+    <lastBuildDate>Wed, 13 Jun 2018 09:59:03 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>What's new in ARKit 2 ~ ARKit2の新機能</title>
+        <description>&lt;p&gt;WWDC2018で発表されたARKit2に関するセッションのビデオ &lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2018/602/&quot;&gt;What’s New in ARKit 2&lt;/a&gt;のメモです。&lt;/p&gt;
+
+&lt;h1 id=&quot;arkit2の新機能&quot;&gt;ARKit2の新機能&lt;/h1&gt;
+
+&lt;p&gt;ざっくり書くと以下の点が新機能として紹介されていました。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ワールドマップの共有が可能になった&lt;/li&gt;
+  &lt;li&gt;画像のトラッキングが可能になった&lt;/li&gt;
+  &lt;li&gt;オブジェクトのテクスチャへの環境情報の反映（Environment Texturing、反射など）が可能になった&lt;/li&gt;
+  &lt;li&gt;リアルな物体の認識、スキャンが可能に&lt;/li&gt;
+  &lt;li&gt;フェイストラッキングの向上、視線追跡、舌の認識が可能になった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;キーノートやセッションビデオで紹介されていますが、一番大きな点としては、&lt;strong&gt;複数人でワールドマップの共有が可能になった&lt;/strong&gt;ことかと思います。&lt;/p&gt;
+
+&lt;p&gt;これによって、複数のデバイスで同じ位置にあるオブジェクトを見ることができるようになったり、キーノートの発表でもあった&lt;code class=&quot;highlighter-rouge&quot;&gt;SwiftShot&lt;/code&gt;のように複数人で遊べるARアプリを簡単に作れるようになりました。&lt;/p&gt;
+
+&lt;p&gt;Environment Texturingも、&lt;code class=&quot;highlighter-rouge&quot;&gt;ARWorldTrackingConfiguration&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;environmentTexturing&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;.automatic&lt;/code&gt;にするだけで良いので非常に簡単に適用できて素晴らしいと思います。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Environment Texturing&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Create world tracking configuration&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;configuration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ARWorldTrackingConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Enable automatic environment texturing &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;environmentTexturing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;automatic&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Run the configuration&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;正式リリースされたら、アプリを作ってみる予定です。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/arkit/swiftshot_creating_a_game_for_augmented_reality&quot;&gt;SwiftShot&lt;/a&gt;についてもソースを読んでみます。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/13/whats-new-in-arkit2.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/13/whats-new-in-arkit2.html</guid>
+        
+        <category>ARKit</category>
+        
+        <category>AR</category>
+        
+        <category>Apple</category>
+        
+        <category>WWDC</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>XRPペーパーウォレットの作り方</title>
@@ -624,53 +678,6 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
         
         
         <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>rippled バージョン1.0.0がリリースされました</title>
-        <description>&lt;p&gt;rippleの公式ブログで、rippled バージョン1.0.0のリリース記事が公開されました。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;rippledのバージョン1.0.0がリリース&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/AmPvP7wQO6&quot;&gt;https://t.co/AmPvP7wQO6&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1002530922460110848?ref_src=twsrc%5Etfw&quot;&gt;2018年6月1日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rippled&lt;/code&gt;のサーバーを運用している場合、2018年6月14日（木）までにバージョン1.0.0にアップグレードする必要があるようです。&lt;/p&gt;
-
-&lt;p&gt;アップデートの方法はこちら&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.ripple.com/update-rippled.html&quot;&gt;Update rippled&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;rippledとは&quot;&gt;rippledとは&lt;/h1&gt;
-
-&lt;p&gt;そもそも&lt;code class=&quot;highlighter-rouge&quot;&gt;rippled&lt;/code&gt;とは何かですが、ウィキペディアによると&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;rippled（リップルド）はP2Pリップルネットワークで動作するサーバーの中核モジュールである。[1]
-それぞれのrippledサーバーはリップルネットワークに接続し、暗号通貨取引のリレー動作、ローカルにコピーした分散元帳のメンテナンスなどを実行する。rippledのソースコードはC++で記述されており、オープンソースライセンス[2]としてGitHubに登録されている。
-ユーザー自身のrippledサーバーを実行させることができる。それぞれのrippledサーバーは、分散元帳のコンセンサスプロセス[3]に参加したり、取引の検証を実行することができる。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;とのことです。&lt;/p&gt;
-
-&lt;p&gt;つまり、&lt;code class=&quot;highlighter-rouge&quot;&gt;rippled&lt;/code&gt;を起動することで、リップルネットワークに参加できるということですね。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 01 Jun 2018 01:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/cryptocurrency/2018/06/01/rippled1.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/06/01/rippled1.html</guid>
-        
-        <category>リップル</category>
-        
-        <category>Ripple</category>
-        
-        <category>XRP</category>
-        
-        <category>仮想通貨</category>
-        
-        <category>cryptocurrency</category>
-        
-        
-        <category>cryptocurrency</category>
         
       </item>
     
