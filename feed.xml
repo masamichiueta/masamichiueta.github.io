@@ -5,8 +5,8 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Jun 2018 09:59:03 +0900</pubDate>
-    <lastBuildDate>Wed, 13 Jun 2018 09:59:03 +0900</lastBuildDate>
+    <pubDate>Wed, 13 Jun 2018 10:33:53 +0900</pubDate>
+    <lastBuildDate>Wed, 13 Jun 2018 10:33:53 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -24,6 +24,21 @@
   &lt;li&gt;リアルな物体の認識、スキャンが可能に&lt;/li&gt;
   &lt;li&gt;フェイストラッキングの向上、視線追跡、舌の認識が可能になった&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2ではマップのrelocalizationが追加されて、worldmapの保存、共有が可能に。これは便利だ&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006324724211728385?ref_src=twsrc%5Etfw&quot;&gt;2018年6月11日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2、ローカルでワールドマップのファイルシェアできるのか。単にファイルをAppGroupでシェアしてる感じかな&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006326931149631488?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;Environment Texturingで反射のような環境情報を反映可能に&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006329003722993665?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2には画像追跡機能も追加。APIも使いやすそう&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006428141441568769?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;FaceTrackingも強化。視線の追跡が可能に。舌の検出も可能。&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006439704978313217?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
 
 &lt;p&gt;キーノートやセッションビデオで紹介されていますが、一番大きな点としては、&lt;strong&gt;複数人でワールドマップの共有が可能になった&lt;/strong&gt;ことかと思います。&lt;/p&gt;
 
