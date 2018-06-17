@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "FirebaseとReactで認証付きアプリのサンプルを実行するまで"
-description: ""
+description: "現在FirebaseでWebアプリを作っています。アプリを作る上でユーザー認証は欠かせないものの、作るのが大変ということが多いですが、Firebaseを使うと簡単に実装することができました。私はWebアプリを作る上でReactを使うことが多いので、今回はFirebaseとReactでユーザー認証を行うサンプルアプリを実行して、Firebaseでホスティングしてみました。"
 date: 2018-06-18
 hero-image: cover.png
 image: /assets/posts/2018-06-18/cover.png
