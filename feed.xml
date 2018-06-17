@@ -5,9 +5,198 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://micchyboy1023.github.iohttps://micchyboy1023.github.io/</link>
     <atom:link href="https://micchyboy1023.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jun 2018 23:03:15 +0900</pubDate>
-    <lastBuildDate>Sun, 10 Jun 2018 23:03:15 +0900</lastBuildDate>
+    <pubDate>Mon, 18 Jun 2018 04:48:18 +0900</pubDate>
+    <lastBuildDate>Mon, 18 Jun 2018 04:48:18 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>FirebaseとReactで認証付きアプリのサンプルを実行するまで</title>
+        <description>&lt;p&gt;現在FirebaseでWebアプリを作っています。アプリを作る上でユーザー認証は欠かせないものの、作るのが大変ということが多いですが、Firebaseを使うと簡単に実装することができました。&lt;/p&gt;
+
+&lt;p&gt;私はWebアプリを作る上でReactを使うことが多いので、今回はFirebaseとReactでユーザー認証を行うサンプルアプリを実行して、Firebaseでホスティングしてみました。&lt;/p&gt;
+
+&lt;p&gt;今回参考にしたサンプルはこちらです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rwieruch/react-firebase-authentication&quot;&gt;rwieruch/react-firebase-authentication&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;firebaseにプロジェクトを登録する&quot;&gt;Firebaseにプロジェクトを登録する&lt;/h1&gt;
+
+&lt;p&gt;まずは&lt;a href=&quot;https://console.firebase.google.com/&quot;&gt;Firebaseのコンソール&lt;/a&gt;から、プロジェクトを登録します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-18/addproject.png&quot; alt=&quot;プロジェクト登録&quot; title=&quot;プロジェクト登録&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;アプリを設定する&quot;&gt;アプリを設定する&lt;/h2&gt;
+
+&lt;p&gt;プロジェクトを登録したらログインの設定を行います。&lt;/p&gt;
+
+&lt;p&gt;サイドメニューの&lt;code class=&quot;highlighter-rouge&quot;&gt;Authentication&lt;/code&gt;から、メールアドレスによるログインを有効にします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-18/login.png&quot; alt=&quot;メールアドレスログイン&quot; title=&quot;メールアドレスログイン&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-18/loginbymail.png&quot; alt=&quot;メールアドレスログイン&quot; title=&quot;メールアドレスログイン&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;firebaseコマンドラインツールのインストール&quot;&gt;Firebaseコマンドラインツールのインストール&lt;/h2&gt;
+
+&lt;p&gt;Firebaseにアプリをデプロイするには、Firebaseコマンドラインツールをインストールする必要があります。&lt;/p&gt;
+
+&lt;p&gt;npmパッケージで提供されているので、npmでインストールします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm intall -g firebase-tools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;その後ターミナルから以下のコマンドを実行します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;firebase login
+
+cd /path/to/project/directory // プロジェクトディレクトリに移動
+
+firebase init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase init&lt;/code&gt;を実行すると、使用する機能やプロジェクトを聞かれるので該当するものを選択します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-18/functions.png&quot; alt=&quot;firebaseの機能&quot; title=&quot;firebaseの機能&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;この場合は、&lt;code class=&quot;highlighter-rouge&quot;&gt;Firestore&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;Hosting&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage&lt;/code&gt;を有効にしてみました。&lt;/p&gt;
+
+&lt;p&gt;また途中で、&lt;code class=&quot;highlighter-rouge&quot;&gt; What do you want to use as your public directory?&lt;/code&gt;と聞かれるので、Reactアプリに合わせるために&lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt;に変更してください。&lt;/p&gt;
+
+&lt;p&gt;プロジェクトを作成した後も、&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase.json&lt;/code&gt;を修正すれば変更可能です。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt;が終了したら、試しに&lt;code class=&quot;highlighter-rouge&quot;&gt;deploy&lt;/code&gt;してみます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;firebase deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これでデフォルトのページがデプロイされました。&lt;/p&gt;
+
+&lt;h1 id=&quot;サンプルアプリを実行する&quot;&gt;サンプルアプリを実行する&lt;/h1&gt;
+
+&lt;p&gt;認証用のサンプルアプリをダウンロードします。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/rwieruch/react-firebase-authentication&quot;&gt;rwieruch/react-firebase-authentication&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ダウンロードしたら、&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package.json
+public
+src
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;をコピーします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-18/project.png&quot; alt=&quot;プロジェクト&quot; title=&quot;プロジェクト&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;その後npmパッケージをインストールします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;インストール後は、&lt;code class=&quot;highlighter-rouge&quot;&gt;src/firebase/firebase.js&lt;/code&gt;の中の&lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;を自分のプロジェクトのものに変更します。
+&lt;code class=&quot;highlighter-rouge&quot;&gt;prod&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;が定義されていますが、一旦同じものを入れました。&lt;/p&gt;
+
+&lt;p&gt;configは、Firebaseのコンソールのトップ、&lt;code class=&quot;highlighter-rouge&quot;&gt;ウェブアプリにFirebaseを追加&lt;/code&gt;から表示することができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-18/addfirebase.png&quot; alt=&quot;ウェブアプリにFirebaseを追加&quot; title=&quot;ウェブアプリにFirebaseを追加&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;設定を書き換えたら、アプリをビルドしてfirebaseにデプロイします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run build
+firebase deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;以上で、サンプルアプリがFirebaseにデプロイされました。&lt;/p&gt;
+
+&lt;p&gt;デプロイ後以下のようなページが表示されていれば成功です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-18/sample.png&quot; alt=&quot;サンプル&quot; title=&quot;サンプル&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;サインアップページからユーザー登録をすると、Firebaseのユーザーが追加されます。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/18/firebase-react-authenticaton.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/18/firebase-react-authenticaton.html</guid>
+        
+        <category>Firebase</category>
+        
+        <category>React</category>
+        
+        <category>JavaScript</category>
+        
+        
+        <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>What's new in ARKit 2 ~ ARKit2の新機能</title>
+        <description>&lt;p&gt;WWDC2018で発表されたARKit2に関するセッションのビデオ &lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2018/602/&quot;&gt;What’s New in ARKit 2&lt;/a&gt;のメモです。&lt;/p&gt;
+
+&lt;h1 id=&quot;arkit2の新機能&quot;&gt;ARKit2の新機能&lt;/h1&gt;
+
+&lt;p&gt;ざっくり書くと以下の点が新機能として紹介されていました。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ワールドマップの共有が可能になった&lt;/li&gt;
+  &lt;li&gt;画像のトラッキングが可能になった&lt;/li&gt;
+  &lt;li&gt;オブジェクトのテクスチャへの環境情報の反映（Environment Texturing、反射など）が可能になった&lt;/li&gt;
+  &lt;li&gt;リアルな物体の認識、スキャンが可能に&lt;/li&gt;
+  &lt;li&gt;フェイストラッキングの向上、視線追跡、舌の認識が可能になった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2ではマップのrelocalizationが追加されて、worldmapの保存、共有が可能に。これは便利だ&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006324724211728385?ref_src=twsrc%5Etfw&quot;&gt;2018年6月11日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2、ローカルでワールドマップのファイルシェアできるのか。単にファイルをAppGroupでシェアしてる感じかな&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006326931149631488?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;Environment Texturingで反射のような環境情報を反映可能に&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006329003722993665?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2には画像追跡機能も追加。APIも使いやすそう&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006428141441568769?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;FaceTrackingも強化。視線の追跡が可能に。舌の検出も可能。&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1006439704978313217?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;キーノートやセッションビデオで紹介されていますが、一番大きな点としては、&lt;strong&gt;複数人でワールドマップの共有が可能になった&lt;/strong&gt;ことかと思います。&lt;/p&gt;
+
+&lt;p&gt;これによって、複数のデバイスで同じ位置にあるオブジェクトを見ることができるようになったり、キーノートの発表でもあった&lt;code class=&quot;highlighter-rouge&quot;&gt;SwiftShot&lt;/code&gt;のように複数人で遊べるARアプリを簡単に作れるようになりました。&lt;/p&gt;
+
+&lt;p&gt;Environment Texturingも、&lt;code class=&quot;highlighter-rouge&quot;&gt;ARWorldTrackingConfiguration&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;environmentTexturing&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;.automatic&lt;/code&gt;にするだけで良いので非常に簡単に適用できて素晴らしいと思います。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Environment Texturing&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Create world tracking configuration&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;configuration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ARWorldTrackingConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Enable automatic environment texturing &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;environmentTexturing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;automatic&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Run the configuration&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;正式リリースされたら、アプリを作ってみる予定です。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/arkit/swiftshot_creating_a_game_for_augmented_reality&quot;&gt;SwiftShot&lt;/a&gt;についてもソースを読んでみます。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://micchyboy1023.github.io/development/2018/06/13/whats-new-in-arkit2.html</link>
+        <guid isPermaLink="true">https://micchyboy1023.github.io/development/2018/06/13/whats-new-in-arkit2.html</guid>
+        
+        <category>ARKit</category>
+        
+        <category>AR</category>
+        
+        <category>Apple</category>
+        
+        <category>WWDC</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>XRPペーパーウォレットの作り方</title>
@@ -549,128 +738,6 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>子育てハック　子供2人（3歳0歳）の私が子供が生まれてから買ってよかったもの</title>
-        <description>&lt;h1 id=&quot;子育てハック子供2人3歳0歳の私が子供が生まれてから買ってよかったもの&quot;&gt;子育てハック　子供2人（3歳0歳）の私が子供が生まれてから買ってよかったもの&lt;/h1&gt;
-
-&lt;p&gt;昨年年末に第2子が生まれて家がにぎやかになりました。
-子供がいるとできるだけ家事の負担を下げたかったり、週末はお出かけしたかったりすると思うのですが、そのために買ってよかったなと思うものをまとめておきます。&lt;/p&gt;
-
-&lt;h2 id=&quot;ルンバ&quot;&gt;ルンバ&lt;/h2&gt;
-
-&lt;p&gt;まずは、ルンバです。
-これまでは掃除機で掃除していましたが、日々の掃除をルンバにお願いするようにしました。&lt;/p&gt;
-
-&lt;p&gt;私が購入したのは、ルンバ960です。&lt;/p&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B01JYD3OCE&amp;amp;linkId=286a86d44a3a44445cb086a7f83864e7&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;購入したといっても、溜まっていたクレジットカードのポイントで購入しました。&lt;/p&gt;
-
-&lt;p&gt;ルンバを導入してから、ほとんど自分で掃除することがなくなりました。流石に細かいところはルンバで掃除しきれませんが、その程度のことは毎日しなくてもよいので日々の掃除はルンバに任せることができます。&lt;/p&gt;
-
-&lt;p&gt;ルンバのアプリで毎日の掃除時間をスケジューリングできるので、非常に便利ですね！
-家の掃除から解放されることで子供や他のことで時間が使えるようになりました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://micchyboy1023.github.io/assets/posts/2018-06-03/roomba.png&quot; alt=&quot;ルンバのアプリ&quot; title=&quot;ルンバのアプリ&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;テント&quot;&gt;テント&lt;/h2&gt;
-
-&lt;p&gt;週末は子供とずっと家にいるのもよくないと思い、よく公園に出かけていますが、その際に便利なのがテントです。
-公園の芝生などでお弁当を食べたりするのに、必須アイテムですね。&lt;/p&gt;
-
-&lt;p&gt;私はAmazonのセールで、こちらのテントを購入しました。&lt;/p&gt;
-
-&lt;p&gt;MRG ワンタッチテント 2～3人用 UPF50+ uvカットコーティング 防水加工 サンシェード テント キャリーバッグ付き&lt;/p&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B01IVKXQSS&amp;amp;linkId=3d995c9af82c39cd4d92b31b34f2daa5&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;折りたたみできて広げるとなかなか広く、毎週末利用しています。&lt;/p&gt;
-
-&lt;h2 id=&quot;お弁当箱&quot;&gt;お弁当箱&lt;/h2&gt;
-
-&lt;p&gt;こちらも週末公園に行った時に、奥さんがお弁当を作ってくれるので必須アイテムです。
-お弁当は3段のものを使っていて、子供と3人で食べています。&lt;/p&gt;
-
-&lt;p&gt;大きめのお弁当がいいと思いますね。&lt;/p&gt;
-
-&lt;h1 id=&quot;今後あってもいいかなと思うもの&quot;&gt;今後あってもいいかなと思うもの&lt;/h1&gt;
-
-&lt;p&gt;食洗機があるといいなと思っています。
-家事で時間がかかるのは、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;洗濯&lt;/li&gt;
-  &lt;li&gt;炊事&lt;/li&gt;
-  &lt;li&gt;掃除&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;だと思うのですが、食洗機があればもっと家事の負担を減らせるなと思っています。&lt;/p&gt;
-
-&lt;p&gt;何かおすすめがあれば、&lt;a href=&quot;https://twitter.com/micchyboy1023&quot;&gt;@micchyboy1023&lt;/a&gt;　まで教えてください。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 03 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/family/2018/06/03/goods-for-baby.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/family/2018/06/03/goods-for-baby.html</guid>
-        
-        <category>子供</category>
-        
-        <category>ルンバ</category>
-        
-        <category>ベビーカー</category>
-        
-        <category>子育て</category>
-        
-        
-        <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>rippled バージョン1.0.0がリリースされました</title>
-        <description>&lt;p&gt;rippleの公式ブログで、rippled バージョン1.0.0のリリース記事が公開されました。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;rippledのバージョン1.0.0がリリース&lt;a href=&quot;https://twitter.com/hashtag/xrp?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#xrp&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/ripple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#ripple&lt;/a&gt; &lt;a href=&quot;https://t.co/AmPvP7wQO6&quot;&gt;https://t.co/AmPvP7wQO6&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@micchyboy1023) &lt;a href=&quot;https://twitter.com/micchyboy1023/status/1002530922460110848?ref_src=twsrc%5Etfw&quot;&gt;2018年6月1日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rippled&lt;/code&gt;のサーバーを運用している場合、2018年6月14日（木）までにバージョン1.0.0にアップグレードする必要があるようです。&lt;/p&gt;
-
-&lt;p&gt;アップデートの方法はこちら&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.ripple.com/update-rippled.html&quot;&gt;Update rippled&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;rippledとは&quot;&gt;rippledとは&lt;/h1&gt;
-
-&lt;p&gt;そもそも&lt;code class=&quot;highlighter-rouge&quot;&gt;rippled&lt;/code&gt;とは何かですが、ウィキペディアによると&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;rippled（リップルド）はP2Pリップルネットワークで動作するサーバーの中核モジュールである。[1]
-それぞれのrippledサーバーはリップルネットワークに接続し、暗号通貨取引のリレー動作、ローカルにコピーした分散元帳のメンテナンスなどを実行する。rippledのソースコードはC++で記述されており、オープンソースライセンス[2]としてGitHubに登録されている。
-ユーザー自身のrippledサーバーを実行させることができる。それぞれのrippledサーバーは、分散元帳のコンセンサスプロセス[3]に参加したり、取引の検証を実行することができる。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;とのことです。&lt;/p&gt;
-
-&lt;p&gt;つまり、&lt;code class=&quot;highlighter-rouge&quot;&gt;rippled&lt;/code&gt;を起動することで、リップルネットワークに参加できるということですね。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 01 Jun 2018 01:00:00 +0900</pubDate>
-        <link>https://micchyboy1023.github.io/cryptocurrency/2018/06/01/rippled1.html</link>
-        <guid isPermaLink="true">https://micchyboy1023.github.io/cryptocurrency/2018/06/01/rippled1.html</guid>
-        
-        <category>リップル</category>
-        
-        <category>Ripple</category>
-        
-        <category>XRP</category>
-        
-        <category>仮想通貨</category>
-        
-        <category>cryptocurrency</category>
-        
-        
-        <category>cryptocurrency</category>
         
       </item>
     
