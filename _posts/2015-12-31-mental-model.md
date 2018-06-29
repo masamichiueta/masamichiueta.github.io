@@ -12,7 +12,7 @@ tags:
 - 書評
 ---
 
-> This post was originally posted in [Medium](https://medium.com/@micchyboy1023/書評-メンタルモデル-ユーザーへの共感から生まれるuxデザイン戦略-3b92a153671e#.i6i8sb6qm) at 12/31 2015.
+> This post was originally posted in [Medium](https://medium.com/@masamichiueta/書評-メンタルモデル-ユーザーへの共感から生まれるuxデザイン戦略-3b92a153671e#.i6i8sb6qm) at 12/31 2015.
 
 ---
 

@@ -11,11 +11,11 @@ tags:
 - github pages
 ---
 
-> This post was originally posted in [Qiita](http://qiita.com/micchyboy/items/0074f002d8f1663577a2) at 12/27 2015.
+> This post was originally posted in [Qiita](http://qiita.com/masamichiueta/items/0074f002d8f1663577a2) at 12/27 2015.
 
 ---
 
-[GitHub Pages](https://github.com/micchyboy1023)でいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。
+[GitHub Pages](https://github.com/masamichiueta)でいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。
 
 sassを使おうとして、調べるとgemでsassをインストールして始めるという記事が見つかります。
 - [CSSのメタ言語Sass(SCSS)、LESSの完全入門](http://qiita.com/ritukiii/items/67b3c50002b48c6186d6)

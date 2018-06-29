@@ -13,7 +13,7 @@ tags:
 - apple
 ---
 
-*この投稿はQiitaに投稿したものと同じです。[Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する](https://qiita.com/micchyboy1023/items/db84ca3d0d23a37d8866)*
+*この投稿はQiitaに投稿したものと同じです。[Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する](https://qiita.com/masamichiueta/items/db84ca3d0d23a37d8866)*
 
 開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分割しました。
 

@@ -10,7 +10,7 @@ tags:
 - App
 ---
 
-> This post was originally posted in [Medium](https://medium.com/@micchyboy1023/how-is-your-today-b52f693b17e6#.dug8v845o) at 03/18 2016.
+> This post was originally posted in [Medium](https://medium.com/@masamichiueta/how-is-your-today-b52f693b17e6#.dug8v845o) at 03/18 2016.
 
 ---
 
@@ -32,7 +32,7 @@ And I’m a developer, so I decided to create an app.
 
 Since Today is an open source project, if you have a good idea, please contribute and submit a pull request.
 
-[https://github.com/micchyboy1023/Today](https://github.com/micchyboy1023/Today)
+[https://github.com/masamichiueta/Today](https://github.com/masamichiueta/Today)
 
 Let’s start Today :)
 

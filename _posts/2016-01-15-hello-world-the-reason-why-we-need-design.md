@@ -10,7 +10,7 @@ tags:
 - 書評
 ---
 
-> This post was originally posted in [Medium](https://medium.com/@micchyboy1023/書評-hello-world-デザイン-が私たちに必要な理由-756de750e52a#.wv28nmigo) at 01/15 2016.
+> This post was originally posted in [Medium](https://medium.com/@masamichiueta/書評-hello-world-デザイン-が私たちに必要な理由-756de750e52a#.wv28nmigo) at 01/15 2016.
 
 ---
 

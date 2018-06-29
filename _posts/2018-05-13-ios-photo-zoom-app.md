@@ -29,7 +29,7 @@ iOSの写真アプリの画面遷移は使いやすいなと思っています�
 # この記事でできるもの
 
 サンプルコードはGitHubのリポジトリに置いてあります。
-[micchyboy1023/SimplePhotoViewer](https://github.com/micchyboy1023/SimplePhotoViewer)
+[masamichiueta/SimplePhotoViewer](https://github.com/masamichiueta/SimplePhotoViewer)
 
 <video width="320" controls>
   <source src="{{ site.url }}/assets/posts/2018-05-13/simplephotoviewer.mov" type="video/mp4">
@@ -685,7 +685,7 @@ class ContainerViewController: UIViewController, UIGestureRecognizerDelegate {
 記事中では全てのソースコードを載せていないのでわかりにくいところもあったかもしれませんが、ぜひ実際にサンプルを動かしてみてください。
 この動きを実現するために結構試行錯誤した結果なので、参考になるのではと思います。
 
-[micchyboy1023/SimplePhotoViewer](https://github.com/micchyboy1023/SimplePhotoViewer)
+[masamichiueta/SimplePhotoViewer](https://github.com/masamichiueta/SimplePhotoViewer)
 
 サンプルでは、タップすると全画面にしたり、ナビゲーションバーの表示・非表示を制御したり、画像のズームを制御したりなど、色々と説明していない部分も実装してあります。
 

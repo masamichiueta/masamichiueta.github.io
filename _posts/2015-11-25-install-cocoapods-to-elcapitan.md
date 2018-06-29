@@ -12,7 +12,7 @@ tags:
 - Xcode
 ---
 
-> This post was originally posted in [Qiita](http://qiita.com/micchyboy1023/items/26440acb62a71d22b255) at 11/25 2015.
+> This post was originally posted in [Qiita](http://qiita.com/masamichiueta/items/26440acb62a71d22b255) at 11/25 2015.
 
 ---
 

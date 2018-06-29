@@ -67,4 +67,4 @@ MRG ワンタッチテント 2～3人用 UPF50+ uvカットコーティング �
 
 だと思うのですが、食洗機があればもっと家事の負担を減らせるなと思っています。
 
-何かおすすめがあれば、[@micchyboy1023](https://twitter.com/micchyboy1023)　まで教えてください。
+何かおすすめがあれば、[@masamichiueta](https://twitter.com/masamichiueta)　まで教えてください。

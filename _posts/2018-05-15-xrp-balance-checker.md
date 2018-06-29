@@ -32,4 +32,4 @@ Ledger Nanoで保有している人はいわゆるガチホの人が多いのか
 
 AppStoreでは公開していませんが、ソースはGitHubで公開していて、Xcodeを使っていて開発者ライセンスを持っている人であればiPhoneにインストールできます。
 
-[GitHub XRP](https://github.com/micchyboy1023/XRP)
+[GitHub XRP](https://github.com/masamichiueta/XRP)

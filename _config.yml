@@ -6,13 +6,13 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: micchyboy
+title: masamichiueta
 description: ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。
 
-url: https://micchyboy1023.github.io
-twitter_username: micchyboy1023
-github_username:  micchyboy1023
-author: micchyboy
+url: https://masamichiueta.github.io
+twitter_username: masamichiueta
+github_username:  masamichiueta
+author: masamichiueta
 lang: ja_JP
 
 paginate: 10

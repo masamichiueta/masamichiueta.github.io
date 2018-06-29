@@ -24,7 +24,7 @@ I want to user Redux architecture in iOS development, and I found [ReSwift](http
 **ReSwift** is the powerful framework to create Redux architecture iOS app.
 I created a sample app using ReSwift with CoreData.
 
-[GitHub - ReSwiftCoreData](https://github.com/micchyboy1023/ReSwiftCoreData)
+[GitHub - ReSwiftCoreData](https://github.com/masamichiueta/ReSwiftCoreData)
 
 ---
 
@@ -314,7 +314,7 @@ func newState(state: AppState) {
 
 Please check my GitHub repository.
 
-[GitHub - ReSwiftCoreData](https://github.com/micchyboy1023/ReSwiftCoreData)
+[GitHub - ReSwiftCoreData](https://github.com/masamichiueta/ReSwiftCoreData)
 
 
 ---
