@@ -3,15 +3,15 @@
   <channel>
     <title>masamichiueta</title>
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
-    <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
-    <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Jun 2018 20:39:36 +0900</pubDate>
-    <lastBuildDate>Sat, 30 Jun 2018 20:39:36 +0900</lastBuildDate>
+    <link>https://masamichi.mehttps://masamichi.me/</link>
+    <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 01 Jul 2018 08:22:23 +0900</pubDate>
+    <lastBuildDate>Sun, 01 Jul 2018 08:22:23 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
         <title>FirebaseとReactとReduxで認証付きのWebアプリのサンプルを作りました</title>
-        <description>&lt;p&gt;先日書いた記事　&lt;a href=&quot;https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html&quot;&gt;FirebaseとReactで認証付きアプリのサンプルを実行するまで&lt;/a&gt; の続きで、この認証サンプルをReduxを使うように変更したサンプルを作ってみました。&lt;/p&gt;
+        <description>&lt;p&gt;先日書いた記事　&lt;a href=&quot;https://masamichi.me/development/2018/06/18/firebase-react-authenticaton.html&quot;&gt;FirebaseとReactで認証付きアプリのサンプルを実行するまで&lt;/a&gt; の続きで、この認証サンプルをReduxを使うように変更したサンプルを作ってみました。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/masamichiueta/react-redux-firebase-auth&quot;&gt;masamichiueta/react-redux-firebase-auth&lt;/a&gt;&lt;/p&gt;
 
@@ -29,8 +29,8 @@
 &lt;p&gt;このあたりの解消法というか、ベストプラクティスがありましたら、&lt;a href=&quot;https://twitter.com/masamichiueta&quot;&gt;@masamichiueta&lt;/a&gt;に教えていただけるとありがたいです。&lt;/p&gt;
 </description>
         <pubDate>Sat, 30 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2018/06/30/firebase-react-redux.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/30/firebase-react-redux.html</guid>
+        <link>https://masamichi.me/development/2018/06/30/firebase-react-redux.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/06/30/firebase-react-redux.html</guid>
         
         <category>Firebase</category>
         
@@ -59,7 +59,7 @@
 
 &lt;p&gt;まずは&lt;a href=&quot;https://console.firebase.google.com/&quot;&gt;Firebaseのコンソール&lt;/a&gt;から、プロジェクトを登録します。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-18/addproject.png&quot; alt=&quot;プロジェクト登録&quot; title=&quot;プロジェクト登録&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/addproject.png&quot; alt=&quot;プロジェクト登録&quot; title=&quot;プロジェクト登録&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;アプリを設定する&quot;&gt;アプリを設定する&lt;/h2&gt;
 
@@ -67,11 +67,11 @@
 
 &lt;p&gt;サイドメニューの&lt;code class=&quot;highlighter-rouge&quot;&gt;Authentication&lt;/code&gt;から、メールアドレスによるログインを有効にします。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-18/login.png&quot; alt=&quot;メールアドレスログイン&quot; title=&quot;メールアドレスログイン&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/login.png&quot; alt=&quot;メールアドレスログイン&quot; title=&quot;メールアドレスログイン&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-18/loginbymail.png&quot; alt=&quot;メールアドレスログイン&quot; title=&quot;メールアドレスログイン&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/loginbymail.png&quot; alt=&quot;メールアドレスログイン&quot; title=&quot;メールアドレスログイン&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;firebaseコマンドラインツールのインストール&quot;&gt;Firebaseコマンドラインツールのインストール&lt;/h2&gt;
 
@@ -93,7 +93,7 @@ firebase init
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase init&lt;/code&gt;を実行すると、使用する機能やプロジェクトを聞かれるので該当するものを選択します。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-18/functions.png&quot; alt=&quot;firebaseの機能&quot; title=&quot;firebaseの機能&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/functions.png&quot; alt=&quot;firebaseの機能&quot; title=&quot;firebaseの機能&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;この場合は、&lt;code class=&quot;highlighter-rouge&quot;&gt;Firestore&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;Hosting&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage&lt;/code&gt;を有効にしてみました。&lt;/p&gt;
 
@@ -122,7 +122,7 @@ src
 
 &lt;p&gt;をコピーします。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-18/project.png&quot; alt=&quot;プロジェクト&quot; title=&quot;プロジェクト&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/project.png&quot; alt=&quot;プロジェクト&quot; title=&quot;プロジェクト&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;その後npmパッケージをインストールします。&lt;/p&gt;
 
@@ -134,7 +134,7 @@ src
 
 &lt;p&gt;configは、Firebaseのコンソールのトップ、&lt;code class=&quot;highlighter-rouge&quot;&gt;ウェブアプリにFirebaseを追加&lt;/code&gt;から表示することができます。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-18/addfirebase.png&quot; alt=&quot;ウェブアプリにFirebaseを追加&quot; title=&quot;ウェブアプリにFirebaseを追加&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/addfirebase.png&quot; alt=&quot;ウェブアプリにFirebaseを追加&quot; title=&quot;ウェブアプリにFirebaseを追加&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;設定を書き換えたら、アプリをビルドしてfirebaseにデプロイします。&lt;/p&gt;
 
@@ -146,13 +146,13 @@ firebase deploy
 
 &lt;p&gt;デプロイ後以下のようなページが表示されていれば成功です。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-18/sample.png&quot; alt=&quot;サンプル&quot; title=&quot;サンプル&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/sample.png&quot; alt=&quot;サンプル&quot; title=&quot;サンプル&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;サインアップページからユーザー登録をすると、Firebaseのユーザーが追加されます。&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html</guid>
+        <link>https://masamichi.me/development/2018/06/18/firebase-react-authenticaton.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/06/18/firebase-react-authenticaton.html</guid>
         
         <category>Firebase</category>
         
@@ -218,8 +218,8 @@ firebase deploy
 &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/arkit/swiftshot_creating_a_game_for_augmented_reality&quot;&gt;SwiftShot&lt;/a&gt;についてもソースを読んでみます。&lt;/p&gt;
 </description>
         <pubDate>Wed, 13 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2018/06/13/whats-new-in-arkit2.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/13/whats-new-in-arkit2.html</guid>
+        <link>https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html</guid>
         
         <category>ARKit</category>
         
@@ -256,7 +256,7 @@ firebase deploy
 
 &lt;p&gt;上のページにアクセスして、ファイルをダウンロードします。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-11/download.png&quot; alt=&quot;Download&quot; title=&quot;Download&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-11/download.png&quot; alt=&quot;Download&quot; title=&quot;Download&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;ファイルをダウンロードしなくても、Web上に提供されているアプリを使用すればウォレットを生成できるのですが、インターネットに繋がれたところで生成するのもセキュリティ的に微妙なので、オフラインで作成するためにダウンロードします。&lt;/p&gt;
 
@@ -264,11 +264,11 @@ firebase deploy
 
 &lt;p&gt;ダウンロードしたら、zipを回答して、&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;を開きます。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-11/html.png&quot; alt=&quot;html&quot; title=&quot;html&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-11/html.png&quot; alt=&quot;html&quot; title=&quot;html&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;を開くと、以下のような画面が表示されるので、右下の&lt;code class=&quot;highlighter-rouge&quot;&gt;Generate&lt;/code&gt;ボタンを押します。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-11/generate-ripple-wallet.png&quot; alt=&quot;generate-ripple-wallet&quot; title=&quot;generate-ripple-wallet&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-11/generate-ripple-wallet.png&quot; alt=&quot;generate-ripple-wallet&quot; title=&quot;generate-ripple-wallet&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;すると、Ripple addressにウォレットのアドレスが、Ripple secretに秘密鍵が表示されます。&lt;/p&gt;
 
@@ -285,8 +285,8 @@ firebase deploy
 &lt;p&gt;簡単ですね！&lt;/p&gt;
 </description>
         <pubDate>Mon, 11 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html</guid>
+        <link>https://masamichi.me/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html</link>
+        <guid isPermaLink="true">https://masamichi.me/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html</guid>
         
         <category>XRP</category>
         
@@ -414,11 +414,11 @@ moneyd xrp:start
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;に表示されたURLにアクセスすると、Reactアプリが実行されています！&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://masamichiueta.github.io/assets/posts/2018-06-10/cover.png&quot; alt=&quot;React on Codius&quot; title=&quot;React on Codius&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-10/cover.png&quot; alt=&quot;React on Codius&quot; title=&quot;React on Codius&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 10 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/cryptocurrency/2018/06/10/ripple-codius-trial.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/cryptocurrency/2018/06/10/ripple-codius-trial.html</guid>
+        <link>https://masamichi.me/cryptocurrency/2018/06/10/ripple-codius-trial.html</link>
+        <guid isPermaLink="true">https://masamichi.me/cryptocurrency/2018/06/10/ripple-codius-trial.html</guid>
         
         <category>Codius</category>
         
@@ -469,8 +469,8 @@ JR東日本展示には作業車両の展示も。&lt;/p&gt;
 &lt;p&gt;無料でこれだけ楽しめるのは、なかなかないイベントだと思います！&lt;/p&gt;
 </description>
         <pubDate>Sat, 09 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/family/2018/06/09/yokosukayynorimonofesta2018.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/family/2018/06/09/yokosukayynorimonofesta2018.html</guid>
+        <link>https://masamichi.me/family/2018/06/09/yokosukayynorimonofesta2018.html</link>
+        <guid isPermaLink="true">https://masamichi.me/family/2018/06/09/yokosukayynorimonofesta2018.html</guid>
         
         <category>よこすかYYのりものフェスタ</category>
         
@@ -512,8 +512,8 @@ JR東日本展示には作業車両の展示も。&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Fri, 08 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2018/06/08/whats-new-swift42.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/08/whats-new-swift42.html</guid>
+        <link>https://masamichi.me/development/2018/06/08/whats-new-swift42.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/06/08/whats-new-swift42.html</guid>
         
         <category>Swift</category>
         
@@ -597,8 +597,8 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
 
 </description>
         <pubDate>Thu, 07 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2018/06/07/create-ml-wwdc2018.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/07/create-ml-wwdc2018.html</guid>
+        <link>https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html</guid>
         
         <category>WWDC2018</category>
         
@@ -645,8 +645,8 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
 &lt;p&gt;&lt;a href=&quot;http://tech.ckme.co.jp/ffmpeg_basic.shtml&quot;&gt;ffmpegの最も基本的な使い方&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 06 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/06/mov-to-gif-with-ffmpeg.html</guid>
+        <link>https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html</guid>
         
         <category>ffmpeg</category>
         
@@ -703,8 +703,8 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
 &lt;p&gt;あんまりすごい発表はなかったですかねぇ。&lt;/p&gt;
 </description>
         <pubDate>Tue, 05 Jun 2018 02:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2018/06/05/wwdc2018-keynote.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/05/wwdc2018-keynote.html</guid>
+        <link>https://masamichi.me/development/2018/06/05/wwdc2018-keynote.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/06/05/wwdc2018-keynote.html</guid>
         
         <category>WWDC2018</category>
         

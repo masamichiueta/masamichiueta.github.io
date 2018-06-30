@@ -1,3 +1,3 @@
-# masamichiueta.github.io
+# masamichi.me
 
-[Web site](https://masamichiueta.github.io)
+[Web site](https://masamichi.me)
