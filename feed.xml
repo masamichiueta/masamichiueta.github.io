@@ -5,9 +5,45 @@
     <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Jun 2018 17:27:35 +0900</pubDate>
-    <lastBuildDate>Sat, 30 Jun 2018 17:27:35 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Jun 2018 20:39:36 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Jun 2018 20:39:36 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>FirebaseとReactとReduxで認証付きのWebアプリのサンプルを作りました</title>
+        <description>&lt;p&gt;先日書いた記事　&lt;a href=&quot;https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html&quot;&gt;FirebaseとReactで認証付きアプリのサンプルを実行するまで&lt;/a&gt; の続きで、この認証サンプルをReduxを使うように変更したサンプルを作ってみました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/masamichiueta/react-redux-firebase-auth&quot;&gt;masamichiueta/react-redux-firebase-auth&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;動きとしては、&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Auth&lt;/code&gt;コンポーネントの&lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillMount&lt;/code&gt;で、&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase.auth.onAuthStateChanged&lt;/code&gt;を登録して、すでにログイン状態だったら、stateにuserを登録してログイン後の画面を表示する。未ログイン状態だったらトップ画面を表示する。&lt;/li&gt;
+  &lt;li&gt;ログインページでログインしたら&lt;code class=&quot;highlighter-rouge&quot;&gt;auth.doSignInWithEmailAndPassword&lt;/code&gt;で返ってくるユーザー情報をstateに登録する。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;という流れです。&lt;/p&gt;
+
+&lt;p&gt;1つ悩んでいることがあって、クライアントでレンダリングするので、&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase.auth.onAuthStateChanged&lt;/code&gt;のコールバックが呼ばれるまでに少しラグがあり、一瞬ローディング画面を出さざるを得ない形になっています。&lt;/p&gt;
+
+&lt;p&gt;このあたりの解消法というか、ベストプラクティスがありましたら、&lt;a href=&quot;https://twitter.com/masamichiueta&quot;&gt;@masamichiueta&lt;/a&gt;に教えていただけるとありがたいです。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 30 Jun 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/development/2018/06/30/firebase-react-redux.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/30/firebase-react-redux.html</guid>
+        
+        <category>Firebase</category>
+        
+        <category>React</category>
+        
+        <category>Redux</category>
+        
+        <category>JavaScript</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>FirebaseとReactで認証付きアプリのサンプルを実行するまで</title>
@@ -683,58 +719,6 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
         <category>watchOS</category>
         
         <category>tvOS</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>ASP.NET Coreでエラーメッセージを日本語にする方法</title>
-        <description>&lt;p&gt;ASP.NET CoreでWebアプリを開発していますが、デフォルトのバリデーションの仕組みを使うとエラーメッセージが英語になってしまい困っていました。&lt;/p&gt;
-
-&lt;p&gt;モデルクラスのプロパティに全部のパターンを日本語で書くとか途方もないことをしたくないと思っていたところ、解決する方法を見つけました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/h0ge/items/b7ffd65d0f11ac6382fd&quot;&gt;ASP.NET Coreでエラーメッセージを日本語で表示する&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;元ネタはこちらの記事のようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blogs.msdn.microsoft.com/mvpawardprogram/2017/05/09/aspnetcore-mvc-error-message/&quot;&gt;Customization And Localization Of ASP.NET Core MVC Default Validation Error Messages&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;エラーメッセージはこんな感じでローカライズしました。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RequiredAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}は必須項目です&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MaxLengthAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}は{1}文字以内で入力してください&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MinLengthAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}は{1}文字以上で入力してください&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;EmailAddressAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}の形式が正しくありません。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CompareAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}と{1}が一致しません。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;data&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;StringLengthAttribute&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xml:space=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;preserve&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;value&amp;gt;&lt;/span&gt;{0}は{1}文字以上{2}文字以下で入力してください。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/value&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-</description>
-        <pubDate>Tue, 05 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2018/06/05/asp-dotnet-core-error-japanese.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2018/06/05/asp-dotnet-core-error-japanese.html</guid>
-        
-        <category>ASP.NET Core</category>
-        
-        <category>C#</category>
-        
-        <category>ASP.NET</category>
-        
-        <category>ローカライズ</category>
-        
-        <category>日本語化</category>
         
         
         <category>development</category>
