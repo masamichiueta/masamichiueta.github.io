@@ -5,9 +5,72 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Jul 2018 10:29:15 +0900</pubDate>
-    <lastBuildDate>Sun, 01 Jul 2018 10:29:15 +0900</lastBuildDate>
+    <pubDate>Sun, 01 Jul 2018 10:50:36 +0900</pubDate>
+    <lastBuildDate>Sun, 01 Jul 2018 10:50:36 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>2018年最新版　GitHub Pagesでカスタムドメインを使用する</title>
+        <description>&lt;p&gt;このブログはGitHub Pagesとjekyllで運用していますが、カスタムドメインの設定をしたのでその方法を記載しておきます。&lt;/p&gt;
+
+&lt;h1 id=&quot;ドメインを取得する&quot;&gt;ドメインを取得する&lt;/h1&gt;
+
+&lt;p&gt;まず自分の使用したいドメインを取得します。私はムームードメインで取得しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://muumuu-domain.com&quot;&gt;ムームードメイン&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;理由は、&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;色々なドメインを取り扱っている&lt;/li&gt;
+  &lt;li&gt;安い&lt;/li&gt;
+  &lt;li&gt;Whois情報公開代行が無料かつ複雑な条件がない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;という点です。&lt;/p&gt;
+
+&lt;p&gt;以前はお名前.comでドメインを取得していましたが、Whois情報公開代行について、ドメイン取得時に申し込まないと無料にならないという条件があり、当時設定していなかったため使用するのをやめました。こういう複雑な条件を設定しているところはあまり使いたくないですね。&lt;/p&gt;
+
+&lt;h1 id=&quot;github-pagesのリポジトリを設定する&quot;&gt;GitHub Pagesのリポジトリを設定する&lt;/h1&gt;
+
+&lt;p&gt;デフォルトのGitHub Pagesのリポジトリ名は、&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;というリポジトリだと思います。このリポジトリの設定画面でカスタムドメインの設定をすることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-07-01/githubpages.png&quot; alt=&quot;GitHub Pagesの設定&quot; title=&quot;GitHub Pagesの設定&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;私のドメインは、&lt;code class=&quot;highlighter-rouge&quot;&gt;masamichi.me&lt;/code&gt;なので、そのドメインを入力し、Enforce HTTPSも有効化します。&lt;/p&gt;
+
+&lt;p&gt;リポジトリには&lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt;というファイルが追加されます。&lt;/p&gt;
+
+&lt;h1 id=&quot;ムームードメインでdnsの設定を行う&quot;&gt;ムームードメインでDNSの設定を行う&lt;/h1&gt;
+
+&lt;p&gt;ムームードメインの管理画面で、ドメイン操作　→ ムームーDNSを選択します。&lt;/p&gt;
+
+&lt;p&gt;自分が取得したドメインが表示されていると思いますが、処理の所の変更ボタンを押します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-07-01/mumu1.png&quot; alt=&quot;処理の変更&quot; title=&quot;処理の変更&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;設定2のところで、Aレコードを以下のIPアドレスで4つ追加します。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;185.199.108.153&lt;/li&gt;
+  &lt;li&gt;185.199.109.153&lt;/li&gt;
+  &lt;li&gt;185.199.110.153&lt;/li&gt;
+  &lt;li&gt;185.199.111.153&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-07-01/mumu2.png&quot; alt=&quot;Aレコード追加&quot; title=&quot;Aレコード追加&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以上で設定は完了です。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Jul 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2018/07/01/github-custom-domain.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/07/01/github-custom-domain.html</guid>
+        
+        <category>GitHub</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>FirebaseとReactとReduxで認証付きのWebアプリのサンプルを作りました</title>
@@ -653,72 +716,6 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
         <category>mov</category>
         
         <category>gif</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>WWDC2018キーノートまとめ</title>
-        <description>&lt;h1 id=&quot;wwdc2018-キーノートまとめ&quot;&gt;WWDC2018 キーノートまとめ&lt;/h1&gt;
-
-&lt;h2 id=&quot;ios-12&quot;&gt;iOS 12&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;パフォーマンスの向上&lt;/li&gt;
-  &lt;li&gt;ARKit2 マルチユーザーに対応&lt;/li&gt;
-  &lt;li&gt;Measureアプリが追加、ARでもののサイズを測れる&lt;/li&gt;
-  &lt;li&gt;Siriが色々アップデート&lt;/li&gt;
-  &lt;li&gt;株価、ニュース、ボイスメモアプリのリデザイン&lt;/li&gt;
-  &lt;li&gt;iBooksがApple Bookに変更、リデザイン&lt;/li&gt;
-  &lt;li&gt;通知のグループ化が可能になった&lt;/li&gt;
-  &lt;li&gt;どれくらいiPhoneを使用しているかがわかるようになった、アプリごとの使用時間を決めて制限することも可能&lt;/li&gt;
-  &lt;li&gt;Animojiにキャラが追加&lt;/li&gt;
-  &lt;li&gt;MeMojiで自分の顔文字を追加することができるように&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;watchos-5&quot;&gt;watchOS 5&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;ヨガやハイキングなど新しいアクティビティの追加&lt;/li&gt;
-  &lt;li&gt;ウォッチ同士でトランシーバーが可能に&lt;/li&gt;
-  &lt;li&gt;通知が強化&lt;/li&gt;
-  &lt;li&gt;ウェブビューが表示できるようになった&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;tvos-12&quot;&gt;tvOS 12&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;音がよくなった&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;macos-1014-mojaveモハーヴェ&quot;&gt;macOS 10.14 Mojave（モハーヴェ）&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ダークモードが追加された&lt;/li&gt;
-  &lt;li&gt;デスクトップのファイルを整理するStack&lt;/li&gt;
-  &lt;li&gt;Finderの新しい表示 ギャラリービュー&lt;/li&gt;
-  &lt;li&gt;News, 株価, ボイスメモ, ホームアプリが追加&lt;/li&gt;
-  &lt;li&gt;CreateMLという機械学習モデル作成フレームワークが追加された&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;あんまりすごい発表はなかったですかねぇ。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 05 Jun 2018 02:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2018/06/05/wwdc2018-keynote.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2018/06/05/wwdc2018-keynote.html</guid>
-        
-        <category>WWDC2018</category>
-        
-        <category>Apple</category>
-        
-        <category>アップル</category>
-        
-        <category>iOS</category>
-        
-        <category>macOS</category>
-        
-        <category>watchOS</category>
-        
-        <category>tvOS</category>
         
         
         <category>development</category>
