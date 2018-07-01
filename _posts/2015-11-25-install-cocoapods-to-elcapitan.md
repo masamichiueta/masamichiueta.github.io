@@ -28,9 +28,6 @@ OS X 10.10.11 El Capitanになり、rootlessが動作しており、rootlessの�
 
 というエラーになります。
 
-
-{% include ad.html %}
-
 # Sudo-less installation
 
 [CocoaPodsのインストールガイド](https://guides.cocoapods.org/using/getting-started.html#getting-started)に従い、ユーザーディレクトリにインストールすることで回避します。

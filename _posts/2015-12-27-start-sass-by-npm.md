@@ -39,8 +39,6 @@ npmについては以下の記事がわかりやすいです。
 
 npmはnode.jsで書かれたツールのパッケージマネージャで、gruntやbowerもnpmでインストールします。[Grunt/Gulpで憔悴したおっさんの話](http://t32k.me/mol/log/npm-run-script/)によると、"Node.js/npmに関する知識とかUNIXに関する知識は、数ヶ月で変わることもない＂ので、npmでやるのが簡単そうです。
 
-{% include ad.html %}
-
 # 始める
 先に大まかな流れを書くと以下のようになります。
 npmのみを使うので、シンプルです。

@@ -28,8 +28,6 @@ I created a sample app using ReSwift with CoreData.
 
 ---
 
-{% include ad.html %}
-
 
 # Inside the sample app
 

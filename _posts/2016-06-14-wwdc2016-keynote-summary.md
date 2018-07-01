@@ -24,9 +24,6 @@ tags:
 - 130 billion times downloads
 - 15 billion dollars for developers
 
-
-{% include ad.html %}
-
 ## 4 Apple Platforms
 
 1. watchOS

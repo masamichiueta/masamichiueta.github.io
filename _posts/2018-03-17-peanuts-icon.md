@@ -19,8 +19,6 @@ tags:
 
 [http://www.peanutizeme.com/jp/](http://www.peanutizeme.com/jp/)
 
-{% include ad.html %}
-
 こちらのサイトで、スヌーピーのキャラクターを自作して、画像をダウンロードすることができます。
 
 Twitterのアイコンを新しく作ってみました！

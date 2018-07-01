@@ -30,8 +30,6 @@ tags:
 今回紹介するLeadger Nano Sは、ビットコイン、イーサリアム、リップルなど様々な仮想通貨に対応したハードウェアウォレットです。
 特にリップルに対応したものを調べると、多くの方がこのLedger Nano Sを使用していることがわかります。
 
-{% include ad.html %}
-
 ### Ledger Nano Sの現在の対応通貨
 
 ![Ledger Nano Sの現在の対応通貨]({{ site.url }}/assets/posts/2018-02-11/currencies.png "Ledger Nano Sの現在の対応通貨")

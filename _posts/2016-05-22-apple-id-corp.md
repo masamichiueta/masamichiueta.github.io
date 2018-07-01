@@ -25,8 +25,6 @@ The following list is what I need to register iOS Developer Program as a Corpora
   - payment for Apple Developer Program
   - $99
 
-  {% include ad.html %}
-
 ## Flow
 
 There are three steps.
