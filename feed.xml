@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>masamichiueta</title>
-    <description>ソフトウェアエンジニアリング・デザイン・日常について投稿するブログ。開発系はSwift, iOSが中心。仮想通貨、お出かけ、ガジェットなども。</description>
+    <title>Masamichi Ueta</title>
+    <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Jul 2018 10:02:12 +0900</pubDate>
-    <lastBuildDate>Sun, 01 Jul 2018 10:02:12 +0900</lastBuildDate>
+    <pubDate>Sun, 01 Jul 2018 10:29:15 +0900</pubDate>
+    <lastBuildDate>Sun, 01 Jul 2018 10:29:15 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
