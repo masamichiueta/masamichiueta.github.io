@@ -5,9 +5,31 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Jul 2018 10:50:36 +0900</pubDate>
-    <lastBuildDate>Sun, 01 Jul 2018 10:50:36 +0900</lastBuildDate>
+    <pubDate>Sun, 15 Jul 2018 09:12:39 +0900</pubDate>
+    <lastBuildDate>Sun, 15 Jul 2018 09:12:39 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>横浜マラソン2018に当選したので参加します</title>
+        <description>&lt;p&gt;4月に横浜マラソンに申し込んで、一般枠で当選していました。
+連絡が6月に来ていて、参加料を振り込んだので横浜マラソンに参加します。&lt;/p&gt;
+
+&lt;p&gt;ここ3年くらいは申し込んでいたのですが、今年はやっと当選しました！&lt;/p&gt;
+
+&lt;p&gt;これから横浜マラソンに向けて練習を積み重ねて行こうと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.yokohamamarathon.jp/2018/&quot;&gt;横浜マラソン2018&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 15 Jul 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/hobby/2018/07/15/yokohama-marathon-2018.html</link>
+        <guid isPermaLink="true">https://masamichi.me/hobby/2018/07/15/yokohama-marathon-2018.html</guid>
+        
+        <category>横浜マラソン</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>2018年最新版　GitHub Pagesでカスタムドメインを使用する</title>
@@ -674,48 +696,6 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
         <category>機械学習</category>
         
         <category>マシーンラーニング</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>ffmpegを使ってmovファイルをgifに変換する</title>
-        <description>&lt;h1 id=&quot;movをgifに変換する&quot;&gt;movをgifに変換する&lt;/h1&gt;
-
-&lt;p&gt;アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、&lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt;を使用すると簡単にmovをgifに変更できました。&lt;/p&gt;
-
-&lt;p&gt;まずffmpegをインストールします&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ffmpeg
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;インストールするとffmpegが使用できるようになるので、&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ffmpeg -i [input file].mov -r [frame rate] [output file].gif
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;例えば、&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ffmpeg -i screen.mov -r 24 screen.gif
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;のようにうつと、ffmpegがmovをgifに変換してくれます。&lt;/p&gt;
-
-&lt;p&gt;ffmpegの使い方はこちらのページが参考になります。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://tech.ckme.co.jp/ffmpeg_basic.shtml&quot;&gt;ffmpegの最も基本的な使い方&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 06 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html</guid>
-        
-        <category>ffmpeg</category>
-        
-        <category>mov</category>
-        
-        <category>gif</category>
         
         
         <category>development</category>
