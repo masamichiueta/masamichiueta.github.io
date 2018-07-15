@@ -28,6 +28,7 @@ category_slugs:
   design: "デザイン"
   gadget: "ガジェット"
   apps: "アプリ"
+  hobby: "趣味"
 
 plugins:
   - jekyll-gist
