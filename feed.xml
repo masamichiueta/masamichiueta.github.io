@@ -5,8 +5,8 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Jul 2018 09:12:39 +0900</pubDate>
-    <lastBuildDate>Sun, 15 Jul 2018 09:12:39 +0900</lastBuildDate>
+    <pubDate>Sun, 15 Jul 2018 11:37:12 +0900</pubDate>
+    <lastBuildDate>Sun, 15 Jul 2018 11:37:12 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
@@ -28,6 +28,96 @@
         
         
         <category>hobby</category>
+        
+      </item>
+    
+      <item>
+        <title>Ledgerの新しいウォレット管理アプリ Ledger Liveの始め方</title>
+        <description>&lt;h1 id=&quot;ledger-live&quot;&gt;Ledger Live&lt;/h1&gt;
+
+&lt;p&gt;先週7/9にLedger Liveが発表されました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ledger.fr/2018/07/09/ledger-launches-ledger-live-the-all-in-one-companion-app-to-your-ledger-device/&quot;&gt;Ledger launches Ledger Live, the all-in-one companion app to your Ledger device&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;これまでChrome appとして提供されていた&lt;a href=&quot;https://www.ledgerwallet.com/apps/manager&quot;&gt;Ledger Manager&lt;/a&gt;や&lt;a href=&quot;https://www.ledgerwallet.com/apps&quot;&gt;各種walletアプリ&lt;/a&gt;などに取って代わる新しいアプリのようです。&lt;/p&gt;
+
+&lt;p&gt;早速インストールして設定したので、手順を載せておきます。&lt;/p&gt;
+
+&lt;h2 id=&quot;アプリをダウンロードインストールする&quot;&gt;アプリをダウンロード、インストールする&lt;/h2&gt;
+
+&lt;p&gt;Ledger Liveのページから使用しているOS用のアプリをダウンロードします。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ledgerwallet.com/live&quot;&gt;Ledger Live&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ダウンロード後、アプリをインストールして起動します。&lt;/p&gt;
+
+&lt;p&gt;起動すると以下のような画面が表示されます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/launch.png&quot; alt=&quot;Ledger Live 起動&quot; title=&quot;Ledger Live 起動&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Get Startedから始めます。&lt;/p&gt;
+
+&lt;h2 id=&quot;デバイスの設定&quot;&gt;デバイスの設定&lt;/h2&gt;
+
+&lt;p&gt;Get Startedを押すと、持っているハードウェアウォレットの設定が始まります。
+私は既にLedger nano sを設定しているので、&lt;code class=&quot;highlighter-rouge&quot;&gt;Use a device that's already initialized&lt;/code&gt;を選択します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/device-setting.png&quot; alt=&quot;Ledger Live デバイス設定&quot; title=&quot;Ledger Live デバイス設定&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;次に設定するデバイスを選択します。私が使っているのはLedger nano sなので、Ledger nano sを選択しました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/select-device.png&quot; alt=&quot;Ledger Live デバイス選択&quot; title=&quot;Ledger Live デバイス選択&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;次にセキュリティーチェックリストに答えていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/security-checklist.png&quot; alt=&quot;Ledger Live セキュリティーチェックリスト&quot; title=&quot;Ledger Live セキュリティーチェックリスト&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;PINコード、リカバリーフレーズはLedger nano sを設定した際に設定ずみだと思います。&lt;/p&gt;
+
+&lt;h2 id=&quot;ledger-liveのパスワードの設定&quot;&gt;Ledger Liveのパスワードの設定&lt;/h2&gt;
+
+&lt;p&gt;次に、Ledger Liveアプリを起動する際のパスワードを設定します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/password.png&quot; alt=&quot;Ledger Live パスワード&quot; title=&quot;Ledger Live パスワード&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;このパスワードを忘れるとLedger Liveを再設定する必要があるようです。
+また、Ledger Liveを再設定してもウォレットがなくなる訳ではないので、再設定すればまた使えるようになります。&lt;/p&gt;
+
+&lt;p&gt;パスワードを登録するとアプリが使えるようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/app.png&quot; alt=&quot;Ledger Live アプリ&quot; title=&quot;Ledger Live アプリ&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;アカウントを追加する&quot;&gt;アカウントを追加する&lt;/h2&gt;
+
+&lt;p&gt;初めはアカウントがないので、自分のウォレットにある資産を管理するためにアカウントを登録します。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Add Accounts&lt;/code&gt;ボタンをおすと追加する仮想通貨を選択する画面が出てくるので選択します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/addaccounts.png&quot; alt=&quot;Ledger Live アカウント追加&quot; title=&quot;Ledger Live アカウント追加&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;選択後はダイアログにしたがって設定を行えばOKです。
+アカウントが追加されるとLedger Live上で送金や受け取りができたりリアルタイムで資産の状態を把握することができます。&lt;/p&gt;
+
+&lt;p&gt;レート設定も設定画面から行えて、USDやJPYが選択できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/setting.png&quot; alt=&quot;Ledger Live 設定&quot; title=&quot;Ledger Live 設定&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これまではChrome appだった上に、それぞれのウォレットアプリが分かれていて若干使いにくかったですが、Ledger Liveのように一つのアプリとして提供されると使いやすいですね〜&lt;/p&gt;
+</description>
+        <pubDate>Sun, 15 Jul 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/cryptocurrency/2018/07/15/how-to-start-ledgaer-live.html</link>
+        <guid isPermaLink="true">https://masamichi.me/cryptocurrency/2018/07/15/how-to-start-ledgaer-live.html</guid>
+        
+        <category>Ledger</category>
+        
+        <category>Ledger nano s</category>
+        
+        <category>Ledger manager</category>
+        
+        <category>Ledger live</category>
+        
+        
+        <category>cryptocurrency</category>
         
       </item>
     
@@ -605,97 +695,6 @@ JR東日本展示には作業車両の展示も。&lt;/p&gt;
         <category>Enum</category>
         
         <category>iOS</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて</title>
-        <description>&lt;h1 id=&quot;create-ml&quot;&gt;Create ML&lt;/h1&gt;
-
-&lt;p&gt;WWDC2018で、機械学習モデルをmacOS Mojave上で簡単に作成することができるフレームワーク &lt;code class=&quot;highlighter-rouge&quot;&gt;Create ML&lt;/code&gt;が発表されました。&lt;/p&gt;
-
-&lt;p&gt;セッションのビデオはこちら&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2018/703/&quot;&gt;Introducing Create ML&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;何ができる&quot;&gt;何ができる？&lt;/h2&gt;
-
-&lt;p&gt;セッションのビデオでは、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;画像の分類&lt;/li&gt;
-  &lt;li&gt;テキストの判定&lt;/li&gt;
-  &lt;li&gt;テーブルデータ(csvなど）によるデータの推測&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;のモデル作成と実際の分類のデモが行われていました。&lt;/p&gt;
-
-&lt;h2 id=&quot;画像認識用学習モデルの作成&quot;&gt;画像認識用学習モデルの作成&lt;/h2&gt;
-
-&lt;h3 id=&quot;transfer-learning&quot;&gt;Transfer Learning&lt;/h3&gt;
-
-&lt;p&gt;注目はTransfer Learningというところで、Appleが事前に学習させたモデルを利用することで、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;モデルサイズの縮小&lt;/li&gt;
-  &lt;li&gt;モデル作成時間の短縮&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;が可能になったようです。&lt;/p&gt;
-
-&lt;p&gt;また、Playground上でモデルを作成するデモもありました。
-画像のファイルをフォルダごと突っ込むことで学習させていましたが、ファイル名やフォルダ名がラベルになるようですね。&lt;/p&gt;
-
-&lt;h3 id=&quot;モデルの作り方&quot;&gt;モデルの作り方&lt;/h3&gt;
-
-&lt;p&gt;デモでは以下のようなSwiftスクリプトでモデルが作成されていました。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#!/usr/bin/swift&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Foundation&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CreateML&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Specify Data&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;trainDirectory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileURLWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Users/createml/Desktop/Fruits&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;testDirectory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileURLWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Users/createml/Desktop/TestFruits&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Create Model&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MLImageClassifier&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;trainingData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;labeledDirectories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trainDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Evaluate Model&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;evaluation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;evaluation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;labeledDirectories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;testDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Save Model&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileURLWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;/Users/createml/Desktop/FruitClassifier.mlmodel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ swift fruitClassifier.swift&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;以上のような形で、モデルが作成できるようです。&lt;/p&gt;
-
-&lt;h2 id=&quot;テキストのラベリング&quot;&gt;テキストのラベリング&lt;/h2&gt;
-
-&lt;p&gt;セッションのデモでは、ユーザーが入力したテキストから、そのテキストがネガティブかポジティブかを判定するデモがありました。
-SNS系のアプリで、コメントを制御する時に便利そうですね！&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 07 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html</guid>
-        
-        <category>WWDC2018</category>
-        
-        <category>WWDC</category>
-        
-        <category>CreateML</category>
-        
-        <category>人工知能</category>
-        
-        <category>機械学習</category>
-        
-        <category>マシーンラーニング</category>
         
         
         <category>development</category>
