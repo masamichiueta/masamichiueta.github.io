@@ -27,8 +27,8 @@ layout: default
                   <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}</small>                    
                   <h3>{{ post.title }}</h3>
                   <p class="text-dark">{{ post.description }}</p>
-                  {% if post.hero-image %}
-                  <div alt="{{post.title}}" class="my-4 media-img rounded" style="background-image: url({{ site.url }}/assets/posts/{{ post.date | date: "%Y-%m-%d" }}/{{ post.hero-image }})">
+                  {% if post.image %}
+                  <div alt="{{post.title}}" class="my-4 media-img rounded" style="background-image: url({{ post.image }})">
                   </div>
                   {% endif %}
                   {% if post.tags %}

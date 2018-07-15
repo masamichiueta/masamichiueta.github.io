@@ -4,7 +4,7 @@ title: "皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロ�
 description: "皮膚や肌の悩みを匿名で相談できるアプリ　Loquat(ロクアット)を紹介します。皮膚や肌に関してお悩みをお持ちの方はたくさんいるのではないでしょうか？私もニキビや口唇ヘルペス、シミができたりと悩むことが多いです。子供も小さいので肌がかぶれたりできものができたりと色々大変で皮膚科に行くことが多いです。"
 date: 2018-05-09
 categories: apps
-hero-image: cover.png
+image: /assets/posts/2018-05-09/cover.png
 hero-caption: <a href="https://loquat.io/">Loquat Webサイト</a>よりスクリーンショット
 lang: ja_JP
 tags:

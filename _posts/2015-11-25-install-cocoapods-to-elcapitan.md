@@ -4,7 +4,7 @@ title:  "OS X 10.10.11 El Capitan にCocoaPodsをインストールする"
 description: "OS X 10.10.11 El Capitan にCocoaPodsをインストールする"
 date: 2015-11-25
 categories: development
-hero-image: "2015-11-25.jpg"
+image: /assets/posts/2015-11-25/2015-11-25.jpg
 lang: js_JP
 tags:
 - iOS

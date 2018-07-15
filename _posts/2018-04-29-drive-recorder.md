@@ -4,7 +4,7 @@ title: "おすすめのドライブレコーダー BRISIE ドライブレコー�
 description: "ついにドライブレコーダーを導入しました！導入したのは、BRISEのドライブレコーダーです。タイムセールで購入し、3880円で購入しました。"
 date: 2018-04-29
 categories: family
-hero-image: "cover.jpg"
+image: /assets/posts/2018-04-29/cover.jpg
 hero-caption: <a href="https://www.pakutaso.com/20170814224post-12856.html">ぱたくそ</a>
 lang: ja_JP
 tags:

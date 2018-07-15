@@ -4,7 +4,7 @@ title: "横浜お出かけスポット！横浜中華街にあるヨコハマお
 description: "横浜中華街にある、ヨコハマおもしろ水族館に行ってきました！みなとみらい線の横浜中華街駅を出て中華街に入り、進んでいくとありました。入場料は、大人1400円ですが、クーポンを持っていたため1000円でした。"
 date: 2018-05-26 00:00
 categories: family
-hero-image: "cover.jpg"
+image: /assets/posts/2018-05-26/cover.jpg
 lang: ja_JP
 tags:
 - 横浜中華街

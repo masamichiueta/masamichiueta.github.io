@@ -4,7 +4,6 @@ title:  "スマートコントラクトプラットフォームCodiusでReactア
 description: "Codiusとは、Ripple Labsにより開発が始まり2015年6月に打ち切りとなっていた、Ripple(XRP)に対応したスマートコントラクト
 らしいです。Codiusはオープンなホスティングプロトコルです。Coidusを使うと、ホスティング先の数に関わらずプログラムのホスティングが非常に簡単になります。"
 date: 2018-06-10
-hero-image: cover.png
 image: /assets/posts/2018-06-10/cover.png
 categories: cryptocurrency
 lang: ja_JP

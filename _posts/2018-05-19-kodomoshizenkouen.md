@@ -4,7 +4,7 @@ title: "横浜周辺の週末子供とお出かけスポット！こども自然
 description: "3歳の子供と0歳の子供がいまして、週末は家にいて動かないのもよくないと思い、よく公園にお出かけしています。その中でもよく行くオススメの公園がこども自然公園（大池公園）です。公園の中心には大きな池がありまして、亀やカモが泳いでいたり、釣りをしている人がいます。"
 date: 2018-05-19
 categories: family
-hero-image: "kodomoshizenkouen.jpg"
+image: /assets/posts/2018-05-19/kodomoshizenkouen.jpg
 lang: ja_JP
 tags:
 - 横浜

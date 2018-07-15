@@ -4,7 +4,7 @@ title:  "Hello World"
 description: "I started my new blog using Jekyll."
 date: 2016-05-20
 categories: family
-hero-image: "2016-05-20.jpg"
+image: /assets/posts/2016-05-20/2016-05-20.jpg
 lang: en_US
 ---
 I started my new blog using Jekyll.

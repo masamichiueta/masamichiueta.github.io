@@ -3,7 +3,6 @@ layout: post
 title:  "XRPペーパーウォレットの作り方"
 description: "XRPのウォレットを作る方法を紹介します。今回作成するのは、ペーパーウォレットです。ペーパーウォレットとは、ウォレットのアドレスと秘密鍵を紙に印刷して保管するウォレットです。"
 date: 2018-06-11
-hero-image: cover.png
 image: /assets/posts/2018-06-11/cover.png
 categories: cryptocurrency
 lang: ja_JP

@@ -4,7 +4,7 @@ title: "GitHubのコミットログ一覧を表示するGitHub Contributions Cha
 description: "GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generatorです。2015年の終わり頃から、GitHubに毎日コミットしようという自分ルールを作って実践してきたので、ログを作って見ました。"
 date: 2018-05-20 00:00
 categories: development
-hero-image: "contributions.png"
+image: /assets/posts/2018-05-20/contributions.png
 lang: ja_JP
 tags:
 - GitHub

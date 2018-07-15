@@ -4,7 +4,7 @@ title: "いよいよ来週！AppleのイベントWWDC2018で発表されそう�
 description: "いよいよAppleの開発者向け会議**WWDC2018(World Wide Developer Conference)**が来週となりました！今年のWWDCで発表されそうなことを噂からまとめてみました。"
 date: 2018-05-29 00:00
 categories: gadget
-hero-image: "cover.png"
+image: /assets/posts/2018-05-29/cover.png
 hero-caption: <a href="https://developer.apple.com/wwdc/">Apple</a>よりスクリーンショット
 lang: ja_JP
 tags:

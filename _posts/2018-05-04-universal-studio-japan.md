@@ -4,7 +4,7 @@ title: "ゴールデンウィークのUSJにはエクスプレスパスが最強
 description: "5月4日、ゴールデンウィーク真っ只中に家族でUSJに行ってきました！予想通り、めちゃくちゃ混んでいました笑高速道路はそうでもなかったのですが、パーク内はすごい人でした。パーク内はイースターのデコレーションがされていて、某夢の国を彷彿とさせるかのような仕上がりでした！"
 date: 2018-05-04
 categories: family
-hero-image: "cover.jpg"
+image: /assets/posts/2018-05-04/cover.jpg
 lang: ja_JP
 tags:
 - usj

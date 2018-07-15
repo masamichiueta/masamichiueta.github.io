@@ -3,7 +3,7 @@ layout: post
 title: "Twitterアイコンにおすすめ！スヌーピーのアイコンをゲットできるサイトの紹介"
 description: "Twitterアイコンにおすすめ！スヌーピーのアイコンをゲットできるサイトの紹介"
 date: 2018-03-17
-hero-image: "cover.png"
+image: /assets/posts/2018-03-17/cover.png
 hero-caption: <a href="http://www.peanutizeme.com">peanutizeme Webサイト</a>よりスクリーンショット
 categories: design
 lang: ja_JP

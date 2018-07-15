@@ -4,7 +4,7 @@ title: "WWDC2016 Keynote Summary"
 description: "WWDC2016 Keynote Summary"
 date: 2016-06-14
 categories: development
-hero-image: "2016-06-14.jpg"
+image: /assets/posts/2016-06-14/2016-06-14.jpg
 lang: en_US
 tags:
 - Apple

@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-{% if page.hero-image %}
-<section class="hero text-center" style="background-image: url({{ site.url }}/assets/posts/{{ page.date | date: "%Y-%m-%d" }}/{{ page.hero-image }})">
+{% if page.image %}
+<section class="hero text-center" style="background-image: url({{ page.image }})">
   <div class="overlay"></div>
 {% else %}
 <section class="hero background-image-none text-center">
@@ -68,8 +68,8 @@ layout: default
                   <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}<span class="ml-2">{{ post.categories | first | slug2name }}</span></small>                    
                   <h3 class="mt-0">{{ post.title }}</h3>
                   <p class="text-dark">{{ post.description }}</p>
-                  {% if post.hero-image %}
-                  <div alt="{{post.title}}" class="my-4 media-img rounded" style="background-image: url({{ site.url }}/assets/posts/{{ post.date | date: "%Y-%m-%d" }}/{{ post.hero-image }})">
+                  {% if post.image %}
+                  <div alt="{{post.title}}" class="my-4 media-img rounded" style="background-image: url({{ post.image }})">
                   </div>
                   {% endif %}
                 </a>

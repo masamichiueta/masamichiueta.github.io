@@ -3,7 +3,7 @@ layout: post
 title: "teacha（ティーチャ）でiOSアプリ開発のレッスンを公開しました"
 description: "teacha（ティーチャ）でiOSアプリ開発のレッスンを公開しました"
 date: 2018-03-18
-hero-image: "cover.png"
+image: /assets/posts/2018-03-18/cover.png
 hero-caption: <a href="https://www.teacha.me">teacha Webサイト</a>よりスクリーンショット
 categories: design
 lang: ja_JP
