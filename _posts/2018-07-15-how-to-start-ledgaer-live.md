@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ledgerの新しいウォレット管理アプリ Ledger Liveの始め方"
-description: ""
+description: "先週7/9にLedger Liveが発表されました。これまでChrome appとして提供されていたLedger Managerや各種walletアプリなどに取って代わる新しいアプリのようです。早速インストールして設定したので、手順を載せておきます。"
 date: 2018-07-15
 categories: cryptocurrency
 image: /assets/posts/2018-07-15/cover.png
