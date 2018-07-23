@@ -5,9 +5,139 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Jul 2018 22:22:51 +0900</pubDate>
-    <lastBuildDate>Sun, 22 Jul 2018 22:22:51 +0900</lastBuildDate>
+    <pubDate>Mon, 23 Jul 2018 12:34:28 +0900</pubDate>
+    <lastBuildDate>Mon, 23 Jul 2018 12:34:28 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>Flutterの始め方</title>
+        <description>&lt;p&gt;Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://flutter.io&quot;&gt;Flutter - Beautiful native apps in record time&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;XcodeやAndroid Studioは事前にインストールします。&lt;/p&gt;
+
+&lt;h1 id=&quot;flutter-sdkのインストール&quot;&gt;Flutter sdkのインストール&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://flutter.io/setup-macos/&quot;&gt;Get Started&lt;/a&gt;を参考に、flutter sdkをインストールします。&lt;/p&gt;
+
+&lt;p&gt;flutter sdkをダウンロードして、zipを展開し、$HOME/.bash_profileにPATHを通します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ export PTAH=path/to/flutter/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;パスを通したあとは、doctorコマンドを使って環境設定状態を確認します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ flutter doctor
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;私の場合は以下のように表示されました。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ╔════════════════════════════════════════════════════════════════════════════╗
+  ║ WARNING: your installation of Flutter is 54 days old.                      ║
+  ║                                                                            ║
+  ║ To update to the latest version, run &quot;flutter upgrade&quot;.                    ║
+  ╚════════════════════════════════════════════════════════════════════════════╝
+
+
+
+  ╔════════════════════════════════════════════════════════════════════════════╗
+  ║                 Welcome to Flutter! - https://flutter.io                   ║
+  ║                                                                            ║
+  ║ The Flutter tool anonymously reports feature usage statistics and crash    ║
+  ║ reports to Google in order to help Google contribute improvements to       ║
+  ║ Flutter over time.                                                         ║
+  ║                                                                            ║
+  ║ Read about data we send with crash reports:                                ║
+  ║ https://github.com/flutter/flutter/wiki/Flutter-CLI-crash-reporting        ║
+  ║                                                                            ║
+  ║ See Google's privacy policy:                                               ║
+  ║ https://www.google.com/intl/en/policies/privacy/                           ║
+  ║                                                                            ║
+  ║ Use &quot;flutter config --no-analytics&quot; to disable analytics and crash         ║
+  ║ reporting.                                                                 ║
+  ╚════════════════════════════════════════════════════════════════════════════╝
+  
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-JP)
+[!] Android toolchain - develop for Android devices (Android SDK 28.0.1)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+[!] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
+    ✗ libimobiledevice and ideviceinstaller are not installed. To install, run:
+        brew install --HEAD libimobiledevice
+        brew install ideviceinstaller
+    ✗ ios-deploy not installed. To install:
+        brew install ios-deploy
+[✓] Android Studio (version 3.1)
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+[!] VS Code (version 1.24.1)
+[✓] Connected devices (1 available)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;とりあえずiOSで動かすために、言われた通りライブラリ周りをインストールして行きます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew install --HEAD libimobiledevice
+$ brew install ideviceinstaller ios-deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;その後もう一度&lt;code class=&quot;highlighter-rouge&quot;&gt;flutter doctor&lt;/code&gt;を実行すると、iOS toolchainではPython moduleが入ってないと怒られました。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-JP)
+[!] Android toolchain - develop for Android devices (Android SDK 28.0.1)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+[!] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
+    ✗ Missing Xcode dependency: Python module &quot;six&quot;.
+      Install via 'pip install six' or 'sudo easy_install six'.
+[✓] Android Studio (version 3.1)
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+[!] VS Code (version 1.24.1)
+[✓] Connected devices (1 available)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;なので、言われた通り&lt;code class=&quot;highlighter-rouge&quot;&gt;six&lt;/code&gt;モジュールをpipでインストールします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip install six
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;vs-codeにflutterの拡張機能をインストールする&quot;&gt;VS Codeにflutterの拡張機能をインストールする&lt;/h1&gt;
+
+&lt;p&gt;VS Codeをメインのエディタとして使用しているので、VS Codeの拡張機能をインストールします。&lt;/p&gt;
+
+&lt;p&gt;Extensionsパネルでflutterと検索すると、&lt;code class=&quot;highlighter-rouge&quot;&gt;Flutter&lt;/code&gt;モジュールが見つかるのでインストールします。&lt;code class=&quot;highlighter-rouge&quot;&gt;Dart&lt;/code&gt;モジュールは同時にインストールされます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-23/vscode.png&quot; alt=&quot;VS Code Flutter Extension&quot; title=&quot;VS Code Flutter Extension&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;vs-codeでサンプルを作って実行する&quot;&gt;VS Codeでサンプルを作って実行する&lt;/h1&gt;
+
+&lt;p&gt;VS Codeのコマンドパレット(Ctrl+Shift+P)で、&lt;code class=&quot;highlighter-rouge&quot;&gt;Flutter: New Project&lt;/code&gt;を選択します。プロジェクト名の入力を求められるので、適当に入力します。&lt;/p&gt;
+
+&lt;p&gt;するとプロジェクトが作成されて、カウントアップアプリのサンプルが実行できる状態になります。&lt;/p&gt;
+
+&lt;p&gt;Debugウィンドウから、Start Debuggingボタンを押すと、シミュレータが起動してアプリが実行されます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-23/sample.png&quot; alt=&quot;Flutter sample&quot; title=&quot;Flutter sample&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;まだまだFlutter&amp;amp;Dart初心者で、Flutterの良さや、&lt;code class=&quot;highlighter-rouge&quot;&gt;Xamarin&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;ReactNative&lt;/code&gt;のような他のクロスプラットフォーム開発フレームワークに比べてどうなのかというところはわかってませんが、これから研究していこうと思います。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Jul 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2018/07/23/get-start-flutter.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/07/23/get-start-flutter.html</guid>
+        
+        <category>Flutter</category>
+        
+        <category>iOS</category>
+        
+        <category>Android</category>
+        
+        <category>モバイルアプリ</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>神奈川公園お出かけスポット！大和ゆとりの森に行ってきました</title>
@@ -58,8 +188,8 @@
 &lt;p&gt;今日は暑すぎて遊具も熱くなってしまっていましたが、もう少し涼しくなるとより楽しめると思います。&lt;/p&gt;
 </description>
         <pubDate>Sun, 22 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/family/2018/07/22/park.html</link>
-        <guid isPermaLink="true">https://masamichi.me/family/2018/07/22/park.html</guid>
+        <link>https://masamichi.me/family/2018/07/22/yamatoshi-yutorinomori.html</link>
+        <guid isPermaLink="true">https://masamichi.me/family/2018/07/22/yamatoshi-yutorinomori.html</guid>
         
         <category>ゆとりの森</category>
         
@@ -643,136 +773,6 @@ firebase deploy
         <category>ウォレット</category>
         
         <category>ペーパーウォレット</category>
-        
-        
-        <category>cryptocurrency</category>
-        
-      </item>
-    
-      <item>
-        <title>スマートコントラクトプラットフォームCodiusでReactアプリを実行してみた</title>
-        <description>&lt;p&gt;元ネタはこちら
-&lt;a href=&quot;https://medium.com/codius/running-a-simple-react-app-on-the-codius-smart-contract-platform-7ddefce8cb06&quot;&gt;Running a simple React app on the Codius smart contract platform&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;codiusとは&quot;&gt;Codiusとは&lt;/h1&gt;
-
-&lt;p&gt;Codiusとは、&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Ripple Labsにより開発が始まり2015年6月に打ち切りとなっていた、Ripple(XRP)に対応したスマートコントラクト
-らしいです。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://crypto-times.jp/xrp_smartcontract_revive/&quot;&gt;Ripple Labsによって開発されたスマートコントラクトのプロトコル Codiusが復活&lt;/a&gt;から引用。&lt;/p&gt;
-
-&lt;p&gt;公式サイトでは、以下のように書かれています。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Codius is an open hosting protocol. It makes it very easy to upload a program, whether you want it to run on one host or thousands.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Codiusはオープンなホスティングプロトコルです。Coidusを使うと、ホスティング先の数に関わらずプログラムのホスティングが非常に簡単になります。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;つまり、中央集権的に1つのサーバーでプログラムをホスティングするのではなく、非中央集権的にあらゆる環境でホスティングできますよということですね。&lt;/p&gt;
-
-&lt;h1 id=&quot;codiusのセットアップ&quot;&gt;Codiusのセットアップ&lt;/h1&gt;
-
-&lt;p&gt;Codiusはオープンソースで、開発者用ツールもすぐにインストールすることができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/codius&quot;&gt;codius&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Codius&lt;/code&gt;をインストールするには、以下の3つが必要です。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;NodeJS version8.9.4以上&lt;/li&gt;
-  &lt;li&gt;XRPウォレット&lt;/li&gt;
-  &lt;li&gt;Moneyd&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Codiusを実行するには、先に&lt;code class=&quot;highlighter-rouge&quot;&gt;Moneyd&lt;/code&gt;を実行する必要があるようです。&lt;/p&gt;
-
-&lt;p&gt;こちらの記事&lt;a href=&quot;https://medium.com/interledger-blog/joining-the-live-ilp-network-eab123a73665&quot;&gt;Joining the Live ILP Network&lt;/a&gt;を参考に&lt;code class=&quot;highlighter-rouge&quot;&gt;Moneyd&lt;/code&gt;の実行していきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Moneydをライブ環境で実行するにあたり、35XRP以上入ったウォレットが必要です。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;今回は開発用のテスト環境で行ってみます。&lt;/p&gt;
-
-&lt;h2 id=&quot;moneydの実行&quot;&gt;Moneydの実行&lt;/h2&gt;
-
-&lt;p&gt;以下のコマンドを実行します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g moneyd moneyd-uplink-xrp
-moneyd xrp:configure
-moneyd xrp:start
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;xrp:configureの際にはXRPの秘密鍵を入力します。&lt;/p&gt;
-
-&lt;p&gt;これで、ILPネットワークに接続できました。&lt;/p&gt;
-
-&lt;h2 id=&quot;codiusの実行&quot;&gt;Codiusの実行&lt;/h2&gt;
-
-&lt;h3 id=&quot;manifestの作成&quot;&gt;Manifestの作成&lt;/h3&gt;
-
-&lt;p&gt;Codiusを実行するには、Manifestを作成する必要があるようです。今回は、CodisuのサンプルからReactアプリを動かすManifestを使ってみます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/codius/examples&quot;&gt;codius/examples&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
-  &quot;manifest&quot;: {
-    &quot;name&quot;: &quot;my-codius-create-react-app&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;machine&quot;: &quot;small&quot;,
-    &quot;port&quot;: &quot;3000&quot;,
-    &quot;containers&quot;: [{
-      &quot;id&quot;: &quot;app&quot;,
-      &quot;image&quot;: &quot;androswong418/example-pod-1@sha256:8933bced1637e7d3b08c4aa50b96a45aef0b63f504f595bb890f57253af68b11&quot;
-    }]
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;これを、&lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app-manifest.json&lt;/code&gt;というファイルで保存します。
-このDockerコンテナは、Facebookの&lt;code class=&quot;highlighter-rouge&quot;&gt;create-react-app&lt;/code&gt;のイメージのようです。&lt;/p&gt;
-
-&lt;h3 id=&quot;manifestのアップロード&quot;&gt;Manifestのアップロード&lt;/h3&gt;
-
-&lt;p&gt;Manifestを作成したら、&lt;code class=&quot;highlighter-rouge&quot;&gt;codius&lt;/code&gt;のコマンドを使用してManifestをアップロードします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;codius upload ./create-react-app-manifest.json --duration 200
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;アップロードが完了すると、以下のようなメッセージが表示されます。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Successfully Uploaded Pods to:
-{ 
-  url:  'http://hogehoge.local.codius.org:3000/',
- manifestHash: 'hogehoge',
-  host: 'hogehoge',
-  expiry: 'xxxx-xx-xxTxx:xx:xx.xxxZ',
-  expirationDate: 'xx-xx-xxxx xx:xx:xx -0700',
-  expires: 'in 2 minutes',
-  pricePaid: 'xxx' 
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;に表示されたURLにアクセスすると、Reactアプリが実行されています！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-10/cover.png&quot; alt=&quot;React on Codius&quot; title=&quot;React on Codius&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 10 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/cryptocurrency/2018/06/10/ripple-codius-trial.html</link>
-        <guid isPermaLink="true">https://masamichi.me/cryptocurrency/2018/06/10/ripple-codius-trial.html</guid>
-        
-        <category>Codius</category>
-        
-        <category>Ripple</category>
-        
-        <category>XRP</category>
-        
-        <category>React</category>
         
         
         <category>cryptocurrency</category>

@@ -6,26 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>How is your today? | Masamichi Ueta</title>
+<title>Flutterの始め方 | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.1" />
-<meta property="og:title" content="How is your today?" />
+<meta property="og:title" content="Flutterの始め方" />
 <meta name="author" content="masamichiueta" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="I released an iOS app named Today - Score Everyday.What you do in this app is to input the score of Today at the end of the day." />
-<meta property="og:description" content="I released an iOS app named Today - Score Everyday.What you do in this app is to input the score of Today at the end of the day." />
-<link rel="canonical" href="https://masamichi.me/development/2016/03/18/how-is-your-today.html" />
-<meta property="og:url" content="https://masamichi.me/development/2016/03/18/how-is-your-today.html" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。" />
+<meta property="og:description" content="Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。" />
+<link rel="canonical" href="https://masamichi.me/development/2018/07/23/get-start-flutter.html" />
+<meta property="og:url" content="https://masamichi.me/development/2018/07/23/get-start-flutter.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-03-18T00:00:00+09:00" />
+<meta property="article:published_time" content="2018-07-23T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"I released an iOS app named Today - Score Everyday.What you do in this app is to input the score of Today at the end of the day.","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2016/03/18/how-is-your-today.html","headline":"How is your today?","dateModified":"2016-03-18T00:00:00+09:00","datePublished":"2016-03-18T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2016/03/18/how-is-your-today.html"},"@context":"http://schema.org"}</script>
+{"description":"Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2018/07/23/get-start-flutter.html","headline":"Flutterの始め方","dateModified":"2018-07-23T00:00:00+09:00","datePublished":"2018-07-23T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/07/23/get-start-flutter.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2016/03/18/how-is-your-today.html">
+  <link rel="canonical" href="https://masamichi.me/development/2018/07/23/get-start-flutter.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -97,7 +97,7 @@
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">How is your today?</h1>
+      <h1 itemprop="name headline">Flutterの始め方</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -111,50 +111,133 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2016-03-18T00:00:00+09:00" itemprop="datePublished">2016/3/18</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2018-07-23T00:00:00+09:00" itemprop="datePublished">2018/7/23</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
+              <span class="badge badge-light">Flutter</span>
+              
               <span class="badge badge-light">iOS</span>
               
-              <span class="badge badge-light">App</span>
+              <span class="badge badge-light">Android</span>
+              
+              <span class="badge badge-light">モバイルアプリ</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <blockquote>
-  <p>This post was originally posted in <a href="https://medium.com/@masamichiueta/how-is-your-today-b52f693b17e6#.dug8v845o">Medium</a> at 03/18 2016.</p>
-</blockquote>
+            <p>Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。</p>
 
-<hr />
+<p><a href="https://flutter.io">Flutter - Beautiful native apps in record time</a></p>
 
-<h1 id="how-is-your-today">How is your today?</h1>
+<p>XcodeやAndroid Studioは事前にインストールします。</p>
 
-<p>I released an iOS app named “Today - Score Everyday”.</p>
+<h1 id="flutter-sdkのインストール">Flutter sdkのインストール</h1>
 
-<p>What you do in this app is to input the score of “Today” at the end of the day.</p>
+<p><a href="https://flutter.io/setup-macos/">Get Started</a>を参考に、flutter sdkをインストールします。</p>
 
-<p>That’s all.</p>
+<p>flutter sdkをダウンロードして、zipを展開し、$HOME/.bash_profileにPATHを通します。</p>
 
-<p>I got the inspiration when I read “Creative Confidence: Unleashing the Creative Potential Within Us All”.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ export PTAH=path/to/flutter/bin
+</code></pre></div></div>
 
-<blockquote>
-  <p>Simply take the time to ask yourself each day. “When was I at my best?” or “When was work most rewarding?” It can help point you toward roles or activities that will enrich your work and reveal what gives you the greatest pleasure or fulfillment.</p>
-</blockquote>
+<p>パスを通したあとは、doctorコマンドを使って環境設定状態を確認します。</p>
 
-<p>I want to know when I was at my best or what makes me happy in everyday life.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ flutter doctor
+</code></pre></div></div>
 
-<p>And I’m a developer, so I decided to create an app.</p>
+<p>私の場合は以下のように表示されました。</p>
 
-<p>Since Today is an open source project, if you have a good idea, please contribute and submit a pull request.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ╔════════════════════════════════════════════════════════════════════════════╗
+  ║ WARNING: your installation of Flutter is 54 days old.                      ║
+  ║                                                                            ║
+  ║ To update to the latest version, run "flutter upgrade".                    ║
+  ╚════════════════════════════════════════════════════════════════════════════╝
 
-<p><a href="https://github.com/masamichiueta/Today">https://github.com/masamichiueta/Today</a></p>
 
-<p>Let’s start Today :)</p>
 
-<p><a href="https://geo.itunes.apple.com/us/app/today-score-everyday/id1090660820?mt=8">Today - Score Everyday</a></p>
+  ╔════════════════════════════════════════════════════════════════════════════╗
+  ║                 Welcome to Flutter! - https://flutter.io                   ║
+  ║                                                                            ║
+  ║ The Flutter tool anonymously reports feature usage statistics and crash    ║
+  ║ reports to Google in order to help Google contribute improvements to       ║
+  ║ Flutter over time.                                                         ║
+  ║                                                                            ║
+  ║ Read about data we send with crash reports:                                ║
+  ║ https://github.com/flutter/flutter/wiki/Flutter-CLI-crash-reporting        ║
+  ║                                                                            ║
+  ║ See Google's privacy policy:                                               ║
+  ║ https://www.google.com/intl/en/policies/privacy/                           ║
+  ║                                                                            ║
+  ║ Use "flutter config --no-analytics" to disable analytics and crash         ║
+  ║ reporting.                                                                 ║
+  ╚════════════════════════════════════════════════════════════════════════════╝
+  
+Doctor summary (to see all details, run flutter doctor -v):
+[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-JP)
+[!] Android toolchain - develop for Android devices (Android SDK 28.0.1)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+[!] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
+    ✗ libimobiledevice and ideviceinstaller are not installed. To install, run:
+        brew install --HEAD libimobiledevice
+        brew install ideviceinstaller
+    ✗ ios-deploy not installed. To install:
+        brew install ios-deploy
+[✓] Android Studio (version 3.1)
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+[!] VS Code (version 1.24.1)
+[✓] Connected devices (1 available)
+</code></pre></div></div>
+
+<p>とりあえずiOSで動かすために、言われた通りライブラリ周りをインストールして行きます。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install --HEAD libimobiledevice
+$ brew install ideviceinstaller ios-deploy
+</code></pre></div></div>
+
+<p>その後もう一度<code class="highlighter-rouge">flutter doctor</code>を実行すると、iOS toolchainではPython moduleが入ってないと怒られました。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-JP)
+[!] Android toolchain - develop for Android devices (Android SDK 28.0.1)
+    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
+[!] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
+    ✗ Missing Xcode dependency: Python module "six".
+      Install via 'pip install six' or 'sudo easy_install six'.
+[✓] Android Studio (version 3.1)
+    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
+    ✗ Dart plugin not installed; this adds Dart specific functionality.
+[!] VS Code (version 1.24.1)
+[✓] Connected devices (1 available)
+
+</code></pre></div></div>
+
+<p>なので、言われた通り<code class="highlighter-rouge">six</code>モジュールをpipでインストールします。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install six
+</code></pre></div></div>
+
+<h1 id="vs-codeにflutterの拡張機能をインストールする">VS Codeにflutterの拡張機能をインストールする</h1>
+
+<p>VS Codeをメインのエディタとして使用しているので、VS Codeの拡張機能をインストールします。</p>
+
+<p>Extensionsパネルでflutterと検索すると、<code class="highlighter-rouge">Flutter</code>モジュールが見つかるのでインストールします。<code class="highlighter-rouge">Dart</code>モジュールは同時にインストールされます。</p>
+
+<p><img src="/assets/posts/2018-07-23/vscode.png" alt="VS Code Flutter Extension" title="VS Code Flutter Extension" /></p>
+
+<h1 id="vs-codeでサンプルを作って実行する">VS Codeでサンプルを作って実行する</h1>
+
+<p>VS Codeのコマンドパレット(Ctrl+Shift+P)で、<code class="highlighter-rouge">Flutter: New Project</code>を選択します。プロジェクト名の入力を求められるので、適当に入力します。</p>
+
+<p>するとプロジェクトが作成されて、カウントアップアプリのサンプルが実行できる状態になります。</p>
+
+<p>Debugウィンドウから、Start Debuggingボタンを押すと、シミュレータが起動してアプリが実行されます。</p>
+
+<p><img src="/assets/posts/2018-07-23/sample.png" alt="Flutter sample" title="Flutter sample" /></p>
+
+<p>まだまだFlutter&amp;Dart初心者で、Flutterの良さや、<code class="highlighter-rouge">Xamarin</code> <code class="highlighter-rouge">ReactNative</code>のような他のクロスプラットフォーム開発フレームワークに比べてどうなのかというところはわかってませんが、これから研究していこうと思います。</p>
 
           </div>
           <div class="pt-5">
@@ -174,18 +257,6 @@
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2018/07/23/get-start-flutter.html">
-                  <small class="decoration-none text-muted">2018/7/23<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">Flutterの始め方</h3>
-                  <p class="text-dark">Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。</p>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -387,6 +458,39 @@
                   <small class="decoration-none text-muted">2018/6/5<span class="ml-2">開発</span></small>                    
                   <h3 class="mt-0">ASP.NET Coreでエラーメッセージを日本語にする方法</h3>
                   <p class="text-dark">SP.NET CoreでWebアプリを開発していますが、デフォルトのバリデーションの仕組みを使うとエラーメッセージが英語になってしまい困っていました。モデルクラスのプロパティに全部のパターンを日本語で書くとか途方もないことをしたくないと思っていたところ、解決する方法を見つけました。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html">
+                  <small class="decoration-none text-muted">2018/6/1<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">Swift for TensorFlowをインストールして試してみる</h3>
+                  <p class="text-dark">先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！</p>
+                  
+                  <div alt="Swift for TensorFlowをインストールして試してみる" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2018-06-01/cover.png)">
+                  </div>
                   
                 </a>
               </li>
