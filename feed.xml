@@ -5,9 +5,39 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Jul 2018 12:34:28 +0900</pubDate>
-    <lastBuildDate>Mon, 23 Jul 2018 12:34:28 +0900</lastBuildDate>
+    <pubDate>Fri, 17 Aug 2018 00:33:34 +0900</pubDate>
+    <lastBuildDate>Fri, 17 Aug 2018 00:33:34 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>元19, 3B LAB.☆Sの岡平健治さんがYoutuberに。Mutuber KENJIのMusicTV配信が始まりました</title>
+        <description>&lt;p&gt;元19, 3B LAB.☆Sの岡平健治さんがYoutuberとして活動開始されました。
+チャンネルはMutuber KENJIのMusicTV。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCpqKhYHtt9ueacox1yxjB_Q?app=desktop&amp;amp;spfreload=10&quot;&gt;Mutuber KENJIのMusicTV&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;記念すべき第1回目は、19の名曲「熊じいちゃん」を歌われています。&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ZXYrBGALr34&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;毎週水曜日に更新されるようなので、要チェックです！&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Aug 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/hobby/2018/08/17/mutuber-okahirakenji.html</link>
+        <guid isPermaLink="true">https://masamichi.me/hobby/2018/08/17/mutuber-okahirakenji.html</guid>
+        
+        <category>岡平健治</category>
+        
+        <category>19</category>
+        
+        <category>ジューク</category>
+        
+        <category>3B Lab</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>Flutterの始め方</title>
@@ -707,75 +737,6 @@ firebase deploy
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>XRPペーパーウォレットの作り方</title>
-        <description>&lt;h1 id=&quot;xrpウォレットの作り方&quot;&gt;XRPウォレットの作り方&lt;/h1&gt;
-
-&lt;p&gt;XRPのウォレットを作る方法を紹介します。&lt;/p&gt;
-
-&lt;p&gt;今回作成するのは、ペーパーウォレットです。&lt;/p&gt;
-
-&lt;p&gt;ペーパーウォレットとは、ウォレットのアドレスと秘密鍵を紙に印刷して保管するウォレットです。&lt;/p&gt;
-
-&lt;p&gt;紙ではなくて、例えば秘密鍵をUSBファイルに保存して、インターネットに接続されていない安全な場所に保管しておいても大丈夫でしょう。&lt;/p&gt;
-
-&lt;p&gt;では早速作成していきましょう。&lt;/p&gt;
-
-&lt;h1 id=&quot;ツールをダウンロードする&quot;&gt;ツールをダウンロードする&lt;/h1&gt;
-
-&lt;p&gt;今回は、Octillionという会社が提供している、&lt;code class=&quot;highlighter-rouge&quot;&gt;generate-ripple-wallet&lt;/code&gt;というツールを使います。&lt;/p&gt;
-
-&lt;p&gt;[generate-ripple-wallet](https://github.com/OctillionSA/generate-ripple-wallet)&lt;/p&gt;
-
-&lt;p&gt;上のページにアクセスして、ファイルをダウンロードします。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-11/download.png&quot; alt=&quot;Download&quot; title=&quot;Download&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ファイルをダウンロードしなくても、Web上に提供されているアプリを使用すればウォレットを生成できるのですが、インターネットに繋がれたところで生成するのもセキュリティ的に微妙なので、オフラインで作成するためにダウンロードします。&lt;/p&gt;
-
-&lt;h1 id=&quot;ツールを開く&quot;&gt;ツールを開く&lt;/h1&gt;
-
-&lt;p&gt;ダウンロードしたら、zipを回答して、&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;を開きます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-11/html.png&quot; alt=&quot;html&quot; title=&quot;html&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;を開くと、以下のような画面が表示されるので、右下の&lt;code class=&quot;highlighter-rouge&quot;&gt;Generate&lt;/code&gt;ボタンを押します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-11/generate-ripple-wallet.png&quot; alt=&quot;generate-ripple-wallet&quot; title=&quot;generate-ripple-wallet&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;すると、Ripple addressにウォレットのアドレスが、Ripple secretに秘密鍵が表示されます。&lt;/p&gt;
-
-&lt;p&gt;ここで生成された秘密鍵は、紙に書いて安全な場所に保管するか、USBメモリにテキストファイルとして保存して安全な場所に保管してください。&lt;/p&gt;
-
-&lt;h1 id=&quot;ウォレットのアクティベーション&quot;&gt;ウォレットのアクティベーション&lt;/h1&gt;
-
-&lt;p&gt;以上でウォレットは作成できましたが、XRPのウォレットを使えるようにするには、&lt;strong&gt;ウォレットに20XRP以上を送金してウォレットをアクティベートする必要があります&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;20XRPはウォレットを使うための手数料のようなもので、ウォレットに送られた20XRPは、送金することはできません。&lt;/p&gt;
-
-&lt;p&gt;生成したアドレスに20XRP以上を送金してウォレットの生成は完了となります。&lt;/p&gt;
-
-&lt;p&gt;簡単ですね！&lt;/p&gt;
-</description>
-        <pubDate>Mon, 11 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html</link>
-        <guid isPermaLink="true">https://masamichi.me/cryptocurrency/2018/06/11/how-to-create-xrp-wallet.html</guid>
-        
-        <category>XRP</category>
-        
-        <category>Ripple</category>
-        
-        <category>リップル</category>
-        
-        <category>ウォレット</category>
-        
-        <category>ペーパーウォレット</category>
-        
-        
-        <category>cryptocurrency</category>
         
       </item>
     
