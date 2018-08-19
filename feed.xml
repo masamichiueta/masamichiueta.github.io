@@ -5,9 +5,43 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Aug 2018 00:33:34 +0900</pubDate>
-    <lastBuildDate>Fri, 17 Aug 2018 00:33:34 +0900</lastBuildDate>
+    <pubDate>Mon, 20 Aug 2018 00:08:57 +0900</pubDate>
+    <lastBuildDate>Mon, 20 Aug 2018 00:08:57 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた</title>
+        <description>&lt;p&gt;App Store ConnectにXcodeからアプリをアップロードすると、少し時間がたってからメールが届きました。&lt;/p&gt;
+
+&lt;p&gt;そのメールはアプリに問題が見つかりましたという題名で、&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Too many symbol files&lt;/code&gt; というエラーが書かれていました。&lt;/p&gt;
+
+&lt;p&gt;iOS11からは32bitアプリのサポートが切られたことが影響している為でしょうか。
+調べたところ、どうやらcocoapodsが生成しているフレームワークのアーキテクチャの設定ぽいということがわかりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/CocoaPods/CocoaPods/issues/7111&quot;&gt;CocoaPods leaves dSYMs for unused architectures in archive&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;アプリの&lt;code class=&quot;highlighter-rouge&quot;&gt;valid architecture&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;arm64&lt;/code&gt;にすれば、64ビットになって解決するようです。&lt;/p&gt;
+
+&lt;p&gt;64ビットにする方法はこちらが参考になりました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://qiita.com/Yasunobu/items/59c89facfcbb36bdedda&quot;&gt;【iOS】iPhoneアプリを64bit端末のみをターゲットにする方法&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 19 Aug 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2018/08/19/too-many-symbol-files.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/08/19/too-many-symbol-files.html</guid>
+        
+        <category>App Store Connect</category>
+        
+        <category>iOS</category>
+        
+        <category>cocoapods</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>元19, 3B LAB.☆Sの岡平健治さんがYoutuberに。Mutuber KENJIのMusicTV配信が始まりました</title>
@@ -665,75 +699,6 @@ firebase deploy
         <category>React</category>
         
         <category>JavaScript</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>What's new in ARKit 2 ~ ARKit2の新機能</title>
-        <description>&lt;p&gt;WWDC2018で発表されたARKit2に関するセッションのビデオ &lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2018/602/&quot;&gt;What’s New in ARKit 2&lt;/a&gt;のメモです。&lt;/p&gt;
-
-&lt;h1 id=&quot;arkit2の新機能&quot;&gt;ARKit2の新機能&lt;/h1&gt;
-
-&lt;p&gt;ざっくり書くと以下の点が新機能として紹介されていました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ワールドマップの共有が可能になった&lt;/li&gt;
-  &lt;li&gt;画像のトラッキングが可能になった&lt;/li&gt;
-  &lt;li&gt;オブジェクトのテクスチャへの環境情報の反映（Environment Texturing、反射など）が可能になった&lt;/li&gt;
-  &lt;li&gt;リアルな物体の認識、スキャンが可能に&lt;/li&gt;
-  &lt;li&gt;フェイストラッキングの向上、視線追跡、舌の認識が可能になった&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2ではマップのrelocalizationが追加されて、worldmapの保存、共有が可能に。これは便利だ&lt;/p&gt;&amp;mdash; Masamichi Ueta (@masamichiueta) &lt;a href=&quot;https://twitter.com/masamichiueta/status/1006324724211728385?ref_src=twsrc%5Etfw&quot;&gt;2018年6月11日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2、ローカルでワールドマップのファイルシェアできるのか。単にファイルをAppGroupでシェアしてる感じかな&lt;/p&gt;&amp;mdash; Masamichi Ueta (@masamichiueta) &lt;a href=&quot;https://twitter.com/masamichiueta/status/1006326931149631488?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;Environment Texturingで反射のような環境情報を反映可能に&lt;/p&gt;&amp;mdash; Masamichi Ueta (@masamichiueta) &lt;a href=&quot;https://twitter.com/masamichiueta/status/1006329003722993665?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;ARKit2には画像追跡機能も追加。APIも使いやすそう&lt;/p&gt;&amp;mdash; Masamichi Ueta (@masamichiueta) &lt;a href=&quot;https://twitter.com/masamichiueta/status/1006428141441568769?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;ja&quot;&gt;&lt;p lang=&quot;ja&quot; dir=&quot;ltr&quot;&gt;FaceTrackingも強化。視線の追跡が可能に。舌の検出も可能。&lt;/p&gt;&amp;mdash; Masamichi Ueta (@masamichiueta) &lt;a href=&quot;https://twitter.com/masamichiueta/status/1006439704978313217?ref_src=twsrc%5Etfw&quot;&gt;2018年6月12日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;キーノートやセッションビデオで紹介されていますが、一番大きな点としては、&lt;strong&gt;複数人でワールドマップの共有が可能になった&lt;/strong&gt;ことかと思います。&lt;/p&gt;
-
-&lt;p&gt;これによって、複数のデバイスで同じ位置にあるオブジェクトを見ることができるようになったり、キーノートの発表でもあった&lt;code class=&quot;highlighter-rouge&quot;&gt;SwiftShot&lt;/code&gt;のように複数人で遊べるARアプリを簡単に作れるようになりました。&lt;/p&gt;
-
-&lt;p&gt;Environment Texturingも、&lt;code class=&quot;highlighter-rouge&quot;&gt;ARWorldTrackingConfiguration&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;environmentTexturing&lt;/code&gt;を&lt;code class=&quot;highlighter-rouge&quot;&gt;.automatic&lt;/code&gt;にするだけで良いので非常に簡単に適用できて素晴らしいと思います。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Environment Texturing&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// Create world tracking configuration&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;configuration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ARWorldTrackingConfiguration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Enable automatic environment texturing &lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;configuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;environmentTexturing&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;automatic&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// Run the configuration&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;configuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;正式リリースされたら、アプリを作ってみる予定です。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/documentation/arkit/swiftshot_creating_a_game_for_augmented_reality&quot;&gt;SwiftShot&lt;/a&gt;についてもソースを読んでみます。&lt;/p&gt;
-</description>
-        <pubDate>Wed, 13 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html</guid>
-        
-        <category>ARKit</category>
-        
-        <category>AR</category>
-        
-        <category>Apple</category>
-        
-        <category>WWDC</category>
         
         
         <category>development</category>

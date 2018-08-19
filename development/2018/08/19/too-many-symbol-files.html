@@ -6,26 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>ffmpegを使ってmovファイルをgifに変換する | Masamichi Ueta</title>
+<title>App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.1" />
-<meta property="og:title" content="ffmpegを使ってmovファイルをgifに変換する" />
+<meta property="og:title" content="App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。" />
-<meta property="og:description" content="アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。" />
-<link rel="canonical" href="https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html" />
+<meta name="description" content="エンジニアリング・デザイン・日常" />
+<meta property="og:description" content="エンジニアリング・デザイン・日常" />
+<link rel="canonical" href="https://masamichi.me/development/2018/08/19/too-many-symbol-files.html" />
+<meta property="og:url" content="https://masamichi.me/development/2018/08/19/too-many-symbol-files.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-06T00:00:00+09:00" />
+<meta property="article:published_time" content="2018-08-19T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html","headline":"ffmpegを使ってmovファイルをgifに変換する","dateModified":"2018-06-06T00:00:00+09:00","datePublished":"2018-06-06T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html"},"@context":"http://schema.org"}</script>
+{"description":"エンジニアリング・デザイン・日常","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2018/08/19/too-many-symbol-files.html","headline":"App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた","dateModified":"2018-08-19T00:00:00+09:00","datePublished":"2018-08-19T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/08/19/too-many-symbol-files.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html">
+  <link rel="canonical" href="https://masamichi.me/development/2018/08/19/too-many-symbol-files.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -97,7 +97,7 @@
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">ffmpegを使ってmovファイルをgifに変換する</h1>
+      <h1 itemprop="name headline">App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -111,45 +111,37 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2018-06-06T00:00:00+09:00" itemprop="datePublished">2018/6/6</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2018-08-19T00:00:00+09:00" itemprop="datePublished">2018/8/19</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">ffmpeg</span>
+              <span class="badge badge-light">App Store Connect</span>
               
-              <span class="badge badge-light">mov</span>
+              <span class="badge badge-light">iOS</span>
               
-              <span class="badge badge-light">gif</span>
+              <span class="badge badge-light">cocoapods</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <h1 id="movをgifに変換する">movをgifに変換する</h1>
+            <p>App Store ConnectにXcodeからアプリをアップロードすると、少し時間がたってからメールが届きました。</p>
 
-<p>アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、<code class="highlighter-rouge">ffmpeg</code>を使用すると簡単にmovをgifに変更できました。</p>
+<p>そのメールはアプリに問題が見つかりましたという題名で、</p>
 
-<p>まずffmpegをインストールします</p>
+<p><code class="highlighter-rouge">Too many symbol files</code> というエラーが書かれていました。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install ffmpeg
-</code></pre></div></div>
+<p>iOS11からは32bitアプリのサポートが切られたことが影響している為でしょうか。
+調べたところ、どうやらcocoapodsが生成しているフレームワークのアーキテクチャの設定ぽいということがわかりました。</p>
 
-<p>インストールするとffmpegが使用できるようになるので、</p>
+<p><a href="https://github.com/CocoaPods/CocoaPods/issues/7111">CocoaPods leaves dSYMs for unused architectures in archive</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg -i [input file].mov -r [frame rate] [output file].gif
-</code></pre></div></div>
+<p>アプリの<code class="highlighter-rouge">valid architecture</code>を<code class="highlighter-rouge">arm64</code>にすれば、64ビットになって解決するようです。</p>
 
-<p>例えば、</p>
+<p>64ビットにする方法はこちらが参考になりました。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg -i screen.mov -r 24 screen.gif
-</code></pre></div></div>
-
-<p>のようにうつと、ffmpegがmovをgifに変換してくれます。</p>
-
-<p>ffmpegの使い方はこちらのページが参考になります。</p>
-
-<p><a href="http://tech.ckme.co.jp/ffmpeg_basic.shtml">ffmpegの最も基本的な使い方</a></p>
+<p><a href="https://qiita.com/Yasunobu/items/59c89facfcbb36bdedda">【iOS】iPhoneアプリを64bit端末のみをターゲットにする方法</a></p>
 
           </div>
           <div class="pt-5">
@@ -169,18 +161,6 @@
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2018/08/19/too-many-symbol-files.html">
-                  <small class="decoration-none text-muted">2018/8/19<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた</h3>
-                  <p class="text-dark"></p>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -364,6 +344,18 @@
 
             
 
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html">
+                  <small class="decoration-none text-muted">2018/6/6<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">ffmpegを使ってmovファイルをgifに変換する</h3>
+                  <p class="text-dark">アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
             
           
             
