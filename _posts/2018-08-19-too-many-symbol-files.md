@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた"
-description: ""
+description: "App Store ConnectにXcodeからアプリをアップロードすると、少し時間がたってからメールが届きました。そのメールはアプリに問題が見つかりましたという題名で、Too many symbol filesというエラーが書かれていました。"
 date: 2018-08-19
 categories: development
 lang: ja_JP
