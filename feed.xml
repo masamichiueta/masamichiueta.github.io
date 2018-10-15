@@ -5,9 +5,36 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Sep 2018 22:54:29 +0900</pubDate>
-    <lastBuildDate>Sat, 22 Sep 2018 22:54:29 +0900</lastBuildDate>
+    <pubDate>Mon, 15 Oct 2018 12:45:45 +0900</pubDate>
+    <lastBuildDate>Mon, 15 Oct 2018 12:45:45 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>FlutterでiOS12のデバイスにアプリをインストールすると日本語が明朝体になる</title>
+        <description>&lt;p&gt;FlutterでiOS12のデバイスにアプリをインストールすると日本語が明朝体になってしまいます。&lt;/p&gt;
+
+&lt;p&gt;Flutterのバージョンは、&lt;code class=&quot;highlighter-rouge&quot;&gt;Channel beta, v0.9.4&lt;/code&gt; です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-10-15/mincho.png&quot; alt=&quot;Flutterの日本語が明朝体になる&quot; title=&quot;Flutterの日本語が明朝体になる&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Flutterの修正でそのうち直ると思います(&lt;a href=&quot;https://github.com/flutter/flutter/issues/21667&quot;&gt;Japanese default font family is incorrect on iOS 12&lt;/a&gt;)が、テーマにヒラギノフォントを指定することで、修正することができます。&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/masamichiueta/a2906d96e568031d8b455575e324b1dc.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-10-15/hiragino.png&quot; alt=&quot;Flutterでヒラギノを使う&quot; title=&quot;Flutterでヒラギノを使う&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Oct 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2018/10/15/resolve-flutter-japanese-font-problem.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2018/10/15/resolve-flutter-japanese-font-problem.html</guid>
+        
+        <category>Flutter</category>
+        
+        <category>iOS</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた</title>
@@ -577,126 +604,6 @@ $ brew install ideviceinstaller ios-deploy
         <category>React</category>
         
         <category>Redux</category>
-        
-        <category>JavaScript</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>FirebaseとReactで認証付きアプリのサンプルを実行するまで</title>
-        <description>&lt;p&gt;現在FirebaseでWebアプリを作っています。アプリを作る上でユーザー認証は欠かせないものの、作るのが大変ということが多いですが、Firebaseを使うと簡単に実装することができました。&lt;/p&gt;
-
-&lt;p&gt;私はWebアプリを作る上でReactを使うことが多いので、今回はFirebaseとReactでユーザー認証を行うサンプルアプリを実行して、Firebaseでホスティングしてみました。&lt;/p&gt;
-
-&lt;p&gt;今回参考にしたサンプルはこちらです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rwieruch/react-firebase-authentication&quot;&gt;rwieruch/react-firebase-authentication&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;firebaseにプロジェクトを登録する&quot;&gt;Firebaseにプロジェクトを登録する&lt;/h1&gt;
-
-&lt;p&gt;まずは&lt;a href=&quot;https://console.firebase.google.com/&quot;&gt;Firebaseのコンソール&lt;/a&gt;から、プロジェクトを登録します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/addproject.png&quot; alt=&quot;プロジェクト登録&quot; title=&quot;プロジェクト登録&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;アプリを設定する&quot;&gt;アプリを設定する&lt;/h2&gt;
-
-&lt;p&gt;プロジェクトを登録したらログインの設定を行います。&lt;/p&gt;
-
-&lt;p&gt;サイドメニューの&lt;code class=&quot;highlighter-rouge&quot;&gt;Authentication&lt;/code&gt;から、メールアドレスによるログインを有効にします。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/login.png&quot; alt=&quot;メールアドレスログイン&quot; title=&quot;メールアドレスログイン&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/loginbymail.png&quot; alt=&quot;メールアドレスログイン&quot; title=&quot;メールアドレスログイン&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;firebaseコマンドラインツールのインストール&quot;&gt;Firebaseコマンドラインツールのインストール&lt;/h2&gt;
-
-&lt;p&gt;Firebaseにアプリをデプロイするには、Firebaseコマンドラインツールをインストールする必要があります。&lt;/p&gt;
-
-&lt;p&gt;npmパッケージで提供されているので、npmでインストールします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm intall -g firebase-tools
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;その後ターミナルから以下のコマンドを実行します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;firebase login
-
-cd /path/to/project/directory // プロジェクトディレクトリに移動
-
-firebase init
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase init&lt;/code&gt;を実行すると、使用する機能やプロジェクトを聞かれるので該当するものを選択します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/functions.png&quot; alt=&quot;firebaseの機能&quot; title=&quot;firebaseの機能&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;この場合は、&lt;code class=&quot;highlighter-rouge&quot;&gt;Firestore&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;Hosting&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;Storage&lt;/code&gt;を有効にしてみました。&lt;/p&gt;
-
-&lt;p&gt;また途中で、&lt;code class=&quot;highlighter-rouge&quot;&gt; What do you want to use as your public directory?&lt;/code&gt;と聞かれるので、Reactアプリに合わせるために&lt;code class=&quot;highlighter-rouge&quot;&gt;build&lt;/code&gt;に変更してください。&lt;/p&gt;
-
-&lt;p&gt;プロジェクトを作成した後も、&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase.json&lt;/code&gt;を修正すれば変更可能です。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;init&lt;/code&gt;が終了したら、試しに&lt;code class=&quot;highlighter-rouge&quot;&gt;deploy&lt;/code&gt;してみます。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;firebase deploy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;これでデフォルトのページがデプロイされました。&lt;/p&gt;
-
-&lt;h1 id=&quot;サンプルアプリを実行する&quot;&gt;サンプルアプリを実行する&lt;/h1&gt;
-
-&lt;p&gt;認証用のサンプルアプリをダウンロードします。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/rwieruch/react-firebase-authentication&quot;&gt;rwieruch/react-firebase-authentication&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ダウンロードしたら、&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package.json
-public
-src
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;をコピーします。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/project.png&quot; alt=&quot;プロジェクト&quot; title=&quot;プロジェクト&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;その後npmパッケージをインストールします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;インストール後は、&lt;code class=&quot;highlighter-rouge&quot;&gt;src/firebase/firebase.js&lt;/code&gt;の中の&lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt;を自分のプロジェクトのものに変更します。
-&lt;code class=&quot;highlighter-rouge&quot;&gt;prod&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt;が定義されていますが、一旦同じものを入れました。&lt;/p&gt;
-
-&lt;p&gt;configは、Firebaseのコンソールのトップ、&lt;code class=&quot;highlighter-rouge&quot;&gt;ウェブアプリにFirebaseを追加&lt;/code&gt;から表示することができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/addfirebase.png&quot; alt=&quot;ウェブアプリにFirebaseを追加&quot; title=&quot;ウェブアプリにFirebaseを追加&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;設定を書き換えたら、アプリをビルドしてfirebaseにデプロイします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run build
-firebase deploy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;以上で、サンプルアプリがFirebaseにデプロイされました。&lt;/p&gt;
-
-&lt;p&gt;デプロイ後以下のようなページが表示されていれば成功です。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://masamichi.me/assets/posts/2018-06-18/sample.png&quot; alt=&quot;サンプル&quot; title=&quot;サンプル&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;サインアップページからユーザー登録をすると、Firebaseのユーザーが追加されます。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 18 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2018/06/18/firebase-react-authenticaton.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2018/06/18/firebase-react-authenticaton.html</guid>
-        
-        <category>Firebase</category>
-        
-        <category>React</category>
         
         <category>JavaScript</category>
         
