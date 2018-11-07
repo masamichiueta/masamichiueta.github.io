@@ -5,9 +5,46 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Oct 2018 12:45:45 +0900</pubDate>
-    <lastBuildDate>Mon, 15 Oct 2018 12:45:45 +0900</lastBuildDate>
+    <pubDate>Thu, 08 Nov 2018 00:09:53 +0900</pubDate>
+    <lastBuildDate>Thu, 08 Nov 2018 00:09:53 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>横浜マラソン2018に参加しました</title>
+        <description>&lt;p&gt;2018年10月28日に横浜で開催された横浜マラソン2018に参加しました。&lt;/p&gt;
+
+&lt;p&gt;人生で初めてのフルマラソンでした。
+結果は&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;グロスタイム: 4:54:31&lt;/li&gt;
+  &lt;li&gt;ネットタイム: 4:44:07&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;でした。&lt;/p&gt;
+
+&lt;p&gt;初めてにしては結構よかったかなと思います。&lt;/p&gt;
+
+&lt;p&gt;22kmを超えたあたりから足が痛くなってきて、そこからは体力というより痛みとの戦いでした。&lt;/p&gt;
+
+&lt;p&gt;こういう大きな大会だと、給水所もしっかり設置されていてとても有り難いです。色々なものが配られていて、次の給水所が楽しみでした。
+また、給水所や路上での応援は、本当にありがたくてなぜか体が少し軽くなって走ることができました。&lt;/p&gt;
+
+&lt;p&gt;無事完走メダルももらうことができました。これをきっかけにマラソンにはまってしまいそうです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-11-07/yokohama-marathon1.jpeg&quot; alt=&quot;横浜マラソン1&quot; title=&quot;横浜マラソン1&quot; /&gt;
+&lt;img src=&quot;/assets/posts/2018-11-07/yokohama-marathon2.jpeg&quot; alt=&quot;横浜マラソン2&quot; title=&quot;横浜マラソン2&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 07 Nov 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/hobby/2018/11/07/yokohama-marathon-2018.html</link>
+        <guid isPermaLink="true">https://masamichi.me/hobby/2018/11/07/yokohama-marathon-2018.html</guid>
+        
+        <category>横浜マラソン</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>FlutterでiOS12のデバイスにアプリをインストールすると日本語が明朝体になる</title>
@@ -570,42 +607,6 @@ $ brew install ideviceinstaller ios-deploy
         <guid isPermaLink="true">https://masamichi.me/development/2018/07/01/github-custom-domain.html</guid>
         
         <category>GitHub</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>FirebaseとReactとReduxで認証付きのWebアプリのサンプルを作りました</title>
-        <description>&lt;p&gt;先日書いた記事　&lt;a href=&quot;https://masamichi.me/development/2018/06/18/firebase-react-authenticaton.html&quot;&gt;FirebaseとReactで認証付きアプリのサンプルを実行するまで&lt;/a&gt; の続きで、この認証サンプルをReduxを使うように変更したサンプルを作ってみました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/masamichiueta/react-redux-firebase-auth&quot;&gt;masamichiueta/react-redux-firebase-auth&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;動きとしては、&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Auth&lt;/code&gt;コンポーネントの&lt;code class=&quot;highlighter-rouge&quot;&gt;componentWillMount&lt;/code&gt;で、&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase.auth.onAuthStateChanged&lt;/code&gt;を登録して、すでにログイン状態だったら、stateにuserを登録してログイン後の画面を表示する。未ログイン状態だったらトップ画面を表示する。&lt;/li&gt;
-  &lt;li&gt;ログインページでログインしたら&lt;code class=&quot;highlighter-rouge&quot;&gt;auth.doSignInWithEmailAndPassword&lt;/code&gt;で返ってくるユーザー情報をstateに登録する。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;という流れです。&lt;/p&gt;
-
-&lt;p&gt;1つ悩んでいることがあって、クライアントでレンダリングするので、&lt;code class=&quot;highlighter-rouge&quot;&gt;firebase.auth.onAuthStateChanged&lt;/code&gt;のコールバックが呼ばれるまでに少しラグがあり、一瞬ローディング画面を出さざるを得ない形になっています。&lt;/p&gt;
-
-&lt;p&gt;このあたりの解消法というか、ベストプラクティスがありましたら、&lt;a href=&quot;https://twitter.com/masamichiueta&quot;&gt;@masamichiueta&lt;/a&gt;に教えていただけるとありがたいです。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 30 Jun 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2018/06/30/firebase-react-redux.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2018/06/30/firebase-react-redux.html</guid>
-        
-        <category>Firebase</category>
-        
-        <category>React</category>
-        
-        <category>Redux</category>
-        
-        <category>JavaScript</category>
         
         
         <category>development</category>
