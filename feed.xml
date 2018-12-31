@@ -5,9 +5,80 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Nov 2018 22:13:38 +0900</pubDate>
-    <lastBuildDate>Sun, 11 Nov 2018 22:13:38 +0900</lastBuildDate>
+    <pubDate>Mon, 31 Dec 2018 18:38:49 +0900</pubDate>
+    <lastBuildDate>Mon, 31 Dec 2018 18:38:49 +0900</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
+    
+      <item>
+        <title>CryptoZombiesというサービスでイーサリアムを使ったdApps開発を勉強し始めました</title>
+        <description>&lt;p&gt;そろそろdApps開発についても勉強しないといけないなと思いながらなかなかできていなかったのですが、年末で時間が取れたので &lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt; というサービスでイーサリアムを使ったdApps開発について勉強しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt; はdApps開発が学べるWebサービスで、CryptoZombiesというdAppsを題材にしながら実際にコードを書いてdApps開発を学ぶことができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cryptozombies.io&quot;&gt;https://cryptozombies.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;現在は3つのコースが用意されており、その中でも &lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; というイーサリアム上でスマートコントラクトを実装できるプログラミング言語のコースを実施してみました。&lt;/p&gt;
+
+&lt;p&gt;現在はレッスン6まで公開されていて、スマートコントラクトの開発部分と、実際にそれをフロントからJavaScriptで呼び出す部分を学ぶことができます。&lt;/p&gt;
+
+&lt;h2 id=&quot;学べたこと&quot;&gt;学べたこと&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;プログラミング言語 &lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; の基本&lt;/li&gt;
+  &lt;li&gt;dApps開発の流れ&lt;/li&gt;
+  &lt;li&gt;フロントとの連携方法&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;1-プログラミング言語-solidity-の基本&quot;&gt;1. プログラミング言語 Solidity の基本&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt; では &lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; の基本的な部分から説明してくれているので、言語自体を学習しながら進めていくことができました。&lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; 自体は難しくないと思いました、少なくとも他の言語の経験があればすぐに理解できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; のページの記述にもあるように、静的型付け言語で、コントラクト指向プログラミング言語です。他の言語と違うのはこのコントラクトという部分だと思います。いわゆる他の言語での&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;にあたるものが&lt;code class=&quot;highlighter-rouge&quot;&gt;contract&lt;/code&gt;になっています。&lt;/p&gt;
+
+&lt;p&gt;あとは、&lt;code class=&quot;highlighter-rouge&quot;&gt;struct&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;function&lt;/code&gt;などなどお馴染みの機能もあれば、&lt;code class=&quot;highlighter-rouge&quot;&gt;modifier&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt;構文など割と独特なものも紹介されています。&lt;/p&gt;
+
+&lt;h3 id=&quot;2-dapps開発の流れ&quot;&gt;2. dApps開発の流れ&lt;/h3&gt;
+
+&lt;p&gt;dApps開発と言っても最初は何を指すのかあまりわかっていませんでしたが、イーサリアムを用いたdApps開発ではこの &lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; で書かれた各種コントラクトをコンパイルして、イーサリアム上にデプロイすることでそのコントラクトを利用できるようになります。そしてそれをWebアプリやスマホアプリなどクライアントから呼び出すことでアプリを開発していきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptZombies&lt;/code&gt; では2018年12月31日時点では、コントラクトをコンパイルしてイーサリアムにデプロイする部分のチュートリアルはありませんが、もうすぐ追加されるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://infura.io&quot;&gt;INFURA&lt;/a&gt; というサービスが紹介されていて、このサービスを使うとイーサリアムのノードを立てることなくコントラクトをデプロイできるようです。&lt;/p&gt;
+
+&lt;h3 id=&quot;3-フロントとの連携方法&quot;&gt;3. フロントとの連携方法&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt; では &lt;code class=&quot;highlighter-rouge&quot;&gt;JavaScript&lt;/code&gt; から実装したコントラクトを呼び出す方法が説明されています。web3.jsというイーサリアムのJavaScriptライブラリを使用することで、実装したコントラクトを簡単に呼び出すことができます。&lt;/p&gt;
+
+&lt;p&gt;このAPIを使って普通にWebアプリを作ると、dAppsとしてWebアプリを開発できるというわけですね。&lt;/p&gt;
+
+&lt;p&gt;CryptoZombiesをやっていて面白かったのが、ゾンビに食べさせる餌として、同じくイーサリアムのコントラクト上で開発されているCryptoKittiesのネコを与えることができるとうい点でした。&lt;/p&gt;
+
+&lt;p&gt;つまり同じブロックチェーン上にあるデータなので、公開されているAPIを使えば違うゲーム同士でもデータをやりとりできるということですね。&lt;/p&gt;
+
+&lt;p&gt;まだまだ理解が浅いのでこれからも研究していこうと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt;をひたすら進めていく動画をアップしたのでよければみてみてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLCwKASeEZrUvXfSoOTE5eud4F7oBYX0H7&quot;&gt;CryptoZombies at Youtube&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 31 Dec 2018 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/cryptocurrency/2018/12/31/start-etherium-with-crypto-zombies.html</link>
+        <guid isPermaLink="true">https://masamichi.me/cryptocurrency/2018/12/31/start-etherium-with-crypto-zombies.html</guid>
+        
+        <category>イーサリアム</category>
+        
+        <category>CryptoZombies</category>
+        
+        <category>Etherium</category>
+        
+        <category>dApps</category>
+        
+        <category>SmartContract</category>
+        
+        
+        <category>cryptocurrency</category>
+        
+      </item>
     
       <item>
         <title>はまりんフェスタ2018にいってきました</title>
@@ -494,96 +565,6 @@ $ brew install ideviceinstaller ios-deploy
         
         
         <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>Ledgerの新しいウォレット管理アプリ Ledger Liveの始め方</title>
-        <description>&lt;h1 id=&quot;ledger-live&quot;&gt;Ledger Live&lt;/h1&gt;
-
-&lt;p&gt;先週7/9にLedger Liveが発表されました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ledger.fr/2018/07/09/ledger-launches-ledger-live-the-all-in-one-companion-app-to-your-ledger-device/&quot;&gt;Ledger launches Ledger Live, the all-in-one companion app to your Ledger device&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;これまでChrome appとして提供されていた&lt;a href=&quot;https://www.ledgerwallet.com/apps/manager&quot;&gt;Ledger Manager&lt;/a&gt;や&lt;a href=&quot;https://www.ledgerwallet.com/apps&quot;&gt;各種walletアプリ&lt;/a&gt;などに取って代わる新しいアプリのようです。&lt;/p&gt;
-
-&lt;p&gt;早速インストールして設定したので、手順を載せておきます。&lt;/p&gt;
-
-&lt;h2 id=&quot;アプリをダウンロードインストールする&quot;&gt;アプリをダウンロード、インストールする&lt;/h2&gt;
-
-&lt;p&gt;Ledger Liveのページから使用しているOS用のアプリをダウンロードします。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ledgerwallet.com/live&quot;&gt;Ledger Live&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;ダウンロード後、アプリをインストールして起動します。&lt;/p&gt;
-
-&lt;p&gt;起動すると以下のような画面が表示されます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/launch.png&quot; alt=&quot;Ledger Live 起動&quot; title=&quot;Ledger Live 起動&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Get Startedから始めます。&lt;/p&gt;
-
-&lt;h2 id=&quot;デバイスの設定&quot;&gt;デバイスの設定&lt;/h2&gt;
-
-&lt;p&gt;Get Startedを押すと、持っているハードウェアウォレットの設定が始まります。
-私は既にLedger nano sを設定しているので、&lt;code class=&quot;highlighter-rouge&quot;&gt;Use a device that's already initialized&lt;/code&gt;を選択します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/device-setting.png&quot; alt=&quot;Ledger Live デバイス設定&quot; title=&quot;Ledger Live デバイス設定&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;次に設定するデバイスを選択します。私が使っているのはLedger nano sなので、Ledger nano sを選択しました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/select-device.png&quot; alt=&quot;Ledger Live デバイス選択&quot; title=&quot;Ledger Live デバイス選択&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;次にセキュリティーチェックリストに答えていきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/security-checklist.png&quot; alt=&quot;Ledger Live セキュリティーチェックリスト&quot; title=&quot;Ledger Live セキュリティーチェックリスト&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;PINコード、リカバリーフレーズはLedger nano sを設定した際に設定ずみだと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;ledger-liveのパスワードの設定&quot;&gt;Ledger Liveのパスワードの設定&lt;/h2&gt;
-
-&lt;p&gt;次に、Ledger Liveアプリを起動する際のパスワードを設定します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/password.png&quot; alt=&quot;Ledger Live パスワード&quot; title=&quot;Ledger Live パスワード&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;このパスワードを忘れるとLedger Liveを再設定する必要があるようです。
-また、Ledger Liveを再設定してもウォレットがなくなる訳ではないので、再設定すればまた使えるようになります。&lt;/p&gt;
-
-&lt;p&gt;パスワードを登録するとアプリが使えるようになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/app.png&quot; alt=&quot;Ledger Live アプリ&quot; title=&quot;Ledger Live アプリ&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;アカウントを追加する&quot;&gt;アカウントを追加する&lt;/h2&gt;
-
-&lt;p&gt;初めはアカウントがないので、自分のウォレットにある資産を管理するためにアカウントを登録します。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Add Accounts&lt;/code&gt;ボタンをおすと追加する仮想通貨を選択する画面が出てくるので選択します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/addaccounts.png&quot; alt=&quot;Ledger Live アカウント追加&quot; title=&quot;Ledger Live アカウント追加&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;選択後はダイアログにしたがって設定を行えばOKです。
-アカウントが追加されるとLedger Live上で送金や受け取りができたりリアルタイムで資産の状態を把握することができます。&lt;/p&gt;
-
-&lt;p&gt;レート設定も設定画面から行えて、USDやJPYが選択できます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-15/setting.png&quot; alt=&quot;Ledger Live 設定&quot; title=&quot;Ledger Live 設定&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;これまではChrome appだった上に、それぞれのウォレットアプリが分かれていて若干使いにくかったですが、Ledger Liveのように一つのアプリとして提供されると使いやすいですね〜&lt;/p&gt;
-</description>
-        <pubDate>Sun, 15 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/cryptocurrency/2018/07/15/how-to-start-ledgaer-live.html</link>
-        <guid isPermaLink="true">https://masamichi.me/cryptocurrency/2018/07/15/how-to-start-ledgaer-live.html</guid>
-        
-        <category>Ledger</category>
-        
-        <category>Ledger nano s</category>
-        
-        <category>Ledger manager</category>
-        
-        <category>Ledger live</category>
-        
-        
-        <category>cryptocurrency</category>
         
       </item>
     
