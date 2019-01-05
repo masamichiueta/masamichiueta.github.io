@@ -6,27 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>OS X 10.10.11 El Capitan にCocoaPodsをインストールする | Masamichi Ueta</title>
+<title>2019年にネイティブアプリを開発する方法 | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.1" />
-<meta property="og:title" content="OS X 10.10.11 El Capitan にCocoaPodsをインストールする" />
+<meta property="og:title" content="2019年にネイティブアプリを開発する方法" />
 <meta name="author" content="masamichiueta" />
-<meta property="og:locale" content="js_JP" />
-<meta name="description" content="OS X 10.10.11 El Capitan にCocoaPodsをインストールする" />
-<meta property="og:description" content="OS X 10.10.11 El Capitan にCocoaPodsをインストールする" />
-<link rel="canonical" href="https://masamichi.me/development/2015/11/25/install-cocoapods-to-elcapitan.html" />
-<meta property="og:url" content="https://masamichi.me/development/2015/11/25/install-cocoapods-to-elcapitan.html" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="エンジニアリング・デザイン・日常" />
+<meta property="og:description" content="エンジニアリング・デザイン・日常" />
+<link rel="canonical" href="https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
-<meta property="og:image" content="https://masamichi.me/assets/posts/2015-11-25/2015-11-25.jpg" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-01-05/cover.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2015-11-25T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-01-05T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"OS X 10.10.11 El Capitan にCocoaPodsをインストールする","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2015/11/25/install-cocoapods-to-elcapitan.html","image":"https://masamichi.me/assets/posts/2015-11-25/2015-11-25.jpg","headline":"OS X 10.10.11 El Capitan にCocoaPodsをインストールする","dateModified":"2015-11-25T00:00:00+09:00","datePublished":"2015-11-25T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2015/11/25/install-cocoapods-to-elcapitan.html"},"@context":"http://schema.org"}</script>
+{"description":"エンジニアリング・デザイン・日常","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html","image":"https://masamichi.me/assets/posts/2019-01-05/cover.jpg","headline":"2019年にネイティブアプリを開発する方法","dateModified":"2019-01-05T00:00:00+09:00","datePublished":"2019-01-05T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2015/11/25/install-cocoapods-to-elcapitan.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -93,15 +93,17 @@
 
 
     
-<section class="hero text-center" style="background-image: url(/assets/posts/2015-11-25/2015-11-25.jpg)">
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-01-05/cover.jpg)">
   <div class="overlay"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">OS X 10.10.11 El Capitan にCocoaPodsをインストールする</h1>
+      <h1 itemprop="name headline">2019年にネイティブアプリを開発する方法</h1>
     </div>
   </div>
   <span class="text-left text-dark">
+    
+    <small>画像出典：Photo by <a href="https://unsplash.com/photos/A6JxK37IlPo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bagus Hernawan</a> on <a href="https://unsplash.com/search/photos/app?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
     
   </span>
 </section>
@@ -112,62 +114,76 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2015-11-25T00:00:00+09:00" itemprop="datePublished">2015/11/25</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-01-05T00:00:00+09:00" itemprop="datePublished">2019/1/5</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">iOS</span>
+              <span class="badge badge-light">アプリ開発</span>
               
-              <span class="badge badge-light">CocoaPods</span>
+              <span class="badge badge-light">Swift</span>
               
-              <span class="badge badge-light">Xcode</span>
+              <span class="badge badge-light">React Native</span>
+              
+              <span class="badge badge-light">Flutter</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <blockquote>
-  <p>This post was originally posted in <a href="http://qiita.com/masamichiueta/items/26440acb62a71d22b255">Qiita</a> at 11/25 2015.</p>
-</blockquote>
+            <p><a href="https://medium.com/@masamichiueta/how-to-build-a-native-app-in-2019-b7f490a17846">Mediumに書いた記事</a>の日本語版となります。</p>
+
+<p>AppleがAppStoreを開始してから10年が経ちました。たくさんの人々がアプリを使っていますし、2019年もこのアプリプラットフォーム上で多くのイノヴェイションが生まれると思います。</p>
+
+<p>これまで様々なプラットフォームで色々なフレームワークを使ってアプリを開発してきました。今はSwiftでiOSアプリを開発していますが、過去にはWindowsアプリを開発していたり、ReactやVueといったフレームワークでWebアプリを開発したり、ReactNativeやFlutterでマルチプラットフォーム向けのネイティブアプリを開発したりしました。過去数年の間に、色々なツールが出てきては消えていきましたが、2019年にアプリを開発するとしたら以下の3つかなと思っています。</p>
+
+<h2 id="1-ネイティブ言語ネイティブプラットフォーム">1. ネイティブ言語、ネイティブプラットフォーム</h2>
+
+<p><img src="/assets/posts/2019-01-05/swift.jpeg" alt="Swift" title="Swift" /></p>
+
+<p>iOSだと、Swift(かObjective-C)、Xcode、UIKitです。</p>
+
+<p>Androidだと、Kotlin(かJava)、AndroidStudio(か他のIDE)、Android SDKです。</p>
+
+<p>2019年でもネイティブアプリを開発するにはこれが一番シンプルな手段だと思います。</p>
+
+<p>ツールやSDKや開発言語は公式でサポートされていて、それぞれ統合されていますし、最新のAPIを使ったりするのももちろん簡単にできます。フレームワークのバージョンを管理する手間や、よくわからないエラーに悩まされることもありません。それにデバイスに最適化されたUXを開発することにフォーカスすることができます。</p>
+
+<p>ただ、ずっと言われているように、iOS,Androidの両方のプラットフォームそれぞれにアプリを開発する必要があります。</p>
+
+<h2 id="2-react-native">2. React Native</h2>
+
+<p><img src="/assets/posts/2019-01-05/react.png" alt="React" title="React" /></p>
+
+<p>React NativeはiOS, Androidのマルチプラットフォームに対してネイティブアプリを開発できるFacebook製のフレームワークです。</p>
+
+<p>React NativeはReactと同じコーディングスタイルなので、JavaScriptやReactをよく知っているWeb開発者のかたは取り組みやすいと思います。Reactを知らない場合は、まずReactを学ぶ必要があります。</p>
+
+<p>Reactで有名なアーキテクチャはReduxのようなFluxアーキテクチャで、スケーラブルなアーキテクチャでアプリを開発していきたい場合には、アーキテクチャやライブラリについても学ぶ必要があります。その分時間はかかります。</p>
+
+<h2 id="3-flutter">3. Flutter</h2>
+
+<p><img src="/assets/posts/2019-01-05/flutter.png" alt="Flutter" title="Flutter" /></p>
+
+<p>FlutterはiOS, Androidのマルチプラットフォームに対してネイティブアプリを開発できるGoogle製のフレームワークです。ネイティブアプリだけでなくWebアプリも開発できるようです。</p>
+
+<p>Flutterは2018年に多くの開発者に注目されたと思います。私も去年Flutterでアプリを開発しました。</p>
+
+<p>FlutterのコーディングスタイルはReactに似ていて、コンポーネントベースのUI（Flutterではウィジェットと言います）、ホットリロード、マルチプラットフォームなどが特徴です。</p>
+
+<p>が、Flutterのもっとも特徴的な点はDartを開発言語として採用している点だと思います。（Go言語ではなく</p>
+
+<p>Flutterでアプリを開発するまではDartは書いたことがありませんでしたが、C#、Java、JavaScriptなどの経験があればDartを書くのは難しいことではないと思います。</p>
+
+<p>Flutterはマテリアルデザインのスキャフフォールディング（テンプレート機能のようなもの）があるので、マテリアルデザインのアプリを作りやすくなっています。2019年新しいアプリを開発するならFlutterは考慮する価値があると思います。</p>
 
 <hr />
 
-<h1 id="el-capitanのrootless">El Capitanのrootless</h1>
+<p>以上、2019年にネイティブアプリを開発するオススメの方法を3つ紹介してみました。</p>
 
-<p>OS X 10.10.11 El Capitanになり、rootlessが動作しており、rootlessの管理範囲内である <code class="highlighter-rouge">/usr/bin</code> には <code class="highlighter-rouge">pod</code> を配置できないため、</p>
+<p>私としては長期的な視点で開発する場合には、やはり <strong>1. ネイティブ言語、ネイティブプラットフォーム</strong>がいいかなと思います。React NativeやFlutterはプロトタイピングに向いていると思っています。というのも、すぐに綺麗なアプリを作ることはできますが、スケーラブルなアーキテクチャ設計にするのはなかなか難しいのではと思うのと、最新のAPIに追従していくのが難しいと思うからです。</p>
 
-<p><code class="highlighter-rouge">sudo gem install cocoapods</code></p>
-
-<p>というコマンドを打つと</p>
-
-<p><code class="highlighter-rouge">Operation not permitted</code></p>
-
-<p>というエラーになります。</p>
-
-<h1 id="sudo-less-installation">Sudo-less installation</h1>
-
-<p><a href="https://guides.cocoapods.org/using/getting-started.html#getting-started">CocoaPodsのインストールガイド</a>に従い、ユーザーディレクトリにインストールすることで回避します。</p>
-
-<p>まずは、ホームディレクトリにある（なければ作成する）<code class="highlighter-rouge">.bash_profile</code> に以下を追記します。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export GEM_HOME=$HOME/.gem
-export PATH=$GEM_HOME/ruby/2.0.0/bin:$PATH   #(CocoaPodsのインストールガイドでは export PATH=$GEM_HOME/bin:$PATH になっている)
-</code></pre></div></div>
-
-<p>そして、<code class="highlighter-rouge">--user-install</code> オプションを付けて、CocoaPodsをインストールします。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install cocoapods --user-install
-gem which cocoapods
-/Users/ユーザ名/.gem/ruby/2.0.0/gems/cocoapods-0.39.0/lib/cocoapods.rb
-pod --version
-インストールされたバージョン
-</code></pre></div></div>
-
-<h1 id="その他">その他</h1>
-<p><code class="highlighter-rouge">/usr/bin/local</code>にインストールするなどもありますね。</p>
-
-<p><code class="highlighter-rouge">sudo gem install -n /usr/local/bin cocoapods</code></p>
+<p>ただ、開発者として開発していて楽しいものを選ぶことが大事だと思います。</p>
 
           </div>
           <div class="pt-5">
@@ -187,21 +203,6 @@ pod --version
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html">
-                  <small class="decoration-none text-muted">2019/1/5<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">2019年にネイティブアプリを開発する方法</h3>
-                  <p class="text-dark"></p>
-                  
-                  <div alt="2019年にネイティブアプリを開発する方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-01-05/cover.jpg)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -427,6 +428,24 @@ pod --version
                   <small class="decoration-none text-muted">2018/6/7<span class="ml-2">開発</span></small>                    
                   <h3 class="mt-0">WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて</h3>
                   <p class="text-dark"></p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2018/06/06/mov-to-gif-with-ffmpeg.html">
+                  <small class="decoration-none text-muted">2018/6/6<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">ffmpegを使ってmovファイルをgifに変換する</h3>
+                  <p class="text-dark">アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。</p>
                   
                 </a>
               </li>
