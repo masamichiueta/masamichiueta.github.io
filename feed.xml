@@ -5,9 +5,60 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Mar 2019 22:22:12 +0900</pubDate>
-    <lastBuildDate>Mon, 18 Mar 2019 22:22:12 +0900</lastBuildDate>
+    <pubDate>Mon, 18 Mar 2019 23:48:32 +0900</pubDate>
+    <lastBuildDate>Mon, 18 Mar 2019 23:48:32 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する</title>
+        <description>&lt;p&gt;Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。&lt;/p&gt;
+
+&lt;p&gt;アプリ開発のプロジェクトでは、スタイルガイドに沿ったベースのUIクラスを作成されている場合もあると思います。
+例えばアプリのプライマリーカラーと同じ文字色のラベルやボタンなどが考えられます。Interface BuilderでUIを作成されている方は多いと思いますが、Interface Builderを使っているとそういったベースとなるUIクラスを適用し忘れがちです。
+ベースとなるクラスを使えばいいのに、IB上で色やフォントを設定してしまったり、そもそもベースクラスの存在に気づかなかったりなど、どうしても起こってしまう問題かと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/IBDecodable/IBLinter&quot;&gt;IBLinter&lt;/a&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;use_base_class&lt;/code&gt;ルールを使うとInterface BuilderのUI要素に指定のカスタムクラスが適用されているかをチェックすることができます。&lt;/p&gt;
+
+&lt;p&gt;例えば全ての&lt;code class=&quot;highlighter-rouge&quot;&gt;UILabel&lt;/code&gt;に&lt;code class=&quot;highlighter-rouge&quot;&gt;PrimaryLabel&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;SecondaryLabel&lt;/code&gt;のどちらかのクラスを設定する必要がある場合はこの&lt;code class=&quot;highlighter-rouge&quot;&gt;use_base_class&lt;/code&gt;ルールが便利です。
+使い方は&lt;code class=&quot;highlighter-rouge&quot;&gt;IBLinter&lt;/code&gt;の設定ファイルである&lt;code class=&quot;highlighter-rouge&quot;&gt;.iblinter.yml&lt;/code&gt;に&lt;code class=&quot;highlighter-rouge&quot;&gt;use_base_class_rule&lt;/code&gt;を追加し、チェックしたいクラスを&lt;code class=&quot;highlighter-rouge&quot;&gt;element_class&lt;/code&gt;に、適用したいカスタムクラスの一覧を&lt;code class=&quot;highlighter-rouge&quot;&gt;base_classes&lt;/code&gt;に記述します。&lt;/p&gt;
+
+&lt;p&gt;例えば以下のような形です。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enabled_rules:
+  - use_base_class
+use_base_class_rule:
+  - element_class: UILabel
+    base_classes:
+      - PrimaryLabel
+      - SecondaryLabel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これで&lt;code class=&quot;highlighter-rouge&quot;&gt;IBLinter&lt;/code&gt;を実行すると、&lt;code class=&quot;highlighter-rouge&quot;&gt;PrimaryLabel&lt;/code&gt;または&lt;code class=&quot;highlighter-rouge&quot;&gt;SecondaryLabel&lt;/code&gt;が適用されていないラベルにはXcode上でwarningが表示されるようになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-03-18/cover.png&quot; alt=&quot;UseBaseClass&quot; title=&quot;UseBaseClass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これでIB上でベースクラスが適用されていないUI要素を確認することができます。&lt;/p&gt;
+
+&lt;p&gt;サンプルプロジェクトを作成したので実際に警告が表示されるのを試してみてください。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/masamichiueta/UseBaseClassRule&quot;&gt;masamichiueta/UseBaseClassRule&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Mar 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html</guid>
+        
+        <category>Interface Builder</category>
+        
+        <category>iOS</category>
+        
+        <category>Xcode</category>
+        
+        <category>IBLinter</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>鼻中隔湾曲症と診断されたので手術します</title>
@@ -474,71 +525,6 @@ $ brew install ideviceinstaller ios-deploy
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>神奈川公園お出かけスポット！大和ゆとりの森に行ってきました</title>
-        <description>&lt;p&gt;今日は神奈川県大和市にある、大和ゆとりの森に行ってきました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.nicspark.com/yutori/&quot;&gt;大和ゆとりの森&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;横浜周辺の公園はすでに開拓したので、今日は少し足を伸ばしてみました。&lt;/p&gt;
-
-&lt;p&gt;asobii横浜の&lt;a href=&quot;https://asobii.net/25756&quot;&gt;珍しい遊具にすごく広い公園。神奈川県の別の「市」へ行ってみよう！神奈川県で探す、近いのにいつもと違う公園11選&lt;/a&gt;の記事を参考にしました。&lt;/p&gt;
-
-&lt;h1 id=&quot;大和ゆとりの森&quot;&gt;大和ゆとりの森&lt;/h1&gt;
-
-&lt;p&gt;横浜から車で30分ほどで、保土ヶ谷バイパスを下川井で降りて左折語直進で到着します。&lt;/p&gt;
-
-&lt;p&gt;到着すると早速遊具が！事前に調べていた通り、かなり豪華な遊具でした。&lt;/p&gt;
-
-&lt;p&gt;入り口から見た遊具エリアの全体像です。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-22/yugu1.jpg&quot; alt=&quot;ゆとりの森 遊具 全体像&quot; title=&quot;ゆとりの森 遊具 全体像&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;中央にはロープの山！
-&lt;img src=&quot;/assets/posts/2018-07-22/cover.jpg&quot; alt=&quot;ゆとりの森 遊具 ロープ&quot; title=&quot;ゆとりの森 遊具 ロープ&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;色々な大きさの滑り台ももちろんあります。
-&lt;img src=&quot;/assets/posts/2018-07-22/yugu2.jpg&quot; alt=&quot;ゆとりの森 遊具 滑り台&quot; title=&quot;ゆとりの森 遊具 滑り台&quot; /&gt;
-&lt;img src=&quot;/assets/posts/2018-07-22/yugu3.jpg&quot; alt=&quot;ゆとりの森 遊具 滑り台&quot; title=&quot;ゆとりの森 遊具 滑り台&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;なかなかこのレベルの遊具がある公園はないのではないでしょうか？息子も興奮して遊んでしました。&lt;/p&gt;
-
-&lt;p&gt;他にも夏にはありがたい霧がでるトンネルがあったり
-&lt;img src=&quot;/assets/posts/2018-07-22/shower.jpg&quot; alt=&quot;ゆとりの森 霧がでるトンネル&quot; title=&quot;ゆとりの森 霧がでるトンネル&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;砂場が3つ
-&lt;img src=&quot;/assets/posts/2018-07-22/sunaba.jpg&quot; alt=&quot;ゆとりの森 砂場&quot; title=&quot;ゆとりの森 砂場&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;トランポリンの山もありましたが、今日は暑すぎて入れなくなっていました。
-&lt;img src=&quot;/assets/posts/2018-07-22/jump.jpg&quot; alt=&quot;ゆとりの森 トランポリン&quot; title=&quot;ゆとりの森 トランポリン&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;公園中央には、クーラーが効いていて売店もある休憩所があったり、
-&lt;img src=&quot;/assets/posts/2018-07-22/rest.jpg&quot; alt=&quot;ゆとりの森 休憩所&quot; title=&quot;ゆとりの森 休憩所&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;川が流れている芝生エリアがあったり
-&lt;img src=&quot;/assets/posts/2018-07-22/grass.jpg&quot; alt=&quot;ゆとりの森 芝生エリア&quot; title=&quot;ゆとりの森 芝生エリア&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;初めていきましたが、かなり楽しめました。&lt;/p&gt;
-
-&lt;p&gt;今日は暑すぎて遊具も熱くなってしまっていましたが、もう少し涼しくなるとより楽しめると思います。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 22 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/family/2018/07/22/yamatoshi-yutorinomori.html</link>
-        <guid isPermaLink="true">https://masamichi.me/family/2018/07/22/yamatoshi-yutorinomori.html</guid>
-        
-        <category>ゆとりの森</category>
-        
-        <category>神奈川県</category>
-        
-        <category>公園</category>
-        
-        <category>お出かけ</category>
-        
-        
-        <category>family</category>
         
       </item>
     

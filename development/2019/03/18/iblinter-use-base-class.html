@@ -6,26 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>How to register iOS Developer Program as a Corporation in Japan? | Masamichi Ueta</title>
+<title>Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="How to register iOS Developer Program as a Corporation in Japan?" />
+<meta property="og:title" content="Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する" />
 <meta name="author" content="masamichiueta" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="The following list is what I need to register iOS Developer Program as a Corporation." />
-<meta property="og:description" content="The following list is what I need to register iOS Developer Program as a Corporation." />
-<link rel="canonical" href="https://masamichi.me/development/2016/05/22/apple-id-corp.html" />
-<meta property="og:url" content="https://masamichi.me/development/2016/05/22/apple-id-corp.html" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。" />
+<meta property="og:description" content="Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-03-18/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-05-22T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-03-18T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"The following list is what I need to register iOS Developer Program as a Corporation.","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2016/05/22/apple-id-corp.html","headline":"How to register iOS Developer Program as a Corporation in Japan?","dateModified":"2016-05-22T00:00:00+09:00","datePublished":"2016-05-22T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2016/05/22/apple-id-corp.html"},"@context":"https://schema.org"}</script>
+{"description":"Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html","image":"https://masamichi.me/assets/posts/2019-03-18/cover.png","headline":"Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する","dateModified":"2019-03-18T00:00:00+09:00","datePublished":"2019-03-18T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2016/05/22/apple-id-corp.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -92,12 +93,12 @@
 
 
     
-<section class="hero background-image-none text-center">
-  <div class="overlay background-color-main"></div>
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-03-18/cover.png)">
+  <div class="overlay"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">How to register iOS Developer Program as a Corporation in Japan?</h1>
+      <h1 itemprop="name headline">Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -111,69 +112,54 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2016-05-22T00:00:00+09:00" itemprop="datePublished">2016/5/22</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-03-18T00:00:00+09:00" itemprop="datePublished">2019/3/18</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
+              <span class="badge badge-light">Interface Builder</span>
+              
               <span class="badge badge-light">iOS</span>
               
-              <span class="badge badge-light">Apple</span>
+              <span class="badge badge-light">Xcode</span>
+              
+              <span class="badge badge-light">IBLinter</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <h2 id="what-i-need">What I need</h2>
+            <p>Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。</p>
 
-<p>The following list is what I need to register iOS Developer Program as a Corporation.</p>
+<p>アプリ開発のプロジェクトでは、スタイルガイドに沿ったベースのUIクラスを作成されている場合もあると思います。
+例えばアプリのプライマリーカラーと同じ文字色のラベルやボタンなどが考えられます。Interface BuilderでUIを作成されている方は多いと思いますが、Interface Builderを使っているとそういったベースとなるUIクラスを適用し忘れがちです。
+ベースとなるクラスを使えばいいのに、IB上で色やフォントを設定してしまったり、そもそもベースクラスの存在に気づかなかったりなど、どうしても起こってしまう問題かと思います。</p>
 
-<ol>
-  <li>Apple ID
-    <ul>
-      <li>mail address of the company</li>
-      <li>person in charge for development</li>
-    </ul>
-  </li>
-  <li>D-U-N-S Number
-    <ul>
-      <li>the name of company, address, contact information</li>
-      <li>Issuance of Certificate of Registered Matters</li>
-    </ul>
-    <ul>
-      <li>the English name of company</li>
-    </ul>
-  </li>
-  <li>Credit card
-    <ul>
-      <li>payment for Apple Developer Program</li>
-      <li>$99</li>
-    </ul>
-  </li>
-</ol>
+<p><a href="https://github.com/IBDecodable/IBLinter">IBLinter</a>の<code class="highlighter-rouge">use_base_class</code>ルールを使うとInterface BuilderのUI要素に指定のカスタムクラスが適用されているかをチェックすることができます。</p>
 
-<h2 id="flow">Flow</h2>
+<p>例えば全ての<code class="highlighter-rouge">UILabel</code>に<code class="highlighter-rouge">PrimaryLabel</code>や<code class="highlighter-rouge">SecondaryLabel</code>のどちらかのクラスを設定する必要がある場合はこの<code class="highlighter-rouge">use_base_class</code>ルールが便利です。
+使い方は<code class="highlighter-rouge">IBLinter</code>の設定ファイルである<code class="highlighter-rouge">.iblinter.yml</code>に<code class="highlighter-rouge">use_base_class_rule</code>を追加し、チェックしたいクラスを<code class="highlighter-rouge">element_class</code>に、適用したいカスタムクラスの一覧を<code class="highlighter-rouge">base_classes</code>に記述します。</p>
 
-<p>There are three steps.</p>
+<p>例えば以下のような形です。</p>
 
-<ol>
-  <li>
-    <p>Register Apple ID　<a href="https://appleid.apple.com/jp/ja/">Apple ID</a></p>
-  </li>
-  <li>
-    <p>Register D-U-N-S Number　<a href="https://developer.apple.com/support/D-U-N-S/jp/">D-U-N-S Number</a></p>
-  </li>
-  <li>
-    <p>Register Apple Developer Program　<a href="https://developer.apple.com/programs/enroll/jp/">Apple Developer Program</a></p>
-  </li>
-</ol>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enabled_rules:
+  - use_base_class
+use_base_class_rule:
+  - element_class: UILabel
+    base_classes:
+      - PrimaryLabel
+      - SecondaryLabel
+</code></pre></div></div>
 
-<h2 id="reference">Reference</h2>
+<p>これで<code class="highlighter-rouge">IBLinter</code>を実行すると、<code class="highlighter-rouge">PrimaryLabel</code>または<code class="highlighter-rouge">SecondaryLabel</code>が適用されていないラベルにはXcode上でwarningが表示されるようになります。</p>
 
-<ul>
-  <li><a href="http://qiita.com/moco3/items/4602ffbf4e60b7e35037">Apple Developer Programに法人として参加する</a></li>
-  <li><a href="http://apploid.jp/ios/ios-developer-duns-number/">法人としてiOSデベロッパー登録をする（D-U-N-S Number取得まで）</a></li>
-</ul>
+<p><img src="/assets/posts/2019-03-18/cover.png" alt="UseBaseClass" title="UseBaseClass" /></p>
+
+<p>これでIB上でベースクラスが適用されていないUI要素を確認することができます。</p>
+
+<p>サンプルプロジェクトを作成したので実際に警告が表示されるのを試してみてください。</p>
+
+<p><a href="https://github.com/masamichiueta/UseBaseClassRule">masamichiueta/UseBaseClassRule</a></p>
 
           </div>
           <div class="pt-5">
@@ -193,21 +179,6 @@
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html">
-                  <small class="decoration-none text-muted">2019/3/18<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する</h3>
-                  <p class="text-dark">Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。</p>
-                  
-                  <div alt="Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-03-18/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -442,6 +413,24 @@
                   <small class="decoration-none text-muted">2018/6/8<span class="ml-2">開発</span></small>                    
                   <h3 class="mt-0">Swift4.2ではEnumを一覧で取得できるようになった</h3>
                   <p class="text-dark">WWDC2018のWhat's new in SwiftでSwift4.2のアップデートが発表されていました。Swift4.2では、CaseIterableプロトコルをEnumに指定することで、allCasesというプロパティが使用できるようになり、Enumの一覧を取得できるようになったようです。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html">
+                  <small class="decoration-none text-muted">2018/6/7<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて</h3>
+                  <p class="text-dark"></p>
                   
                 </a>
               </li>
