@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法"
-description: "Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。"
+description: "WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。"
 date: 2019-06-10
 categories: development
 image: /assets/posts/2019-06-10/cover.jpg
