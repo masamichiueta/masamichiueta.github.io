@@ -6,26 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Flutterの始め方 | Masamichi Ueta</title>
+<title>macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法 | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Flutterの始め方" />
+<meta property="og:title" content="macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。" />
-<meta property="og:description" content="Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。" />
-<link rel="canonical" href="https://masamichi.me/development/2018/07/23/get-start-flutter.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/07/23/get-start-flutter.html" />
+<meta name="description" content="Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。" />
+<meta property="og:description" content="Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-06-10/cover.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-07-23T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-06-10T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2018/07/23/get-start-flutter.html","headline":"Flutterの始め方","dateModified":"2018-07-23T00:00:00+09:00","datePublished":"2018-07-23T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/07/23/get-start-flutter.html"},"@context":"https://schema.org"}</script>
+{"description":"Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html","image":"https://masamichi.me/assets/posts/2019-06-10/cover.jpg","headline":"macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法","dateModified":"2019-06-10T00:00:00+09:00","datePublished":"2019-06-10T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2018/07/23/get-start-flutter.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -92,12 +93,12 @@
 
 
     
-<section class="hero background-image-none text-center">
-  <div class="overlay background-color-main"></div>
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-06-10/cover.jpg)">
+  <div class="overlay"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">Flutterの始め方</h1>
+      <h1 itemprop="name headline">macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -111,133 +112,43 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2018-07-23T00:00:00+09:00" itemprop="datePublished">2018/7/23</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-06-10T00:00:00+09:00" itemprop="datePublished">2019/6/10</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">Flutter</span>
+              <span class="badge badge-light">macOS</span>
               
-              <span class="badge badge-light">iOS</span>
+              <span class="badge badge-light">Catalina</span>
               
-              <span class="badge badge-light">Android</span>
-              
-              <span class="badge badge-light">モバイルアプリ</span>
+              <span class="badge badge-light">APFS</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <p>Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。</p>
+            <p>WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。</p>
 
-<p><a href="https://flutter.io">Flutter - Beautiful native apps in record time</a></p>
+<p>あくまでベータバージョンですので、メインで使用しているmacにインストールしてしまうと、普段使っているアプリが動かなくなってしまう場合もあります。</p>
 
-<p>XcodeやAndroid Studioは事前にインストールします。</p>
+<p>Apple公式に、ベータバージョンを安全にインストールする手順が記載されていましした。</p>
 
-<h1 id="flutter-sdkのインストール">Flutter sdkのインストール</h1>
+<p><a href="https://support.apple.com/ja-jp/HT208891">個別の APFS ボリュームに macOS をインストールする</a></p>
 
-<p><a href="https://flutter.io/setup-macos/">Get Started</a>を参考に、flutter sdkをインストールします。</p>
+<p>ディスクユーティリティから、新しいAPFSボリュームを追加して、そこにインストールすることで現在使っているmacOSを失うことなく、使用できます。</p>
 
-<p>flutter sdkをダウンロードして、zipを展開し、$HOME/.bash_profileにPATHを通します。</p>
+<p>ボリュームを追加した後、Appleの<a href="https://developer.apple.com/download/">ダウンロードサイト</a>から新しいOSのプロファイルをインストールして、macOS10.15 Catalinaをダウンロードします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ export PTAH=path/to/flutter/bin
-</code></pre></div></div>
+<p><img src="/assets/posts/2019-06-10/download.png" alt="Download Catalina" title="Download Catalina" /></p>
 
-<p>パスを通したあとは、doctorコマンドを使って環境設定状態を確認します。</p>
+<p>ダウンロードするとインストーラが立ち上がるので、インストール先を先ほど作成した方のAPFSボリュームに指定します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ flutter doctor
-</code></pre></div></div>
+<p><img src="/assets/posts/2019-06-10/catalina1.png" alt="Catalina1" title="Catalina1" />
+<img src="/assets/posts/2019-06-10/catalina2.png" alt="Catalina2" title="Catalina2" /></p>
 
-<p>私の場合は以下のように表示されました。</p>
+<p>あとはインストールされるのを待つだけです。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ╔════════════════════════════════════════════════════════════════════════════╗
-  ║ WARNING: your installation of Flutter is 54 days old.                      ║
-  ║                                                                            ║
-  ║ To update to the latest version, run "flutter upgrade".                    ║
-  ╚════════════════════════════════════════════════════════════════════════════╝
-
-
-
-  ╔════════════════════════════════════════════════════════════════════════════╗
-  ║                 Welcome to Flutter! - https://flutter.io                   ║
-  ║                                                                            ║
-  ║ The Flutter tool anonymously reports feature usage statistics and crash    ║
-  ║ reports to Google in order to help Google contribute improvements to       ║
-  ║ Flutter over time.                                                         ║
-  ║                                                                            ║
-  ║ Read about data we send with crash reports:                                ║
-  ║ https://github.com/flutter/flutter/wiki/Flutter-CLI-crash-reporting        ║
-  ║                                                                            ║
-  ║ See Google's privacy policy:                                               ║
-  ║ https://www.google.com/intl/en/policies/privacy/                           ║
-  ║                                                                            ║
-  ║ Use "flutter config --no-analytics" to disable analytics and crash         ║
-  ║ reporting.                                                                 ║
-  ╚════════════════════════════════════════════════════════════════════════════╝
-  
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-JP)
-[!] Android toolchain - develop for Android devices (Android SDK 28.0.1)
-    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
-[!] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
-    ✗ libimobiledevice and ideviceinstaller are not installed. To install, run:
-        brew install --HEAD libimobiledevice
-        brew install ideviceinstaller
-    ✗ ios-deploy not installed. To install:
-        brew install ios-deploy
-[✓] Android Studio (version 3.1)
-    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
-    ✗ Dart plugin not installed; this adds Dart specific functionality.
-[!] VS Code (version 1.24.1)
-[✓] Connected devices (1 available)
-</code></pre></div></div>
-
-<p>とりあえずiOSで動かすために、言われた通りライブラリ周りをインストールして行きます。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install --HEAD libimobiledevice
-$ brew install ideviceinstaller ios-deploy
-</code></pre></div></div>
-
-<p>その後もう一度<code class="highlighter-rouge">flutter doctor</code>を実行すると、iOS toolchainではPython moduleが入ってないと怒られました。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-JP)
-[!] Android toolchain - develop for Android devices (Android SDK 28.0.1)
-    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
-[!] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
-    ✗ Missing Xcode dependency: Python module "six".
-      Install via 'pip install six' or 'sudo easy_install six'.
-[✓] Android Studio (version 3.1)
-    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
-    ✗ Dart plugin not installed; this adds Dart specific functionality.
-[!] VS Code (version 1.24.1)
-[✓] Connected devices (1 available)
-
-</code></pre></div></div>
-
-<p>なので、言われた通り<code class="highlighter-rouge">six</code>モジュールをpipでインストールします。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install six
-</code></pre></div></div>
-
-<h1 id="vs-codeにflutterの拡張機能をインストールする">VS Codeにflutterの拡張機能をインストールする</h1>
-
-<p>VS Codeをメインのエディタとして使用しているので、VS Codeの拡張機能をインストールします。</p>
-
-<p>Extensionsパネルでflutterと検索すると、<code class="highlighter-rouge">Flutter</code>モジュールが見つかるのでインストールします。<code class="highlighter-rouge">Dart</code>モジュールは同時にインストールされます。</p>
-
-<p><img src="/assets/posts/2018-07-23/vscode.png" alt="VS Code Flutter Extension" title="VS Code Flutter Extension" /></p>
-
-<h1 id="vs-codeでサンプルを作って実行する">VS Codeでサンプルを作って実行する</h1>
-
-<p>VS Codeのコマンドパレット(Ctrl+Shift+P)で、<code class="highlighter-rouge">Flutter: New Project</code>を選択します。プロジェクト名の入力を求められるので、適当に入力します。</p>
-
-<p>するとプロジェクトが作成されて、カウントアップアプリのサンプルが実行できる状態になります。</p>
-
-<p>Debugウィンドウから、Start Debuggingボタンを押すと、シミュレータが起動してアプリが実行されます。</p>
-
-<p><img src="/assets/posts/2018-07-23/sample.png" alt="Flutter sample" title="Flutter sample" /></p>
-
-<p>まだまだFlutter&amp;Dart初心者で、Flutterの良さや、<code class="highlighter-rouge">Xamarin</code> <code class="highlighter-rouge">ReactNative</code>のような他のクロスプラットフォーム開発フレームワークに比べてどうなのかというところはわかってませんが、これから研究していこうと思います。</p>
+<p>起動ディスクを変更するにはシステム環境設定のスタートアップディスクから変更することができます。</p>
 
           </div>
           <div class="pt-5">
@@ -257,21 +168,6 @@ $ brew install ideviceinstaller ios-deploy
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html">
-                  <small class="decoration-none text-muted">2019/6/10<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法</h3>
-                  <p class="text-dark">Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。</p>
-                  
-                  <div alt="macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-06-10/cover.jpg)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -386,6 +282,18 @@ $ brew install ideviceinstaller ios-deploy
 
             
 
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2018/07/23/get-start-flutter.html">
+                  <small class="decoration-none text-muted">2018/7/23<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">Flutterの始め方</h3>
+                  <p class="text-dark">Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
             
           
             

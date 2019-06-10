@@ -5,9 +5,49 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Jun 2019 21:48:08 +0900</pubDate>
-    <lastBuildDate>Mon, 03 Jun 2019 21:48:08 +0900</lastBuildDate>
+    <pubDate>Mon, 10 Jun 2019 11:27:49 +0900</pubDate>
+    <lastBuildDate>Mon, 10 Jun 2019 11:27:49 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法</title>
+        <description>&lt;p&gt;WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。&lt;/p&gt;
+
+&lt;p&gt;あくまでベータバージョンですので、メインで使用しているmacにインストールしてしまうと、普段使っているアプリが動かなくなってしまう場合もあります。&lt;/p&gt;
+
+&lt;p&gt;Apple公式に、ベータバージョンを安全にインストールする手順が記載されていましした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://support.apple.com/ja-jp/HT208891&quot;&gt;個別の APFS ボリュームに macOS をインストールする&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ディスクユーティリティから、新しいAPFSボリュームを追加して、そこにインストールすることで現在使っているmacOSを失うことなく、使用できます。&lt;/p&gt;
+
+&lt;p&gt;ボリュームを追加した後、Appleの&lt;a href=&quot;https://developer.apple.com/download/&quot;&gt;ダウンロードサイト&lt;/a&gt;から新しいOSのプロファイルをインストールして、macOS10.15 Catalinaをダウンロードします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-06-10/download.png&quot; alt=&quot;Download Catalina&quot; title=&quot;Download Catalina&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ダウンロードするとインストーラが立ち上がるので、インストール先を先ほど作成した方のAPFSボリュームに指定します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-06-10/catalina1.png&quot; alt=&quot;Catalina1&quot; title=&quot;Catalina1&quot; /&gt;
+&lt;img src=&quot;/assets/posts/2019-06-10/catalina2.png&quot; alt=&quot;Catalina2&quot; title=&quot;Catalina2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;あとはインストールされるのを待つだけです。&lt;/p&gt;
+
+&lt;p&gt;起動ディスクを変更するにはシステム環境設定のスタートアップディスクから変更することができます。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Jun 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html</guid>
+        
+        <category>macOS</category>
+        
+        <category>Catalina</category>
+        
+        <category>APFS</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する</title>
@@ -395,136 +435,6 @@ use_base_class_rule:
         
         
         <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>Flutterの始め方</title>
-        <description>&lt;p&gt;Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://flutter.io&quot;&gt;Flutter - Beautiful native apps in record time&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;XcodeやAndroid Studioは事前にインストールします。&lt;/p&gt;
-
-&lt;h1 id=&quot;flutter-sdkのインストール&quot;&gt;Flutter sdkのインストール&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://flutter.io/setup-macos/&quot;&gt;Get Started&lt;/a&gt;を参考に、flutter sdkをインストールします。&lt;/p&gt;
-
-&lt;p&gt;flutter sdkをダウンロードして、zipを展開し、$HOME/.bash_profileにPATHを通します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ export PTAH=path/to/flutter/bin
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;パスを通したあとは、doctorコマンドを使って環境設定状態を確認します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ flutter doctor
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;私の場合は以下のように表示されました。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ╔════════════════════════════════════════════════════════════════════════════╗
-  ║ WARNING: your installation of Flutter is 54 days old.                      ║
-  ║                                                                            ║
-  ║ To update to the latest version, run &quot;flutter upgrade&quot;.                    ║
-  ╚════════════════════════════════════════════════════════════════════════════╝
-
-
-
-  ╔════════════════════════════════════════════════════════════════════════════╗
-  ║                 Welcome to Flutter! - https://flutter.io                   ║
-  ║                                                                            ║
-  ║ The Flutter tool anonymously reports feature usage statistics and crash    ║
-  ║ reports to Google in order to help Google contribute improvements to       ║
-  ║ Flutter over time.                                                         ║
-  ║                                                                            ║
-  ║ Read about data we send with crash reports:                                ║
-  ║ https://github.com/flutter/flutter/wiki/Flutter-CLI-crash-reporting        ║
-  ║                                                                            ║
-  ║ See Google's privacy policy:                                               ║
-  ║ https://www.google.com/intl/en/policies/privacy/                           ║
-  ║                                                                            ║
-  ║ Use &quot;flutter config --no-analytics&quot; to disable analytics and crash         ║
-  ║ reporting.                                                                 ║
-  ╚════════════════════════════════════════════════════════════════════════════╝
-  
-Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-JP)
-[!] Android toolchain - develop for Android devices (Android SDK 28.0.1)
-    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
-[!] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
-    ✗ libimobiledevice and ideviceinstaller are not installed. To install, run:
-        brew install --HEAD libimobiledevice
-        brew install ideviceinstaller
-    ✗ ios-deploy not installed. To install:
-        brew install ios-deploy
-[✓] Android Studio (version 3.1)
-    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
-    ✗ Dart plugin not installed; this adds Dart specific functionality.
-[!] VS Code (version 1.24.1)
-[✓] Connected devices (1 available)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;とりあえずiOSで動かすために、言われた通りライブラリ周りをインストールして行きます。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew install --HEAD libimobiledevice
-$ brew install ideviceinstaller ios-deploy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;その後もう一度&lt;code class=&quot;highlighter-rouge&quot;&gt;flutter doctor&lt;/code&gt;を実行すると、iOS toolchainではPython moduleが入ってないと怒られました。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-JP)
-[!] Android toolchain - develop for Android devices (Android SDK 28.0.1)
-    ! Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
-[!] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
-    ✗ Missing Xcode dependency: Python module &quot;six&quot;.
-      Install via 'pip install six' or 'sudo easy_install six'.
-[✓] Android Studio (version 3.1)
-    ✗ Flutter plugin not installed; this adds Flutter specific functionality.
-    ✗ Dart plugin not installed; this adds Dart specific functionality.
-[!] VS Code (version 1.24.1)
-[✓] Connected devices (1 available)
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;なので、言われた通り&lt;code class=&quot;highlighter-rouge&quot;&gt;six&lt;/code&gt;モジュールをpipでインストールします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip install six
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;vs-codeにflutterの拡張機能をインストールする&quot;&gt;VS Codeにflutterの拡張機能をインストールする&lt;/h1&gt;
-
-&lt;p&gt;VS Codeをメインのエディタとして使用しているので、VS Codeの拡張機能をインストールします。&lt;/p&gt;
-
-&lt;p&gt;Extensionsパネルでflutterと検索すると、&lt;code class=&quot;highlighter-rouge&quot;&gt;Flutter&lt;/code&gt;モジュールが見つかるのでインストールします。&lt;code class=&quot;highlighter-rouge&quot;&gt;Dart&lt;/code&gt;モジュールは同時にインストールされます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-23/vscode.png&quot; alt=&quot;VS Code Flutter Extension&quot; title=&quot;VS Code Flutter Extension&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;vs-codeでサンプルを作って実行する&quot;&gt;VS Codeでサンプルを作って実行する&lt;/h1&gt;
-
-&lt;p&gt;VS Codeのコマンドパレット(Ctrl+Shift+P)で、&lt;code class=&quot;highlighter-rouge&quot;&gt;Flutter: New Project&lt;/code&gt;を選択します。プロジェクト名の入力を求められるので、適当に入力します。&lt;/p&gt;
-
-&lt;p&gt;するとプロジェクトが作成されて、カウントアップアプリのサンプルが実行できる状態になります。&lt;/p&gt;
-
-&lt;p&gt;Debugウィンドウから、Start Debuggingボタンを押すと、シミュレータが起動してアプリが実行されます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2018-07-23/sample.png&quot; alt=&quot;Flutter sample&quot; title=&quot;Flutter sample&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;まだまだFlutter&amp;amp;Dart初心者で、Flutterの良さや、&lt;code class=&quot;highlighter-rouge&quot;&gt;Xamarin&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;ReactNative&lt;/code&gt;のような他のクロスプラットフォーム開発フレームワークに比べてどうなのかというところはわかってませんが、これから研究していこうと思います。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 23 Jul 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2018/07/23/get-start-flutter.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2018/07/23/get-start-flutter.html</guid>
-        
-        <category>Flutter</category>
-        
-        <category>iOS</category>
-        
-        <category>Android</category>
-        
-        <category>モバイルアプリ</category>
-        
-        
-        <category>development</category>
         
       </item>
     
