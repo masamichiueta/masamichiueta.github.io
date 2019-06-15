@@ -6,27 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Swift for TensorFlowをインストールして試してみる | Masamichi Ueta</title>
+<title>macOSにPythonの環境を構築する方法 | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Swift for TensorFlowをインストールして試してみる" />
+<meta property="og:title" content="macOSにPythonの環境を構築する方法" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！" />
-<meta property="og:description" content="先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！" />
-<link rel="canonical" href="https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html" />
+<meta name="description" content="Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。" />
+<meta property="og:description" content="Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
-<meta property="og:image" content="https://masamichi.me/assets/posts/2018-06-01/cover.png" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-06-15/cover.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-01T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-06-15T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html","image":"https://masamichi.me/assets/posts/2018-06-01/cover.png","headline":"Swift for TensorFlowをインストールして試してみる","dateModified":"2018-06-01T00:00:00+09:00","datePublished":"2018-06-01T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html"},"@context":"https://schema.org"}</script>
+{"description":"Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html","image":"https://masamichi.me/assets/posts/2019-06-15/cover.jpg","headline":"macOSにPythonの環境を構築する方法","dateModified":"2019-06-15T00:00:00+09:00","datePublished":"2019-06-15T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -93,17 +93,17 @@
 
 
     
-<section class="hero text-center" style="background-image: url(/assets/posts/2018-06-01/cover.png)">
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-06-15/cover.jpg)">
   <div class="overlay"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">Swift for TensorFlowをインストールして試してみる</h1>
+      <h1 itemprop="name headline">macOSにPythonの環境を構築する方法</h1>
     </div>
   </div>
   <span class="text-left text-dark">
     
-    <small>画像出典：<a href="https://www.tensorflow.org/community/swift">TensorFlow Webサイト</a>よりスクリーンショット</small>
+    <small>画像出典：Photo by <a href="https://unsplash.com/@hiteshchoudhary?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hitesh Choudhary</a> on <a href="https://unsplash.com/search/photos/python?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
     
   </span>
 </section>
@@ -114,149 +114,114 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2018-06-01T00:00:00+09:00" itemprop="datePublished">2018/6/1</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-06-15T00:00:00+09:00" itemprop="datePublished">2019/6/15</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">Swift</span>
+              <span class="badge badge-light">macOS</span>
               
-              <span class="badge badge-light">Xcode</span>
+              <span class="badge badge-light">Python</span>
               
-              <span class="badge badge-light">TensorFlow</span>
+              <span class="badge badge-light">pyenv</span>
               
-              <span class="badge badge-light">Machine Lerning</span>
-              
-              <span class="badge badge-light">機械学習</span>
+              <span class="badge badge-light">virtualenv</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <p>先日TensorFlow Dev Summit2018で<code class="highlighter-rouge">Swift for TensorFlow</code>が発表されました。</p>
+            <p>Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。</p>
 
-<iframe src="https://www.youtube.com/embed/Yze693W4MaU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+<h2 id="1-pyenvをインストールする">1. pyenvをインストールする</h2>
 
-<p>同時にTensorFlowのWebサイトに<code class="highlighter-rouge">Swift for TensorFlow</code>のページができています。</p>
+<p><a href="https://github.com/pyenv/pyenv">Pyenv</a>はPythonのバージョン管理をしてくれる便利なツールです。
+Pyenvは<a href="https://brew.sh">homebrew</a>を使ってインストールすることができます。もしhomebrewをインストールしていなければインストールしましょう。homebrewはmacOSで人気のあるパッケージマネージャです。</p>
 
-<p><a href="https://www.tensorflow.org/community/swift">Swift for TensorFlow</a></p>
+<p>pyenvをインストールするには以下のコマンドを実行します。</p>
 
-<p>私はTensorFlowについては初心者なのですが、今回は<code class="highlighter-rouge">Swift for TensorFlow</code>をインストールして試してみました！</p>
-
-<p>基本的にはGitHubのREADMEを見ながら実行していきます。</p>
-
-<p><a href="https://github.com/tensorflow/swift/blob/master/Installation.md">Install Swift for TensorFlow</a></p>
-
-<h1 id="インストール">インストール</h1>
-
-<ol>
-  <li>プレビルドパッケージをダウンロードする</li>
-</ol>
-
-<p>私はmacを使っているので、GitHubのページから<code class="highlighter-rouge">Xcode</code>と書かれているものをダウンロードします。</p>
-
-<p><a href="https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2018-05-10-a-osx.pkg">Xcode</a></p>
-
-<p><img src="https://masamichi.me/assets/posts/2018-06-01/download.png" alt="Download Swift for TensorFlow" title="Download Swift for TensorFlow" /></p>
-
-<ol>
-  <li>
-    <p>ダウンロードしたパッケージを実行する
-実行すると、<code class="highlighter-rouge">/Library/Developer/Toolchains/</code>にXcode toolchainが追加されます。Xcode toolchain（<code class="highlighter-rouge">.xctoolchain</code>）には、コンパイラーやその他の開発ツールが含まれています。</p>
-  </li>
-  <li>
-    <p>Xcodeを開いて、<code class="highlighter-rouge">環境設定</code>から<code class="highlighter-rouge">Compnents &gt; Toolchains</code>にいき、インストールされた`Swift for TensorFlow toolchainを選択します。</p>
-  </li>
-</ol>
-
-<p><img src="https://masamichi.me/assets/posts/2018-06-01/toolchain.png" alt="Xcode toolchain" title="Xcode toolchain" /></p>
-
-<ol>
-  <li>toolchainの選択はXcodeのみに適用されるので、コマンドラインを仕様する場合は、Swift toolchainをパスに追記する必要があります。</li>
-</ol>
-
-<p><code class="highlighter-rouge">export PATH=/Library/Developer/Toolchains/swift-latest/usr/bin:"${PATH}"</code></p>
-
-<p>これでインストールは完了です。</p>
-
-<h1 id="swift-for-tensorflowを使ってみる">Swift for TensorFlowを使ってみる</h1>
-
-<p>とりあえず使ってみるという部分はこちらに記載されています。</p>
-
-<p><a href="https://github.com/tensorflow/swift/blob/master/Usage.md">Using Swift for TensorFlow</a></p>
-
-<h2 id="replread-eval-print-loop">REPL(Read Eval Print Loop)</h2>
-
-<p>ターミナルを開いて、swiftを起動します。</p>
-
-<p><code class="highlighter-rouge">$ swift</code></p>
-
-<p>TensorFlowを実行してみます。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1&gt; import TensorFlow
-2&gt; var x = Tensor&lt;Float&gt;([[1, 2], [3, 4]])
-x: TensorFlow.Tensor&lt;Float&gt; = [[1.0, 2.0], [3.0, 4.0]]
-3&gt; x + x
-$R0: TensorFlow.Tensor&lt;Float&gt; = [[2.0, 4.0], [6.0, 8.0]]
-4&gt; for _ in 0..&lt;3 {
-5.     x += x
-6. }
-7&gt; x
-$R1: TensorFlow.Tensor&lt;Float&gt; = [[8.0, 16.0], [24.0, 32.0]]
-8&gt; x[0] + x[1]
-$R2: TensorFlow.Tensor&lt;Float&gt; = [32.0, 48.0]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew update
+$ brew install pyenv
 </code></pre></div></div>
 
-<h2 id="インタプリタ">インタプリタ</h2>
+<p>pyenvをインストールした後、bashの設定ファイルに設定を追記する必要がありますので、以下のコマンドを実行します。</p>
 
-<p>スクリプト言語のようにインタプリタでSwiftを実行することができます。
-<code class="highlighter-rouge">inference.swift</code>というファイルを作成して、以下のコードを書きます。</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">TensorFlow</span>
-
-<span class="kd">struct</span> <span class="kt">MLPClassifier</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">w1</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">shape</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="nv">repeating</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="k">var</span> <span class="nv">w2</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">shape</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="nv">scalars</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">])</span>
-    <span class="k">var</span> <span class="nv">b1</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
-    <span class="k">var</span> <span class="nv">b2</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">([[</span><span class="mf">0.4</span><span class="p">]])</span>
-
-    <span class="kd">func</span> <span class="nf">prediction</span><span class="p">(</span><span class="k">for</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="c1">// The ⊗ operator performs matrix multiplication.</span>
-        <span class="k">let</span> <span class="nv">o1</span> <span class="o">=</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">x</span> <span class="err">⊗</span> <span class="n">w1</span> <span class="o">+</span> <span class="n">b1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">o1</span> <span class="err">⊗</span> <span class="n">w2</span> <span class="o">+</span> <span class="n">b2</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="k">let</span> <span class="nv">input</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">([[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]])</span>
-<span class="k">let</span> <span class="nv">classifier</span> <span class="o">=</span> <span class="kt">MLPClassifier</span><span class="p">()</span>
-<span class="k">let</span> <span class="nv">prediction</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="nf">prediction</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">input</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span></code></pre></figure>
-
-<p>保存したら、swiftで実行します。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ swift -O inference.swift
-[[0.680704]]
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo ‘export PYENV_ROOT=”$HOME/.pyenv”’ &gt;&gt; ~/.bash_profile
+$ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' &gt;&gt; ~/.bash_profile
+$ echo -e 'if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval "$(pyenv init -)"\nfi' &gt;&gt; ~/.bash_profile
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">-O</code>をつけることではSwiftで最適化された状態で実行されます。</p>
+<h2 id="2-pyenv-virtualenvをインストールする">2. pyenv-virtualenvをインストールする</h2>
 
-<h2 id="xcode">Xcode</h2>
+<p><a href="https://github.com/pyenv/pyenv-virtualenv">Pyenv-virtualenv</a>はPythonのVirtualenvを管理するPyenvのプラグインです。</p>
 
-<p>Xcodeで実行するには、上記インストール手順で、Xcodeのツールチェーンをインストールしたものに変更しておきます。</p>
+<p>VirtualenvとはPythonの隔離された環境を作る方法です。例えばディレクトリごとにPythonのバージョンを変更することができます。</p>
 
-<p><img src="https://masamichi.me/assets/posts/2018-06-01/toolchain.png" alt="Xcode toolchain" title="Xcode toolchain" /></p>
+<p>Pyenv-virtualenvはpyenv同様homebrewでインストールすることができます。</p>
 
-<p>新しいPlaygroundファイルを作成して、以下のコードを記述します。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew install pyenv-virtualenv
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">TensorFlow</span>
+<p>pyenv同様、bashの設定ファイルに設定を追記します。</p>
 
-<span class="k">let</span> <span class="nv">x</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo ‘eval “$(pyenv virtualenv-init -)”’ &gt;&gt; ~/.bash_profile
+</code></pre></div></div>
 
-<p>するとPlaygroundが実行されて、結果が表示されます。</p>
+<p>以上で環境を作る準備ができました。ターミナルを再起動してPythonの環境を作っていきましょう。</p>
 
-<p>以上で<code class="highlighter-rouge">Swift for TensorFlow</code>でTensorFlowを使用することができました。</p>
+<h2 id="pythonの環境を作る">Pythonの環境を作る</h2>
 
-<p>次回は何かしらのモデルを学習させたり予測させたりしたいと思います。</p>
+<p>まず始めに、使用するPythonのバージョンを決めましょう。特に気にしなければ、最新のバージョンを使います。</p>
+
+<p>どのバージョンや環境をインストールできるかはpyenvで確認することができます。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pyenv install --list
+</code></pre></div></div>
+
+<p>Pythonをインストールします。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pyenv install 3.7.3
+</code></pre></div></div>
+
+<p>次にVirtualenvを作成します。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pyenv virtualenv 3.7.3 your-virtual-env-name
+</code></pre></div></div>
+
+<p>Pythonのプロジェクトのディレクトリに移動して、そのディレクトリのPythonの環境を指定します。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd path-to-your-direcotry
+$ pyenv local your-virtual-env-name
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">pyenv local</code> コマンドは <code class="highlighter-rouge">.python-version</code>ファイルを作成します。そのファイルによって、ディレクトリ内でどのpyenv環境を使うかが指定されます。</p>
+
+<p>これでpyenvが自動的にPythonの環境を作成したvirtualenvに切り替えてくれるようになりました。</p>
+
+<h2 id="ライブラリをインストールする">ライブラリをインストールする</h2>
+
+<p>Pythonを使う場合、 numpy, pandasやtenforflowのようなライブラリを使用することが多いかと思います。Pythonのライブラリをインストールするには、pipというPython用のパッケージマネージャを使用します。virtualenvと組み合わせることで、それぞれのvirtualenvごとにライブラリをインストールすることができます。例えばnumpyをインストールするにはpipでインストールコマンドを実行します。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install numpy
+</code></pre></div></div>
+
+<p>簡単ですね！</p>
+
+<h2 id="ライブラリリストをエクスポートする">ライブラリリストをエクスポートする</h2>
+
+<p>pipはインストールしたライブラリをテキストファイルに出力することができます。また逆にテキストファイルからライブラリ一覧をインストールすることができます。これは他のmacで同じ環境を作る時やdockerのようなコンテナに環境を再現する際に重要です。Pythonの環境をdockerにすることで、自分の環境で動作するスクリプトをAWSバッチやAWS Elastic Beanstalkのようなdockerをサポートするサービスで動かすことができます。</p>
+
+<p>エクスポート</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip freeze &gt; requirements.txt
+</code></pre></div></div>
+
+<p>インポート</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install -r requirements.txt
+</code></pre></div></div>
+
+<p>これでポータブルなPython環境を作ることができます。</p>
 
           </div>
           <div class="pt-5">
@@ -276,21 +241,6 @@ $R2: TensorFlow.Tensor&lt;Float&gt; = [32.0, 48.0]
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html">
-                  <small class="decoration-none text-muted">2019/6/15<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">macOSにPythonの環境を構築する方法</h3>
-                  <p class="text-dark">Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。</p>
-                  
-                  <div alt="macOSにPythonの環境を構築する方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-06-15/cover.jpg)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -513,6 +463,24 @@ $R2: TensorFlow.Tensor&lt;Float&gt; = [32.0, 48.0]
                   
                   <div alt="FirebaseとReactで認証付きアプリのサンプルを実行するまで" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2018-06-18/cover.png)">
                   </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html">
+                  <small class="decoration-none text-muted">2018/6/13<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">What's new in ARKit 2 ~ ARKit2の新機能</h3>
+                  <p class="text-dark"></p>
                   
                 </a>
               </li>

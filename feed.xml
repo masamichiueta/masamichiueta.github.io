@@ -5,9 +5,120 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Jun 2019 22:53:53 +0900</pubDate>
-    <lastBuildDate>Mon, 10 Jun 2019 22:53:53 +0900</lastBuildDate>
+    <pubDate>Sat, 15 Jun 2019 22:30:24 +0900</pubDate>
+    <lastBuildDate>Sat, 15 Jun 2019 22:30:24 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>macOSにPythonの環境を構築する方法</title>
+        <description>&lt;p&gt;Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。&lt;/p&gt;
+
+&lt;h2 id=&quot;1-pyenvをインストールする&quot;&gt;1. pyenvをインストールする&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;Pyenv&lt;/a&gt;はPythonのバージョン管理をしてくれる便利なツールです。
+Pyenvは&lt;a href=&quot;https://brew.sh&quot;&gt;homebrew&lt;/a&gt;を使ってインストールすることができます。もしhomebrewをインストールしていなければインストールしましょう。homebrewはmacOSで人気のあるパッケージマネージャです。&lt;/p&gt;
+
+&lt;p&gt;pyenvをインストールするには以下のコマンドを実行します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew update
+$ brew install pyenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;pyenvをインストールした後、bashの設定ファイルに設定を追記する必要がありますので、以下のコマンドを実行します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo ‘export PYENV_ROOT=”$HOME/.pyenv”’ &amp;gt;&amp;gt; ~/.bash_profile
+$ echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &amp;gt;&amp;gt; ~/.bash_profile
+$ echo -e 'if command -v pyenv 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then\n  eval &quot;$(pyenv init -)&quot;\nfi' &amp;gt;&amp;gt; ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;2-pyenv-virtualenvをインストールする&quot;&gt;2. pyenv-virtualenvをインストールする&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/pyenv/pyenv-virtualenv&quot;&gt;Pyenv-virtualenv&lt;/a&gt;はPythonのVirtualenvを管理するPyenvのプラグインです。&lt;/p&gt;
+
+&lt;p&gt;VirtualenvとはPythonの隔離された環境を作る方法です。例えばディレクトリごとにPythonのバージョンを変更することができます。&lt;/p&gt;
+
+&lt;p&gt;Pyenv-virtualenvはpyenv同様homebrewでインストールすることができます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew install pyenv-virtualenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;pyenv同様、bashの設定ファイルに設定を追記します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo ‘eval “$(pyenv virtualenv-init -)”’ &amp;gt;&amp;gt; ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;以上で環境を作る準備ができました。ターミナルを再起動してPythonの環境を作っていきましょう。&lt;/p&gt;
+
+&lt;h2 id=&quot;pythonの環境を作る&quot;&gt;Pythonの環境を作る&lt;/h2&gt;
+
+&lt;p&gt;まず始めに、使用するPythonのバージョンを決めましょう。特に気にしなければ、最新のバージョンを使います。&lt;/p&gt;
+
+&lt;p&gt;どのバージョンや環境をインストールできるかはpyenvで確認することができます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pyenv install --list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pythonをインストールします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pyenv install 3.7.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;次にVirtualenvを作成します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pyenv virtualenv 3.7.3 your-virtual-env-name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Pythonのプロジェクトのディレクトリに移動して、そのディレクトリのPythonの環境を指定します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd path-to-your-direcotry
+$ pyenv local your-virtual-env-name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pyenv local&lt;/code&gt; コマンドは &lt;code class=&quot;highlighter-rouge&quot;&gt;.python-version&lt;/code&gt;ファイルを作成します。そのファイルによって、ディレクトリ内でどのpyenv環境を使うかが指定されます。&lt;/p&gt;
+
+&lt;p&gt;これでpyenvが自動的にPythonの環境を作成したvirtualenvに切り替えてくれるようになりました。&lt;/p&gt;
+
+&lt;h2 id=&quot;ライブラリをインストールする&quot;&gt;ライブラリをインストールする&lt;/h2&gt;
+
+&lt;p&gt;Pythonを使う場合、 numpy, pandasやtenforflowのようなライブラリを使用することが多いかと思います。Pythonのライブラリをインストールするには、pipというPython用のパッケージマネージャを使用します。virtualenvと組み合わせることで、それぞれのvirtualenvごとにライブラリをインストールすることができます。例えばnumpyをインストールするにはpipでインストールコマンドを実行します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip install numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;簡単ですね！&lt;/p&gt;
+
+&lt;h2 id=&quot;ライブラリリストをエクスポートする&quot;&gt;ライブラリリストをエクスポートする&lt;/h2&gt;
+
+&lt;p&gt;pipはインストールしたライブラリをテキストファイルに出力することができます。また逆にテキストファイルからライブラリ一覧をインストールすることができます。これは他のmacで同じ環境を作る時やdockerのようなコンテナに環境を再現する際に重要です。Pythonの環境をdockerにすることで、自分の環境で動作するスクリプトをAWSバッチやAWS Elastic Beanstalkのようなdockerをサポートするサービスで動かすことができます。&lt;/p&gt;
+
+&lt;p&gt;エクスポート&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip freeze &amp;gt; requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;インポート&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これでポータブルなPython環境を作ることができます。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 15 Jun 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html</guid>
+        
+        <category>macOS</category>
+        
+        <category>Python</category>
+        
+        <category>pyenv</category>
+        
+        <category>virtualenv</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法</title>
@@ -405,36 +516,6 @@ use_base_class_rule:
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>元19, 3B LAB.☆Sの岡平健治さんがYoutuberに。Mutuber KENJIのMusicTV配信が始まりました</title>
-        <description>&lt;p&gt;元19, 3B LAB.☆Sの岡平健治さんがYoutuberとして活動開始されました。
-チャンネルはMutuber KENJIのMusicTV。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCpqKhYHtt9ueacox1yxjB_Q?app=desktop&amp;amp;spfreload=10&quot;&gt;Mutuber KENJIのMusicTV&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;記念すべき第1回目は、19の名曲「熊じいちゃん」を歌われています。&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ZXYrBGALr34&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;毎週水曜日に更新されるようなので、要チェックです！&lt;/p&gt;
-</description>
-        <pubDate>Fri, 17 Aug 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/hobby/2018/08/17/mutuber-okahirakenji.html</link>
-        <guid isPermaLink="true">https://masamichi.me/hobby/2018/08/17/mutuber-okahirakenji.html</guid>
-        
-        <category>岡平健治</category>
-        
-        <category>19</category>
-        
-        <category>ジューク</category>
-        
-        <category>3B Lab</category>
-        
-        
-        <category>hobby</category>
         
       </item>
     
