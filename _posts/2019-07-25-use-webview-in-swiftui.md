@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SwiftUIでWebViewを使う"
-description: "SwiftUIでWebViewを使ってみました。"
+description: "SwiftUIでWebViewを使ってみました。SwiftUI専用のWebViewはまだないようで、WebKitのWKWebViewや、SafariServiceのSFSafariViewControllerを使う必要があります。"
 date: 2019-07-25
 categories: development
 hero-caption: <a href="https://developer.apple.com/xcode/swiftui/">Appleサイト</a>よりスクリーンショット
