@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "YAMAHAの電子ピアノCLP-675Bを購入しました"
-description: ""
+description: "今年の4月から子供がピアノのレッスンに行き始めたということもあり、電子ピアノを購入しました。購入したのはYAMAHAのCLP-675Bです。6月にヨドバシカメラが20%ポイントバックのキャンペーンをやっていたので、今しかないということで購入しました。電子ピアノについては全然詳しくなかったのですが、購入するにあたり色々と調べたので、参考になれば良いと思います。"
 date: 2019-07-16
 categories: family
 hero-caption: Photo by <a href="https://unsplash.com/@shayans2?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shayan Bemanian</a> on <a href="https://unsplash.com/">Unsplash</a>
