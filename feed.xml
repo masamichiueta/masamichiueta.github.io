@@ -5,9 +5,102 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Jul 2019 13:24:14 +0900</pubDate>
-    <lastBuildDate>Tue, 16 Jul 2019 13:24:14 +0900</lastBuildDate>
+    <pubDate>Thu, 25 Jul 2019 23:11:00 +0900</pubDate>
+    <lastBuildDate>Thu, 25 Jul 2019 23:11:00 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>SwiftUIでWebViewを使う</title>
+        <description>&lt;p&gt;SwiftUIでWebViewを使ってみました。
+SwiftUI専用のWebViewはまだないようで、&lt;code class=&quot;highlighter-rouge&quot;&gt;WebKit&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;WKWebView&lt;/code&gt;や、&lt;code class=&quot;highlighter-rouge&quot;&gt;SafariService&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;SFSafariViewController&lt;/code&gt;を使う必要があります。&lt;/p&gt;
+
+&lt;h2 id=&quot;wkwebview&quot;&gt;WKWebView&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;WKWebView&lt;/code&gt;を使うには、まず&lt;code class=&quot;highlighter-rouge&quot;&gt;UIViewRepresentable&lt;/code&gt;を使って&lt;code class=&quot;highlighter-rouge&quot;&gt;WKWebView&lt;/code&gt;を表示する&lt;code class=&quot;highlighter-rouge&quot;&gt;View&lt;/code&gt;を作成します。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;WebKit&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;WebView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewRepresentable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makeUIView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;WKWebView&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;WKWebView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;updateUIView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;uiView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;WKWebView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;req&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;uiView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#if DEBUG&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;WebView_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;WebView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://apple.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#endif&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;この&lt;code class=&quot;highlighter-rouge&quot;&gt;WebView&lt;/code&gt;を使うと、WebViewを表示することができます。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;WebView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#if DEBUG&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyView_Previews&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;MyView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://apple.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#endif&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;sfsafariviewcontroller&quot;&gt;SFSafariViewController&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SFSafariViewController&lt;/code&gt;も&lt;code class=&quot;highlighter-rouge&quot;&gt;WKWebView&lt;/code&gt;と同様に&lt;code class=&quot;highlighter-rouge&quot;&gt;UIViewControllerRepresentable&lt;/code&gt;を使ってブリッジする必要があります。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SwiftUI&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SafariService&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SafariView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewControllerRepresentable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makeUIViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewControllerRepresentableContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;SafariView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SFSafariViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SFSafariViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;updateUIViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;uiViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SFSafariViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewControllerRepresentableContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;SafariView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;#if DEBUG&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SafariView_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;SafariView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://apple.com&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#endif&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;今のところモーダルで表示する場合は問題無いようですが、プッシュで表示すると、ナビゲーションバーが2重で表示される問題があるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/56518029/how-do-i-use-sfsafariviewcontroller-with-swiftui&quot;&gt;How do I use SFSafariViewController with SwiftUI?&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Jul 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2019/07/25/use-webview-in-swiftui.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2019/07/25/use-webview-in-swiftui.html</guid>
+        
+        <category>SwiftUI</category>
+        
+        <category>WebView</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>YAMAHAの電子ピアノCLP-675Bを購入しました</title>
@@ -745,77 +838,6 @@ use_base_class_rule:
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>CryptoZombiesというサービスでイーサリアムを使ったdApps開発を勉強し始めました</title>
-        <description>&lt;p&gt;そろそろdApps開発についても勉強しないといけないなと思いながらなかなかできていなかったのですが、年末で時間が取れたので &lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt; というサービスでイーサリアムを使ったdApps開発について勉強しています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt; はdApps開発が学べるWebサービスで、CryptoZombiesというdAppsを題材にしながら実際にコードを書いてdApps開発を学ぶことができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cryptozombies.io&quot;&gt;https://cryptozombies.io&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;現在は3つのコースが用意されており、その中でも &lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; というイーサリアム上でスマートコントラクトを実装できるプログラミング言語のコースを実施してみました。&lt;/p&gt;
-
-&lt;p&gt;現在はレッスン6まで公開されていて、スマートコントラクトの開発部分と、実際にそれをフロントからJavaScriptで呼び出す部分を学ぶことができます。&lt;/p&gt;
-
-&lt;h2 id=&quot;学べたこと&quot;&gt;学べたこと&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;プログラミング言語 &lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; の基本&lt;/li&gt;
-  &lt;li&gt;dApps開発の流れ&lt;/li&gt;
-  &lt;li&gt;フロントとの連携方法&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;1-プログラミング言語-solidity-の基本&quot;&gt;1. プログラミング言語 Solidity の基本&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt; では &lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; の基本的な部分から説明してくれているので、言語自体を学習しながら進めていくことができました。&lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; 自体は難しくないと思いました、少なくとも他の言語の経験があればすぐに理解できます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; のページの記述にもあるように、静的型付け言語で、コントラクト指向プログラミング言語です。他の言語と違うのはこのコントラクトという部分だと思います。いわゆる他の言語での&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;にあたるものが&lt;code class=&quot;highlighter-rouge&quot;&gt;contract&lt;/code&gt;になっています。&lt;/p&gt;
-
-&lt;p&gt;あとは、&lt;code class=&quot;highlighter-rouge&quot;&gt;struct&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;function&lt;/code&gt;などなどお馴染みの機能もあれば、&lt;code class=&quot;highlighter-rouge&quot;&gt;modifier&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt;構文など割と独特なものも紹介されています。&lt;/p&gt;
-
-&lt;h3 id=&quot;2-dapps開発の流れ&quot;&gt;2. dApps開発の流れ&lt;/h3&gt;
-
-&lt;p&gt;dApps開発と言っても最初は何を指すのかあまりわかっていませんでしたが、イーサリアムを用いたdApps開発ではこの &lt;code class=&quot;highlighter-rouge&quot;&gt;Solidity&lt;/code&gt; で書かれた各種コントラクトをコンパイルして、イーサリアム上にデプロイすることでそのコントラクトを利用できるようになります。そしてそれをWebアプリやスマホアプリなどクライアントから呼び出すことでアプリを開発していきます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptZombies&lt;/code&gt; では2018年12月31日時点では、コントラクトをコンパイルしてイーサリアムにデプロイする部分のチュートリアルはありませんが、もうすぐ追加されるようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://infura.io&quot;&gt;INFURA&lt;/a&gt; というサービスが紹介されていて、このサービスを使うとイーサリアムのノードを立てることなくコントラクトをデプロイできるようです。&lt;/p&gt;
-
-&lt;h3 id=&quot;3-フロントとの連携方法&quot;&gt;3. フロントとの連携方法&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt; では &lt;code class=&quot;highlighter-rouge&quot;&gt;JavaScript&lt;/code&gt; から実装したコントラクトを呼び出す方法が説明されています。web3.jsというイーサリアムのJavaScriptライブラリを使用することで、実装したコントラクトを簡単に呼び出すことができます。&lt;/p&gt;
-
-&lt;p&gt;このAPIを使って普通にWebアプリを作ると、dAppsとしてWebアプリを開発できるというわけですね。&lt;/p&gt;
-
-&lt;p&gt;CryptoZombiesをやっていて面白かったのが、ゾンビに食べさせる餌として、同じくイーサリアムのコントラクト上で開発されているCryptoKittiesのネコを与えることができるとうい点でした。&lt;/p&gt;
-
-&lt;p&gt;つまり同じブロックチェーン上にあるデータなので、公開されているAPIを使えば違うゲーム同士でもデータをやりとりできるということですね。&lt;/p&gt;
-
-&lt;p&gt;まだまだ理解が浅いのでこれからも研究していこうと思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CryptoZombies&lt;/code&gt;をひたすら進めていく動画をアップしたのでよければみてみてください。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/playlist?list=PLCwKASeEZrUvXfSoOTE5eud4F7oBYX0H7&quot;&gt;CryptoZombies at Youtube&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 31 Dec 2018 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/cryptocurrency/2018/12/31/start-etherium-with-crypto-zombies.html</link>
-        <guid isPermaLink="true">https://masamichi.me/cryptocurrency/2018/12/31/start-etherium-with-crypto-zombies.html</guid>
-        
-        <category>イーサリアム</category>
-        
-        <category>CryptoZombies</category>
-        
-        <category>Etherium</category>
-        
-        <category>dApps</category>
-        
-        <category>SmartContract</category>
-        
-        
-        <category>cryptocurrency</category>
         
       </item>
     
