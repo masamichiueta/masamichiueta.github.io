@@ -5,9 +5,64 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Aug 2019 00:28:22 +0900</pubDate>
-    <lastBuildDate>Sun, 11 Aug 2019 00:28:22 +0900</lastBuildDate>
+    <pubDate>Mon, 12 Aug 2019 23:41:24 +0900</pubDate>
+    <lastBuildDate>Mon, 12 Aug 2019 23:41:24 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>多々良浜と三戸浜海岸に行ってきました</title>
+        <description>&lt;p&gt;今年の夏は海水浴に行こうということで、横須賀方面の海水浴場である多々良浜と三戸浜海岸に行ってきました！どちらの海水浴場も綺麗で楽しめました。&lt;/p&gt;
+
+&lt;h2 id=&quot;多々良浜&quot;&gt;多々良浜&lt;/h2&gt;
+
+&lt;p&gt;観音崎公園の近くにある海水浴場でとても綺麗な砂浜でした。砂は白っぽくて細かく、海水はこんな感じで透明でとても綺麗です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-08-12/tatarahama.png&quot; alt=&quot;多々良浜&quot; title=&quot;多々良浜&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;海水浴場の近くに駐車場が2つあるのですが、午前10時くらいに到着したら一番近くの駐車場は満車でした。博物館の方の駐車場は空いていました。
+駐車場は有料です、詳しい料金はこちらを参照してください。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.kanagawaparks.com/kannon/guide/&quot;&gt;観音崎公園　案内&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;海水浴場があるだけで海の家はありません。トイレはありますが、シャワーはありません。&lt;/p&gt;
+
+&lt;p&gt;そのため事前に2リットルの水6本セットのダンボールを2箱買って行きました。3本ほどは凍らせて、残りはシャワー用に使いました。
+晴れの日だったら車のフロント部分に水を置いておけば、あったかくなってシャワーがわりに使うことができます。&lt;/p&gt;
+
+&lt;p&gt;多々良浜で遊び終わった後は、博物館があるのでそこに入って、子供達と遊びました。博物館の外にはハンモックが置いてあり、気持ちよかったです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-08-12/tatarahama2.jpeg&quot; alt=&quot;多々良浜のハンモック&quot; title=&quot;多々良浜のハンモック&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;三戸浜海岸&quot;&gt;三戸浜海岸&lt;/h2&gt;
+
+&lt;p&gt;三戸浜海岸にも行ってきました。&lt;/p&gt;
+
+&lt;p&gt;横浜方面からだと、多々良浜より若干遠いです。ソレイユの丘の近くですね。&lt;/p&gt;
+
+&lt;p&gt;三戸浜海岸の方は、多々良浜より海岸自体は広いですが、砂が黒めで波が少し大きかったです。防波堤があるところだと少し波はましでした。&lt;/p&gt;
+
+&lt;p&gt;パノラマはこんな感じです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-08-12/mitohama.jpeg&quot; alt=&quot;三戸浜海岸のパノラマ&quot; title=&quot;三戸浜海岸のパノラマ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;こちらも海水浴場があるだけで、トイレはありますが、海の家やシャワーはありません。駐車場は有料で1200円でした。&lt;/p&gt;
+
+&lt;p&gt;どちらの海水浴場もいい感じで楽しかったですが、多々良浜の方が小さい子供がいる家族連れにはむているかなという印象でした！&lt;/p&gt;
+</description>
+        <pubDate>Mon, 12 Aug 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/family/2019/08/12/tatarahama-mitohamakaigan.html</link>
+        <guid isPermaLink="true">https://masamichi.me/family/2019/08/12/tatarahama-mitohamakaigan.html</guid>
+        
+        <category>多々良浜</category>
+        
+        <category>たたら浜</category>
+        
+        <category>三戸浜海岸</category>
+        
+        
+        <category>family</category>
+        
+      </item>
     
       <item>
         <title>1Passwordを6にダウングレードしました</title>
@@ -734,57 +789,6 @@ $ pyenv local your-virtual-env-name
         <category>Catalina</category>
         
         <category>APFS</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する</title>
-        <description>&lt;p&gt;Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。&lt;/p&gt;
-
-&lt;p&gt;アプリ開発のプロジェクトでは、スタイルガイドに沿ったベースのUIクラスを作成されている場合もあると思います。
-例えばアプリのプライマリーカラーと同じ文字色のラベルやボタンなどが考えられます。Interface BuilderでUIを作成されている方は多いと思いますが、Interface Builderを使っているとそういったベースとなるUIクラスを適用し忘れがちです。
-ベースとなるクラスを使えばいいのに、IB上で色やフォントを設定してしまったり、そもそもベースクラスの存在に気づかなかったりなど、どうしても起こってしまう問題かと思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/IBDecodable/IBLinter&quot;&gt;IBLinter&lt;/a&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;use_base_class&lt;/code&gt;ルールを使うとInterface BuilderのUI要素に指定のカスタムクラスが適用されているかをチェックすることができます。&lt;/p&gt;
-
-&lt;p&gt;例えば全ての&lt;code class=&quot;highlighter-rouge&quot;&gt;UILabel&lt;/code&gt;に&lt;code class=&quot;highlighter-rouge&quot;&gt;PrimaryLabel&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;SecondaryLabel&lt;/code&gt;のどちらかのクラスを設定する必要がある場合はこの&lt;code class=&quot;highlighter-rouge&quot;&gt;use_base_class&lt;/code&gt;ルールが便利です。
-使い方は&lt;code class=&quot;highlighter-rouge&quot;&gt;IBLinter&lt;/code&gt;の設定ファイルである&lt;code class=&quot;highlighter-rouge&quot;&gt;.iblinter.yml&lt;/code&gt;に&lt;code class=&quot;highlighter-rouge&quot;&gt;use_base_class_rule&lt;/code&gt;を追加し、チェックしたいクラスを&lt;code class=&quot;highlighter-rouge&quot;&gt;element_class&lt;/code&gt;に、適用したいカスタムクラスの一覧を&lt;code class=&quot;highlighter-rouge&quot;&gt;base_classes&lt;/code&gt;に記述します。&lt;/p&gt;
-
-&lt;p&gt;例えば以下のような形です。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enabled_rules:
-  - use_base_class
-use_base_class_rule:
-  - element_class: UILabel
-    base_classes:
-      - PrimaryLabel
-      - SecondaryLabel
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;これで&lt;code class=&quot;highlighter-rouge&quot;&gt;IBLinter&lt;/code&gt;を実行すると、&lt;code class=&quot;highlighter-rouge&quot;&gt;PrimaryLabel&lt;/code&gt;または&lt;code class=&quot;highlighter-rouge&quot;&gt;SecondaryLabel&lt;/code&gt;が適用されていないラベルにはXcode上でwarningが表示されるようになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-03-18/cover.png&quot; alt=&quot;UseBaseClass&quot; title=&quot;UseBaseClass&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;これでIB上でベースクラスが適用されていないUI要素を確認することができます。&lt;/p&gt;
-
-&lt;p&gt;サンプルプロジェクトを作成したので実際に警告が表示されるのを試してみてください。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/masamichiueta/UseBaseClassRule&quot;&gt;masamichiueta/UseBaseClassRule&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 18 Mar 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html</guid>
-        
-        <category>Interface Builder</category>
-        
-        <category>iOS</category>
-        
-        <category>Xcode</category>
-        
-        <category>IBLinter</category>
         
         
         <category>development</category>
