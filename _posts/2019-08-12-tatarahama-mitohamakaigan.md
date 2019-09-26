@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "多々良浜と三戸浜海岸に行ってきました"
-description: ""
+description: "今年の夏は海水浴に行こうということで、横須賀方面の海水浴場である多々良浜と三戸浜海岸に行ってきました！どちらの海水浴場も綺麗で楽しめました。"
 date: 2019-08-12
 categories: family
 image: /assets/posts/2019-08-12/mitohama.jpeg
