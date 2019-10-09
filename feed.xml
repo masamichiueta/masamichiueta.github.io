@@ -5,9 +5,50 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Sep 2019 00:55:21 +0900</pubDate>
-    <lastBuildDate>Fri, 27 Sep 2019 00:55:21 +0900</lastBuildDate>
+    <pubDate>Wed, 09 Oct 2019 23:05:13 +0900</pubDate>
+    <lastBuildDate>Wed, 09 Oct 2019 23:05:13 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>ソレイユの丘にキャンプに行ってきました</title>
+        <description>&lt;p&gt;先日キャンプ用品を買いまして、ついにキャンプに行ってきました。横須賀にある公園ソレイユの丘です。&lt;/p&gt;
+
+&lt;p&gt;ソレイユの丘は大きな公園で遊具やアトラクションがあったりするのですが、キャンプ場も併設されています。&lt;/p&gt;
+
+&lt;p&gt;キャンプ場の予約サイトなっぷで予約しました。休日の予約はほとんど取れないのですがたまたま予約をとることができました。&lt;/p&gt;
+
+&lt;p&gt;キャンプ場は、1区画ずつ分かれていて車も停めることができるオートキャンプサイトと、芝生の上で自由にテントを設置するフリーサイトがあるのですが、今回はフリーサイトでした。フリーサイトエリアは十分大きいし、台車を借りることができるので、車とテントの間の荷物運びも問題なくできます。&lt;/p&gt;
+
+&lt;p&gt;手洗い場、トイレ、洗い場もキャンプ場内にあり、なんの不便もありませんでした。
+もちろん公園内には露天風呂もあり、お風呂も入れます。&lt;/p&gt;
+
+&lt;p&gt;強いて困ったことを言うなら、海に近いので風が強いということです。特に、当日の午前中は天気が少し悪く風も強かったので、自分たちだけではテントを立てることができませんでした。近くにテントを立てていたベテランの方が親切に手伝ってくださり、ようやく立てることができました。ポールが1つ少し曲がってしまいましたが…泣&lt;/p&gt;
+
+&lt;p&gt;テントを立てた後の様子です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-10-09/tent.jpg&quot; alt=&quot;テント&quot; title=&quot;テント&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;今回はBBQセットをレンタルしました！
+テントを立てた後は、BBQをしてご飯を食べて、子供と公園で遊んで、お風呂に入って、晩ご飯を食べて、花火をして、焚き火をして、寝る！という流れでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-10-09/fire.jpg&quot; alt=&quot;焚き火&quot; title=&quot;焚き火&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ソレイユの丘自体はアクセスもいいですし、特に山の中でもないので、初心者にはとても優しいキャンプ場だなと感じました！&lt;/p&gt;
+
+&lt;p&gt;予約が取れれば、来年ももう一度行こうと思います！&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/family/2019/10/09/soleil-camp.html</link>
+        <guid isPermaLink="true">https://masamichi.me/family/2019/10/09/soleil-camp.html</guid>
+        
+        <category>キャンプ</category>
+        
+        <category>ソレイユの丘</category>
+        
+        
+        <category>family</category>
+        
+      </item>
     
       <item>
         <title>キャンプ初心者がキャンプ用品を揃えてみた</title>
@@ -769,117 +810,6 @@ Balance is: 62
         
         
         <category>cryptocurrency</category>
-        
-      </item>
-    
-      <item>
-        <title>macOSにPythonの環境を構築する方法</title>
-        <description>&lt;p&gt;Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。&lt;/p&gt;
-
-&lt;h2 id=&quot;1-pyenvをインストールする&quot;&gt;1. pyenvをインストールする&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;Pyenv&lt;/a&gt;はPythonのバージョン管理をしてくれる便利なツールです。
-Pyenvは&lt;a href=&quot;https://brew.sh&quot;&gt;homebrew&lt;/a&gt;を使ってインストールすることができます。もしhomebrewをインストールしていなければインストールしましょう。homebrewはmacOSで人気のあるパッケージマネージャです。&lt;/p&gt;
-
-&lt;p&gt;pyenvをインストールするには以下のコマンドを実行します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew update
-$ brew install pyenv
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;pyenvをインストールした後、bashの設定ファイルに設定を追記する必要がありますので、以下のコマンドを実行します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo ‘export PYENV_ROOT=”$HOME/.pyenv”’ &amp;gt;&amp;gt; ~/.bash_profile
-$ echo 'export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;' &amp;gt;&amp;gt; ~/.bash_profile
-$ echo -e 'if command -v pyenv 1&amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then\n  eval &quot;$(pyenv init -)&quot;\nfi' &amp;gt;&amp;gt; ~/.bash_profile
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;2-pyenv-virtualenvをインストールする&quot;&gt;2. pyenv-virtualenvをインストールする&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/pyenv/pyenv-virtualenv&quot;&gt;Pyenv-virtualenv&lt;/a&gt;はPythonのVirtualenvを管理するPyenvのプラグインです。&lt;/p&gt;
-
-&lt;p&gt;VirtualenvとはPythonの隔離された環境を作る方法です。例えばディレクトリごとにPythonのバージョンを変更することができます。&lt;/p&gt;
-
-&lt;p&gt;Pyenv-virtualenvはpyenv同様homebrewでインストールすることができます。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew install pyenv-virtualenv
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;pyenv同様、bashの設定ファイルに設定を追記します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo ‘eval “$(pyenv virtualenv-init -)”’ &amp;gt;&amp;gt; ~/.bash_profile
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;以上で環境を作る準備ができました。ターミナルを再起動してPythonの環境を作っていきましょう。&lt;/p&gt;
-
-&lt;h2 id=&quot;pythonの環境を作る&quot;&gt;Pythonの環境を作る&lt;/h2&gt;
-
-&lt;p&gt;まず始めに、使用するPythonのバージョンを決めましょう。特に気にしなければ、最新のバージョンを使います。&lt;/p&gt;
-
-&lt;p&gt;どのバージョンや環境をインストールできるかはpyenvで確認することができます。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pyenv install --list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Pythonをインストールします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pyenv install 3.7.3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;次にVirtualenvを作成します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pyenv virtualenv 3.7.3 your-virtual-env-name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Pythonのプロジェクトのディレクトリに移動して、そのディレクトリのPythonの環境を指定します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd path-to-your-direcotry
-$ pyenv local your-virtual-env-name
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pyenv local&lt;/code&gt; コマンドは &lt;code class=&quot;highlighter-rouge&quot;&gt;.python-version&lt;/code&gt;ファイルを作成します。そのファイルによって、ディレクトリ内でどのpyenv環境を使うかが指定されます。&lt;/p&gt;
-
-&lt;p&gt;これでpyenvが自動的にPythonの環境を作成したvirtualenvに切り替えてくれるようになりました。&lt;/p&gt;
-
-&lt;h2 id=&quot;ライブラリをインストールする&quot;&gt;ライブラリをインストールする&lt;/h2&gt;
-
-&lt;p&gt;Pythonを使う場合、 numpy, pandasやtenforflowのようなライブラリを使用することが多いかと思います。Pythonのライブラリをインストールするには、pipというPython用のパッケージマネージャを使用します。virtualenvと組み合わせることで、それぞれのvirtualenvごとにライブラリをインストールすることができます。例えばnumpyをインストールするにはpipでインストールコマンドを実行します。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip install numpy
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;簡単ですね！&lt;/p&gt;
-
-&lt;h2 id=&quot;ライブラリリストをエクスポートする&quot;&gt;ライブラリリストをエクスポートする&lt;/h2&gt;
-
-&lt;p&gt;pipはインストールしたライブラリをテキストファイルに出力することができます。また逆にテキストファイルからライブラリ一覧をインストールすることができます。これは他のmacで同じ環境を作る時やdockerのようなコンテナに環境を再現する際に重要です。Pythonの環境をdockerにすることで、自分の環境で動作するスクリプトをAWSバッチやAWS Elastic Beanstalkのようなdockerをサポートするサービスで動かすことができます。&lt;/p&gt;
-
-&lt;p&gt;エクスポート&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip freeze &amp;gt; requirements.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;インポート&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip install -r requirements.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;これでポータブルなPython環境を作ることができます。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 15 Jun 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html</guid>
-        
-        <category>macOS</category>
-        
-        <category>Python</category>
-        
-        <category>pyenv</category>
-        
-        <category>virtualenv</category>
-        
-        
-        <category>development</category>
         
       </item>
     
