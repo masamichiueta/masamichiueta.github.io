@@ -6,27 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Swift for TensorFlowをインストールして試してみる | Masamichi Ueta</title>
+<title>SwiftUIでURLから画像を取得して表示する方法 | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="Swift for TensorFlowをインストールして試してみる" />
+<meta property="og:title" content="SwiftUIでURLから画像を取得して表示する方法" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！" />
-<meta property="og:description" content="先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！" />
-<link rel="canonical" href="https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html" />
+<meta name="description" content="SwiftUIでURLから画像を取得して表示する方法を紹介します。" />
+<meta property="og:description" content="SwiftUIでURLから画像を取得して表示する方法を紹介します。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/10/12/swiftui-url-image.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/10/12/swiftui-url-image.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
-<meta property="og:image" content="https://masamichi.me/assets/posts/2018-06-01/cover.png" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-07-25/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-01T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-10-12T00:00:00+09:00" />
 <script type="application/ld+json">
-{"url":"https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html","headline":"Swift for TensorFlowをインストールして試してみる","datePublished":"2018-06-01T00:00:00+09:00","dateModified":"2018-06-01T00:00:00+09:00","image":"https://masamichi.me/assets/posts/2018-06-01/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"https://masamichi.me/development/2019/10/12/swiftui-url-image.html","headline":"SwiftUIでURLから画像を取得して表示する方法","datePublished":"2019-10-12T00:00:00+09:00","dateModified":"2019-10-12T00:00:00+09:00","image":"https://masamichi.me/assets/posts/2019-07-25/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/10/12/swiftui-url-image.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"SwiftUIでURLから画像を取得して表示する方法を紹介します。","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2018/06/01/swift-for-tensorflow-installation.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/10/12/swiftui-url-image.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -97,17 +97,17 @@
 </header>
 
     
-<section class="hero text-center" style="background-image: url(/assets/posts/2018-06-01/cover.png)">
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-07-25/cover.png)">
   <div class="overlay"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">Swift for TensorFlowをインストールして試してみる</h1>
+      <h1 itemprop="name headline">SwiftUIでURLから画像を取得して表示する方法</h1>
     </div>
   </div>
   <span class="text-left text-dark">
     
-    <small>画像出典：<a href="https://www.tensorflow.org/community/swift">TensorFlow Webサイト</a>よりスクリーンショット</small>
+    <small>画像出典：<a href="https://developer.apple.com/xcode/swiftui/">Appleサイト</a>よりスクリーンショット</small>
     
   </span>
 </section>
@@ -118,149 +118,97 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2018-06-01T00:00:00+09:00" itemprop="datePublished">2018/6/1</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-10-12T00:00:00+09:00" itemprop="datePublished">2019/10/12</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">Swift</span>
+              <span class="badge badge-light">SwiftUI</span>
               
-              <span class="badge badge-light">Xcode</span>
-              
-              <span class="badge badge-light">TensorFlow</span>
-              
-              <span class="badge badge-light">Machine Lerning</span>
-              
-              <span class="badge badge-light">機械学習</span>
+              <span class="badge badge-light">画像</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <p>先日TensorFlow Dev Summit2018で<code class="highlighter-rouge">Swift for TensorFlow</code>が発表されました。</p>
+            <p>SwiftUIでURLから画像を取得して表示する方法を紹介します。</p>
 
-<iframe src="https://www.youtube.com/embed/Yze693W4MaU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+<p>指定されたURLから画像をダウンロードする <code class="highlighter-rouge">ImageLoader</code> と、その画像を表示する <code class="highlighter-rouge">URLImage</code> を作成すると表示することができます。</p>
 
-<p>同時にTensorFlowのWebサイトに<code class="highlighter-rouge">Swift for TensorFlow</code>のページができています。</p>
+<p>まず画像をダウンロードする <code class="highlighter-rouge">ImageLoader</code> です。</p>
 
-<p><a href="https://www.tensorflow.org/community/swift">Swift for TensorFlow</a></p>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">ImageLoader</span><span class="p">:</span> <span class="kt">ObservableObject</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">objectWillChange</span> <span class="o">=</span> <span class="kt">ObservableObjectPublisher</span><span class="p">()</span>
 
-<p>私はTensorFlowについては初心者なのですが、今回は<code class="highlighter-rouge">Swift for TensorFlow</code>をインストールして試してみました！</p>
+    <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">Image</span><span class="p">?</span> <span class="p">{</span>
+        <span class="k">willSet</span> <span class="p">{</span>
+            <span class="n">objectWillChange</span><span class="o">.</span><span class="nf">send</span><span class="p">()</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-<p>基本的にはGitHubのREADMEを見ながら実行していきます。</p>
+    <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">guard</span> <span class="k">let</span> <span class="nv">url</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+        <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTask</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+            <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="n">async</span> <span class="p">{</span>
+                <span class="k">self</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kt">Image</span><span class="p">(</span><span class="nv">uiImage</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="o">.</span><span class="nf">resume</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<p><a href="https://github.com/tensorflow/swift/blob/master/Installation.md">Install Swift for TensorFlow</a></p>
+<p><code class="highlighter-rouge">ObservableObject</code>にして、<code class="highlighter-rouge">image</code>の変更を監視できるようにします。<code class="highlighter-rouge">load</code>関数で指定されたURLから画像をダウンロードして<code class="highlighter-rouge">Image</code>をセットします。</p>
 
-<h1 id="インストール">インストール</h1>
+<p>次に画像を表示するView <code class="highlighter-rouge">URLImage</code> です。</p>
 
-<ol>
-  <li>プレビルドパッケージをダウンロードする</li>
-</ol>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">URLImage</span><span class="o">&lt;</span><span class="kt">Content</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">View</span> <span class="k">where</span> <span class="kt">Content</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@ObservedObject</span> <span class="k">var</span> <span class="nv">imageLoader</span> <span class="o">=</span> <span class="kt">ImageLoader</span><span class="p">()</span>
 
-<p>私はmacを使っているので、GitHubのページから<code class="highlighter-rouge">Xcode</code>と書かれているものをダウンロードします。</p>
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span>
+    <span class="kd">private</span> <span class="k">let</span> <span class="nv">content</span><span class="p">:</span> <span class="p">(</span><span class="n">_</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">Image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Content</span>
 
-<p><a href="https://storage.googleapis.com/swift-tensorflow/mac/swift-tensorflow-DEVELOPMENT-2018-05-10-a-osx.pkg">Xcode</a></p>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">content</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">Image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Content</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">content</span>
+    <span class="p">}</span>
 
-<p><img src="https://masamichi.me/assets/posts/2018-06-01/download.png" alt="Download Swift for TensorFlow" title="Download Swift for TensorFlow" /></p>
-
-<ol>
-  <li>
-    <p>ダウンロードしたパッケージを実行する
-実行すると、<code class="highlighter-rouge">/Library/Developer/Toolchains/</code>にXcode toolchainが追加されます。Xcode toolchain（<code class="highlighter-rouge">.xctoolchain</code>）には、コンパイラーやその他の開発ツールが含まれています。</p>
-  </li>
-  <li>
-    <p>Xcodeを開いて、<code class="highlighter-rouge">環境設定</code>から<code class="highlighter-rouge">Compnents &gt; Toolchains</code>にいき、インストールされた`Swift for TensorFlow toolchainを選択します。</p>
-  </li>
-</ol>
-
-<p><img src="https://masamichi.me/assets/posts/2018-06-01/toolchain.png" alt="Xcode toolchain" title="Xcode toolchain" /></p>
-
-<ol>
-  <li>toolchainの選択はXcodeのみに適用されるので、コマンドラインを仕様する場合は、Swift toolchainをパスに追記する必要があります。</li>
-</ol>
-
-<p><code class="highlighter-rouge">export PATH=/Library/Developer/Toolchains/swift-latest/usr/bin:"${PATH}"</code></p>
-
-<p>これでインストールは完了です。</p>
-
-<h1 id="swift-for-tensorflowを使ってみる">Swift for TensorFlowを使ってみる</h1>
-
-<p>とりあえず使ってみるという部分はこちらに記載されています。</p>
-
-<p><a href="https://github.com/tensorflow/swift/blob/master/Usage.md">Using Swift for TensorFlow</a></p>
-
-<h2 id="replread-eval-print-loop">REPL(Read Eval Print Loop)</h2>
-
-<p>ターミナルを開いて、swiftを起動します。</p>
-
-<p><code class="highlighter-rouge">$ swift</code></p>
-
-<p>TensorFlowを実行してみます。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1&gt; import TensorFlow
-2&gt; var x = Tensor&lt;Float&gt;([[1, 2], [3, 4]])
-x: TensorFlow.Tensor&lt;Float&gt; = [[1.0, 2.0], [3.0, 4.0]]
-3&gt; x + x
-$R0: TensorFlow.Tensor&lt;Float&gt; = [[2.0, 4.0], [6.0, 8.0]]
-4&gt; for _ in 0..&lt;3 {
-5.     x += x
-6. }
-7&gt; x
-$R1: TensorFlow.Tensor&lt;Float&gt; = [[8.0, 16.0], [24.0, 32.0]]
-8&gt; x[0] + x[1]
-$R2: TensorFlow.Tensor&lt;Float&gt; = [32.0, 48.0]
-</code></pre></div></div>
-
-<h2 id="インタプリタ">インタプリタ</h2>
-
-<p>スクリプト言語のようにインタプリタでSwiftを実行することができます。
-<code class="highlighter-rouge">inference.swift</code>というファイルを作成して、以下のコードを書きます。</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">TensorFlow</span>
-
-<span class="kd">struct</span> <span class="kt">MLPClassifier</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">w1</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">shape</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="nv">repeating</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="k">var</span> <span class="nv">w2</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">shape</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="nv">scalars</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">])</span>
-    <span class="k">var</span> <span class="nv">b1</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
-    <span class="k">var</span> <span class="nv">b2</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">([[</span><span class="mf">0.4</span><span class="p">]])</span>
-
-    <span class="kd">func</span> <span class="nf">prediction</span><span class="p">(</span><span class="k">for</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span> <span class="p">{</span>
-        <span class="c1">// The ⊗ operator performs matrix multiplication.</span>
-        <span class="k">let</span> <span class="nv">o1</span> <span class="o">=</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">x</span> <span class="err">⊗</span> <span class="n">w1</span> <span class="o">+</span> <span class="n">b1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">o1</span> <span class="err">⊗</span> <span class="n">w2</span> <span class="o">+</span> <span class="n">b2</span><span class="p">)</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">ZStack</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">imageLoader</span><span class="o">.</span><span class="n">image</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+                <span class="nf">content</span><span class="p">(</span><span class="n">imageLoader</span><span class="o">.</span><span class="n">image</span><span class="o">!</span><span class="p">)</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nf">content</span><span class="p">(</span><span class="kt">Image</span><span class="p">(</span><span class="s">"placeholder"</span><span class="p">))</span>
+            <span class="p">}</span>
+        <span class="p">}</span><span class="o">.</span><span class="n">onAppear</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">imageLoader</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="k">let</span> <span class="nv">input</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">([[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]])</span>
-<span class="k">let</span> <span class="nv">classifier</span> <span class="o">=</span> <span class="kt">MLPClassifier</span><span class="p">()</span>
-<span class="k">let</span> <span class="nv">prediction</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="nf">prediction</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">input</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span></code></pre></figure>
 
-<p>保存したら、swiftで実行します。</p>
+<span class="kd">struct</span> <span class="kt">URLImage_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">URLImage</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">""</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ swift -O inference.swift
-[[0.680704]]
-</code></pre></div></div>
+<p>urlを受け取り<code class="highlighter-rouge">onAppear</code>で<code class="highlighter-rouge">ImageLoader</code>の<code class="highlighter-rouge">load</code>を呼び出します。ここではダウンロードする前で<code class="highlighter-rouge">image</code>が<code class="highlighter-rouge">nil</code>の時は<code class="highlighter-rouge">placeholder</code>画像を表示するようにしています。</p>
 
-<p><code class="highlighter-rouge">-O</code>をつけることではSwiftで最適化された状態で実行されます。</p>
+<p>また<code class="highlighter-rouge">content</code>を受け取ることで、<code class="highlighter-rouge">URLImage</code>を呼び出した側から画像のスタイルを変更できるようにできます。</p>
 
-<h2 id="xcode">Xcode</h2>
+<p><code class="highlighter-rouge">URLImage</code>の使い方です。例えば、画像を丸い円でクリップして影をつけてみます。</p>
 
-<p>Xcodeで実行するには、上記インストール手順で、Xcodeのツールチェーンをインストールしたものに変更しておきます。</p>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kt">URLImage</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$0</span><span class="o">.</span><span class="nf">renderingMode</span><span class="p">(</span><span class="o">.</span><span class="n">original</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">resizable</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">scaledToFit</span><span class="p">()</span>
+        <span class="o">.</span><span class="nf">clipShape</span><span class="p">(</span><span class="kt">Circle</span><span class="p">())</span>
+        <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mf">50.0</span><span class="p">)</span>
+        <span class="o">.</span><span class="nf">overlay</span><span class="p">(</span><span class="kt">Circle</span><span class="p">()</span><span class="o">.</span><span class="nf">stroke</span><span class="p">(</span><span class="kt">Color</span><span class="o">.</span><span class="n">white</span><span class="p">,</span><span class="nv">lineWidth</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="nf">shadow</span><span class="p">(</span><span class="nv">radius</span><span class="p">:</span> <span class="mi">10</span><span class="p">))</span>
+<span class="p">}</span></code></pre></figure>
 
-<p><img src="https://masamichi.me/assets/posts/2018-06-01/toolchain.png" alt="Xcode toolchain" title="Xcode toolchain" /></p>
-
-<p>新しいPlaygroundファイルを作成して、以下のコードを記述します。</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">TensorFlow</span>
-
-<span class="k">let</span> <span class="nv">x</span> <span class="o">=</span> <span class="kt">Tensor</span><span class="o">&lt;</span><span class="kt">Float</span><span class="o">&gt;</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre></figure>
-
-<p>するとPlaygroundが実行されて、結果が表示されます。</p>
-
-<p>以上で<code class="highlighter-rouge">Swift for TensorFlow</code>でTensorFlowを使用することができました。</p>
-
-<p>次回は何かしらのモデルを学習させたり予測させたりしたいと思います。</p>
+<p><img src="/assets/posts/2019-10-12/image.png" alt="画像" title="画像" /></p>
 
           </div>
           <div class="pt-5">
@@ -280,21 +228,6 @@ $R2: TensorFlow.Tensor&lt;Float&gt; = [32.0, 48.0]
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/10/12/swiftui-url-image.html">
-                  <small class="decoration-none text-muted">2019/10/12<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">SwiftUIでURLから画像を取得して表示する方法</h3>
-                  <p class="text-dark">SwiftUIでURLから画像を取得して表示する方法を紹介します。</p>
-                  
-                  <div alt="SwiftUIでURLから画像を取得して表示する方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-07-25/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -532,6 +465,30 @@ $R2: TensorFlow.Tensor&lt;Float&gt; = [32.0, 48.0]
                   <small class="decoration-none text-muted">2018/8/19<span class="ml-2">開発</span></small>                    
                   <h3 class="mt-0">App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた</h3>
                   <p class="text-dark">App Store ConnectにXcodeからアプリをアップロードすると、少し時間がたってからメールが届きました。そのメールはアプリに問題が見つかりましたという題名で、Too many symbol filesというエラーが書かれていました。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2018/07/23/get-start-flutter.html">
+                  <small class="decoration-none text-muted">2018/7/23<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">Flutterの始め方</h3>
+                  <p class="text-dark">Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。</p>
                   
                 </a>
               </li>
