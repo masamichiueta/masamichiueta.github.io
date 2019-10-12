@@ -101,3 +101,7 @@ URLImage(url: url) {
 {% endhighlight %}
 
 ![画像](/assets/posts/2019-10-12/image.png "画像")
+
+より使いやすいAPIを提供してくれているOSSもすでにGitHubに公開されています。
+
+[dmytro-anokhin/url-image](https://github.com/dmytro-anokhin/url-image)
