@@ -6,27 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>SwiftUIでWebViewを使う | Masamichi Ueta</title>
+<title>SwiftUIでUIPageViewControllerとSegmentedControlを使う方法 | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="SwiftUIでWebViewを使う" />
+<meta property="og:title" content="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="SwiftUIでWebViewを使ってみました。SwiftUI専用のWebViewはまだないようで、WebKitのWKWebViewや、SafariServiceのSFSafariViewControllerを使う必要があります。" />
-<meta property="og:description" content="SwiftUIでWebViewを使ってみました。SwiftUI専用のWebViewはまだないようで、WebKitのWKWebViewや、SafariServiceのSFSafariViewControllerを使う必要があります。" />
-<link rel="canonical" href="https://masamichi.me/development/2019/07/25/use-webview-in-swiftui.html" />
-<meta property="og:url" content="https://masamichi.me/development/2019/07/25/use-webview-in-swiftui.html" />
+<meta name="description" content="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。" />
+<meta property="og:description" content="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/10/12/swiftui-pageview.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/10/12/swiftui-pageview.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
 <meta property="og:image" content="https://masamichi.me/assets/posts/2019-07-25/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-07-25T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-10-12T00:00:00+09:00" />
 <script type="application/ld+json">
-{"url":"https://masamichi.me/development/2019/07/25/use-webview-in-swiftui.html","headline":"SwiftUIでWebViewを使う","datePublished":"2019-07-25T00:00:00+09:00","dateModified":"2019-07-25T00:00:00+09:00","image":"https://masamichi.me/assets/posts/2019-07-25/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/07/25/use-webview-in-swiftui.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"SwiftUIでWebViewを使ってみました。SwiftUI専用のWebViewはまだないようで、WebKitのWKWebViewや、SafariServiceのSFSafariViewControllerを使う必要があります。","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"https://masamichi.me/development/2019/10/12/swiftui-pageview.html","headline":"SwiftUIでUIPageViewControllerとSegmentedControlを使う方法","datePublished":"2019-10-12T00:00:00+09:00","dateModified":"2019-10-12T00:00:00+09:00","image":"https://masamichi.me/assets/posts/2019-07-25/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/10/12/swiftui-pageview.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2019/07/25/use-webview-in-swiftui.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/10/12/swiftui-pageview.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -102,7 +102,7 @@
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">SwiftUIでWebViewを使う</h1>
+      <h1 itemprop="name headline">SwiftUIでUIPageViewControllerとSegmentedControlを使う方法</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -118,96 +118,155 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2019-07-25T00:00:00+09:00" itemprop="datePublished">2019/7/25</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-10-12T00:00:00+09:00" itemprop="datePublished">2019/10/12</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
               <span class="badge badge-light">SwiftUI</span>
               
-              <span class="badge badge-light">WebView</span>
+              <span class="badge badge-light">ページ</span>
+              
+              <span class="badge badge-light">SegmentedControl</span>
+              
+              <span class="badge badge-light">PageView</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <p>SwiftUIでWebViewを使ってみました。
-SwiftUI専用のWebViewはまだないようで、<code class="highlighter-rouge">WebKit</code>の<code class="highlighter-rouge">WKWebView</code>や、<code class="highlighter-rouge">SafariService</code>の<code class="highlighter-rouge">SFSafariViewController</code>を使う必要があります。</p>
+            <p>SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。</p>
 
-<h2 id="wkwebview">WKWebView</h2>
+<p>Appleの公式チュートリアルを参考にしています。</p>
 
-<p><code class="highlighter-rouge">WKWebView</code>を使うには、まず<code class="highlighter-rouge">UIViewRepresentable</code>を使って<code class="highlighter-rouge">WKWebView</code>を表示する<code class="highlighter-rouge">View</code>を作成します。</p>
+<p><a href="https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit">Interfacing with UIKit</a></p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">SwiftUI</span>
-<span class="kd">import</span> <span class="kt">WebKit</span>
+<p><code class="highlighter-rouge">UIKit</code>の<code class="highlighter-rouge">UIPageViewController</code>をラップする<code class="highlighter-rouge">PageViewController</code>と、SwiftUIから<code class="highlighter-rouge">PageViewController</code>を使うための<code class="highlighter-rouge">PageView</code>を作ります。</p>
 
-<span class="kd">struct</span> <span class="kt">WebView</span> <span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span>
+<p>まず、<code class="highlighter-rouge">PageViewController</code>です。</p>
 
-    <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">WKWebView</span>  <span class="p">{</span>
-        <span class="k">return</span> <span class="kt">WKWebView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="o">.</span><span class="n">zero</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">PageViewController</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentable</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">controllers</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIViewController</span><span class="p">]</span>
+    <span class="kd">@Binding</span> <span class="k">var</span> <span class="nv">currentPage</span><span class="p">:</span> <span class="kt">Int</span>
+
+    <span class="kd">func</span> <span class="nf">makeCoordinator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Coordinator</span> <span class="p">{</span>
+        <span class="kt">Coordinator</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
     <span class="p">}</span>
-    <span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">let</span> <span class="nv">req</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
-        <span class="n">uiView</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+
+    <span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIPageViewController</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">pageViewController</span> <span class="o">=</span> <span class="kt">UIPageViewController</span><span class="p">(</span>
+            <span class="nv">transitionStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">scroll</span><span class="p">,</span>
+            <span class="nv">navigationOrientation</span><span class="p">:</span> <span class="o">.</span><span class="n">horizontal</span><span class="p">)</span>
+        <span class="n">pageViewController</span><span class="o">.</span><span class="n">dataSource</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">coordinator</span>
+        <span class="n">pageViewController</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">coordinator</span>
+
+        <span class="k">return</span> <span class="n">pageViewController</span>
     <span class="p">}</span>
-<span class="p">}</span>
 
-<span class="cp">#if DEBUG</span>
-<span class="kd">struct</span> <span class="kt">WebView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">WebView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://apple.com"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+    <span class="kd">func</span> <span class="nf">updateUIViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">pageViewController</span><span class="p">:</span> <span class="kt">UIPageViewController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">Context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">pageViewController</span><span class="o">.</span><span class="nf">setViewControllers</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">controllers</span><span class="p">[</span><span class="n">currentPage</span><span class="p">]],</span> <span class="nv">direction</span><span class="p">:</span> <span class="o">.</span><span class="n">forward</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">#endif</span></code></pre></figure>
 
-<p>この<code class="highlighter-rouge">WebView</code>を使うと、WebViewを表示することができます。</p>
+    <span class="kd">class</span> <span class="kt">Coordinator</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UIPageViewControllerDataSource</span><span class="p">,</span> <span class="kt">UIPageViewControllerDelegate</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">parent</span><span class="p">:</span> <span class="kt">PageViewController</span>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">SwiftUI</span>
+        <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">pageViewController</span><span class="p">:</span> <span class="kt">PageViewController</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">pageViewController</span>
+        <span class="p">}</span>
 
-<span class="kd">struct</span> <span class="kt">MyView</span> <span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span>
+        <span class="kd">func</span> <span class="nf">pageViewController</span><span class="p">(</span>
+            <span class="n">_</span> <span class="nv">pageViewController</span><span class="p">:</span> <span class="kt">UIPageViewController</span><span class="p">,</span>
+            <span class="n">viewControllerBefore</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span><span class="p">?</span>
+        <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">controllers</span><span class="o">.</span><span class="nf">firstIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">viewController</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">nil</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">nil</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">parent</span><span class="o">.</span><span class="n">controllers</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="p">}</span>
+
+        <span class="kd">func</span> <span class="nf">pageViewController</span><span class="p">(</span>
+            <span class="n">_</span> <span class="nv">pageViewController</span><span class="p">:</span> <span class="kt">UIPageViewController</span><span class="p">,</span>
+            <span class="n">viewControllerAfter</span> <span class="nv">viewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span><span class="p">?</span>
+        <span class="p">{</span>
+            <span class="k">guard</span> <span class="k">let</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">controllers</span><span class="o">.</span><span class="nf">firstIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">viewController</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">nil</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">parent</span><span class="o">.</span><span class="n">controllers</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">nil</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">parent</span><span class="o">.</span><span class="n">controllers</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="p">}</span>
+
+        <span class="kd">func</span> <span class="nf">pageViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">pageViewController</span><span class="p">:</span> <span class="kt">UIPageViewController</span><span class="p">,</span> <span class="n">didFinishAnimating</span> <span class="nv">finished</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">previousViewControllers</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIViewController</span><span class="p">],</span> <span class="n">transitionCompleted</span> <span class="nv">completed</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">completed</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">visibleViewController</span> <span class="o">=</span> <span class="n">pageViewController</span><span class="o">.</span><span class="n">viewControllers</span><span class="p">?</span><span class="o">.</span><span class="n">first</span><span class="p">,</span>
+                <span class="k">let</span> <span class="nv">index</span> <span class="o">=</span> <span class="n">parent</span><span class="o">.</span><span class="n">controllers</span><span class="o">.</span><span class="nf">firstIndex</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">visibleViewController</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">parent</span><span class="o">.</span><span class="n">currentPage</span> <span class="o">=</span> <span class="n">index</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">UIViewControllerRepresentable</code>の<code class="highlighter-rouge">makeUIViewController(context: Context)</code>で<code class="highlighter-rouge">UIPageViewController</code>を作成します。 <code class="highlighter-rouge">updateUIViewController</code>で<code class="highlighter-rouge">PageViewController</code>のページを表示します。</p>
+
+<p><code class="highlighter-rouge">UIPageViewController</code>の<code class="highlighter-rouge">Delegate</code>と<code class="highlighter-rouge">DataSource</code>を設定するために、<code class="highlighter-rouge">Coordinator</code>クラスを作成し、<code class="highlighter-rouge">makeUIViewController</code>で<code class="highlighter-rouge">delgate</code>と<code class="highlighter-rouge">dataSource</code>を<code class="highlighter-rouge">context</code>の<code class="highlighter-rouge">coordinator</code>にセットします。</p>
+
+<p>次にこの<code class="highlighter-rouge">PageViewController</code>を使って、SwiftUIのViewを表示する<code class="highlighter-rouge">PageView</code>を作ります。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">PageView</span><span class="o">&lt;</span><span class="kt">Page</span><span class="p">:</span> <span class="kt">View</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">viewControllers</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIHostingController</span><span class="o">&lt;</span><span class="kt">Page</span><span class="o">&gt;</span><span class="p">]</span>
+    <span class="kd">@Binding</span> <span class="k">var</span> <span class="nv">currentPage</span><span class="p">:</span> <span class="kt">Int</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">views</span><span class="p">:</span> <span class="p">[</span><span class="kt">Page</span><span class="p">],</span> <span class="nv">currentPage</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">_currentPage</span> <span class="o">=</span> <span class="n">currentPage</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">viewControllers</span> <span class="o">=</span> <span class="n">views</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">UIHostingController</span><span class="p">(</span><span class="nv">rootView</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">}</span>
+
     <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">WebView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
+        <span class="kt">PageViewController</span><span class="p">(</span><span class="nv">controllers</span><span class="p">:</span> <span class="n">viewControllers</span><span class="p">,</span> <span class="nv">currentPage</span><span class="p">:</span> <span class="err">$</span><span class="n">currentPage</span><span class="p">)</span>
     <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<span class="cp">#if DEBUG</span>
-<span class="kd">struct</span> <span class="kt">MyView_Previews</span> <span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">MyView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://apple.com"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
+<p>こちらは簡単で、ページとして表示するViewと、<code class="highlighter-rouge">currentPage</code>を受け取って、<code class="highlighter-rouge">PageViewController</code>に渡します。</p>
+
+<p>これを<code class="highlighter-rouge">SegmentedControl</code>と組み合わせて使います。</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">page</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">Picker</span><span class="p">(</span><span class="s">"Page"</span><span class="p">,</span> <span class="nv">selection</span><span class="p">:</span> <span class="err">$</span><span class="n">page</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Page 1"</span><span class="p">)</span><span class="o">.</span><span class="nf">tag</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Page 2"</span><span class="p">)</span><span class="o">.</span><span class="nf">tag</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="o">.</span><span class="nf">pickerStyle</span><span class="p">(</span><span class="kt">SegmentedPickerStyle</span><span class="p">())</span>
+            <span class="o">.</span><span class="nf">padding</span><span class="p">(</span><span class="kt">EdgeInsets</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">leading</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">trailing</span><span class="p">:</span> <span class="mi">12</span><span class="p">))</span>
+            <span class="kt">PageView</span><span class="p">([</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Page1"</span><span class="p">),</span>
+                <span class="kt">Text</span><span class="p">(</span><span class="s">"Page2"</span><span class="p">)</span>
+            <span class="p">],</span> <span class="nv">currentPage</span><span class="p">:</span> <span class="err">$</span><span class="n">page</span><span class="p">)</span>
+        <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">#endif</span></code></pre></figure>
+<span class="p">}</span></code></pre></figure>
 
-<h2 id="sfsafariviewcontroller">SFSafariViewController</h2>
+<p><code class="highlighter-rouge">PageView</code>の<code class="highlighter-rouge">currentPage</code>は<code class="highlighter-rouge">@Binding</code>プロパティなので、<code class="highlighter-rouge">@State</code>プロパティを<code class="highlighter-rouge">PageView</code>の<code class="highlighter-rouge">currentPage</code>にセットします。これによって、<code class="highlighter-rouge">currentPage</code>を書き換えると、ページが自動的に変更されます。</p>
 
-<p><code class="highlighter-rouge">SFSafariViewController</code>も<code class="highlighter-rouge">WKWebView</code>と同様に<code class="highlighter-rouge">UIViewControllerRepresentable</code>を使ってブリッジする必要があります。</p>
+<p>SwiftUIで<code class="highlighter-rouge">SegmentedControl</code>を使うには<code class="highlighter-rouge">Picker</code>に<code class="highlighter-rouge">SegmentedPickerStyle</code>をセットします。こちらの<code class="highlighter-rouge">selection</code>プロパティも<code class="highlighter-rouge">@Binding</code>プロパティなので、<code class="highlighter-rouge">PageView</code>の<code class="highlighter-rouge">currentPage</code>に渡したものと同じプロパティを渡します。</p>
 
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">SwiftUI</span>
-<span class="kd">import</span> <span class="kt">SafariService</span>
+<p>これで<code class="highlighter-rouge">SegmentedControl</code>と<code class="highlighter-rouge">PageView</code>を組み合わせることができました。</p>
 
-<span class="kd">struct</span> <span class="kt">SafariView</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentable</span> <span class="p">{</span>
-    <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span>
+<p><img src="/assets/posts/2019-10-12/pageviewcontroller.gif" alt="PageView" title="PageView" /></p>
 
-    <span class="kd">func</span> <span class="nf">makeUIViewController</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentableContext</span><span class="o">&lt;</span><span class="kt">SafariView</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">SFSafariViewController</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kt">SFSafariViewController</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
-    <span class="p">}</span>
+<p>gistはこちら</p>
 
-    <span class="kd">func</span> <span class="nf">updateUIViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiViewController</span><span class="p">:</span> <span class="kt">SFSafariViewController</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentableContext</span><span class="o">&lt;</span><span class="kt">SafariView</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
-<span class="p">}</span>
+<p><a href="https://gist.github.com/masamichiueta/f07fd47040b2add051afa45d73966481">PageView</a></p>
 
-<span class="cp">#if DEBUG</span>
-<span class="kd">struct</span> <span class="kt">SafariView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
-        <span class="kt">SafariView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://apple.com"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">#endif</span></code></pre></figure>
-
-<p>今のところモーダルで表示する場合は問題無いようですが、プッシュで表示すると、ナビゲーションバーが2重で表示される問題があるようです。</p>
-
-<p><a href="https://stackoverflow.com/questions/56518029/how-do-i-use-sfsafariviewcontroller-with-swiftui">How do I use SFSafariViewController with SwiftUI?</a></p>
 
           </div>
           <div class="pt-5">
@@ -248,21 +307,6 @@ SwiftUI専用のWebViewはまだないようで、<code class="highlighter-rouge
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/10/12/swiftui-pageview.html">
-                  <small class="decoration-none text-muted">2019/10/12<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">SwiftUIでUIPageViewControllerとSegmentedControlを使う方法</h3>
-                  <p class="text-dark">SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。</p>
-                  
-                  <div alt="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-07-25/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -323,6 +367,21 @@ SwiftUI専用のWebViewはまだないようで、<code class="highlighter-rouge
 
             
 
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/07/25/use-webview-in-swiftui.html">
+                  <small class="decoration-none text-muted">2019/7/25<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">SwiftUIでWebViewを使う</h3>
+                  <p class="text-dark">SwiftUIでWebViewを使ってみました。SwiftUI専用のWebViewはまだないようで、WebKitのWKWebViewや、SafariServiceのSFSafariViewControllerを使う必要があります。</p>
+                  
+                  <div alt="SwiftUIでWebViewを使う" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-07-25/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
             
           
             
