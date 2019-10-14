@@ -5,9 +5,32 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Oct 2019 15:47:48 +0900</pubDate>
-    <lastBuildDate>Sat, 12 Oct 2019 15:47:48 +0900</lastBuildDate>
+    <pubDate>Mon, 14 Oct 2019 22:55:37 +0900</pubDate>
+    <lastBuildDate>Mon, 14 Oct 2019 22:55:37 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>iPhoneシミュレーターでダークモードにする方法</title>
+        <description>&lt;p&gt;iPhoneシミュレーターでダークモードにするには、&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;設定アプリ&lt;/code&gt; → &lt;code class=&quot;highlighter-rouge&quot;&gt;Developer&lt;/code&gt; → &lt;code class=&quot;highlighter-rouge&quot;&gt;Dark Appearance&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;でスイッチをオンにするとできます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-10-14/cover.png&quot; alt=&quot;ダークモード&quot; title=&quot;ダークモード&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 14 Oct 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2019/10/14/ios-simulator-dark-mode.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2019/10/14/ios-simulator-dark-mode.html</guid>
+        
+        <category>dark mode</category>
+        
+        <category>ダークモード</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>SwiftUIでURLから画像を取得して表示する方法</title>
@@ -697,74 +720,6 @@ SwiftUI専用のWebViewはまだないようで、&lt;code class=&quot;highlight
         <category>YAMAH</category>
         
         <category>CLP-675</category>
-        
-        
-        <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>Amazonプライムデー2019　セールで買ったものまとめ</title>
-        <description>&lt;h1 id=&quot;amazon-プライムデー&quot;&gt;Amazon プライムデー&lt;/h1&gt;
-
-&lt;p&gt;今年もプライムデーが始まりました。&lt;/p&gt;
-
-&lt;p&gt;プライムデーは、プライム会員限定でセール品を買える日です！&lt;/p&gt;
-
-&lt;p&gt;毎年プライムデーやサイバーマンデーセールではその時必要な物を何かしら買っていて、今回も色々と買いました。&lt;/p&gt;
-
-&lt;p&gt;買ったものをご紹介します。&lt;/p&gt;
-
-&lt;h2 id=&quot;日用品&quot;&gt;日用品&lt;/h2&gt;
-
-&lt;p&gt;セールのメインは日用品で、安くなっていたものをたくさん買いました。日用品はどの道必要になるので我が家では買い溜めしていて、セールなど安い時に買っています。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;【(医薬部外品)【Amazon.co.jp限定】キレイキレイ 薬用 泡ハンドソープ シトラスフルーティの香り 詰替特大 800ml×2個 除菌シート付&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;language=ja_JP&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B07NF9BN7J&amp;amp;linkId=a3ed816a98dcb5de0147b43a78f627bc&quot;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;【Amazon.co.jp 限定】 Dove (ダヴ) ビューティモイスチャー クリーミー泡洗顔料 ポンプ 160ml + 詰替え 140ml×2個 + LUX (ラックス) ルミニーク トリートメント 60ml (おまけ付)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;language=ja_JP&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B07HS18J9L&amp;amp;linkId=d0499123f1fb53c89c13a00476c41c93&quot;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;【大容量】パンテーン コンディショナー エクストラダメージケア トリートメントコンディショナー 詰め替え 超特大 2,000g&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;language=ja_JP&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B07HRWBSTZ&amp;amp;linkId=1e003560e111224e33fd20bcb7315303&quot;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;【大容量】パンテーン シャンプー エクストラダメージケア 詰め替え 超特大 2,200mL&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;language=ja_JP&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B07HRSMSWQ&amp;amp;linkId=0f353b7345b24168986834461aba4f7b&quot;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;【Amazon.co.jp 限定】 KOSE コーセー サンカット パーフェクト UV ジェル SPF50+ PA++++ スーパーウォータープルーフ 100g&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;language=ja_JP&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B07P8XDJB1&amp;amp;linkId=b0182dc6be99294fe9fd49e419f83d16&quot;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;【ケース販売】キュキュット 食器用洗剤 クリア除菌 緑茶の香り 詰め替え 大容量 1380ml×6個&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;language=ja_JP&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B00UN13R10&amp;amp;linkId=767084ecbd78e1cd3e5173c2ff84effa&quot;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;【ケース販売】アタック 抗菌EX スーパークリアジェル 洗濯洗剤 液体 詰め替え 大容量 1.6kg×6個&lt;/li&gt;
-&lt;/ul&gt;
-&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;language=ja_JP&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B07BDLQW7H&amp;amp;linkId=7f0cc4b7d0874fbaf6b6c433ab025384&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://masamichi.me/family/2018/07/16/amazon-prime-day-2018.html&quot;&gt;去年&lt;/a&gt;と買ったものが結構被っているかもしれないですね…&lt;/p&gt;
-
-&lt;p&gt;以上、今年もプライムデーで購入したものでした。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 16 Jul 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/family/2019/07/16/amazon-prime-day-2019.html</link>
-        <guid isPermaLink="true">https://masamichi.me/family/2019/07/16/amazon-prime-day-2019.html</guid>
-        
-        <category>プライムデー</category>
-        
-        <category>Amazon</category>
         
         
         <category>family</category>
