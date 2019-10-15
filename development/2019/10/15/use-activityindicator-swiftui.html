@@ -6,26 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>What’s new in ARKit 2 ~ ARKit2の新機能 | Masamichi Ueta</title>
+<title>SwiftUIでActivityIndicatorを使う方法 | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="What’s new in ARKit 2 ~ ARKit2の新機能" />
+<meta property="og:title" content="SwiftUIでActivityIndicatorを使う方法" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="エンジニアリング・デザイン・日常" />
-<meta property="og:description" content="エンジニアリング・デザイン・日常" />
-<link rel="canonical" href="https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html" />
+<meta name="description" content="SwiftUIでActivityIndicatorを使う方法を紹介します。" />
+<meta property="og:description" content="SwiftUIでActivityIndicatorを使う方法を紹介します。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/10/15/use-activityindicator-swiftui.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/10/15/use-activityindicator-swiftui.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-10-15/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-13T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-10-15T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"エンジニアリング・デザイン・日常","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html","headline":"What’s new in ARKit 2 ~ ARKit2の新機能","dateModified":"2018-06-13T00:00:00+09:00","datePublished":"2018-06-13T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html"},"@context":"https://schema.org"}</script>
+{"description":"SwiftUIでActivityIndicatorを使う方法を紹介します。","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2019/10/15/use-activityindicator-swiftui.html","image":"https://masamichi.me/assets/posts/2019-10-15/cover.png","headline":"SwiftUIでActivityIndicatorを使う方法","dateModified":"2019-10-15T00:00:00+09:00","datePublished":"2019-10-15T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/10/15/use-activityindicator-swiftui.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2018/06/13/whats-new-in-arkit2.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/10/15/use-activityindicator-swiftui.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -96,12 +97,12 @@
 </header>
 
     
-<section class="hero background-image-none text-center">
-  <div class="overlay background-color-main"></div>
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-10-15/cover.png)">
+  <div class="overlay"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">What's new in ARKit 2 ~ ARKit2の新機能</h1>
+      <h1 itemprop="name headline">SwiftUIでActivityIndicatorを使う方法</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -115,72 +116,54 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2018-06-13T00:00:00+09:00" itemprop="datePublished">2018/6/13</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-10-15T00:00:00+09:00" itemprop="datePublished">2019/10/15</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">ARKit</span>
+              <span class="badge badge-light">SwiftUI</span>
               
-              <span class="badge badge-light">AR</span>
-              
-              <span class="badge badge-light">Apple</span>
-              
-              <span class="badge badge-light">WWDC</span>
+              <span class="badge badge-light">ActivityIndicator</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <p>WWDC2018で発表されたARKit2に関するセッションのビデオ <a href="https://developer.apple.com/videos/play/wwdc2018/602/">What’s New in ARKit 2</a>のメモです。</p>
+            <p>SwiftUIでActivityIndicatorを使う方法を紹介します。</p>
 
-<h1 id="arkit2の新機能">ARKit2の新機能</h1>
+<p>SwiftUI製のActivityIndicatorは今のところないので、<code class="highlighter-rouge">UIKit</code>の<code class="highlighter-rouge">UIActivityIndicator</code>を使う必要があります。</p>
 
-<p>ざっくり書くと以下の点が新機能として紹介されていました。</p>
+<p><code class="highlighter-rouge">UIKit</code>のViewをSwiftUIで使用するには、<code class="highlighter-rouge">UIViewRepresentable</code>を使用します。</p>
 
-<ul>
-  <li>ワールドマップの共有が可能になった</li>
-  <li>画像のトラッキングが可能になった</li>
-  <li>オブジェクトのテクスチャへの環境情報の反映（Environment Texturing、反射など）が可能になった</li>
-  <li>リアルな物体の認識、スキャンが可能に</li>
-  <li>フェイストラッキングの向上、視線追跡、舌の認識が可能になった</li>
-</ul>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">SwiftUI</span>
+<span class="kd">import</span> <span class="kt">UIKit</span>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ARKit2ではマップのrelocalizationが追加されて、worldmapの保存、共有が可能に。これは便利だ</p>&mdash; Masamichi Ueta (@masamichiueta) <a href="https://twitter.com/masamichiueta/status/1006324724211728385?ref_src=twsrc%5Etfw">2018年6月11日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<span class="kd">struct</span> <span class="kt">ActivityIndicator</span><span class="p">:</span> <span class="kt">UIViewRepresentable</span> <span class="p">{</span>
+    <span class="kd">typealias</span> <span class="kt">UIViewType</span> <span class="o">=</span> <span class="kt">UIActivityIndicatorView</span>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ARKit2、ローカルでワールドマップのファイルシェアできるのか。単にファイルをAppGroupでシェアしてる感じかな</p>&mdash; Masamichi Ueta (@masamichiueta) <a href="https://twitter.com/masamichiueta/status/1006326931149631488?ref_src=twsrc%5Etfw">2018年6月12日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <span class="kd">@Binding</span> <span class="k">var</span> <span class="nv">isAnimating</span><span class="p">:</span> <span class="kt">Bool</span>
+    <span class="k">let</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">UIActivityIndicatorView</span><span class="o">.</span><span class="kt">Style</span>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Environment Texturingで反射のような環境情報を反映可能に</p>&mdash; Masamichi Ueta (@masamichiueta) <a href="https://twitter.com/masamichiueta/status/1006329003722993665?ref_src=twsrc%5Etfw">2018年6月12日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <span class="kd">func</span> <span class="nf">makeUIView</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">UIViewRepresentableContext</span><span class="o">&lt;</span><span class="kt">ActivityIndicator</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ActivityIndicator</span><span class="o">.</span><span class="kt">UIViewType</span> <span class="p">{</span>
+        <span class="kt">UIActivityIndicatorView</span><span class="p">(</span><span class="nv">style</span><span class="p">:</span> <span class="n">style</span><span class="p">)</span>
+    <span class="p">}</span>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ARKit2には画像追跡機能も追加。APIも使いやすそう</p>&mdash; Masamichi Ueta (@masamichiueta) <a href="https://twitter.com/masamichiueta/status/1006428141441568769?ref_src=twsrc%5Etfw">2018年6月12日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <span class="kd">func</span> <span class="nf">updateUIView</span><span class="p">(</span><span class="n">_</span> <span class="nv">uiView</span><span class="p">:</span> <span class="kt">UIActivityIndicatorView</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">UIViewRepresentableContext</span><span class="o">&lt;</span><span class="kt">ActivityIndicator</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">isAnimating</span> <span class="p">?</span> <span class="n">uiView</span><span class="o">.</span><span class="nf">startAnimating</span><span class="p">()</span> <span class="p">:</span> <span class="n">uiView</span><span class="o">.</span><span class="nf">stopAnimating</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">FaceTrackingも強化。視線の追跡が可能に。舌の検出も可能。</p>&mdash; Masamichi Ueta (@masamichiueta) <a href="https://twitter.com/masamichiueta/status/1006439704978313217?ref_src=twsrc%5Etfw">2018年6月12日</a></blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>これでSwiftUIのViewからActivityIndicatorを使うことができるようになります。</p>
 
-<p>キーノートやセッションビデオで紹介されていますが、一番大きな点としては、<strong>複数人でワールドマップの共有が可能になった</strong>ことかと思います。</p>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">MyView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">@State</span> <span class="k">var</span> <span class="nv">isLoading</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
 
-<p>これによって、複数のデバイスで同じ位置にあるオブジェクトを見ることができるようになったり、キーノートの発表でもあった<code class="highlighter-rouge">SwiftShot</code>のように複数人で遊べるARアプリを簡単に作れるようになりました。</p>
-
-<p>Environment Texturingも、<code class="highlighter-rouge">ARWorldTrackingConfiguration</code>の<code class="highlighter-rouge">environmentTexturing</code>を<code class="highlighter-rouge">.automatic</code>にするだけで良いので非常に簡単に適用できて素晴らしいと思います。</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Environment Texturing</span>
-<span class="c1">// Create world tracking configuration</span>
-<span class="k">let</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">ARWorldTrackingConfiguration</span><span class="p">()</span>
-
-<span class="c1">// Enable automatic environment texturing </span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">environmentTexturing</span> <span class="o">=</span> <span class="o">.</span><span class="n">automatic</span>
-
-<span class="c1">// Run the configuration</span>
-<span class="n">session</span><span class="o">.</span><span class="nf">run</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
- </code></pre></figure>
-
-<p>正式リリースされたら、アプリを作ってみる予定です。</p>
-
-<p><a href="https://developer.apple.com/documentation/arkit/swiftshot_creating_a_game_for_augmented_reality">SwiftShot</a>についてもソースを読んでみます。</p>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">VStack</span> <span class="p">{</span>
+            <span class="kt">ActivityIndicator</span><span class="p">(</span><span class="nv">isAnimating</span><span class="p">:</span> <span class="err">$</span><span class="n">isLoading</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">medium</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
           </div>
           <div class="pt-5">
@@ -200,21 +183,6 @@
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/10/15/use-activityindicator-swiftui.html">
-                  <small class="decoration-none text-muted">2019/10/15<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">SwiftUIでActivityIndicatorを使う方法</h3>
-                  <p class="text-dark">SwiftUIでActivityIndicatorを使う方法を紹介します。</p>
-                  
-                  <div alt="SwiftUIでActivityIndicatorを使う方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-10-15/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -433,6 +401,33 @@
                   <p class="text-dark">Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。</p>
                   
                   <div alt="Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-03-18/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html">
+                  <small class="decoration-none text-muted">2019/1/5<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">2019年にネイティブアプリを開発する方法</h3>
+                  <p class="text-dark">AppleがAppStoreを開始してから10年が経ちました。たくさんの人々がアプリを使っていますし、2019年もこのアプリプラットフォーム上で多くのイノヴェイションが生まれると思います。これまで様々なプラットフォームで色々なフレームワークを使ってアプリを開発してきました。今はSwiftでiOSアプリを開発していますが、過去にはWindowsアプリを開発していたり、ReactやVueといったフレームワークでWebアプリを開発したり、ReactNativeやFlutterでマルチプラットフォーム向けのネイティブアプリを開発したりしました。過去数年の間に、色々なツールが出てきては消えていきましたが、2019年にアプリを開発するとしたら以下の3つかなと思っています。</p>
+                  
+                  <div alt="2019年にネイティブアプリを開発する方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-01-05/cover.jpg)">
                   </div>
                   
                 </a>
