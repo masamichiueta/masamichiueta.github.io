@@ -6,26 +6,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて | Masamichi Ueta</title>
+<title>SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて" />
+<meta property="og:title" content="SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="エンジニアリング・デザイン・日常" />
-<meta property="og:description" content="エンジニアリング・デザイン・日常" />
-<link rel="canonical" href="https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html" />
+<meta name="description" content="SwiftUIでListの中でNavigationLinkを複数使うとうまく動かなかったのでメモです。" />
+<meta property="og:description" content="SwiftUIでListの中でNavigationLinkを複数使うとうまく動かなかったのでメモです。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/10/21/swiftui-list-multiple-navigationlink.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/10/21/swiftui-list-multiple-navigationlink.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-10-21/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-07T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-10-21T00:00:00+09:00" />
 <script type="application/ld+json">
-{"description":"エンジニアリング・デザイン・日常","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html","headline":"WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて","dateModified":"2018-06-07T00:00:00+09:00","datePublished":"2018-06-07T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html"},"@context":"https://schema.org"}</script>
+{"description":"SwiftUIでListの中でNavigationLinkを複数使うとうまく動かなかったのでメモです。","author":{"@type":"Person","name":"masamichiueta"},"@type":"BlogPosting","url":"https://masamichi.me/development/2019/10/21/swiftui-list-multiple-navigationlink.html","image":"https://masamichi.me/assets/posts/2019-10-21/cover.png","headline":"SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない","dateModified":"2019-10-21T00:00:00+09:00","datePublished":"2019-10-21T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/10/21/swiftui-list-multiple-navigationlink.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2018/06/07/create-ml-wwdc2018.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/10/21/swiftui-list-multiple-navigationlink.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -96,12 +97,12 @@
 </header>
 
     
-<section class="hero background-image-none text-center">
-  <div class="overlay background-color-main"></div>
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-10-21/cover.png)">
+  <div class="overlay"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて</h1>
+      <h1 itemprop="name headline">SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -115,94 +116,98 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2018-06-07T00:00:00+09:00" itemprop="datePublished">2018/6/7</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-10-21T00:00:00+09:00" itemprop="datePublished">2019/10/21</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">WWDC2018</span>
+              <span class="badge badge-light">SwiftUI</span>
               
-              <span class="badge badge-light">WWDC</span>
+              <span class="badge badge-light">List</span>
               
-              <span class="badge badge-light">CreateML</span>
-              
-              <span class="badge badge-light">人工知能</span>
-              
-              <span class="badge badge-light">機械学習</span>
-              
-              <span class="badge badge-light">マシーンラーニング</span>
+              <span class="badge badge-light">NavigationLink</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <h1 id="create-ml">Create ML</h1>
+            <p>SwiftUIでListの中でNavigationLinkを複数使うとうまく動かなかったのでメモです。</p>
 
-<p>WWDC2018で、機械学習モデルをmacOS Mojave上で簡単に作成することができるフレームワーク <code class="highlighter-rouge">Create ML</code>が発表されました。</p>
+<p><code class="highlighter-rouge">UIKit</code>だと、<code class="highlighter-rouge">UITableView</code>を使って1つのセルの中で複数のタップエリアを作って別々の画面に遷移させたいことがあると思います。
+<code class="highlighter-rouge">UITableViewCell</code>の<code class="highlighter-rouge">accessoryView</code>とかがまさにそんな感じの使い方かと思います。</p>
 
-<p>セッションのビデオはこちら</p>
+<p><code class="highlighter-rouge">SwiftUI</code>でこれをしようとすると<code class="highlighter-rouge">UITableView</code>の代わりに<code class="highlighter-rouge">List</code>を使って、遷移は<code class="highlighter-rouge">NavigationLink</code>で行います。しかし、<code class="highlighter-rouge">List</code>の中に複数の<code class="highlighter-rouge">NavigationLink</code>をいれてしまうと、遷移の挙動がおかしくなります。</p>
 
-<p><a href="https://developer.apple.com/videos/play/wwdc2018/703/">Introducing Create ML</a></p>
+<p>例えば以下のような<code class="highlighter-rouge">View</code>を作ると添付gifのような挙動になります。</p>
 
-<h2 id="何ができる">何ができる？</h2>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
 
-<p>セッションのビデオでは、</p>
+    <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s">"Mavericks"</span><span class="p">,</span>
+        <span class="s">"Yosemite"</span><span class="p">,</span>
+        <span class="s">"El Capitan"</span><span class="p">,</span>
+        <span class="s">"Sierra"</span><span class="p">,</span>
+        <span class="s">"High Sierra"</span><span class="p">,</span>
+        <span class="s">"Mojave"</span><span class="p">,</span>
+        <span class="s">"Catalina"</span>
+    <span class="p">]</span>
 
-<ul>
-  <li>画像の分類</li>
-  <li>テキストの判定</li>
-  <li>テーブルデータ(csvなど）によるデータの推測</li>
-</ul>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">NavigationView</span> <span class="p">{</span>
+            <span class="kt">List</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span> <span class="k">in</span>
+                <span class="kt">VStack</span> <span class="p">{</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">Text</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="kt">Text</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="p">}</span>
+                    <span class="kt">NavigationLink</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">Text</span><span class="p">(</span><span class="s">"Second navigation"</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="kt">Text</span><span class="p">(</span><span class="s">"additional navigation"</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<p>のモデル作成と実際の分類のデモが行われていました。</p>
+<p><img src="/assets/posts/2019-10-21/navigationlink-bug.gif" alt="NavigationLink List" title="NavigationLink List" /></p>
 
-<h2 id="画像認識用学習モデルの作成">画像認識用学習モデルの作成</h2>
+<p><code class="highlighter-rouge">NavigationLink</code>を2つ<code class="highlighter-rouge">VStack</code>で配置していても、タップエリアは全体で、遷移したあと戻ると自動で遷移されてしまいます。</p>
 
-<h3 id="transfer-learning">Transfer Learning</h3>
+<p>この挙動を回避するには、今のところわたしが見つけた方法としては、<code class="highlighter-rouge">List</code>の代わりに<code class="highlighter-rouge">ScrollView</code>を使うということです。</p>
 
-<p>注目はTransfer Learningというところで、Appleが事前に学習させたモデルを利用することで、</p>
+<p><code class="highlighter-rouge">List</code>がデフォルトで提供してくれるスタイルは適用されなくなってしまいますが、<code class="highlighter-rouge">ScrollView</code>を使うと実現できます。</p>
 
-<ul>
-  <li>モデルサイズの縮小</li>
-  <li>モデル作成時間の短縮</li>
-</ul>
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
 
-<p>が可能になったようです。</p>
+    <span class="k">let</span> <span class="nv">data</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s">"Mavericks"</span><span class="p">,</span>
+        <span class="s">"Yosemite"</span><span class="p">,</span>
+        <span class="s">"El Capitan"</span><span class="p">,</span>
+        <span class="s">"Sierra"</span><span class="p">,</span>
+        <span class="s">"High Sierra"</span><span class="p">,</span>
+        <span class="s">"Mojave"</span><span class="p">,</span>
+        <span class="s">"Catalina"</span>
+    <span class="p">]</span>
 
-<p>また、Playground上でモデルを作成するデモもありました。
-画像のファイルをフォルダごと突っ込むことで学習させていましたが、ファイル名やフォルダ名がラベルになるようですね。</p>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+        <span class="kt">NavigationView</span> <span class="p">{</span>
+            <span class="kt">ScrollView</span><span class="p">(</span><span class="o">.</span><span class="n">vertical</span><span class="p">,</span> <span class="nv">showsIndicators</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">ForEach</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nv">id</span><span class="p">:</span> <span class="p">\</span><span class="o">.</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span> <span class="k">in</span>
+                    <span class="kt">VStack</span> <span class="p">{</span>
+                        <span class="kt">NavigationLink</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">Text</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="p">{</span>
+                            <span class="kt">Text</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                        <span class="p">}</span>
+                        <span class="kt">NavigationLink</span><span class="p">(</span><span class="nv">destination</span><span class="p">:</span> <span class="kt">Text</span><span class="p">(</span><span class="s">"Second navigation"</span><span class="p">))</span> <span class="p">{</span>
+                            <span class="kt">Text</span><span class="p">(</span><span class="s">"additional navigation"</span><span class="p">)</span>
+                        <span class="p">}</span>
+                        <span class="kt">Divider</span><span class="p">()</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<h3 id="モデルの作り方">モデルの作り方</h3>
-
-<p>デモでは以下のようなSwiftスクリプトでモデルが作成されていました。</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="cp">#!/usr/bin/swift</span>
-
-<span class="kd">import</span> <span class="kt">Foundation</span>
-<span class="kd">import</span> <span class="kt">CreateML</span>
-
-<span class="c1">// Specify Data</span>
-<span class="k">let</span> <span class="nv">trainDirectory</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/Users/createml/Desktop/Fruits"</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">testDirectory</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/Users/createml/Desktop/TestFruits"</span><span class="p">)</span>
-
-<span class="c1">// Create Model</span>
-<span class="k">let</span> <span class="nv">model</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">MLImageClassifier</span><span class="p">(</span><span class="nv">trainingData</span><span class="p">:</span> <span class="o">.</span><span class="nf">labeledDirectories</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">trainDirectory</span><span class="p">))</span>
-
-<span class="c1">// Evaluate Model</span>
-<span class="k">let</span> <span class="nv">evaluation</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="nf">evaluation</span><span class="p">(</span><span class="nv">on</span><span class="p">:</span> <span class="o">.</span><span class="nf">labeledDirectories</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="n">testDirectory</span><span class="p">))</span>
-
-<span class="c1">// Save Model</span>
-<span class="k">try</span> <span class="n">model</span><span class="o">.</span><span class="nf">write</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">fileURLWithPath</span><span class="p">:</span> <span class="s">"/Users/createml/Desktop/FruitClassifier.mlmodel"</span><span class="p">))</span></code></pre></figure>
-
-<p><code class="highlighter-rouge">$ swift fruitClassifier.swift</code></p>
-
-<p>以上のような形で、モデルが作成できるようです。</p>
-
-<h2 id="テキストのラベリング">テキストのラベリング</h2>
-
-<p>セッションのデモでは、ユーザーが入力したテキストから、そのテキストがネガティブかポジティブかを判定するデモがありました。
-SNS系のアプリで、コメントを制御する時に便利そうですね！</p>
-
+<p><img src="/assets/posts/2019-10-21/navigationlink-scrollview.gif" alt="NavigationLink ScrollView" title="NavigationLink ScrollView" /></p>
 
           </div>
           <div class="pt-5">
@@ -222,21 +227,6 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/10/21/swiftui-list-multiple-navigationlink.html">
-                  <small class="decoration-none text-muted">2019/10/21<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない</h3>
-                  <p class="text-dark">SwiftUIでListの中でNavigationLinkを複数使うとうまく動かなかったのでメモです。</p>
-                  
-                  <div alt="SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-10-21/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -455,6 +445,27 @@ SNS系のアプリで、コメントを制御する時に便利そうですね�
                   <p class="text-dark">WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。</p>
                   
                   <div alt="macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-06-10/cover.jpg)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/03/18/iblinter-use-base-class.html">
+                  <small class="decoration-none text-muted">2019/3/18<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する</h3>
+                  <p class="text-dark">Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。</p>
+                  
+                  <div alt="Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-03-18/cover.png)">
                   </div>
                   
                 </a>
