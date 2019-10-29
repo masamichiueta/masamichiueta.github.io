@@ -5,9 +5,48 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Oct 2019 17:16:47 +0900</pubDate>
-    <lastBuildDate>Mon, 21 Oct 2019 17:16:47 +0900</lastBuildDate>
+    <pubDate>Tue, 29 Oct 2019 22:00:41 +0900</pubDate>
+    <lastBuildDate>Tue, 29 Oct 2019 22:00:41 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Recamp勝浦（旧：しあわせの丘リゾート）にキャンプに行ってきました</title>
+        <description>&lt;p&gt;先日&lt;a href=&quot;https://masamichi.me/family/2019/10/09/soleil-camp.html&quot;&gt;横須賀にある公園ソレイユの丘にキャンプにいってきた&lt;/a&gt;のですが、次はRecamp勝浦（旧：しあわせの丘リゾート）にキャンプに行ってきました。今回もなっぷで予約しました。&lt;/p&gt;
+
+&lt;p&gt;私が予約したのは、AC林間サイトというやつですね。&lt;/p&gt;
+
+&lt;p&gt;なっぷのRecamp勝浦の説明には、&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;都心から車で2時間弱、勝浦駅からタクシーで10分弱と好アクセス！
+国道から近いのに、静かでプライベート感を味わえます！
+四季折々の花が咲く散策路が美しく、綺麗に整備された芝生の上でキャンプが楽しめます♪
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;と書いてあるのですが、実際にアクセスはしやすかったです。&lt;/p&gt;
+
+&lt;p&gt;前日台風だったので、地面の状態が心配でしたが特に問題はありませんでした。
+ただ私が泊まった区画は少し芝が少なかったです。キャンプ場全体としては綺麗に芝生が整備されていて、他の区画は綺麗でした。残念です。&lt;/p&gt;
+
+&lt;p&gt;どの区画も車をそばにおけるのでとても便利でした！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-10-29/site.jpg&quot; alt=&quot;テント&quot; title=&quot;テント&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;なっぷに遊具があると書いてあったのですが、滑り台が1つ、鉄棒、木の上を歩くやつと、かなりこじんまりした感じで、少し物足りない感じでした。&lt;/p&gt;
+
+&lt;p&gt;夜は晴れていて星が綺麗に見えました！&lt;/p&gt;
+</description>
+        <pubDate>Tue, 29 Oct 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/family/2019/10/29/shiawasenooka-resort-camp.html</link>
+        <guid isPermaLink="true">https://masamichi.me/family/2019/10/29/shiawasenooka-resort-camp.html</guid>
+        
+        <category>キャンプ</category>
+        
+        <category>Recamp勝浦</category>
+        
+        <category>しあわせの丘リゾート</category>
+        
+        
+        <category>family</category>
+        
+      </item>
     
       <item>
         <title>SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない</title>
@@ -671,33 +710,6 @@ AppStoreから過去にインストールしたアプリ一覧から入れるこ
         <guid isPermaLink="true">https://masamichi.me/development/2019/08/11/1password-downgrade.html</guid>
         
         <category>1Password</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>no submodule mapping found in .gitmodulesを解決する</title>
-        <description>&lt;p&gt;git submoduleを更新しようとして、&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;No submodule mapping found in .gitmodules for path 'path/to/submoddule&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;というエラーが発生しました。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git rm --cached path_to_submodule&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;でキャッシュをクリアすると解決しました。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 05 Aug 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2019/08/05/no-submodule-mapping-found-in-gitmodules.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2019/08/05/no-submodule-mapping-found-in-gitmodules.html</guid>
-        
-        <category>gitmodules</category>
-        
-        <category>git</category>
-        
-        <category>submodules</category>
         
         
         <category>development</category>
