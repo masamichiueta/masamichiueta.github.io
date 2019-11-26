@@ -6,27 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法 | Masamichi Ueta</title>
+<title>SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn’t exist | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法" />
+<meta property="og:title" content="SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn’t exist" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。" />
-<meta property="og:description" content="WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。" />
-<link rel="canonical" href="https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html" />
-<meta property="og:url" content="https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html" />
+<meta name="description" content="エンジニアリング・デザイン・日常" />
+<meta property="og:description" content="エンジニアリング・デザイン・日常" />
+<link rel="canonical" href="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
-<meta property="og:image" content="https://masamichi.me/assets/posts/2019-06-10/cover.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-06-10T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-11-26T00:00:00+09:00" />
 <script type="application/ld+json">
-{"url":"https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html","headline":"macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法","dateModified":"2019-06-10T00:00:00+09:00","datePublished":"2019-06-10T00:00:00+09:00","image":"https://masamichi.me/assets/posts/2019-06-10/cover.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html","headline":"SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn’t exist","dateModified":"2019-11-26T00:00:00+09:00","datePublished":"2019-11-26T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"エンジニアリング・デザイン・日常","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://masamichi.me/development/2019/06/10/install-macos-catalina-safely.html">
+  <link rel="canonical" href="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html">
   <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta" href="https://masamichi.me/feed.xml">
   <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
   </script>
@@ -97,12 +96,12 @@
 </header>
 
     
-<section class="hero text-center" style="background-image: url(/assets/posts/2019-06-10/cover.jpg)">
-  <div class="overlay"></div>
+<section class="hero background-image-none text-center">
+  <div class="overlay background-color-main"></div>
 
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
-      <h1 itemprop="name headline">macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法</h1>
+      <h1 itemprop="name headline">SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn't exist</h1>
     </div>
   </div>
   <span class="text-left text-dark">
@@ -116,43 +115,38 @@
       <div class="col-12 col-md-9">
         <article itemscope itemtype="http://schema.org/BlogPosting">
           <div class="article-body" itemprop="articleBody">
-            <p class="text-muted"><time datetime="2019-06-10T00:00:00+09:00" itemprop="datePublished">2019/6/10</time><span class="ml-3">開発</span></p>
+            <p class="text-muted"><time datetime="2019-11-26T00:00:00+09:00" itemprop="datePublished">2019/11/26</time><span class="ml-3">開発</span></p>
             
             <p>
               <small>タグ</small>
               
-              <span class="badge badge-light">macOS</span>
+              <span class="badge badge-light">SwiftUI</span>
               
-              <span class="badge badge-light">Catalina</span>
+              <span class="badge badge-light">NavigationLink</span>
               
-              <span class="badge badge-light">APFS</span>
+              <span class="badge badge-light">PageView</span>
               
             </p>
             
             <div>
               <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            <p>WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。</p>
+            <p>SwiftUIで、公式チュートリアルで紹介されている<code class="highlighter-rouge">PageView</code>の中に<code class="highlighter-rouge">NavigationLink</code>を入れて、プッシュ遷移した後に戻るボタンでポップすると、<code class="highlighter-rouge">Tried to pop to a view controller that doesn't exist</code> というエラーが発生してクラッシュしてしまいました。</p>
 
-<p>あくまでベータバージョンですので、メインで使用しているmacにインストールしてしまうと、普段使っているアプリが動かなくなってしまう場合もあります。</p>
+<p>環境はXcode11.2.1でiOS13.2.2のシミュレータで実行しています。</p>
 
-<p>Apple公式に、ベータバージョンを安全にインストールする手順が記載されていました。</p>
+<p><code class="highlighter-rouge">UINavigationController</code>が元の<code class="highlighter-rouge">ViewController</code>にポップできていないようです。</p>
 
-<p><a href="https://support.apple.com/ja-jp/HT208891">個別の APFS ボリュームに macOS をインストールする</a></p>
+<p><code class="highlighter-rouge">PageView</code>が毎回新しい<code class="highlighter-rouge">ViewController</code>を生成するのが原因でしょうか。</p>
 
-<p>ディスクユーティリティから、新しいAPFSボリュームを追加して、そこにインストールすることで現在使っているmacOSを失うことなく、使用できます。</p>
+<p>ググってみると同じようなエラーにぶつかっている人もいるみたいです。Xcode11.0では動いていたので、iOSのバグ、という可能性もあります。</p>
 
-<p>ボリュームを追加した後、Appleの<a href="https://developer.apple.com/download/">ダウンロードサイト</a>から新しいOSのプロファイルをインストールして、macOS10.15 Catalinaをダウンロードします。</p>
+<p><a href="https://forums.developer.apple.com/thread/124757">SwiftUI - NavigationLink inside NavigationBarItems, returns error on navigating from detail back to master view</a></p>
 
-<p><img src="/assets/posts/2019-06-10/download.png" alt="Download Catalina" title="Download Catalina" /></p>
+<p>TabViewが原因で発生する場合もあるようですが、私は<code class="highlighter-rouge">PageView</code>が原因でした。</p>
 
-<p>ダウンロードするとインストーラが立ち上がるので、インストール先を先ほど作成した方のAPFSボリュームに指定します。</p>
+<p><a href="https://stackoverflow.com/questions/58737567/tried-to-pop-to-a-view-controller-that-doesnt-exist-in-swiftui">Tried to pop to a view controller that doesn’t exist in SwiftUI</a></p>
 
-<p><img src="/assets/posts/2019-06-10/catalina1.png" alt="Catalina1" title="Catalina1" />
-<img src="/assets/posts/2019-06-10/catalina2.png" alt="Catalina2" title="Catalina2" /></p>
-
-<p>あとはインストールされるのを待つだけです。</p>
-
-<p>起動ディスクを変更するにはシステム環境設定のスタートアップディスクから変更することができます。</p>
+<p>解決方法はまだ見つかっていませんが、見つかったら紹介します。</p>
 
           </div>
           <div class="pt-5">
@@ -178,18 +172,6 @@
 
             
 
-            
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html">
-                  <small class="decoration-none text-muted">2019/11/26<span class="ml-2">開発</span></small>                    
-                  <h3 class="mt-0">SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn't exist</h3>
-                  <p class="text-dark"></p>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
             
           
             
@@ -396,6 +378,51 @@
                   <p class="text-dark">SwiftUIでWebViewを使ってみました。SwiftUI専用のWebViewはまだないようで、WebKitのWKWebViewや、SafariServiceのSFSafariViewControllerを使う必要があります。</p>
                   
                   <div alt="SwiftUIでWebViewを使う" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-07-25/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+          
+            
+
+            
+
+            
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/06/15/how-to-seup-python-environment.html">
+                  <small class="decoration-none text-muted">2019/6/15<span class="ml-2">開発</span></small>                    
+                  <h3 class="mt-0">macOSにPythonの環境を構築する方法</h3>
+                  <p class="text-dark">Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。</p>
+                  
+                  <div alt="macOSにPythonの環境を構築する方法" class="my-4 media-img rounded" style="background-image: url(/assets/posts/2019-06-15/cover.jpg)">
                   </div>
                   
                 </a>

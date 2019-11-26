@@ -5,8 +5,8 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Nov 2019 21:42:33 +0900</pubDate>
-    <lastBuildDate>Tue, 26 Nov 2019 21:42:33 +0900</lastBuildDate>
+    <pubDate>Tue, 26 Nov 2019 22:06:45 +0900</pubDate>
+    <lastBuildDate>Tue, 26 Nov 2019 22:06:45 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -62,6 +62,41 @@
         
         
         <category>hobby</category>
+        
+      </item>
+    
+      <item>
+        <title>SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn't exist</title>
+        <description>&lt;p&gt;SwiftUIで、公式チュートリアルで紹介されている&lt;code class=&quot;highlighter-rouge&quot;&gt;PageView&lt;/code&gt;の中に&lt;code class=&quot;highlighter-rouge&quot;&gt;NavigationLink&lt;/code&gt;を入れて、プッシュ遷移した後に戻るボタンでポップすると、&lt;code class=&quot;highlighter-rouge&quot;&gt;Tried to pop to a view controller that doesn't exist&lt;/code&gt; というエラーが発生してクラッシュしてしまいました。&lt;/p&gt;
+
+&lt;p&gt;環境はXcode11.2.1でiOS13.2.2のシミュレータで実行しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UINavigationController&lt;/code&gt;が元の&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController&lt;/code&gt;にポップできていないようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PageView&lt;/code&gt;が毎回新しい&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController&lt;/code&gt;を生成するのが原因でしょうか。&lt;/p&gt;
+
+&lt;p&gt;ググってみると同じようなエラーにぶつかっている人もいるみたいです。Xcode11.0では動いていたので、iOSのバグ、という可能性もあります。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://forums.developer.apple.com/thread/124757&quot;&gt;SwiftUI - NavigationLink inside NavigationBarItems, returns error on navigating from detail back to master view&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;TabViewが原因で発生する場合もあるようですが、私は&lt;code class=&quot;highlighter-rouge&quot;&gt;PageView&lt;/code&gt;が原因でした。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/58737567/tried-to-pop-to-a-view-controller-that-doesnt-exist-in-swiftui&quot;&gt;Tried to pop to a view controller that doesn’t exist in SwiftUI&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解決方法はまだ見つかっていませんが、見つかったら紹介します。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 26 Nov 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html</guid>
+        
+        <category>SwiftUI</category>
+        
+        <category>NavigationLink</category>
+        
+        <category>PageView</category>
+        
+        
+        <category>development</category>
         
       </item>
     
@@ -622,47 +657,6 @@
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>ソレイユの丘にキャンプに行ってきました</title>
-        <description>&lt;p&gt;先日キャンプ用品を買いまして、ついにキャンプに行ってきました。横須賀にある公園ソレイユの丘です。&lt;/p&gt;
-
-&lt;p&gt;ソレイユの丘は大きな公園で遊具やアトラクションがあったりするのですが、キャンプ場も併設されています。&lt;/p&gt;
-
-&lt;p&gt;キャンプ場の予約サイトなっぷで予約しました。休日の予約はほとんど取れないのですがたまたま予約をとることができました。&lt;/p&gt;
-
-&lt;p&gt;キャンプ場は、1区画ずつ分かれていて車も停めることができるオートキャンプサイトと、芝生の上で自由にテントを設置するフリーサイトがあるのですが、今回はフリーサイトでした。フリーサイトエリアは十分大きいし、台車を借りることができるので、車とテントの間の荷物運びも問題なくできます。&lt;/p&gt;
-
-&lt;p&gt;手洗い場、トイレ、洗い場もキャンプ場内にあり、なんの不便もありませんでした。
-もちろん公園内には露天風呂もあり、お風呂も入れます。&lt;/p&gt;
-
-&lt;p&gt;強いて困ったことを言うなら、海に近いので風が強いということです。特に、当日の午前中は天気が少し悪く風も強かったので、自分たちだけではテントを立てることができませんでした。近くにテントを立てていたベテランの方が親切に手伝ってくださり、ようやく立てることができました。ポールが1つ少し曲がってしまいましたが…泣&lt;/p&gt;
-
-&lt;p&gt;テントを立てた後の様子です。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-10-09/tent.jpg&quot; alt=&quot;テント&quot; title=&quot;テント&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;今回はBBQセットをレンタルしました！
-テントを立てた後は、BBQをしてご飯を食べて、子供と公園で遊んで、お風呂に入って、晩ご飯を食べて、花火をして、焚き火をして、寝る！という流れでした。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-10-09/fire.jpg&quot; alt=&quot;焚き火&quot; title=&quot;焚き火&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ソレイユの丘自体はアクセスもいいですし、特に山の中でもないので、初心者にはとても優しいキャンプ場だなと感じました！&lt;/p&gt;
-
-&lt;p&gt;予約が取れれば、来年ももう一度行こうと思います！&lt;/p&gt;
-</description>
-        <pubDate>Wed, 09 Oct 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/family/2019/10/09/soleil-camp.html</link>
-        <guid isPermaLink="true">https://masamichi.me/family/2019/10/09/soleil-camp.html</guid>
-        
-        <category>キャンプ</category>
-        
-        <category>ソレイユの丘</category>
-        
-        
-        <category>family</category>
         
       </item>
     
