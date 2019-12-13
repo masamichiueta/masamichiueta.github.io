@@ -5,9 +5,86 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 07 Dec 2019 08:23:54 +0900</pubDate>
-    <lastBuildDate>Sat, 07 Dec 2019 08:23:54 +0900</lastBuildDate>
+    <pubDate>Sat, 14 Dec 2019 00:18:33 +0900</pubDate>
+    <lastBuildDate>Sat, 14 Dec 2019 00:18:33 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>GitHub Pagesでブログを運用し始めてから4年くらいたった</title>
+        <description>&lt;p&gt;このサイトはGitHub Pagesで運用しています。&lt;/p&gt;
+
+&lt;p&gt;運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。&lt;/p&gt;
+
+&lt;h2 id=&quot;github-pageのいいところ&quot;&gt;GitHub Pageのいいところ&lt;/h2&gt;
+
+&lt;p&gt;GitHub Pagesのいいところは、なんといっても無料で使えるところとサーバーを管理する必要がないところです。GitHubのリポジトリにコンテンツを置いておけばサイトを作ることができます。&lt;/p&gt;
+
+&lt;p&gt;また、&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;というドメインだけでなく、自分で取得したカスタムドメインが使えたりSSL(https)にも無料で対応できる、という点も本当に素晴らしいなと思います。&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyllとテンプレート&quot;&gt;Jekyllとテンプレート&lt;/h2&gt;
+&lt;p&gt;GitHub Pagesはhtmlファイルをおけばサイトとして運用できますが、&lt;a href=&quot;https://jekyllrb-ja.github.io&quot;&gt;Jekyll&lt;/a&gt;というブログ・静的Webサイトを生成するツールをつかえば、ブログを作ることができます。私のサイトもJekyllを使っています。Jekyllにはブログテーマが色々と用意されているので、公開されているテーマを使うことができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyllthemes.org&quot;&gt;Jekyll Themes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本サイトでは、テンプレートは使わずに、Jekyllの仕組みに則って自分のオリジナルのデザインを使用しています。テーマの作り方はWordpressに近くて、テンプレートとなるhtmlをJekyllのルールにしたがって作っていくという流れです。自分で作るとCSSやJavaScriptを柔軟に使うことができて、やっぱりいいですね。&lt;/p&gt;
+
+&lt;h2 id=&quot;リポジトリの運用&quot;&gt;リポジトリの運用&lt;/h2&gt;
+
+&lt;p&gt;GitHub Pagesは&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチの内容が反映されます。Jeykllのテンプレートテーマを使えば何も考えずに&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;にコンテンツを入れておけばいいのですが、本サイトのようにテンプレートテーマを使っていない場合は工夫が必要です。&lt;/p&gt;
+
+&lt;p&gt;jekyllでビルドした結果の静的ページのファイルをmasterブランチに置く必要があるからです。&lt;/p&gt;
+
+&lt;p&gt;本サイトでは、&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチと&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチを作成して運用しています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチは直接触らずにビルドした結果を入れておくブランチにしています。&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチにはサイトの元となるjekyllのソースコードがあります。実は&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチがリポジトリの本当のルートディレクトリになっています。&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチでビルドした結果を&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;というディレクトリに入れていて、この&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;というディレクトリが、&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチに紐づいています。&lt;/p&gt;
+
+&lt;p&gt;こうすることで、&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;はビルドされた結果を表示する静的サイト、&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチは&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;に置くファイルを生成するためのソースコードが入ったブランチにできます。&lt;/p&gt;
+
+&lt;p&gt;この運用で全く問題なくできているので、おすすめです。&lt;/p&gt;
+
+&lt;h2 id=&quot;seo対策&quot;&gt;SEO対策&lt;/h2&gt;
+
+&lt;p&gt;SEO対策は&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll SEO Tag&lt;/code&gt;というプラグインを入れているのと、Google Search Consoleにも一応登録しています。&lt;/p&gt;
+
+&lt;p&gt;とはいえ、やはりコンテンツが大事だな、という結論です。&lt;/p&gt;
+
+&lt;p&gt;記事が少ないころはあまり検索しても出てこないな、という感じでしたが、記事が増えてくるのとコンテンツが増えてくるにしたがって、いくつかの記事は検索でも上位に出てくるようになってきました。&lt;/p&gt;
+
+&lt;h2 id=&quot;ローカライズ&quot;&gt;ローカライズ&lt;/h2&gt;
+
+&lt;p&gt;記事のカテゴリには英語を使っています。そのカテゴリ名がurlに反映されるからです。しかしサイドバーに出るカテゴリ名は日本語で表示したいので、&lt;code class=&quot;highlighter-rouge&quot;&gt;Slug2Name&lt;/code&gt;というプラグインを使っています。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://kerotaa.github.io/programming/2013/06/16/jekyll-category-slug-to-name-filter/&quot;&gt;英語名カテゴリーを日本語表記に変換するフィルター&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;category_slugs:
+  development: &quot;開発&quot;
+  family: &quot;家族&quot;
+  design: &quot;デザイン&quot;
+  hobby: &quot;趣味&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;のように書くとカテゴリ名が日本語で表示されるようにしています。&lt;/p&gt;
+
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;GitHub Pagesでブログを運営するTipsを書いてみました。Wordpressのようにアップデートの対応や、サーバーの管理もしなくていいし、無料でできるし、SSLも有効だしカスタムドメインも使えるし、マークダウンでブログがかける、ということで、GitHub Pagesとてもおすすめです。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 14 Dec 2019 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2019/12/14/github-pages-blog.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2019/12/14/github-pages-blog.html</guid>
+        
+        <category>GitHub Pages</category>
+        
+        <category>ブログ</category>
+        
+        <category>無料</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>UIScrollViewとUIStackViewで、UITableViewのハイライトを作る</title>
@@ -560,104 +637,6 @@
         <category>dark mode</category>
         
         <category>ダークモード</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>SwiftUIでURLから画像を取得して表示する方法</title>
-        <description>&lt;p&gt;SwiftUIでURLから画像を取得して表示する方法を紹介します。&lt;/p&gt;
-
-&lt;p&gt;指定されたURLから画像をダウンロードする &lt;code class=&quot;highlighter-rouge&quot;&gt;ImageLoader&lt;/code&gt; と、その画像を表示する &lt;code class=&quot;highlighter-rouge&quot;&gt;URLImage&lt;/code&gt; を作成すると表示することができます。&lt;/p&gt;
-
-&lt;p&gt;まず画像をダウンロードする &lt;code class=&quot;highlighter-rouge&quot;&gt;ImageLoader&lt;/code&gt; です。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ImageLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ObservableObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;objectWillChange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ObservableObjectPublisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;willSet&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;objectWillChange&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;URLSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shared&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;dataTask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;DispatchQueue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;uiImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;resume&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ObservableObject&lt;/code&gt;にして、&lt;code class=&quot;highlighter-rouge&quot;&gt;image&lt;/code&gt;の変更を監視できるようにします。&lt;code class=&quot;highlighter-rouge&quot;&gt;load&lt;/code&gt;関数で指定されたURLから画像をダウンロードして&lt;code class=&quot;highlighter-rouge&quot;&gt;Image&lt;/code&gt;をセットします。&lt;/p&gt;
-
-&lt;p&gt;次に画像を表示するView &lt;code class=&quot;highlighter-rouge&quot;&gt;URLImage&lt;/code&gt; です。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLImage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;@ObservedObject&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;imageLoader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ImageLoader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Content&lt;/span&gt;
-
-    &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;@escaping&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;ZStack&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;imageLoader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nf&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageLoader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nf&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;placeholder&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;onAppear&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imageLoader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URLImage_Previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;PreviewProvider&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;previews&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kt&quot;&gt;URLImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;urlを受け取り&lt;code class=&quot;highlighter-rouge&quot;&gt;onAppear&lt;/code&gt;で&lt;code class=&quot;highlighter-rouge&quot;&gt;ImageLoader&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;load&lt;/code&gt;を呼び出します。ここではダウンロードする前で&lt;code class=&quot;highlighter-rouge&quot;&gt;image&lt;/code&gt;が&lt;code class=&quot;highlighter-rouge&quot;&gt;nil&lt;/code&gt;の時は&lt;code class=&quot;highlighter-rouge&quot;&gt;placeholder&lt;/code&gt;画像を表示するようにしています。&lt;/p&gt;
-
-&lt;p&gt;また&lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt;を受け取ることで、&lt;code class=&quot;highlighter-rouge&quot;&gt;URLImage&lt;/code&gt;を呼び出した側から画像のスタイルを変更できるようにできます。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;URLImage&lt;/code&gt;の使い方です。例えば、画像を丸い円でクリップして影をつけてみます。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kt&quot;&gt;URLImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nv&quot;&gt;$0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;renderingMode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;resizable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;scaledToFit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clipShape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Circle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;frame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;50.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;50.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;overlay&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Circle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;stroke&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lineWidth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-10-12/image.png&quot; alt=&quot;画像&quot; title=&quot;画像&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;より使いやすいAPIを提供してくれているOSSもすでにGitHubに公開されています。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/dmytro-anokhin/url-image&quot;&gt;dmytro-anokhin/url-image&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 12 Oct 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2019/10/12/swiftui-url-image.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2019/10/12/swiftui-url-image.html</guid>
-        
-        <category>SwiftUI</category>
-        
-        <category>画像</category>
         
         
         <category>development</category>

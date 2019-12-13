@@ -6,27 +6,28 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>ASP.NET Coreでエラーメッセージを日本語にする方法 | Masamichi Ueta</title>
+<title>GitHub Pagesでブログを運用し始めてから4年くらいたった | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="ASP.NET Coreでエラーメッセージを日本語にする方法" />
+<meta property="og:title" content="GitHub Pagesでブログを運用し始めてから4年くらいたった" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="SP.NET CoreでWebアプリを開発していますが、デフォルトのバリデーションの仕組みを使うとエラーメッセージが英語になってしまい困っていました。モデルクラスのプロパティに全部のパターンを日本語で書くとか途方もないことをしたくないと思っていたところ、解決する方法を見つけました。" />
-<meta property="og:description" content="SP.NET CoreでWebアプリを開発していますが、デフォルトのバリデーションの仕組みを使うとエラーメッセージが英語になってしまい困っていました。モデルクラスのプロパティに全部のパターンを日本語で書くとか途方もないことをしたくないと思っていたところ、解決する方法を見つけました。" />
-<link rel="canonical" href="https://masamichi.me/development/2018/06/05/asp-dotnet-core-error-japanese.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/06/05/asp-dotnet-core-error-japanese.html" />
+<meta name="description" content="このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。" />
+<meta property="og:description" content="このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/12/14/github-pages-blog.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/12/14/github-pages-blog.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-12-14/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-05T00:00:00+09:00" />
+<meta property="article:published_time" content="2019-12-14T00:00:00+09:00" />
 <script type="application/ld+json">
-{"url":"https://masamichi.me/development/2018/06/05/asp-dotnet-core-error-japanese.html","headline":"ASP.NET Coreでエラーメッセージを日本語にする方法","dateModified":"2018-06-05T00:00:00+09:00","datePublished":"2018-06-05T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/06/05/asp-dotnet-core-error-japanese.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"SP.NET CoreでWebアプリを開発していますが、デフォルトのバリデーションの仕組みを使うとエラーメッセージが英語になってしまい困っていました。モデルクラスのプロパティに全部のパターンを日本語で書くとか途方もないことをしたくないと思っていたところ、解決する方法を見つけました。","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"https://masamichi.me/development/2019/12/14/github-pages-blog.html","headline":"GitHub Pagesでブログを運用し始めてから4年くらいたった","dateModified":"2019-12-14T00:00:00+09:00","datePublished":"2019-12-14T00:00:00+09:00","image":"https://masamichi.me/assets/posts/2019-12-14/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/12/14/github-pages-blog.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      <link rel="stylesheet" href="/css/main.css">
-     <link rel="canonical" href="https://masamichi.me/development/2018/06/05/asp-dotnet-core-error-japanese.html">
+     <link rel="canonical" href="https://masamichi.me/development/2019/12/14/github-pages-blog.html">
      <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
           href="https://masamichi.me/feed.xml">
      <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
@@ -97,15 +98,17 @@
 </header>
 
   
-  <section class="hero background-image-none text-center">
-    <div class="overlay background-color-main"></div>
-    
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-12-14/cover.png)">
+  <div class="overlay"></div>
+  
     <div class="d-flex align-items-center justify-content-between h-100 position-relative">
       <div class="container">
-        <h1 itemprop="name headline">ASP.NET Coreでエラーメッセージを日本語にする方法</h1>
+        <h1 itemprop="name headline">GitHub Pagesでブログを運用し始めてから4年くらいたった</h1>
       </div>
     </div>
     <span class="text-left text-dark">
+      
+      <small>画像出典：<a href="https://pages.github.com">GitHubサイト</a>よりスクリーンショット</small>
       
     </span>
   </section>
@@ -116,58 +119,83 @@
         <div class="col-12 col-md-9">
           <article itemscope itemtype="http://schema.org/BlogPosting">
             <div class="article-body" itemprop="articleBody">
-              <p class="text-muted"><time datetime="2018-06-05T00:00:00+09:00"
-                  itemprop="datePublished">2018/6/5</time><span
+              <p class="text-muted"><time datetime="2019-12-14T00:00:00+09:00"
+                  itemprop="datePublished">2019/12/14</time><span
                   class="ml-3">開発</span></p>
               
               <p>
                 <small>タグ</small>
                 
-                <span class="badge badge-light">ASP.NET Core</span>
+                <span class="badge badge-light">GitHub Pages</span>
                 
-                <span class="badge badge-light">C#</span>
+                <span class="badge badge-light">ブログ</span>
                 
-                <span class="badge badge-light">ASP.NET</span>
-                
-                <span class="badge badge-light">ローカライズ</span>
-                
-                <span class="badge badge-light">日本語化</span>
+                <span class="badge badge-light">無料</span>
                 
               </p>
               
               <div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a>
                 <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-                <p>ASP.NET CoreでWebアプリを開発していますが、デフォルトのバリデーションの仕組みを使うとエラーメッセージが英語になってしまい困っていました。</p>
+                <p>このサイトはGitHub Pagesで運用しています。</p>
 
-<p>モデルクラスのプロパティに全部のパターンを日本語で書くとか途方もないことをしたくないと思っていたところ、解決する方法を見つけました。</p>
+<p>運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。</p>
 
-<p><a href="https://qiita.com/h0ge/items/b7ffd65d0f11ac6382fd">ASP.NET Coreでエラーメッセージを日本語で表示する</a></p>
+<h2 id="github-pageのいいところ">GitHub Pageのいいところ</h2>
 
-<p>元ネタはこちらの記事のようです。</p>
+<p>GitHub Pagesのいいところは、なんといっても無料で使えるところとサーバーを管理する必要がないところです。GitHubのリポジトリにコンテンツを置いておけばサイトを作ることができます。</p>
 
-<p><a href="https://blogs.msdn.microsoft.com/mvpawardprogram/2017/05/09/aspnetcore-mvc-error-message/">Customization And Localization Of ASP.NET Core MVC Default Validation Error Messages</a></p>
+<p>また、<code class="highlighter-rouge">username.github.io</code>というドメインだけでなく、自分で取得したカスタムドメインが使えたりSSL(https)にも無料で対応できる、という点も本当に素晴らしいなと思います。</p>
 
-<p>エラーメッセージはこんな感じでローカライズしました。</p>
+<h2 id="jekyllとテンプレート">Jekyllとテンプレート</h2>
+<p>GitHub Pagesはhtmlファイルをおけばサイトとして運用できますが、<a href="https://jekyllrb-ja.github.io">Jekyll</a>というブログ・静的Webサイトを生成するツールをつかえば、ブログを作ることができます。私のサイトもJekyllを使っています。Jekyllにはブログテーマが色々と用意されているので、公開されているテーマを使うことができます。</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"RequiredAttribute"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;value&gt;</span>{0}は必須項目です<span class="nt">&lt;/value&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"MaxLengthAttribute"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;value&gt;</span>{0}は{1}文字以内で入力してください<span class="nt">&lt;/value&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"MinLengthAttribute"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;value&gt;</span>{0}は{1}文字以上で入力してください<span class="nt">&lt;/value&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"EmailAddressAttribute"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;value&gt;</span>{0}の形式が正しくありません。<span class="nt">&lt;/value&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"CompareAttribute"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;value&gt;</span>{0}と{1}が一致しません。<span class="nt">&lt;/value&gt;</span>
-<span class="nt">&lt;/data&gt;</span>
-<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">"StringLengthAttribute"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;value&gt;</span>{0}は{1}文字以上{2}文字以下で入力してください。<span class="nt">&lt;/value&gt;</span>
-<span class="nt">&lt;/data&gt;</span></code></pre></figure>
+<p><a href="http://jekyllthemes.org">Jekyll Themes</a></p>
+
+<p>本サイトでは、テンプレートは使わずに、Jekyllの仕組みに則って自分のオリジナルのデザインを使用しています。テーマの作り方はWordpressに近くて、テンプレートとなるhtmlをJekyllのルールにしたがって作っていくという流れです。自分で作るとCSSやJavaScriptを柔軟に使うことができて、やっぱりいいですね。</p>
+
+<h2 id="リポジトリの運用">リポジトリの運用</h2>
+
+<p>GitHub Pagesは<code class="highlighter-rouge">master</code>ブランチの内容が反映されます。Jeykllのテンプレートテーマを使えば何も考えずに<code class="highlighter-rouge">master</code>にコンテンツを入れておけばいいのですが、本サイトのようにテンプレートテーマを使っていない場合は工夫が必要です。</p>
+
+<p>jekyllでビルドした結果の静的ページのファイルをmasterブランチに置く必要があるからです。</p>
+
+<p>本サイトでは、<code class="highlighter-rouge">master</code>ブランチと<code class="highlighter-rouge">source</code>ブランチを作成して運用しています。</p>
+
+<p><code class="highlighter-rouge">master</code>ブランチは直接触らずにビルドした結果を入れておくブランチにしています。<code class="highlighter-rouge">source</code>ブランチにはサイトの元となるjekyllのソースコードがあります。実は<code class="highlighter-rouge">source</code>ブランチがリポジトリの本当のルートディレクトリになっています。<code class="highlighter-rouge">source</code>ブランチでビルドした結果を<code class="highlighter-rouge">_site</code>というディレクトリに入れていて、この<code class="highlighter-rouge">_site</code>というディレクトリが、<code class="highlighter-rouge">master</code>ブランチに紐づいています。</p>
+
+<p>こうすることで、<code class="highlighter-rouge">master</code>はビルドされた結果を表示する静的サイト、<code class="highlighter-rouge">source</code>ブランチは<code class="highlighter-rouge">master</code>に置くファイルを生成するためのソースコードが入ったブランチにできます。</p>
+
+<p>この運用で全く問題なくできているので、おすすめです。</p>
+
+<h2 id="seo対策">SEO対策</h2>
+
+<p>SEO対策は<code class="highlighter-rouge">Jekyll SEO Tag</code>というプラグインを入れているのと、Google Search Consoleにも一応登録しています。</p>
+
+<p>とはいえ、やはりコンテンツが大事だな、という結論です。</p>
+
+<p>記事が少ないころはあまり検索しても出てこないな、という感じでしたが、記事が増えてくるのとコンテンツが増えてくるにしたがって、いくつかの記事は検索でも上位に出てくるようになってきました。</p>
+
+<h2 id="ローカライズ">ローカライズ</h2>
+
+<p>記事のカテゴリには英語を使っています。そのカテゴリ名がurlに反映されるからです。しかしサイドバーに出るカテゴリ名は日本語で表示したいので、<code class="highlighter-rouge">Slug2Name</code>というプラグインを使っています。</p>
+
+<p><a href="http://kerotaa.github.io/programming/2013/06/16/jekyll-category-slug-to-name-filter/">英語名カテゴリーを日本語表記に変換するフィルター</a></p>
+
+<p><code class="highlighter-rouge">_config.yml</code>に</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>category_slugs:
+  development: "開発"
+  family: "家族"
+  design: "デザイン"
+  hobby: "趣味"
+</code></pre></div></div>
+
+<p>のように書くとカテゴリ名が日本語で表示されるようにしています。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>GitHub Pagesでブログを運営するTipsを書いてみました。Wordpressのようにアップデートの対応や、サーバーの管理もしなくていいし、無料でできるし、SSLも有効だしカスタムドメインも使えるし、マークダウンでブログがかける、ということで、GitHub Pagesとてもおすすめです。</p>
 
               </div>
               <div class="pt-5">
@@ -188,23 +216,6 @@
 
               
 
-              
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/12/14/github-pages-blog.html">
-                  <small class="decoration-none text-muted">2019/12/14<span
-                      class="ml-2">開発</span></small>
-                  <h3 class="mt-0">GitHub Pagesでブログを運用し始めてから4年くらいたった</h3>
-                  <p class="text-dark">このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。</p>
-                  
-                  <div alt="GitHub Pagesでブログを運用し始めてから4年くらいたった" class="my-4 media-img rounded"
-                    style="background-image: url(/assets/posts/2019-12-14/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
               
               
               
@@ -434,6 +445,25 @@
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">1Passwordを6にダウングレードしました</h3>
                   <p class="text-dark">パスワード管理には昔から1Passwordを使っているのですが、最近1Passwordが7にアップグレードされました。AppStoreからインストールしていたので、確かそのままインストールしたはずですが、1Password7になると、月額のサブスクリプションに登録しないと、readonly と言う表示になり、既存のデータを更新できなくなってしまいました。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/08/05/no-submodule-mapping-found-in-gitmodules.html">
+                  <small class="decoration-none text-muted">2019/8/5<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">no submodule mapping found in .gitmodulesを解決する</h3>
+                  <p class="text-dark">no submodule mapping found in .gitmodulesを解決する</p>
                   
                 </a>
               </li>
