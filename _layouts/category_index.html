@@ -22,25 +22,26 @@ layout: default
         <div class="posts">
           <ul class="list-unstyled pb-5">
             {% for post in paginator.posts %}
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="{{ post.url | prepend: site.url }}">
-                  <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}</small>                    
-                  <h3>{{ post.title }}</h3>
-                  <p class="text-dark">{{ post.description }}</p>
-                  {% if post.image %}
-                  <div alt="{{post.title}}" class="my-4 media-img rounded" style="background-image: url({{ post.image }})">
-                  </div>
-                  {% endif %}
-                  {% if post.tags %}
-                  <p class="mb-0">
-                    {% for tags in post.tags %}
-                    <span class="badge badge-light">{{ tags }}</span>
-                    {% endfor %}
-                  </p>
-                  {% endif %} 
-                </a>
-              </li>
-              <hr />
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="{{ post.url | prepend: site.url }}">
+                <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}</small>
+                <h3>{{ post.title }}</h3>
+                <p class="text-dark">{{ post.description }}</p>
+                {% if post.image %}
+                <div alt="{{post.title}}" class="my-4 media-img rounded"
+                  style="background-image: url({{ post.image }})">
+                </div>
+                {% endif %}
+                {% if post.tags %}
+                <p class="mb-0">
+                  {% for tags in post.tags %}
+                  <span class="badge badge-light">{{ tags }}</span>
+                  {% endfor %}
+                </p>
+                {% endif %}
+              </a>
+            </li>
+            <hr />
             {% endfor %}
           </ul>
         </div>
@@ -48,32 +49,36 @@ layout: default
         {% if paginator.total_pages > 1 %}
         <div class="pagination d-flex justify-content-center">
           {% if paginator.previous_page %}
-            <a class="mr-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">&laquo; 前</a>
+          <a class="mr-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">&laquo; 前</a>
           {% else %}
-            <span class="mr-3" >&laquo; 前</span>
+          <span class="mr-3">&laquo; 前</span>
           {% endif %}
 
           {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-              <em class="mr-3">{{ page }}</em>
-            {% elsif page == 1 %}
-              <a class="mr-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">{{ page }}</a>
-            {% else %}
-              {% assign nextpage = '/category/' | urlencode | append: categorypath | append: site.paginate_path | replace: '//', '/' | replace: ':num', page %}
-              <a class="mr-3" href="{{nextpage}}">{{ page }}</a>
-            {% endif %}
+          {% assign prev_limit = paginator.page | minus: 5 %}
+          {% assign next_limit = paginator.page | plus: 5 %}
+          {% if page == paginator.page %}
+          <em class="mr-3">{{ page }}</em>
+          {% elsif page == 1 and prev_limit <= 1 %}
+          <a class="mr-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">{{ page }}</a>
+          {% else %}
+          {% if page > prev_limit and page < next_limit %}
+          {% assign nextpage = '/category/' | urlencode | append: categorypath | append: site.paginate_path | replace: '//', '/' | replace: ':num', page %}
+          <a class="mr-3" href="{{nextpage}}">{{ page }}</a>
+          {% endif %}
+          {% endif %}
           {% endfor %}
 
           {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | replace: '//', '/' }}">次 &raquo;</a>
+          <a href="{{ paginator.next_page_path | replace: '//', '/' }}">次 &raquo;</a>
           {% else %}
-            <span>次 &raquo;</span>
+          <span>次 &raquo;</span>
           {% endif %}
         </div>
         {% endif %}
       </div>
       <div class="col-12 col-md-3 mt-5 mt-md-0">
-          {% include sidebar.html %}
+        {% include sidebar.html %}
       </div>
     </div>
   </div>
