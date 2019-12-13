@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn't exist"
-description: ""
+description: "SwiftUIで、公式チュートリアルで紹介されているPageViewの中にNavigationLinkを入れて、プッシュ遷移した後に戻るボタンでポップすると、Tried to pop to a view controller that doesn't exist というエラーが発生してクラッシュしてしまいました。"
 date: 2019-11-26
 categories: development
 lang: ja_JP
