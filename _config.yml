@@ -22,7 +22,7 @@ markdown: kramdown
 future: true
 
 category_slugs:
-  cryptocurrency: "仮想通貨"
+  cryptocurrency: "暗号通貨"
   development: "開発"
   family: "家族"
   design: "デザイン"
