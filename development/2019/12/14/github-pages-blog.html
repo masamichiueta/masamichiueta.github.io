@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>GitHub Pagesでブログを運用し始めてから4年くらいたった | Masamichi Ueta</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="GitHub Pagesでブログを運用し始めてから4年くらいたった" />
+<meta name="author" content="masamichiueta" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。" />
+<meta property="og:description" content="このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。" />
+<link rel="canonical" href="https://masamichi.me/development/2019/12/14/github-pages-blog.html" />
+<meta property="og:url" content="https://masamichi.me/development/2019/12/14/github-pages-blog.html" />
+<meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2019-12-14/cover.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-14T00:00:00+09:00" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"masamichiueta"},"url":"https://masamichi.me/development/2019/12/14/github-pages-blog.html","headline":"GitHub Pagesでブログを運用し始めてから4年くらいたった","dateModified":"2019-12-14T00:00:00+09:00","datePublished":"2019-12-14T00:00:00+09:00","image":"https://masamichi.me/assets/posts/2019-12-14/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/12/14/github-pages-blog.html"},"description":"このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/main.css">
+     <link rel="canonical" href="https://masamichi.me/development/2019/12/14/github-pages-blog.html">
+     <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
+          href="https://masamichi.me/feed.xml">
+     <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
+     </script>
+     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+               google_ad_client: "ca-pub-3655474149264343",
+               enable_page_level_ads: true,
+               overlays: { bottom: true }
+          });
+     </script>
+</head>
+
+<body>
+  <header>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
+    <div class="container">
+      <div class="dynamic-navbar">
+        <ul class="dn-list">
+          <li class="dn-item dn-menuicon">
+            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+              <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+              </span>
+              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+              </span>
+            </label>
+            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span
+                class="dn-menuanchor-label">Open Menu</span> </a>
+            <a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span
+                class="dn-menuanchor-label">Close Menu</span> </a>
+          </li>
+          <li class="dn-item dn-logo">
+            <a href="https://masamichi.me/">MasamichiUeta</a>
+          </li>
+        </ul>
+      </div>
+      <div class="static-navbar">
+        <div class="sn-item sn-logo">
+          <a href="https://masamichi.me/">MasamichiUeta</a>
+        </div>
+        <ul class="sn-list">
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichi.me/">Blog</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichi.me/about.html">About</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//twitter.com/masamichiueta" target="_blank">Twitter</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//github.com/masamichiueta" target="_blank">Github</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//medium.com/@masamichiueta" target="_blank">Medium</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-12-14/cover.png)">
+  <div class="overlay"></div>
+  
+    <div class="d-flex align-items-center justify-content-between h-100 position-relative">
+      <div class="container">
+        <h1 itemprop="name headline">GitHub Pagesでブログを運用し始めてから4年くらいたった</h1>
+      </div>
+    </div>
+    <span class="text-left text-dark">
+      
+      <small>画像出典：<a href="https://pages.github.com">GitHubサイト</a>よりスクリーンショット</small>
+      
+    </span>
+  </section>
+
+  <section class="post-content py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-9">
+          <article itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="article-body" itemprop="articleBody">
+              <p class="text-muted"><time datetime="2019-12-14T00:00:00+09:00"
+                  itemprop="datePublished">2019/12/14</time><span
+                  class="ml-3">開発</span></p>
+              
+              <p>
+                <small>タグ</small>
+                
+                <span class="badge badge-light">GitHub Pages</span>
+                
+                <span class="badge badge-light">ブログ</span>
+                
+                <span class="badge badge-light">無料</span>
+                
+              </p>
+              
+              <div>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a>
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+                <p>このサイトはGitHub Pagesで運用しています。</p>
+
+<p>運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。</p>
+
+<h2 id="github-pageのいいところ">GitHub Pageのいいところ</h2>
+
+<p>GitHub Pagesのいいところは、なんといっても無料で使えるところとサーバーを管理する必要がないところです。GitHubのリポジトリにコンテンツを置いておけばサイトを作ることができます。</p>
+
+<p>また、<code class="highlighter-rouge">username.github.io</code>というドメインだけでなく、自分で取得したカスタムドメインが使えたりSSL(https)にも無料で対応できる、という点も本当に素晴らしいなと思います。</p>
+
+<h2 id="jekyllとテンプレート">Jekyllとテンプレート</h2>
+<p>GitHub Pagesはhtmlファイルをおけばサイトとして運用できますが、<a href="https://jekyllrb-ja.github.io">Jekyll</a>というブログ・静的Webサイトを生成するツールをつかえば、ブログを作ることができます。私のサイトもJekyllを使っています。Jekyllにはブログテーマが色々と用意されているので、公開されているテーマを使うことができます。</p>
+
+<p><a href="http://jekyllthemes.org">Jekyll Themes</a></p>
+
+<p>本サイトでは、テンプレートは使わずに、Jekyllの仕組みに則って自分のオリジナルのデザインを使用しています。テーマの作り方はWordpressに近くて、テンプレートとなるhtmlをJekyllのルールにしたがって作っていくという流れです。自分で作るとCSSやJavaScriptを柔軟に使うことができて、やっぱりいいですね。</p>
+
+<h2 id="リポジトリの運用">リポジトリの運用</h2>
+
+<p>GitHub Pagesは<code class="highlighter-rouge">master</code>ブランチの内容が反映されます。Jeykllのテンプレートテーマを使えば何も考えずに<code class="highlighter-rouge">master</code>にコンテンツを入れておけばいいのですが、本サイトのようにテンプレートテーマを使っていない場合は工夫が必要です。</p>
+
+<p>jekyllでビルドした結果の静的ページのファイルをmasterブランチに置く必要があるからです。</p>
+
+<p>本サイトでは、<code class="highlighter-rouge">master</code>ブランチと<code class="highlighter-rouge">source</code>ブランチを作成して運用しています。</p>
+
+<p><code class="highlighter-rouge">master</code>ブランチは直接触らずにビルドした結果を入れておくブランチにしています。<code class="highlighter-rouge">source</code>ブランチにはサイトの元となるjekyllのソースコードがあります。実は<code class="highlighter-rouge">source</code>ブランチがリポジトリの本当のルートディレクトリになっています。<code class="highlighter-rouge">source</code>ブランチでビルドした結果を<code class="highlighter-rouge">_site</code>というディレクトリに入れていて、この<code class="highlighter-rouge">_site</code>というディレクトリが、<code class="highlighter-rouge">master</code>ブランチに紐づいています。</p>
+
+<p>こうすることで、<code class="highlighter-rouge">master</code>はビルドされた結果を表示する静的サイト、<code class="highlighter-rouge">source</code>ブランチは<code class="highlighter-rouge">master</code>に置くファイルを生成するためのソースコードが入ったブランチにできます。</p>
+
+<p>この運用で全く問題なくできているので、おすすめです。</p>
+
+<h2 id="seo対策">SEO対策</h2>
+
+<p>SEO対策は<code class="highlighter-rouge">Jekyll SEO Tag</code>というプラグインを入れているのと、Google Search Consoleにも一応登録しています。</p>
+
+<p>とはいえ、やはりコンテンツが大事だな、という結論です。</p>
+
+<p>記事が少ないころはあまり検索しても出てこないな、という感じでしたが、記事が増えてくるのとコンテンツが増えてくるにしたがって、いくつかの記事は検索でも上位に出てくるようになってきました。</p>
+
+<h2 id="ローカライズ">ローカライズ</h2>
+
+<p>記事のカテゴリには英語を使っています。そのカテゴリ名がurlに反映されるからです。しかしサイドバーに出るカテゴリ名は日本語で表示したいので、<code class="highlighter-rouge">Slug2Name</code>というプラグインを使っています。</p>
+
+<p><a href="http://kerotaa.github.io/programming/2013/06/16/jekyll-category-slug-to-name-filter/">英語名カテゴリーを日本語表記に変換するフィルター</a></p>
+
+<p><code class="highlighter-rouge">_config.yml</code>に</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>category_slugs:
+  development: "開発"
+  family: "家族"
+  design: "デザイン"
+  hobby: "趣味"
+</code></pre></div></div>
+
+<p>のように書くとカテゴリ名が日本語で表示されるようにしています。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>GitHub Pagesでブログを運営するTipsを書いてみました。Wordpressのようにアップデートの対応や、サーバーの管理もしなくていいし、無料でできるし、SSLも有効だしカスタムドメインも使えるし、マークダウンでブログがかける、ということで、GitHub Pagesとてもおすすめです。</p>
+
+              </div>
+              <div class="pt-5">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a>
+                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+              </div>
+          </article>
+          <hr />
+          <div>
+            <h3>オススメ記事</h3>
+            <ul class="list-unstyled pb-5">
+              
+              
+              
+
+              
+              
+
+              
+
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/12/06/uistackview-cell-highlight.html">
+                  <small class="decoration-none text-muted">2019/12/6<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">UIScrollViewとUIStackViewで、UITableViewのハイライトを作る</h3>
+                  <p class="text-dark">UITableViewのようなレイアウトを作る際に、UIScrollViewとUIStackViewを使って作る場合もあるかと思います。UITableViewは選択されたセルをハイライトすることができますが、UIScrollViewとUIStackViewの場合はそのままではハイライトができません。今回はセルのハイライトを再現する方法を紹介します。</p>
+                  
+                  <div alt="UIScrollViewとUIStackViewで、UITableViewのハイライトを作る" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2019-12-06/storyboard.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html">
+                  <small class="decoration-none text-muted">2019/11/26<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn't exist</h3>
+                  <p class="text-dark">SwiftUIで、公式チュートリアルで紹介されているPageViewの中にNavigationLinkを入れて、プッシュ遷移した後に戻るボタンでポップすると、Tried to pop to a view controller that doesn't exist というエラーが発生してクラッシュしてしまいました。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/11/02/github-sponsors.html">
+                  <small class="decoration-none text-muted">2019/11/2<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">GitHub Sponsorsに登録する方法</h3>
+                  <p class="text-dark">先日GitHub Sponsorsに承認されました。GitHub Sponsorsに登録することで、スポンサーを募ることができます。逆に、OSS開発をしている開発者のスポンサーになることができます。</p>
+                  
+                  <div alt="GitHub Sponsorsに登録する方法" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2019-11-02/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/10/21/swiftui-list-multiple-navigationlink.html">
+                  <small class="decoration-none text-muted">2019/10/21<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない</h3>
+                  <p class="text-dark">SwiftUIでListの中でNavigationLinkを複数使うとうまく動かなかったのでメモです。</p>
+                  
+                  <div alt="SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2019-10-21/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/10/15/use-activityindicator-swiftui.html">
+                  <small class="decoration-none text-muted">2019/10/15<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">SwiftUIでActivityIndicatorを使う方法</h3>
+                  <p class="text-dark">SwiftUIでActivityIndicatorを使う方法を紹介します。</p>
+                  
+                  <div alt="SwiftUIでActivityIndicatorを使う方法" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2019-10-15/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/10/14/ios-simulator-dark-mode.html">
+                  <small class="decoration-none text-muted">2019/10/14<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">iPhoneシミュレーターでダークモードにする方法</h3>
+                  <p class="text-dark">iPhoneシミュレーターでダークモードにする方法を紹介します。</p>
+                  
+                  <div alt="iPhoneシミュレーターでダークモードにする方法" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2019-10-14/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/10/12/swiftui-url-image.html">
+                  <small class="decoration-none text-muted">2019/10/12<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">SwiftUIでURLから画像を取得して表示する方法</h3>
+                  <p class="text-dark">SwiftUIでURLから画像を取得して表示する方法を紹介します。</p>
+                  
+                  <div alt="SwiftUIでURLから画像を取得して表示する方法" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2019-07-25/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/10/12/swiftui-pageview.html">
+                  <small class="decoration-none text-muted">2019/10/12<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">SwiftUIでUIPageViewControllerとSegmentedControlを使う方法</h3>
+                  <p class="text-dark">SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。</p>
+                  
+                  <div alt="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2019-07-25/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              
+              
+
+              
+
+              
+              
+              
+
+              
+
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/08/11/1password-downgrade.html">
+                  <small class="decoration-none text-muted">2019/8/11<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">1Passwordを6にダウングレードしました</h3>
+                  <p class="text-dark">パスワード管理には昔から1Passwordを使っているのですが、最近1Passwordが7にアップグレードされました。AppStoreからインストールしていたので、確かそのままインストールしたはずですが、1Password7になると、月額のサブスクリプションに登録しないと、readonly と言う表示になり、既存のデータを更新できなくなってしまいました。</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/08/05/no-submodule-mapping-found-in-gitmodules.html">
+                  <small class="decoration-none text-muted">2019/8/5<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">no submodule mapping found in .gitmodulesを解決する</h3>
+                  <p class="text-dark">no submodule mapping found in .gitmodulesを解決する</p>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <div class="mb-4">
+    <h5 class="mt-0 mb-2">運営者プロフィール</h5>
+    <div class="ml-2">
+        <div class="w-50 py-3">
+            <img class="rounded-circle" src="https://masamichi.me/assets/layouts/about.jpg" alt="masamichiueta" />
+        </div>
+        <h6 class="mt-0 mb-2">MasamichiUeta</h6>
+        <p>ソフトウェアエンジニアです。ソフトウェアエンジニアリング、アプリ開発、ブロックチェーン、家族、ガジェット、Apple関係のことについて書いています。</p>
+    </div>
+</div>
+<div class="mb-4">
+    <h5 class="mt-0 mb-2">カテゴリー</h5>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://masamichi.me/">全て(90)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+            <a class="nav-link  py-1"
+                href="https://masamichi.me/category/design/index.html">デザイン(5)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+            <a class="nav-link  py-1"
+                href="https://masamichi.me/category/development/index.html">開発(41)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+            <a class="nav-link  py-1"
+                href="https://masamichi.me/category/family/index.html">家族(29)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+            <a class="nav-link  py-1"
+                href="https://masamichi.me/category/apple/index.html">apple(3)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+            <a class="nav-link  py-1"
+                href="https://masamichi.me/category/gadget/index.html">ガジェット(4)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+            <a class="nav-link  py-1"
+                href="https://masamichi.me/category/cryptocurrency/index.html">暗号通貨(3)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+            <a class="nav-link  py-1"
+                href="https://masamichi.me/category/apps/index.html">アプリ(1)</a>
+        </li>
+        
+        <li class="nav-item">
+            
+            <a class="nav-link  py-1"
+                href="https://masamichi.me/category/hobby/index.html">趣味(4)</a>
+        </li>
+        
+    </ul>
+</div>
+<div class="mb-4">
+    <h5 class="mt-3 mb-2">新着記事</h5>
+    <ul class="nav flex-column">
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://masamichi.me/development/2019/12/14/github-pages-blog.html">GitHub Pagesでブログを運用し始めてから4年くらいたった</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://masamichi.me/development/2019/12/06/uistackview-cell-highlight.html">UIScrollViewとUIStackViewで、UITableViewのハイライトを作る</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://masamichi.me/hobby/2019/11/26/yokohama-marathon-2019.html">横浜マラソン2019に参加しました</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html">SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn't exist</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link py-1" href="https://masamichi.me/family/2019/11/18/shouwanomori-forestvillage-camp.html">昭和の森フォレストビレッジにキャンプに行ってきました</a>
+        </li>
+        
+    </ul>
+</div>
+<div class="mb-4">
+    <h5 class="mt-3 mb-2">Twitter</h5>
+    <a class="twitter-timeline" href="https://twitter.com/masamichiueta?ref_src=twsrc%5Etfw" data-tweet-limit="5">Tweets
+        by masamichiueta</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </a>
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+  <hr />
+</div>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <div class="py-4">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://masamichi.me/">Blog</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://masamichi.me/about.html">About</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//twitter.com/masamichiueta">Twitter</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//github.com/masamichiueta">Github</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//medium.com/@masamichiueta">Medium</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
+        </li>
+      </ul>
+      <p>© 2019 MasamichiUeta</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="/js/site.js"></script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-21581479-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+
+</html>
