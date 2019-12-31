@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "GitHub Pagesでブログを運用し始めてから4年くらいたった"
-description: "このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたって、今年の目標にしていた100記事目もクリアしたので、GitHub Pages運用のTipsでも書いておこうかと思います。"
+description: "このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたったので、GitHub Pages運用のTipsでも書いておこうかと思います。"
 date: 2019-12-14
 categories: development
 image: /assets/posts/2019-12-14/cover.png
