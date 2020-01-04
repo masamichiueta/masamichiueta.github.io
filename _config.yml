@@ -20,6 +20,7 @@ paginate: 10
 # Build settings
 markdown: kramdown
 future: true
+highlighter: rouge
 
 category_slugs:
   cryptocurrency: "暗号通貨"
