@@ -6,27 +6,28 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>JekyllでSEO対策をする方法 | Masamichi Ueta</title>
+<title>FirebaseでCloud Storageに画像をアップロードする | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="JekyllでSEO対策をする方法" />
+<meta property="og:title" content="FirebaseでCloud Storageに画像をアップロードする" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="グーグルやヤフーの検索でブログをヒットさせるには、SEOを行う必要がります。今回はJekyllのSEO対策について書きます。よくブログで使われるワードプレスは最初からSEOに最適化された状態ですが、JekyllでもSEO対策を行うことが出来ます。" />
-<meta property="og:description" content="グーグルやヤフーの検索でブログをヒットさせるには、SEOを行う必要がります。今回はJekyllのSEO対策について書きます。よくブログで使われるワードプレスは最初からSEOに最適化された状態ですが、JekyllでもSEO対策を行うことが出来ます。" />
-<link rel="canonical" href="https://masamichi.me/development/2018/05/30/jekyll-seo.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/05/30/jekyll-seo.html" />
+<meta name="description" content="エンジニアリング・デザイン・日常" />
+<meta property="og:description" content="エンジニアリング・デザイン・日常" />
+<link rel="canonical" href="https://masamichi.me/development/2020/01/03/upload-image-firebase.html" />
+<meta property="og:url" content="https://masamichi.me/development/2020/01/03/upload-image-firebase.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2020-01-03/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-05-30T00:00:00+09:00" />
+<meta property="article:published_time" content="2020-01-03T00:00:00+09:00" />
 <script type="application/ld+json">
-{"url":"https://masamichi.me/development/2018/05/30/jekyll-seo.html","headline":"JekyllでSEO対策をする方法","dateModified":"2018-05-30T00:00:00+09:00","datePublished":"2018-05-30T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/05/30/jekyll-seo.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"グーグルやヤフーの検索でブログをヒットさせるには、SEOを行う必要がります。今回はJekyllのSEO対策について書きます。よくブログで使われるワードプレスは最初からSEOに最適化された状態ですが、JekyllでもSEO対策を行うことが出来ます。","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"url":"https://masamichi.me/development/2020/01/03/upload-image-firebase.html","headline":"FirebaseでCloud Storageに画像をアップロードする","dateModified":"2020-01-03T00:00:00+09:00","datePublished":"2020-01-03T00:00:00+09:00","image":"https://masamichi.me/assets/posts/2020-01-03/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2020/01/03/upload-image-firebase.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"エンジニアリング・デザイン・日常","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      <link rel="stylesheet" href="/css/main.css">
-     <link rel="canonical" href="https://masamichi.me/development/2018/05/30/jekyll-seo.html">
+     <link rel="canonical" href="https://masamichi.me/development/2020/01/03/upload-image-firebase.html">
      <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
           href="https://masamichi.me/feed.xml">
      <link rel="icon" type="image/png" href="/assets/layouts/favicon.png">
@@ -97,12 +98,12 @@
 </header>
 
   
-  <section class="hero background-image-none text-center">
-    <div class="overlay background-color-main"></div>
-    
+<section class="hero text-center" style="background-image: url(/assets/posts/2020-01-03/cover.png)">
+  <div class="overlay"></div>
+  
     <div class="d-flex align-items-center justify-content-between h-100 position-relative">
       <div class="container">
-        <h1 itemprop="name headline">JekyllでSEO対策をする方法</h1>
+        <h1 itemprop="name headline">FirebaseでCloud Storageに画像をアップロードする</h1>
       </div>
     </div>
     <span class="text-left text-dark">
@@ -116,105 +117,93 @@
         <div class="col-12 col-md-9">
           <article itemscope itemtype="http://schema.org/BlogPosting">
             <div class="article-body" itemprop="articleBody">
-              <p class="text-muted"><time datetime="2018-05-30T00:00:00+09:00"
-                  itemprop="datePublished">2018/5/30</time><span
+              <p class="text-muted"><time datetime="2020-01-03T00:00:00+09:00"
+                  itemprop="datePublished">2020/1/3</time><span
                   class="ml-3">開発</span></p>
               
               <p>
                 <small>タグ</small>
                 
-                <span class="badge badge-light">Jekyll</span>
+                <span class="badge badge-light">Firebase</span>
                 
-                <span class="badge badge-light">SEO</span>
-                
-                <span class="badge badge-light">ブログ</span>
+                <span class="badge badge-light">Cloud Storage</span>
                 
               </p>
               
               <div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a>
                 <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-                <h1 id="jekyllでseo対策をする">JekyllでSEO対策をする</h1>
+                <p>今FirebaseとReactでアプリを開発中で、画像をアップロードする部分を作ったのでメモ。</p>
 
-<p>グーグルやヤフーの検索でブログをヒットさせるには、SEOを行う必要がります。
-今回はJekyllのSEO対策について書きます。</p>
+<p>アップロード部分</p>
 
-<p>よくブログで使われるワードプレスは最初からSEOに最適化された状態ですが、JekyllでもSEO対策を行うことが出来ます。</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// uploadPhotoという名前でexport</span>
 
-<h2 id="グーグルの検索で上位に表示されるには">グーグルの検索で上位に表示されるには</h2>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">uploadPhoto</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">storageRef</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">ref</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">uuid</span> <span class="o">=</span> <span class="nx">generateUUID</span><span class="p">();</span> <span class="c1">// UUIDを作っていますがなんでもOK</span>
+  <span class="kd">const</span> <span class="nx">metadata</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">contentType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image/png</span><span class="dl">'</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">fileRef</span> <span class="o">=</span> <span class="nx">storageRef</span><span class="p">.</span><span class="nx">child</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">uuid</span><span class="p">}</span><span class="s2">.png`</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">fileRef</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">uuid</span><span class="p">;</span> <span class="c1">// UUIDを返していますが返さなくてもOK</span>
+<span class="p">}</span></code></pre></figure>
 
-<p>様々な検索エンジンがありますが、グーグルが寡占状態です。つまり、ブログのページがグーグルの検索インデックスに登録され、グーグル検索で上位に表示されるようにする必要があります。</p>
+<p>使う部分</p>
 
-<p>JekyllにはSEOを簡単にしてくれるいくつかのプラグインがあります。プラグインとその他のSEO対策についてまとめました。</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">class</span> <span class="nx">SampleUploader</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fileInput</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createRef</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">photoData</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="na">isPosting</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-<ol>
-  <li><code class="highlighter-rouge">jekyll-seo-tag</code>プラグイン</li>
-  <li><code class="highlighter-rouge">jekyll-sitemap</code>プラグイン</li>
-  <li>画像のオルトタグ</li>
-  <li>レスポンシブ</li>
-  <li>スピード</li>
-</ol>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Preview</span>
+    <span class="kd">const</span> <span class="nx">photo</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">photoData</span> <span class="o">===</span> <span class="kc">null</span> <span class="p">?</span> <span class="kc">null</span> <span class="p">:</span>
+      <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">photoData</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="p">);</span>
 
-<h2 id="1-jekyll-seo-tagプラグイン">1. <code class="highlighter-rouge">jekyll-seo-tag</code>プラグイン</h2>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">async</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+          <span class="na">isPosting</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">});</span>
+        <span class="kd">const</span> <span class="nx">photoId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">storage</span><span class="p">.</span><span class="nx">uploadPhoto</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fileInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="c1">// use photoId</span>
 
-<p>Jekyllには、SEO用の設定を作ってくれる<code class="highlighter-rouge">jekyll-seo-tag</code>というプラグインがあります。</p>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+          <span class="na">isPosting</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="na">photoData</span><span class="p">:</span> <span class="kc">null</span>
+        <span class="p">})</span>
+      <span class="p">}}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span> <span class="nx">accept</span><span class="o">=</span><span class="dl">"</span><span class="s2">image/*</span><span class="dl">"</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">fileInput</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="kd">const</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">files</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">files</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">file</span> <span class="o">=</span> <span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="kd">var</span> <span class="nx">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileReader</span><span class="p">();</span>
+            <span class="nx">reader</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+              <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">photoData</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">result</span> <span class="p">});</span>
+            <span class="p">};</span>
+            <span class="nx">reader</span><span class="p">.</span><span class="nx">readAsDataURL</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">photoData</span><span class="p">:</span> <span class="kc">null</span> <span class="p">});</span>
+          <span class="p">}</span>
+        <span class="p">}}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="p">{</span><span class="nx">photo</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isPosting</span><span class="p">}</span><span class="o">&gt;</span><span class="err">投稿する</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<p>こちらの記事に詳しく書いてあります。
-<a href="https://help.github.com/articles/search-engine-optimization-for-github-pages/">Search engine optimization for GitHub Pages</a></p>
-
-<p>使い方としては、<code class="highlighter-rouge">_config.yml</code>に<code class="highlighter-rouge">jekyll-seo-tag</code>を追加します。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plugins:
-  - jekyll-seo-tag
-</code></pre></div></div>
-
-<p>そして、<code class="highlighter-rouge">head</code>タグを記入しているところに、<code class="highlighter-rouge">seo</code>プラグインを記述します。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    
-    {% include head.html %}
-    {% seo %}
-    
-  <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
-
-<p>これで、タイトルや見出しなど、headタグで必要なSEO対策が行われます。</p>
-
-<h2 id="2-jekyll-sitemapプラグイン">2. <code class="highlighter-rouge">jekyll-sitemap</code>プラグイン</h2>
-
-<p>グーグルにブログのページがインデックス登録されるためには、サイトマップは重要な要素です。
-<code class="highlighter-rouge">jekyll-sitemap</code>プラグインを使うことで、サイトマップが記述された<code class="highlighter-rouge">sitemap.xml</code>を自動生成することが出来ます。</p>
-
-<p><a href="https://github.com/jekyll/jekyll-sitemap">jekyll-sitemap</a></p>
-
-<p><code class="highlighter-rouge">jekyll-sitemap</code>プラグインを使うには、<code class="highlighter-rouge">_config.yml</code>に<code class="highlighter-rouge">jekyll-sitemap</code>を追加します。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plugins:
-  - jekyll-sitemap
-</code></pre></div></div>
-
-<p>そして、jekyllをビルドすると<code class="highlighter-rouge">sitemap.xml</code>が生成されます。</p>
-
-<h2 id="3-画像のオルトタグ">3. 画像のオルトタグ</h2>
-
-<p>画像のオルトタグは、画像がない場合に表示されるテキストです。オルトタグはクローリング時にロードされるので、画像に記述しておく方がキーワードが多くなり上位に表示されやすくなります。</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img alt="jekyll seo" title="Jekyll SEO" src="/images/jekyll-seo.jpg"&gt;
-</code></pre></div></div>
-
-<h2 id="4-レスポンシブ">4. レスポンシブ</h2>
-
-<p>グーグルはレスポンシブなサイトでモバイルでも見やすいかということをSEOのランキングのパラメータに設定しています。
-サイトがモバイルに対応しているかどうかは、 <a href="https://search.google.com/test/mobile-friendly?utm_source=mft&amp;utm_medium=redirect&amp;utm_campaign=mft-redirect">Mobile Friendly Test</a>というサイトで確認することが出来ます。</p>
-
-<p>Jekyllのテーマは、モバイルに対応しているものがほとんどなので、非対応なものを使わない限りは大丈夫かと思います。</p>
-
-<h2 id="5-スピード">5. スピード</h2>
-
-<p>ランキング上位に表示されるにはページのロードスピードも重要です。
-Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎたりするのは注意しましょう。</p>
+<p>無事FirebaseのCloud Storageに画像をアップロードすることができました。</p>
 
               </div>
               <div class="pt-5">
@@ -235,23 +224,6 @@ Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎ�
 
               
 
-              
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/01/03/upload-image-firebase.html">
-                  <small class="decoration-none text-muted">2020/1/3<span
-                      class="ml-2">開発</span></small>
-                  <h3 class="mt-0">FirebaseでCloud Storageに画像をアップロードする</h3>
-                  <p class="text-dark"></p>
-                  
-                  <div alt="FirebaseでCloud Storageに画像をアップロードする" class="my-4 media-img rounded"
-                    style="background-image: url(/assets/posts/2020-01-03/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
               
               
               
@@ -465,6 +437,29 @@ Jekyllのサイトは、通常十分早いですが、JavaScriptを使い過ぎ�
                   <p class="text-dark">SwiftUIでURLから画像を取得して表示する方法を紹介します。</p>
                   
                   <div alt="SwiftUIでURLから画像を取得して表示する方法" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2019-07-25/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2019/10/12/swiftui-pageview.html">
+                  <small class="decoration-none text-muted">2019/10/12<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">SwiftUIでUIPageViewControllerとSegmentedControlを使う方法</h3>
+                  <p class="text-dark">SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。</p>
+                  
+                  <div alt="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法" class="my-4 media-img rounded"
                     style="background-image: url(/assets/posts/2019-07-25/cover.png)">
                   </div>
                   
