@@ -159,7 +159,7 @@ SwiftUI専用のWebViewはまだないようで、<code class="highlighter-rouge
 
 <span class="cp">#if DEBUG</span>
 <span class="kd">struct</span> <span class="kt">WebView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
         <span class="kt">WebView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://apple.com"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -171,14 +171,14 @@ SwiftUI専用のWebViewはまだないようで、<code class="highlighter-rouge
 
 <span class="kd">struct</span> <span class="kt">MyView</span> <span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span>
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
         <span class="kt">WebView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="n">url</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="cp">#if DEBUG</span>
 <span class="kd">struct</span> <span class="kt">MyView_Previews</span> <span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
         <span class="kt">MyView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://apple.com"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -203,7 +203,7 @@ SwiftUI専用のWebViewはまだないようで、<code class="highlighter-rouge
 
 <span class="cp">#if DEBUG</span>
 <span class="kd">struct</span> <span class="kt">SafariView_Previews</span><span class="p">:</span> <span class="kt">PreviewProvider</span> <span class="p">{</span>
-    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="k">var</span> <span class="nv">previews</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
         <span class="kt">SafariView</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://apple.com"</span><span class="p">)</span><span class="o">!</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>

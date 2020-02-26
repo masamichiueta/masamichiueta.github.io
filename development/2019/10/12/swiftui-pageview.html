@@ -231,7 +231,7 @@
         <span class="k">self</span><span class="o">.</span><span class="n">viewControllers</span> <span class="o">=</span> <span class="n">views</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">UIHostingController</span><span class="p">(</span><span class="nv">rootView</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span> <span class="p">}</span>
     <span class="p">}</span>
 
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
         <span class="kt">PageViewController</span><span class="p">(</span><span class="nv">controllers</span><span class="p">:</span> <span class="n">viewControllers</span><span class="p">,</span> <span class="nv">currentPage</span><span class="p">:</span> <span class="err">$</span><span class="n">currentPage</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
@@ -243,7 +243,7 @@
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">page</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="n">some</span> <span class="kt">View</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span>
         <span class="kt">VStack</span> <span class="p">{</span>
             <span class="kt">Picker</span><span class="p">(</span><span class="s">"Page"</span><span class="p">,</span> <span class="nv">selection</span><span class="p">:</span> <span class="err">$</span><span class="n">page</span><span class="p">)</span> <span class="p">{</span>
                 <span class="kt">Text</span><span class="p">(</span><span class="s">"Page 1"</span><span class="p">)</span><span class="o">.</span><span class="nf">tag</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
