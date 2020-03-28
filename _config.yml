@@ -23,12 +23,11 @@ future: true
 highlighter: rouge
 
 category_slugs:
-  cryptocurrency: "暗号通貨"
   development: "開発"
   family: "家族"
   design: "デザイン"
-  gadget: "ガジェット"
   hobby: "趣味"
+  cryptocurrency: "暗号通貨"
 
 plugins:
   - jekyll-gist
