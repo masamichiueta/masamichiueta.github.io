@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "FirebaseでCloud Storageに画像をアップロードする"
-description: ""
+description: "今FirebaseとReactでアプリを開発中で、画像をアップロードする部分を作ったのでメモ。"
 date: 2020-01-03
 categories: development
 image: /assets/posts/2020-01-03/cover.png
