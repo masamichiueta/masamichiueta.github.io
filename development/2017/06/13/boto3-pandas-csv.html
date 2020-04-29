@@ -19,7 +19,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-06-13T00:00:00+09:00" />
 <script type="application/ld+json">
-{"url":"https://masamichi.me/development/2017/06/13/boto3-pandas-csv.html","headline":"【メモ】boto3でs3のcsvをpandasに読み込む","dateModified":"2017-06-13T00:00:00+09:00","datePublished":"2017-06-13T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2017/06/13/boto3-pandas-csv.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"【メモ】boto3でs3のcsvをpandasに読み込む","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"datePublished":"2017-06-13T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2017/06/13/boto3-pandas-csv.html"},"url":"https://masamichi.me/development/2017/06/13/boto3-pandas-csv.html","author":{"@type":"Person","name":"masamichiueta"},"description":"【メモ】boto3でs3のcsvをpandasに読み込む","headline":"【メモ】boto3でs3のcsvをpandasに読み込む","dateModified":"2017-06-13T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -139,14 +139,14 @@
 <span class="kn">import</span> <span class="nn">boto3</span>
 <span class="n">ACCESS_KEY</span> <span class="o">=</span> <span class="s">'your access key'</span>
 <span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s">'your secret key'</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s">'s3'</span><span class="p">,</span> <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">ACCESS_KEY</span><span class="p">,</span> <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">SECRET_KEY</span><span class="p">)</span>
-<span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s">'list_objects'</span><span class="p">)</span>
-<span class="n">pageresponse</span> <span class="o">=</span> <span class="n">paginator</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s">"your bucket"</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="n">client</span><span class="p">(</span><span class="s">'s3'</span><span class="p">,</span> <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">ACCESS_KEY</span><span class="p">,</span> <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">SECRET_KEY</span><span class="p">)</span>
+<span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s">'list_objects'</span><span class="p">)</span>
+<span class="n">pageresponse</span> <span class="o">=</span> <span class="n">paginator</span><span class="p">.</span><span class="n">paginate</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s">"your bucket"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">pageobject</span> <span class="ow">in</span> <span class="n">pageresponse</span><span class="p">:</span>
     <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">pageobject</span><span class="p">[</span><span class="s">"Contents"</span><span class="p">]:</span>
-        <span class="n">obj</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s">"your bucket"</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="nb">file</span><span class="p">[</span><span class="s">"Key"</span><span class="p">])</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s">'Body'</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">content</span><span class="p">))</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s">"your bucket"</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="nb">file</span><span class="p">[</span><span class="s">"Key"</span><span class="p">])</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s">'Body'</span><span class="p">].</span><span class="n">read</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">content</span><span class="p">))</span>
         <span class="k">print</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span></code></pre></figure>
 
 
@@ -164,6 +164,12 @@
               
               
 
+              
+              
+
+              
+
+              
               
               
 
@@ -437,7 +443,7 @@
     <h5 class="mt-0 mb-2">カテゴリー</h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/">全て(94)</a>
+            <a class="nav-link py-1" href="https://masamichi.me/">全て(95)</a>
         </li>
         
         <li class="nav-item">
@@ -461,7 +467,7 @@
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/hobby/index.html">趣味(8)</a>
+                href="https://masamichi.me/category/hobby/index.html">趣味(9)</a>
         </li>
         
         <li class="nav-item">
@@ -477,6 +483,10 @@
     <ul class="nav flex-column">
         
         <li class="nav-item">
+            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/04/29/toshiba-ishigamadome.html">東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000がよかった</a>
+        </li>
+        
+        <li class="nav-item">
             <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/03/29/hanaugai.html">鼻うがいの仕方</a>
         </li>
         
@@ -490,10 +500,6 @@
         
         <li class="nav-item">
             <a class="nav-link py-1" href="https://masamichi.me/development/2020/01/01/build-a-native-app-in-2020.html">2020年にネイティブアプリを開発する方法</a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2019/12/14/github-pages-blog.html">GitHub Pagesでブログを運用し始めてから4年くらいたった</a>
         </li>
         
     </ul>

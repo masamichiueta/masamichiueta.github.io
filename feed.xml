@@ -5,9 +5,44 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Apr 2020 15:54:41 +0900</pubDate>
-    <lastBuildDate>Sun, 19 Apr 2020 15:54:41 +0900</lastBuildDate>
+    <pubDate>Thu, 30 Apr 2020 00:09:56 +0900</pubDate>
+    <lastBuildDate>Thu, 30 Apr 2020 00:09:56 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000がよかった</title>
+        <description>&lt;p&gt;10年以上使ってきたNationalの電子レンジから、東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000に買い換えました。&lt;/p&gt;
+
+&lt;p&gt;ヨドバシカメラでキャッシュレス決済キャンペーンをしていて、15%ポイントバックされるので買いました。&lt;/p&gt;
+
+&lt;p&gt;買い換えてよかっですね、やっぱり特にオーブン機能がいいですね。&lt;/p&gt;
+
+&lt;p&gt;石窯ドームはより上位の機種だと350度まで加熱できるようですが、300度もあれば充分かなと思い、ER-TD3000にしときました。&lt;/p&gt;
+
+&lt;p&gt;オーブンレンジをアップデートすることで、家でできる料理の幅がかなり広がるということを実感しております。&lt;/p&gt;
+
+&lt;p&gt;コロナ禍でパンをつくり始める人が多いみたいです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://headlines.yahoo.co.jp/article?a=20200426-00345635-toyo-bus_all&quot;&gt;コロナ禍「パンを作る人」が激増している背景&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我が家でもオーブンレンジを買い換えたので、マニュアルに載っているレシピを見ながら、パンやピザを作っています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-04-29/bread.jpg&quot; alt=&quot;パン&quot; title=&quot;パン&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 29 Apr 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/hobby/2020/04/29/toshiba-ishigamadome.html</link>
+        <guid isPermaLink="true">https://masamichi.me/hobby/2020/04/29/toshiba-ishigamadome.html</guid>
+        
+        <category>オーブンレンジ</category>
+        
+        <category>東芝</category>
+        
+        <category>石窯ドーム</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>鼻うがいの仕方</title>
@@ -661,62 +696,6 @@
         
         
         <category>family</category>
-        
-      </item>
-    
-      <item>
-        <title>GitHub Sponsorsに登録する方法</title>
-        <description>&lt;p&gt;先日GitHub Sponsorsに承認されました。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Approved GitHub sponsor 🦋&lt;a href=&quot;https://t.co/xSsKanltqM&quot;&gt;https://t.co/xSsKanltqM&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta 🐬 (@masamichiueta) &lt;a href=&quot;https://twitter.com/masamichiueta/status/1190139038830718976?ref_src=twsrc%5Etfw&quot;&gt;November 1, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;GitHub Sponsorsに登録することで、スポンサーを募ることができます。逆に、OSS開発をしている開発者のスポンサーになることができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sponsors&quot;&gt;https://github.com/sponsors&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub Sponsorsは現在承認制になっていて、GitHubに申請後、申請されると有効にできます。&lt;/p&gt;
-
-&lt;p&gt;承認制になっているので、これまでのOSSへの貢献など条件があるかもしれませんが、基本的には誰でも申請できそうです。&lt;/p&gt;
-
-&lt;p&gt;FAQページより抜粋&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;There are a small number of sponsored developers currently participating in the limited beta. Anyone who contributes to an open source project is eligible to become a sponsored developer in the future.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;現在ベータ版に参加しているスポンサー制度が適用された開発者は少ないです。将来的にはオープンソースプロジェクトに貢献している開発者なら誰でもスポンサー制度を適用できるようになります。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;申請するとWaitlistに入ります。その後承認されると、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;GitHub Sponsorsのプロフィールの入力&lt;/li&gt;
-  &lt;li&gt;スポンサーしてもらう金額の設定&lt;/li&gt;
-  &lt;li&gt;Stripe Connectと連携して銀行口座の接続と本人確認&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;というステップのあと、再度GitHubに承認リクエストを申請します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-11-02/dashboard.png&quot; alt=&quot;ダッシュボード&quot; title=&quot;ダッシュボード&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;本人確認に数日時間がかかります。全体で1週間程度かかりました。&lt;/p&gt;
-
-&lt;p&gt;承認されると、GitHub Sponsorsのダッシュボードが作られるのと、ユーザーページにSponsorボタンが表示されるようになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-11-02/profile.png&quot; alt=&quot;プロフィール&quot; title=&quot;プロフィール&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sponsors/masamichiueta/dashboard&quot;&gt;https://github.com/sponsors/masamichiueta/dashboard&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 02 Nov 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2019/11/02/github-sponsors.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2019/11/02/github-sponsors.html</guid>
-        
-        <category>GitHub Sponsors</category>
-        
-        
-        <category>development</category>
         
       </item>
     
