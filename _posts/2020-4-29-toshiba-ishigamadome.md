@@ -1,11 +1,9 @@
 ---
 layout: post
 title:  "東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000がよかった"
-description: ""
+description: "10年以上使ってきたNationalの電子レンジから、東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000に買い換えました。"
 date: 2020-04-29
 categories: hobby
-image: /assets/posts/2020-04-29/cover.png
-hero-caption: <a href="https://www.toshiba-lifestyle.co.jp/living/microwave/er_td3000/">ER-TD3000のサイト</a>よりスクリーンショット
 lang: ja_JP
 tags:
 - オーブンレンジ
