@@ -5,9 +5,109 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 May 2020 17:57:00 +0900</pubDate>
-    <lastBuildDate>Sat, 23 May 2020 17:57:00 +0900</lastBuildDate>
+    <pubDate>Sun, 24 May 2020 18:27:17 +0900</pubDate>
+    <lastBuildDate>Sun, 24 May 2020 18:27:17 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する</title>
+        <description>&lt;p&gt;以前、 &lt;a href=&quot;https://masamichi.me/development/2019/12/14/github-pages-blog.html&quot;&gt;GitHub Pagesでブログを運用し始めてから4年くらいたった&lt;/a&gt;というブログを書いたのですが、概要を書いただけで具体的な構築方法はあまり記述していなかったので、何回かに分けてブログを作っていく方法を書いていきたいと思います。&lt;/p&gt;
+
+&lt;p&gt;基本的には &lt;a href=&quot;https://help.github.com/ja/github/working-with-github-pages/about-github-pages&quot;&gt;GitHubのヘルプページ&lt;/a&gt;を読むのが確実です。&lt;/p&gt;
+
+&lt;h3 id=&quot;掲載予定&quot;&gt;掲載予定&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt; (この記事です)&lt;/li&gt;
+  &lt;li&gt;Part2 Jekyllのテンプレートを使ってみる&lt;/li&gt;
+  &lt;li&gt;Part3 Jekyllのプラグインを使う&lt;/li&gt;
+  &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
+  &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-github-pagesについて知る&quot;&gt;1. GitHub Pagesについて知る&lt;/h2&gt;
+
+&lt;p&gt;GitHub PagesはGitHubにリポジトリを作りそこにサイト用のファイルを配置することで、Webサイトとして運用できる仕組みです。 GitHub Pagesのサイトには個人のユーザーであればユーザーサイトか、プロジェクトのサイトがあります。&lt;/p&gt;
+
+&lt;p&gt;ユーザーサイトは &lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt; (usernameのところは自分のGitHubユーザー名に置き換える)というリポジトリを作成する必要があります。 &lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt; リポジトリの &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; ブランチに配置されたファイルがWebサイトとして公開されます。その場合のurlは&lt;code class=&quot;highlighter-rouge&quot;&gt;https://username.github.io&lt;/code&gt;になります（設定次第でカスタムドメインを使うことも可能です）。&lt;/p&gt;
+
+&lt;p&gt;プロジェクトサイトは特にリポジトリ名にルールはなく、普段作成しているリポジトリで管理できます。urlは&lt;code class=&quot;highlighter-rouge&quot;&gt;https://username.github.io/project&lt;/code&gt;(projectの部分がリポジトリ名に置き換わる)という形になります。
+ただしプロジェクトサイトでは&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチが公開されるのではなく、&lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;ブランチが公開されます。&lt;/p&gt;
+
+&lt;p&gt;主に個人の情報を公開したりブログを作ったりする場合は、&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;のユーザーサイト、自分が作っているOSSのようなプロジェクトについての情報を公開する場合はプロジェクトサイトを使う、という形で使い分けていけばいいと思います。&lt;/p&gt;
+
+&lt;p&gt;ここではユーザーサイトをサンプルに作ってみます。&lt;/p&gt;
+
+&lt;h2 id=&quot;2-githubにリポジトリを作る&quot;&gt;2. GitHubにリポジトリを作る&lt;/h2&gt;
+
+&lt;p&gt;ではGitHubに実際にリポジトリを作ってみましょう。&lt;/p&gt;
+
+&lt;p&gt;GitHubの右上のナビゲーションバーのプラスボタンから&lt;code class=&quot;highlighter-rouge&quot;&gt;New repository&lt;/code&gt;を選びます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/newrepository.png&quot; alt=&quot;New repository&quot; title=&quot;New repository&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Repository Name&lt;/code&gt;のところに、&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;を入力します。私の場合はすでに作成済なのでエラーになります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/input.png&quot; alt=&quot;username.github.io&quot; title=&quot;username.github.io&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Initialize this repository with a README&lt;/code&gt; のチェックはどちらでも大丈夫です。&lt;/p&gt;
+
+&lt;p&gt;これでリポジトリの作成ができました。&lt;/p&gt;
+
+&lt;h2 id=&quot;3-リポジトリにファイルを作って公開する&quot;&gt;3. リポジトリにファイルを作って公開する&lt;/h2&gt;
+
+&lt;p&gt;リポジトリが作成されたらすでに公開準備は整っているので、ファイルを追加してサイトを公開します。&lt;/p&gt;
+
+&lt;p&gt;まずリポジトリをクローンします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/username/usernam.github.io.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;そして&lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;というファイルを作成して適当に中身を書きます。&lt;/p&gt;
+
+&lt;p&gt;index.md&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これをリポジトリに追加してGitHubにプッシュします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add index.md
+$ git commit -m &quot;first commit&quot;
+$ git push
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これで&lt;code class=&quot;highlighter-rouge&quot;&gt;https://username.github.io&lt;/code&gt;にアクセスすると、Hello worldと表示されると思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/helloworld.png&quot; alt=&quot;hello world&quot; title=&quot;hello world&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以上でサイトの公開ができました。&lt;/p&gt;
+
+&lt;h2 id=&quot;4-設置を確認する&quot;&gt;4. 設置を確認する&lt;/h2&gt;
+
+&lt;p&gt;リポジトリのナビゲーションメニューのSettingに移動するとGitHug Pagesの設定を確認することができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/settings.png&quot; alt=&quot;settings&quot; title=&quot;settings&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;設定の中にEnforce HTTPSという項目があるので、このチェックをオンにしておくことをお勧めします。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/https.png&quot; alt=&quot;Enforce HTTPS&quot; title=&quot;Enforce HTTPS&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;以上で無事サイトを公開することができました。&lt;/p&gt;
+
+&lt;p&gt;次のPart2ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 May 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2020/05/24/github-pages-blog-part1-jekyll.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2020/05/24/github-pages-blog-part1-jekyll.html</guid>
+        
+        <category>GitHub Pages</category>
+        
+        <category>ブログ</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000がよかった</title>
@@ -650,52 +750,6 @@
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>昭和の森フォレストビレッジにキャンプに行ってきました</title>
-        <description>&lt;p&gt;今回は千葉県にある昭和の森フォレストビレッジにキャンプにいってきました。
-前回の&lt;a href=&quot;https://masamichi.me/family/2019/10/29/shiawasenooka-resort-camp.html&quot;&gt;Recamp勝浦（旧：しあわせの丘リゾート）のキャンプ&lt;/a&gt;に引き続き千葉県です!&lt;/p&gt;
-
-&lt;p&gt;今回もなっぷで予約しました。たまたま芝生のフリーサイトに空きが出たので予約しました。&lt;/p&gt;
-
-&lt;p&gt;オートキャンプサイト、フリーテントサイト、芝生サイトがありましたが、今回は芝生サイトです。どのサイトも隣合っていますが、芝生サイトは横にフットサルコートがありました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-11-18/forestvillage.jpeg&quot; alt=&quot;芝生サイト&quot; title=&quot;芝生サイト&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;フットサルは予約が入っていれば21時まであるみたいです。ナイターもついていて明るかったです。&lt;/p&gt;
-
-&lt;p&gt;芝生サイトには4つくらいウッドデッキが設置されていて、空いていたら自由に使えるようでした。今回のテントはこんな感じでウッドデッキの上に設置しました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-11-18/cover.jpeg&quot; alt=&quot;テント&quot; title=&quot;テント&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;キャンプ上からは少し歩きますが、昭和の森には大きな遊具も設置されているので、テントの設営が終わったあとは、子供と遊具で遊ぶことができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-11-18/athretic.jpeg&quot; alt=&quot;遊具&quot; title=&quot;遊具&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;近くには温泉施設もあり、車で15分くらいでいけます。&lt;/p&gt;
-
-&lt;p&gt;食器の洗い場もキャンプ場にありますし、森！という感じでとても気持ちのいいキャンプ場でした。&lt;/p&gt;
-
-&lt;p&gt;今回初めてウッドデッキを使ってテントを作ったのですが、ウッドデッキはよかったです。テントやシートは汚れにくいし寒さも少しましだったと思います。それでもやっぱり夜から明け方はかなり寒かったです。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-11-18/wooddeck.jpeg&quot; alt=&quot;ウッドデッキ&quot; title=&quot;ウッドデッキ&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;キャンプ場としてはかなり満足度が高かったです、また来年も行きたいと思います。今度はオートキャンプサイト、フリーテントサイトに行ってみたいですね。&lt;/p&gt;
-</description>
-        <pubDate>Mon, 18 Nov 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/family/2019/11/18/shouwanomori-forestvillage-camp.html</link>
-        <guid isPermaLink="true">https://masamichi.me/family/2019/11/18/shouwanomori-forestvillage-camp.html</guid>
-        
-        <category>キャンプ</category>
-        
-        <category>昭和の森</category>
-        
-        <category>フォレストビレッジ</category>
-        
-        
-        <category>family</category>
         
       </item>
     
