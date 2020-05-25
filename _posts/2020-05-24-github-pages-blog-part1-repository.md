@@ -18,7 +18,7 @@ tags:
 
 ### 掲載予定
 
-- [Part1 GitHubにリポジトリを作ってサイトを公開する]() (この記事です)
+- [Part1 GitHubにリポジトリを作ってサイトを公開する](https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html) (この記事です)
 - Part2 Jekyllのテンプレートを使ってみる
 - Part3 Jekyllのプラグインを使う
 - Part4 自分のオリジナルテンプレートを作る
