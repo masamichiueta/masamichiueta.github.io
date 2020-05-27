@@ -96,4 +96,4 @@ $ git push
 
 以上で無事サイトを公開することができました。
 
-[次のPart2]((https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html))ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。
+[次のPart2](https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。
