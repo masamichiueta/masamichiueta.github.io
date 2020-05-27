@@ -5,9 +5,480 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 25 May 2020 20:24:23 +0900</pubDate>
-    <lastBuildDate>Mon, 25 May 2020 20:24:23 +0900</lastBuildDate>
+    <pubDate>Wed, 27 May 2020 17:13:19 +0900</pubDate>
+    <lastBuildDate>Wed, 27 May 2020 17:13:19 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる</title>
+        <description>&lt;p&gt;「GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる」です。&lt;/p&gt;
+
+&lt;p&gt;他の記事はこちら。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Part3 Jekyllのプラグインを使う&lt;/li&gt;
+  &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
+  &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyllとは&quot;&gt;Jekyllとは&lt;/h2&gt;
+
+&lt;p&gt;JekyllはGitHub Pagesで使用することができる静的サイトのジェネレータです。Jekyllを使うことで、Markdownで書いたブログの記事やhtmlで作ったページをビルドして、公開用のhtmlとして生成することができます。&lt;/p&gt;
+
+&lt;p&gt;htmlを事前に生成して、公開時にはサーバーサイドによる動的な処理を実行せずhtmlを表示するだけなので、静的サイトになります。
+JekyllにはWordpressのように、いくつかのテーマが提供されていて、それらを活用することで簡単にブログサイトを構築することができます。&lt;/p&gt;
+
+&lt;p&gt;静的サイトジェネレータは他にも&lt;a href=&quot;https://gohugo.io&quot;&gt;HUGO&lt;/a&gt;や&lt;a href=&quot;https://www.gatsbyjs.org&quot;&gt;Gatsby&lt;/a&gt;などがありますが、GitHub Pagesはデフォルトで&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;をサポートしています。そのため、特別なカスタマイズをしなければ、Jekyllで事前にビルドする必要もなくGitHub Pagesでテーマを活用したブログを構築することができます。&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyllを使ってみる&quot;&gt;Jekyllを使ってみる&lt;/h2&gt;
+
+&lt;p&gt;GitHub PagesでJekyllのテンプレートを使うのは簡単です。リポジトリのメニューからSettingsを開いて、下の方にあるGitHub Pagesの設定をみると、 &lt;code class=&quot;highlighter-rouge&quot;&gt;Choose a theme&lt;/code&gt; というメニューがあります。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-26/chooseatheme.png&quot; alt=&quot;Choose a theme&quot; title=&quot;Choose a theme&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;ボタンをクリックするとテーマセレクタ画面が表示されます。テーマを選択することでプレビューを見ることもできます。
+良さそうなテーマがあれば、&lt;code class=&quot;highlighter-rouge&quot;&gt;Select theme&lt;/code&gt;で決定します。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-26/selecttheme.png&quot; alt=&quot;Select theme&quot; title=&quot;Select theme&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;するとテーマが適用されます。具体的にはリポジトリに &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; というファイルが新しく追加されています。中身は以下のようになっています。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;theme: jekyll-theme-cayman (実際に選んだテーマ)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jekyllはこの&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に基づいて静的サイトを生成しますが、GitHub PagesはJekyllをサポートしているので既存のテーマを使うだけであればこれだけでテーマを適用することができます。&lt;/p&gt;
+
+&lt;h2 id=&quot;新規ポストを投稿する&quot;&gt;新規ポストを投稿する&lt;/h2&gt;
+
+&lt;p&gt;Jekyllのルールではブログの記事は &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;フォルダの中に、&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-title.md&lt;/code&gt;という形式で記事を配置する必要があります。例えば、&lt;code class=&quot;highlighter-rouge&quot;&gt;2020-05-26-first-post.md&lt;/code&gt;などです。&lt;/p&gt;
+
+&lt;p&gt;Markdownファイルを作成したら、ファイルの一番上の部分にタイトルや日付などのメタデータを書き込み、その下に記事のコンテンツを書き込みます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
+layout: page
+title: &quot;First post&quot;
+date: 2020-05-26
+---
+
+# Fist post
+
+First post
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これをリポジトリに配置すれば記事が公開されます。&lt;/p&gt;
+
+&lt;p&gt;トップページに記事の一覧を表示するには&lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;に以下を追記します。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&amp;gt;GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&amp;gt;GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2020/04/29/toshiba-ishigamadome.html&quot;&amp;gt;東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000がよかった&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2020/03/29/hanaugai.html&quot;&amp;gt;鼻うがいの仕方&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2020/03/28/investment-is-hard.html&quot;&amp;gt;ほったらかし投資は難しいなという話&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2020/01/03/upload-image-firebase.html&quot;&amp;gt;FirebaseでCloud Storageに画像をアップロードする&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2020/01/01/build-a-native-app-in-2020.html&quot;&amp;gt;2020年にネイティブアプリを開発する方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/12/14/github-pages-blog.html&quot;&amp;gt;GitHub Pagesでブログを運用し始めてから4年くらいたった&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/12/06/uistackview-cell-highlight.html&quot;&amp;gt;UIScrollViewとUIStackViewで、UITableViewのハイライトを作る&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2019/11/26/yokohama-marathon-2019.html&quot;&amp;gt;横浜マラソン2019に参加しました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/11/26/swiftui-navigation-crash.html&quot;&amp;gt;SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn't exist&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/11/18/shouwanomori-forestvillage-camp.html&quot;&amp;gt;昭和の森フォレストビレッジにキャンプに行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/11/02/github-sponsors.html&quot;&amp;gt;GitHub Sponsorsに登録する方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/10/29/shiawasenooka-resort-camp.html&quot;&amp;gt;Recamp勝浦（旧：しあわせの丘リゾート）にキャンプに行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/10/21/swiftui-list-multiple-navigationlink.html&quot;&amp;gt;SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/10/15/use-activityindicator-swiftui.html&quot;&amp;gt;SwiftUIでActivityIndicatorを使う方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/10/14/ios-simulator-dark-mode.html&quot;&amp;gt;iPhoneシミュレーターでダークモードにする方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/10/12/swiftui-url-image.html&quot;&amp;gt;SwiftUIでURLから画像を取得して表示する方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/10/12/swiftui-pageview.html&quot;&amp;gt;SwiftUIでUIPageViewControllerとSegmentedControlを使う方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/10/09/soleil-camp.html&quot;&amp;gt;ソレイユの丘にキャンプに行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/09/27/camp-beginner.html&quot;&amp;gt;キャンプ初心者がキャンプ用品を揃えてみた&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/08/12/tatarahama-mitohamakaigan.html&quot;&amp;gt;多々良浜と三戸浜海岸に行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/08/11/1password-downgrade.html&quot;&amp;gt;1Passwordを6にダウングレードしました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/08/05/no-submodule-mapping-found-in-gitmodules.html&quot;&amp;gt;no submodule mapping found in .gitmodulesを解決する&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/07/25/use-webview-in-swiftui.html&quot;&amp;gt;SwiftUIでWebViewを使う&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/07/16/electric-piano.html&quot;&amp;gt;YAMAHAの電子ピアノCLP-675Bを購入しました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/07/16/amazon-prime-day-2019.html&quot;&amp;gt;Amazonプライムデー2019　セールで買ったものまとめ&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/07/01/bichukakuwankyokusho.html&quot;&amp;gt;鼻中隔湾曲症の手術をしたら世界が変わった話&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/cryptocurrency/2019/06/20/try-libra.html&quot;&amp;gt;Facebookが発表した仮想通貨Libraを動かしてみる&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/06/15/how-to-seup-python-environment.html&quot;&amp;gt;macOSにPythonの環境を構築する方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/06/10/install-macos-catalina-safely.html&quot;&amp;gt;macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/03/18/iblinter-use-base-class.html&quot;&amp;gt;Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2019/01/15/deflected-septum.html&quot;&amp;gt;鼻中隔湾曲症と診断されたので手術します&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2019/01/05/build-a-native-app-in-2019.html&quot;&amp;gt;2019年にネイティブアプリを開発する方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/cryptocurrency/2018/12/31/start-etherium-with-crypto-zombies.html&quot;&amp;gt;CryptoZombiesというサービスでイーサリアムを使ったdApps開発を勉強し始めました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/11/11/hamarin-festa-2018.html&quot;&amp;gt;はまりんフェスタ2018にいってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2018/11/07/yokohama-marathon-2018.html&quot;&amp;gt;横浜マラソン2018に参加しました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/10/15/resolve-flutter-japanese-font-problem.html&quot;&amp;gt;FlutterでiOS12のデバイスにアプリをインストールすると日本語が明朝体になる&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/08/19/too-many-symbol-files.html&quot;&amp;gt;App Store ConnectにアプリをアップロードしたらToo many symbol filesと怒られた&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2018/08/17/mutuber-okahirakenji.html&quot;&amp;gt;元19, 3B LAB.☆Sの岡平健治さんがYoutuberに。Mutuber KENJIのMusicTV配信が始まりました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/07/23/get-start-flutter.html&quot;&amp;gt;Flutterの始め方&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/07/22/yamatoshi-yutorinomori.html&quot;&amp;gt;神奈川公園お出かけスポット！大和ゆとりの森に行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/07/16/amazon-prime-day-2018.html&quot;&amp;gt;Amazonプライムデー2018　セールで買ったものまとめ&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2018/07/15/yokohama-marathon-2018.html&quot;&amp;gt;横浜マラソン2018に当選したので参加します&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/07/01/github-custom-domain.html&quot;&amp;gt;2018年最新版　GitHub Pagesでカスタムドメインを使用する&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/30/firebase-react-redux.html&quot;&amp;gt;FirebaseとReactとReduxで認証付きのWebアプリのサンプルを作りました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/18/firebase-react-authenticaton.html&quot;&amp;gt;FirebaseとReactで認証付きアプリのサンプルを実行するまで&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/13/whats-new-in-arkit2.html&quot;&amp;gt;What's new in ARKit 2 ~ ARKit2の新機能&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/06/09/yokosukayynorimonofesta2018.html&quot;&amp;gt;よこすかYYのりものフェスタ2018に行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/08/whats-new-swift42.html&quot;&amp;gt;Swift4.2ではEnumを一覧で取得できるようになった&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/07/create-ml-wwdc2018.html&quot;&amp;gt;WWDC2018で発表された機械学習モデル生成フレームワーク Create MLについて&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/06/mov-to-gif-with-ffmpeg.html&quot;&amp;gt;ffmpegを使ってmovファイルをgifに変換する&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/05/wwdc2018-keynote.html&quot;&amp;gt;WWDC2018キーノートまとめ&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/05/asp-dotnet-core-error-japanese.html&quot;&amp;gt;ASP.NET Coreでエラーメッセージを日本語にする方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/06/03/goods-for-baby.html&quot;&amp;gt;子育てハック　子供2人（3歳0歳）の私が子供が生まれてから買ってよかったもの&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/06/01/swift-for-tensorflow-installation.html&quot;&amp;gt;Swift for TensorFlowをインストールして試してみる&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/05/30/jekyll-seo.html&quot;&amp;gt;JekyllでSEO対策をする方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/05/29/wwdc2018-prediction.html&quot;&amp;gt;いよいよ来週！AppleのイベントWWDC2018で発表されそうなことまとめ&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/05/26/yokohama-omorhiso-suziokukan.html&quot;&amp;gt;横浜お出かけスポット！横浜中華街にあるヨコハマおもしろ水族館に行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/05/20/enoshima.html&quot;&amp;gt;江ノ電に乗って江ノ島にいったら富士山が見えた&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/05/20/github-commit-history.html&quot;&amp;gt;GitHubのコミットログ一覧を表示するGitHub Contributions Chart Generator&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/05/19/kodomoshizenkouen.html&quot;&amp;gt;横浜周辺の週末子供とお出かけスポット！こども自然公園（大池公園）の紹介&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/05/18/amazon.html&quot;&amp;gt;Amazonの定期おトク便でパンパースを買って節約する&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/05/13/ios-photo-zoom-app.html&quot;&amp;gt;iOSの写真アプリのような画面遷移とインタラクションを実装する&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/cryptocurrency/2018/05/08/bitmex-bot-sample.html&quot;&amp;gt;BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/05/06/embedded-framework.html&quot;&amp;gt;Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/05/04/universal-studio-japan.html&quot;&amp;gt;ゴールデンウィークのUSJにはエクスプレスパスが最強でした&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/05/01/minimalization.html&quot;&amp;gt;ライフスタイルの変化に合わせてメルカリで断捨離してみた&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/04/30/rinko-park.html&quot;&amp;gt;横浜みなとみらいお出かけスポット！臨港公園にピクニックに行って来ました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/04/29/eureka.html&quot;&amp;gt;EurekaでkeyboardDismissMode = .interactiveにしてもインタラクティブにならない問題を解決する方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/04/29/drive-recorder.html&quot;&amp;gt;おすすめのドライブレコーダー BRISIE ドライブレコーダーを導入しました。&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/04/28/plarail-ex-2018.html&quot;&amp;gt;プラレール博 in TOKYO 2018に行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2018/04/16/plarail-ex-2018.html&quot;&amp;gt;プラレール博 in TOKYO 2018のチケットを購入しました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/03/19/wwdc2018-page.html&quot;&amp;gt;WWDC2018のページが公開されました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2018/02/07/vue-reference.html&quot;&amp;gt;【メモ】Vue.jsアプリ構成の調査で参考になった記事一覧&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2017/11/26/icloud.html&quot;&amp;gt;iCloud徹底活用！iCloud 2TBストレージを購入して、快適クラウドライフ&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2017/10/28/hamarin-fecta-2017.html&quot;&amp;gt;はまりんフェスタ2017に行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2017/10/21/odakyu-family-2017.html&quot;&amp;gt;小田急ファミリー鉄道展2017に行ってきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2017/10/05/high-sierra-login.html&quot;&amp;gt;macOS 10.13 High Sierraのログイン画面で、Othersが表示されるのを直す方法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/hobby/2017/10/04/mineo.html&quot;&amp;gt;ソフトバンクからmineoに乗り換えました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2017/10/01/thomas-2018-movie.html&quot;&amp;gt;きかんしゃトーマスシリーズ2018年の映画が発表されました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2017/09/28/doctor-yellow.html&quot;&amp;gt;大井車両基地でドクターイエローを見てきました&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2017/06/13/boto3-pandas-csv.html&quot;&amp;gt;【メモ】boto3でs3のcsvをpandasに読み込む&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2017/06/06/WWDC2017-Keynote.html&quot;&amp;gt;WWDC2017 キーノートまとめ&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2016/12/11/iOS-MVVM.html&quot;&amp;gt;iOSでMVVM（バインディングを使わない）&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2016/09/23/iOS-Redux-Architecture-with-coredata.html&quot;&amp;gt;iOS Redux Architecture with CoreData&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2016/06/14/wwdc2016-keynote-summary.html&quot;&amp;gt;WWDC2016 Keynote Summary&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2016/05/22/apple-id-corp.html&quot;&amp;gt;How to register iOS Developer Program as a Corporation in Japan?&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/family/2016/05/20/helloworld.html&quot;&amp;gt;Hello World&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2016/03/18/how-is-your-today.html&quot;&amp;gt;How is your today?&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/design/2016/01/15/hello-world-the-reason-why-we-need-design.html&quot;&amp;gt;【書評】HELLO WORLD 「デザイン」が私たちに必要な理由&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/design/2015/12/31/mental-model.html&quot;&amp;gt;【書評】メンタルモデル ユーザーへの共感から生まれるUXデザイン戦略&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2015/12/27/start-sass-by-npm.html&quot;&amp;gt;npmでミニマムに始めるSass&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/development/2015/11/25/install-cocoapods-to-elcapitan.html&quot;&amp;gt;OS X 10.10.11 El Capitan にCocoaPodsをインストールする&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/design/2015/11/18/the-art-ob-innovation.html&quot;&amp;gt;【書評】発想する会社! ― 世界最高のデザイン・ファームIDEOに学ぶイノベーションの技法&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/design/2015/11/10/micro-interaction.html&quot;&amp;gt;【書評】マイクロインタラクション UI/UXデザインの神が宿る細部&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+    &amp;lt;li&amp;gt;
+      &amp;lt;a href=&quot;/design/2015/11/04/design-engineering.html&quot;&amp;gt;【書評】一橋ビジネスレビュー デザインエンジニアリング&amp;lt;/a&amp;gt;
+    &amp;lt;/li&amp;gt;
+  
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;次のPart3ではJekyllの設定をカスタマイズする方法を書いていきます。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 26 May 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html</guid>
+        
+        <category>GitHub Pages</category>
+        
+        <category>ブログ</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する</title>
@@ -19,8 +490,8 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt; (この記事です)&lt;/li&gt;
-  &lt;li&gt;Part2 Jekyllのテンプレートを使ってみる&lt;/li&gt;
-  &lt;li&gt;Part3 Jekyllのプラグインを使う&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Part3 Jekyllの設定をカスタマイズする&lt;/li&gt;
   &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
   &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
 &lt;/ul&gt;
@@ -94,7 +565,7 @@ $ git push
 
 &lt;p&gt;以上で無事サイトを公開することができました。&lt;/p&gt;
 
-&lt;p&gt;次のPart2ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;(https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)&quot;&gt;次のPart2&lt;/a&gt;ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 May 2020 00:00:00 +0900</pubDate>
         <link>https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html</link>
@@ -715,41 +1186,6 @@ $ git push
         
         
         <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn't exist</title>
-        <description>&lt;p&gt;SwiftUIで、公式チュートリアルで紹介されている&lt;code class=&quot;highlighter-rouge&quot;&gt;PageView&lt;/code&gt;の中に&lt;code class=&quot;highlighter-rouge&quot;&gt;NavigationLink&lt;/code&gt;を入れて、プッシュ遷移した後に戻るボタンでポップすると、&lt;code class=&quot;highlighter-rouge&quot;&gt;Tried to pop to a view controller that doesn't exist&lt;/code&gt; というエラーが発生してクラッシュしてしまいました。&lt;/p&gt;
-
-&lt;p&gt;環境はXcode11.2.1でiOS13.2.2のシミュレータで実行しています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UINavigationController&lt;/code&gt;が元の&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController&lt;/code&gt;にポップできていないようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PageView&lt;/code&gt;が毎回新しい&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewController&lt;/code&gt;を生成するのが原因でしょうか。&lt;/p&gt;
-
-&lt;p&gt;ググってみると同じようなエラーにぶつかっている人もいるみたいです。Xcode11.0では動いていたので、iOSのバグ、という可能性もあります。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://forums.developer.apple.com/thread/124757&quot;&gt;SwiftUI - NavigationLink inside NavigationBarItems, returns error on navigating from detail back to master view&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;TabViewが原因で発生する場合もあるようですが、私は&lt;code class=&quot;highlighter-rouge&quot;&gt;PageView&lt;/code&gt;が原因でした。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/58737567/tried-to-pop-to-a-view-controller-that-doesnt-exist-in-swiftui&quot;&gt;Tried to pop to a view controller that doesn’t exist in SwiftUI&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;解決方法はまだ見つかっていませんが、見つかったら紹介します。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 Nov 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html</guid>
-        
-        <category>SwiftUI</category>
-        
-        <category>NavigationLink</category>
-        
-        <category>PageView</category>
-        
-        
-        <category>development</category>
         
       </item>
     
