@@ -74,6 +74,7 @@ First post
 トップページに記事の一覧を表示するには`index.md`に以下を追記します。
 
 ```
+{% raw %}
 <ul>
   {% for post in site.posts %}
     <li>
@@ -81,6 +82,7 @@ First post
     </li>
   {% endfor %}
 </ul>
+{% endraw %}
 ```
 
 次のPart3ではJekyllの設定をカスタマイズする方法を書いていきます。
