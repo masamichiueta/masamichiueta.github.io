@@ -19,8 +19,8 @@ tags:
 ### 掲載予定
 
 - [Part1 GitHubにリポジトリを作ってサイトを公開する](https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html) (この記事です)
-- Part2 Jekyllのテンプレートを使ってみる
-- Part3 Jekyllのプラグインを使う
+- [Part2 Jekyllを使ってみる](https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)
+- Part3 Jekyllの設定をカスタマイズする
 - Part4 自分のオリジナルテンプレートを作る
 - Part5 ファイルをうまく管理する
 
@@ -96,4 +96,4 @@ $ git push
 
 以上で無事サイトを公開することができました。
 
-次のPart2ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。
+[次のPart2]((https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html))ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。
