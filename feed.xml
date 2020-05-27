@@ -5,8 +5,8 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 May 2020 17:13:19 +0900</pubDate>
-    <lastBuildDate>Wed, 27 May 2020 17:13:19 +0900</lastBuildDate>
+    <pubDate>Wed, 27 May 2020 17:15:58 +0900</pubDate>
+    <lastBuildDate>Wed, 27 May 2020 17:15:58 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -565,7 +565,7 @@ $ git push
 
 &lt;p&gt;以上で無事サイトを公開することができました。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;(https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)&quot;&gt;次のPart2&lt;/a&gt;ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;次のPart2&lt;/a&gt;ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 May 2020 00:00:00 +0900</pubDate>
         <link>https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html</link>
