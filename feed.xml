@@ -5,9 +5,123 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 May 2020 17:20:13 +0900</pubDate>
-    <lastBuildDate>Wed, 27 May 2020 17:20:13 +0900</lastBuildDate>
+    <pubDate>Sat, 30 May 2020 12:33:33 +0900</pubDate>
+    <lastBuildDate>Sat, 30 May 2020 12:33:33 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</title>
+        <description>&lt;p&gt;「GitHub Pagesで無料ブログを作成すr - Part3 Jekyllの設定をカスタマイズする」です。&lt;/p&gt;
+
+&lt;p&gt;他の記事はこちら&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
+  &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ローカルでjekyllを実行する&quot;&gt;ローカルでJekyllを実行する&lt;/h2&gt;
+
+&lt;p&gt;前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。&lt;/p&gt;
+
+&lt;p&gt;今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;Jekyllのサイト&lt;/a&gt;に書いてありますが、gemでjekyllをbundlerをインストールして起動することができます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem install jekyll bundler
+$ cd your-repository
+$ bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;これまで作成したブログのリポジトリをクローンして、jekyllを実行できるようにします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone your-repository
+$ cd your-repository
+$ bundle exec jekyll new . --force
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--force&lt;/code&gt; オプションをつけるとこれまで作成したファイルがいったんJekyllのテンプレートで上書きされます。&lt;/p&gt;
+
+&lt;p&gt;デフォルトでは&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;というテーマが有効になっています。&lt;/p&gt;
+
+&lt;p&gt;その状態でJekyllを実行してみます。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;実行するとローカルでブログを立ち上げることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;404.html&lt;/code&gt;が生成されていたり、&lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;が上書きされています。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new&lt;/code&gt;で初期化するとデフォルトのテーマである&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;が適用されるので、今後は&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;のテーマを想定して作っていきます。&lt;/p&gt;
+
+&lt;h2 id=&quot;github-pagesのプラグインとテーマを使う&quot;&gt;GitHub Pagesのプラグインとテーマを使う&lt;/h2&gt;
+
+&lt;p&gt;もし、元々使っていたGitHub Pagesのテーマを使いたい場合には、&lt;code class=&quot;highlighter-rouge&quot;&gt;github-pages&lt;/code&gt;のプラグインを入れる必要があります。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;を見ると、&lt;code class=&quot;highlighter-rouge&quot;&gt;github-pages&lt;/code&gt;というgemがコメントアウトされていると思うので、記載されているコメントにしたがってコメントアウトを外します。
+それに伴い、jekyllの方はコメントアウトします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# This will help ensure the proper Jekyll version is running.
+# Happy Jekylling!
+# gem &quot;jekyll&quot;, &quot;~&amp;gt; 3.8.7&quot;
+
+# If you want to use GitHub Pages, remove the &quot;gem &quot;jekyll&quot;&quot; above and
+# uncomment the line below. To upgrade, run `bundle update github-pages`.
+gem &quot;github-pages&quot;, group: :jekyll_plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;そしてgemをアップデートします。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ bundle update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に記載されているthemeを例えば&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-theme-cayman&lt;/code&gt;に戻して、&lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;を元に戻せば、元々のテーマを使うことができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;を使う場合はそのままでオッケーです。&lt;/p&gt;
+
+&lt;p&gt;上記のようにGitHub Pagesでは必要なGemをインストールして、&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;を変更すると設定をカスタマイズすることができます。
+例えばテーマを変更したりサイトのタイトルを編集することができます。&lt;/p&gt;
+
+&lt;h2 id=&quot;レイアウトとページ&quot;&gt;レイアウトとページ&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new&lt;/code&gt;で初期化すると &lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;404.html&lt;/code&gt;が追加されたと思います。jekyllではこのようにブログの記事以外に個別のページを作ることができます。&lt;/p&gt;
+
+&lt;p&gt;例えば&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt;というファイルを作ると、&lt;code class=&quot;highlighter-rouge&quot;&gt;https://username.github.io/about/&lt;/code&gt;というページを作ることができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;404.html&lt;/code&gt;は特別なファイルで、アクセスしたページが存在しないときに使われるファイルです。&lt;/p&gt;
+
+&lt;p&gt;このようにページをどんどん作成することができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;about.md&lt;/code&gt;を見ると、&lt;code class=&quot;highlighter-rouge&quot;&gt;layout: home&lt;/code&gt;や&lt;code class=&quot;highlighter-rouge&quot;&gt;layout: page&lt;/code&gt;という設定がヘッダーのところに記載されていると思います。これは各テーマが作っているレイアウトのテンプレートを設定しています。テーマによって、いくつかのページのレイアウトが用意されていて、ページごとにどのレイアウトを使うかを設定できます。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;には&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;default&lt;/li&gt;
+  &lt;li&gt;home&lt;/li&gt;
+  &lt;li&gt;page&lt;/li&gt;
+  &lt;li&gt;post&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;の4つのレイアウトが用意されています。&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 28 May 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html</guid>
+        
+        <category>GitHub Pages</category>
+        
+        <category>ブログ</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる</title>
@@ -18,7 +132,7 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Part3 Jekyllのプラグインを使う&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
   &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
 &lt;/ul&gt;
@@ -83,7 +197,7 @@ First post
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;次のPart3ではJekyllの設定をカスタマイズする方法を書いていきます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;次のPart3&lt;/a&gt;ではJekyllの設定をカスタマイズする方法を書いていきます。&lt;/p&gt;
 </description>
         <pubDate>Tue, 26 May 2020 00:00:00 +0900</pubDate>
         <link>https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html</link>
@@ -109,7 +223,7 @@ First post
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt; (この記事です)&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Part3 Jekyllの設定をカスタマイズする&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
   &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
 &lt;/ul&gt;
@@ -748,62 +862,6 @@ $ git push
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>横浜マラソン2019に参加しました</title>
-        <description>&lt;p&gt;2019年11月10日に横浜で開催された横浜マラソン2019に参加しました。去年に引き続き2回目の参加です。&lt;/p&gt;
-
-&lt;p&gt;去年の記事 &lt;a href=&quot;https://masamichi.me/hobby/2018/11/07/yokohama-marathon-2018.html&quot;&gt;横浜マラソン2018に参加しました&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;今年のタイムは、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;グロスタイム: 4:57:34&lt;/li&gt;
-  &lt;li&gt;ネットタイム: 4:38:53&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;でした！&lt;/p&gt;
-
-&lt;p&gt;去年が&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;グロスタイム: 4:54:31&lt;/li&gt;
-  &lt;li&gt;ネットタイム: 4:44:07&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;だったので、ネットタイムは6分程度早くなりました！&lt;/p&gt;
-
-&lt;p&gt;今回Hグループでスタートがかなり後ろの方だったので、グロスタイムは落ちました。&lt;/p&gt;
-
-&lt;p&gt;去年よりは安定して走れたと思います。やはり経験を積むのは大事だなと思いました。&lt;/p&gt;
-
-&lt;p&gt;20km過ぎたあたりから足が痛くなってくるのはわかっていたので、10-20kmのところは丁寧に飛ばし過ぎず走りました。&lt;/p&gt;
-
-&lt;p&gt;エアサロンパスも装備していて、ちょこちょこケアしつつ走りました。&lt;/p&gt;
-
-&lt;p&gt;去年に引き続き、給水スポットが10数個設置されていてとてもありがたかったです。今年はラッキー給食は1箇所だけでした。&lt;/p&gt;
-
-&lt;p&gt;横浜マラソンはやっぱり景色が綺麗で、天気もとてもよかったので走っている途中で富士山も見えたりします。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-11-26/fujisan.jpeg&quot; alt=&quot;横浜マラソンの富士山&quot; title=&quot;横浜マラソンの富士山&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;30kmのタイマー。心で走れ
-&lt;img src=&quot;/assets/posts/2019-11-26/30km.jpeg&quot; alt=&quot;30km&quot; title=&quot;30km&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;今年も無事完走メダルももらうことができました。来年も走りたいですね。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-11-26/goal.jpeg&quot; alt=&quot;横浜マラソン&quot; title=&quot;横浜マラソン&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 Nov 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/hobby/2019/11/26/yokohama-marathon-2019.html</link>
-        <guid isPermaLink="true">https://masamichi.me/hobby/2019/11/26/yokohama-marathon-2019.html</guid>
-        
-        <category>横浜マラソン</category>
-        
-        
-        <category>hobby</category>
         
       </item>
     
