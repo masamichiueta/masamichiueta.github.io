@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる"
-description: ""
+description: "JekyllはGitHub Pagesで使用することができる静的サイトのジェネレータです。Jekyllを使うことで、Markdownで書いたブログの記事やhtmlで作ったページをビルドして、公開用のhtmlとして生成することができます。"
 image: /assets/posts/2020-05-26/cover.png
 hero-caption: <a href="https://jekyllrb.com">Jekyllのサイト</a>よりスクリーンショット
 date: 2020-05-26
@@ -18,7 +18,7 @@ tags:
 
 - [Part1 GitHubにリポジトリを作ってサイトを公開する](https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html)
 - [Part2 Jekyllを使ってみる](https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)
-- Part3 Jekyllのプラグインを使う
+- [Part3 Jekyllの設定をカスタマイズする](https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html)
 - Part4 自分のオリジナルテンプレートを作る
 - Part5 ファイルをうまく管理する
 
@@ -85,4 +85,4 @@ First post
 {% endraw %}
 ```
 
-次のPart3ではJekyllの設定をカスタマイズする方法を書いていきます。
+[次のPart3](https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html)ではJekyllの設定をカスタマイズする方法を書いていきます。
