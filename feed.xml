@@ -5,8 +5,8 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 May 2020 12:33:33 +0900</pubDate>
-    <lastBuildDate>Sat, 30 May 2020 12:33:33 +0900</lastBuildDate>
+    <pubDate>Sat, 30 May 2020 15:19:02 +0900</pubDate>
+    <lastBuildDate>Sat, 30 May 2020 15:19:02 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -109,6 +109,7 @@ gem &quot;github-pages&quot;, group: :jekyll_plugins
 
 &lt;p&gt;の4つのレイアウトが用意されています。&lt;/p&gt;
 
+&lt;p&gt;次のPart4では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。&lt;/p&gt;
 </description>
         <pubDate>Thu, 28 May 2020 00:00:00 +0900</pubDate>
         <link>https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html</link>
