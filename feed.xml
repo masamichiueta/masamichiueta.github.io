@@ -5,13 +5,13 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 May 2020 15:19:02 +0900</pubDate>
-    <lastBuildDate>Sat, 30 May 2020 15:19:02 +0900</lastBuildDate>
+    <pubDate>Sun, 31 May 2020 23:16:22 +0900</pubDate>
+    <lastBuildDate>Sun, 31 May 2020 23:16:22 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
-        <title>GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</title>
-        <description>&lt;p&gt;「GitHub Pagesで無料ブログを作成すr - Part3 Jekyllの設定をカスタマイズする」です。&lt;/p&gt;
+        <title>GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</title>
+        <description>&lt;p&gt;「GitHub Pagesで無料ブログを作成すr - Part4 自分のオリジナルのテーマを作る」です。&lt;/p&gt;
 
 &lt;p&gt;他の記事はこちら&lt;/p&gt;
 
@@ -19,13 +19,96 @@
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
-  &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html&quot;&gt;Part4 自分のオリジナルのテーマを作る&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;jekyllのテーマのカスタマイズする&quot;&gt;Jekyllのテーマのカスタマイズする&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;前回の記事&lt;/a&gt;ではJekyllの設定をカスタマイズする方法を紹介しました。&lt;/p&gt;
+
+&lt;p&gt;カスタマイズするとはいえ、既存のテーマを使っていました。&lt;/p&gt;
+
+&lt;p&gt;Jekyllでは既存のテーマを使うこともできるのですが、さらに一歩踏み込んで、自分で既存のテーマをカスタマイズしたり、テーマを作ることもできます。&lt;/p&gt;
+
+&lt;p&gt;まずは、既存のテーマをカスタマイズする方法について紹介します。&lt;/p&gt;
+
+&lt;h2 id=&quot;既存のテーマをカスタマイズする&quot;&gt;既存のテーマをカスタマイズする&lt;/h2&gt;
+
+&lt;p&gt;Jekyllでは&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;で設定しているテーマを使いつつ、自分で少しカスタマイズすることができます。
+カスタマイズ方法はテーマによったりもするのですが、例えばデフォルトのテーマ&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;では、&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;GitHubのリポジトリ&lt;/a&gt;にカスタマイズ方法が記載されています。&lt;/p&gt;
+
+&lt;p&gt;Jekyllはディレクトリの構造が決められているので、そのルールにしたがって定義されているファイルを上書きすることで、カスタマイズすることができます。&lt;/p&gt;
+
+&lt;p&gt;例えば、ヘッダー部分をカスタマイズしたい場合は、自分のリポジトリに&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;フォルダを作成して、&lt;code class=&quot;highlighter-rouge&quot;&gt;header.html&lt;/code&gt;を作成します。ゼロから作るのは難しいと思うので、&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;のデフォルトの&lt;code class=&quot;highlighter-rouge&quot;&gt;header.html&lt;/code&gt;をコピーした上でカスタマイズしていくと良いと思います。&lt;/p&gt;
+
+&lt;p&gt;Jekyllでは&lt;a href=&quot;https://shopify.github.io/liquid/&quot;&gt;Liquid&lt;/a&gt;というテンプレートを処理するための言語が使用されています。Liquidを使うことでテンプレートの中でif文によって分岐やループ処理を書くことができます。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/variables/&quot;&gt;Jekyllでは様々な変数が定義されている&lt;/a&gt;ので、それらを使ってテンプレートを書いていくことでレイアウトやページを作成していきます。&lt;/p&gt;
+
+&lt;p&gt;レイアウトをカスタマイズする場合は、&lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;フォルダを作りカスタマイズしたいレイアウトのhtmlファイルと同じファイル名でhtmlを作成し中身を上書きします。&lt;/p&gt;
+
+&lt;p&gt;こちらも0から作るのは大変なので、既存のレイアウトをコピーしてからカスタマイズしていくといいと思います。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;ではcssをカスタマイズすることも可能です。&lt;code class=&quot;highlighter-rouge&quot;&gt;assets/css/style.scss&lt;/code&gt;というファイルを作成します。拡張子からもわかるようにJekyllはsassをサポートしており、sassで記述していくことが可能です。&lt;/p&gt;
+
+&lt;p&gt;またファイルの先頭には以下を記述する必要があります。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;---
+---
+&lt;/span&gt;
+@import &quot;minima/skins/classic&quot;;
+&lt;span class=&quot;err&quot;&gt;@import&lt;/span&gt; &quot;minima/initialize&quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;このように既存のテーマをカスタマイズしていく場合は、基本的にはテーマで定義されているファイルを上書きして自分のファイルを作成する、という手順になります。&lt;/p&gt;
+
+&lt;h2 id=&quot;自分のテーマを作る&quot;&gt;自分のテーマを作る&lt;/h2&gt;
+
+&lt;p&gt;Jekyllでは既存のテーマをカスタマイズするだけでなく、自分のテーマを作ることもできます。&lt;/p&gt;
+
+&lt;p&gt;これまではGemで公開されているテーマを使ってきましたが、Jekyllのディレクトリ構造にしたがって、必要なファイルを作成すれば自分のオリジナルのページを作ることができます。Wordpressでテーマを作るのに似ています。&lt;/p&gt;
+
+&lt;p&gt;Jekyllのディレクトリやテンプレート言語のLiquidの使い方については&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;Jekyllの公式サイト&lt;/a&gt;に書かれています。テンプレートの作り方全てを紹介するのは難しいのですが、基本的にはレイアウトに使われるhtmlやヘッダー・フッターなどの共通のhtmlなどを作成していくような形になります。&lt;/p&gt;
+
+&lt;p&gt;既存のテーマをカスタマイズする場合は、上書きしない部分を変更する必要はありませんでしたが、自分でテーマを作る場合は全て作る必要があります。しかしかなり柔軟にレイアウトを作成することができるので、まずはテーマを使ってみて、不満な部分があれば自分でテーマを作ってみるのをお勧めします。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、このブログは自分でレイアウトを作成しています。&lt;/p&gt;
+
+&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
+
+&lt;p&gt;Part1からPart4で、GitHub Pagesで無料ブログを作成する方法を詳しく説明してみました。形さえ出来あがればあとはMarkdownで記事を書いていくだけで、とても使いやすいのでGitHub Pagesを使ったサイト作りはお勧めです。&lt;/p&gt;
+
+&lt;p&gt;Jekyllでサイト自体は生成できるので、静的サイトをホスティングできるところであればGitHub Pagesではなくても同じサイトを構築することができる点もメリットですね。もしファイルサイズはアクセス数に引っかかってしまった場合も、例えばAWSのS3のような場所に引越ししやすいのではないかと思います。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 31 May 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html</guid>
+        
+        <category>GitHub Pages</category>
+        
+        <category>ブログ</category>
+        
+        
+        <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</title>
+        <description>&lt;p&gt;「GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする」です。&lt;/p&gt;
+
+&lt;p&gt;他の記事はこちら&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html&quot;&gt;Part4 自分のオリジナルのテーマを作る&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;ローカルでjekyllを実行する&quot;&gt;ローカルでJekyllを実行する&lt;/h2&gt;
 
-&lt;p&gt;前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;前回の記事&lt;/a&gt;では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。&lt;/p&gt;
 
 &lt;p&gt;今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。&lt;/p&gt;
 
@@ -109,7 +192,7 @@ gem &quot;github-pages&quot;, group: :jekyll_plugins
 
 &lt;p&gt;の4つのレイアウトが用意されています。&lt;/p&gt;
 
-&lt;p&gt;次のPart4では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html&quot;&gt;次のPart4&lt;/a&gt;では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。&lt;/p&gt;
 </description>
         <pubDate>Thu, 28 May 2020 00:00:00 +0900</pubDate>
         <link>https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html</link>
@@ -134,8 +217,7 @@ gem &quot;github-pages&quot;, group: :jekyll_plugins
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
-  &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html&quot;&gt;Part4 自分のオリジナルのテーマを作る&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;jekyllとは&quot;&gt;Jekyllとは&lt;/h2&gt;
@@ -225,8 +307,7 @@ First post
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt; (この記事です)&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Part4 自分のオリジナルテンプレートを作る&lt;/li&gt;
-  &lt;li&gt;Part5 ファイルをうまく管理する&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html&quot;&gt;Part4 自分のオリジナルのテーマを作る&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;1-github-pagesについて知る&quot;&gt;1. GitHub Pagesについて知る&lt;/h2&gt;
@@ -704,162 +785,6 @@ $ git push
         <category>ブログ</category>
         
         <category>無料</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>UIScrollViewとUIStackViewで、UITableViewのハイライトを作る</title>
-        <description>&lt;p&gt;UITableViewのようなレイアウトを作る際に、UIScrollViewとUIStackViewを使って作る場合もあるかと思います。&lt;/p&gt;
-
-&lt;p&gt;UITableViewは選択されたセルをハイライトすることができますが、UIScrollViewとUIStackViewの場合はそのままではハイライトができません。&lt;/p&gt;
-
-&lt;p&gt;今回はセルのハイライトを再現する方法を紹介します。&lt;/p&gt;
-
-&lt;p&gt;リポジトリはこちら。
-&lt;a href=&quot;https://github.com/masamichiueta/StackViewCellHighlight&quot;&gt;StackViewCellHighlight&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-12-06/StackViewCellHighlight.gif&quot; alt=&quot;StackViewCellHighlight&quot; title=&quot;StackViewCellHighlight&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;全体の構成&quot;&gt;全体の構成&lt;/h2&gt;
-
-&lt;p&gt;全体のStoryboardは画像のようになっています。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-12-06/storyboard.png&quot; alt=&quot;Storyboard&quot; title=&quot;Storyboard&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;の中に&lt;code class=&quot;highlighter-rouge&quot;&gt;UIStackView&lt;/code&gt;を配置して、それぞれのCellに該当するViewを配置しています。&lt;/p&gt;
-
-&lt;p&gt;それぞれのCellの中には、カスタムViewの&lt;code class=&quot;highlighter-rouge&quot;&gt;SelectableCellView&lt;/code&gt;を配置しています。この&lt;code class=&quot;highlighter-rouge&quot;&gt;SelectableCellView&lt;/code&gt;が選択時のハイライト処理を実装しています。また、&lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;は&lt;code class=&quot;highlighter-rouge&quot;&gt;UIButton&lt;/code&gt;のイベントをキャンセルできる&lt;code class=&quot;highlighter-rouge&quot;&gt;UIButtonCancelableScrollView&lt;/code&gt;というカスタムクラスにしています。このスクロールビューを使うことで、セルの選択時にスクロールをした場合にスムーズにスクロールすることができます。&lt;/p&gt;
-
-&lt;h2 id=&quot;selectablecellviewとselectablebutton&quot;&gt;SelectableCellViewとSelectableButton&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SelectableCellView&lt;/code&gt;は内部に&lt;code class=&quot;highlighter-rouge&quot;&gt;SelectableButton&lt;/code&gt;を配置しています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SelectableButton&lt;/code&gt;には&lt;code class=&quot;highlighter-rouge&quot;&gt;setSelected(_ selected: Bool, animated: Bool)&lt;/code&gt;関数を定義していて、セルの選択状態が変更された時に呼び出します。&lt;code class=&quot;highlighter-rouge&quot;&gt;isSelected&lt;/code&gt;の状態管理と背景色の処理をしています。&lt;code class=&quot;highlighter-rouge&quot;&gt;isHighlight&lt;/code&gt;もオーバーライドしていて、&lt;code class=&quot;highlighter-rouge&quot;&gt;isSelected&lt;/code&gt;と合わせて背景色のハンドリングをしています。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;SelectableButton&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SelectableButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIButton&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;isHighlighted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isHighlighted&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isSelected&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;opaqueSeparator&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isHighlighted&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newValue&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;selected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;isSelected&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selected&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selected&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;opaqueSeparator&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;white&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animated&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;withDuration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.35&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nf&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SelectableCellView&lt;/code&gt;では、&lt;code class=&quot;highlighter-rouge&quot;&gt;SelectableButton&lt;/code&gt;の&lt;code class=&quot;highlighter-rouge&quot;&gt;touchDown&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;touchCancel&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;touchUpInside&lt;/code&gt;にハンドラを設定しています。それぞれのイベントで選択状態をセットします。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SelectableCellView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIView&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;lazy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SelectableButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SelectableButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}()&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;required&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;coder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSCoder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;coder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coder&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;addSubview&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;translatesAutoresizingMaskIntoConstraints&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;topAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;topAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;leadingAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leadingAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;trailingAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trailingAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bottomAnchor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;constraint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;equalTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bottomAnchor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isActive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;#selector(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;touchDown(button:)&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;touchDown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;#selector(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cancel(button:)&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;touchCancel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addTarget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;#selector(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;handleTap(button:)&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;touchUpInside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;didTap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)?&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;@objc&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleTap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SelectableButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;setSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;didTap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-     &lt;span class=&quot;kd&quot;&gt;@objc&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;touchDown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SelectableButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;setSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-     &lt;span class=&quot;kd&quot;&gt;@objc&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cancel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SelectableButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nf&quot;&gt;setSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-     &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;selected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;これで&lt;code class=&quot;highlighter-rouge&quot;&gt;UIStackView&lt;/code&gt;に配置したViewがタップされた時に背景がハイライトされるようになります。&lt;/p&gt;
-
-&lt;h2 id=&quot;navigationcontrollerのスワイプバックに対応する&quot;&gt;NavigationControllerのスワイプバックに対応する&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;UITableViewController&lt;/code&gt;には、セルをタップした時にセルを選択してプッシュ遷移した後、画面に戻ってきたらハイライトを消す&lt;code class=&quot;highlighter-rouge&quot;&gt;clearsSelectionOnViewWillAppear&lt;/code&gt;という設定があります。&lt;/p&gt;
-
-&lt;p&gt;これを実現するには、選択されたセルを保持して、ViewControllerの&lt;code class=&quot;highlighter-rouge&quot;&gt;viewWillAppear&lt;/code&gt;で適切に選択状態をハンドリングする必要があります。&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-swift&quot; data-lang=&quot;swift&quot;&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;ViewController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UIViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;....&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;selectedCell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SelectableCellView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;clearsSelectionOnViewWillAppear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-
-    &lt;span class=&quot;o&quot;&gt;....&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewWillAppear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;viewWillAppear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;selectedCell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selectedCell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clearsSelectionOnViewWillAppear&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;transitionCoordinator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;alongsideTransition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;selectedCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;completion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isCancelled&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;n&quot;&gt;selectedCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setSelected&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;animated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;selectedCell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;これで、&lt;code class=&quot;highlighter-rouge&quot;&gt;UITableView&lt;/code&gt;のハイライトを&lt;code class=&quot;highlighter-rouge&quot;&gt;UIScrollView&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;UIStackView&lt;/code&gt;で実現することができました。&lt;/p&gt;
-
-&lt;p&gt;こちらにサンプルコードを置いてあります。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/masamichiueta/StackViewCellHighlight&quot;&gt;StackViewCellHighlight&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 06 Dec 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2019/12/06/uistackview-cell-highlight.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2019/12/06/uistackview-cell-highlight.html</guid>
-        
-        <category>UIStackView</category>
-        
-        <category>UIScrollView</category>
-        
-        <category>UITableView</category>
-        
-        <category>ハイライト</category>
         
         
         <category>development</category>

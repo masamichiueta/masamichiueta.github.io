@@ -16,10 +16,11 @@
 <link rel="canonical" href="https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html" />
 <meta property="og:url" content="https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichi.me/assets/posts/2020-05-28/cover.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-05-28T00:00:00+09:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-05-28T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html"},"url":"https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html","author":{"@type":"Person","name":"masamichiueta"},"description":"前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。","headline":"GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする","dateModified":"2020-05-28T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"datePublished":"2020-05-28T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html"},"url":"https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html","image":"https://masamichi.me/assets/posts/2020-05-28/cover.jpg","author":{"@type":"Person","name":"masamichiueta"},"description":"前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。","headline":"GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする","dateModified":"2020-05-28T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -96,15 +97,17 @@
 </header>
 
   
-  <section class="hero background-image-none text-center">
-    <div class="overlay background-color-main"></div>
-    
+<section class="hero text-center" style="background-image: url(/assets/posts/2020-05-28/cover.jpg)">
+  <div class="overlay"></div>
+  
     <div class="d-flex align-items-center justify-content-between h-100 position-relative">
       <div class="container">
         <h1 itemprop="name headline">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h1>
       </div>
     </div>
     <span class="text-left text-dark">
+      
+      <small>画像出典：Photo by <a href="https://unsplash.com/@aahubs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aaron Huber</a> on <a href="https://unsplash.com/s/photos/custom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
       
     </span>
   </section>
@@ -131,7 +134,7 @@
               <div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a>
                 <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-                <p>「GitHub Pagesで無料ブログを作成すr - Part3 Jekyllの設定をカスタマイズする」です。</p>
+                <p>「GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする」です。</p>
 
 <p>他の記事はこちら</p>
 
@@ -139,13 +142,12 @@
   <li><a href="https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html">Part1 GitHubにリポジトリを作ってサイトを公開する</a></li>
   <li><a href="https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html">Part2 Jekyllを使ってみる</a></li>
   <li><a href="https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">Part3 Jekyllの設定をカスタマイズする</a></li>
-  <li>Part4 自分のオリジナルテンプレートを作る</li>
-  <li>Part5 ファイルをうまく管理する</li>
+  <li><a href="https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html">Part4 自分のオリジナルのテーマを作る</a></li>
 </ul>
 
 <h2 id="ローカルでjekyllを実行する">ローカルでJekyllを実行する</h2>
 
-<p>前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。</p>
+<p><a href="https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html">前回の記事</a>では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。</p>
 
 <p>今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。</p>
 
@@ -229,7 +231,7 @@ gem "github-pages", group: :jekyll_plugins
 
 <p>の4つのレイアウトが用意されています。</p>
 
-<p>次のPart4では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。</p>
+<p><a href="https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html">次のPart4</a>では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。</p>
 
               </div>
               <div class="pt-5">
@@ -245,6 +247,29 @@ gem "github-pages", group: :jekyll_plugins
               
               
 
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html">
+                  <small class="decoration-none text-muted">2020/5/31<span
+                      class="ml-2">開発</span></small>
+                  <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
+                  <p class="text-dark"></p>
+                  
+                  <div alt="GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2020-05-31/cover.jpg)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
               
               
 
@@ -490,29 +515,6 @@ gem "github-pages", group: :jekyll_plugins
               
               
               
-              
-              
-
-              
-
-              
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2019/10/15/use-activityindicator-swiftui.html">
-                  <small class="decoration-none text-muted">2019/10/15<span
-                      class="ml-2">開発</span></small>
-                  <h3 class="mt-0">SwiftUIでActivityIndicatorを使う方法</h3>
-                  <p class="text-dark">SwiftUIでActivityIndicatorを使う方法を紹介します。</p>
-                  
-                  <div alt="SwiftUIでActivityIndicatorを使う方法" class="my-4 media-img rounded"
-                    style="background-image: url(/assets/posts/2019-10-15/cover.png)">
-                  </div>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
-              
             </ul>
           </div>
         </div>
@@ -527,7 +529,7 @@ gem "github-pages", group: :jekyll_plugins
     <h5 class="mt-0 mb-2">カテゴリー</h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/">全て(98)</a>
+            <a class="nav-link py-1" href="https://masamichi.me/">全て(99)</a>
         </li>
         
         <li class="nav-item">
@@ -539,7 +541,7 @@ gem "github-pages", group: :jekyll_plugins
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/development/index.html">開発(52)</a>
+                href="https://masamichi.me/category/development/index.html">開発(53)</a>
         </li>
         
         <li class="nav-item">
@@ -567,6 +569,10 @@ gem "github-pages", group: :jekyll_plugins
     <ul class="nav flex-column">
         
         <li class="nav-item">
+            <a class="nav-link py-1" href="https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</a>
+        </li>
+        
+        <li class="nav-item">
             <a class="nav-link py-1" href="https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</a>
         </li>
         
@@ -580,10 +586,6 @@ gem "github-pages", group: :jekyll_plugins
         
         <li class="nav-item">
             <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/04/29/toshiba-ishigamadome.html">東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000がよかった</a>
-        </li>
-        
-        <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/03/29/hanaugai.html">鼻うがいの仕方</a>
         </li>
         
     </ul>
