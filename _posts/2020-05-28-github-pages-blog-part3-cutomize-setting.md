@@ -4,25 +4,26 @@ title:  "GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定�
 description: "前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。"
 date: 2020-05-28
 categories: development
+image: /assets/posts/2020-05-28/cover.jpg
+hero-caption: Photo by <a href="https://unsplash.com/@aahubs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aaron Huber</a> on <a href="https://unsplash.com/s/photos/custom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 lang: ja_JP
 tags:
 - GitHub Pages
 - ブログ
 ---
 
-「GitHub Pagesで無料ブログを作成すr - Part3 Jekyllの設定をカスタマイズする」です。
+「GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする」です。
 
 他の記事はこちら
 
 - [Part1 GitHubにリポジトリを作ってサイトを公開する](https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html)
 - [Part2 Jekyllを使ってみる](https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)
 - [Part3 Jekyllの設定をカスタマイズする](https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html)
-- Part4 自分のオリジナルテンプレートを作る
-- Part5 ファイルをうまく管理する
+- [Part4 自分のオリジナルのテーマを作る](https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html)
 
 ## ローカルでJekyllを実行する
 
-前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。
+[前回の記事](https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。
 
 今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。
 
@@ -110,4 +111,4 @@ $ bundle update
 
 の4つのレイアウトが用意されています。
 
-次のPart4では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。
+[次のPart4](https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html)では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。

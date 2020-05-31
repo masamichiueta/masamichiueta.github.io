@@ -21,8 +21,7 @@ tags:
 - [Part1 GitHubにリポジトリを作ってサイトを公開する](https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html) (この記事です)
 - [Part2 Jekyllを使ってみる](https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)
 - [Part3 Jekyllの設定をカスタマイズする](https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html)
-- Part4 自分のオリジナルテンプレートを作る
-- Part5 ファイルをうまく管理する
+- [Part4 自分のオリジナルのテーマを作る](https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html)
 
 ## 1. GitHub Pagesについて知る
 
