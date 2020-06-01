@@ -5,9 +5,52 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 31 May 2020 23:16:22 +0900</pubDate>
-    <lastBuildDate>Sun, 31 May 2020 23:16:22 +0900</lastBuildDate>
+    <pubDate>Mon, 01 Jun 2020 20:49:11 +0900</pubDate>
+    <lastBuildDate>Mon, 01 Jun 2020 20:49:11 +0900</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>おすすめのペダルなし自転車向けキッズシューズの紹介</title>
+        <description>&lt;p&gt;ストライダーのようなペダルなし自転車でも大丈夫な靴を紹介します。&lt;/p&gt;
+
+&lt;p&gt;コロナの影響もありなかなか公園にいったりも気軽にできないので、家の前で子供が自転車をすることが多かったのですが、靴がボロボロになってしまいました。&lt;/p&gt;
+
+&lt;p&gt;子供がペダルなし自転車に持っていますが、ブレーキするときに靴のつま先でブレーキしちゃうんですね。そうすると道路で擦れて靴がボロボロになってしまいました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-06-01/shoes.png&quot; alt=&quot;ボロボロ&quot; title=&quot;ボロボロ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;この前買ったばかりの靴だったのですが、自転車のしすぎでこんなことに。。。&lt;/p&gt;
+
+&lt;p&gt;つま先でブレーキしても大丈夫な靴はないものかと探していると、キーンというメーカーを見つけました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.keenfootwear.com/ja-jp/&quot;&gt;https://www.keenfootwear.com/ja-jp/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;CHANDLER CNXというモデルがAmazonに売っていたので、購入しました。&lt;/p&gt;
+
+&lt;iframe style=&quot;width:120px;height:240px;&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; src=&quot;//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&amp;amp;bc1=000000&amp;amp;IS2=1&amp;amp;bg1=FFFFFF&amp;amp;fc1=000000&amp;amp;lc1=0000FF&amp;amp;t=maasaamiichii-22&amp;amp;language=ja_JP&amp;amp;o=9&amp;amp;p=8&amp;amp;l=as4&amp;amp;m=amazon&amp;amp;f=ifr&amp;amp;ref=as_ss_li_til&amp;amp;asins=B010CDH6EW&amp;amp;linkId=b50e535566d879756eaaebf6c394c1a2&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;つま先がゴムのような物に覆われているので、かなり強そうです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-06-01/cover.jpeg&quot; alt=&quot;キーン CHANDLER CNX&quot; title=&quot;キーン CHANDLER CNX&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これでペダルなし自転車のブレーキでも、靴がボロボロになることはなさそうです。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Jun 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/family/2020/06/01/keen-kids-shoes.html</link>
+        <guid isPermaLink="true">https://masamichi.me/family/2020/06/01/keen-kids-shoes.html</guid>
+        
+        <category>キーン</category>
+        
+        <category>ストライダー</category>
+        
+        <category>キッズシューズ</category>
+        
+        <category>ペダルなし自転車</category>
+        
+        
+        <category>family</category>
+        
+      </item>
     
       <item>
         <title>GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</title>
@@ -708,83 +751,6 @@ $ git push
         <category>Swift</category>
         
         <category>Dart</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>GitHub Pagesでブログを運用し始めてから4年くらいたった</title>
-        <description>&lt;p&gt;このサイトはGitHub Pagesで運用しています。&lt;/p&gt;
-
-&lt;p&gt;運用を開始してから4年くらいたったのでGitHub Pages運用のTipsでも書いておこうかと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;github-pageのいいところ&quot;&gt;GitHub Pageのいいところ&lt;/h2&gt;
-
-&lt;p&gt;GitHub Pagesのいいところは、なんといっても無料で使えるところとサーバーを管理する必要がないところです。GitHubのリポジトリにコンテンツを置いておけばサイトを作ることができます。&lt;/p&gt;
-
-&lt;p&gt;また、&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;というドメインだけでなく、自分で取得したカスタムドメインが使えたりSSL(https)にも無料で対応できる、という点も本当に素晴らしいなと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;jekyllとテンプレート&quot;&gt;Jekyllとテンプレート&lt;/h2&gt;
-&lt;p&gt;GitHub Pagesはhtmlファイルをおけばサイトとして運用できますが、&lt;a href=&quot;https://jekyllrb-ja.github.io&quot;&gt;Jekyll&lt;/a&gt;というブログ・静的Webサイトを生成するツールをつかえば、ブログを作ることができます。私のサイトもJekyllを使っています。Jekyllにはブログテーマが色々と用意されているので、公開されているテーマを使うことができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://jekyllthemes.org&quot;&gt;Jekyll Themes&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;本サイトでは、テンプレートは使わずに、Jekyllの仕組みに則って自分のオリジナルのデザインを使用しています。テーマの作り方はWordpressに近くて、テンプレートとなるhtmlをJekyllのルールにしたがって作っていくという流れです。自分で作るとCSSやJavaScriptを柔軟に使うことができて、やっぱりいいですね。&lt;/p&gt;
-
-&lt;h2 id=&quot;リポジトリの運用&quot;&gt;リポジトリの運用&lt;/h2&gt;
-
-&lt;p&gt;GitHub Pagesは&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチの内容が反映されます。Jeykllのテンプレートテーマを使えば何も考えずに&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;にコンテンツを入れておけばいいのですが、本サイトのようにテンプレートテーマを使っていない場合は工夫が必要です。&lt;/p&gt;
-
-&lt;p&gt;jekyllでビルドした結果の静的ページのファイルをmasterブランチに置く必要があるからです。&lt;/p&gt;
-
-&lt;p&gt;本サイトでは、&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチと&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチを作成して運用しています。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチは直接触らずにビルドした結果を入れておくブランチにしています。&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチにはサイトの元となるjekyllのソースコードがあります。実は&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチがリポジトリの本当のルートディレクトリになっています。&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチでビルドした結果を&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;というディレクトリに入れていて、この&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;というディレクトリが、&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチに紐づいています。&lt;/p&gt;
-
-&lt;p&gt;こうすることで、&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;はビルドされた結果を表示する静的サイト、&lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt;ブランチは&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;に置くファイルを生成するためのソースコードが入ったブランチにできます。&lt;/p&gt;
-
-&lt;p&gt;この運用で全く問題なくできているので、おすすめです。&lt;/p&gt;
-
-&lt;h2 id=&quot;seo対策&quot;&gt;SEO対策&lt;/h2&gt;
-
-&lt;p&gt;SEO対策は&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll SEO Tag&lt;/code&gt;というプラグインを入れているのと、Google Search Consoleにも一応登録しています。&lt;/p&gt;
-
-&lt;p&gt;とはいえ、やはりコンテンツが大事だな、という結論です。&lt;/p&gt;
-
-&lt;p&gt;記事が少ないころはあまり検索しても出てこないな、という感じでしたが、記事が増えてくるのとコンテンツが増えてくるにしたがって、いくつかの記事は検索でも上位に出てくるようになってきました。&lt;/p&gt;
-
-&lt;h2 id=&quot;ローカライズ&quot;&gt;ローカライズ&lt;/h2&gt;
-
-&lt;p&gt;記事のカテゴリには英語を使っています。そのカテゴリ名がurlに反映されるからです。しかしサイドバーに出るカテゴリ名は日本語で表示したいので、&lt;code class=&quot;highlighter-rouge&quot;&gt;Slug2Name&lt;/code&gt;というプラグインを使っています。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://kerotaa.github.io/programming/2013/06/16/jekyll-category-slug-to-name-filter/&quot;&gt;英語名カテゴリーを日本語表記に変換するフィルター&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;category_slugs:
-  development: &quot;開発&quot;
-  family: &quot;家族&quot;
-  design: &quot;デザイン&quot;
-  hobby: &quot;趣味&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;のように書くとカテゴリ名が日本語で表示されるようにしています。&lt;/p&gt;
-
-&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;GitHub Pagesでブログを運営するTipsを書いてみました。Wordpressのようにアップデートの対応や、サーバーの管理もしなくていいし、無料でできるし、SSLも有効だしカスタムドメインも使えるし、マークダウンでブログがかける、ということで、GitHub Pagesとてもおすすめです。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 14 Dec 2019 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2019/12/14/github-pages-blog.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2019/12/14/github-pages-blog.html</guid>
-        
-        <category>GitHub Pages</category>
-        
-        <category>ブログ</category>
-        
-        <category>無料</category>
         
         
         <category>development</category>
