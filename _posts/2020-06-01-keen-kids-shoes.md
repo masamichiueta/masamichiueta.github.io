@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "おすすめのペダルなし自転車向けキッズシューズの紹介"
-description: ""
+description: "ストライダーのようなペダルなし自転車でも大丈夫な靴を紹介します。"
 date: 2020-06-01
 categories: family
 image: /assets/posts/2020-06-01/cover.jpeg
