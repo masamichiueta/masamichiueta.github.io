@@ -5,9 +5,9 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Jun 2020 20:49:11 +0900</pubDate>
-    <lastBuildDate>Mon, 01 Jun 2020 20:49:11 +0900</lastBuildDate>
-    <generator>Jekyll v3.8.6</generator>
+    <pubDate>Fri, 12 Jun 2020 23:27:20 +0900</pubDate>
+    <lastBuildDate>Fri, 12 Jun 2020 23:27:20 +0900</lastBuildDate>
+    <generator>Jekyll v3.8.7</generator>
     
       <item>
         <title>おすすめのペダルなし自転車向けキッズシューズの紹介</title>
@@ -96,11 +96,11 @@
 
 &lt;p&gt;またファイルの先頭には以下を記述する必要があります。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;---
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
 ---
-&lt;/span&gt;
+
 @import &quot;minima/skins/classic&quot;;
-&lt;span class=&quot;err&quot;&gt;@import&lt;/span&gt; &quot;minima/initialize&quot;;
+@import &quot;minima/initialize&quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;このように既存のテーマをカスタマイズしていく場合は、基本的にはテーマで定義されているファイルを上書きして自分のファイルを作成する、という手順になります。&lt;/p&gt;
