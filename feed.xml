@@ -5,9 +5,38 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Jun 2020 23:27:20 +0900</pubDate>
-    <lastBuildDate>Fri, 12 Jun 2020 23:27:20 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jun 2020 23:00:40 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jun 2020 23:00:40 +0900</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>WWDC2020キーノートまとめ</title>
+        <description>&lt;h1 id=&quot;wwdc2020-キーノートまとめ&quot;&gt;WWDC2020 キーノートまとめ&lt;/h1&gt;
+
+&lt;p&gt;ここに書いていく予定&lt;/p&gt;
+</description>
+        <pubDate>Tue, 23 Jun 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2020/06/23/wwdc2020-keynote.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2020/06/23/wwdc2020-keynote.html</guid>
+        
+        <category>WWDC2020</category>
+        
+        <category>Apple</category>
+        
+        <category>アップル</category>
+        
+        <category>iOS</category>
+        
+        <category>macOS</category>
+        
+        <category>watchOS</category>
+        
+        <category>tvOS</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>おすすめのペダルなし自転車向けキッズシューズの紹介</title>
@@ -633,124 +662,6 @@ $ git push
         <category>Firebase</category>
         
         <category>Cloud Storage</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>2020年にネイティブアプリを開発する方法</title>
-        <description>&lt;p&gt;去年&lt;a href=&quot;https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html&quot;&gt;2019年にネイティブアプリを開発する方法&lt;/a&gt;という記事を書きました。&lt;/p&gt;
-
-&lt;p&gt;その中では&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;ネイティブ言語、ネイティブプラットフォーム&lt;/li&gt;
-  &lt;li&gt;React Native&lt;/li&gt;
-  &lt;li&gt;Flutter&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;の3つの方法を紹介していました。&lt;/p&gt;
-
-&lt;p&gt;2020年はどういう感じになりそうか、という実感を書いておきたいと思います。私はAndroidの開発方法については詳しくないので触れません。&lt;/p&gt;
-
-&lt;p&gt;選択肢としては、&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Flutter&lt;/li&gt;
-  &lt;li&gt;ネイティブ言語、新しいフレームワーク(Swift/SwiftUI)&lt;/li&gt;
-  &lt;li&gt;ネイティブ言語、従来のフレームワーク(Swift/UIKit)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;という感じかなと思っています。&lt;/p&gt;
-
-&lt;p&gt;ちなみにGoogleトレンドで、Flutter, React Native, SwiftUIを比較してみるとこんな感じです。
-&lt;img src=&quot;/assets/posts/2020-01-01/compare.png&quot; alt=&quot;Compare&quot; title=&quot;Compare&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;期間は2018年1月1日から2019年12月31日です。2019年9月~10月ごろにFlutterがReact Nativeを超えてきているような感じでしょうか。SwiftUIはWWDC直後は増えているもののここ最近は横ばいのようです。&lt;/p&gt;
-
-&lt;h2 id=&quot;1-flutter&quot;&gt;1. Flutter&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-01-01/flutter.png&quot; alt=&quot;Flutter&quot; title=&quot;Flutter&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;FlutterはiOS, Android, Web, Desktopのクロスプラットフォームな環境に対してネイティブアプリを開発できるGoogle製のフレームワークです。プログラミング言語はDartを採用しています。&lt;/p&gt;
-
-&lt;p&gt;Flutterは2019年とても勢いがあったように感じました。2019年QiitaのアドベントカレンダーでもFlutterが購読数1位だったようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://qiita.com/advent-calendar/2019/ranking/subscriptions/categories/mobile&quot;&gt;Qiitaのモバイルのカレンダーランキング&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Flutterでは、WidgetとDartのStreamを組み合わせるBLoC(Business Logic Components)パターンというアーキテクチャが主流のようです。&lt;/p&gt;
-
-&lt;p&gt;このビデオがわかりやすかったです。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Google IOのビデオ　Build reactive mobile apps with Flutter (Google I/O ‘18)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;iframe class=&quot;w-100&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/RS36gBEp8OI&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;こちらの記事も
-&lt;a href=&quot;https://www.raywenderlich.com/4074597-getting-started-with-the-bloc-pattern&quot;&gt;Getting Started with the BLoC Pattern&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;これまでのクロスプラットフォームアプリ開発のフレームワークとは違った盛り上がりを見せているな、と言う印象のFlutterですが、2020年どうなるか注目です。&lt;/p&gt;
-
-&lt;p&gt;開発したアプリではBLoCパターンは使っていなかったので今後このパターンを使いつつ、個人でもFlutterでアプリ開発をしていきたいと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;2-ネイティブ言語新しいフレームワークswiftswiftui&quot;&gt;2. ネイティブ言語、新しいフレームワーク(Swift/SwiftUI)&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-01-01/swiftui.png&quot; alt=&quot;SwiftUI&quot; title=&quot;SwiftUI&quot; /&gt;
-&lt;small&gt;&lt;a href=&quot;https://developer.apple.com/xcode/swiftui/&quot;&gt;Appleのサイト&lt;/a&gt;からスクリーンショット&lt;/small&gt;&lt;/p&gt;
-
-&lt;p&gt;WWDC2019で突然発表されたUIフレームワークがSwiftUIです。&lt;/p&gt;
-
-&lt;p&gt;ついに公式で宣言的シンタックスがサポートされました。&lt;/p&gt;
-
-&lt;p&gt;ReactやFlutterと同様、コンポーネントを組み合わせてViewを作っていく方式で、Stateの管理などもSwiftUIとCombineフレームワークでうまくできるようになっています。&lt;/p&gt;
-
-&lt;p&gt;個人的にリファレンスになるリポジトリはこちらのMovieSwiftUIです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Dimillian/MovieSwiftUI&quot;&gt;MovieSwiftUI&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;2019年にSwiftUIでアプリを1つ開発しましたが、コンポーネント指向でかけるところはいいものの、想定外の動きをする場合があったりして、もっとチップスが色々共有されてくるといいですね。&lt;/p&gt;
-
-&lt;p&gt;2020年、大規模で複雑なアプリをSwiftUIで作るのはまだ難しい部分もあるかもしれませんが、先取りで挑戦していく価値はあると思います。小規模なアプリならお試しで使ってみるのもいいと思います。&lt;/p&gt;
-
-&lt;p&gt;もっとSwiftUIネイティブのコンポーネントが増えてくると便利になってくるでしょう。
-とはいえ、Twitter上ではiPodをSwiftUIでiOS上に再現された方もいて、うまく作ればかなり高機能なアプリも開発できます。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Turned my iPhone into an iPod Classic with Click Wheel and Cover Flow with &lt;a href=&quot;https://twitter.com/hashtag/SwiftUI?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#SwiftUI&lt;/a&gt; &lt;a href=&quot;https://t.co/zVk5YJj0rh&quot;&gt;pic.twitter.com/zVk5YJj0rh&lt;/a&gt;&lt;/p&gt;&amp;mdash; Elvin (@elvin_not_11) &lt;a href=&quot;https://twitter.com/elvin_not_11/status/1199717678908366854?ref_src=twsrc%5Etfw&quot;&gt;November 27, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;3-ネイティブ言語従来のフレームワークswiftuikit&quot;&gt;3. ネイティブ言語、従来のフレームワーク(Swift/UIKit)&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2019-01-05/swift.jpeg&quot; alt=&quot;Swift&quot; title=&quot;Swift&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2020年でもネイティブアプリを開発するにはこれが一番シンプルな手段だと思います。&lt;/p&gt;
-
-&lt;p&gt;SwiftUIが発表されたものの、既存のアプリはまだほとんどUIKitベースでしょうし、UIKitでできていたことがSwiftUIだとなかなかできない、といったこともまだあるかなと思います。&lt;/p&gt;
-
-&lt;p&gt;既存のアプリがあったり、大規模になりそうなアプリを開発していくならUIKitにしておく方が安全かもしれません。とはいえ長期的に考えるとSwiftUIに移行していくと思うので、部分的にSwiftUIを導入するとか、SwiftUIに移行しやすい形でUIKitで開発する、という方法がバランス的に良さそうです。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;以上、2020年にネイティブアプリを開発するオススメの方法を3つ紹介してみました。&lt;/p&gt;
-
-&lt;p&gt;新しい開発方法は色々と出てくるものの、開発者として開発していて楽しいものを選ぶことが大事だと思います。&lt;/p&gt;
-
-&lt;p&gt;もちろん食わず嫌いはよくないので、どのフレームワークも学んで試した上で、最近の潮流も含めどれが自分に合うかを見極めていけばいいと思います。&lt;/p&gt;
-</description>
-        <pubDate>Wed, 01 Jan 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2020/01/01/build-a-native-app-in-2020.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2020/01/01/build-a-native-app-in-2020.html</guid>
-        
-        <category>アプリ開発</category>
-        
-        <category>Swift UI</category>
-        
-        <category>Flutter</category>
-        
-        <category>Swift</category>
-        
-        <category>Dart</category>
         
         
         <category>development</category>
