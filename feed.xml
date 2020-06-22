@@ -5,15 +5,147 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Jun 2020 23:00:40 +0900</pubDate>
-    <lastBuildDate>Mon, 22 Jun 2020 23:00:40 +0900</lastBuildDate>
+    <pubDate>Tue, 23 Jun 2020 03:49:02 +0900</pubDate>
+    <lastBuildDate>Tue, 23 Jun 2020 03:49:02 +0900</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
         <title>WWDC2020キーノートまとめ</title>
         <description>&lt;h1 id=&quot;wwdc2020-キーノートまとめ&quot;&gt;WWDC2020 キーノートまとめ&lt;/h1&gt;
 
-&lt;p&gt;ここに書いていく予定&lt;/p&gt;
+&lt;h2 id=&quot;ios14&quot;&gt;iOS14&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ホーム画面のアップデート&lt;/li&gt;
+  &lt;li&gt;App Libraryという新しいアプリ管理方法が追加
+    &lt;ul&gt;
+      &lt;li&gt;アプリへのアクセスが簡単になる&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ウィジェットの新しいサイズが追加
+    &lt;ul&gt;
+      &lt;li&gt;またウィジェットをホームスクリーンに追加することが可能になった&lt;/li&gt;
+      &lt;li&gt;スマートスタックを使うことでホーム画面上でウィジェットをスクロールして切り替えが可能になった&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;動画のPicture in Pictureに対応
+    &lt;ul&gt;
+      &lt;li&gt;動画を再生しながらアプリを切り替えられるように&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Siriのデザインが更新される&lt;/li&gt;
+  &lt;li&gt;Message
+    &lt;ul&gt;
+      &lt;li&gt;メッセージをピンできるようになった&lt;/li&gt;
+      &lt;li&gt;Memojiに新しいスタイルが追加（マスクも）&lt;/li&gt;
+      &lt;li&gt;インラインメッセージ（スレッド）とメンション機能が追加&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Map
+    &lt;ul&gt;
+      &lt;li&gt;経路の検索手段に自転車が追加&lt;/li&gt;
+      &lt;li&gt;EV対応&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CarPlay
+    &lt;ul&gt;
+      &lt;li&gt;壁紙を変更可能に&lt;/li&gt;
+      &lt;li&gt;NFCで車の鍵を開けられるように&lt;/li&gt;
+      &lt;li&gt;メッセージで鍵をシェアできる&lt;/li&gt;
+      &lt;li&gt;Walletアプリに鍵が追加される&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;App Store
+    &lt;ul&gt;
+      &lt;li&gt;App Clipsというミニアプリのような機能が追加される&lt;/li&gt;
+      &lt;li&gt;App ClipコードというQRコードやNFC、Safariから起動できる&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ipados14&quot;&gt;iPadOS14&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;iOS14と同じ新しいデザインのウィジェット&lt;/li&gt;
+  &lt;li&gt;Photos
+    &lt;ul&gt;
+      &lt;li&gt;サイドバーで検索が簡単に&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;電話の通知画面が小さく&lt;/li&gt;
+  &lt;li&gt;Spotlightが使いやすくなる&lt;/li&gt;
+  &lt;li&gt;Apple Pencil
+    &lt;ul&gt;
+      &lt;li&gt;Apple Pencilで書いたオブジェクトの認識に対応、手書き図形の補正や文字認識が可能に&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;airpods&quot;&gt;AirPods&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;デバイス間で自動的にAirPodsをスイッチできるようになる&lt;/li&gt;
+  &lt;li&gt;Spacial Audioアルゴリズムに対応&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;watchos7&quot;&gt;watchOS7&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;watch faceの共有が可能になった&lt;/li&gt;
+  &lt;li&gt;Maps
+    &lt;ul&gt;
+      &lt;li&gt;自転車の経路対応&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Workoutがダンスに対応&lt;/li&gt;
+  &lt;li&gt;睡眠の解析に対応&lt;/li&gt;
+  &lt;li&gt;手洗いの検出に対応、手洗い時間の計測&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;privacy&quot;&gt;Privacy&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;録画中のインディケーターが追加&lt;/li&gt;
+  &lt;li&gt;AppStoreにアプリがh使用する情報がより明確に表示されるようになった&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;tvos&quot;&gt;tvOS&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;HomeKit, 顔認識&lt;/li&gt;
+  &lt;li&gt;Picture in pictureの対応&lt;/li&gt;
+  &lt;li&gt;AppleTV+の新シリーズ FOUNDATION&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;macos1016-bigsur&quot;&gt;macOS10.16 BigSur&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;デザインの刷新
+    &lt;ul&gt;
+      &lt;li&gt;アイコンがiOSと同じような形に&lt;/li&gt;
+      &lt;li&gt;ウィジェット、通知センターのデザイン変更&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Messages
+    &lt;ul&gt;
+      &lt;li&gt;検索対応&lt;/li&gt;
+      &lt;li&gt;Memoji対応&lt;/li&gt;
+      &lt;li&gt;ピン、グループ対応&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Maps
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Mac Catalyst
+    &lt;ul&gt;
+      &lt;li&gt;MapとMessagesがCatalystに移行&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;macの独自cpuへの移行&quot;&gt;Macの独自CPUへの移行&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Apple Silicon&lt;/li&gt;
+  &lt;li&gt;アプリの最ビルドなしでもロゼッタ2によって自動的に変換される&lt;/li&gt;
+  &lt;li&gt;Developer Transition Kitに申し込むとApple SiliconのMac miniを使うことができる&lt;/li&gt;
+  &lt;li&gt;今後2年間でApple Siliconへ移行していく&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Tue, 23 Jun 2020 00:00:00 +0900</pubDate>
         <link>https://masamichi.me/development/2020/06/23/wwdc2020-keynote.html</link>
