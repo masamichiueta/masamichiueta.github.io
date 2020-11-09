@@ -5,8 +5,8 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Oct 2020 23:21:32 +0900</pubDate>
-    <lastBuildDate>Sat, 24 Oct 2020 23:21:32 +0900</lastBuildDate>
+    <pubDate>Mon, 09 Nov 2020 22:30:02 +0900</pubDate>
+    <lastBuildDate>Mon, 09 Nov 2020 22:30:02 +0900</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
     
       <item>
@@ -781,7 +781,7 @@ $ git push
         <title>鼻うがいの仕方</title>
         <description>&lt;p&gt;このYoutubeによるとコロナウイルスは鼻水に多く含まれるらしいです。&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qICAP83rDck&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe class=&quot;w-100&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qICAP83rDck&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;鼻うがいがコロナウイルスに効くかは全く知りませんが、鼻中隔湾曲症の手術をしてから鼻うがいをするように先生に言われていて、鼻がすっきりするのでやり方を書いておきます。&lt;/p&gt;
 
