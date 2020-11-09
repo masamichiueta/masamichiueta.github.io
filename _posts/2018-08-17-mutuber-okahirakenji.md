@@ -21,6 +21,6 @@ tags:
 
 記念すべき第1回目は、19の名曲「熊じいちゃん」を歌われています。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZXYrBGALr34" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe class="w-100" height="315" src="https://www.youtube.com/embed/ZXYrBGALr34" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 毎週水曜日に更新されるようなので、要チェックです！

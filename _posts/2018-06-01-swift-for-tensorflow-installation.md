@@ -17,7 +17,7 @@ tags:
 
 先日TensorFlow Dev Summit2018で`Swift for TensorFlow`が発表されました。
 
-<iframe src="https://www.youtube.com/embed/Yze693W4MaU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe class="w-100" height="315" src="https://www.youtube.com/embed/Yze693W4MaU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 同時にTensorFlowのWebサイトに`Swift for TensorFlow`のページができています。
 

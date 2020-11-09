@@ -38,7 +38,7 @@ tags:
 
 特に島村楽器みなとみらい店さんのこの動画がよかったです。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N-u_CnZeJ9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="w-100" height="315" src="https://www.youtube.com/embed/N-u_CnZeJ9U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 残念ながら自宅はそんなに広くはないので、コンパクトな電子ピアノがいいかなと思っていました。なのでこの動画で紹介されている`Roland F-140R`か`Roland DP-603`にしようと思いました。
 
