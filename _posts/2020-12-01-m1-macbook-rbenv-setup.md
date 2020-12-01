@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする"
-description: ""
+description: "先日購入したApple Silicon搭載 MacBook Pro M1にこのブログをビルドするためにHomebrewとrbenvをインストールしたのでメモ。"
 date: 2020-12-01
 categories: development
 lang: ja_JP
