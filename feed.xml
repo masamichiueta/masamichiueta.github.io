@@ -5,9 +5,94 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Dec 2020 18:36:59 +0900</pubDate>
-    <lastBuildDate>Tue, 01 Dec 2020 18:36:59 +0900</lastBuildDate>
+    <pubDate>Tue, 01 Dec 2020 19:02:09 +0900</pubDate>
+    <lastBuildDate>Tue, 01 Dec 2020 19:02:09 +0900</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</title>
+        <description>&lt;p&gt;先日購入したApple Silicon搭載 MacBook Pro M1にこのブログをビルドするためにHomebrewとrbenvをインストールしたのでメモ。&lt;/p&gt;
+
+&lt;h2 id=&quot;homebrewのインストール&quot;&gt;Homebrewのインストール&lt;/h2&gt;
+
+&lt;p&gt;Homebrewには現状2つのインストール方法があるようです。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;TerminalをRosetta2を有効にして起動し通常インストールする&lt;/li&gt;
+  &lt;li&gt;デフォルトではないディレクトリにネイティブインストールする&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;せっかくのM1なので、Rosetta使う方法ではなく2のネイティブインストールしました。&lt;/p&gt;
+
+&lt;p&gt;ネイティブインストールするには現状いくつかのステップが必要ですが、こちらのYoutubeとgistが参考になりました。&lt;/p&gt;
+
+&lt;h4 id=&quot;youtube&quot;&gt;Youtube&lt;/h4&gt;
+
+&lt;iframe class=&quot;w-100&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/nv2ylxro7rM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h4 id=&quot;gist&quot;&gt;Gist&lt;/h4&gt;
+
+&lt;script src=&quot;https://gist.github.com/nrubin29/bea5aa83e8dfa91370fe83b62dad6dfa.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/opt/homebrew&lt;/code&gt;以下にインストールするのが今のところ一般的なようです。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Homebrew/brew/issues/9177&quot;&gt;Discussion: longterm Homebrew prefix on Apple Silicon Macs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rbenvをインストールする&quot;&gt;rbenvをインストールする&lt;/h2&gt;
+
+&lt;p&gt;rbenvは通常どおりhomebrewでインストール可能。&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;rbenv
+rbenv init
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'eval &quot;$(rbenv init -)&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.zshrc
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;その後rubyをインストールしようとするとopensslのコンパイルでエラー&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rbenv &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;2.7.2
+
+Downloading openssl-1.1.1h.tar.gz...
+-&amp;gt; https://dqw8nmjcqpjn7.cloudfront.net/5c9ca8774bd7b03e5784f26ae9e9e6d749c9da2438545077e6b3d755a06595d9
+Installing openssl-1.1.1h...
+
+BUILD FAILED &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;macOS 11.0.1 using ruby-build 20201118&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;opensslをインストールする&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;openssl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt;に設定を追記.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export RUBY_CONFIGURE_OPTS=&quot;--with-openssl-dir=$(brew --prefix openssl@1.1)&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;再度rubyをインストール&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rbenv &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;2.7.2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;無事インストールができました。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Dec 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html</link>
+        <guid isPermaLink="true">https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html</guid>
+        
+        <category>Apple Silicon</category>
+        
+        <category>Homebrew</category>
+        
+        <category>rbenv</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</title>
@@ -832,41 +917,6 @@ $ git push
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000がよかった</title>
-        <description>&lt;p&gt;10年以上使ってきたNationalの電子レンジから、東芝の過熱水蒸気オーブンレンジ 石窯ドームER-TD3000に買い換えました。&lt;/p&gt;
-
-&lt;p&gt;ヨドバシカメラでキャッシュレス決済キャンペーンをしていて、15%ポイントバックされるので買いました。&lt;/p&gt;
-
-&lt;p&gt;買い換えてよかっですね、やっぱり特にオーブン機能がいいですね。&lt;/p&gt;
-
-&lt;p&gt;石窯ドームはより上位の機種だと350度まで加熱できるようですが、300度もあれば充分かなと思い、ER-TD3000にしときました。&lt;/p&gt;
-
-&lt;p&gt;オーブンレンジをアップデートすることで、家でできる料理の幅がかなり広がるということを実感しております。&lt;/p&gt;
-
-&lt;p&gt;コロナ禍でパンをつくり始める人が多いみたいです。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://headlines.yahoo.co.jp/article?a=20200426-00345635-toyo-bus_all&quot;&gt;コロナ禍「パンを作る人」が激増している背景&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;我が家でもオーブンレンジを買い換えたので、マニュアルに載っているレシピを見ながら、パンやピザを作っています。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-04-29/bread.jpg&quot; alt=&quot;パン&quot; title=&quot;パン&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 29 Apr 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/hobby/2020/04/29/toshiba-ishigamadome.html</link>
-        <guid isPermaLink="true">https://masamichi.me/hobby/2020/04/29/toshiba-ishigamadome.html</guid>
-        
-        <category>オーブンレンジ</category>
-        
-        <category>東芝</category>
-        
-        <category>石窯ドーム</category>
-        
-        
-        <category>hobby</category>
         
       </item>
     
