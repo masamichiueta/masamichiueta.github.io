@@ -46,11 +46,6 @@ Apple Silicon搭載のMacBook Pro 13インチを仕事用に購入したので�
 
 ![BigSurのクリーンインストール失敗](/assets/posts/2020-11-27/bigsur-fail-install.jpeg "BigSurのクリーンインストール失敗")
 
-調べてみると同じ現象が発生しているみたいです。
-
-- [Restoring Apple Silicon M1 Macs Leading to macOS Installation Errors](https://www.macrumors.com/2020/11/17/apple-silicon-macs-restoring-installation-errors/)
-
-
 AppleがBigSurのクリーンインストールの際に文鎮化したMacの解決方法を公開していたので、公開されている方法を試していきました。
 
 - [If you get a personalization error when reinstalling macOS on your Mac with Apple M1 chip](https://support.apple.com/en-us/HT211983)
@@ -68,10 +63,6 @@ Apple Configuratorによる修復は最後に試したのですが、こちら�
 実はこちらの方法の途中にも一度エラーがでて、諦めかけましたが、Apple  Configuratorを再起動してもう一度実行すると無事修復できました。
 
 ![Apple Configuratorのエラー](/assets/posts/2020-11-27/appleconfiguratorerror.jpg "Apple Configuratorのエラー")
-
-Apple Configuratorの使い方はこちらの記事にある動画が参考になりました。
-
-- [Restore macOS Firmware on an Apple Silicon Mac + Boot to DFU Mode](https://mrmacintosh.com/restore-macos-firmware-on-an-apple-silicon-mac-boot-to-dfu-mode/)
 
 最後は交換を覚悟したのですが、なんとか無事復活することができてよかったです。かなり焦りました。。。
 
