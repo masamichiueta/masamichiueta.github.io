@@ -5,9 +5,34 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichi.mehttps://masamichi.me/</link>
     <atom:link href="https://masamichi.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Dec 2020 19:02:49 +0900</pubDate>
-    <lastBuildDate>Tue, 01 Dec 2020 19:02:49 +0900</lastBuildDate>
+    <pubDate>Thu, 03 Dec 2020 00:01:03 +0900</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2020 00:01:03 +0900</lastBuildDate>
     <generator>Jekyll v3.8.7</generator>
+    
+      <item>
+        <title>テレビを見ない生活が続いたので、テレビを捨てました</title>
+        <description>&lt;p&gt;テレビを見ない生活がけっこう長く続いた（1年ちょっとくらい？）ので、先日テレビを捨てました。Nintendo SwitchやApple TVのディスプレイとしてはたまに使っていたのですが、それもたまに、という感じだったので捨てちゃいました。&lt;/p&gt;
+
+&lt;p&gt;もともとはリビングに置いてあったのですが、ダイニングテーブルを買ったり子供の電子ピアノを買ったり、子供のおもちゃが増えてきた結果リビングに置く場所がなくなり、別の部屋に移動した結果全く見なくなってしいまいました。&lt;/p&gt;
+
+&lt;p&gt;ケーブルテレビも契約していたのですが、見なくなってもったいないなと感じたので、捨ててもろもろ解約しました。捨てるときは、家電リサイクル法に基づいて指定引取場所に直接搬入しました。8前くらいの古いやつだったのですが、3000円くらいしました。全部で1ヶ月くらいかかりましたが、機材の撤去、過払い分の返金なども含めて事務処理的なところも終わりました。&lt;/p&gt;
+
+&lt;p&gt;ライブニュースはTwitterやFacebook、ニュースアプリで大体把握できるのと、YouTubeやAmazon Prime、Netflixがあるので、コンテンツ的にも充実しているというのもあり、見なくなってからも特に問題なく過ごせています。もともとあんまり見ない方だったというのもあるかもしれません。&lt;/p&gt;
+
+&lt;p&gt;またテレビが見たくなってきたら買おうと思ってます。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Dec 2020 00:00:00 +0900</pubDate>
+        <link>https://masamichi.me/hobby/2020/12/02/discard-tv.html</link>
+        <guid isPermaLink="true">https://masamichi.me/hobby/2020/12/02/discard-tv.html</guid>
+        
+        <category>テレビ</category>
+        
+        <category>捨てる</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</title>
@@ -131,12 +156,6 @@ BUILD FAILED &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;macOS 11.0.1 using ru
 
 &lt;p&gt;&lt;img src=&quot;/assets/posts/2020-11-27/bigsur-fail-install.jpeg&quot; alt=&quot;BigSurのクリーンインストール失敗&quot; title=&quot;BigSurのクリーンインストール失敗&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;調べてみると同じ現象が発生しているみたいです。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.macrumors.com/2020/11/17/apple-silicon-macs-restoring-installation-errors/&quot;&gt;Restoring Apple Silicon M1 Macs Leading to macOS Installation Errors&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;p&gt;AppleがBigSurのクリーンインストールの際に文鎮化したMacの解決方法を公開していたので、公開されている方法を試していきました。&lt;/p&gt;
 
 &lt;ul&gt;
@@ -158,12 +177,6 @@ BUILD FAILED &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;macOS 11.0.1 using ru
 &lt;p&gt;実はこちらの方法の途中にも一度エラーがでて、諦めかけましたが、Apple  Configuratorを再起動してもう一度実行すると無事修復できました。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/posts/2020-11-27/appleconfiguratorerror.jpg&quot; alt=&quot;Apple Configuratorのエラー&quot; title=&quot;Apple Configuratorのエラー&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Apple Configuratorの使い方はこちらの記事にある動画が参考になりました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://mrmacintosh.com/restore-macos-firmware-on-an-apple-silicon-mac-boot-to-dfu-mode/&quot;&gt;Restore macOS Firmware on an Apple Silicon Mac + Boot to DFU Mode&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;p&gt;最後は交換を覚悟したのですが、なんとか無事復活することができてよかったです。かなり焦りました。。。&lt;/p&gt;
 
@@ -811,105 +824,6 @@ First post
         <pubDate>Tue, 26 May 2020 00:00:00 +0900</pubDate>
         <link>https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html</link>
         <guid isPermaLink="true">https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html</guid>
-        
-        <category>GitHub Pages</category>
-        
-        <category>ブログ</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する</title>
-        <description>&lt;p&gt;以前、 &lt;a href=&quot;https://masamichi.me/development/2019/12/14/github-pages-blog.html&quot;&gt;GitHub Pagesでブログを運用し始めてから4年くらいたった&lt;/a&gt;というブログを書いたのですが、概要を書いただけで具体的な構築方法はあまり記述していなかったので、何回かに分けてブログを作っていく方法を書いていきたいと思います。&lt;/p&gt;
-
-&lt;p&gt;基本的には &lt;a href=&quot;https://help.github.com/ja/github/working-with-github-pages/about-github-pages&quot;&gt;GitHubのヘルプページ&lt;/a&gt;を読むのが確実です。&lt;/p&gt;
-
-&lt;h3 id=&quot;掲載予定&quot;&gt;掲載予定&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt; (この記事です)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html&quot;&gt;Part4 自分のオリジナルのテーマを作る&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;1-github-pagesについて知る&quot;&gt;1. GitHub Pagesについて知る&lt;/h2&gt;
-
-&lt;p&gt;GitHub PagesはGitHubにリポジトリを作りそこにサイト用のファイルを配置することで、Webサイトとして運用できる仕組みです。 GitHub Pagesのサイトには個人のユーザーであればユーザーサイトか、プロジェクトのサイトがあります。&lt;/p&gt;
-
-&lt;p&gt;ユーザーサイトは &lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt; (usernameのところは自分のGitHubユーザー名に置き換える)というリポジトリを作成する必要があります。 &lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt; リポジトリの &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; ブランチに配置されたファイルがWebサイトとして公開されます。その場合のurlは&lt;code class=&quot;highlighter-rouge&quot;&gt;https://username.github.io&lt;/code&gt;になります（設定次第でカスタムドメインを使うことも可能です）。&lt;/p&gt;
-
-&lt;p&gt;プロジェクトサイトは特にリポジトリ名にルールはなく、普段作成しているリポジトリで管理できます。urlは&lt;code class=&quot;highlighter-rouge&quot;&gt;https://username.github.io/project&lt;/code&gt;(projectの部分がリポジトリ名に置き換わる)という形になります。
-ただしプロジェクトサイトでは&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;ブランチが公開されるのではなく、&lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;ブランチが公開されます。&lt;/p&gt;
-
-&lt;p&gt;主に個人の情報を公開したりブログを作ったりする場合は、&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;のユーザーサイト、自分が作っているOSSのようなプロジェクトについての情報を公開する場合はプロジェクトサイトを使う、という形で使い分けていけばいいと思います。&lt;/p&gt;
-
-&lt;p&gt;ここではユーザーサイトをサンプルに作ってみます。&lt;/p&gt;
-
-&lt;h2 id=&quot;2-githubにリポジトリを作る&quot;&gt;2. GitHubにリポジトリを作る&lt;/h2&gt;
-
-&lt;p&gt;ではGitHubに実際にリポジトリを作ってみましょう。&lt;/p&gt;
-
-&lt;p&gt;GitHubの右上のナビゲーションバーのプラスボタンから&lt;code class=&quot;highlighter-rouge&quot;&gt;New repository&lt;/code&gt;を選びます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/newrepository.png&quot; alt=&quot;New repository&quot; title=&quot;New repository&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Repository Name&lt;/code&gt;のところに、&lt;code class=&quot;highlighter-rouge&quot;&gt;username.github.io&lt;/code&gt;を入力します。私の場合はすでに作成済なのでエラーになります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/input.png&quot; alt=&quot;username.github.io&quot; title=&quot;username.github.io&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Initialize this repository with a README&lt;/code&gt; のチェックはどちらでも大丈夫です。&lt;/p&gt;
-
-&lt;p&gt;これでリポジトリの作成ができました。&lt;/p&gt;
-
-&lt;h2 id=&quot;3-リポジトリにファイルを作って公開する&quot;&gt;3. リポジトリにファイルを作って公開する&lt;/h2&gt;
-
-&lt;p&gt;リポジトリが作成されたらすでに公開準備は整っているので、ファイルを追加してサイトを公開します。&lt;/p&gt;
-
-&lt;p&gt;まずリポジトリをクローンします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/username/usernam.github.io.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;そして&lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt;というファイルを作成して適当に中身を書きます。&lt;/p&gt;
-
-&lt;p&gt;index.md&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello world
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;これをリポジトリに追加してGitHubにプッシュします。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add index.md
-$ git commit -m &quot;first commit&quot;
-$ git push
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;これで&lt;code class=&quot;highlighter-rouge&quot;&gt;https://username.github.io&lt;/code&gt;にアクセスすると、Hello worldと表示されると思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/helloworld.png&quot; alt=&quot;hello world&quot; title=&quot;hello world&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以上でサイトの公開ができました。&lt;/p&gt;
-
-&lt;h2 id=&quot;4-設置を確認する&quot;&gt;4. 設置を確認する&lt;/h2&gt;
-
-&lt;p&gt;リポジトリのナビゲーションメニューのSettingに移動するとGitHug Pagesの設定を確認することができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/settings.png&quot; alt=&quot;settings&quot; title=&quot;settings&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;設定の中にEnforce HTTPSという項目があるので、このチェックをオンにしておくことをお勧めします。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-24/https.png&quot; alt=&quot;Enforce HTTPS&quot; title=&quot;Enforce HTTPS&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;以上で無事サイトを公開することができました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;次のPart2&lt;/a&gt;ではJekyllというツールを使って、ブログ形式のサイトを構築する方法を書いていきます。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 24 May 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html</link>
-        <guid isPermaLink="true">https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html</guid>
         
         <category>GitHub Pages</category>
         
