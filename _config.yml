@@ -27,7 +27,6 @@ category_slugs:
   family: "家族"
   design: "デザイン"
   hobby: "趣味"
-  cryptocurrency: "暗号通貨"
 
 plugins:
   - jekyll-gist

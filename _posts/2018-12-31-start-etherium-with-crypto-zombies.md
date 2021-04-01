@@ -3,7 +3,7 @@ layout: post
 title:  "CryptoZombiesというサービスでイーサリアムを使ったdApps開発を勉強し始めました"
 description: "そろそろdApps開発についても勉強しないといけないなと思いながらなかなかできていなかったのですが、年末で時間が取れたので CryptoZombiesというサービスでイーサリアムを使ったdApps開発について勉強しています。"
 date: 2018-12-31
-categories: cryptocurrency
+categories: development
 image: /assets/posts/2018-12-31/cover.png
 hero-caption: <a href="https://cryptozombies.io">CryptoZombies</a>よりスクリーンショット
 lang: ja_JP
