@@ -32,7 +32,7 @@ tags:
 
 ![GitHub Pagesの設定]({{ site.url }}/assets/posts/2018-07-01/githubpages.png "GitHub Pagesの設定")
 
-私のドメインは、`masamichi.me`なので、そのドメインを入力し、Enforce HTTPSも有効化します。
+私のドメインは、`masamichiueta.github.io`なので、そのドメインを入力し、Enforce HTTPSも有効化します。
 
 リポジトリには`CNAME`というファイルが追加されます。
 

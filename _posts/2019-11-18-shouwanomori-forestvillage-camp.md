@@ -13,7 +13,7 @@ tags:
 ---
 
 今回は千葉県にある昭和の森フォレストビレッジにキャンプにいってきました。
-前回の[Recamp勝浦（旧：しあわせの丘リゾート）のキャンプ](https://masamichi.me/family/2019/10/29/shiawasenooka-resort-camp.html)に引き続き千葉県です!
+前回の[Recamp勝浦（旧：しあわせの丘リゾート）のキャンプ](https://masamichiueta.github.io/family/2019/10/29/shiawasenooka-resort-camp.html)に引き続き千葉県です!
 
 
 今回もなっぷで予約しました。たまたま芝生のフリーサイトに空きが出たので予約しました。

@@ -48,6 +48,6 @@ tags:
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=maasaamiichii-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07BDLQW7H&linkId=7f0cc4b7d0874fbaf6b6c433ab025384"></iframe>
 
 
-[去年](https://masamichi.me/family/2018/07/16/amazon-prime-day-2018.html)と買ったものが結構被っているかもしれないですね...
+[去年](https://masamichiueta.github.io/family/2018/07/16/amazon-prime-day-2018.html)と買ったものが結構被っているかもしれないですね...
 
 以上、今年もプライムデーで購入したものでした。

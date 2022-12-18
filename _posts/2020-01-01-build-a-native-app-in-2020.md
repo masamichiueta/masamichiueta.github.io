@@ -15,7 +15,7 @@ tags:
 - Dart
 ---
 
-去年[2019年にネイティブアプリを開発する方法](https://masamichi.me/development/2019/01/05/build-a-native-app-in-2019.html)という記事を書きました。
+去年[2019年にネイティブアプリを開発する方法](https://masamichiueta.github.io/development/2019/01/05/build-a-native-app-in-2019.html)という記事を書きました。
 
 その中では
 

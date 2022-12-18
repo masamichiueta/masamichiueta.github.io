@@ -16,14 +16,14 @@ tags:
 
 他の記事はこちら
 
-- [Part1 GitHubにリポジトリを作ってサイトを公開する](https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html)
-- [Part2 Jekyllを使ってみる](https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)
-- [Part3 Jekyllの設定をカスタマイズする](https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html)
-- [Part4 自分のオリジナルのテーマを作る](https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html)
+- [Part1 GitHubにリポジトリを作ってサイトを公開する](https://masamichiueta.github.io/development/2020/05/24/github-pages-blog-part1-repository.html)
+- [Part2 Jekyllを使ってみる](https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html)
+- [Part3 Jekyllの設定をカスタマイズする](https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html)
+- [Part4 自分のオリジナルのテーマを作る](https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html)
 
 ## ローカルでJekyllを実行する
 
-[前回の記事](https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html)では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。
+[前回の記事](https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html)では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。
 
 今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。
 
@@ -111,4 +111,4 @@ $ bundle update
 
 の4つのレイアウトが用意されています。
 
-[次のPart4](https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html)では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。
+[次のPart4](https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html)では、レイアウトを自分で変更してオリジナルのテンプレートを作る方法を書いていきます。
