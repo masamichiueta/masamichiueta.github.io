@@ -24,7 +24,6 @@ highlighter: rouge
 
 category_slugs:
   development: "開発"
-  family: "家族"
   design: "デザイン"
   hobby: "趣味"
 

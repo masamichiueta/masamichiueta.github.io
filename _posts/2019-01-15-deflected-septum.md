@@ -3,7 +3,7 @@ layout: post
 title:  "鼻中隔湾曲症と診断されたので手術します"
 description: "昔からアレルギー性鼻炎があり鼻づまりがよく起こっていました。そのためあまり気にならなかったのですが、よく考えると右の鼻が全然通らないことに最近気づきました。"
 date: 2019-01-15
-categories: family
+categories: hobby
 lang: ja_JP
 tags:
 - 鼻中隔湾曲
