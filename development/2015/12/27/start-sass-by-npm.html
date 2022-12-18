@@ -15,31 +15,34 @@
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <!-- Begin Jekyll SEO tag v2.6.1 -->
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>npmでミニマムに始めるSass | Masamichi Ueta</title>
-<meta name="generator" content="Jekyll v3.8.7" />
+<meta name="generator" content="Jekyll v4.3.1" />
 <meta property="og:title" content="npmでミニマムに始めるSass" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="description" content="GitHub Pagesでいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。" />
 <meta property="og:description" content="GitHub Pagesでいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。" />
-<link rel="canonical" href="https://masamichi.me/development/2015/12/27/start-sass-by-npm.html" />
-<meta property="og:url" content="https://masamichi.me/development/2015/12/27/start-sass-by-npm.html" />
+<link rel="canonical" href="https://masamichiueta.github.io/development/2015/12/27/start-sass-by-npm.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/development/2015/12/27/start-sass-by-npm.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-12-27T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="npmでミニマムに始めるSass" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2015/12/27/start-sass-by-npm.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"GitHub Pagesでいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。","headline":"npmでミニマムに始めるSass","dateModified":"2015-12-27T00:00:00+09:00","url":"https://masamichi.me/development/2015/12/27/start-sass-by-npm.html","datePublished":"2015-12-27T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"masamichiueta"},"dateModified":"2015-12-27T00:00:00+09:00","datePublished":"2015-12-27T00:00:00+09:00","description":"GitHub Pagesでいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。","headline":"npmでミニマムに始めるSass","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/development/2015/12/27/start-sass-by-npm.html"},"url":"https://masamichiueta.github.io/development/2015/12/27/start-sass-by-npm.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
      <link rel="stylesheet" href="/css/main.css">
-     <link rel="canonical" href="https://masamichi.me/development/2015/12/27/start-sass-by-npm.html">
+     <link rel="canonical" href="https://masamichiueta.github.io/development/2015/12/27/start-sass-by-npm.html">
      <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
-          href="https://masamichi.me/feed.xml">
+          href="https://masamichiueta.github.io/feed.xml">
      </script>
-     <script data-ad-client="ca-pub-3655474149264343" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -64,20 +67,20 @@
                 class="dn-menuanchor-label">Close Menu</span> </a>
           </li>
           <li class="dn-item dn-logo">
-            <a href="https://masamichi.me/">MasamichiUeta</a>
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
           </li>
         </ul>
       </div>
       <div class="static-navbar">
         <div class="sn-item sn-logo">
-          <a href="https://masamichi.me/">MasamichiUeta</a>
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
         </div>
         <ul class="sn-list">
           <li class="sn-item sn-item-menu">
-            <a href="https://masamichi.me/">Blog</a>
+            <a href="https://masamichiueta.github.io/">Blog</a>
           </li>
           <li class="sn-item sn-item-menu">
-            <a href="https://masamichi.me/about.html">About</a>
+            <a href="https://masamichiueta.github.io/about.html">About</a>
           </li>
           <li class="sn-item sn-item-menu">
             <a href="//twitter.com/masamichiueta" target="_blank">Twitter</a>
@@ -197,31 +200,31 @@ npmのみを使うので、シンプルです。</p>
 <h2 id="nodejsのインストール">node.jsのインストール</h2>
 
 <p>homebrewでnode.jsをインストールします。
-<code class="highlighter-rouge">$ brew install node</code></p>
+<code class="language-plaintext highlighter-rouge">$ brew install node</code></p>
 
 <h2 id="プロジェクトを作る">プロジェクトを作る</h2>
 <p>例として、Webサイト用のディレクトリをデスクトップに作成します。ここでは、mysiteというディレクトリにします。</p>
 
-<p><code class="highlighter-rouge">$ mkdir ~/Desktop/mysite &amp;&amp; cd ~/Desktop/mysite</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ mkdir ~/Desktop/mysite &amp;&amp; cd ~/Desktop/mysite</code></p>
 
 <p>npmの初期設定を行います。
-<code class="highlighter-rouge">$ npm init</code></p>
+<code class="language-plaintext highlighter-rouge">$ npm init</code></p>
 
 <p>いろいろ聞かれますが、とりあえずエンター。</p>
 
 <p>sass用のディレクトリ scss 、sassをコンパイルした後にcssを出力する用のディレクトリ cssを作成します。
-<code class="highlighter-rouge">$ mkdir scss css</code></p>
+<code class="language-plaintext highlighter-rouge">$ mkdir scss css</code></p>
 
 <p>ソースをgitで管理する場合に、npmを使用した際に作成されるnode_moduleは不必要なので、gitで管理しないように.gitignoreを作成します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ touch .gitignore
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ touch .gitignore
 </code></pre></div></div>
 
 <p>.gitignoreに関しては、GitHubによって公開されている<a href="https://github.com/github/gitignore/blob/master/Node.gitignore">.gitignoreリポジトリのNode.gitignore</a>を参考にするといいと思います。</p>
 
 <p>次にscssファイルを作成します。</p>
 
-<p><code class="highlighter-rouge">$ touch style.scss</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ touch style.scss</code></p>
 
 <p>以上でプロジェクトの構成は終了です。</p>
 
@@ -229,13 +232,13 @@ npmのみを使うので、シンプルです。</p>
 
 <p>sassのコンパイルに必要なツール node-sass と、ファイルの更新管理に使用するツール nodemon をnpmでインストールします。</p>
 
-<p><code class="highlighter-rouge">$ npm install -D node-sass nodemon</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ npm install -D node-sass nodemon</code></p>
 
 <h2 id="sassをコンパイルする">sassをコンパイルする</h2>
 
 <p>npmを使用するとpackage.jsonというファイルができていますが、その中のscriptsの部分に、sassコンパイル用のscript, 監視用のscriptを記述します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
   "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
   "watch-css": "nodemon -e scss -x \"npm run build-css\""
 }
@@ -247,18 +250,18 @@ npmのみを使うので、シンプルです。</p>
 
 <p>style.scssにコードを書いて、コンパイルします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$my-color: #3d3d3d;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$my-color: #3d3d3d;
 
 body {
   color: $my-color;
 }
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">$ npm run build-css</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ npm run build-css</code></p>
 
 <p>これで、css/style.css が作成され、以下のようなファイルができると思います。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>body {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>body {
   color: #3d3d3d;
 }
 </code></pre></div></div>
@@ -273,18 +276,18 @@ sassライフが捗りそうです。</p>
 
 <p><a href="https://www.npmjs.com/package/local-web-server">local-web-server</a>を使用します。</p>
 
-<p><code class="highlighter-rouge">$ npm install -D local-web-server</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ npm install -D local-web-server</code></p>
 
 <p>package.json</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
   "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
   "watch-css": "nodemon -e scss -x \"npm run build-css\"",
   "ws": "ws"
 }
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">$ npm run ws</code></p>
+<p><code class="language-plaintext highlighter-rouge">$ npm run ws</code></p>
 
               </div>
               <div class="pt-5">
@@ -307,7 +310,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2021/02/17/homebrew-macos11-error.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html">
                   <small class="decoration-none text-muted">2021/2/17<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h3>
@@ -332,7 +335,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/12/01/m1-macbook-rbenv-setup.html">
                   <small class="decoration-none text-muted">2020/12/1<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
@@ -351,7 +354,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
                   <small class="decoration-none text-muted">2020/11/27<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
@@ -380,7 +383,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/06/23/wwdc2020-platform-state-of-the-union.html">
                   <small class="decoration-none text-muted">2020/6/23<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Platform State of the Unionまとめ</h3>
@@ -399,7 +402,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/06/23/wwdc2020-keynote.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/06/23/wwdc2020-keynote.html">
                   <small class="decoration-none text-muted">2020/6/23<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">WWDC2020キーノートまとめ</h3>
@@ -428,7 +431,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html">
                   <small class="decoration-none text-muted">2020/5/31<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
@@ -451,7 +454,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
                   <small class="decoration-none text-muted">2020/5/28<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
@@ -474,7 +477,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html">
                   <small class="decoration-none text-muted">2020/5/26<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる</h3>
@@ -497,7 +500,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/24/github-pages-blog-part1-repository.html">
                   <small class="decoration-none text-muted">2020/5/24<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する</h3>
@@ -538,7 +541,7 @@ sassライフが捗りそうです。</p>
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/01/03/upload-image-firebase.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/01/03/upload-image-firebase.html">
                   <small class="decoration-none text-muted">2020/1/3<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">FirebaseでCloud Storageに画像をアップロードする</h3>
@@ -568,31 +571,31 @@ sassライフが捗りそうです。</p>
     <h5 class="mt-0 mb-2">カテゴリー</h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/">全て(107)</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/">全て(107)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/design/index.html">デザイン(5)</a>
+                href="https://masamichiueta.github.io/category/design/index.html">デザイン(5)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/development/index.html">開発(61)</a>
+                href="https://masamichiueta.github.io/category/development/index.html">開発(61)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/family/index.html">家族(30)</a>
+                href="https://masamichiueta.github.io/category/family/index.html">家族(30)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/hobby/index.html">趣味(11)</a>
+                href="https://masamichiueta.github.io/category/hobby/index.html">趣味(11)</a>
         </li>
         
     </ul>
@@ -602,23 +605,23 @@ sassライフが捗りそうです。</p>
     <ul class="nav flex-column">
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2021/02/17/homebrew-macos11-error.html">brew upgradeで Your CLT does not support macOS 11というエラーがでた</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html">brew upgradeで Your CLT does not support macOS 11というエラーがでた</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/12/02/discard-tv.html">テレビを見ない生活が続いたので、テレビを捨てました</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/hobby/2020/12/02/discard-tv.html">テレビを見ない生活が続いたので、テレビを捨てました</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2020/12/01/m1-macbook-rbenv-setup.html">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/06/28/to-pixar-and-beyond.html">PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/hobby/2020/06/28/to-pixar-and-beyond.html">PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ</a>
         </li>
         
     </ul>
@@ -644,10 +647,10 @@ sassライフが捗りそうです。</p>
     <div class="py-4">
       <ul class="list-inline">
         <li class="list-inline-item">
-          <a href="https://masamichi.me/">Blog</a>
+          <a href="https://masamichiueta.github.io/">Blog</a>
         </li>
         <li class="list-inline-item">
-          <a href="https://masamichi.me/about.html">About</a>
+          <a href="https://masamichiueta.github.io/about.html">About</a>
         </li>
         <li class="list-inline-item">
           <a href="//twitter.com/masamichiueta">Twitter</a>
@@ -662,7 +665,7 @@ sassライフが捗りそうです。</p>
           <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
         </li>
       </ul>
-      <p>© 2020 MasamichiUeta</p>
+      <p>© 2023 Masamichi Ueta</p>
     </div>
   </div>
 </footer>

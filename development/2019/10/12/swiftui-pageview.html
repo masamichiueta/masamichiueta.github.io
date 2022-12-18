@@ -15,32 +15,36 @@
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <!-- Begin Jekyll SEO tag v2.6.1 -->
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>SwiftUIでUIPageViewControllerとSegmentedControlを使う方法 | Masamichi Ueta</title>
-<meta name="generator" content="Jekyll v3.8.7" />
+<meta name="generator" content="Jekyll v4.3.1" />
 <meta property="og:title" content="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="description" content="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。" />
 <meta property="og:description" content="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。" />
-<link rel="canonical" href="https://masamichi.me/development/2019/10/12/swiftui-pageview.html" />
-<meta property="og:url" content="https://masamichi.me/development/2019/10/12/swiftui-pageview.html" />
+<link rel="canonical" href="https://masamichiueta.github.io/development/2019/10/12/swiftui-pageview.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/development/2019/10/12/swiftui-pageview.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
-<meta property="og:image" content="https://masamichi.me/assets/posts/2019-07-25/cover.png" />
+<meta property="og:image" content="https://masamichiueta.github.io/assets/posts/2019-07-25/cover.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-10-12T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://masamichiueta.github.io/assets/posts/2019-07-25/cover.png" />
+<meta property="twitter:title" content="SwiftUIでUIPageViewControllerとSegmentedControlを使う方法" />
 <script type="application/ld+json">
-{"image":"https://masamichi.me/assets/posts/2019-07-25/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/10/12/swiftui-pageview.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。","headline":"SwiftUIでUIPageViewControllerとSegmentedControlを使う方法","dateModified":"2019-10-12T00:00:00+09:00","url":"https://masamichi.me/development/2019/10/12/swiftui-pageview.html","datePublished":"2019-10-12T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"masamichiueta"},"dateModified":"2019-10-12T00:00:00+09:00","datePublished":"2019-10-12T00:00:00+09:00","description":"SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。","headline":"SwiftUIでUIPageViewControllerとSegmentedControlを使う方法","image":"https://masamichiueta.github.io/assets/posts/2019-07-25/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/development/2019/10/12/swiftui-pageview.html"},"url":"https://masamichiueta.github.io/development/2019/10/12/swiftui-pageview.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
      <link rel="stylesheet" href="/css/main.css">
-     <link rel="canonical" href="https://masamichi.me/development/2019/10/12/swiftui-pageview.html">
+     <link rel="canonical" href="https://masamichiueta.github.io/development/2019/10/12/swiftui-pageview.html">
      <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
-          href="https://masamichi.me/feed.xml">
+          href="https://masamichiueta.github.io/feed.xml">
      </script>
-     <script data-ad-client="ca-pub-3655474149264343" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -65,20 +69,20 @@
                 class="dn-menuanchor-label">Close Menu</span> </a>
           </li>
           <li class="dn-item dn-logo">
-            <a href="https://masamichi.me/">MasamichiUeta</a>
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
           </li>
         </ul>
       </div>
       <div class="static-navbar">
         <div class="sn-item sn-logo">
-          <a href="https://masamichi.me/">MasamichiUeta</a>
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
         </div>
         <ul class="sn-list">
           <li class="sn-item sn-item-menu">
-            <a href="https://masamichi.me/">Blog</a>
+            <a href="https://masamichiueta.github.io/">Blog</a>
           </li>
           <li class="sn-item sn-item-menu">
-            <a href="https://masamichi.me/about.html">About</a>
+            <a href="https://masamichiueta.github.io/about.html">About</a>
           </li>
           <li class="sn-item sn-item-menu">
             <a href="//twitter.com/masamichiueta" target="_blank">Twitter</a>
@@ -146,9 +150,9 @@
 
 <p><a href="https://developer.apple.com/tutorials/swiftui/interfacing-with-uikit">Interfacing with UIKit</a></p>
 
-<p><code class="highlighter-rouge">UIKit</code>の<code class="highlighter-rouge">UIPageViewController</code>をラップする<code class="highlighter-rouge">PageViewController</code>と、SwiftUIから<code class="highlighter-rouge">PageViewController</code>を使うための<code class="highlighter-rouge">PageView</code>を作ります。</p>
+<p><code class="language-plaintext highlighter-rouge">UIKit</code>の<code class="language-plaintext highlighter-rouge">UIPageViewController</code>をラップする<code class="language-plaintext highlighter-rouge">PageViewController</code>と、SwiftUIから<code class="language-plaintext highlighter-rouge">PageViewController</code>を使うための<code class="language-plaintext highlighter-rouge">PageView</code>を作ります。</p>
 
-<p>まず、<code class="highlighter-rouge">PageViewController</code>です。</p>
+<p>まず、<code class="language-plaintext highlighter-rouge">PageViewController</code>です。</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">PageViewController</span><span class="p">:</span> <span class="kt">UIViewControllerRepresentable</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">controllers</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIViewController</span><span class="p">]</span>
@@ -217,11 +221,11 @@
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p><code class="highlighter-rouge">UIViewControllerRepresentable</code>の<code class="highlighter-rouge">makeUIViewController(context: Context)</code>で<code class="highlighter-rouge">UIPageViewController</code>を作成します。 <code class="highlighter-rouge">updateUIViewController</code>で<code class="highlighter-rouge">PageViewController</code>のページを表示します。</p>
+<p><code class="language-plaintext highlighter-rouge">UIViewControllerRepresentable</code>の<code class="language-plaintext highlighter-rouge">makeUIViewController(context: Context)</code>で<code class="language-plaintext highlighter-rouge">UIPageViewController</code>を作成します。 <code class="language-plaintext highlighter-rouge">updateUIViewController</code>で<code class="language-plaintext highlighter-rouge">PageViewController</code>のページを表示します。</p>
 
-<p><code class="highlighter-rouge">UIPageViewController</code>の<code class="highlighter-rouge">Delegate</code>と<code class="highlighter-rouge">DataSource</code>を設定するために、<code class="highlighter-rouge">Coordinator</code>クラスを作成し、<code class="highlighter-rouge">makeUIViewController</code>で<code class="highlighter-rouge">delgate</code>と<code class="highlighter-rouge">dataSource</code>を<code class="highlighter-rouge">context</code>の<code class="highlighter-rouge">coordinator</code>にセットします。</p>
+<p><code class="language-plaintext highlighter-rouge">UIPageViewController</code>の<code class="language-plaintext highlighter-rouge">Delegate</code>と<code class="language-plaintext highlighter-rouge">DataSource</code>を設定するために、<code class="language-plaintext highlighter-rouge">Coordinator</code>クラスを作成し、<code class="language-plaintext highlighter-rouge">makeUIViewController</code>で<code class="language-plaintext highlighter-rouge">delgate</code>と<code class="language-plaintext highlighter-rouge">dataSource</code>を<code class="language-plaintext highlighter-rouge">context</code>の<code class="language-plaintext highlighter-rouge">coordinator</code>にセットします。</p>
 
-<p>次にこの<code class="highlighter-rouge">PageViewController</code>を使って、SwiftUIのViewを表示する<code class="highlighter-rouge">PageView</code>を作ります。</p>
+<p>次にこの<code class="language-plaintext highlighter-rouge">PageViewController</code>を使って、SwiftUIのViewを表示する<code class="language-plaintext highlighter-rouge">PageView</code>を作ります。</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">PageView</span><span class="o">&lt;</span><span class="kt">Page</span><span class="p">:</span> <span class="kt">View</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">viewControllers</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIHostingController</span><span class="o">&lt;</span><span class="kt">Page</span><span class="o">&gt;</span><span class="p">]</span>
@@ -237,9 +241,9 @@
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>こちらは簡単で、ページとして表示するViewと、<code class="highlighter-rouge">currentPage</code>を受け取って、<code class="highlighter-rouge">PageViewController</code>に渡します。</p>
+<p>こちらは簡単で、ページとして表示するViewと、<code class="language-plaintext highlighter-rouge">currentPage</code>を受け取って、<code class="language-plaintext highlighter-rouge">PageViewController</code>に渡します。</p>
 
-<p>これを<code class="highlighter-rouge">SegmentedControl</code>と組み合わせて使います。</p>
+<p>これを<code class="language-plaintext highlighter-rouge">SegmentedControl</code>と組み合わせて使います。</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">ContentView</span><span class="p">:</span> <span class="kt">View</span> <span class="p">{</span>
     <span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">page</span> <span class="o">=</span> <span class="mi">0</span>
@@ -260,11 +264,11 @@
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p><code class="highlighter-rouge">PageView</code>の<code class="highlighter-rouge">currentPage</code>は<code class="highlighter-rouge">@Binding</code>プロパティなので、<code class="highlighter-rouge">@State</code>プロパティを<code class="highlighter-rouge">PageView</code>の<code class="highlighter-rouge">currentPage</code>にセットします。これによって、<code class="highlighter-rouge">currentPage</code>を書き換えると、ページが自動的に変更されます。</p>
+<p><code class="language-plaintext highlighter-rouge">PageView</code>の<code class="language-plaintext highlighter-rouge">currentPage</code>は<code class="language-plaintext highlighter-rouge">@Binding</code>プロパティなので、<code class="language-plaintext highlighter-rouge">@State</code>プロパティを<code class="language-plaintext highlighter-rouge">PageView</code>の<code class="language-plaintext highlighter-rouge">currentPage</code>にセットします。これによって、<code class="language-plaintext highlighter-rouge">currentPage</code>を書き換えると、ページが自動的に変更されます。</p>
 
-<p>SwiftUIで<code class="highlighter-rouge">SegmentedControl</code>を使うには<code class="highlighter-rouge">Picker</code>に<code class="highlighter-rouge">SegmentedPickerStyle</code>をセットします。こちらの<code class="highlighter-rouge">selection</code>プロパティも<code class="highlighter-rouge">@Binding</code>プロパティなので、<code class="highlighter-rouge">PageView</code>の<code class="highlighter-rouge">currentPage</code>に渡したものと同じプロパティを渡します。</p>
+<p>SwiftUIで<code class="language-plaintext highlighter-rouge">SegmentedControl</code>を使うには<code class="language-plaintext highlighter-rouge">Picker</code>に<code class="language-plaintext highlighter-rouge">SegmentedPickerStyle</code>をセットします。こちらの<code class="language-plaintext highlighter-rouge">selection</code>プロパティも<code class="language-plaintext highlighter-rouge">@Binding</code>プロパティなので、<code class="language-plaintext highlighter-rouge">PageView</code>の<code class="language-plaintext highlighter-rouge">currentPage</code>に渡したものと同じプロパティを渡します。</p>
 
-<p>これで<code class="highlighter-rouge">SegmentedControl</code>と<code class="highlighter-rouge">PageView</code>を組み合わせることができました。</p>
+<p>これで<code class="language-plaintext highlighter-rouge">SegmentedControl</code>と<code class="language-plaintext highlighter-rouge">PageView</code>を組み合わせることができました。</p>
 
 <p><img src="/assets/posts/2019-10-12/pageviewcontroller.gif" alt="PageView" title="PageView" /></p>
 
@@ -294,7 +298,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2021/02/17/homebrew-macos11-error.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html">
                   <small class="decoration-none text-muted">2021/2/17<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h3>
@@ -319,7 +323,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/12/01/m1-macbook-rbenv-setup.html">
                   <small class="decoration-none text-muted">2020/12/1<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
@@ -338,7 +342,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
                   <small class="decoration-none text-muted">2020/11/27<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
@@ -367,7 +371,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/06/23/wwdc2020-platform-state-of-the-union.html">
                   <small class="decoration-none text-muted">2020/6/23<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Platform State of the Unionまとめ</h3>
@@ -386,7 +390,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/06/23/wwdc2020-keynote.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/06/23/wwdc2020-keynote.html">
                   <small class="decoration-none text-muted">2020/6/23<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">WWDC2020キーノートまとめ</h3>
@@ -415,7 +419,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html">
                   <small class="decoration-none text-muted">2020/5/31<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
@@ -438,7 +442,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
                   <small class="decoration-none text-muted">2020/5/28<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
@@ -461,7 +465,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html">
                   <small class="decoration-none text-muted">2020/5/26<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる</h3>
@@ -484,7 +488,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/24/github-pages-blog-part1-repository.html">
                   <small class="decoration-none text-muted">2020/5/24<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する</h3>
@@ -525,7 +529,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/01/03/upload-image-firebase.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/01/03/upload-image-firebase.html">
                   <small class="decoration-none text-muted">2020/1/3<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">FirebaseでCloud Storageに画像をアップロードする</h3>
@@ -555,31 +559,31 @@
     <h5 class="mt-0 mb-2">カテゴリー</h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/">全て(107)</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/">全て(107)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/design/index.html">デザイン(5)</a>
+                href="https://masamichiueta.github.io/category/design/index.html">デザイン(5)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/development/index.html">開発(61)</a>
+                href="https://masamichiueta.github.io/category/development/index.html">開発(61)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/family/index.html">家族(30)</a>
+                href="https://masamichiueta.github.io/category/family/index.html">家族(30)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/hobby/index.html">趣味(11)</a>
+                href="https://masamichiueta.github.io/category/hobby/index.html">趣味(11)</a>
         </li>
         
     </ul>
@@ -589,23 +593,23 @@
     <ul class="nav flex-column">
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2021/02/17/homebrew-macos11-error.html">brew upgradeで Your CLT does not support macOS 11というエラーがでた</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html">brew upgradeで Your CLT does not support macOS 11というエラーがでた</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/12/02/discard-tv.html">テレビを見ない生活が続いたので、テレビを捨てました</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/hobby/2020/12/02/discard-tv.html">テレビを見ない生活が続いたので、テレビを捨てました</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2020/12/01/m1-macbook-rbenv-setup.html">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/06/28/to-pixar-and-beyond.html">PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/hobby/2020/06/28/to-pixar-and-beyond.html">PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ</a>
         </li>
         
     </ul>
@@ -631,10 +635,10 @@
     <div class="py-4">
       <ul class="list-inline">
         <li class="list-inline-item">
-          <a href="https://masamichi.me/">Blog</a>
+          <a href="https://masamichiueta.github.io/">Blog</a>
         </li>
         <li class="list-inline-item">
-          <a href="https://masamichi.me/about.html">About</a>
+          <a href="https://masamichiueta.github.io/about.html">About</a>
         </li>
         <li class="list-inline-item">
           <a href="//twitter.com/masamichiueta">Twitter</a>
@@ -649,7 +653,7 @@
           <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
         </li>
       </ul>
-      <p>© 2020 MasamichiUeta</p>
+      <p>© 2023 Masamichi Ueta</p>
     </div>
   </div>
 </footer>

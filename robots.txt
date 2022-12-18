@@ -1,1 +1,1 @@
-Sitemap: https://masamichi.me/sitemap.xml
+Sitemap: https://masamichiueta.github.io/sitemap.xml

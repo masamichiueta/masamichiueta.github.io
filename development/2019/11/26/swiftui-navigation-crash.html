@@ -15,31 +15,34 @@
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <!-- Begin Jekyll SEO tag v2.6.1 -->
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn’t exist | Masamichi Ueta</title>
-<meta name="generator" content="Jekyll v3.8.7" />
+<meta name="generator" content="Jekyll v4.3.1" />
 <meta property="og:title" content="SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn’t exist" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="description" content="SwiftUIで、公式チュートリアルで紹介されているPageViewの中にNavigationLinkを入れて、プッシュ遷移した後に戻るボタンでポップすると、Tried to pop to a view controller that doesn’t exist というエラーが発生してクラッシュしてしまいました。" />
 <meta property="og:description" content="SwiftUIで、公式チュートリアルで紹介されているPageViewの中にNavigationLinkを入れて、プッシュ遷移した後に戻るボタンでポップすると、Tried to pop to a view controller that doesn’t exist というエラーが発生してクラッシュしてしまいました。" />
-<link rel="canonical" href="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html" />
-<meta property="og:url" content="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html" />
+<link rel="canonical" href="https://masamichiueta.github.io/development/2019/11/26/swiftui-navigation-crash.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/development/2019/11/26/swiftui-navigation-crash.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-11-26T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn’t exist" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"SwiftUIで、公式チュートリアルで紹介されているPageViewの中にNavigationLinkを入れて、プッシュ遷移した後に戻るボタンでポップすると、Tried to pop to a view controller that doesn’t exist というエラーが発生してクラッシュしてしまいました。","headline":"SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn’t exist","dateModified":"2019-11-26T00:00:00+09:00","url":"https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html","datePublished":"2019-11-26T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"masamichiueta"},"dateModified":"2019-11-26T00:00:00+09:00","datePublished":"2019-11-26T00:00:00+09:00","description":"SwiftUIで、公式チュートリアルで紹介されているPageViewの中にNavigationLinkを入れて、プッシュ遷移した後に戻るボタンでポップすると、Tried to pop to a view controller that doesn’t exist というエラーが発生してクラッシュしてしまいました。","headline":"SwiftUIでNavigationLinkがクラッシュする - Tried to pop to a view controller that doesn’t exist","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/development/2019/11/26/swiftui-navigation-crash.html"},"url":"https://masamichiueta.github.io/development/2019/11/26/swiftui-navigation-crash.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
      <link rel="stylesheet" href="/css/main.css">
-     <link rel="canonical" href="https://masamichi.me/development/2019/11/26/swiftui-navigation-crash.html">
+     <link rel="canonical" href="https://masamichiueta.github.io/development/2019/11/26/swiftui-navigation-crash.html">
      <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
-          href="https://masamichi.me/feed.xml">
+          href="https://masamichiueta.github.io/feed.xml">
      </script>
-     <script data-ad-client="ca-pub-3655474149264343" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -64,20 +67,20 @@
                 class="dn-menuanchor-label">Close Menu</span> </a>
           </li>
           <li class="dn-item dn-logo">
-            <a href="https://masamichi.me/">MasamichiUeta</a>
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
           </li>
         </ul>
       </div>
       <div class="static-navbar">
         <div class="sn-item sn-logo">
-          <a href="https://masamichi.me/">MasamichiUeta</a>
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
         </div>
         <ul class="sn-list">
           <li class="sn-item sn-item-menu">
-            <a href="https://masamichi.me/">Blog</a>
+            <a href="https://masamichiueta.github.io/">Blog</a>
           </li>
           <li class="sn-item sn-item-menu">
-            <a href="https://masamichi.me/about.html">About</a>
+            <a href="https://masamichiueta.github.io/about.html">About</a>
           </li>
           <li class="sn-item sn-item-menu">
             <a href="//twitter.com/masamichiueta" target="_blank">Twitter</a>
@@ -135,19 +138,19 @@
               <div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a>
                 <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-                <p>SwiftUIで、公式チュートリアルで紹介されている<code class="highlighter-rouge">PageView</code>の中に<code class="highlighter-rouge">NavigationLink</code>を入れて、プッシュ遷移した後に戻るボタンでポップすると、<code class="highlighter-rouge">Tried to pop to a view controller that doesn't exist</code> というエラーが発生してクラッシュしてしまいました。</p>
+                <p>SwiftUIで、公式チュートリアルで紹介されている<code class="language-plaintext highlighter-rouge">PageView</code>の中に<code class="language-plaintext highlighter-rouge">NavigationLink</code>を入れて、プッシュ遷移した後に戻るボタンでポップすると、<code class="language-plaintext highlighter-rouge">Tried to pop to a view controller that doesn't exist</code> というエラーが発生してクラッシュしてしまいました。</p>
 
 <p>環境はXcode11.2.1でiOS13.2.2のシミュレータで実行しています。</p>
 
-<p><code class="highlighter-rouge">UINavigationController</code>が元の<code class="highlighter-rouge">ViewController</code>にポップできていないようです。</p>
+<p><code class="language-plaintext highlighter-rouge">UINavigationController</code>が元の<code class="language-plaintext highlighter-rouge">ViewController</code>にポップできていないようです。</p>
 
-<p><code class="highlighter-rouge">PageView</code>が毎回新しい<code class="highlighter-rouge">ViewController</code>を生成するのが原因でしょうか。</p>
+<p><code class="language-plaintext highlighter-rouge">PageView</code>が毎回新しい<code class="language-plaintext highlighter-rouge">ViewController</code>を生成するのが原因でしょうか。</p>
 
 <p>ググってみると同じようなエラーにぶつかっている人もいるみたいです。Xcode11.0では動いていたので、iOSのバグ、という可能性もあります。</p>
 
 <p><a href="https://forums.developer.apple.com/thread/124757">SwiftUI - NavigationLink inside NavigationBarItems, returns error on navigating from detail back to master view</a></p>
 
-<p>TabViewが原因で発生する場合もあるようですが、私は<code class="highlighter-rouge">PageView</code>が原因でした。</p>
+<p>TabViewが原因で発生する場合もあるようですが、私は<code class="language-plaintext highlighter-rouge">PageView</code>が原因でした。</p>
 
 <p><a href="https://stackoverflow.com/questions/58737567/tried-to-pop-to-a-view-controller-that-doesnt-exist-in-swiftui">Tried to pop to a view controller that doesn’t exist in SwiftUI</a></p>
 
@@ -174,7 +177,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2021/02/17/homebrew-macos11-error.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html">
                   <small class="decoration-none text-muted">2021/2/17<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h3>
@@ -199,7 +202,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/12/01/m1-macbook-rbenv-setup.html">
                   <small class="decoration-none text-muted">2020/12/1<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
@@ -218,7 +221,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
                   <small class="decoration-none text-muted">2020/11/27<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
@@ -247,7 +250,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/06/23/wwdc2020-platform-state-of-the-union.html">
                   <small class="decoration-none text-muted">2020/6/23<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Platform State of the Unionまとめ</h3>
@@ -266,7 +269,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/06/23/wwdc2020-keynote.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/06/23/wwdc2020-keynote.html">
                   <small class="decoration-none text-muted">2020/6/23<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">WWDC2020キーノートまとめ</h3>
@@ -295,7 +298,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html">
                   <small class="decoration-none text-muted">2020/5/31<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
@@ -318,7 +321,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
                   <small class="decoration-none text-muted">2020/5/28<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
@@ -341,7 +344,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html">
                   <small class="decoration-none text-muted">2020/5/26<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる</h3>
@@ -364,7 +367,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/24/github-pages-blog-part1-repository.html">
                   <small class="decoration-none text-muted">2020/5/24<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する</h3>
@@ -405,7 +408,7 @@
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/01/03/upload-image-firebase.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/01/03/upload-image-firebase.html">
                   <small class="decoration-none text-muted">2020/1/3<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">FirebaseでCloud Storageに画像をアップロードする</h3>
@@ -435,31 +438,31 @@
     <h5 class="mt-0 mb-2">カテゴリー</h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/">全て(107)</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/">全て(107)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/design/index.html">デザイン(5)</a>
+                href="https://masamichiueta.github.io/category/design/index.html">デザイン(5)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/development/index.html">開発(61)</a>
+                href="https://masamichiueta.github.io/category/development/index.html">開発(61)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/family/index.html">家族(30)</a>
+                href="https://masamichiueta.github.io/category/family/index.html">家族(30)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/hobby/index.html">趣味(11)</a>
+                href="https://masamichiueta.github.io/category/hobby/index.html">趣味(11)</a>
         </li>
         
     </ul>
@@ -469,23 +472,23 @@
     <ul class="nav flex-column">
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2021/02/17/homebrew-macos11-error.html">brew upgradeで Your CLT does not support macOS 11というエラーがでた</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html">brew upgradeで Your CLT does not support macOS 11というエラーがでた</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/12/02/discard-tv.html">テレビを見ない生活が続いたので、テレビを捨てました</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/hobby/2020/12/02/discard-tv.html">テレビを見ない生活が続いたので、テレビを捨てました</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2020/12/01/m1-macbook-rbenv-setup.html">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/06/28/to-pixar-and-beyond.html">PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/hobby/2020/06/28/to-pixar-and-beyond.html">PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ</a>
         </li>
         
     </ul>
@@ -511,10 +514,10 @@
     <div class="py-4">
       <ul class="list-inline">
         <li class="list-inline-item">
-          <a href="https://masamichi.me/">Blog</a>
+          <a href="https://masamichiueta.github.io/">Blog</a>
         </li>
         <li class="list-inline-item">
-          <a href="https://masamichi.me/about.html">About</a>
+          <a href="https://masamichiueta.github.io/about.html">About</a>
         </li>
         <li class="list-inline-item">
           <a href="//twitter.com/masamichiueta">Twitter</a>
@@ -529,7 +532,7 @@
           <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
         </li>
       </ul>
-      <p>© 2020 MasamichiUeta</p>
+      <p>© 2023 Masamichi Ueta</p>
     </div>
   </div>
 </footer>

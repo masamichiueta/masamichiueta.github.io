@@ -15,32 +15,36 @@
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <!-- Begin Jekyll SEO tag v2.6.1 -->
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました | Masamichi Ueta</title>
-<meta name="generator" content="Jekyll v3.8.7" />
+<meta name="generator" content="Jekyll v4.3.1" />
 <meta property="og:title" content="BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="description" content="最近流行りのビットコインFXボットでも作ってみようかと調べていたところ、BitMEXのボットのサンプルコード sample-market-makerがあったので、動かしてみました。" />
 <meta property="og:description" content="最近流行りのビットコインFXボットでも作ってみようかと調べていたところ、BitMEXのボットのサンプルコード sample-market-makerがあったので、動かしてみました。" />
-<link rel="canonical" href="https://masamichi.me/development/2018/05/08/bitmex-bot-sample.html" />
-<meta property="og:url" content="https://masamichi.me/development/2018/05/08/bitmex-bot-sample.html" />
+<link rel="canonical" href="https://masamichiueta.github.io/development/2018/05/08/bitmex-bot-sample.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/development/2018/05/08/bitmex-bot-sample.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
-<meta property="og:image" content="https://masamichi.me/assets/posts/2018-05-08/cover.png" />
+<meta property="og:image" content="https://masamichiueta.github.io/assets/posts/2018-05-08/cover.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-05-08T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://masamichiueta.github.io/assets/posts/2018-05-08/cover.png" />
+<meta property="twitter:title" content="BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました" />
 <script type="application/ld+json">
-{"image":"https://masamichi.me/assets/posts/2018-05-08/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichi.me/development/2018/05/08/bitmex-bot-sample.html"},"author":{"@type":"Person","name":"masamichiueta"},"description":"最近流行りのビットコインFXボットでも作ってみようかと調べていたところ、BitMEXのボットのサンプルコード sample-market-makerがあったので、動かしてみました。","headline":"BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました","dateModified":"2018-05-08T00:00:00+09:00","url":"https://masamichi.me/development/2018/05/08/bitmex-bot-sample.html","datePublished":"2018-05-08T00:00:00+09:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"masamichiueta"},"dateModified":"2018-05-08T00:00:00+09:00","datePublished":"2018-05-08T00:00:00+09:00","description":"最近流行りのビットコインFXボットでも作ってみようかと調べていたところ、BitMEXのボットのサンプルコード sample-market-makerがあったので、動かしてみました。","headline":"BitMEX ビットコインFXの自動取引Botのサンプルを動かしてみました","image":"https://masamichiueta.github.io/assets/posts/2018-05-08/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/development/2018/05/08/bitmex-bot-sample.html"},"url":"https://masamichiueta.github.io/development/2018/05/08/bitmex-bot-sample.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
      <link rel="stylesheet" href="/css/main.css">
-     <link rel="canonical" href="https://masamichi.me/development/2018/05/08/bitmex-bot-sample.html">
+     <link rel="canonical" href="https://masamichiueta.github.io/development/2018/05/08/bitmex-bot-sample.html">
      <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
-          href="https://masamichi.me/feed.xml">
+          href="https://masamichiueta.github.io/feed.xml">
      </script>
-     <script data-ad-client="ca-pub-3655474149264343" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -65,20 +69,20 @@
                 class="dn-menuanchor-label">Close Menu</span> </a>
           </li>
           <li class="dn-item dn-logo">
-            <a href="https://masamichi.me/">MasamichiUeta</a>
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
           </li>
         </ul>
       </div>
       <div class="static-navbar">
         <div class="sn-item sn-logo">
-          <a href="https://masamichi.me/">MasamichiUeta</a>
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
         </div>
         <ul class="sn-list">
           <li class="sn-item sn-item-menu">
-            <a href="https://masamichi.me/">Blog</a>
+            <a href="https://masamichiueta.github.io/">Blog</a>
           </li>
           <li class="sn-item sn-item-menu">
-            <a href="https://masamichi.me/about.html">About</a>
+            <a href="https://masamichiueta.github.io/about.html">About</a>
           </li>
           <li class="sn-item sn-item-menu">
             <a href="//twitter.com/masamichiueta" target="_blank">Twitter</a>
@@ -162,7 +166,7 @@
 
 <p><a href="https://testnet.bitmex.com/app">Testnet BitMEX Account</a></p>
 
-<p>その後、テスト環境で使うビットコインもどき<code class="highlighter-rouge">TBTC</code>をウォレットに送信します。</p>
+<p>その後、テスト環境で使うビットコインもどき<code class="language-plaintext highlighter-rouge">TBTC</code>をウォレットに送信します。</p>
 
 <p><a href="https://testnet.bitmex.com/app/deposit">deposit some TBTC</a></p>
 
@@ -174,17 +178,17 @@
 
 <p>bitmex-market-makerは、python3.5以降をサポートしているようなので、pyenvで3.6.5をインストールします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv install 3.6.5
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv install 3.6.5
 </code></pre></div></div>
 
 <p>その後、pyenv-virtualenvで、bitmex-market-maker用の環境を作ります。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv virtualenv 3.6.5 bitmex
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pyenv virtualenv 3.6.5 bitmex
 </code></pre></div></div>
 
 <p>bitmex-market-maker用のディレクトリを作って、pipでbitmex-market-makerをインストールします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir bitmex
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir bitmex
 cd bitmex
 pyenv local bitmex
 pip install bitmex-market-maker
@@ -192,21 +196,21 @@ pip install bitmex-market-maker
 
 <p>その後、market-makerをセットアップします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>marketmaker setup
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>marketmaker setup
 </code></pre></div></div>
 
-<p>すると、<code class="highlighter-rouge">market_maker</code>フォルダと、<code class="highlighter-rouge">settings.py</code>が生成されます。</p>
+<p>すると、<code class="language-plaintext highlighter-rouge">market_maker</code>フォルダと、<code class="language-plaintext highlighter-rouge">settings.py</code>が生成されます。</p>
 
 <h2 id="とりあえず実行して見る">とりあえず実行して見る</h2>
 
 <p>API KeyとSecret Keyを生成します。</p>
 
-<p><img src="https://masamichi.me/assets/posts/2018-05-08/key.png" alt="API Key and Secret Key" title="API Key and Secret Key" /></p>
+<p><img src="https://masamichiueta.github.io/assets/posts/2018-05-08/key.png" alt="API Key and Secret Key" title="API Key and Secret Key" /></p>
 
 <p>キーを生成したら、settings.pyのAPI_KEYとAPI_SECRETにコピーします。
 そして、ボットを実行します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>marketmaker XBTUSD
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>marketmaker XBTUSD
 </code></pre></div></div>
 
 <p>ボットを実行するとデフォルトの設定にしたがって、オーダーが自動的に実行されていきます。</p>
@@ -245,7 +249,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2021/02/17/homebrew-macos11-error.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html">
                   <small class="decoration-none text-muted">2021/2/17<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h3>
@@ -270,7 +274,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/12/01/m1-macbook-rbenv-setup.html">
                   <small class="decoration-none text-muted">2020/12/1<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
@@ -289,7 +293,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
                   <small class="decoration-none text-muted">2020/11/27<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
@@ -318,7 +322,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/06/23/wwdc2020-platform-state-of-the-union.html">
                   <small class="decoration-none text-muted">2020/6/23<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">Platform State of the Unionまとめ</h3>
@@ -337,7 +341,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/06/23/wwdc2020-keynote.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/06/23/wwdc2020-keynote.html">
                   <small class="decoration-none text-muted">2020/6/23<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">WWDC2020キーノートまとめ</h3>
@@ -366,7 +370,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html">
                   <small class="decoration-none text-muted">2020/5/31<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
@@ -389,7 +393,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
                   <small class="decoration-none text-muted">2020/5/28<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
@@ -412,7 +416,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/26/github-pages-blog-part2-jekyll.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html">
                   <small class="decoration-none text-muted">2020/5/26<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる</h3>
@@ -435,7 +439,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/05/24/github-pages-blog-part1-repository.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/05/24/github-pages-blog-part1-repository.html">
                   <small class="decoration-none text-muted">2020/5/24<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する</h3>
@@ -476,7 +480,7 @@ pip install bitmex-market-maker
 
               
               <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichi.me/development/2020/01/03/upload-image-firebase.html">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/01/03/upload-image-firebase.html">
                   <small class="decoration-none text-muted">2020/1/3<span
                       class="ml-2">開発</span></small>
                   <h3 class="mt-0">FirebaseでCloud Storageに画像をアップロードする</h3>
@@ -506,31 +510,31 @@ pip install bitmex-market-maker
     <h5 class="mt-0 mb-2">カテゴリー</h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/">全て(107)</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/">全て(107)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/design/index.html">デザイン(5)</a>
+                href="https://masamichiueta.github.io/category/design/index.html">デザイン(5)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/development/index.html">開発(61)</a>
+                href="https://masamichiueta.github.io/category/development/index.html">開発(61)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/family/index.html">家族(30)</a>
+                href="https://masamichiueta.github.io/category/family/index.html">家族(30)</a>
         </li>
         
         <li class="nav-item">
             
             <a class="nav-link  py-1"
-                href="https://masamichi.me/category/hobby/index.html">趣味(11)</a>
+                href="https://masamichiueta.github.io/category/hobby/index.html">趣味(11)</a>
         </li>
         
     </ul>
@@ -540,23 +544,23 @@ pip install bitmex-market-maker
     <ul class="nav flex-column">
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2021/02/17/homebrew-macos11-error.html">brew upgradeで Your CLT does not support macOS 11というエラーがでた</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html">brew upgradeで Your CLT does not support macOS 11というエラーがでた</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/12/02/discard-tv.html">テレビを見ない生活が続いたので、テレビを捨てました</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/hobby/2020/12/02/discard-tv.html">テレビを見ない生活が続いたので、テレビを捨てました</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2020/12/01/m1-macbook-rbenv-setup.html">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2020/12/01/m1-macbook-rbenv-setup.html">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</a>
         </li>
         
         <li class="nav-item">
-            <a class="nav-link py-1" href="https://masamichi.me/hobby/2020/06/28/to-pixar-and-beyond.html">PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ</a>
+            <a class="nav-link py-1" href="https://masamichiueta.github.io/hobby/2020/06/28/to-pixar-and-beyond.html">PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ</a>
         </li>
         
     </ul>
@@ -582,10 +586,10 @@ pip install bitmex-market-maker
     <div class="py-4">
       <ul class="list-inline">
         <li class="list-inline-item">
-          <a href="https://masamichi.me/">Blog</a>
+          <a href="https://masamichiueta.github.io/">Blog</a>
         </li>
         <li class="list-inline-item">
-          <a href="https://masamichi.me/about.html">About</a>
+          <a href="https://masamichiueta.github.io/about.html">About</a>
         </li>
         <li class="list-inline-item">
           <a href="//twitter.com/masamichiueta">Twitter</a>
@@ -600,7 +604,7 @@ pip install bitmex-market-maker
           <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
         </li>
       </ul>
-      <p>© 2020 MasamichiUeta</p>
+      <p>© 2023 Masamichi Ueta</p>
     </div>
   </div>
 </footer>
