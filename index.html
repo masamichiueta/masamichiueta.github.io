@@ -12,7 +12,7 @@ layout: default
             <li class="pb-4 pt-4">
               <a class="nounderline" href="{{ post.url | prepend: site.url }}">
                 <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}<span
-                    class="ml-2">{{ post.categories | first | slug2name }}</span></small>
+                    class="ms-2">{{ post.categories | first | slug2name }}</span></small>
                 <h3>{{ post.title }}</h3>
                 <p class="text-dark">{{ post.description }}</p>
                 {% if post.image %}
@@ -22,7 +22,7 @@ layout: default
                 {% if post.tags %}
                 <p class="mb-0">
                   {% for tags in post.tags %}
-                  <span class="badge badge-light">{{ tags }}</span>
+                  <span class="badge bg-light text-dark">{{ tags }}</span>
                   {% endfor %}
                 </p>
                 {% endif %}
@@ -36,21 +36,21 @@ layout: default
         {% if paginator.total_pages > 1 %}
         <div class="pagination d-flex justify-content-center">
           {% if paginator.previous_page %}
-          <a class="mr-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">&laquo; 前</a>
+          <a class="me-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">&laquo; 前</a>
           {% else %}
-          <span class="mr-3">&laquo; 前</span>
+          <span class="me-3">&laquo; 前</span>
           {% endif %}
 
           {% for page in (1..paginator.total_pages) %}
           {% assign prev_limit = paginator.page | minus: 5 %}
           {% assign next_limit = paginator.page | plus: 5 %}
           {% if page == paginator.page %}
-          <em class="mr-3">{{ page }}</em>
+          <em class="me-3">{{ page }}</em>
           {% elsif page == 1 and prev_limit <= 1 %}
-          <a class="mr-3" href="{{ site.url }}">{{ page }}</a>
+          <a class="me-3" href="{{ site.url }}">{{ page }}</a>
           {% else %}
           {% if page > prev_limit and page < next_limit %}
-          <a class="mr-3" href="{{ site.paginate_path | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+          <a class="me-3" href="{{ site.paginate_path | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
           {% endif %}
           {% endif %}
           {% endfor %}
