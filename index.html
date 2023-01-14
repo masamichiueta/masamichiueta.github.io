@@ -23,7 +23,7 @@ layout: default
                 <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}<span
                     class="ms-2">{{ post.categories | first | slug2name }}</span></small>
                 <h3>{{ post.title }}</h3>
-                <p class="text-dark">{{ post.description }}</p>
+                <p class="text-body">{{ post.description }}</p>
                 {% if post.image %}
                 <div class="my-4 media-img rounded" style="background-image: url({{ post.image }})">
                 </div>
@@ -31,7 +31,7 @@ layout: default
                 {% if post.tags %}
                 <p class="mb-0">
                   {% for tags in post.tags %}
-                  <span class="badge bg-light text-dark">{{ tags }}</span>
+                  <span class="badge text-bg-light">{{ tags }}</span>
                   {% endfor %}
                 </p>
                 {% endif %}

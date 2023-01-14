@@ -13,7 +13,7 @@ layout: default
         <h1 itemprop="name headline">{{ page.title }}</h1>
       </div>
     </div>
-    <span class="text-start text-dark">
+    <span class="text-start text-body">
       {% if page.hero-caption %}
       <small>画像出典：{{page.hero-caption}}</small>
       {% endif %}
@@ -31,7 +31,7 @@ layout: default
               <p>
                 <small>タグ</small>
                 {% for tags in page.tags %}
-                <span class="badge bg-light text-dark">{{ tags }}</span>
+                <span class="badge text-bg-light">{{ tags }}</span>
                 {% endfor %}
               </p>
               {% endif %}
@@ -70,7 +70,7 @@ layout: default
                   <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}<span
                       class="ms-2">{{ post.categories | first | slug2name }}</span></small>
                   <h3 class="mt-0">{{ post.title }}</h3>
-                  <p class="text-dark">{{ post.description }}</p>
+                  <p class="text-body">{{ post.description }}</p>
                   {% if post.image %}
                   <div alt="{{post.title}}" class="my-4 media-img rounded"
                     style="background-image: url({{ post.image }})">
