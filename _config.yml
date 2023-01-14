@@ -20,7 +20,6 @@ paginate: 10
 # Build settings
 markdown: kramdown
 future: true
-highlighter: rouge
 
 category_slugs:
   development: "開発"
