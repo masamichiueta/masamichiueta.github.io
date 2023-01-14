@@ -5,9 +5,42 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Jan 2023 01:19:48 +0900</pubDate>
-    <lastBuildDate>Sun, 15 Jan 2023 01:19:48 +0900</lastBuildDate>
+    <pubDate>Sun, 15 Jan 2023 01:30:31 +0900</pubDate>
+    <lastBuildDate>Sun, 15 Jan 2023 01:30:31 +0900</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
+    
+      <item>
+        <title>Bootstrap5.3で追加されたダークモードに対応してみました</title>
+        <description>&lt;p&gt;Bootstrap5.3がリリースされており（現段階ではまだalphaバージョン？）、ダークモードが追加されたようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://getbootstrap.com/docs/5.3/customize/color-modes/&quot;&gt;Color modes&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;このブログでもBootstrapを長らく使っていて、時々バージョンを上げていましたが、ダークモード対応したいなと思っていたのでアップデートしました。
+基本的にはバージョンを上げるだけで大丈夫で、Bootstrapの記事に記載されているJavaScriptを導入するとユーザーの環境設定に応じてColor modeが設定されるようです。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://getbootstrap.com/docs/5.3/customize/color-modes/#javascript&quot;&gt;Color modes - JavaScript&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ダークモード対応に伴い、色をcssで指定していた部分を少し対応しました。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;text-dark&lt;/code&gt; を指定していたところを、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;text-body&lt;/code&gt;に変更&lt;/li&gt;
+  &lt;li&gt;badgeのスタイルの更新&lt;/li&gt;
+  &lt;li&gt;syntacs highlightingに関して、&lt;a href=&quot;https://highlightjs.org&quot;&gt;highlight.js&lt;/a&gt; を導入、スタイルは &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a11y-dark&lt;/code&gt;のテーマを追加ました。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ようやくダークモードに対応できて、もう少しブログも更新していこうと思います。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 15 Jan 2023 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/development/2023/01/15/bootstrap-dark-mode.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/development/2023/01/15/bootstrap-dark-mode.html</guid>
+        
+        <category>Bootstrap</category>
+        
+        <category>DarkMode</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>brew upgradeで Your CLT does not support macOS 11というエラーがでた</title>
@@ -727,94 +760,6 @@ gem &quot;github-pages&quot;, group: :jekyll_plugins
         <pubDate>Thu, 28 May 2020 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html</guid>
-        
-        <category>GitHub Pages</category>
-        
-        <category>ブログ</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる</title>
-        <description>&lt;p&gt;「GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる」です。&lt;/p&gt;
-
-&lt;p&gt;他の記事はこちら。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html&quot;&gt;Part4 自分のオリジナルのテーマを作る&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;jekyllとは&quot;&gt;Jekyllとは&lt;/h2&gt;
-
-&lt;p&gt;JekyllはGitHub Pagesで使用することができる静的サイトのジェネレータです。Jekyllを使うことで、Markdownで書いたブログの記事やhtmlで作ったページをビルドして、公開用のhtmlとして生成することができます。&lt;/p&gt;
-
-&lt;p&gt;htmlを事前に生成して、公開時にはサーバーサイドによる動的な処理を実行せずhtmlを表示するだけなので、静的サイトになります。
-JekyllにはWordpressのように、いくつかのテーマが提供されていて、それらを活用することで簡単にブログサイトを構築することができます。&lt;/p&gt;
-
-&lt;p&gt;静的サイトジェネレータは他にも&lt;a href=&quot;https://gohugo.io&quot;&gt;HUGO&lt;/a&gt;や&lt;a href=&quot;https://www.gatsbyjs.org&quot;&gt;Gatsby&lt;/a&gt;などがありますが、GitHub Pagesはデフォルトで&lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;をサポートしています。そのため、特別なカスタマイズをしなければ、Jekyllで事前にビルドする必要もなくGitHub Pagesでテーマを活用したブログを構築することができます。&lt;/p&gt;
-
-&lt;h2 id=&quot;jekyllを使ってみる&quot;&gt;Jekyllを使ってみる&lt;/h2&gt;
-
-&lt;p&gt;GitHub PagesでJekyllのテンプレートを使うのは簡単です。リポジトリのメニューからSettingsを開いて、下の方にあるGitHub Pagesの設定をみると、 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Choose a theme&lt;/code&gt; というメニューがあります。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-26/chooseatheme.png&quot; alt=&quot;Choose a theme&quot; title=&quot;Choose a theme&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;ボタンをクリックするとテーマセレクタ画面が表示されます。テーマを選択することでプレビューを見ることもできます。
-良さそうなテーマがあれば、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Select theme&lt;/code&gt;で決定します。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-05-26/selecttheme.png&quot; alt=&quot;Select theme&quot; title=&quot;Select theme&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;するとテーマが適用されます。具体的にはリポジトリに &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; というファイルが新しく追加されています。中身は以下のようになっています。&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;theme: jekyll-theme-cayman (実際に選んだテーマ)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Jekyllはこの&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に基づいて静的サイトを生成しますが、GitHub PagesはJekyllをサポートしているので既存のテーマを使うだけであればこれだけでテーマを適用することができます。&lt;/p&gt;
-
-&lt;h2 id=&quot;新規ポストを投稿する&quot;&gt;新規ポストを投稿する&lt;/h2&gt;
-
-&lt;p&gt;Jekyllのルールではブログの記事は &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt;フォルダの中に、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YYYY-MM-DD-title.md&lt;/code&gt;という形式で記事を配置する必要があります。例えば、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2020-05-26-first-post.md&lt;/code&gt;などです。&lt;/p&gt;
-
-&lt;p&gt;Markdownファイルを作成したら、ファイルの一番上の部分にタイトルや日付などのメタデータを書き込み、その下に記事のコンテンツを書き込みます。&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-layout: page
-title: &quot;First post&quot;
-date: 2020-05-26
----
-
-# Fist post
-
-First post
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;これをリポジトリに配置すれば記事が公開されます。&lt;/p&gt;
-
-&lt;p&gt;トップページに記事の一覧を表示するには&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;index.md&lt;/code&gt;に以下を追記します。&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&amp;lt;ul&amp;gt;
-  {% for post in site.posts %}
-    &amp;lt;li&amp;gt;
-      &amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;
-    &amp;lt;/li&amp;gt;
-  {% endfor %}
-&amp;lt;/ul&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;次のPart3&lt;/a&gt;ではJekyllの設定をカスタマイズする方法を書いていきます。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 May 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html</guid>
         
         <category>GitHub Pages</category>
         

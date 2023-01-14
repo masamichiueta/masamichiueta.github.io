@@ -16,30 +16,28 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>FirebaseとReactで認証付きアプリのサンプルを実行するまで | Masamichi Ueta</title>
+<title>Bootstrap5.3で追加されたダークモードに対応してみました | Masamichi Ueta</title>
 <meta name="generator" content="Jekyll v4.3.1" />
-<meta property="og:title" content="FirebaseとReactで認証付きアプリのサンプルを実行するまで" />
+<meta property="og:title" content="Bootstrap5.3で追加されたダークモードに対応してみました" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="現在FirebaseでWebアプリを作っています。アプリを作る上でユーザー認証は欠かせないものの、作るのが大変ということが多いですが、Firebaseを使うと簡単に実装することができました。私はWebアプリを作る上でReactを使うことが多いので、今回はFirebaseとReactでユーザー認証を行うサンプルアプリを実行して、Firebaseでホスティングしてみました。" />
-<meta property="og:description" content="現在FirebaseでWebアプリを作っています。アプリを作る上でユーザー認証は欠かせないものの、作るのが大変ということが多いですが、Firebaseを使うと簡単に実装することができました。私はWebアプリを作る上でReactを使うことが多いので、今回はFirebaseとReactでユーザー認証を行うサンプルアプリを実行して、Firebaseでホスティングしてみました。" />
-<link rel="canonical" href="https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html" />
-<meta property="og:url" content="https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html" />
+<meta name="description" content="エンジニアリング・デザイン・日常" />
+<meta property="og:description" content="エンジニアリング・デザイン・日常" />
+<link rel="canonical" href="https://masamichiueta.github.io/development/2023/01/15/bootstrap-dark-mode.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/development/2023/01/15/bootstrap-dark-mode.html" />
 <meta property="og:site_name" content="Masamichi Ueta" />
-<meta property="og:image" content="https://masamichiueta.github.io/assets/posts/2018-06-18/cover.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2018-06-18T00:00:00+09:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://masamichiueta.github.io/assets/posts/2018-06-18/cover.png" />
-<meta property="twitter:title" content="FirebaseとReactで認証付きアプリのサンプルを実行するまで" />
+<meta property="article:published_time" content="2023-01-15T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Bootstrap5.3で追加されたダークモードに対応してみました" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"masamichiueta"},"dateModified":"2018-06-18T00:00:00+09:00","datePublished":"2018-06-18T00:00:00+09:00","description":"現在FirebaseでWebアプリを作っています。アプリを作る上でユーザー認証は欠かせないものの、作るのが大変ということが多いですが、Firebaseを使うと簡単に実装することができました。私はWebアプリを作る上でReactを使うことが多いので、今回はFirebaseとReactでユーザー認証を行うサンプルアプリを実行して、Firebaseでホスティングしてみました。","headline":"FirebaseとReactで認証付きアプリのサンプルを実行するまで","image":"https://masamichiueta.github.io/assets/posts/2018-06-18/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html"},"url":"https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"masamichiueta"},"dateModified":"2023-01-15T00:00:00+09:00","datePublished":"2023-01-15T00:00:00+09:00","description":"エンジニアリング・デザイン・日常","headline":"Bootstrap5.3で追加されたダークモードに対応してみました","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/development/2023/01/15/bootstrap-dark-mode.html"},"url":"https://masamichiueta.github.io/development/2023/01/15/bootstrap-dark-mode.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
      <link rel="stylesheet" href="/css/main.css">
-     <link rel="canonical" href="https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html">
+     <link rel="canonical" href="https://masamichiueta.github.io/development/2023/01/15/bootstrap-dark-mode.html">
      <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
           href="https://masamichiueta.github.io/feed.xml">
      </script>
@@ -103,17 +101,15 @@
 </header>
 
   
-<section class="hero text-center" style="background-image: url(/assets/posts/2018-06-18/cover.png)">
-  <div class="overlay"></div>
-  
+  <section class="hero background-image-none text-center">
+    <div class="overlay background-color-main"></div>
+    
     <div class="d-flex align-items-center justify-content-between h-100 position-relative">
       <div class="container">
-        <h1 itemprop="name headline">FirebaseとReactで認証付きアプリのサンプルを実行するまで</h1>
+        <h1 itemprop="name headline">Bootstrap5.3で追加されたダークモードに対応してみました</h1>
       </div>
     </div>
     <span class="text-start text-body">
-      
-      <small>画像出典：firebase</small>
       
     </span>
   </section>
@@ -124,124 +120,37 @@
         <div class="col-12 col-lg-8">
           <article itemscope itemtype="http://schema.org/BlogPosting">
             <div class="article-body" itemprop="articleBody">
-              <p class="text-muted"><time datetime="2018-06-18T00:00:00+09:00" itemprop="datePublished">2018/6/18</time><a class="ms-3" href="https://masamichiueta.github.io/category/development/index.html">開発</a></p>
+              <p class="text-muted"><time datetime="2023-01-15T00:00:00+09:00" itemprop="datePublished">2023/1/15</time><a class="ms-3" href="https://masamichiueta.github.io/category/development/index.html">開発</a></p>
               
               <p>
                 <small>タグ</small>
                 
-                <span class="badge text-bg-light">Firebase</span>
+                <span class="badge text-bg-light">Bootstrap</span>
                 
-                <span class="badge text-bg-light">React</span>
-                
-                <span class="badge text-bg-light">JavaScript</span>
+                <span class="badge text-bg-light">DarkMode</span>
                 
               </p>
               
               <div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a>
                 <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-                <p>現在FirebaseでWebアプリを作っています。アプリを作る上でユーザー認証は欠かせないものの、作るのが大変ということが多いですが、Firebaseを使うと簡単に実装することができました。</p>
+                <p>Bootstrap5.3がリリースされており（現段階ではまだalphaバージョン？）、ダークモードが追加されたようです。</p>
 
-<p>私はWebアプリを作る上でReactを使うことが多いので、今回はFirebaseとReactでユーザー認証を行うサンプルアプリを実行して、Firebaseでホスティングしてみました。</p>
+<p><a href="https://getbootstrap.com/docs/5.3/customize/color-modes/">Color modes</a></p>
 
-<p>今回参考にしたサンプルはこちらです。</p>
+<p>このブログでもBootstrapを長らく使っていて、時々バージョンを上げていましたが、ダークモード対応したいなと思っていたのでアップデートしました。
+基本的にはバージョンを上げるだけで大丈夫で、Bootstrapの記事に記載されているJavaScriptを導入するとユーザーの環境設定に応じてColor modeが設定されるようです。</p>
 
-<p><a href="https://github.com/rwieruch/react-firebase-authentication">rwieruch/react-firebase-authentication</a></p>
+<p><a href="https://getbootstrap.com/docs/5.3/customize/color-modes/#javascript">Color modes - JavaScript</a></p>
 
-<h1 id="firebaseにプロジェクトを登録する">Firebaseにプロジェクトを登録する</h1>
+<p>ダークモード対応に伴い、色をcssで指定していた部分を少し対応しました。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">text-dark</code> を指定していたところを、<code class="language-plaintext highlighter-rouge">text-body</code>に変更</li>
+  <li>badgeのスタイルの更新</li>
+  <li>syntacs highlightingに関して、<a href="https://highlightjs.org">highlight.js</a> を導入、スタイルは <code class="language-plaintext highlighter-rouge">a11y-dark</code>のテーマを追加ました。</li>
+</ul>
 
-<p>まずは<a href="https://console.firebase.google.com/">Firebaseのコンソール</a>から、プロジェクトを登録します。</p>
-
-<p><img src="https://masamichiueta.github.io/assets/posts/2018-06-18/addproject.png" alt="プロジェクト登録" title="プロジェクト登録" /></p>
-
-<h2 id="アプリを設定する">アプリを設定する</h2>
-
-<p>プロジェクトを登録したらログインの設定を行います。</p>
-
-<p>サイドメニューの<code class="language-plaintext highlighter-rouge">Authentication</code>から、メールアドレスによるログインを有効にします。</p>
-
-<p><img src="https://masamichiueta.github.io/assets/posts/2018-06-18/login.png" alt="メールアドレスログイン" title="メールアドレスログイン" /></p>
-
-<p><br /></p>
-
-<p><img src="https://masamichiueta.github.io/assets/posts/2018-06-18/loginbymail.png" alt="メールアドレスログイン" title="メールアドレスログイン" /></p>
-
-<h2 id="firebaseコマンドラインツールのインストール">Firebaseコマンドラインツールのインストール</h2>
-
-<p>Firebaseにアプリをデプロイするには、Firebaseコマンドラインツールをインストールする必要があります。</p>
-
-<p>npmパッケージで提供されているので、npmでインストールします。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm intall -g firebase-tools
-</code></pre></div></div>
-
-<p>その後ターミナルから以下のコマンドを実行します。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firebase login
-
-cd /path/to/project/directory // プロジェクトディレクトリに移動
-
-firebase init
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">firebase init</code>を実行すると、使用する機能やプロジェクトを聞かれるので該当するものを選択します。</p>
-
-<p><img src="https://masamichiueta.github.io/assets/posts/2018-06-18/functions.png" alt="firebaseの機能" title="firebaseの機能" /></p>
-
-<p>この場合は、<code class="language-plaintext highlighter-rouge">Firestore</code>,<code class="language-plaintext highlighter-rouge">Hosting</code>,<code class="language-plaintext highlighter-rouge">Storage</code>を有効にしてみました。</p>
-
-<p>また途中で、<code class="language-plaintext highlighter-rouge"> What do you want to use as your public directory?</code>と聞かれるので、Reactアプリに合わせるために<code class="language-plaintext highlighter-rouge">build</code>に変更してください。</p>
-
-<p>プロジェクトを作成した後も、<code class="language-plaintext highlighter-rouge">firebase.json</code>を修正すれば変更可能です。</p>
-
-<p><code class="language-plaintext highlighter-rouge">init</code>が終了したら、試しに<code class="language-plaintext highlighter-rouge">deploy</code>してみます。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>firebase deploy
-</code></pre></div></div>
-
-<p>これでデフォルトのページがデプロイされました。</p>
-
-<h1 id="サンプルアプリを実行する">サンプルアプリを実行する</h1>
-
-<p>認証用のサンプルアプリをダウンロードします。</p>
-
-<p><a href="https://github.com/rwieruch/react-firebase-authentication">rwieruch/react-firebase-authentication</a></p>
-
-<p>ダウンロードしたら、</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package.json
-public
-src
-</code></pre></div></div>
-
-<p>をコピーします。</p>
-
-<p><img src="https://masamichiueta.github.io/assets/posts/2018-06-18/project.png" alt="プロジェクト" title="プロジェクト" /></p>
-
-<p>その後npmパッケージをインストールします。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install
-</code></pre></div></div>
-
-<p>インストール後は、<code class="language-plaintext highlighter-rouge">src/firebase/firebase.js</code>の中の<code class="language-plaintext highlighter-rouge">config</code>を自分のプロジェクトのものに変更します。
-<code class="language-plaintext highlighter-rouge">prod</code>と<code class="language-plaintext highlighter-rouge">dev</code>が定義されていますが、一旦同じものを入れました。</p>
-
-<p>configは、Firebaseのコンソールのトップ、<code class="language-plaintext highlighter-rouge">ウェブアプリにFirebaseを追加</code>から表示することができます。</p>
-
-<p><img src="https://masamichiueta.github.io/assets/posts/2018-06-18/addfirebase.png" alt="ウェブアプリにFirebaseを追加" title="ウェブアプリにFirebaseを追加" /></p>
-
-<p>設定を書き換えたら、アプリをビルドしてfirebaseにデプロイします。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build
-firebase deploy
-</code></pre></div></div>
-
-<p>以上で、サンプルアプリがFirebaseにデプロイされました。</p>
-
-<p>デプロイ後以下のようなページが表示されていれば成功です。</p>
-
-<p><img src="https://masamichiueta.github.io/assets/posts/2018-06-18/sample.png" alt="サンプル" title="サンプル" /></p>
-
-<p>サインアップページからユーザー登録をすると、Firebaseのユーザーが追加されます。</p>
+<p>ようやくダークモードに対応できて、もう少しブログも更新していこうと思います。</p>
 
               </div>
               <div class="pt-5">
@@ -262,19 +171,6 @@ firebase deploy
 
               
 
-              
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="https://masamichiueta.github.io/development/2023/01/15/bootstrap-dark-mode.html">
-                  <small class="decoration-none text-muted">2023/1/15<span
-                      class="ms-2">開発</span></small>
-                  <h3 class="mt-0">Bootstrap5.3で追加されたダークモードに対応してみました</h3>
-                  <p class="text-body"></p>
-                  
-                </a>
-              </li>
-              <hr />
-              
-              
               
               
               
@@ -475,6 +371,35 @@ firebase deploy
                   
                   <div alt="GitHub Pagesで無料ブログを作成する - Part1 GitHubにリポジトリを作ってサイトを公開する" class="my-4 media-img rounded"
                     style="background-image: url(/assets/posts/2020-05-24/cover.png)">
+                  </div>
+                  
+                </a>
+              </li>
+              <hr />
+              
+              
+              
+              
+              
+
+              
+
+              
+              
+              
+
+              
+
+              
+              <li class="pb-4 pt-4">
+                <a class="nounderline" href="https://masamichiueta.github.io/development/2020/01/03/upload-image-firebase.html">
+                  <small class="decoration-none text-muted">2020/1/3<span
+                      class="ms-2">開発</span></small>
+                  <h3 class="mt-0">FirebaseでCloud Storageに画像をアップロードする</h3>
+                  <p class="text-body">今FirebaseとReactでアプリを開発中で、画像をアップロードする部分を作ったのでメモ。</p>
+                  
+                  <div alt="FirebaseでCloud Storageに画像をアップロードする" class="my-4 media-img rounded"
+                    style="background-image: url(/assets/posts/2020-01-03/cover.png)">
                   </div>
                   
                 </a>
