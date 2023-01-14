@@ -132,14 +132,4 @@ a { word-break: break-all; }
 
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 { margin-top: 3rem; margin-bottom: 1.5rem; }
 
-pre, code { border: 1px solid #e8e8e8; border-radius: 3px; background-color: #eef; }
-
-code { padding: 1px 5px; }
-
-pre { padding: 8px 12px; overflow-x: auto; }
-
-pre > code { border: 0; padding-right: 0; padding-left: 0; }
-
-[data-bs-theme="dark"] pre, [data-bs-theme="dark"] code { border: #2b3035; background-color: #2b3035; }
-
 /*# sourceMappingURL=main.css.map */
