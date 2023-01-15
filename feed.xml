@@ -5,9 +5,36 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Jan 2023 14:55:08 +0900</pubDate>
-    <lastBuildDate>Sun, 15 Jan 2023 14:55:08 +0900</lastBuildDate>
+    <pubDate>Sun, 15 Jan 2023 19:34:40 +0900</pubDate>
+    <lastBuildDate>Sun, 15 Jan 2023 19:34:40 +0900</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
+    
+      <item>
+        <title>英語を学んでいる</title>
+        <description>&lt;p&gt;これまで継続的に英語を学習してきてはいたが、この半年ほどはさらに学習量を増やしています。&lt;/p&gt;
+
+&lt;p&gt;具体的には、毎日1時間 NativeCampで英語のレッスンを受けるようにしています。実際に英語を話して聞く習慣をつけて時間を作ることで成長できるようにしています。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2023-01-16/nativecamp.jpg&quot; alt=&quot;NativeCamp&quot; title=&quot;NativeCamp&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;実際に毎日コツコツ練習している効果を少しは感じてきており、以前よりも英語で使える表現であったり、自分の意見を英語で表現することがやりやすくなってきました。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CEFR (Common European Framework of Reference for Languages)&lt;/strong&gt; という国際的な指標があり、22年4月に受けたテストではB1 midでしたが、22年12月に受けたテストではB1 highと、実際に少し成長することができました。&lt;/p&gt;
+
+&lt;p&gt;ただ大きくB1のレベルからまだ抜けられていないので、引き続き学習を継続して23年にはB2を実現したいと考えています。&lt;/p&gt;
+
+&lt;p&gt;また仕事でも英語話者と接する機会も増えてきて、今年の目標としては学習フェーズから活用フェーズへ、というところを意識していきたいと思います。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Jan 2023 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2023/01/16/learning-english.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/01/16/learning-english.html</guid>
+        
+        <category>英語</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>最近読んだ本 - チームトポロジー &amp; 組織デザイン</title>
@@ -529,167 +556,6 @@ BUILD FAILED &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;macOS 11.0.1 using ru
         <pubDate>Tue, 23 Jun 2020 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/development/2020/06/23/wwdc2020-platform-state-of-the-union.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/development/2020/06/23/wwdc2020-platform-state-of-the-union.html</guid>
-        
-        <category>WWDC2020</category>
-        
-        <category>Apple</category>
-        
-        <category>アップル</category>
-        
-        <category>iOS</category>
-        
-        <category>macOS</category>
-        
-        <category>watchOS</category>
-        
-        <category>tvOS</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>WWDC2020キーノートまとめ</title>
-        <description>&lt;h1 id=&quot;wwdc2020-キーノートまとめ&quot;&gt;WWDC2020 キーノートまとめ&lt;/h1&gt;
-
-&lt;h2 id=&quot;ios14&quot;&gt;iOS14&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ホーム画面のアップデート&lt;/li&gt;
-  &lt;li&gt;App Libraryという新しいアプリ管理方法が追加
-    &lt;ul&gt;
-      &lt;li&gt;アプリへのアクセスが簡単になる&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;ウィジェットの新しいサイズが追加
-    &lt;ul&gt;
-      &lt;li&gt;またウィジェットをホームスクリーンに追加することが可能になった&lt;/li&gt;
-      &lt;li&gt;スマートスタックを使うことでホーム画面上でウィジェットをスクロールして切り替えが可能になった&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;動画のPicture in Pictureに対応
-    &lt;ul&gt;
-      &lt;li&gt;動画を再生しながらアプリを切り替えられるように&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Siriのデザインが更新される&lt;/li&gt;
-  &lt;li&gt;Message
-    &lt;ul&gt;
-      &lt;li&gt;メッセージをピンできるようになった&lt;/li&gt;
-      &lt;li&gt;Memojiに新しいスタイルが追加（マスクも）&lt;/li&gt;
-      &lt;li&gt;インラインメッセージ（スレッド）とメンション機能が追加&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Map
-    &lt;ul&gt;
-      &lt;li&gt;経路の検索手段に自転車が追加&lt;/li&gt;
-      &lt;li&gt;EV対応&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;CarPlay
-    &lt;ul&gt;
-      &lt;li&gt;壁紙を変更可能に&lt;/li&gt;
-      &lt;li&gt;NFCで車の鍵を開けられるように&lt;/li&gt;
-      &lt;li&gt;メッセージで鍵をシェアできる&lt;/li&gt;
-      &lt;li&gt;Walletアプリに鍵が追加される&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;App Store
-    &lt;ul&gt;
-      &lt;li&gt;App Clipsというミニアプリのような機能が追加される&lt;/li&gt;
-      &lt;li&gt;App ClipコードというQRコードやNFC、Safariから起動できる&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ipados14&quot;&gt;iPadOS14&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;iOS14と同じ新しいデザインのウィジェット&lt;/li&gt;
-  &lt;li&gt;Photos
-    &lt;ul&gt;
-      &lt;li&gt;サイドバーで検索が簡単に&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;電話の通知画面が小さく&lt;/li&gt;
-  &lt;li&gt;Spotlightが使いやすくなる&lt;/li&gt;
-  &lt;li&gt;Apple Pencil
-    &lt;ul&gt;
-      &lt;li&gt;Apple Pencilで書いたオブジェクトの認識に対応、手書き図形の補正や文字認識が可能に&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;airpods&quot;&gt;AirPods&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;デバイス間で自動的にAirPodsをスイッチできるようになる&lt;/li&gt;
-  &lt;li&gt;Spacial Audioアルゴリズムに対応&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;watchos7&quot;&gt;watchOS7&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;watch faceの共有が可能になった&lt;/li&gt;
-  &lt;li&gt;Maps
-    &lt;ul&gt;
-      &lt;li&gt;自転車の経路対応&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Workoutがダンスに対応&lt;/li&gt;
-  &lt;li&gt;睡眠の解析に対応&lt;/li&gt;
-  &lt;li&gt;手洗いの検出に対応、手洗い時間の計測&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;privacy&quot;&gt;Privacy&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;録画中のインディケーターが追加&lt;/li&gt;
-  &lt;li&gt;AppStoreにアプリがh使用する情報がより明確に表示されるようになった&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;tvos&quot;&gt;tvOS&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;HomeKit, 顔認識&lt;/li&gt;
-  &lt;li&gt;Picture in pictureの対応&lt;/li&gt;
-  &lt;li&gt;AppleTV+の新シリーズ FOUNDATION&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;macos11-bigsur&quot;&gt;macOS11 BigSur&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;デザインの刷新
-    &lt;ul&gt;
-      &lt;li&gt;アイコンがiOSと同じような形に&lt;/li&gt;
-      &lt;li&gt;ウィジェット、通知センターのデザイン変更&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Messages
-    &lt;ul&gt;
-      &lt;li&gt;検索対応&lt;/li&gt;
-      &lt;li&gt;Memoji対応&lt;/li&gt;
-      &lt;li&gt;ピン、グループ対応&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Maps
-    &lt;ul&gt;
-      &lt;li&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Mac Catalyst
-    &lt;ul&gt;
-      &lt;li&gt;MapとMessagesがCatalystに移行&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;macの独自cpuへの移行&quot;&gt;Macの独自CPUへの移行&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Apple Silicon&lt;/li&gt;
-  &lt;li&gt;アプリの最ビルドなしでもロゼッタ2によって自動的に変換される&lt;/li&gt;
-  &lt;li&gt;Developer Transition Kitに申し込むとApple SiliconのMac miniを使うことができる&lt;/li&gt;
-  &lt;li&gt;今後2年間でApple Siliconへ移行していく&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 23 Jun 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2020/06/23/wwdc2020-keynote.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2020/06/23/wwdc2020-keynote.html</guid>
         
         <category>WWDC2020</category>
         
