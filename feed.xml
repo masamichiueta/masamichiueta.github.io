@@ -5,8 +5,8 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Jan 2023 12:38:41 +0900</pubDate>
-    <lastBuildDate>Sun, 15 Jan 2023 12:38:41 +0900</lastBuildDate>
+    <pubDate>Sun, 15 Jan 2023 14:07:42 +0900</pubDate>
+    <lastBuildDate>Sun, 15 Jan 2023 14:07:42 +0900</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
     
       <item>
@@ -128,6 +128,55 @@
         
         
         <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>横浜マラソン2022に参加しました</title>
+        <description>&lt;p&gt;2022年10月30日に横浜で開催された横浜マラソン2022に参加しました。2019年以来のオフライン開催で、2021年のオンラインマラソンを合わせると4回目のフルマラソン参加でした。&lt;/p&gt;
+
+&lt;p&gt;前回の記事 &lt;a href=&quot;https://masamichiueta.github.io/hobby/2019/11/26/yokohama-marathon-2019.html&quot;&gt;横浜マラソン2019に参加しました&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;今年のタイムは、&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;グロスタイム: 4:21:16&lt;/li&gt;
+  &lt;li&gt;ネットタイム: 4:06:43&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;でした！&lt;/p&gt;
+
+&lt;p&gt;2019年が&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;グロスタイム: 4:57:34&lt;/li&gt;
+  &lt;li&gt;ネットタイム: 4:38:53&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;だったので、ネットタイムは32分と大幅に早くなりました！あと少しでサブ4というところだったのですが、やはり最後の最後体の痛みでなかなか早く走れず、4時間を超えてしまいました。&lt;/p&gt;
+
+&lt;p&gt;今回タイムが良くなった一因として、マラソンのためにApple Watchを導入して、ワークアウトで計測しながら走ったのがよかったポイントでした。
+1kmごとのスプリットに何分かかったかをその都度確認できるので、自分がどれくらい安定して走れているかを把握しながら走れました。&lt;/p&gt;
+
+&lt;p&gt;また、走行記録がログとして残るので自分の走りの分析にも使えそうです。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2022-10-30/workout.PNG&quot; alt=&quot;スプリット&quot; title=&quot;スプリット&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;スプリットの結果を見るとやはり30kmあたりから明確にペースが落ちてしまっています。&lt;/p&gt;
+
+&lt;p&gt;今年も無事メダルをもらうことができました。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2022-10-30/medal.jpeg&quot; alt=&quot;メダル&quot; title=&quot;メダル&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;来年も参加したい！&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Oct 2022 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2022/10/30/yokohama-marathon-2022.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2022/10/30/yokohama-marathon-2022.html</guid>
+        
+        <category>横浜マラソン</category>
+        
+        
+        <category>hobby</category>
         
       </item>
     
@@ -655,90 +704,6 @@ BUILD FAILED &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;macOS 11.0.1 using ru
         <category>watchOS</category>
         
         <category>tvOS</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</title>
-        <description>&lt;p&gt;「GitHub Pagesで無料ブログを作成すr - Part4 自分のオリジナルのテーマを作る」です。&lt;/p&gt;
-
-&lt;p&gt;他の記事はこちら&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/24/github-pages-blog-part1-repository.html&quot;&gt;Part1 GitHubにリポジトリを作ってサイトを公開する&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/26/github-pages-blog-part2-jekyll.html&quot;&gt;Part2 Jekyllを使ってみる&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;Part3 Jekyllの設定をカスタマイズする&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html&quot;&gt;Part4 自分のオリジナルのテーマを作る&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;jekyllのテーマのカスタマイズする&quot;&gt;Jekyllのテーマのカスタマイズする&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://masamichiueta.github.io/development/2020/05/28/github-pages-blog-part3-cutomize-setting.html&quot;&gt;前回の記事&lt;/a&gt;ではJekyllの設定をカスタマイズする方法を紹介しました。&lt;/p&gt;
-
-&lt;p&gt;カスタマイズするとはいえ、既存のテーマを使っていました。&lt;/p&gt;
-
-&lt;p&gt;Jekyllでは既存のテーマを使うこともできるのですが、さらに一歩踏み込んで、自分で既存のテーマをカスタマイズしたり、テーマを作ることもできます。&lt;/p&gt;
-
-&lt;p&gt;まずは、既存のテーマをカスタマイズする方法について紹介します。&lt;/p&gt;
-
-&lt;h2 id=&quot;既存のテーマをカスタマイズする&quot;&gt;既存のテーマをカスタマイズする&lt;/h2&gt;
-
-&lt;p&gt;Jekyllでは&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;で設定しているテーマを使いつつ、自分で少しカスタマイズすることができます。
-カスタマイズ方法はテーマによったりもするのですが、例えばデフォルトのテーマ&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minima&lt;/code&gt;では、&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;GitHubのリポジトリ&lt;/a&gt;にカスタマイズ方法が記載されています。&lt;/p&gt;
-
-&lt;p&gt;Jekyllはディレクトリの構造が決められているので、そのルールにしたがって定義されているファイルを上書きすることで、カスタマイズすることができます。&lt;/p&gt;
-
-&lt;p&gt;例えば、ヘッダー部分をカスタマイズしたい場合は、自分のリポジトリに&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt;フォルダを作成して、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;header.html&lt;/code&gt;を作成します。ゼロから作るのは難しいと思うので、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minima&lt;/code&gt;のデフォルトの&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;header.html&lt;/code&gt;をコピーした上でカスタマイズしていくと良いと思います。&lt;/p&gt;
-
-&lt;p&gt;Jekyllでは&lt;a href=&quot;https://shopify.github.io/liquid/&quot;&gt;Liquid&lt;/a&gt;というテンプレートを処理するための言語が使用されています。Liquidを使うことでテンプレートの中でif文によって分岐やループ処理を書くことができます。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/variables/&quot;&gt;Jekyllでは様々な変数が定義されている&lt;/a&gt;ので、それらを使ってテンプレートを書いていくことでレイアウトやページを作成していきます。&lt;/p&gt;
-
-&lt;p&gt;レイアウトをカスタマイズする場合は、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;フォルダを作りカスタマイズしたいレイアウトのhtmlファイルと同じファイル名でhtmlを作成し中身を上書きします。&lt;/p&gt;
-
-&lt;p&gt;こちらも0から作るのは大変なので、既存のレイアウトをコピーしてからカスタマイズしていくといいと思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minima&lt;/code&gt;ではcssをカスタマイズすることも可能です。&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;assets/css/style.scss&lt;/code&gt;というファイルを作成します。拡張子からもわかるようにJekyllはsassをサポートしており、sassで記述していくことが可能です。&lt;/p&gt;
-
-&lt;p&gt;またファイルの先頭には以下を記述する必要があります。&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
----
-
-@import &quot;minima/skins/classic&quot;;
-@import &quot;minima/initialize&quot;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;このように既存のテーマをカスタマイズしていく場合は、基本的にはテーマで定義されているファイルを上書きして自分のファイルを作成する、という手順になります。&lt;/p&gt;
-
-&lt;h2 id=&quot;自分のテーマを作る&quot;&gt;自分のテーマを作る&lt;/h2&gt;
-
-&lt;p&gt;Jekyllでは既存のテーマをカスタマイズするだけでなく、自分のテーマを作ることもできます。&lt;/p&gt;
-
-&lt;p&gt;これまではGemで公開されているテーマを使ってきましたが、Jekyllのディレクトリ構造にしたがって、必要なファイルを作成すれば自分のオリジナルのページを作ることができます。Wordpressでテーマを作るのに似ています。&lt;/p&gt;
-
-&lt;p&gt;Jekyllのディレクトリやテンプレート言語のLiquidの使い方については&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;Jekyllの公式サイト&lt;/a&gt;に書かれています。テンプレートの作り方全てを紹介するのは難しいのですが、基本的にはレイアウトに使われるhtmlやヘッダー・フッターなどの共通のhtmlなどを作成していくような形になります。&lt;/p&gt;
-
-&lt;p&gt;既存のテーマをカスタマイズする場合は、上書きしない部分を変更する必要はありませんでしたが、自分でテーマを作る場合は全て作る必要があります。しかしかなり柔軟にレイアウトを作成することができるので、まずはテーマを使ってみて、不満な部分があれば自分でテーマを作ってみるのをお勧めします。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、このブログは自分でレイアウトを作成しています。&lt;/p&gt;
-
-&lt;h2 id=&quot;まとめ&quot;&gt;まとめ&lt;/h2&gt;
-
-&lt;p&gt;Part1からPart4で、GitHub Pagesで無料ブログを作成する方法を詳しく説明してみました。形さえ出来あがればあとはMarkdownで記事を書いていくだけで、とても使いやすいのでGitHub Pagesを使ったサイト作りはお勧めです。&lt;/p&gt;
-
-&lt;p&gt;Jekyllでサイト自体は生成できるので、静的サイトをホスティングできるところであればGitHub Pagesではなくても同じサイトを構築することができる点もメリットですね。もしファイルサイズはアクセス数に引っかかってしまった場合も、例えばAWSのS3のような場所に引越ししやすいのではないかと思います。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 31 May 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2020/05/31/github-pages-blog-part4-original-theme.html</guid>
-        
-        <category>GitHub Pages</category>
-        
-        <category>ブログ</category>
         
         
         <category>development</category>
