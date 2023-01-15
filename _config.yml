@@ -21,6 +21,7 @@ paginate: 10
 markdown: kramdown
 future: true
 highlighter: rouge
+github: [metadata]
 
 category_slugs:
   development: "開発"
