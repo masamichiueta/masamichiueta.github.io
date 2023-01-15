@@ -4,7 +4,6 @@ title: "Swift for TensorFlowをインストールして試してみる"
 description: "先日TensorFlow Dev Summit2018でSwift for TensorFlowが発表されました。同時にTensorFlowのWebサイトにSwift for TensorFlowのページができています。私はTensorFlowについては初心者なのですが、今回はSwift for TensorFlowをインストールして試してみました！"
 date: 2018-06-01
 categories: development
-image: /assets/posts/2018-06-01/cover.png
 hero-caption: <a href="https://www.tensorflow.org/community/swift">TensorFlow Webサイト</a>よりスクリーンショット
 lang: ja_JP
 tags:
