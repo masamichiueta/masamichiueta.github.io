@@ -5,8 +5,8 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Jan 2023 00:49:36 +0900</pubDate>
-    <lastBuildDate>Tue, 17 Jan 2023 00:49:36 +0900</lastBuildDate>
+    <pubDate>Tue, 17 Jan 2023 01:08:06 +0900</pubDate>
+    <lastBuildDate>Tue, 17 Jan 2023 01:08:06 +0900</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
     
       <item>
@@ -155,6 +155,33 @@
         
         
         <category>development</category>
+        
+      </item>
+    
+      <item>
+        <title>2022年買ってよかったもの</title>
+        <description>&lt;p&gt;2022年に買ってよかったもの振り返り&lt;/p&gt;
+
+&lt;h2 id=&quot;apple-watch-se2nd-generation&quot;&gt;Apple Watch SE(2nd generation)&lt;/h2&gt;
+
+&lt;p&gt;横浜マラソンへの参加に向けて、ついにApple Watch SEを購入しました。Apple Watchの1st generationを発売当時つけていたのですが訳あってつけなくなってから、ついに購入しました。やはりあると便利でWorkoutアプリや日々の運動のトラッキングなど、生活必需品となりました。&lt;/p&gt;
+
+&lt;h2 id=&quot;ipad-10th-generation&quot;&gt;iPad (10th generation)&lt;/h2&gt;
+
+&lt;p&gt;iPadも、iPad2を買って以降長らく持っていなかったのですが、子供に渡していたMacBook(2015 Intel CoreM)がいよいよ使えなくなってきて、ホームボタンのないフルスクリーンのiPadが出たので、子供用に買いました。Folio Keyboardも買って、子供がiPadを使ってキーボードに慣れることができるようにしました。実際は、Huluでアンパンマンを見たり、Youtube, Robloxをやったりしていて全然キーボード使ってないので、まだいらなかったかもと思っています。&lt;/p&gt;
+
+&lt;h2 id=&quot;コレクションケース&quot;&gt;コレクションケース&lt;/h2&gt;
+
+&lt;p&gt;4段のコレクションケースを買いました。子供の作品やレゴやガチャポン、メダルなど飾っておきたいおもちゃをディスプレイするのにとてもいい感じです。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 31 Dec 2022 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2022/12/31/good-things-to-buy.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2022/12/31/good-things-to-buy.html</guid>
+        
+        <category>買い物</category>
+        
+        
+        <category>hobby</category>
         
       </item>
     
@@ -466,113 +493,6 @@ BUILD FAILED &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;macOS 11.0.1 using ru
         
         
         <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>Platform State of the Unionまとめ</title>
-        <description>&lt;h1 id=&quot;platform-state-of-the-unionまとめ&quot;&gt;Platform State of the Unionまとめ&lt;/h1&gt;
-
-&lt;h2 id=&quot;find-my&quot;&gt;Find My&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Apple Device以外のものも検出可能になる可能性&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;apple-silicon&quot;&gt;Apple Silicon&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;iPhone, iPadで使われているチップをMacに取り込む&lt;/li&gt;
-  &lt;li&gt;ハイパフォーマンス、低消費電力&lt;/li&gt;
-  &lt;li&gt;全てのデバイスで統一されたアーキテクチャ&lt;/li&gt;
-  &lt;li&gt;Intel, Apple Siliconの両方に対応したユニバーサルアプリをビルドすることができる&lt;/li&gt;
-  &lt;li&gt;UnityもApple Siliconで動作するバージョンをリリース予定&lt;/li&gt;
-  &lt;li&gt;Big SurにはRosetta2というエミュレータが搭載されており、Apple Siliconのネイティブアプリでなくても実行することができる&lt;/li&gt;
-  &lt;li&gt;AOT&lt;/li&gt;
-  &lt;li&gt;JITプラットフォームではDynamic translation&lt;/li&gt;
-  &lt;li&gt;XcodeからRosetta環境で実行することも可能&lt;/li&gt;
-  &lt;li&gt;iOS, iPadのアプリを変更なしで実行できるようになる&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;macos11-big-sur&quot;&gt;macOS11 Big Sur&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;デザインの刷新
-    &lt;ul&gt;
-      &lt;li&gt;アイコン&lt;/li&gt;
-      &lt;li&gt;ウィジェット、通知センター&lt;/li&gt;
-      &lt;li&gt;ツールバー、サイドバー&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ipados&quot;&gt;iPadOS&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;これまでのタブバースタイルからサイドバーのスタイルに移行&lt;/li&gt;
-  &lt;li&gt;LiDARによって様々な計測が可能に&lt;/li&gt;
-  &lt;li&gt;Apple Pencilでオブジェクトの認識が可能に&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ios14&quot;&gt;iOS14&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;ウィジェット
-    &lt;ul&gt;
-      &lt;li&gt;3つのサイズに対応&lt;/li&gt;
-      &lt;li&gt;SwiftUIで作成可能&lt;/li&gt;
-      &lt;li&gt;ホームスクリーンで表示できる&lt;/li&gt;
-      &lt;li&gt;WidgetKitによって、Viewをアーカイブから作成しパフォーマンスを向上させる&lt;/li&gt;
-      &lt;li&gt;ウィジェットをスタック形式で表示することも可能&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;App Clipds
-    &lt;ul&gt;
-      &lt;li&gt;App Clipsのカードは自動生成される&lt;/li&gt;
-      &lt;li&gt;カードをタップするとアプリのダウンロードが始まる&lt;/li&gt;
-      &lt;li&gt;ホームには表示されない&lt;/li&gt;
-      &lt;li&gt;App Clip code&lt;/li&gt;
-      &lt;li&gt;10MB以下でアプリに含めることができる&lt;/li&gt;
-      &lt;li&gt;8時間は通知を表示することができる&lt;/li&gt;
-      &lt;li&gt;SignInWithAppleやApplePayが使える&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;watchos7&quot;&gt;watchOS7&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;SwiftUIのcomplicationをサポート&lt;/li&gt;
-  &lt;li&gt;WatchFaceの共有機能&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;xcode12&quot;&gt;Xcode12&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;デザインのBigSur対応&lt;/li&gt;
-  &lt;li&gt;ドキュメントタブでファイルを一括で開いたりできるように&lt;/li&gt;
-  &lt;li&gt;SwiftUIのビューをライブラリに追加することが可能に&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;swiftui&quot;&gt;SwiftUI&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;VStack, HStackにLazyバージョンが追加されパフォーマンス、メモリ管理が効率化&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 23 Jun 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2020/06/23/wwdc2020-platform-state-of-the-union.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2020/06/23/wwdc2020-platform-state-of-the-union.html</guid>
-        
-        <category>WWDC2020</category>
-        
-        <category>Apple</category>
-        
-        <category>アップル</category>
-        
-        <category>iOS</category>
-        
-        <category>macOS</category>
-        
-        <category>watchOS</category>
-        
-        <category>tvOS</category>
-        
-        
-        <category>development</category>
         
       </item>
     
