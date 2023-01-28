@@ -23,7 +23,7 @@ layout: default
   <section class="post-content py-5">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-md-9">
           <article itemscope itemtype="http://schema.org/BlogPosting">
             <div class="article-body" itemprop="articleBody">
               <p class="text-muted"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y/%-m/%-d" }}</time><a class="ms-3" href="{{ site.url }}/category/{{ page.categories | first | url_encode }}/index.html">{{ page.categories| first | slug2name }}</a></p>
@@ -87,6 +87,9 @@ layout: default
               {% endfor %}
             </ul>
           </div>
+        </div>
+        <div class="col-12 col-md-3 mt-5 mt-md-0">
+          {% include sidebar.html %}
         </div>
       </div>
     </div>
