@@ -5,9 +5,70 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Jan 2023 01:08:02 +0900</pubDate>
-    <lastBuildDate>Mon, 30 Jan 2023 01:08:02 +0900</lastBuildDate>
+    <pubDate>Mon, 30 Jan 2023 02:17:39 +0900</pubDate>
+    <lastBuildDate>Mon, 30 Jan 2023 02:17:39 +0900</lastBuildDate>
     <generator>Jekyll v4.3.1</generator>
+    
+      <item>
+        <title>SwiftUIでTabBarを非表示にする</title>
+        <description>&lt;p&gt;SwiftUIでタブを表示するために使う &lt;a href=&quot;https://developer.apple.com/documentation/swiftui/tabview&quot;&gt;TabView&lt;/a&gt; ですがiOS16でプッシュ遷移をした時にTabBarを非表示にする手段が公式で追加されました。&lt;/p&gt;
+
+&lt;p&gt;UIKitでは表示される&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIViewController&lt;/code&gt;で&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiviewcontroller/1621863-hidesbottombarwhenpushed&quot;&gt;hidesBottomBarWhenPushed&lt;/a&gt;をtrueにすればプッシュ遷移でTabBarを非表示にすることができましたが、iOS16までSwiftUIでは同様のことができませんでした。&lt;/p&gt;
+
+&lt;p&gt;TabBarを非表示にしたい画面で、 &lt;a href=&quot;https://developer.apple.com/documentation/swiftui/presentedwindowcontent/toolbar(_:for:)&quot;&gt;.toolbar(.hidden, for: .tabBar)&lt;/a&gt;を使えば非表示にすることができます。&lt;/p&gt;
+
+&lt;p&gt;サンプルコード&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            NavigationStack {
+                NavigationLink(&quot;Sun&quot;) {
+                    Text(&quot;Hello Sun&quot;)
+                        .toolbar(.hidden, for: .tabBar)
+                }
+                .navigationTitle(Text(&quot;Sun&quot;))
+            }
+            .tabItem {
+                Label(&quot;Sun&quot;, systemImage: &quot;sun.max&quot;)
+            }
+            NavigationStack {
+                NavigationLink(&quot;Moon&quot;) {
+                    Text(&quot;Hello Moon&quot;)
+                }
+                .navigationTitle(Text(&quot;Moon&quot;))
+            }
+            .tabItem {
+                Label(&quot;Moon&quot;, systemImage: &quot;moon.stars&quot;)
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2023-01-31/tabbar.mov&quot; alt=&quot;Hide TabBar&quot; title=&quot;Hide TabBar&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sunはプッシュ遷移をした時にTabBarが非表示になるのですが、Moonはそのまま表示されます。
+TabBarを非表示にした後、ポップすると少しTabBarを表示するのに遅延があるところあたり、もう少し改善の余地がありそうです。&lt;/p&gt;
+
+&lt;p&gt;また残念ながらこのAPIはiOS16以降でしか使えず、iOS15以前で対応するにはUIKitベースのAPIを使うしかなさそうです。&lt;/p&gt;
+
+&lt;p&gt;ちなみに、&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2022/10001/&quot;&gt;WWDC2022のExplore navigation design for iOSというセッション&lt;/a&gt;で説明されていますが、Appleの公式見解としてはTabBarを非表示にするのは非推奨なので、ナビゲーションのベストプラクティスについてはまたまとめたいと思います。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 31 Jan 2023 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/development/2023/01/31/hide-tabbar-swiftui.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/development/2023/01/31/hide-tabbar-swiftui.html</guid>
+        
+        <category>SwiftUI</category>
+        
+        <category>TabBar</category>
+        
+        
+        <category>development</category>
+        
+      </item>
     
       <item>
         <title>フィットネスジムに通い始めました</title>
@@ -428,87 +489,6 @@ BUILD FAILED &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;macOS 11.0.1 using ru
         <category>Homebrew</category>
         
         <category>rbenv</category>
-        
-        
-        <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</title>
-        <description>&lt;p&gt;Apple Silicon搭載のMacBook Pro 13インチを仕事用に購入したのですが、クリーンインストールしたところ文鎮化しかけたので記録しておきます。&lt;/p&gt;
-
-&lt;h2 id=&quot;apple-silicon-m1搭載-macbook-pro-13インチの購入&quot;&gt;Apple Silicon M1搭載 MacBook Pro 13インチの購入&lt;/h2&gt;
-
-&lt;p&gt;11月に発表されてから割とすぐに注文したのですが、受け取ったのが11月26日でした。夜にセットアップを開始しはじめました。&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;und&quot; dir=&quot;ltr&quot;&gt;💻 &lt;a href=&quot;https://twitter.com/hashtag/MacBookProM1?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#MacBookProM1&lt;/a&gt; &lt;a href=&quot;https://t.co/w4LNZrpFba&quot;&gt;pic.twitter.com/w4LNZrpFba&lt;/a&gt;&lt;/p&gt;&amp;mdash; Masamichi Ueta (@masamichiueta) &lt;a href=&quot;https://twitter.com/masamichiueta/status/1331595674735968257?ref_src=twsrc%5Etfw&quot;&gt;November 25, 2020&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;セットアップしているとカーネルパニックが発生するようになった&quot;&gt;セットアップしているとカーネルパニックが発生するようになった&lt;/h2&gt;
-
-&lt;p&gt;初期設定後、Xcode, Karabiner-Elements, VS Codeなど、いつも使っているアプリをもろもろインストールしていきました。&lt;/p&gt;
-
-&lt;p&gt;あとは、マイナンバーカード読み取り用に、NFCカードリーダーのドライバをインストールしたんですが、うまく動きませんでした。&lt;/p&gt;
-
-&lt;p&gt;その後、Macを再起動しようとすると、シャットダウンの途中で画面がおかしくなって、うまくシャットダウンできなくなってしまいました。起動後にカーネルパニックのアラートが表示されるようになり、焦りました。&lt;/p&gt;
-
-&lt;p&gt;今思うとこの時点でエラーメッセージをぐぐっておけば原因が特定できたのですが、NFCカードリーダーが動かなかったので、そのドライバが悪かったかなーと思い、設定したてでカーネルパニックになるのも気持ち悪かったので、一度BigSurクリーンインストールすることにしました。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、原因はいつもお世話になっているKarabiner-Elementsだったようで、他にも同じ現象になる方がいるみたいです。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/pqrs-org/Karabiner-Elements/issues/2517&quot;&gt;Karabiner Elements causes Apple silicon MacBook Air to crash during system shutdown #2517&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;コメントをみるにBigSur側の問題のようですが、アンインストールするとシャットダウンできるようになりました。&lt;/p&gt;
-
-&lt;h2 id=&quot;クリーンインストールに失敗する&quot;&gt;クリーンインストールに失敗する&lt;/h2&gt;
-
-&lt;p&gt;クリーンインストール作業を始めて、BigSurのインストール画面まで進んだのですが、エラーが表示されてインストールに失敗して進めなくなりました。いわゆる文鎮化。&lt;/p&gt;
-
-&lt;p&gt;「アップデートの準備中にエラーが起きました。 Failed to personalize the software update. Please try again.」&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-11-27/bigsur-fail-install.jpeg&quot; alt=&quot;BigSurのクリーンインストール失敗&quot; title=&quot;BigSurのクリーンインストール失敗&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;AppleがBigSurのクリーンインストールの際に文鎮化したMacの解決方法を公開していたので、公開されている方法を試していきました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://support.apple.com/en-us/HT211983&quot;&gt;If you get a personalization error when reinstalling macOS on your Mac with Apple M1 chip&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;なんとか復活&quot;&gt;なんとか復活&lt;/h2&gt;
-
-&lt;p&gt;結果的に、上の記事で紹介されている全ての方法を試したのですが、唯一成功したのが、Apple Configuratorでファームウェアを復活させる方法でした。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://support.apple.com/guide/apple-configurator-2/revive-or-restore-a-mac-with-apple-silicon-apdd5f3c75ad/mac&quot;&gt;Revive or restore a Mac with Apple silicon with Apple Configurator 2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;それ以外にユーティリティ画面で対応する方法が3つほど紹介されていますが、どの方法でも最終的にBigSurのインストール画面で同じエラーが発生しました。&lt;/p&gt;
-
-&lt;p&gt;Apple Configuratorによる修復は最後に試したのですが、こちらはなんとかうまくいき、無事M1 MacBookProを復活させることができました。&lt;/p&gt;
-
-&lt;p&gt;実はこちらの方法の途中にも一度エラーがでて、諦めかけましたが、Apple  Configuratorを再起動してもう一度実行すると無事修復できました。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2020-11-27/appleconfiguratorerror.jpg&quot; alt=&quot;Apple Configuratorのエラー&quot; title=&quot;Apple Configuratorのエラー&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;最後は交換を覚悟したのですが、なんとか無事復活することができてよかったです。かなり焦りました。。。&lt;/p&gt;
-
-&lt;p&gt;同じ状態の方がいれば、参考にしてもらえるといいかと思います。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 27 Nov 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2020/11/27/macbookpro-m1-apple-silicon-recovery.html</guid>
-        
-        <category>MacBook Pro</category>
-        
-        <category>Apple</category>
-        
-        <category>Apple Silicon</category>
-        
-        <category>M1</category>
         
         
         <category>development</category>
