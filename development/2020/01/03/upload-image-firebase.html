@@ -17,7 +17,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>FirebaseでCloud Storageに画像をアップロードする | Masamichi Ueta</title>
-<meta name="generator" content="Jekyll v4.3.1" />
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="FirebaseでCloud Storageに画像をアップロードする" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
@@ -142,61 +142,61 @@
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// uploadPhotoという名前でexport</span>
 
-<span class="k">export</span> <span class="kd">const</span> <span class="nx">uploadPhoto</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">storageRef</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">ref</span><span class="p">();</span>
-  <span class="kd">const</span> <span class="nx">uuid</span> <span class="o">=</span> <span class="nx">generateUUID</span><span class="p">();</span> <span class="c1">// UUIDを作っていますがなんでもOK</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">uploadPhoto</span> <span class="o">=</span> <span class="k">async </span><span class="p">(</span><span class="nx">file</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">storageRef</span> <span class="o">=</span> <span class="nx">firebase</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nf">ref</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">uuid</span> <span class="o">=</span> <span class="nf">generateUUID</span><span class="p">();</span> <span class="c1">// UUIDを作っていますがなんでもOK</span>
   <span class="kd">const</span> <span class="nx">metadata</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">contentType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">image/png</span><span class="dl">'</span>
   <span class="p">};</span>
-  <span class="kd">const</span> <span class="nx">fileRef</span> <span class="o">=</span> <span class="nx">storageRef</span><span class="p">.</span><span class="nx">child</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">uuid</span><span class="p">}</span><span class="s2">.png`</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">fileRef</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">fileRef</span> <span class="o">=</span> <span class="nx">storageRef</span><span class="p">.</span><span class="nf">child</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">uuid</span><span class="p">}</span><span class="s2">.png`</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">fileRef</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">);</span>
   <span class="k">return</span> <span class="nx">uuid</span><span class="p">;</span> <span class="c1">// UUIDを返していますが返さなくてもOK</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>使う部分</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">class</span> <span class="nx">SampleUploader</span> <span class="kd">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">class</span> <span class="nc">SampleUploader</span> <span class="kd">extends</span> <span class="nc">Component</span> <span class="p">{</span>
+  <span class="nf">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">fileInput</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createRef</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">fileInput</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nf">createRef</span><span class="p">();</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
       <span class="na">photoData</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="na">isPosting</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
     <span class="p">};</span>
   <span class="p">}</span>
 
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// Preview</span>
     <span class="kd">const</span> <span class="nx">photo</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">photoData</span> <span class="o">===</span> <span class="kc">null</span> <span class="p">?</span> <span class="kc">null</span> <span class="p">:</span>
       <span class="p">(</span>
         <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">photoData</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
 </span>      <span class="p">);</span>
 
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">async</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+    <span class="k">return </span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">async </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">e</span><span class="p">.</span><span class="nf">preventDefault</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span>
           <span class="na">isPosting</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">});</span>
-        <span class="kd">const</span> <span class="nx">photoId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">storage</span><span class="p">.</span><span class="nx">uploadPhoto</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fileInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="kd">const</span> <span class="nx">photoId</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">storage</span><span class="p">.</span><span class="nf">uploadPhoto</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fileInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
         <span class="c1">// use photoId</span>
 
-        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+        <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span>
           <span class="na">isPosting</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
           <span class="na">photoData</span><span class="p">:</span> <span class="kc">null</span>
         <span class="p">})</span>
       <span class="p">}}</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span> <span class="nx">accept</span><span class="o">=</span><span class="dl">"</span><span class="s2">image/*</span><span class="dl">"</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">fileInput</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
           <span class="kd">const</span> <span class="nx">files</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">files</span>
-          <span class="k">if</span> <span class="p">(</span><span class="nx">files</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if </span><span class="p">(</span><span class="nx">files</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
             <span class="kd">var</span> <span class="nx">file</span> <span class="o">=</span> <span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="kd">var</span> <span class="nx">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FileReader</span><span class="p">();</span>
+            <span class="kd">var</span> <span class="nx">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FileReader</span><span class="p">();</span>
             <span class="nx">reader</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-              <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">photoData</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">result</span> <span class="p">});</span>
+              <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span> <span class="na">photoData</span><span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">result</span> <span class="p">});</span>
             <span class="p">};</span>
-            <span class="nx">reader</span><span class="p">.</span><span class="nx">readAsDataURL</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
+            <span class="nx">reader</span><span class="p">.</span><span class="nf">readAsDataURL</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
           <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span> <span class="na">photoData</span><span class="p">:</span> <span class="kc">null</span> <span class="p">});</span>
+            <span class="k">this</span><span class="p">.</span><span class="nf">setState</span><span class="p">({</span> <span class="na">photoData</span><span class="p">:</span> <span class="kc">null</span> <span class="p">});</span>
           <span class="p">}</span>
         <span class="p">}}</span> <span class="sr">/</span><span class="err">&gt;
 </span>        <span class="p">{</span><span class="nx">photo</span><span class="p">}</span>

@@ -17,7 +17,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>【メモ】boto3でs3のcsvをpandasに読み込む | Masamichi Ueta</title>
-<meta name="generator" content="Jekyll v4.3.1" />
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="【メモ】boto3でs3のcsvをpandasに読み込む" />
 <meta name="author" content="masamichiueta" />
 <meta property="og:locale" content="ja_JP" />
@@ -137,20 +137,20 @@
                 <a href="https://twitter.com/share" class="twitter-share-button" data-via="masamichiueta">Tweet</a>
                 <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
                 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
-<span class="kn">import</span> <span class="nn">boto3</span>
-<span class="n">ACCESS_KEY</span> <span class="o">=</span> <span class="s">'your access key'</span>
-<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s">'your secret key'</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="n">client</span><span class="p">(</span><span class="s">'s3'</span><span class="p">,</span> <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">ACCESS_KEY</span><span class="p">,</span> <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">SECRET_KEY</span><span class="p">)</span>
-<span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">get_paginator</span><span class="p">(</span><span class="s">'list_objects'</span><span class="p">)</span>
-<span class="n">pageresponse</span> <span class="o">=</span> <span class="n">paginator</span><span class="p">.</span><span class="n">paginate</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s">"your bucket"</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="n">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">import</span> <span class="n">boto3</span>
+<span class="n">ACCESS_KEY</span> <span class="o">=</span> <span class="sh">'</span><span class="s">your access key</span><span class="sh">'</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="sh">'</span><span class="s">your secret key</span><span class="sh">'</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="nf">client</span><span class="p">(</span><span class="sh">'</span><span class="s">s3</span><span class="sh">'</span><span class="p">,</span> <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">ACCESS_KEY</span><span class="p">,</span> <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">SECRET_KEY</span><span class="p">)</span>
+<span class="n">paginator</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">get_paginator</span><span class="p">(</span><span class="sh">'</span><span class="s">list_objects</span><span class="sh">'</span><span class="p">)</span>
+<span class="n">pageresponse</span> <span class="o">=</span> <span class="n">paginator</span><span class="p">.</span><span class="nf">paginate</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="sh">"</span><span class="s">your bucket</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">pageobject</span> <span class="ow">in</span> <span class="n">pageresponse</span><span class="p">:</span>
-    <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">pageobject</span><span class="p">[</span><span class="s">"Contents"</span><span class="p">]:</span>
-        <span class="n">obj</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="s">"your bucket"</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="nb">file</span><span class="p">[</span><span class="s">"Key"</span><span class="p">])</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s">'Body'</span><span class="p">].</span><span class="n">read</span><span class="p">().</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">content</span><span class="p">))</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span></code></pre></figure>
+    <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">pageobject</span><span class="p">[</span><span class="sh">"</span><span class="s">Contents</span><span class="sh">"</span><span class="p">]:</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">get_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="sh">"</span><span class="s">your bucket</span><span class="sh">"</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="nb">file</span><span class="p">[</span><span class="sh">"</span><span class="s">Key</span><span class="sh">"</span><span class="p">])</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="sh">'</span><span class="s">Body</span><span class="sh">'</span><span class="p">].</span><span class="nf">read</span><span class="p">().</span><span class="nf">decode</span><span class="p">(</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="nc">StringIO</span><span class="p">(</span><span class="n">content</span><span class="p">))</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span></code></pre></figure>
 
 
               </div>
