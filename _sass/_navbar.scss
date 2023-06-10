@@ -179,7 +179,7 @@ $navbar-animation-duration: 0.35s;
     background: #fff;
     display: block;
     height: $crust-height;
-    left: round(($navbar-height - $crust-width)/2);
+    left: round(calc(($navbar-height - $crust-width) / 2));
     position: absolute;
     transition: transform 0.2s;
     width: $crust-width;
@@ -187,13 +187,13 @@ $navbar-animation-duration: 0.35s;
   }
 
   .dn-menuicon-bread-crust-top {
-    top: round($navbar-height/2 - 1);
+    top: round(calc($navbar-height / 2) - 1);
     transform: translateY(-3px);
     transition: transform 0.2s 0.2s;
   }
 
   .dn-menuicon-bread-crust-bottom {
-    bottom: round($navbar-height/2 - 1);
+    bottom: round(calc($navbar-height / 2) - 1);
     transform: translateY(3px);
   }
 
