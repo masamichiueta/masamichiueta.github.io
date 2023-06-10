@@ -25,7 +25,7 @@ layout: default
             <li class="pb-4 pt-4">
               <a class="nounderline" href="{{ post.url | prepend: site.url }}">
                 <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}</small>
-                <h3>{{ post.title }}</h3>
+                <h3 class="text-body-emphasis">{{ post.title }}</h3>
                 <p class="text-body">{{ post.description }}</p>
                 {% if post.image %}
                 <div alt="{{post.title}}" class="my-4 media-img rounded"
