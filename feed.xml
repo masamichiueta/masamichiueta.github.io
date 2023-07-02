@@ -5,9 +5,46 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Jun 2023 17:52:53 +0900</pubDate>
-    <lastBuildDate>Sat, 10 Jun 2023 17:52:53 +0900</lastBuildDate>
+    <pubDate>Sun, 02 Jul 2023 13:03:43 +0900</pubDate>
+    <lastBuildDate>Sun, 02 Jul 2023 13:03:43 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>英語がCEFR（セファール）B2レベルに到達しました</title>
+        <description>&lt;p&gt;ここ数年で継続的に学習量を増やしてきた英語ですが、6月に行なった社内のテストで中期の目標にしていたCEFR（セファール）B2レベルに到達することができました。前回2022年末に受けたテストでは、B1 highという結果でB2まであと少しという状況でした。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;前回の記事 &lt;a href=&quot;https://masamichiueta.github.io/hobby/2023/01/16/learning-english.html&quot;&gt;英語を学んでいます&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.mext.go.jp/b_menu/shingi/chousa/koutou/091/gijiroku/__icsFiles/afieldfile/2018/07/27/1407616_003.pdf&quot;&gt;文部科学省のpdf&lt;/a&gt;から抜粋するとB2は以下の定義になっています。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;自分の専門分野の技術的な議論も含めて、抽象的な話題でも具体的な話題でも、複雑な文章の主要な内容を理解できる。母語話者とはお互いに緊張しないで普通にやり取りができるくらい流暢かつ自然である。幅広い話題について明確で詳細な文章を作ることができる。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;最近は会議や雑談でもそこまで詰まることもなくなってきたり、相手が話していることも割とすんなりと理解できるようになってきた実感もあり、無事テストの結果に反映されていてよかったです。&lt;/p&gt;
+
+&lt;p&gt;ここ1年間くらいのNativeCampでの学習状況。平日に1日1時間（2レッスン）の学習に取り組んでいます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2023-07-02/nativecamp1.jpg&quot; alt=&quot;月の学習回数&quot; title=&quot;月の学習回数&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;総レッスン時間はまだ145時間、355回くらいなので、引き続き継続学習を続けていきます。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2023-07-02/nativecamp2.jpg&quot; alt=&quot;総レッスン時間&quot; title=&quot;総レッスン時間&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;次の中期目標としては、1~2年後にC1レベルへの到達です。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Jul 2023 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2023/07/02/english-reached-cefr-b2.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/07/02/english-reached-cefr-b2.html</guid>
+        
+        <category>英語</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>横浜マラソン2023に当選しました</title>
@@ -399,31 +436,6 @@ $ sudo xcode-select --install
         
         
         <category>development</category>
-        
-      </item>
-    
-      <item>
-        <title>テレビを見ない生活が続いたので、テレビを捨てました</title>
-        <description>&lt;p&gt;テレビを見ない生活がけっこう長く続いた（1年ちょっとくらい？）ので、先日テレビを捨てました。Nintendo SwitchやApple TVのディスプレイとしてはたまに使っていたのですが、それもたまに、という感じだったので捨てちゃいました。&lt;/p&gt;
-
-&lt;p&gt;もともとはリビングに置いてあったのですが、ダイニングテーブルを買ったり子供の電子ピアノを買ったり、子供のおもちゃが増えてきた結果リビングに置く場所がなくなり、別の部屋に移動した結果全く見なくなってしいまいました。&lt;/p&gt;
-
-&lt;p&gt;ケーブルテレビも契約していたのですが、見なくなってもったいないなと感じたので、捨ててもろもろ解約しました。捨てるときは、家電リサイクル法に基づいて指定引取場所に直接搬入しました。8前くらいの古いやつだったのですが、3000円くらいしました。全部で1ヶ月くらいかかりましたが、機材の撤去、過払い分の返金なども含めて事務処理的なところも終わりました。&lt;/p&gt;
-
-&lt;p&gt;ライブニュースはTwitterやFacebook、ニュースアプリで大体把握できるのと、YouTubeやAmazon Prime、Netflixがあるので、コンテンツ的にも充実しているというのもあり、見なくなってからも特に問題なく過ごせています。もともとあんまり見ない方だったというのもあるかもしれません。&lt;/p&gt;
-
-&lt;p&gt;またテレビが見たくなってきたら買おうと思ってます。&lt;/p&gt;
-</description>
-        <pubDate>Wed, 02 Dec 2020 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2020/12/02/discard-tv.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2020/12/02/discard-tv.html</guid>
-        
-        <category>テレビ</category>
-        
-        <category>捨てる</category>
-        
-        
-        <category>hobby</category>
         
       </item>
     
