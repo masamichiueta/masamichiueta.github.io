@@ -16,9 +16,6 @@ tags:
 
 ---
 
-<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=maasaamiichii-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=4873116597" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-
-
 「インタラクションデザインの教科書」の著者であるDan Suffer氏の著書である。
 
 サービスデザインやデザイン思考など、全体像を視野に入れて問題を解決するという観点に対し、それだけではなく”細部”のデザインにも注目しなければ、「許容範囲の製品」を超えた「こよなく愛する製品」になることはできないという主張を述べており、”細部”をデザインするためのノウハウが記載されている。

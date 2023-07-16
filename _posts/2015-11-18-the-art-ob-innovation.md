@@ -15,9 +15,6 @@ tags:
 
 ---
 
-<iframe src="http://rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=maasaamiichii-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=415208426X" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-
-
 2002年に発売された、「発想する会社！」を読みました。
 
 「デザイン思考」や「デザインシンキング」といった言葉が最近注目を集めていますが、本書はそれらの言葉を生み出したシリコンバレーのデザインファーム「IDEO」のゼネラルマネージャー トム・ケリー氏が書いた本です。

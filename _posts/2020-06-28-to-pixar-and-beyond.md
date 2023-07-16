@@ -13,8 +13,6 @@ tags:
 
 「PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話」がPrime Readingで利用可能になっていたので、読みました。
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=maasaamiichii-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07PQDKFMR&linkId=53988c136e84eb27db3c39aeeb27798a"></iframe>
-
 英語のタイトルは、「To Pixar and Beyond: My Unlikely Journey with Steve Jobs to Make Entertainment History」のようです。
 
 
