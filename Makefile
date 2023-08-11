@@ -7,3 +7,6 @@ serve:
 
 build:
 	bundle exec jekyll build JEKYLL_ENV=production
+
+update:
+	bundle update
