@@ -1,18 +1,12 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: Masamichi Ueta
 description: エンジニアリング・デザイン・日常
 
 url: https://masamichiueta.github.io
-twitter_username: masamichiueta
-github_username:  masamichiueta
-author: masamichiueta
+x_username: masamichiueta
+github_username: masamichiueta
+linkedin_username: masamichi-ueta-b1b88856
+author: Masamichi Ueta
 lang: ja_JP
 
 paginate: 10

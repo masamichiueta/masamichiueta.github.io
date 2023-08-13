@@ -2,16 +2,18 @@
     <h5 class="mt-0 mb-2">カテゴリー</h5>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link py-1" href="{{ site.url }}/">全て({{ site.posts | size }})</a>
+            <a class="nav-link py-1 text-decoration-underline" href="{{ site.url }}/">全て({{ site.posts | size }})</a>
         </li>
         {% for category in site.categories %}
         <li class="nav-item">
             {% if category[0] == page.category %}
             {% assign disabled = 'disabled' %}
+            {% assign underline = '' %}
             {% else %}
             {% assign disabled = '' %}
+            {% assign underline = 'text-decoration-underline' %}
             {% endif %}
-            <a class="nav-link {{disabled}} py-1"
+            <a class="nav-link py-1 {{disabled}} {{underline}}"
                 href="{{ site.url }}/category/{{ category | first | url_encode }}/index.html">{{ category | first | slug2name }}({{category[1].size}})</a>
         </li>
         {% endfor %}
@@ -22,7 +24,7 @@
     <ul class="nav flex-column">
         {% for post in site.posts limit:5 %}
         <li class="nav-item">
-            <a class="nav-link py-1" href="{{ post.url | prepend: site.url }}">{{post.title}}</a>
+            <a class="nav-link py-1 text-decoration-underline" href="{{ post.url | prepend: site.url }}">{{post.title}}</a>
         </li>
         {% endfor %}
     </ul>
