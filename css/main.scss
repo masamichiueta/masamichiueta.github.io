@@ -4,7 +4,13 @@
 @charset "utf-8";
 @import "navbar";
 
-.nounderline{
+@media (min-width:768px) {
+  .small-container {
+    max-width: 720px;
+  }
+}
+
+.nounderline {
   text-decoration: none !important;
 }
 
