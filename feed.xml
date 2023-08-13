@@ -5,9 +5,36 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Aug 2023 12:21:55 +0900</pubDate>
-    <lastBuildDate>Sun, 13 Aug 2023 12:21:55 +0900</lastBuildDate>
+    <pubDate>Mon, 14 Aug 2023 03:03:58 +0900</pubDate>
+    <lastBuildDate>Mon, 14 Aug 2023 03:03:58 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>お盆に走る</title>
+        <description>&lt;p&gt;8月7日から一週間休みを取り家族で実家に帰っていました。&lt;/p&gt;
+
+&lt;p&gt;連休で実家にいたりするとついつい食べ過ぎたりジムもないので運動不足になってしまいがちですが、こういう時こそリズムを壊さずにランニングということでできる限り毎日走りました。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;8日 7.24km&lt;/li&gt;
+  &lt;li&gt;9日 7.27km&lt;/li&gt;
+  &lt;li&gt;11日 7.19km&lt;/li&gt;
+  &lt;li&gt;12日 7.26km&lt;/li&gt;
+  &lt;li&gt;13日 14.57km&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ということで累計 43.46kmでフルマラソン1回分くらい走ることができました。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 14 Aug 2023 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2023/08/14/run-in-obon.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/08/14/run-in-obon.html</guid>
+        
+        <category>運動</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>英語がCEFR（セファール）B2レベルに到達しました</title>
@@ -402,40 +429,6 @@ TabBarを非表示にした後、ポップすると少しTabBarを表示する�
         
         
         <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>brew upgradeで Your CLT does not support macOS 11というエラーがでた</title>
-        <description>&lt;p&gt;macOSをBig Surに更新してから、homebrewの更新をするとエラーが発生したのでメモ。&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ brew update
-$ brew upgrade
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;を実行すると、&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Error: Your CLT does not support macOS 11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;と表示されました。&lt;/p&gt;
-
-&lt;p&gt;以下を実行すれば、更新できるようになりました。&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo rm -rf /Library/Developer/CommandLineTools
-$ sudo xcode-select --install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Wed, 17 Feb 2021 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2021/02/17/homebrew-macos11-error.html</guid>
-        
-        <category>homebrew</category>
-        
-        <category>macOS Big Sur</category>
-        
-        
-        <category>development</category>
         
       </item>
     
