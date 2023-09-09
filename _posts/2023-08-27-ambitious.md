@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "アンビシャス 北海道にボールパークを創った男たち を読んだ"
+title: "アンビシャス 北海道にボールパークを創った男たち を読みました"
 description: ""
 date: 2023-08-27
 categories: hobby
