@@ -5,9 +5,24 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 16 Sep 2023 19:00:08 +0900</pubDate>
-    <lastBuildDate>Sat, 16 Sep 2023 19:00:08 +0900</lastBuildDate>
+    <pubDate>Mon, 02 Oct 2023 07:52:10 +0900</pubDate>
+    <lastBuildDate>Mon, 02 Oct 2023 07:52:10 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>反応しない練習 あらゆる悩みが消えていくブッダの超・合理的な「考え方」 を読みました</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/反応しない練習-あらゆる悩みが消えていくブッダの超・合理的な「考え方」-草薙龍瞬/dp/4041030404&quot;&gt;反応しない練習 あらゆる悩みが消えていくブッダの超・合理的な「考え方」&lt;/a&gt; を読みました。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 22 Sep 2023 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2023/09/22/non-reactive-practice.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/09/22/non-reactive-practice.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>NO RULES: 世界一「自由」な会社、NETFLIX を読みました</title>
@@ -164,6 +179,8 @@ Netflixは日本にも進出しているためだと思いますが、やはり�
         <link>https://masamichiueta.github.io/hobby/2023/09/09/the-progress-principle.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/09/09/the-progress-principle.html</guid>
         
+        <category>読書</category>
+        
         <category>マネジメント</category>
         
         <category>The progress principle</category>
@@ -188,6 +205,8 @@ Netflixは日本にも進出しているためだと思いますが、やはり�
         <pubDate>Sun, 27 Aug 2023 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/hobby/2023/08/27/ambitious.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/08/27/ambitious.html</guid>
+        
+        <category>読書</category>
         
         <category>アンビシャス</category>
         
@@ -418,95 +437,6 @@ TabBarを非表示にした後、ポップすると少しTabBarを表示する�
         
         
         <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>最近読んだ本 - チームトポロジー &amp; 組織デザイン</title>
-        <description>&lt;p&gt;年末年始を通して組織設計について知見を広めようと思い、&lt;a href=&quot;https://amzn.asia/d/3QRyXat&quot;&gt;チームトポロジー 価値あるソフトウェアをすばやく届ける適応型組織設計&lt;/a&gt;と、&lt;a href=&quot;https://amzn.asia/d/38nTfab&quot;&gt;組織デザイン&lt;/a&gt;という本を読みました。&lt;/p&gt;
-
-&lt;p&gt;得てして、こういった本を読んだ後の感想としては、常に最適な状態を考えて変化させていくことが重要なのだなというのが感想ですが、面白かったり記憶に残っているところをメモしておこうと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;チームトポロジー&quot;&gt;チームトポロジー&lt;/h2&gt;
-
-&lt;p&gt;日本語版が2021年末に発売された比較的新しい本。
-コンウェイの法則の重要性を説明しつつ、どのような組織をどのように設計するかを解説した本。&lt;/p&gt;
-
-&lt;p&gt;そもそもタイトルにあるトポロジーってどういう意味？というところで言うと、&lt;a href=&quot;https://ja.wikipedia.org/wiki/位相幾何学&quot;&gt;wikipedia&lt;/a&gt;では、&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;位相幾何学: 図形を構成する点の連続的位置関係のみに着目する幾何学で「位置の学問」を意味している&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;と書かれている。またそこから派生して&lt;a href=&quot;https://ja.wikipedia.org/wiki/ネットワーク・トポロジー&quot;&gt;ネットワークトポロジー&lt;/a&gt;というワードもあり、&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;ネットワーク上のノードと、ネットワークの経路との相関をダイアグラムで抽象化した概念のこと&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;とのこと。&lt;/p&gt;
-
-&lt;p&gt;つまりチームトポロジーとは、組織のチーム（ノード）とその位置関係（経路・相関）を概念化したもの、というようなイメージになるのでしょうか。&lt;/p&gt;
-
-&lt;p&gt;プロダクト開発における4つタイプののチーム&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ストリームアラインドチーム&lt;/li&gt;
-  &lt;li&gt;イネイブリングチーム&lt;/li&gt;
-  &lt;li&gt;コンプリケイテッド・サブシステムチーム&lt;/li&gt;
-  &lt;li&gt;プラットフォームチーム&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;を定義して、各チームの責務やコミュニケーションの方法（本の中ではインタラクションと書かれている）が解説されていました。&lt;/p&gt;
-
-&lt;p&gt;全体を通して、チームの境界線を明確に定義し、複数のチームが同一のシステムのオーナーにならず、1つのチームがオーナーシップを持てるようにすべき、というのが学びでした。&lt;/p&gt;
-
-&lt;p&gt;あとは、チームをAPIとして考える、という考え方が書かれていて、これはチームの境界線やオーナーシップを考える上で面白い言語化だと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;組織デザイン&quot;&gt;組織デザイン&lt;/h2&gt;
-
-&lt;p&gt;こちらは2004年と、約20年前くらいに発売された本。組織の取りうる形について解説されいて、個々の具体例に関してはその時代の内容が反映されていますが、基本の型というか、組織のフレームワークを学ぶ上ではとてもいい本でした。&lt;/p&gt;
-
-&lt;p&gt;基本的な組織形態として「機能別組織」「事業部制組織」「マトリックス組織」を定義し、それぞれの特徴を説明。特に組織の権限の強さについても書かれているのがリアルで、P269にある、機能部門長とプロダクトマネージャのパワーの強さによって規定される組織の形の図が興味深かったです。&lt;/p&gt;
-
-&lt;p&gt;多数の人々が意識的に役割を分け（分業）、時間的・空間的に連動する（調整）のが組織的であると言語化されていて理解できました。&lt;/p&gt;
-
-&lt;p&gt;組織の基本型から始まり、垂直・水平分業、標準化・ヒエラルキーのデザイン、水平関係の構築などフレームワークが網羅的に解説されておりました。&lt;/p&gt;
-
-&lt;p&gt;読んでいて面白かったのが、組織デザインにおける人間の心理や感情についても述べられているところです。&lt;/p&gt;
-
-&lt;p&gt;例えば、P86 分業によって心理的に発生することとして以下が記載されています。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;組織内で分業を進め、既存の部署を分けて新しい複数の部署を作るということは、同時に、組織内に新しい「種族」を生み出すという覚悟を持って臨まなければならない&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;自分が属している集団は一人ひとり個性的な人物が多いが、よその集団は皆似たり寄ったりの人が集まっている、という認知が発達することがよく知られている。これを外集団均質化効果という。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;分業は単に仕事を分けるだけでなく、人々の心まで分けてしまう。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;またマトリクス組織について、機能部門長と、製品・市場マネージャーの2人のボスがいるという状況でうまく組織が作動しない理由として、P278では以下のように述べられている。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;そもそも同等のパワーを持つ二人のボスが存在するシステムは、ボスたちの間で嫉妬が発生しやすい。… 命令一元化の原則（どの部下も複数の上司から命令を受けてはならない）を唱えたアンリ・フェイヨールもその原則を主張する最大の理由として嫉妬を上げている。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;なるほど、やはり人間とは感情の生き物なのだなと改めて思いました。またヒエラルキーや権限については目を背けがちだったのですが、誰が権限を持っていてどう意思決定するか、という点はやはり最も重要なポイントだと改めて理解しました。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 15 Jan 2023 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2023/01/15/books.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2023/01/15/books.html</guid>
-        
-        <category>チームトポロジー</category>
-        
-        <category>組織デザイン</category>
-        
-        
-        <category>development</category>
         
       </item>
     
