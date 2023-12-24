@@ -16,70 +16,64 @@ layout: default
 {% assign paginator = page.paginator %}
 
 <section class="py-5">
-  <div class="container">
+  <div class="container small-container">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-9">
-        <div class="posts">
-          <ul class="list-unstyled pb-5">
-            {% for post in paginator.posts %}
-            <li class="pb-4 pt-4">
-              <a class="nounderline" href="{{ post.url | prepend: site.url }}">
-                <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}</small>
-                <h3 class="text-body-emphasis">{{ post.title }}</h3>
-                <p class="text-body">{{ post.description }}</p>
-                {% if post.image %}
-                <div alt="{{post.title}}" class="my-4 media-img rounded"
-                  style="background-image: url({{ post.image }})">
-                </div>
-                {% endif %}
-                {% if post.tags %}
-                <p class="mb-0">
-                  {% for tags in post.tags %}
-                  <span class="badge text-bg-light">{{ tags }}</span>
-                  {% endfor %}
-                </p>
-                {% endif %}
-              </a>
-            </li>
-            <hr />
-            {% endfor %}
-          </ul>
-        </div>
-        <!-- Pagination links -->
-        {% if paginator.total_pages > 1 %}
-        <div class="pagination d-flex justify-content-center">
-          {% if paginator.previous_page %}
-          <a class="me-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">&laquo; 前</a>
-          {% else %}
-          <span class="me-3">&laquo; 前</span>
-          {% endif %}
-
-          {% for page in (1..paginator.total_pages) %}
-          {% assign prev_limit = paginator.page | minus: 5 %}
-          {% assign next_limit = paginator.page | plus: 5 %}
-          {% if page == paginator.page %}
-          <em class="me-3">{{ page }}</em>
-          {% elsif page == 1 and prev_limit <= 1 %}
-          <a class="me-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">{{ page }}</a>
-          {% else %}
-          {% if page > prev_limit and page < next_limit %}
-          {% assign nextpage = '/category/' | urlencode | append: categorypath | append: site.paginate_path | replace: '//', '/' | replace: ':num', page %}
-          <a class="me-3" href="{{nextpage}}">{{ page }}</a>
-          {% endif %}
-          {% endif %}
+      <div class="posts">
+        <ul class="list-unstyled pb-5">
+          {% for post in paginator.posts %}
+          <li class="pb-4 pt-4">
+            <a class="nounderline" href="{{ post.url | prepend: site.url }}">
+              <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}</small>
+              <h3 class="text-body-emphasis">{{ post.title }}</h3>
+              <p class="text-body">{{ post.description }}</p>
+              {% if post.image %}
+              <div alt="{{post.title}}" class="my-4 media-img rounded" style="background-image: url({{ post.image }})">
+              </div>
+              {% endif %}
+              {% if post.tags %}
+              <p class="mb-0">
+                {% for tags in post.tags %}
+                <span class="badge text-bg-light">{{ tags }}</span>
+                {% endfor %}
+              </p>
+              {% endif %}
+            </a>
+          </li>
+          <hr />
           {% endfor %}
-
-          {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path | replace: '//', '/' }}">次 &raquo;</a>
-          {% else %}
-          <span>次 &raquo;</span>
-          {% endif %}
-        </div>
+        </ul>
+      </div>
+      <!-- Pagination links -->
+      {% if paginator.total_pages > 1 %}
+      <div class="pagination d-flex justify-content-center">
+        {% if paginator.previous_page %}
+        <a class="me-3" href="{{ paginator.previous_page_path | replace: '//', '/' }}">&laquo; 前</a>
+        {% else %}
+        <span class="me-3">&laquo; 前</span>
         {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+        {% assign prev_limit = paginator.page | minus: 5 %}
+        {% assign next_limit = paginator.page | plus: 5 %}
+        {% if page == paginator.page %}
+        <em class="me-3">{{ page }}</em>
+        {% elsif page == 1 and prev_limit <= 1 %} <a class="me-3"
+          href="{{ paginator.previous_page_path | replace: '//', '/' }}">{{ page }}</a>
+          {% else %}
+          {% if page > prev_limit and page < next_limit %} {% assign nextpage='/category/' | urlencode | append:
+            categorypath | append: site.paginate_path | replace: '//' , '/' | replace: ':num' , page %} <a class="me-3"
+            href="{{nextpage}}">{{ page }}</a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+            {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path | replace: '//', '/' }}">次 &raquo;</a>
+            {% else %}
+            <span>次 &raquo;</span>
+            {% endif %}
       </div>
-      <div class="col-12 col-md-3 mt-5 mt-md-0">
-        {% include sidebar.html %}
-      </div>
+      {% endif %}
     </div>
   </div>
 </section>

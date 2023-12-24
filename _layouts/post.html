@@ -11,88 +11,90 @@ layout: default
     <div class="d-flex align-items-center justify-content-between h-100 position-relative">
       <div class="container">
         <h1 itemprop="name headline">{{ page.title }}</h1>
+        <p>
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{
+            page.date | date: "%Y/%-m/%-d" }}</time>
+        </p>
       </div>
     </div>
-    <span class="text-start text-body">
-      {% if page.hero-caption %}
-      <small>画像出典：{{page.hero-caption}}</small>
-      {% endif %}
-    </span>
   </section>
+  {% if page.hero-caption %}
+  <div class="text-center text-body-secondary">
+    <small>画像出典：{{page.hero-caption}}</small>
+  </div>
+  {% endif %}
 
   <section class="post-content py-5">
-    <div class="container">
+    <div class="container small-container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-9">
-          <article itemscope itemtype="http://schema.org/BlogPosting">
-            <div class="article-body" itemprop="articleBody">
-              <p class="text-muted"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y/%-m/%-d" }}</time><a class="ms-2" href="{{ site.url }}/category/{{ page.categories | first | url_encode }}/index.html">{{ page.categories| first | slug2name }}</a></p>
-              <div>
-                {{ content }}
-              </div>
-              {% if page.tags %}
-              <p class="pt-5">
-                {% for tags in page.tags %}
-                <span class="badge text-bg-light">{{ tags }}</span>
-                {% endfor %}
-              </p>
-              {% endif %}
-              <div>
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-              </div>
-          </article>
-          <hr />
-          <div>
-            <h3>オススメ記事</h3>
-            <ul class="list-unstyled pb-5">
-              {% assign maxRelated = 10 %}
-              {% assign minCommonCategories =  1 %}
-              {% assign maxRelatedCounter = 0 %}
-
-              {% for post in site.posts %}
-              {% assign sameCategoryCount = 0 %}
-
-              {% for category in post.categories %}
-              {% if post.url != page.url %}
-              {% if page.categories contains category %}
-              {% assign sameCategoryCount = sameCategoryCount | plus: 1 %}
-              {% endif %}
-              {% endif %}
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="article-body" itemprop="articleBody">
+            <div>
+              {{ content }}
+            </div>
+            {% if page.tags %}
+            <p class="pt-5">
+              <a class="badge text-bg-light"
+                href="{{ site.url }}/category/{{ page.categories | first | url_encode }}/index.html">{{ page.categories|
+                first | slug2name }}</a>
+              {% for tags in page.tags %}
+              <span class="badge text-bg-light">{{ tags }}</span>
               {% endfor %}
+            </p>
+            {% endif %}
+            <div>
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
+                data-show-count="false">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </article>
+        <hr />
+        <div>
+          <h3>オススメ記事</h3>
+          <ul class="list-unstyled pb-5">
+            {% assign maxRelated = 10 %}
+            {% assign minCommonCategories = 1 %}
+            {% assign maxRelatedCounter = 0 %}
 
-              {% if sameCategoryCount >= minCommonCategories %}
-              <li class="pb-4 pt-4">
-                <a class="nounderline" href="{{ post.url | prepend: site.url }}">
-                  <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}<span
-                      class="ms-2">{{ post.categories | first | slug2name }}</span></small>
-                  <h3 class="mt-0 text-body-emphasis">{{ post.title }}</h3>
-                  <p class="text-body">{{ post.description }}</p>
-                  {% if post.image %}
-                  <div alt="{{post.title}}" class="my-4 media-img rounded"
-                    style="background-image: url({{ post.image }})">
-                  </div>
-                  {% endif %}
-                  {% if post.tags %}
-                  <p class="mb-0">
-                    {% for tags in post.tags %}
-                    <span class="badge text-bg-light">{{ tags }}</span>
-                    {% endfor %}
-                  </p>
-                  {% endif %}
-                </a>
-              </li>
-              <hr />
-              {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
-              {% if maxRelatedCounter >= maxRelated %}
-              {% break %}
-              {% endif %}
-              {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-        <div class="col-12 col-md-3 mt-5 mt-md-0">
-          {% include sidebar.html %}
+            {% for post in site.posts %}
+            {% assign sameCategoryCount = 0 %}
+
+            {% for category in post.categories %}
+            {% if post.url != page.url %}
+            {% if page.categories contains category %}
+            {% assign sameCategoryCount = sameCategoryCount | plus: 1 %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+
+            {% if sameCategoryCount >= minCommonCategories %}
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="{{ post.url | prepend: site.url }}">
+                <small class="decoration-none text-muted">{{ post.date | date: "%Y/%-m/%-d" }}</small>
+                <h3 class="mt-0 text-body-emphasis">{{ post.title }}</h3>
+                <p class="text-body">{{ post.description }}</p>
+                {% if post.image %}
+                <div alt="{{post.title}}" class="my-4 media-img rounded"
+                  style="background-image: url({{ post.image }})">
+                </div>
+                {% endif %}
+                {% if post.tags %}
+                <p class="mb-0">
+                  {% for tags in post.tags %}
+                  <span class="badge text-bg-light">{{ tags }}</span>
+                  {% endfor %}
+                </p>
+                {% endif %}
+              </a>
+            </li>
+            <hr />
+            {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+            {% if maxRelatedCounter >= maxRelated %}
+            {% break %}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </ul>
         </div>
       </div>
     </div>
