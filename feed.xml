@@ -5,9 +5,30 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 24 Dec 2023 14:47:33 +0900</pubDate>
-    <lastBuildDate>Sun, 24 Dec 2023 14:47:33 +0900</lastBuildDate>
+    <pubDate>Tue, 26 Dec 2023 20:54:00 +0900</pubDate>
+    <lastBuildDate>Tue, 26 Dec 2023 20:54:00 +0900</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>年末年始で読む本</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/1yPu5Sf&quot;&gt;ディズニーランド 世界最強のエンターテインメントが生まれるまで&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/c8srIjs&quot;&gt;サーバントリーダーシップ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/b2ilS5u&quot;&gt;ビジネスエリートが知っておきたい 教養としてのヨーロッパ史&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/3H6JUKE&quot;&gt;BUILD　真に価値あるものをつくる型破りなガイドブック&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/1zUbQ9W&quot;&gt;Spotify 新しいコンテンツ王国の誕生&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 26 Dec 2023 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2023/12/26/books.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/12/26/books.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>2023年振り返り</title>
@@ -31,6 +52,8 @@
   &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/1lS2Cws&quot;&gt;豊田章男&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/5W6G6w6&quot;&gt;インスタグラム:野望の果ての真実&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/dqhLxJY&quot;&gt;レゴ 競争にも模倣にも負けない世界一ブランドの育て方&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/iduxKhD&quot;&gt;ティム・クック-アップルをさらなる高みへと押し上げた天才&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/2glc99L&quot;&gt;The Daily Stoic: 366 Meditations on Wisdom, Perseverance, and the Art of Living&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;トレーニング&quot;&gt;トレーニング&lt;/h2&gt;
@@ -422,67 +445,6 @@ Netflixは日本にも進出しているためだと思いますが、やはり�
         
         
         <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>SwiftUIでTabBarを非表示にする</title>
-        <description>&lt;p&gt;SwiftUIでタブを表示するために使う &lt;a href=&quot;https://developer.apple.com/documentation/swiftui/tabview&quot;&gt;TabView&lt;/a&gt; ですがiOS16でプッシュ遷移をした時にTabBarを非表示にする手段が公式で追加されました。&lt;/p&gt;
-
-&lt;p&gt;UIKitでは表示される&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UIViewController&lt;/code&gt;で&lt;a href=&quot;https://developer.apple.com/documentation/uikit/uiviewcontroller/1621863-hidesbottombarwhenpushed&quot;&gt;hidesBottomBarWhenPushed&lt;/a&gt;をtrueにすればプッシュ遷移でTabBarを非表示にすることができましたが、iOS16までSwiftUIでは同様のことができませんでした。&lt;/p&gt;
-
-&lt;p&gt;TabBarを非表示にしたい画面で、 &lt;a href=&quot;https://developer.apple.com/documentation/swiftui/presentedwindowcontent/toolbar(_:for:)&quot;&gt;.toolbar(.hidden, for: .tabBar)&lt;/a&gt;を使えば非表示にすることができます。&lt;/p&gt;
-
-&lt;p&gt;サンプルコード&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        TabView {
-            NavigationStack {
-                NavigationLink(&quot;Sun&quot;) {
-                    Text(&quot;Hello Sun&quot;)
-                        .toolbar(.hidden, for: .tabBar)
-                }
-                .navigationTitle(Text(&quot;Sun&quot;))
-            }
-            .tabItem {
-                Label(&quot;Sun&quot;, systemImage: &quot;sun.max&quot;)
-            }
-            NavigationStack {
-                NavigationLink(&quot;Moon&quot;) {
-                    Text(&quot;Hello Moon&quot;)
-                }
-                .navigationTitle(Text(&quot;Moon&quot;))
-            }
-            .tabItem {
-                Label(&quot;Moon&quot;, systemImage: &quot;moon.stars&quot;)
-            }
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/posts/2023-01-31/tabbar.mov&quot; alt=&quot;Hide TabBar&quot; title=&quot;Hide TabBar&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Sunはプッシュ遷移をした時にTabBarが非表示になるのですが、Moonはそのまま表示されます。
-TabBarを非表示にした後、ポップすると少しTabBarを表示するのに遅延があるところあたり、もう少し改善の余地がありそうです。&lt;/p&gt;
-
-&lt;p&gt;また残念ながらこのAPIはiOS16以降でしか使えず、iOS15以前で対応するにはUIKitベースのAPIを使うしかなさそうです。&lt;/p&gt;
-
-&lt;p&gt;ちなみに、&lt;a href=&quot;https://developer.apple.com/videos/play/wwdc2022/10001/&quot;&gt;WWDC2022のExplore navigation design for iOSというセッション&lt;/a&gt;で説明されていますが、Appleの公式見解としてはTabBarを非表示にするのは非推奨なので、ナビゲーションのベストプラクティスについてはまたまとめたいと思います。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 31 Jan 2023 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/development/2023/01/31/hide-tabbar-swiftui.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/development/2023/01/31/hide-tabbar-swiftui.html</guid>
-        
-        <category>SwiftUI</category>
-        
-        <category>TabBar</category>
-        
-        
-        <category>development</category>
         
       </item>
     
