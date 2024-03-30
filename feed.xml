@@ -5,9 +5,35 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Mar 2024 10:06:49 +0900</pubDate>
-    <lastBuildDate>Mon, 18 Mar 2024 10:06:49 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Mar 2024 21:31:40 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Mar 2024 21:31:40 +0900</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>2024年3月に読んだ本</title>
+        <description>&lt;p&gt;2024年3月に読んだ本リスト。最近読んでいるのは企業小説が多かったです。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/eXSL1KR&quot;&gt;人に頼む技術 コロンビア大学の嫌な顔されずに人を動かす科学&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/0Kjy5TO&quot;&gt;読書という荒野 (幻冬舎文庫)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/cWsTP5k&quot;&gt;憂鬱でなければ、仕事じゃない (講談社+α文庫)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/i6vGIPk&quot;&gt;トヨトミの野望 (小学館文庫)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/365Eb3O&quot;&gt;トヨトミの逆襲 (小学館文庫)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/goxFBNX&quot;&gt;トヨトミの世襲～小説・巨大自動車企業～&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/4wA8SjG&quot;&gt;半沢直樹　１　オレたちバブル入行組 (講談社文庫)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/fDNWUDg&quot;&gt;半沢直樹　２　オレたち花のバブル組 (講談社文庫)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 30 Mar 2024 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2024/03/30/books-in-march.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/03/30/books-in-march.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>2024年2月に読んだ本</title>
@@ -345,87 +371,6 @@
         <pubDate>Fri, 22 Sep 2023 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/hobby/2023/09/22/non-reactive-practice.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/09/22/non-reactive-practice.html</guid>
-        
-        <category>読書</category>
-        
-        
-        <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>NO RULES: 世界一「自由」な会社、NETFLIX を読みました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://www.amazon.co.jp/NO-RULES-ノー・ルールズ-世界一「自由」な会社、NETFLIX-リード・ヘイスティングス/dp/4532323673&quot;&gt;NO RULES: 世界一「自由」な会社、NETFLIX&lt;/a&gt;を読みました。&lt;/p&gt;
-
-&lt;p&gt;4セクション、全10章で構成されています。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Section1 「自由と責任」のカルチャーへの第一歩
-    &lt;ul&gt;
-      &lt;li&gt;第1章 最高の職場=最高の同僚&lt;/li&gt;
-      &lt;li&gt;第2章 本音を語る(前向きな意図をもって)&lt;/li&gt;
-      &lt;li&gt;第3a章 休暇規定を撤廃する&lt;/li&gt;
-      &lt;li&gt;第3b章 出張旅費と経費の承認プロセスを廃止する&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Section2 「自由と責任」のカルチャーへの次の一歩
-    &lt;ul&gt;
-      &lt;li&gt;第4章 個人における最高水準の報酬を払う&lt;/li&gt;
-      &lt;li&gt;第5章 情報はオープンに共有&lt;/li&gt;
-      &lt;li&gt;第6章 意思決定にかかわる承認を一切不要にする&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Section3 「自由と責任」のカルチャーの強化
-    &lt;ul&gt;
-      &lt;li&gt;第7章 キーパーテスト&lt;/li&gt;
-      &lt;li&gt;第8章 フィードバック・サークル&lt;/li&gt;
-      &lt;li&gt;第9章 コントロールではなくコンテキストを&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Section4 グローバル企業への道
-    &lt;ul&gt;
-      &lt;li&gt;第10章 すべてのサービスを世界へ!&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;セクションのタイトルにもある通り、社員の自由度が高い分相応の責任を持つという文化が紹介されており、能力密度が高い会社において効果的に作用するということが理解できました。&lt;/p&gt;
-
-&lt;p&gt;また、チーム全体のパフォーマンス向上や率直なフィードバック文化醸成において、&lt;strong&gt;Brilliant Jerk（ブリリアント・ジャーク、デキるけど嫌なやつ）&lt;/strong&gt;を排除する必要性が強調されています。
-ジャークではない率直なカルチャーとして、相手にどんな影響を及ぼすかを気にせず思ったことを口にしていいということではなく、「4A」ガイドラインをしっかり守る必要があるとされていました。&lt;/p&gt;
-
-&lt;p&gt;4A&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;相手を助けようという気持ちで（AIM TO ASSIST）&lt;/li&gt;
-  &lt;li&gt;行動変化を促す（ACTIONABLE）&lt;/li&gt;
-  &lt;li&gt;感謝する（APPRECIATE）&lt;/li&gt;
-  &lt;li&gt;取捨選択（ACCEPT OR DISCARD）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;特に参考になったのは&lt;strong&gt;第9章 コントロールではなくコンテキスト&lt;/strong&gt;をで、コンテキストによるリーダーシップが説明されています。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;コンテキストによるリーダーシップはもっと難しいが、部下の自由度は大幅に高まる。上司はできるかぎり多くの情報をチームと共有し、監督やプロセスによるコントロールがなくてもメンバーが優れた意思決定をして、成果を挙げられるように後押しする。それによって部下の意思決定能力が鍛えられ、将来的に自分の力で優れた判断を下せるようになるというメリットがある。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;特に「イカロス」の映画の権利を購入するストーリーで、担当のアダムに対して上司のテッドが、&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;「ドキュメンタリー担当はオレじゃない、君だ。こういう判断をさせるために君に給料を払っているんだ。本当に来るか、自分自身に聞いてみろ。….」&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;というところで、判断が会社の戦略と合致するようにコンテキストを設定するということを理解しやすかったです。
-別の言葉で、Netflixではピラミッド型の意思決定構造と対比して、「情報に通じたキャプテン」が意思決定をする木のような意思決定構造と説明しています。
-上司が明確なコンテキストを設定しチームと足並みを揃えることで、「情報に通じたキャプテン」に選択の自由を与えるという考え方は参考になりました。&lt;/p&gt;
-
-&lt;p&gt;最後の章でグローバル化について述べられていて、日本の事例が多く語られていたのが意外でした。
-Netflixは日本にも進出しているためだと思いますが、やはりフィードバックの仕方1つとっても米国の考え方と日本の考え方は違いがあるらしく、各国の文化に沿った対応の仕方が述べられており参考になりました。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 16 Sep 2023 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2023/09/16/no-rules-netflix.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2023/09/16/no-rules-netflix.html</guid>
-        
-        <category>NETFLIX</category>
         
         <category>読書</category>
         
