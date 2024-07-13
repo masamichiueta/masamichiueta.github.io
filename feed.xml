@@ -5,9 +5,150 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Jul 2024 13:41:29 +0900</pubDate>
-    <lastBuildDate>Sat, 13 Jul 2024 13:41:29 +0900</lastBuildDate>
+    <pubDate>Sat, 13 Jul 2024 23:16:05 +0900</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2024 23:16:05 +0900</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>エレガントパズル　エンジニアのマネジメントという難問にあなたはどう立ち向かうのかを読みました</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/0b7jF4Jj&quot;&gt;エレガントパズル　エンジニアのマネジメントという難問にあなたはどう立ち向かうのか&lt;/a&gt;を読みました。&lt;/p&gt;
+
+&lt;p&gt;日本語版は2024年5月と2ヶ月前に発売されたばかりの本です。&lt;a href=&quot;https://amzn.asia/d/030mVEME&quot;&gt;オリジナルの方&lt;/a&gt;は2019年5月と少し前です。&lt;/p&gt;
+
+&lt;p&gt;組織作りから、変化への対応、問題解決、文化形成、キャリアや採用について幅広く書かれていました。個人的には今の興味もあり、&lt;strong&gt;3章ツール:変化をマネジメントする手法&lt;/strong&gt;、&lt;strong&gt;4章アプローチ:問題解決につなげる&lt;/strong&gt;、あたりは特にピックアップしておきたいところが多かったです。&lt;/p&gt;
+
+&lt;p&gt;まずチームのところは、マネージャーは6-8人のエンジニアを支援すべきというところで、これはやはり一般的な感覚でもあったりするかなと思いました。またトップダウンによる全体最適に対して、チームファーストに徹する、ゆとりを確保しスコープを変更していくという考え方は参考になりました。&lt;/p&gt;
+
+&lt;p&gt;3章では変化のマネジメントとして、戦略とビジョンの合意形成について述べられています。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;戦略とは、特定の課題を解決するためのトレードオフと行動が記された、基盤となるドキュメント。ビジョンとは、密に協力していない個々人が整合性のある意思決定を下すことを可能にする、目指すべき理想を示すドキュメント。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;いずれも文書化するというところがポイントで、その文書化の具体的な方法についても記載されています。&lt;/p&gt;
+
+&lt;h3 id=&quot;戦略の文書化&quot;&gt;戦略の文書化&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;診断・基本方針・行動の3つの工程からなる。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;診断は、目の前にある課題を説明する理論である。課題を定義する要因や制約を明らかにするものであり、その中心には突き詰めた問題に関するステートメント（声明、説明）がある。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;基本方針は、課題に対処するために適用する方針を定めたものである。これから実施するアプローチを説明しており、それは2つの競合するゴール間のトレードオフになることが多い。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;出来の悪い基本方針を読むと、「結局どうすればいいんだ？」と感じるだろう。現実を変えない方法を正当化しているからだ。よい方針を読むと、「あぁ、アンナとビルとクレアを本当に困らせるだろうな」と思うだろう。競合するゴールに対する立場を明確にしているからだ。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;基本方針を診断に適用することで、どのように行動したらよいかが分かる。決断を具現化するために、基本方針を具体的な行程に落とし込むのは確かに難しい。書くだけであれば簡単だ。共有してやり抜くことは、あなたの本気度を試す重要な試練になる。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;ビジョンの文書化&quot;&gt;ビジョンの文書化&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;戦略が特定の課題を克服するために必要となる厳しいトレードオフであるなら、ビジョンはそれらのトレードオフが相互に排他的ではない未来を描くものだ。効果的なビジョンにより、局所最適な制約を超えて考えられるようになり、中央集権的で厳格な調整を必要とせずに、進むべき道を緩やかに方向付けできる。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;良いビジョンは次の項目で成り立つ&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ビジョンステートメント: 目指す姿を1~2分で表した文書全体の要約&lt;/li&gt;
+  &lt;li&gt;バリュープロポジション: ユーザーや自社にとってどのような価値があるのか&lt;/li&gt;
+  &lt;li&gt;ケイパビリティ&lt;/li&gt;
+  &lt;li&gt;将来はなくなる制約&lt;/li&gt;
+  &lt;li&gt;将来の制約&lt;/li&gt;
+  &lt;li&gt;参考資料&lt;/li&gt;
+  &lt;li&gt;ナラティブ&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;確かに参考になるドキュメントはこの辺りの項目が述べられているなと改めて思います。&lt;/p&gt;
+
+&lt;p&gt;また、これらのドキュメントを検証するために、草案を書いたら同僚と共有しフィードバックをもらい修正する、定期的に更新するといったことも重要なポイントとして述べられており、ここも共感するところがありました。&lt;/p&gt;
+
+&lt;h3 id=&quot;マイグレーション&quot;&gt;マイグレーション&lt;/h3&gt;
+
+&lt;p&gt;マイグレーションについても記載されています。なぜマイグレーションが重要なのか？という問いから始まります。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;マイグレーションが重要なのは、技術的負債に対して意味のある進歩を遂げるために利用できる唯一の方法だからだ。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;マイグレーションは、将来的なゆとりの確保につながる反面、目前に迫った締め切りの仕事への取り組みが手薄になるというジレンマを抱えている。そのためマイグレーションのスケジュールは議論の的となる。そしてシステムが大きくなるにつれて、マイグレーションのコストが高まっていく。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Googleで働く社員から伝え聞くところによると、「running to stand still. (駆け足で立ち止まる)」というフレーズがあるという。このフレーズは、依存性や設計パターンのアップグレードにチーム全体の能力が費やされ、プロダクトやシステムが前に進めない状況を表しているそうだ。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;マイグレーションは、企業とコードが成長するにつれて、技術的夫妻を効果的に管理するための唯一の仕組みである。ソフトウェアやシステムをうまくマイグレーションできなければ、技術的負債で苦しむことになる。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;このあたりはどこをとっても、共感できる部分でした。&lt;/p&gt;
+
+&lt;p&gt;次のよいマイグレーションを実行する、というセクションも面白く、デザインドキュメントの活用、部分的に終わったままで放置しない、マネジメント層にマイグレーションの状況を伝える仕組みを整える、100%に到達するにはマイグレーションを主導しているチームが自分たちで隅々まで掘り下げる、など納得の手順ばかりでした。&lt;/p&gt;
+
+&lt;h3 id=&quot;ポリシーに従う例外に従わない&quot;&gt;ポリシーに従う、例外に従わない&lt;/h3&gt;
+
+&lt;p&gt;例外を認めれば一貫性が損なわれるが、確立した慣習に固執する「変化」しない組織は失敗に至るというところで、一貫性と変化をどのように調和させるかについての話で、最近自分でも考えていることに近い話題でした。&lt;/p&gt;
+
+&lt;p&gt;よいポリシーは制約をもたらす、ということで、&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ポリシー「運営ルール」は小さな戦略である。ゴールを定めて、そのゴールと行動を一致させるための制約を特定することにより、ポリシーは構築される。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ポリシーが成功するか否かは、例外となる要求をどう扱うかで決まる。例外を認めることにより、みんなの公平感が失われ、今後にポリシーを弱めてしまう前例となる。例外に多くの時間を費やしている組織は、「例外負債」を負うことになる。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;制約を再検討するための先行事例として全てのエスカレーションを集めよう。エスカレーションが十分に集まったら、制約を見直そう。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ポリシーを実運用するといきは、次回の更新時期を宣言しておこう。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;この辺りはまさに今考えている部分だったりするのでとても参考になりましたし早速取り入れていきたいと思いました。&lt;/p&gt;
+
+&lt;p&gt;例外負債というところは確かにそうで、ポリシーに対して一度例外を認めてしまうとその後も例外がどんどん増えていくというは感じているので、その場合は制約を見直す必要があると考えています。&lt;/p&gt;
+
+&lt;h3 id=&quot;会社チーム自分自身&quot;&gt;会社、チーム、自分自身&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;まず、会社のために正しいことをする。
+次に、チームのために正しいことをする。
+最後に、自分のために正しいことをする。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;読む人によっては違う意見を持つこともありそうですが、対象がマネージャならではの観点と思いました。個人的には納得。&lt;/p&gt;
+
+&lt;h3 id=&quot;終わりに&quot;&gt;終わりに&lt;/h3&gt;
+
+&lt;p&gt;あとは、文化、キャリア、採用や評価などありましたが、特に印象に残ったところを抜粋しました。&lt;/p&gt;
+
+&lt;p&gt;こういう技術的な領域に近い本を読んだときに、普段自分が考えていることに対して一定近い意見や参考になる考え方があって、腹落ちする感じがいいです。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 13 Jul 2024 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2024/07/13/elegant-puzzle.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/07/13/elegant-puzzle.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>Product Led Growthを読みました</title>
@@ -439,27 +580,6 @@
         <pubDate>Sat, 04 May 2024 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/hobby/2024/05/04/immunity-to-change.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/05/04/immunity-to-change.html</guid>
-        
-        <category>読書</category>
-        
-        
-        <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>2024年4月に読んだ本</title>
-        <description>&lt;p&gt;2024年4月に読んだ本リスト。引き続き今更半沢直樹を読んだり見たりして燃えている。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/dwysNDW&quot;&gt;ロスジェネの逆襲&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/aCjotbx&quot;&gt;銀翼のイカロス&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/7jfiu11&quot;&gt;SWITCHCRAFT(スイッチクラフト) 切り替える力: すばやく変化に気づき、最適に対応するための人生戦略&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 01 May 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/05/01/books-in-april.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/05/01/books-in-april.html</guid>
         
         <category>読書</category>
         
