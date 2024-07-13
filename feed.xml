@@ -5,9 +5,101 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 Jul 2024 11:13:33 +0900</pubDate>
-    <lastBuildDate>Tue, 02 Jul 2024 11:13:33 +0900</lastBuildDate>
+    <pubDate>Sat, 13 Jul 2024 13:41:29 +0900</pubDate>
+    <lastBuildDate>Sat, 13 Jul 2024 13:41:29 +0900</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>Product Led Growthを読みました</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/00U2Ow56&quot;&gt;Product Led Growth&lt;/a&gt;を読みました。&lt;/p&gt;
+
+&lt;p&gt;オリジナルの本が発売されたのが2019年5月、日本語訳が発売されたのが2021年10月のようです。&lt;/p&gt;
+
+&lt;p&gt;前提としては、SaaSビジネスに関する考え方で冒頭ではProduct Led Growthの代表例としてZoom, Slack, Dropboxなどが挙げられています。&lt;/p&gt;
+
+&lt;p&gt;セールスがプロダクトを売るセールス主導型と、プロダクトでプロダクトを売るプロダクト主導型の対比が述べられており、プロダクト主導型へのパラダイムシフトが起こっているというのが本書のコアな主張だと思います。&lt;/p&gt;
+
+&lt;p&gt;Product Led Growth (PLG) とはユーザー獲得、アクティベーション、リテンションをプロダクトそのものが担うという手法と紹介されています。&lt;/p&gt;
+
+&lt;p&gt;PLGを実践するにあたっていくつか参考になりそうな考え方をピックアップ。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PLGを本書に則って実践しても、そもそものプロダクト・クオリティが低ければ元も子もない。ユーザーペインを解決する芯を食うソリューション、魅力的なデザイン、プロダクトの本源的価値に沿うUI/UX、全てを兼ね備えた上で、PLGが活きてくる&lt;/li&gt;
+  &lt;li&gt;PLGは一見すると、購入前にプロダクトを試すというシンプルなビジネスモデル&lt;/li&gt;
+  &lt;li&gt;事業に関わるすべてのチームがプロダクトに影響を与える&lt;/li&gt;
+  &lt;li&gt;サブスクリプションビジネスに迫る3つの変化
+    &lt;ul&gt;
+      &lt;li&gt;顧客獲得コスト(CAC)が上がる一方で、顧客単価は下がっている&lt;/li&gt;
+      &lt;li&gt;顧客は自ら学ぶことを好むようになった&lt;/li&gt;
+      &lt;li&gt;購入プロセスで、プロダクトの利用体験が重視されるようになった&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;プロダクト主導型では目標を達成するのに、どのチームもプロダクトを活用している&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;戦略の考え方としてMOATフレームワークというものが紹介されていました。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;M: マーケット戦略&lt;/li&gt;
+  &lt;li&gt;O: オーシャン状況&lt;/li&gt;
+  &lt;li&gt;A: オーディエンス&lt;/li&gt;
+  &lt;li&gt;T: タイム・トゥ・バリュー&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;MOATフレームワークは読めばわかったきにはなりつつ、自社の戦略を確認する上では便利そうという感想です、しっかり理解するには実施に当てはめてみないと分からなさそう。&lt;/p&gt;
+
+&lt;p&gt;プロダクトの価格を決める部分の話はそのサービス次第だなというところでした。&lt;/p&gt;
+
+&lt;p&gt;後半では測定すべき成長のレバーとして、解約率、ARPU（顧客平均単価）、顧客数が挙げられています。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;顧客数を増やす&lt;/li&gt;
+  &lt;li&gt;ARPU（顧客平均単価）を増やす&lt;/li&gt;
+  &lt;li&gt;解約率を減らす&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この3点について具体的な考え方が述べられていました。&lt;/p&gt;
+
+&lt;p&gt;面白いなと思った考え方はボーリングレーン・フレームワークというオンボーディングの考え方でした。&lt;/p&gt;
+
+&lt;p&gt;ガターのないバンパー付きボーリングのレーンのメタファーで、レーンを現在地から求められる成果までのストレートライン、両サイドのバンパーをプロダクトバンパー、コミュニケーションバンパーと捉えて、ユーザーがストレートラインに戻るようにしていく、という考え方です。&lt;/p&gt;
+
+&lt;p&gt;具体的なプロダクトバンパーやコミュニケーションバンパーの例&lt;/p&gt;
+
+&lt;p&gt;プロダクトバンパー&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ウェルカムメッセージ&lt;/li&gt;
+  &lt;li&gt;プロダクトツアー&lt;/li&gt;
+  &lt;li&gt;プログレスバー&lt;/li&gt;
+  &lt;li&gt;チェックリスト&lt;/li&gt;
+  &lt;li&gt;オンボーディング、ツールチップ&lt;/li&gt;
+  &lt;li&gt;エンプティーステート&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;コミュニケーションバンパー&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;オンボーディングメール&lt;/li&gt;
+  &lt;li&gt;プッシュ通知&lt;/li&gt;
+  &lt;li&gt;説明動画&lt;/li&gt;
+  &lt;li&gt;ダイレクトメール&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;いずれもプロダクト開発やCRMの観点でもよく用いられるものかと思います。改めてこのあたりしっかりやるのがPLGでも重要と思います。&lt;/p&gt;
+
+&lt;p&gt;ARPUの改善については、まず理想的なユーザーの特定、その層を増やすところから始めるとのことでした。解約率を減らすこともARPUの改善につながるらしいです。&lt;/p&gt;
+
+&lt;p&gt;以上、SaaSビジネスが前提なのでそれ以外のところだと当てはめて考えづらいところもあるかもしれないですが、いろいろなフレームワークが紹介されていて学びになりました。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 07 Jul 2024 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2024/07/07/product-led-growth.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/07/07/product-led-growth.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>2024年6月に読んだ本</title>
@@ -368,60 +460,6 @@
         <pubDate>Wed, 01 May 2024 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/hobby/2024/05/01/books-in-april.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/05/01/books-in-april.html</guid>
-        
-        <category>読書</category>
-        
-        
-        <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>SWITCHCRAFT(スイッチクラフト) 切り替える力: すばやく変化に気づき、最適に対応するための人生戦略 を読みました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/5VMgA32&quot;&gt;SWITCHCRAFT(スイッチクラフト) 切り替える力: すばやく変化に気づき、最適に対応するための人生戦略&lt;/a&gt; を読みました。&lt;/p&gt;
-
-&lt;p&gt;あとがきには、&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;著者は成功し達成感を覚えている人々に共通するのは機敏さ（すばやく柔軟に対応する能力）であり、機敏さが人間の感情や行動に影響を及ぼすことをあきらかにした。そして、「切り替える力」を発揮すれば脳内に機敏さ（すばやく柔軟に対応する能力）だけでなく、レジリエンス（立ち直る力）も形成されることを突き止めたのである。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;と書かれています。&lt;/p&gt;
-
-&lt;p&gt;そして切り替える力として以下の4本の柱が述べられています。&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;すばやく柔軟に対応する&lt;/li&gt;
-  &lt;li&gt;自分を知る&lt;/li&gt;
-  &lt;li&gt;感情への気づき&lt;/li&gt;
-  &lt;li&gt;状況をつかむ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;最近は変化をテーマにいくつか本を読んでいて、この本はまさにそのあたりの考え方の参考になる本でした。&lt;/p&gt;
-
-&lt;p&gt;2章「すばやく柔軟に対応する」の中で、4つの行動が紹介されていて、そこが参考になりました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;変化に適応する&lt;/li&gt;
-  &lt;li&gt;目標と願望のバランスをとる&lt;/li&gt;
-  &lt;li&gt;視点を変える&lt;/li&gt;
-  &lt;li&gt;実行機能を高める&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;その中でも特に、&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;好奇心をもって変化をとらえる&lt;/li&gt;
-  &lt;li&gt;ほかの選択肢を確認する&lt;/li&gt;
-  &lt;li&gt;「完璧」にこだわらない&lt;/li&gt;
-  &lt;li&gt;相手の立場に立って利益を得る&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;などは参考になる考え方だなと思いました。&lt;/p&gt;
-
-&lt;p&gt;切り替える力、意識していきたい。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Apr 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/04/30/switchcraft.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/04/30/switchcraft.html</guid>
         
         <category>読書</category>
         
