@@ -5,9 +5,74 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 14 Jul 2024 08:26:19 +0900</pubDate>
-    <lastBuildDate>Sun, 14 Jul 2024 08:26:19 +0900</lastBuildDate>
+    <pubDate>Mon, 02 Sep 2024 16:46:52 +0900</pubDate>
+    <lastBuildDate>Mon, 02 Sep 2024 16:46:52 +0900</lastBuildDate>
     <generator>Jekyll v4.3.3</generator>
+    
+      <item>
+        <title>良い戦略、悪い戦略を読みました</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/hJfkic2&quot;&gt;良い戦略、悪い戦略&lt;/a&gt;を読みました。&lt;/p&gt;
+
+&lt;p&gt;プロジェクトを進めていったり、その優先度や方向性を見極めるためには良い戦略とは何かということを理解できると良さそうと思い読んでみました。&lt;/p&gt;
+
+&lt;p&gt;この本では良い戦略と悪い戦略の違い、良い戦略を立てるヒントを知ることができます。&lt;/p&gt;
+
+&lt;p&gt;良い戦略にはしっかりとした論理構造があり、著者は「カーネル（核）」と呼んでいます。そしてカーネルは診断、基本方針、行動の3つの要素で構成されるとしています。&lt;/p&gt;
+
+&lt;p&gt;逆に悪い戦略の4つの特徴として以下を挙げています。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;空疎である&lt;/li&gt;
+  &lt;li&gt;重大な問題に取り組まない&lt;/li&gt;
+  &lt;li&gt;目標と戦略と取り違えている&lt;/li&gt;
+  &lt;li&gt;間違った戦略目標を掲げている&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;良い戦略は何かということを理解する時に、何が悪い戦略なのかを理解しておくこともとても重要です。目標と戦略を取り違えている、の項目が難しいと思いましたが、&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;悪い戦略の多くは、困難な問題を乗り越える道筋を示さずに、単に願望や希望的観察を語っている&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;という説明があります。本書では戦略実行に使える強力な手段として近い目標を定めることが紹介されています。近い目標は、手の届く距離にあって十分に実現可能な目標で、高い目標であっても良いが、達成不可能ではいけないとされています。&lt;/p&gt;
+
+&lt;p&gt;あたりまえのようではありますが、道筋のない願望や希望的観測ではなく、実現可能な目標を立てることが悪い戦略にならないポイントと理解しました。&lt;/p&gt;
+
+&lt;p&gt;良い戦略をとっている企業の例としてNVIDIAが挙げられていて、その戦略が興味深かったです。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;開発チームを3つに分けて、各チームは18ヶ月のサイクルで作業3つのチームのスケジュールをずらすことで6ヶ月ごとの新製品リリースを実現する&lt;/li&gt;
+  &lt;li&gt;設計速度を早めるためにシミュレーションやエミュレータに投資する&lt;/li&gt;
+  &lt;li&gt;ドライバの開発期間短縮のために、統合ドライバ・アーキテクチャを採用する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;この本は2012年に執筆されており、3Dグラフィックス向けのGPU開発でNVIDIAがとった戦略について書かれていますが、その後のAIへの活用によってNVIDIAが一層成長したのはやはり凄まじいなと思います。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 Sep 2024 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2024/09/02/good-strategy-bad-strategy.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/09/02/good-strategy-bad-strategy.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
+    
+      <item>
+        <title>スタッフエンジニア　マネジメントを超えるリーダーシップを読みました</title>
+        <description>&lt;p&gt;Writing&lt;/p&gt;
+</description>
+        <pubDate>Sat, 20 Jul 2024 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2024/07/20/staff-engineer.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/07/20/staff-engineer.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>エレガントパズル　エンジニアのマネジメントという難問にあなたはどう立ち向かうのかを読みました</title>
@@ -431,155 +496,6 @@
         <pubDate>Sun, 02 Jun 2024 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/hobby/2024/06/02/books-in-may.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/06/02/books-in-may.html</guid>
-        
-        <category>読書</category>
-        
-        
-        <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>人生を変える80対20の法則 を読みました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/dH1odMP&quot;&gt;人生を変える80対20の法則&lt;/a&gt;を読みました。&lt;/p&gt;
-
-&lt;p&gt;もともと組織論的なところで、&lt;a href=&quot;https://ja.wikipedia.org/wiki/働きアリの法則&quot;&gt;働きアリの法則&lt;/a&gt;に興味があって、パレートの法則（80:20の法則）、2-6-2の法則と言ったりするのですが、この辺りの知見が書かれているのかなと思い読んでみました。&lt;/p&gt;
-
-&lt;p&gt;内容としてはかなりビジネス寄りの本という印象で、80%の効果を生み出す20%のことに注力せよ、的な内容でした。&lt;/p&gt;
-
-&lt;p&gt;期待していた働きアリの法則や、パレートの法則、2-6-2の法則がなぜそうなるのか、といった内容まではあまり触れられていなかったですが、考え方としては参考になりました。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 16 May 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/05/16/the-80-20-principle.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/05/16/the-80-20-principle.html</guid>
-        
-        <category>読書</category>
-        
-        
-        <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>Immunity to Change: なぜ人と組織は変われないのか――ハーバード流 自己変革の理論と実践 を読みました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/5UQjcC3&quot;&gt;なぜ人と組織は変われないのか――ハーバード流 自己変革の理論と実践&lt;/a&gt;を読みました。&lt;/p&gt;
-
-&lt;p&gt;発売日は2013年10月24日ということで、10年前くらいの本です。内容は割と難しかったですが学びが多かったです。最近テーマとして読んでいる変化に関する本の1つとして、前回読んだ &lt;a href=&quot;https://masamichiueta.github.io/hobby/2024/04/30/switchcraft.html&quot;&gt;SWITCHCRAFT(スイッチクラフト) 切り替える力: すばやく変化に気づき、最適に対応するための人生戦略&lt;/a&gt;に続きこちらも読みました。&lt;/p&gt;
-
-&lt;p&gt;終章「成長を促すリーダーシップ」に述べられていますが、この本の目的とは&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;人間は何歳になっても成長できる&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ということ。当たり前のようにも聞こえますが大人になっても成長できるということです。&lt;/p&gt;
-
-&lt;h2 id=&quot;免疫マップ&quot;&gt;免疫マップ&lt;/h2&gt;
-
-&lt;p&gt;本書では人が知性のレベルを高める足を引っ張り、自分を変えることを妨げているメカニズムを”変革をはばむ免疫機能”と呼んでいます。
-そしてそれを明らかにする方法として”免疫マップ”が紹介されています。&lt;/p&gt;
-
-&lt;p&gt;免疫マップには4つの枠があります。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;改善目標&lt;/li&gt;
-  &lt;li&gt;阻害行動&lt;/li&gt;
-  &lt;li&gt;裏の目標&lt;/li&gt;
-  &lt;li&gt;強力な固定観念&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;第3枠の裏の目標が面白くて、ここを考えることで、目標の達成が妨げられるとわかっているのに、どうして第2枠の阻害行動を取り続けるのかということを明らかにすることができます。&lt;/p&gt;
-
-&lt;p&gt;本書で出てくるキャシーさんのサンプル。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1 改善目標
-    &lt;ul&gt;
-      &lt;li&gt;自分の感情と感情表現をもっと上手く管理すること。&lt;/li&gt;
-      &lt;li&gt;仕事や人間関係で問題が持ち上がったときに、精神の動揺をほかの局面に飛び火させない。問題に正面から向き合い、ほかの仕事やほかの人との関係にいらだちを持ち込まない。そうすれば、自分の感情面の状態をもっとコントロールし、自分が幸せになり、結果としてチームのバランスも良くなる。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;2 阻害行動
-    &lt;ul&gt;
-      &lt;li&gt;強い感情をいだきやすい。&lt;/li&gt;
-      &lt;li&gt;ものごとに感情的に反応してしまう。速く、強烈な反応をしがちだ。&lt;/li&gt;
-      &lt;li&gt;自分の感情を自己点検しない。&lt;/li&gt;
-      &lt;li&gt;ある局面でいだいた感情を別の局面に持ち込み、その感情が言動にあらわれていても、よほど激しくないかぎり自分では気づかない。&lt;/li&gt;
-      &lt;li&gt;ほかの人に助けを求めない。&lt;/li&gt;
-      &lt;li&gt;「ノー」と言わない。&lt;/li&gt;
-      &lt;li&gt;処理すべきだと思う課題は、すべて自分でやろうとする。&lt;/li&gt;
-      &lt;li&gt;取り組む課題のすべてを110%の質でやり遂げようとする。&lt;/li&gt;
-      &lt;li&gt;必須課題とそうでない課題の区別をしない。&lt;/li&gt;
-      &lt;li&gt;オーバーペースで働いてしまう（頻繁に、しかも長期間ぶっ通しで）。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;3 裏の目標
-    &lt;ul&gt;
-      &lt;li&gt;いかなる代償を払ってでも、あらゆることにベストを尽くす。そうしないことは、自分自身とチームに対する裏切りだからだ。&lt;/li&gt;
-      &lt;li&gt;いざというときに頼りになる人間だと思われたい。課題を適切にやり遂げられる存在として信用されたい。たとえそれが非現実的で、私自身が大きなツケを払わされることになっても、この点は譲れない。やがて私が燃え尽き、チームに迷惑をかけることになるとしても。&lt;/li&gt;
-      &lt;li&gt;他人に弱みを見せたり、他人の気分を害したりしたくない。「ノー」と言ったり、助けを求めたり、「無理です」と認めたりはしない。&lt;/li&gt;
-      &lt;li&gt;以上の「裏の目標」の数々に、完璧な仕事をしようという強い情熱が結びつく結果、感情が張り詰めた状態になってしまう。それでもしばらくは自分をコントロールできるが、やがて破綻する。肉体的には疲労し切って体調がすぐれなくなり、精神的には頭が働かなくなって、仕事の質が落ちる。こうして燃え尽き状態に陥り、その苦しみの感情を噴出させてしまう。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;4 強力な固定観念
-    &lt;ul&gt;
-      &lt;li&gt;チームのメンバーの期待を裏切れば、頼りになる仲間という評価が傷つきかねない。チームのよきメンバーだと思われなくなる恐れがある。&lt;/li&gt;
-      &lt;li&gt;自分がいだく要求水準に達しない行動を取れば、自分が仕事に手を抜いているという思いにとらわれる。&lt;/li&gt;
-      &lt;li&gt;チームのよきメンバーとは、100%を超えて、110%の努力をする人間である。&lt;/li&gt;
-      &lt;li&gt;上記の点について、チームのメンバー全員が同じ基準をいだいている。&lt;/li&gt;
-      &lt;li&gt;私自身に関しては、150%の努力をしてこそ自分を評価できる。&lt;/li&gt;
-      &lt;li&gt;110%の努力をしないくらいなら、燃え尽きる危険を冒すほうがまだましだ。&lt;/li&gt;
-      &lt;li&gt;同僚に頼られる存在でなくなれば、チーム内での地位が脅かされる。&lt;/li&gt;
-      &lt;li&gt;私のチーム内での評価は、困った時にいちばん頼りになる人間だと思われているかどうかにかかっている。&lt;/li&gt;
-      &lt;li&gt;一度でも同僚に「ノー」と言うことは、自分の行動基準に反する。&lt;/li&gt;
-      &lt;li&gt;いかなるときでも、たとえ張りつめた状態にあるときでも、自分の感情をコントロールできなくてはならない。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;第1枠の改善目標、第2枠の阻害行動、第3枠の裏の目標、この3つが作用し合い、力の均衡状態が作り出されている、というのが面白い部分でした。&lt;/p&gt;
-
-&lt;p&gt;キャシーさんのような実際の事例を出しながら免疫マップを紹介し、登場人物がいかに変化していけたか、という話が記載されています。&lt;/p&gt;
-
-&lt;h2 id=&quot;不安管理システム&quot;&gt;不安管理システム&lt;/h2&gt;
-
-&lt;p&gt;本書では変革をはばむ免疫機能は不安管理のシステムという性格を持っているとしています。いくつか抜粋。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;自己変革の過程で経験する大きな試練は、変革を推し進めても自分は安全だと（思考と感情の両面で）信じるように転換することだ。不安を乗り越えるとは、そういう自信をはぐくむことなのである。その試練を克服したあとでは、ものごとがまるで違って見えるようになり、実は危険などなかったのだと気づく。自分には無理だと思っていたことができるようになり、単に生き延びるだけでなく、もっと大きな成功を手にできる。リスクと恩恵を計算し直してこのような発見に到達するためには、自分の感情について思考することと、感情に導かれて新たな思考様式を見いだすことを並行しておこなわなくてはならない。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;成長を促すリーダーシップ&quot;&gt;成長を促すリーダーシップ&lt;/h2&gt;
-
-&lt;p&gt;最後の章では、変化と成長を促したければ、リーダー個人の姿勢と組織文化が発達志向である必要があ理、7つの要素を満たしている必要があると述べられています。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;大人になっても成長できるという前提に立つ&lt;/li&gt;
-  &lt;li&gt;適切な学習方法を採用する&lt;/li&gt;
-  &lt;li&gt;誰もが内に秘めている成長への欲求をはぐくむ&lt;/li&gt;
-  &lt;li&gt;本当の変革には時間がかかることを覚悟する&lt;/li&gt;
-  &lt;li&gt;感情が重要な役割を担っていることを認識する&lt;/li&gt;
-  &lt;li&gt;考え方と行動のどちらも変えるべきだと理解する&lt;/li&gt;
-  &lt;li&gt;メンバーにとって安全な場所を用意する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;特に6のところで、考えが変わることで行動が変わるのか？行動が変わることで考えが変わるのか？という長年の議論に対して、両方を変える必要があると論じています。片方が変わればもう片方がおのずと変わるわけではなく、二者択一的な発想ではなく2つのアプローチを一体化させる必要があるようです。&lt;/p&gt;
-
-&lt;h2 id=&quot;最後に&quot;&gt;最後に&lt;/h2&gt;
-&lt;p&gt;第3部では、それまでの具体的な事例をベースに実際に免疫マップを作成していくプロセスが紹介されていますが、これが実際やるにはなかなか大変そうだなと思いました。単純にワークショップするにも時間かかりそうです。&lt;/p&gt;
-
-&lt;p&gt;本書を読んで一番の気づきは、&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;改善目標に対して、それを阻害する裏の目標を誰しも持っているということ&lt;/li&gt;
-  &lt;li&gt;それを認識し、思考様式を変えて行動することで変革できるということ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;を認識できたことでした。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 04 May 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/05/04/immunity-to-change.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/05/04/immunity-to-change.html</guid>
         
         <category>読書</category>
         
