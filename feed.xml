@@ -5,9 +5,44 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Oct 2024 00:31:21 +0900</pubDate>
-    <lastBuildDate>Wed, 09 Oct 2024 00:31:21 +0900</lastBuildDate>
+    <pubDate>Mon, 04 Nov 2024 18:10:22 +0900</pubDate>
+    <lastBuildDate>Mon, 04 Nov 2024 18:10:22 +0900</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
+    
+      <item>
+        <title>モデルナ: 万年赤字企業が、世界を変えるまでを読みました</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/8PEHHqY&quot;&gt;モデルナ: 万年赤字企業が、世界を変えるまで&lt;/a&gt;を読みました。&lt;/p&gt;
+
+&lt;p&gt;モデルナのmRNA技術がどのように開発されたか、新型コロナウイルスワクチンがどんなスピード感で開発されたかを理解することができる本でした。&lt;/p&gt;
+
+&lt;p&gt;mRNAを用いたワクチンの仕組みを理解した範囲でメモしておくと&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;mRNAは細胞核内のDNAからコピーされた遺伝情報を細胞のより外側の部位に運ぶ役目を果たしており、目的の場所まで運ばれたmRNAは、そこで特定のタンパク質の合成を引き起こす&lt;/li&gt;
+  &lt;li&gt;DNAがmRNAを、mRNAがタンパク質を、タンパク質が生命を作る&lt;/li&gt;
+  &lt;li&gt;コロナウイルスのスパイクタンパク質のクローンを作り、免疫反応を引き出すのに十分な量を注射することで、免疫系にその撃退法を学ばせる&lt;/li&gt;
+  &lt;li&gt;mRNAを利用したアプローチでは、人間の体をスパイクタンパク質製造工場に変える。mRANワクチンはスパイクタンパク質の遺伝情報を人間の細胞に送り届け、構造変化前のスパイクタンパク質を生成するよう指示する。すると、免疫系は生成されたスパイクタンパク質を侵入者ととらえ、しかるべく防衛反応をとって抗体やその他の細胞を作りだす。また、mRNAは細胞質に入れるだけでより簡単に導入できる。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;本では、mRNAを使ったワクチンをITプラットフォームのように説明している点があり、上の構造を理解するとそれが理解しやすかったです。modernaのIPOの書類にはDNAがストレージ、mRNAがソフトウェア、タンパク質がアプリとして例えられていたようです。&lt;/p&gt;
+
+&lt;p&gt;自分の理解としては、人間の体に新しい免疫をインストールする → App Storeからアプリをインストールするというよりは、人間の体が免疫工場になる → ソースコードをビルドする みたいなイメージに近いのかなと思いました。&lt;/p&gt;
+
+&lt;p&gt;本を読みながらタイムランを理解するとタイミングがすごいと思いました。
+modernaが上場したのが2018年12月、新型コロナウイルスが広がり始めたのが2019年12月。modernaが2020年1月にコロナウイルスのワクチン開発に取り掛かって承認されたのが12月。かつそれが創業から10年間での最初の製品ということで、ワクチンが承認されるスピード感もさることながら研究開発を重ねしかるべきタイミングでしっかりと成果を出しているmodernaを見ると、準備することとチャンスを掴むことの大切さを感じました。&lt;/p&gt;
+
+&lt;p&gt;私も新型コロナウイルスの影響をリアルタイムで受けて、modernaのワクチンが日本で受けられるようになったタイミングで接種したので当時のことを思い出しながらその時ワクチン開発の現場で起こっていたことを知ることができて良い本でした。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 04 Nov 2024 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2024/11/04/the-messenger-moderna.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/11/04/the-messenger-moderna.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>2024年9月に読んだ本</title>
@@ -436,56 +471,6 @@
         <pubDate>Tue, 02 Jul 2024 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/hobby/2024/07/02/books-in-june.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/07/02/books-in-june.html</guid>
-        
-        <category>読書</category>
-        
-        
-        <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>崖っぷちだったアメリカ任天堂を復活させた男を読みました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/0aBtNW9n&quot;&gt;崖っぷちだったアメリカ任天堂を復活させた男&lt;/a&gt;を読みました。5月22日に発売されたらしく、本屋さんで店頭に置かれていたので気になって購入。&lt;/p&gt;
-
-&lt;p&gt;著者のレジー・フィサメィ氏は元Nintendo of America (NOA) の社長で、ご自身のキャリアからNOAに転職してからの物語が主な内容でした。
-各節の最後に要点が短くまとめられていて内容を振り返りやすくなっているのがとても読みやすく、わかりやすい本でした。&lt;/p&gt;
-
-&lt;p&gt;任天堂の前にはP&amp;amp;Gやペプシコなどを経ていたらしく、そのあたりのストーリーも書いてあるので、レジー・フィサメィ氏の人生全体感を知ることができました。&lt;/p&gt;
-
-&lt;p&gt;入社してから各部署と関係性を構築したり宣伝制作のプロセスを明確にしたりと、実直にやるべきことを推進し、E3でのニンテンドーDSやWiiの発表、その成功からの社長への昇進など、任天堂の成功をNOAからどう推進していたのかを知ることができました。&lt;/p&gt;
-
-&lt;p&gt;脳を鍛える大人のDSトレーニングは当時リアルタイムで流行しているのを感じていましたが、その西洋向けのローカライズの際に数独を追加していたのは初めて知りました。ただローカライズするだけでなく文化によってコンテンツを調整しているのがすごい。&lt;/p&gt;
-
-&lt;p&gt;社長として取り組んだ3つの問題として以下が挙げられていました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;縦割り化した構造&lt;/li&gt;
-  &lt;li&gt;行動を報酬の一本化&lt;/li&gt;
-  &lt;li&gt;カルチャーの衝突&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;大きな会社ですし国も違えばこういう問題は当然起こるんだろうなと思いつつも、こういった問題に取り組むのはリーダーとして必要なのだと思います。&lt;/p&gt;
-
-&lt;p&gt;成功だけでなくニンテンドー3DSの価格設定の苦悩やWiiUの売り上げ維持の苦悩など、その後苦闘していたことについても述べられています。&lt;/p&gt;
-
-&lt;p&gt;いくつかまとめの見出しが良かったので抜粋&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;たった1つの答えに固執しない&lt;/li&gt;
-  &lt;li&gt;言葉の力を過小評価しない&lt;/li&gt;
-  &lt;li&gt;よいアイディアは盗む&lt;/li&gt;
-  &lt;li&gt;コミュニケーションは取りすぎるくらい取る&lt;/li&gt;
-  &lt;li&gt;仲間を作ることが決定を後押しする&lt;/li&gt;
-  &lt;li&gt;決断した以上結果を受け入れる&lt;/li&gt;
-  &lt;li&gt;関係性を築くことをあきらめない&lt;/li&gt;
-  &lt;li&gt;まずはビジョンを描くこと&lt;/li&gt;
-  &lt;li&gt;信念を貫きながら、現状を揺り動かす&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 23 Jun 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/06/23/disrupting-the-game.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/06/23/disrupting-the-game.html</guid>
         
         <category>読書</category>
         
