@@ -5,9 +5,78 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Nov 2024 18:29:48 +0900</pubDate>
-    <lastBuildDate>Mon, 04 Nov 2024 18:29:48 +0900</lastBuildDate>
+    <pubDate>Sun, 10 Nov 2024 15:34:54 +0900</pubDate>
+    <lastBuildDate>Sun, 10 Nov 2024 15:34:54 +0900</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
+    
+      <item>
+        <title>ジェームズ・クリアー式 複利で伸びる1つの習慣を読みました</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/cVDZ2xw&quot;&gt;ジェームズ・クリアー式 複利で伸びる1つの習慣&lt;/a&gt;を読みました。英語のタイトルは “Atomic Habits: An Easy &amp;amp; Proven Way to Build Good Habits &amp;amp; Break Bad Ones”で、世界中で発売されている本のようです。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;ahttps://jamesclear.com/atomic-habits&quot;&gt;https://jamesclear.com/atomic-habits&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有名な数式かもしれないですが、&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1.01&lt;sup&gt;365&lt;/sup&gt; = 37.78&lt;/li&gt;
+  &lt;li&gt;0.99&lt;sup&gt;365&lt;/sup&gt; = 0.03&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;となり、毎日1%良くなれば1年後には約37倍になりますが、毎日1%悪くなれば1年後にはゼロ近くになってしまうというものです。
+この本では毎日1%よくなるような小さな習慣が大きな変化をもたらすというのがメインのトピックであり、良い習慣を身につけるための4つのステップを定義しています。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;はっきりさせる&lt;/li&gt;
+  &lt;li&gt;魅力的にする&lt;/li&gt;
+  &lt;li&gt;易しくする&lt;/li&gt;
+  &lt;li&gt;満足できるものにする&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;特に、「はっきりさせる」で紹介されている&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;環境を作る。良い習慣のきっかけを、はっきり見えるようにする&lt;/li&gt;
+    &lt;li&gt;習慣の積み上げをする。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;「易しくする」で紹介されている&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;抵抗となるものを減らす。良い習慣へたどりつくまでのステップを減らす。&lt;/li&gt;
+    &lt;li&gt;環境を準備する。未来の行動がとりやすくなるよう環境を整える。&lt;/li&gt;
+    &lt;li&gt;2分間ルールを使う。習慣を2分以内でできるものに縮小する。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;などは習慣にする上で、自分自身も気をつけているところだと感じました。&lt;/p&gt;
+
+&lt;p&gt;例えば、&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;朝起きたらストレッチをする&lt;/li&gt;
+  &lt;li&gt;読む本を生活導線にみえるようにする&lt;/li&gt;
+  &lt;li&gt;ジムの予定をあらかじめスケジュールに入れておく&lt;/li&gt;
+  &lt;li&gt;ランニングに行くモチベーションが低くい日でも、とりあえず着替えて靴をはいて走り出してみる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;など。&lt;/p&gt;
+
+&lt;p&gt;毎日の少しずつの積み重ねが長期的に大きな変化をもたらすということを肝に銘じて、毎日1%とは言わずとも0.1%くらいは何かしらよくなるような改善をしていきたいと思います。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 10 Nov 2024 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2024/11/10/atomic-habits.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/11/10/atomic-habits.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>モデルナ: 万年赤字企業が、世界を変えるまでを読みました</title>
@@ -447,30 +516,6 @@ modernaが上場したのが2018年12月、新型コロナウイルスが広が�
         <pubDate>Sun, 07 Jul 2024 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/hobby/2024/07/07/product-led-growth.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/07/07/product-led-growth.html</guid>
-        
-        <category>読書</category>
-        
-        
-        <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>2024年6月に読んだ本</title>
-        <description>&lt;p&gt;2024年6月に読んだ本リスト。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/hobby/2024/06/03/uniqlo.html&quot;&gt;ユニクロ&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/hobby/2024/06/10/fujitaden.html&quot;&gt;勝てば官軍&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/hobby/2024/06/10/fujitaden.html&quot;&gt;ユダヤの商法&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://masamichiueta.github.io/hobby/2024/06/23/disrupting-the-game.html&quot;&gt;崖っぷちだったアメリカ任天堂を復活させた男&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;7月は Growthとか戦略をテーマに本を読んでみようかと思います。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 02 Jul 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/07/02/books-in-june.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/07/02/books-in-june.html</guid>
         
         <category>読書</category>
         
