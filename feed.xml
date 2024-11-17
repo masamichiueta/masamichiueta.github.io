@@ -5,9 +5,52 @@
     <description>エンジニアリング・デザイン・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Nov 2024 15:34:54 +0900</pubDate>
-    <lastBuildDate>Sun, 10 Nov 2024 15:34:54 +0900</lastBuildDate>
+    <pubDate>Sun, 17 Nov 2024 15:51:39 +0900</pubDate>
+    <lastBuildDate>Sun, 17 Nov 2024 15:51:39 +0900</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
+    
+      <item>
+        <title>ユーモアは最強の武器であるを読みました</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/5snJnI5&quot;&gt;ユーモアは最強の武器である&lt;/a&gt;を読みました。&lt;/p&gt;
+
+&lt;p&gt;日常的な会話やスピーチなどでユーモアのある笑えるようなことを言える人は、上手いというか知性を感じるなと思う時があり、興味が湧いたので購入してみました。&lt;/p&gt;
+
+&lt;p&gt;この本では人生やビジネスでのあらゆる面でユーモアの重要性を紹介しています。&lt;/p&gt;
+
+&lt;p&gt;カバーには4点紹介されていて、本書のまとめといってもいいと思います。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ユーモアを発揮する人は、知的で有能で、親しみやすい印象を与える&lt;/li&gt;
+  &lt;li&gt;ユーモアのある職場は創造性や生産性が高い&lt;/li&gt;
+  &lt;li&gt;ユーモアはつながりや信頼を育み、ストレスや逆境を乗り越える力となる&lt;/li&gt;
+  &lt;li&gt;ユーモアは生まれつきの才能ではなく、習得できるスキルだ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;笑いを忘れた大人たち、という章で笑いに関するデータが紹介されており参考になりました。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;人びとが1日に笑う/微笑む回数は、23歳ごろから急激に減り始める。… 平均的な4歳児は1日に300回も笑うのだ（いっぽう平均的な40歳は、2~3ヶ月で300回笑う）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;確かに自分の子供を見ていても、些細なことでも1日中笑っているなと思います。自分としてももっとユーモアを持って笑っているように心掛けようと思います。
+とはいえ、スピーチや発表でもとっさにセンスのあるユーモアを言うのはなかなか難しいし、準備した感があっても面白さがないかもしれないので難しいところです。&lt;/p&gt;
+
+&lt;p&gt;職場で陽気な文化を作るという章では、GoogleのTGIFのビデオが紹介されていました。&lt;/p&gt;
+
+&lt;p&gt;Google TGIF 1999 ビデオ
+&lt;a href=&quot;https://youtu.be/u68QWfHOYhY?si=3X0zGHrE8d47xcXb&quot;&gt;https://youtu.be/u68QWfHOYhY?si=3X0zGHrE8d47xcXb&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 17 Nov 2024 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/hobby/2024/11/17/humor-seriously.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/11/17/humor-seriously.html</guid>
+        
+        <category>読書</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>ジェームズ・クリアー式 複利で伸びる1つの習慣を読みました</title>
@@ -424,98 +467,6 @@ modernaが上場したのが2018年12月、新型コロナウイルスが広が�
         <pubDate>Sat, 13 Jul 2024 00:00:00 +0900</pubDate>
         <link>https://masamichiueta.github.io/hobby/2024/07/13/elegant-puzzle.html</link>
         <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/07/13/elegant-puzzle.html</guid>
-        
-        <category>読書</category>
-        
-        
-        <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>Product Led Growthを読みました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/00U2Ow56&quot;&gt;Product Led Growth&lt;/a&gt;を読みました。&lt;/p&gt;
-
-&lt;p&gt;オリジナルの本が発売されたのが2019年5月、日本語訳が発売されたのが2021年10月のようです。&lt;/p&gt;
-
-&lt;p&gt;前提としては、SaaSビジネスに関する考え方で冒頭ではProduct Led Growthの代表例としてZoom, Slack, Dropboxなどが挙げられています。&lt;/p&gt;
-
-&lt;p&gt;セールスがプロダクトを売るセールス主導型と、プロダクトでプロダクトを売るプロダクト主導型の対比が述べられており、プロダクト主導型へのパラダイムシフトが起こっているというのが本書のコアな主張だと思います。&lt;/p&gt;
-
-&lt;p&gt;Product Led Growth (PLG) とはユーザー獲得、アクティベーション、リテンションをプロダクトそのものが担うという手法と紹介されています。&lt;/p&gt;
-
-&lt;p&gt;PLGを実践するにあたっていくつか参考になりそうな考え方をピックアップ。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;PLGを本書に則って実践しても、そもそものプロダクト・クオリティが低ければ元も子もない。ユーザーペインを解決する芯を食うソリューション、魅力的なデザイン、プロダクトの本源的価値に沿うUI/UX、全てを兼ね備えた上で、PLGが活きてくる&lt;/li&gt;
-  &lt;li&gt;PLGは一見すると、購入前にプロダクトを試すというシンプルなビジネスモデル&lt;/li&gt;
-  &lt;li&gt;事業に関わるすべてのチームがプロダクトに影響を与える&lt;/li&gt;
-  &lt;li&gt;サブスクリプションビジネスに迫る3つの変化
-    &lt;ul&gt;
-      &lt;li&gt;顧客獲得コスト(CAC)が上がる一方で、顧客単価は下がっている&lt;/li&gt;
-      &lt;li&gt;顧客は自ら学ぶことを好むようになった&lt;/li&gt;
-      &lt;li&gt;購入プロセスで、プロダクトの利用体験が重視されるようになった&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;プロダクト主導型では目標を達成するのに、どのチームもプロダクトを活用している&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;戦略の考え方としてMOATフレームワークというものが紹介されていました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;M: マーケット戦略&lt;/li&gt;
-  &lt;li&gt;O: オーシャン状況&lt;/li&gt;
-  &lt;li&gt;A: オーディエンス&lt;/li&gt;
-  &lt;li&gt;T: タイム・トゥ・バリュー&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;MOATフレームワークは読めばわかったきにはなりつつ、自社の戦略を確認する上では便利そうという感想です、しっかり理解するには実施に当てはめてみないと分からなさそう。&lt;/p&gt;
-
-&lt;p&gt;プロダクトの価格を決める部分の話はそのサービス次第だなというところでした。&lt;/p&gt;
-
-&lt;p&gt;後半では測定すべき成長のレバーとして、解約率、ARPU（顧客平均単価）、顧客数が挙げられています。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;顧客数を増やす&lt;/li&gt;
-  &lt;li&gt;ARPU（顧客平均単価）を増やす&lt;/li&gt;
-  &lt;li&gt;解約率を減らす&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;この3点について具体的な考え方が述べられていました。&lt;/p&gt;
-
-&lt;p&gt;面白いなと思った考え方はボーリングレーン・フレームワークというオンボーディングの考え方でした。&lt;/p&gt;
-
-&lt;p&gt;ガターのないバンパー付きボーリングのレーンのメタファーで、レーンを現在地から求められる成果までのストレートライン、両サイドのバンパーをプロダクトバンパー、コミュニケーションバンパーと捉えて、ユーザーがストレートラインに戻るようにしていく、という考え方です。&lt;/p&gt;
-
-&lt;p&gt;具体的なプロダクトバンパーやコミュニケーションバンパーの例&lt;/p&gt;
-
-&lt;p&gt;プロダクトバンパー&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;ウェルカムメッセージ&lt;/li&gt;
-  &lt;li&gt;プロダクトツアー&lt;/li&gt;
-  &lt;li&gt;プログレスバー&lt;/li&gt;
-  &lt;li&gt;チェックリスト&lt;/li&gt;
-  &lt;li&gt;オンボーディング、ツールチップ&lt;/li&gt;
-  &lt;li&gt;エンプティーステート&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;コミュニケーションバンパー&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;オンボーディングメール&lt;/li&gt;
-  &lt;li&gt;プッシュ通知&lt;/li&gt;
-  &lt;li&gt;説明動画&lt;/li&gt;
-  &lt;li&gt;ダイレクトメール&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;いずれもプロダクト開発やCRMの観点でもよく用いられるものかと思います。改めてこのあたりしっかりやるのがPLGでも重要と思います。&lt;/p&gt;
-
-&lt;p&gt;ARPUの改善については、まず理想的なユーザーの特定、その層を増やすところから始めるとのことでした。解約率を減らすこともARPUの改善につながるらしいです。&lt;/p&gt;
-
-&lt;p&gt;以上、SaaSビジネスが前提なのでそれ以外のところだと当てはめて考えづらいところもあるかもしれないですが、いろいろなフレームワークが紹介されていて学びになりました。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 07 Jul 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/07/07/product-led-growth.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/07/07/product-led-growth.html</guid>
         
         <category>読書</category>
         
