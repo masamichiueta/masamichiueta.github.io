@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Masamichi Ueta</title>
-    <description>エンジニアリング・デザイン・日常</description>
+    <description>エンジニアリング・読書・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 11 Jan 2025 14:02:18 +0900</pubDate>
-    <lastBuildDate>Sat, 11 Jan 2025 14:02:18 +0900</lastBuildDate>
+    <pubDate>Sat, 11 Jan 2025 15:52:35 +0900</pubDate>
+    <lastBuildDate>Sat, 11 Jan 2025 15:52:35 +0900</lastBuildDate>
     <generator>Jekyll v4.3.4</generator>
     
       <item>
@@ -68,13 +68,13 @@
 &lt;p&gt;全体を通して、ビル・キャンベル氏がいかに素晴らしい人間だったか、またそれを実践するためには人間的な価値を高めることが大切ということを学びました。&lt;/p&gt;
 </description>
         <pubDate>Sat, 11 Jan 2025 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2025/01/11/trillion-dollar-coach.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2025/01/11/trillion-dollar-coach.html</guid>
+        <link>https://masamichiueta.github.io/reading/2025/01/11/trillion-dollar-coach.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2025/01/11/trillion-dollar-coach.html</guid>
         
-        <category>読書</category>
+        <category>コーチング</category>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     
@@ -168,13 +168,13 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 31 Dec 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/12/31/look-back-2024.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/12/31/look-back-2024.html</guid>
+        <link>https://masamichiueta.github.io/everyday/2024/12/31/look-back-2024.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/everyday/2024/12/31/look-back-2024.html</guid>
         
         <category>振り返り</category>
         
         
-        <category>hobby</category>
+        <category>everyday</category>
         
       </item>
     
@@ -238,13 +238,13 @@
 &lt;p&gt;人間の行動原理に着目し「決して変わることのないもの」を説明している本書からは学びがとても多かったです。繰り返し読みたい本となりました。&lt;/p&gt;
 </description>
         <pubDate>Sun, 01 Dec 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/12/01/same-as-ever.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/12/01/same-as-ever.html</guid>
+        <link>https://masamichiueta.github.io/reading/2024/12/01/same-as-ever.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/12/01/same-as-ever.html</guid>
         
-        <category>読書</category>
+        <category>行動原理</category>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     
@@ -281,13 +281,13 @@
 
 </description>
         <pubDate>Sun, 17 Nov 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/11/17/humor-seriously.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/11/17/humor-seriously.html</guid>
+        <link>https://masamichiueta.github.io/reading/2024/11/17/humor-seriously.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/11/17/humor-seriously.html</guid>
         
-        <category>読書</category>
+        <category>ユーモア</category>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     
@@ -350,13 +350,13 @@
 &lt;p&gt;毎日の少しずつの積み重ねが長期的に大きな変化をもたらすということを肝に銘じて、毎日1%とは言わずとも0.1%くらいは何かしらよくなるような改善をしていきたいと思います。&lt;/p&gt;
 </description>
         <pubDate>Sun, 10 Nov 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/11/10/atomic-habits.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/11/10/atomic-habits.html</guid>
+        <link>https://masamichiueta.github.io/reading/2024/11/10/atomic-habits.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/11/10/atomic-habits.html</guid>
         
-        <category>読書</category>
+        <category>習慣</category>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     
@@ -385,13 +385,13 @@ modernaが上場したのが2018年12月、新型コロナウイルスが広が�
 &lt;p&gt;私も新型コロナウイルスの影響をリアルタイムで受けて、modernaのワクチンが日本で受けられるようになったタイミングで接種したので当時のことを思い出しながらその時ワクチン開発の現場で起こっていたことを知ることができて良い本でした。&lt;/p&gt;
 </description>
         <pubDate>Mon, 04 Nov 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/11/04/the-messenger-moderna.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/11/04/the-messenger-moderna.html</guid>
+        <link>https://masamichiueta.github.io/reading/2024/11/04/the-messenger-moderna.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/11/04/the-messenger-moderna.html</guid>
         
-        <category>読書</category>
+        <category>モデルナ</category>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     
@@ -407,13 +407,11 @@ modernaが上場したのが2018年12月、新型コロナウイルスが広が�
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 06 Oct 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/10/06/books-in-september.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/10/06/books-in-september.html</guid>
-        
-        <category>読書</category>
+        <link>https://masamichiueta.github.io/reading/2024/10/06/books-in-september.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/10/06/books-in-september.html</guid>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     
@@ -452,13 +450,13 @@ modernaが上場したのが2018年12月、新型コロナウイルスが広が�
 &lt;p&gt;コロナの時や最近の暴落があったり、将来も何が起こるかわかりませんが、気にせず長期的に投資をしていくことが大事です。&lt;/p&gt;
 </description>
         <pubDate>Sat, 21 Sep 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/09/21/just-keep-buying.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/09/21/just-keep-buying.html</guid>
+        <link>https://masamichiueta.github.io/reading/2024/09/21/just-keep-buying.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/09/21/just-keep-buying.html</guid>
         
-        <category>読書</category>
+        <category>JUST KEEP BUYING</category>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     
@@ -475,13 +473,13 @@ modernaが上場したのが2018年12月、新型コロナウイルスが広が�
 &lt;p&gt;自分の場合は、仕事の後にランニングしたりジムにいってトレーニングしたり泳いだりしているタイミングを考える時間としていますが、仕事の合間にも意識的に小休止する時間を確保していきたいと思います。&lt;/p&gt;
 </description>
         <pubDate>Mon, 16 Sep 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/09/16/white-space.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/09/16/white-space.html</guid>
+        <link>https://masamichiueta.github.io/reading/2024/09/16/white-space.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/09/16/white-space.html</guid>
         
-        <category>読書</category>
+        <category>WHITE SPACE</category>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     
@@ -498,13 +496,11 @@ modernaが上場したのが2018年12月、新型コロナウイルスが広が�
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 03 Sep 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/hobby/2024/09/03/books-in-july-august.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/hobby/2024/09/03/books-in-july-august.html</guid>
-        
-        <category>読書</category>
+        <link>https://masamichiueta.github.io/reading/2024/09/03/books-in-july-august.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/09/03/books-in-july-august.html</guid>
         
         
-        <category>hobby</category>
+        <category>reading</category>
         
       </item>
     

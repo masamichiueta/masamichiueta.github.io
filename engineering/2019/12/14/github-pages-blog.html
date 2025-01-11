@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKSNDSCLBP"></script>
+     <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-LKSNDSCLBP');
+     </script>
+
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>GitHub Pagesでブログを運用し始めてから4年くらいたった | Masamichi Ueta</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="GitHub Pagesでブログを運用し始めてから4年くらいたった" />
+<meta name="author" content="Masamichi Ueta" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたったので、GitHub Pages運用のTipsでも書いておこうかと思います。" />
+<meta property="og:description" content="このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたったので、GitHub Pages運用のTipsでも書いておこうかと思います。" />
+<link rel="canonical" href="https://masamichiueta.github.io/engineering/2019/12/14/github-pages-blog.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/engineering/2019/12/14/github-pages-blog.html" />
+<meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichiueta.github.io/assets/posts/2019-12-14/cover.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-12-14T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://masamichiueta.github.io/assets/posts/2019-12-14/cover.png" />
+<meta property="twitter:title" content="GitHub Pagesでブログを運用し始めてから4年くらいたった" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Masamichi Ueta"},"dateModified":"2019-12-14T00:00:00+09:00","datePublished":"2019-12-14T00:00:00+09:00","description":"このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたったので、GitHub Pages運用のTipsでも書いておこうかと思います。","headline":"GitHub Pagesでブログを運用し始めてから4年くらいたった","image":"https://masamichiueta.github.io/assets/posts/2019-12-14/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/engineering/2019/12/14/github-pages-blog.html"},"url":"https://masamichiueta.github.io/engineering/2019/12/14/github-pages-blog.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/main.css">
+     <link rel="canonical" href="https://masamichiueta.github.io/engineering/2019/12/14/github-pages-blog.html">
+     <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
+          href="https://masamichiueta.github.io/feed.xml">
+     </script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
+    <div class="container">
+      <div class="dynamic-navbar">
+        <ul class="dn-list">
+          <li class="dn-item dn-menuicon">
+            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+              <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+              </span>
+              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+              </span>
+            </label>
+            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span
+                class="dn-menuanchor-label">Open Menu</span> </a>
+            <a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span
+                class="dn-menuanchor-label">Close Menu</span> </a>
+          </li>
+          <li class="dn-item dn-logo">
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+          </li>
+        </ul>
+      </div>
+      <div class="static-navbar">
+        <div class="sn-item sn-logo">
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+        </div>
+        <ul class="sn-list">
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/">Blog</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/about.html">About</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//x.com/masamichiueta" target="_blank">X</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//github.com/masamichiueta" target="_blank">GitHub</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-12-14/cover.png)">
+  <div class="overlay"></div>
+  
+    <div class="d-flex align-items-center justify-content-between h-100 position-relative">
+      <div class="container">
+        <h1 itemprop="name headline">GitHub Pagesでブログを運用し始めてから4年くらいたった</h1>
+        <p>
+          <time datetime="2019-12-14T00:00:00+09:00" itemprop="datePublished">2019/12/14</time>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <div class="text-center text-body-secondary">
+    <small>画像出典：<a href="https://pages.github.com">GitHubサイト</a>よりスクリーンショット</small>
+  </div>
+  
+
+  <section class="post-content py-5">
+    <div class="container small-container">
+      <div class="row justify-content-center">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="article-body" itemprop="articleBody">
+            <div>
+              <p>このサイトはGitHub Pagesで運用しています。</p>
+
+<p>運用を開始してから4年くらいたったのでGitHub Pages運用のTipsでも書いておこうかと思います。</p>
+
+<h2 id="github-pageのいいところ">GitHub Pageのいいところ</h2>
+
+<p>GitHub Pagesのいいところは、なんといっても無料で使えるところとサーバーを管理する必要がないところです。GitHubのリポジトリにコンテンツを置いておけばサイトを作ることができます。</p>
+
+<p>また、<code class="language-plaintext highlighter-rouge">username.github.io</code>というドメインだけでなく、自分で取得したカスタムドメインが使えたりSSL(https)にも無料で対応できる、という点も本当に素晴らしいなと思います。</p>
+
+<h2 id="jekyllとテンプレート">Jekyllとテンプレート</h2>
+<p>GitHub Pagesはhtmlファイルをおけばサイトとして運用できますが、<a href="https://jekyllrb-ja.github.io">Jekyll</a>というブログ・静的Webサイトを生成するツールをつかえば、ブログを作ることができます。私のサイトもJekyllを使っています。Jekyllにはブログテーマが色々と用意されているので、公開されているテーマを使うことができます。</p>
+
+<p><a href="http://jekyllthemes.org">Jekyll Themes</a></p>
+
+<p>本サイトでは、テンプレートは使わずに、Jekyllの仕組みに則って自分のオリジナルのデザインを使用しています。テーマの作り方はWordpressに近くて、テンプレートとなるhtmlをJekyllのルールにしたがって作っていくという流れです。自分で作るとCSSやJavaScriptを柔軟に使うことができて、やっぱりいいですね。</p>
+
+<h2 id="リポジトリの運用">リポジトリの運用</h2>
+
+<p>GitHub Pagesは<code class="language-plaintext highlighter-rouge">master</code>ブランチの内容が反映されます。Jeykllのテンプレートテーマを使えば何も考えずに<code class="language-plaintext highlighter-rouge">master</code>にコンテンツを入れておけばいいのですが、本サイトのようにテンプレートテーマを使っていない場合は工夫が必要です。</p>
+
+<p>jekyllでビルドした結果の静的ページのファイルをmasterブランチに置く必要があるからです。</p>
+
+<p>本サイトでは、<code class="language-plaintext highlighter-rouge">master</code>ブランチと<code class="language-plaintext highlighter-rouge">source</code>ブランチを作成して運用しています。</p>
+
+<p><code class="language-plaintext highlighter-rouge">master</code>ブランチは直接触らずにビルドした結果を入れておくブランチにしています。<code class="language-plaintext highlighter-rouge">source</code>ブランチにはサイトの元となるjekyllのソースコードがあります。実は<code class="language-plaintext highlighter-rouge">source</code>ブランチがリポジトリの本当のルートディレクトリになっています。<code class="language-plaintext highlighter-rouge">source</code>ブランチでビルドした結果を<code class="language-plaintext highlighter-rouge">_site</code>というディレクトリに入れていて、この<code class="language-plaintext highlighter-rouge">_site</code>というディレクトリが、<code class="language-plaintext highlighter-rouge">master</code>ブランチに紐づいています。</p>
+
+<p>こうすることで、<code class="language-plaintext highlighter-rouge">master</code>はビルドされた結果を表示する静的サイト、<code class="language-plaintext highlighter-rouge">source</code>ブランチは<code class="language-plaintext highlighter-rouge">master</code>に置くファイルを生成するためのソースコードが入ったブランチにできます。</p>
+
+<p>この運用で全く問題なくできているので、おすすめです。</p>
+
+<h2 id="seo対策">SEO対策</h2>
+
+<p>SEO対策は<code class="language-plaintext highlighter-rouge">Jekyll SEO Tag</code>というプラグインを入れているのと、Google Search Consoleにも一応登録しています。</p>
+
+<p>とはいえ、やはりコンテンツが大事だな、という結論です。</p>
+
+<p>記事が少ないころはあまり検索しても出てこないな、という感じでしたが、記事が増えてくるのとコンテンツが増えてくるにしたがって、いくつかの記事は検索でも上位に出てくるようになってきました。</p>
+
+<h2 id="ローカライズ">ローカライズ</h2>
+
+<p>記事のカテゴリには英語を使っています。そのカテゴリ名がurlに反映されるからです。しかしサイドバーに出るカテゴリ名は日本語で表示したいので、<code class="language-plaintext highlighter-rouge">Slug2Name</code>というプラグインを使っています。</p>
+
+<p><a href="http://kerotaa.github.io/programming/2013/06/16/jekyll-category-slug-to-name-filter/">英語名カテゴリーを日本語表記に変換するフィルター</a></p>
+
+<p><code class="language-plaintext highlighter-rouge">_config.yml</code>に</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>category_slugs:
+  development: "開発"
+  family: "家族"
+  design: "デザイン"
+  hobby: "趣味"
+</code></pre></div></div>
+
+<p>のように書くとカテゴリ名が日本語で表示されるようにしています。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>GitHub Pagesでブログを運営するTipsを書いてみました。Wordpressのようにアップデートの対応や、サーバーの管理もしなくていいし、無料でできるし、SSLも有効だしカスタムドメインも使えるし、マークダウンでブログがかける、ということで、GitHub Pagesとてもおすすめです。</p>
+
+            </div>
+            
+            <p class="pt-5">
+              <a class="badge text-bg-light"
+                href="https://masamichiueta.github.io/category/engineering/index.html">エンジニアリング</a>
+              
+              <span class="badge text-bg-light">GitHub Pages</span>
+              
+              <span class="badge text-bg-light">ブログ</span>
+              
+              <span class="badge text-bg-light">無料</span>
+              
+            </p>
+            
+            <div>
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
+                data-show-count="false">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </article>
+        <hr />
+        <div>
+          <h3>関連記事</h3>
+          <ul class="list-unstyled pb-5">
+            
+            
+            
+
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2024/03/24/try-swift-2024.html">
+                <small class="decoration-none text-muted">2024/3/24</small>
+                <h3 class="mt-0 text-body-emphasis">try! Swift Tokyo 2024</h3>
+                <p class="text-body">try! Swift Tokyo 2024の参加メモ</p>
+                
+                <div alt="try! Swift Tokyo 2024" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2024-03-24/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Swift</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/31/hide-tabbar-swiftui.html">
+                <small class="decoration-none text-muted">2023/1/31</small>
+                <h3 class="mt-0 text-body-emphasis">SwiftUIでTabBarを非表示にする</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">SwiftUI</span>
+                  
+                  <span class="badge text-bg-light">TabBar</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/14/bootstrap-dark-mode.html">
+                <small class="decoration-none text-muted">2023/1/14</small>
+                <h3 class="mt-0 text-body-emphasis">Bootstrap5.3で追加されたダークモードに対応してみました</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Bootstrap</span>
+                  
+                  <span class="badge text-bg-light">DarkMode</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html">
+                <small class="decoration-none text-muted">2021/2/17</small>
+                <h3 class="mt-0 text-body-emphasis">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">homebrew</span>
+                  
+                  <span class="badge text-bg-light">macOS Big Sur</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/12/01/m1-macbook-rbenv-setup.html">
+                <small class="decoration-none text-muted">2020/12/1</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
+                <p class="text-body">先日購入したApple Silicon搭載 MacBook Pro M1にこのブログをビルドするためにHomebrewとrbenvをインストールしたのでメモ。</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">Homebrew</span>
+                  
+                  <span class="badge text-bg-light">rbenv</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <small class="decoration-none text-muted">2020/11/27</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
+                <p class="text-body">Apple Silicon搭載のMacBook Pro 13インチを仕事用に購入したのですが、クリーンインストールしたところ文鎮化しかけたので記録しておきます。</p>
+                
+                <div alt="Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-11-27/cover.jpeg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">MacBook Pro</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">M1</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">Platform State of the Unionまとめ</h3>
+                <p class="text-body">Platform State of the Unioまとめ</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-keynote.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">WWDC2020キーノートまとめ</h3>
+                <p class="text-body">WWDC2020 キーノートまとめ</p>
+                
+                <div alt="WWDC2020キーノートまとめ" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-06-23/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <small class="decoration-none text-muted">2020/5/31</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
+                <p class="text-body">Jekyllでは既存のテーマを使うこともできるのですが、さらに一歩踏み込んで、自分で既存のテーマをカスタマイズしたり、テーマを作ることもできます。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-31/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <small class="decoration-none text-muted">2020/5/28</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
+                <p class="text-body">前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-28/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+  <hr />
+</div>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <div class="py-4">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/">Blog</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/about.html">About</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//x.com/masamichiueta">X</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//github.com/masamichiueta">GitHub</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
+        </li>
+      </ul>
+      <p>© <script>document.write(new Date().getFullYear());</script> Masamichi Ueta</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/js/site.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

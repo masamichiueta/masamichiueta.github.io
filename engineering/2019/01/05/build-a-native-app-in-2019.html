@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKSNDSCLBP"></script>
+     <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-LKSNDSCLBP');
+     </script>
+
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>2019年にネイティブアプリを開発する方法 | Masamichi Ueta</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="2019年にネイティブアプリを開発する方法" />
+<meta name="author" content="Masamichi Ueta" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="AppleがAppStoreを開始してから10年が経ちました。たくさんの人々がアプリを使っていますし、2019年もこのアプリプラットフォーム上で多くのイノヴェイションが生まれると思います。これまで様々なプラットフォームで色々なフレームワークを使ってアプリを開発してきました。今はSwiftでiOSアプリを開発していますが、過去にはWindowsアプリを開発していたり、ReactやVueといったフレームワークでWebアプリを開発したり、ReactNativeやFlutterでマルチプラットフォーム向けのネイティブアプリを開発したりしました。過去数年の間に、色々なツールが出てきては消えていきましたが、2019年にアプリを開発するとしたら以下の3つかなと思っています。" />
+<meta property="og:description" content="AppleがAppStoreを開始してから10年が経ちました。たくさんの人々がアプリを使っていますし、2019年もこのアプリプラットフォーム上で多くのイノヴェイションが生まれると思います。これまで様々なプラットフォームで色々なフレームワークを使ってアプリを開発してきました。今はSwiftでiOSアプリを開発していますが、過去にはWindowsアプリを開発していたり、ReactやVueといったフレームワークでWebアプリを開発したり、ReactNativeやFlutterでマルチプラットフォーム向けのネイティブアプリを開発したりしました。過去数年の間に、色々なツールが出てきては消えていきましたが、2019年にアプリを開発するとしたら以下の3つかなと思っています。" />
+<link rel="canonical" href="https://masamichiueta.github.io/engineering/2019/01/05/build-a-native-app-in-2019.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/engineering/2019/01/05/build-a-native-app-in-2019.html" />
+<meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichiueta.github.io/assets/posts/2019-01-05/cover.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-01-05T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://masamichiueta.github.io/assets/posts/2019-01-05/cover.jpg" />
+<meta property="twitter:title" content="2019年にネイティブアプリを開発する方法" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Masamichi Ueta"},"dateModified":"2019-01-05T00:00:00+09:00","datePublished":"2019-01-05T00:00:00+09:00","description":"AppleがAppStoreを開始してから10年が経ちました。たくさんの人々がアプリを使っていますし、2019年もこのアプリプラットフォーム上で多くのイノヴェイションが生まれると思います。これまで様々なプラットフォームで色々なフレームワークを使ってアプリを開発してきました。今はSwiftでiOSアプリを開発していますが、過去にはWindowsアプリを開発していたり、ReactやVueといったフレームワークでWebアプリを開発したり、ReactNativeやFlutterでマルチプラットフォーム向けのネイティブアプリを開発したりしました。過去数年の間に、色々なツールが出てきては消えていきましたが、2019年にアプリを開発するとしたら以下の3つかなと思っています。","headline":"2019年にネイティブアプリを開発する方法","image":"https://masamichiueta.github.io/assets/posts/2019-01-05/cover.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/engineering/2019/01/05/build-a-native-app-in-2019.html"},"url":"https://masamichiueta.github.io/engineering/2019/01/05/build-a-native-app-in-2019.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/main.css">
+     <link rel="canonical" href="https://masamichiueta.github.io/engineering/2019/01/05/build-a-native-app-in-2019.html">
+     <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
+          href="https://masamichiueta.github.io/feed.xml">
+     </script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
+    <div class="container">
+      <div class="dynamic-navbar">
+        <ul class="dn-list">
+          <li class="dn-item dn-menuicon">
+            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+              <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+              </span>
+              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+              </span>
+            </label>
+            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span
+                class="dn-menuanchor-label">Open Menu</span> </a>
+            <a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span
+                class="dn-menuanchor-label">Close Menu</span> </a>
+          </li>
+          <li class="dn-item dn-logo">
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+          </li>
+        </ul>
+      </div>
+      <div class="static-navbar">
+        <div class="sn-item sn-logo">
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+        </div>
+        <ul class="sn-list">
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/">Blog</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/about.html">About</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//x.com/masamichiueta" target="_blank">X</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//github.com/masamichiueta" target="_blank">GitHub</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-01-05/cover.jpg)">
+  <div class="overlay"></div>
+  
+    <div class="d-flex align-items-center justify-content-between h-100 position-relative">
+      <div class="container">
+        <h1 itemprop="name headline">2019年にネイティブアプリを開発する方法</h1>
+        <p>
+          <time datetime="2019-01-05T00:00:00+09:00" itemprop="datePublished">2019/1/5</time>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <div class="text-center text-body-secondary">
+    <small>画像出典：Photo by <a href="https://unsplash.com/photos/A6JxK37IlPo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bagus Hernawan</a> on <a href="https://unsplash.com/search/photos/app?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></small>
+  </div>
+  
+
+  <section class="post-content py-5">
+    <div class="container small-container">
+      <div class="row justify-content-center">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="article-body" itemprop="articleBody">
+            <div>
+              <p><a href="https://medium.com/@masamichiueta/how-to-build-a-native-app-in-2019-b7f490a17846">Mediumに書いた記事</a>の日本語版となります。</p>
+
+<hr />
+<p>2020/01/01追記
+2020はこちら　<a href="https://masamichiueta.github.io/development/2020/01/01/build-a-native-app-in-2020.html">2020年にネイティブアプリを開発する方法</a>
+—</p>
+
+<p>AppleがAppStoreを開始してから10年が経ちました。たくさんの人々がアプリを使っていますし、2019年もこのアプリプラットフォーム上で多くのイノヴェイションが生まれると思います。</p>
+
+<p>これまで様々なプラットフォームで色々なフレームワークを使ってアプリを開発してきました。今はSwiftでiOSアプリを開発していますが、過去にはWindowsアプリを開発していたり、ReactやVueといったフレームワークでWebアプリを開発したり、ReactNativeやFlutterでマルチプラットフォーム向けのネイティブアプリを開発したりしました。過去数年の間に、色々なツールが出てきては消えていきましたが、2019年にアプリを開発するとしたら以下の3つかなと思っています。</p>
+
+<h2 id="1-ネイティブ言語ネイティブプラットフォーム">1. ネイティブ言語、ネイティブプラットフォーム</h2>
+
+<p><img src="/assets/posts/2019-01-05/swift.jpeg" alt="Swift" title="Swift" /></p>
+
+<p>iOSだと、Swift(かObjective-C)、Xcode、UIKitです。</p>
+
+<p>Androidだと、Kotlin(かJava)、AndroidStudio(か他のIDE)、Android SDKです。</p>
+
+<p>2019年でもネイティブアプリを開発するにはこれが一番シンプルな手段だと思います。</p>
+
+<p>ツールやSDKや開発言語は公式でサポートされていて、それぞれ統合されていますし、最新のAPIを使ったりするのももちろん簡単にできます。フレームワークのバージョンを管理する手間や、よくわからないエラーに悩まされることもありません。それにデバイスに最適化されたUXを開発することにフォーカスすることができます。</p>
+
+<p>ただ、ずっと言われているように、iOS,Androidの両方のプラットフォームそれぞれにアプリを開発する必要があります。</p>
+
+<h2 id="2-react-native">2. React Native</h2>
+
+<p><img src="/assets/posts/2019-01-05/react.png" alt="React" title="React" /></p>
+
+<p>React NativeはiOS, Androidのマルチプラットフォームに対してネイティブアプリを開発できるFacebook製のフレームワークです。</p>
+
+<p>React NativeはReactと同じコーディングスタイルなので、JavaScriptやReactをよく知っているWeb開発者のかたは取り組みやすいと思います。Reactを知らない場合は、まずReactを学ぶ必要があります。</p>
+
+<p>Reactで有名なアーキテクチャはReduxのようなFluxアーキテクチャで、スケーラブルなアーキテクチャでアプリを開発していきたい場合には、アーキテクチャやライブラリについても学ぶ必要があります。その分時間はかかります。</p>
+
+<h2 id="3-flutter">3. Flutter</h2>
+
+<p><img src="/assets/posts/2019-01-05/flutter.png" alt="Flutter" title="Flutter" /></p>
+
+<p>FlutterはiOS, Androidのマルチプラットフォームに対してネイティブアプリを開発できるGoogle製のフレームワークです。ネイティブアプリだけでなくWebアプリも開発できるようです。</p>
+
+<p>Flutterは2018年に多くの開発者に注目されたと思います。私も去年Flutterでアプリを開発しました。</p>
+
+<p>FlutterのコーディングスタイルはReactに似ていて、コンポーネントベースのUI（Flutterではウィジェットと言います）、ホットリロード、マルチプラットフォームなどが特徴です。</p>
+
+<p>が、Flutterのもっとも特徴的な点はDartを開発言語として採用している点だと思います。（Go言語ではなく</p>
+
+<p>Flutterでアプリを開発するまではDartは書いたことがありませんでしたが、C#、Java、JavaScriptなどの経験があればDartを書くのは難しいことではないと思います。</p>
+
+<p>Flutterはマテリアルデザインのスキャフフォールディング（テンプレート機能のようなもの）があるので、マテリアルデザインのアプリを作りやすくなっています。2019年新しいアプリを開発するならFlutterは考慮する価値があると思います。</p>
+
+<hr />
+
+<p>以上、2019年にネイティブアプリを開発するオススメの方法を3つ紹介してみました。</p>
+
+<p>私としては長期的な視点で開発する場合には、やはり <strong>1. ネイティブ言語、ネイティブプラットフォーム</strong>がいいかなと思います。React NativeやFlutterはプロトタイピングに向いていると思っています。というのも、すぐに綺麗なアプリを作ることはできますが、スケーラブルなアーキテクチャ設計にするのはなかなか難しいのではと思うのと、最新のAPIに追従していくのが難しいと思うからです。</p>
+
+<p>ただ、開発者として開発していて楽しいものを選ぶことが大事だと思います。</p>
+
+            </div>
+            
+            <p class="pt-5">
+              <a class="badge text-bg-light"
+                href="https://masamichiueta.github.io/category/engineering/index.html">エンジニアリング</a>
+              
+              <span class="badge text-bg-light">アプリ開発</span>
+              
+              <span class="badge text-bg-light">Swift</span>
+              
+              <span class="badge text-bg-light">React Native</span>
+              
+              <span class="badge text-bg-light">Flutter</span>
+              
+            </p>
+            
+            <div>
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
+                data-show-count="false">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </article>
+        <hr />
+        <div>
+          <h3>関連記事</h3>
+          <ul class="list-unstyled pb-5">
+            
+            
+            
+
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2024/03/24/try-swift-2024.html">
+                <small class="decoration-none text-muted">2024/3/24</small>
+                <h3 class="mt-0 text-body-emphasis">try! Swift Tokyo 2024</h3>
+                <p class="text-body">try! Swift Tokyo 2024の参加メモ</p>
+                
+                <div alt="try! Swift Tokyo 2024" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2024-03-24/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Swift</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/31/hide-tabbar-swiftui.html">
+                <small class="decoration-none text-muted">2023/1/31</small>
+                <h3 class="mt-0 text-body-emphasis">SwiftUIでTabBarを非表示にする</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">SwiftUI</span>
+                  
+                  <span class="badge text-bg-light">TabBar</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/14/bootstrap-dark-mode.html">
+                <small class="decoration-none text-muted">2023/1/14</small>
+                <h3 class="mt-0 text-body-emphasis">Bootstrap5.3で追加されたダークモードに対応してみました</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Bootstrap</span>
+                  
+                  <span class="badge text-bg-light">DarkMode</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html">
+                <small class="decoration-none text-muted">2021/2/17</small>
+                <h3 class="mt-0 text-body-emphasis">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">homebrew</span>
+                  
+                  <span class="badge text-bg-light">macOS Big Sur</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/12/01/m1-macbook-rbenv-setup.html">
+                <small class="decoration-none text-muted">2020/12/1</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
+                <p class="text-body">先日購入したApple Silicon搭載 MacBook Pro M1にこのブログをビルドするためにHomebrewとrbenvをインストールしたのでメモ。</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">Homebrew</span>
+                  
+                  <span class="badge text-bg-light">rbenv</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <small class="decoration-none text-muted">2020/11/27</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
+                <p class="text-body">Apple Silicon搭載のMacBook Pro 13インチを仕事用に購入したのですが、クリーンインストールしたところ文鎮化しかけたので記録しておきます。</p>
+                
+                <div alt="Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-11-27/cover.jpeg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">MacBook Pro</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">M1</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">Platform State of the Unionまとめ</h3>
+                <p class="text-body">Platform State of the Unioまとめ</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-keynote.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">WWDC2020キーノートまとめ</h3>
+                <p class="text-body">WWDC2020 キーノートまとめ</p>
+                
+                <div alt="WWDC2020キーノートまとめ" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-06-23/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <small class="decoration-none text-muted">2020/5/31</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
+                <p class="text-body">Jekyllでは既存のテーマを使うこともできるのですが、さらに一歩踏み込んで、自分で既存のテーマをカスタマイズしたり、テーマを作ることもできます。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-31/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <small class="decoration-none text-muted">2020/5/28</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
+                <p class="text-body">前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-28/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+  <hr />
+</div>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <div class="py-4">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/">Blog</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/about.html">About</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//x.com/masamichiueta">X</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//github.com/masamichiueta">GitHub</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
+        </li>
+      </ul>
+      <p>© <script>document.write(new Date().getFullYear());</script> Masamichi Ueta</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/js/site.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

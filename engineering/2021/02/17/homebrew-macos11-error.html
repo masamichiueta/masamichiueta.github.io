@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKSNDSCLBP"></script>
+     <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-LKSNDSCLBP');
+     </script>
+
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>brew upgradeで Your CLT does not support macOS 11というエラーがでた | Masamichi Ueta</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="brew upgradeで Your CLT does not support macOS 11というエラーがでた" />
+<meta name="author" content="Masamichi Ueta" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="エンジニアリング・読書・日常" />
+<meta property="og:description" content="エンジニアリング・読書・日常" />
+<link rel="canonical" href="https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html" />
+<meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-17T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="brew upgradeで Your CLT does not support macOS 11というエラーがでた" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Masamichi Ueta"},"dateModified":"2021-02-17T00:00:00+09:00","datePublished":"2021-02-17T00:00:00+09:00","description":"エンジニアリング・読書・日常","headline":"brew upgradeで Your CLT does not support macOS 11というエラーがでた","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html"},"url":"https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/main.css">
+     <link rel="canonical" href="https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html">
+     <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
+          href="https://masamichiueta.github.io/feed.xml">
+     </script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
+    <div class="container">
+      <div class="dynamic-navbar">
+        <ul class="dn-list">
+          <li class="dn-item dn-menuicon">
+            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+              <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+              </span>
+              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+              </span>
+            </label>
+            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span
+                class="dn-menuanchor-label">Open Menu</span> </a>
+            <a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span
+                class="dn-menuanchor-label">Close Menu</span> </a>
+          </li>
+          <li class="dn-item dn-logo">
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+          </li>
+        </ul>
+      </div>
+      <div class="static-navbar">
+        <div class="sn-item sn-logo">
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+        </div>
+        <ul class="sn-list">
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/">Blog</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/about.html">About</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//x.com/masamichiueta" target="_blank">X</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//github.com/masamichiueta" target="_blank">GitHub</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  
+  <section class="hero background-image-none text-center">
+    <div class="overlay background-color-main"></div>
+    
+    <div class="d-flex align-items-center justify-content-between h-100 position-relative">
+      <div class="container">
+        <h1 itemprop="name headline">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h1>
+        <p>
+          <time datetime="2021-02-17T00:00:00+09:00" itemprop="datePublished">2021/2/17</time>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="post-content py-5">
+    <div class="container small-container">
+      <div class="row justify-content-center">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="article-body" itemprop="articleBody">
+            <div>
+              <p>macOSをBig Surに更新してから、homebrewの更新をするとエラーが発生したのでメモ。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew update
+$ brew upgrade
+</code></pre></div></div>
+
+<p>を実行すると、</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: Your CLT does not support macOS 11
+</code></pre></div></div>
+
+<p>と表示されました。</p>
+
+<p>以下を実行すれば、更新できるようになりました。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo rm -rf /Library/Developer/CommandLineTools
+$ sudo xcode-select --install
+</code></pre></div></div>
+
+            </div>
+            
+            <p class="pt-5">
+              <a class="badge text-bg-light"
+                href="https://masamichiueta.github.io/category/engineering/index.html">エンジニアリング</a>
+              
+              <span class="badge text-bg-light">homebrew</span>
+              
+              <span class="badge text-bg-light">macOS Big Sur</span>
+              
+            </p>
+            
+            <div>
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
+                data-show-count="false">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </article>
+        <hr />
+        <div>
+          <h3>関連記事</h3>
+          <ul class="list-unstyled pb-5">
+            
+            
+            
+
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2024/03/24/try-swift-2024.html">
+                <small class="decoration-none text-muted">2024/3/24</small>
+                <h3 class="mt-0 text-body-emphasis">try! Swift Tokyo 2024</h3>
+                <p class="text-body">try! Swift Tokyo 2024の参加メモ</p>
+                
+                <div alt="try! Swift Tokyo 2024" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2024-03-24/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Swift</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/31/hide-tabbar-swiftui.html">
+                <small class="decoration-none text-muted">2023/1/31</small>
+                <h3 class="mt-0 text-body-emphasis">SwiftUIでTabBarを非表示にする</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">SwiftUI</span>
+                  
+                  <span class="badge text-bg-light">TabBar</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/14/bootstrap-dark-mode.html">
+                <small class="decoration-none text-muted">2023/1/14</small>
+                <h3 class="mt-0 text-body-emphasis">Bootstrap5.3で追加されたダークモードに対応してみました</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Bootstrap</span>
+                  
+                  <span class="badge text-bg-light">DarkMode</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/12/01/m1-macbook-rbenv-setup.html">
+                <small class="decoration-none text-muted">2020/12/1</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
+                <p class="text-body">先日購入したApple Silicon搭載 MacBook Pro M1にこのブログをビルドするためにHomebrewとrbenvをインストールしたのでメモ。</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">Homebrew</span>
+                  
+                  <span class="badge text-bg-light">rbenv</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <small class="decoration-none text-muted">2020/11/27</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
+                <p class="text-body">Apple Silicon搭載のMacBook Pro 13インチを仕事用に購入したのですが、クリーンインストールしたところ文鎮化しかけたので記録しておきます。</p>
+                
+                <div alt="Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-11-27/cover.jpeg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">MacBook Pro</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">M1</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">Platform State of the Unionまとめ</h3>
+                <p class="text-body">Platform State of the Unioまとめ</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-keynote.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">WWDC2020キーノートまとめ</h3>
+                <p class="text-body">WWDC2020 キーノートまとめ</p>
+                
+                <div alt="WWDC2020キーノートまとめ" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-06-23/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <small class="decoration-none text-muted">2020/5/31</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
+                <p class="text-body">Jekyllでは既存のテーマを使うこともできるのですが、さらに一歩踏み込んで、自分で既存のテーマをカスタマイズしたり、テーマを作ることもできます。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-31/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <small class="decoration-none text-muted">2020/5/28</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
+                <p class="text-body">前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-28/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/26/github-pages-blog-part2-jekyll.html">
+                <small class="decoration-none text-muted">2020/5/26</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる</h3>
+                <p class="text-body">JekyllはGitHub Pagesで使用することができる静的サイトのジェネレータです。Jekyllを使うことで、Markdownで書いたブログの記事やhtmlで作ったページをビルドして、公開用のhtmlとして生成することができます。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part2 Jekyllを使ってみる" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-26/cover.png)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+  <hr />
+</div>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <div class="py-4">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/">Blog</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/about.html">About</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//x.com/masamichiueta">X</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//github.com/masamichiueta">GitHub</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
+        </li>
+      </ul>
+      <p>© <script>document.write(new Date().getFullYear());</script> Masamichi Ueta</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/js/site.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

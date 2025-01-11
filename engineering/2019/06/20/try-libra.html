@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKSNDSCLBP"></script>
+     <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-LKSNDSCLBP');
+     </script>
+
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Facebookが発表した仮想通貨Libraを動かしてみる | Masamichi Ueta</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Facebookが発表した仮想通貨Libraを動かしてみる" />
+<meta name="author" content="Masamichi Ueta" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="今週Facebookが仮想通貨Libraを発表しました。ステーブルコインとして価値が一定になるような仮想通貨で、Facebook Messenger, WhatsApp, 専用のウォレットアプリ カリブラ(Calibra)などで利用できるようです。" />
+<meta property="og:description" content="今週Facebookが仮想通貨Libraを発表しました。ステーブルコインとして価値が一定になるような仮想通貨で、Facebook Messenger, WhatsApp, 専用のウォレットアプリ カリブラ(Calibra)などで利用できるようです。" />
+<link rel="canonical" href="https://masamichiueta.github.io/engineering/2019/06/20/try-libra.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/engineering/2019/06/20/try-libra.html" />
+<meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:image" content="https://masamichiueta.github.io/assets/posts/2019-06-20/cover.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-20T00:00:00+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://masamichiueta.github.io/assets/posts/2019-06-20/cover.png" />
+<meta property="twitter:title" content="Facebookが発表した仮想通貨Libraを動かしてみる" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Masamichi Ueta"},"dateModified":"2019-06-20T00:00:00+09:00","datePublished":"2019-06-20T00:00:00+09:00","description":"今週Facebookが仮想通貨Libraを発表しました。ステーブルコインとして価値が一定になるような仮想通貨で、Facebook Messenger, WhatsApp, 専用のウォレットアプリ カリブラ(Calibra)などで利用できるようです。","headline":"Facebookが発表した仮想通貨Libraを動かしてみる","image":"https://masamichiueta.github.io/assets/posts/2019-06-20/cover.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/engineering/2019/06/20/try-libra.html"},"url":"https://masamichiueta.github.io/engineering/2019/06/20/try-libra.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/main.css">
+     <link rel="canonical" href="https://masamichiueta.github.io/engineering/2019/06/20/try-libra.html">
+     <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
+          href="https://masamichiueta.github.io/feed.xml">
+     </script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
+    <div class="container">
+      <div class="dynamic-navbar">
+        <ul class="dn-list">
+          <li class="dn-item dn-menuicon">
+            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+              <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+              </span>
+              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+              </span>
+            </label>
+            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span
+                class="dn-menuanchor-label">Open Menu</span> </a>
+            <a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span
+                class="dn-menuanchor-label">Close Menu</span> </a>
+          </li>
+          <li class="dn-item dn-logo">
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+          </li>
+        </ul>
+      </div>
+      <div class="static-navbar">
+        <div class="sn-item sn-logo">
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+        </div>
+        <ul class="sn-list">
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/">Blog</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/about.html">About</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//x.com/masamichiueta" target="_blank">X</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//github.com/masamichiueta" target="_blank">GitHub</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  
+<section class="hero text-center" style="background-image: url(/assets/posts/2019-06-20/cover.png)">
+  <div class="overlay"></div>
+  
+    <div class="d-flex align-items-center justify-content-between h-100 position-relative">
+      <div class="container">
+        <h1 itemprop="name headline">Facebookが発表した仮想通貨Libraを動かしてみる</h1>
+        <p>
+          <time datetime="2019-06-20T00:00:00+09:00" itemprop="datePublished">2019/6/20</time>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <div class="text-center text-body-secondary">
+    <small>画像出典：<a href="https://developers.libra.org">Libra Developer Site</a></small>
+  </div>
+  
+
+  <section class="post-content py-5">
+    <div class="container small-container">
+      <div class="row justify-content-center">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="article-body" itemprop="articleBody">
+            <div>
+              <p>今週Facebookが仮想通貨Libraを発表しました。</p>
+
+<p>ステーブルコインとして価値が一定になるような仮想通貨で、Facebook Messenger, WhatsApp, 専用のウォレットアプリ カリブラ(Calibra)などで利用できるようです。</p>
+
+<p>Libraを使ったアプリを開発できるMoveというプログラミング言語も発表されています。</p>
+
+<p>LibraのDeveloperサイト <a href="https://developers.libra.org">https://developers.libra.org</a>に、Libraを実行するチュートリアルがあったので、実行してみました。</p>
+
+<h2 id="1-libraをクローンする">1. Libraをクローンする</h2>
+
+<p>まずGitHubからLibraをクローンしてきましょう。</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/libra/libra.git &amp;&amp; cd libra
+</code></pre></div></div>
+
+<h2 id="2-依存ライブラリをインストールする">2. 依存ライブラリをインストールする</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./scripts/dev_setup.sh
+</code></pre></div></div>
+
+<p>スクリプトを実行すると、依存ライブラリをインストールされます。</p>
+
+<h2 id="3-libra-cliを実行する">3. Libra CLIを実行する</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./scripts/cli/start_cli_testnet.sh
+</code></pre></div></div>
+
+<p>ビルドするのに結構時間がかかりました。
+ビルドが終わるとLibra CLIが起動します。</p>
+
+<p><img src="/assets/posts/2019-06-20/libracli.png" alt="Libra CLI" title="Libra CLI" /></p>
+
+<h2 id="4-トランザクションを実行する">4. トランザクションを実行する</h2>
+
+<p>LibraのMy First Transactionのページ <a href="https://developers.libra.org/docs/my-first-transaction">https://developers.libra.org/docs/my-first-transaction</a> に沿って実行していきます。</p>
+
+<h3 id="aliceとbobのアカウントを作成する">AliceとBobのアカウントを作成する</h3>
+
+<h4 id="1-cli-clientがシステムで動いているか確認する">1. CLI Clientがシステムで動いているか確認する</h4>
+
+<p>Libra CLIで <code class="language-plaintext highlighter-rouge">account</code> コマンドを実行します。すると以下のようにコマンドの説明が表示されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Use the following args for this command:
+
+create | c 
+	Create an account. Returns reference ID to use in other operations
+list | la 
+	Print all accounts that were created or loaded
+recover | r &lt;file_path&gt;
+	Recover Libra wallet from the file path
+write | w &lt;file_path&gt;
+	Save Libra wallet mnemonic recovery seed to disk
+mint | mintb | m | mb &lt;receiver_account_ref_id&gt;|&lt;receiver_account_address&gt; &lt;number_of_coins&gt;
+	Mint coins to the account. Suffix 'b' is for blocking
+</code></pre></div></div>
+
+<h4 id="2-aliceのアカウントを作成する">2. Aliceのアカウントを作成する</h4>
+
+<p><code class="language-plaintext highlighter-rouge">account create</code> コマンドを実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% account create
+</code></pre></div></div>
+
+<p>するとアカウントのアドレスが発行されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; Creating/retrieving next account from wallet
+Created/retrieved account #0 address 05f2ce8714d7f6fb6eeb0735477ce31c7ee8087790bc522b1d37a8a107e82f46
+</code></pre></div></div>
+
+<h4 id="3-bobのアカウントを作成する">3. Bobのアカウントを作成する</h4>
+
+<p>もう一度 <code class="language-plaintext highlighter-rouge">account create</code> コマンドを実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% account create
+</code></pre></div></div>
+
+<p>すると次は #1のアカウントが作成されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; Creating/retrieving next account from wallet
+Created/retrieved account #1 address 806ada4d58bab45bf9f3ea1d37d2aa383a750812c16af63a57d69692459a3a97
+</code></pre></div></div>
+
+<h4 id="4-アカウント一覧を表示する">4. アカウント一覧を表示する</h4>
+
+<p><code class="language-plaintext highlighter-rouge">account list</code> コマンドでアカウント一覧を表示できます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% account list
+</code></pre></div></div>
+
+<p>すると先ほど作成したアカウント一覧が表示されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User account index: 0, address: 05f2ce8714d7f6fb6eeb0735477ce31c7ee8087790bc522b1d37a8a107e82f46, sequence number: 0, status: Local
+User account index: 1, address: 806ada4d58bab45bf9f3ea1d37d2aa383a750812c16af63a57d69692459a3a97, sequence number: 0, status: Local
+</code></pre></div></div>
+
+<h3 id="libraコインをaliceとbobのアカウントに追加する">LibraコインをAliceとBobのアカウントに追加する</h3>
+
+<p><code class="language-plaintext highlighter-rouge">account mint</code>コマンドを使いますがこの機能はテストネットのみのようです。</p>
+
+<h4 id="1-110-libraをaliceのアカウントに追加する">1. 110 LibraをAliceのアカウントに追加する</h4>
+
+<p><code class="language-plaintext highlighter-rouge">account mint</code>コマンドでAliceのアカウントに110 Libraを追加します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% account mint 0 110
+</code></pre></div></div>
+
+<p>するとリクエストがサブミットされたことがわかります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; Minting coins
+Mint request submitted
+</code></pre></div></div>
+
+<p>ここではまだリクエストをサブミットしただけで実際に110Libra付与されたわけではありません。</p>
+
+<h4 id="2-bobのアカウントに52libra追加する">2. Bobのアカウントに52Libra追加する</h4>
+
+<p>Alice同様、BobのアカウントにもLibraを追加します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% account mint 1 52
+</code></pre></div></div>
+
+<p>こちらもリクエストがサブミットされます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt; Minting coins
+Mint request submitted
+</code></pre></div></div>
+
+<h4 id="3-残高を確認する">3. 残高を確認する</h4>
+
+<p>残高を確認するには、<code class="language-plaintext highlighter-rouge">query</code>コマンドを使います。</p>
+
+<p>Aliceの残高を確認します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% query balance 0
+</code></pre></div></div>
+
+<p>すると先ほど付与した110libraあることがわかります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Balance is: 110
+</code></pre></div></div>
+
+<p>同様にBobの残高も確認します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% query balance 1
+Balance is: 52
+</code></pre></div></div>
+
+<h3 id="トランザクションを実行する">トランザクションを実行する</h3>
+
+<h4 id="アカウントのシーケンス番号を取得する">アカウントのシーケンス番号を取得する</h4>
+
+<p>トランザクションを実行する前に、シーケンス番号を取得します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% query sequence 0
+&gt;&gt; Getting current sequence number
+Sequence number is: 0
+libra% query sequence 1
+&gt;&gt; Getting current sequence number
+Sequence number is: 0
+</code></pre></div></div>
+
+<p>Alice, Bobのどちらもシーケンス番号は0です。これはまだどちらのアカウントもトランザクションを実行していないことを意味します。</p>
+
+<h4 id="送金する">送金する</h4>
+
+<p>送金するには <code class="language-plaintext highlighter-rouge">transfer</code> コマンドを使用します。</p>
+
+<p>Alice(0)からBob(1)に10Libraを送金します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% transfer 0 1 10
+</code></pre></div></div>
+
+<p>すると送金リクエストがバリデータに送信されたことがわかります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% transfer 0 1 10
+&gt;&gt; Transferring
+Transaction submitted to validator
+To query for transaction status, run: query txn_acc_seq 0 0 &lt;fetch_events=true|false&gt;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">query txn_acc_seq 0 0 true</code> コマンドを実行することでトランザクションの詳細をみることができます。</p>
+
+<p>これでバリデータに承認されると送金が行われます。</p>
+
+<h4 id="送金後のシーケンス番号を確認する">送金後のシーケンス番号を確認する</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% query sequence 0
+&gt;&gt; Getting current sequence number
+Sequence number is: 1
+libra% query sequence 1
+&gt;&gt; Getting current sequence number
+Sequence number is: 0
+</code></pre></div></div>
+
+<p>Aliceのシーケンス番号は1, Bobのシーケンス番号は0のままです。AliceからBobに送金したのでAliceのシーケンス番号を1つ上がっています。</p>
+
+<h4 id="aliceとbobの残高を確認する">AliceとBobの残高を確認する</h4>
+
+<p><code class="language-plaintext highlighter-rouge">query balance</code>コマンドを使って、両者の残高を確認しましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>libra% query balance 0
+Balance is: 100
+libra% query balance 1
+Balance is: 62
+</code></pre></div></div>
+
+<p>以上で送金ができました！</p>
+
+<h2 id="試すのは簡単">試すのは簡単</h2>
+
+<p>Libraの開発者サイトを参考にテストネットで試してみましたが、Libraを送金するのは非常に簡単ですね。</p>
+
+<p>今度はMoveについても試してみたいと思います。</p>
+
+            </div>
+            
+            <p class="pt-5">
+              <a class="badge text-bg-light"
+                href="https://masamichiueta.github.io/category/engineering/index.html">エンジニアリング</a>
+              
+              <span class="badge text-bg-light">Libra</span>
+              
+              <span class="badge text-bg-light">Facebook</span>
+              
+              <span class="badge text-bg-light">CryptoCurrency</span>
+              
+              <span class="badge text-bg-light">Blockchain</span>
+              
+            </p>
+            
+            <div>
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
+                data-show-count="false">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </article>
+        <hr />
+        <div>
+          <h3>関連記事</h3>
+          <ul class="list-unstyled pb-5">
+            
+            
+            
+
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2024/03/24/try-swift-2024.html">
+                <small class="decoration-none text-muted">2024/3/24</small>
+                <h3 class="mt-0 text-body-emphasis">try! Swift Tokyo 2024</h3>
+                <p class="text-body">try! Swift Tokyo 2024の参加メモ</p>
+                
+                <div alt="try! Swift Tokyo 2024" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2024-03-24/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Swift</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/31/hide-tabbar-swiftui.html">
+                <small class="decoration-none text-muted">2023/1/31</small>
+                <h3 class="mt-0 text-body-emphasis">SwiftUIでTabBarを非表示にする</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">SwiftUI</span>
+                  
+                  <span class="badge text-bg-light">TabBar</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/14/bootstrap-dark-mode.html">
+                <small class="decoration-none text-muted">2023/1/14</small>
+                <h3 class="mt-0 text-body-emphasis">Bootstrap5.3で追加されたダークモードに対応してみました</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Bootstrap</span>
+                  
+                  <span class="badge text-bg-light">DarkMode</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html">
+                <small class="decoration-none text-muted">2021/2/17</small>
+                <h3 class="mt-0 text-body-emphasis">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">homebrew</span>
+                  
+                  <span class="badge text-bg-light">macOS Big Sur</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/12/01/m1-macbook-rbenv-setup.html">
+                <small class="decoration-none text-muted">2020/12/1</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
+                <p class="text-body">先日購入したApple Silicon搭載 MacBook Pro M1にこのブログをビルドするためにHomebrewとrbenvをインストールしたのでメモ。</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">Homebrew</span>
+                  
+                  <span class="badge text-bg-light">rbenv</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <small class="decoration-none text-muted">2020/11/27</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
+                <p class="text-body">Apple Silicon搭載のMacBook Pro 13インチを仕事用に購入したのですが、クリーンインストールしたところ文鎮化しかけたので記録しておきます。</p>
+                
+                <div alt="Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-11-27/cover.jpeg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">MacBook Pro</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">M1</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">Platform State of the Unionまとめ</h3>
+                <p class="text-body">Platform State of the Unioまとめ</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-keynote.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">WWDC2020キーノートまとめ</h3>
+                <p class="text-body">WWDC2020 キーノートまとめ</p>
+                
+                <div alt="WWDC2020キーノートまとめ" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-06-23/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <small class="decoration-none text-muted">2020/5/31</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
+                <p class="text-body">Jekyllでは既存のテーマを使うこともできるのですが、さらに一歩踏み込んで、自分で既存のテーマをカスタマイズしたり、テーマを作ることもできます。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-31/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <small class="decoration-none text-muted">2020/5/28</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
+                <p class="text-body">前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-28/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+  <hr />
+</div>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <div class="py-4">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/">Blog</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/about.html">About</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//x.com/masamichiueta">X</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//github.com/masamichiueta">GitHub</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
+        </li>
+      </ul>
+      <p>© <script>document.write(new Date().getFullYear());</script> Masamichi Ueta</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/js/site.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

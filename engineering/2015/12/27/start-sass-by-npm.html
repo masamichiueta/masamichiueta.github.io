@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKSNDSCLBP"></script>
+     <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-LKSNDSCLBP');
+     </script>
+
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>npmでミニマムに始めるSass | Masamichi Ueta</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="npmでミニマムに始めるSass" />
+<meta name="author" content="Masamichi Ueta" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="description" content="GitHub Pagesでいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。" />
+<meta property="og:description" content="GitHub Pagesでいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。" />
+<link rel="canonical" href="https://masamichiueta.github.io/engineering/2015/12/27/start-sass-by-npm.html" />
+<meta property="og:url" content="https://masamichiueta.github.io/engineering/2015/12/27/start-sass-by-npm.html" />
+<meta property="og:site_name" content="Masamichi Ueta" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-12-27T00:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="npmでミニマムに始めるSass" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Masamichi Ueta"},"dateModified":"2015-12-27T00:00:00+09:00","datePublished":"2015-12-27T00:00:00+09:00","description":"GitHub Pagesでいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。","headline":"npmでミニマムに始めるSass","mainEntityOfPage":{"@type":"WebPage","@id":"https://masamichiueta.github.io/engineering/2015/12/27/start-sass-by-npm.html"},"url":"https://masamichiueta.github.io/engineering/2015/12/27/start-sass-by-npm.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/main.css">
+     <link rel="canonical" href="https://masamichiueta.github.io/engineering/2015/12/27/start-sass-by-npm.html">
+     <link rel="alternate" type="application/rss+xml" title="Masamichi Ueta"
+          href="https://masamichiueta.github.io/feed.xml">
+     </script>
+     <!-- Adsense -->
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3655474149264343" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
+  <nav id="nav">
+    <div class="container">
+      <div class="dynamic-navbar">
+        <ul class="dn-list">
+          <li class="dn-item dn-menuicon">
+            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
+              <span class="dn-menuicon-bread dn-menuicon-bread-top">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
+              </span>
+              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
+                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
+              </span>
+            </label>
+            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span
+                class="dn-menuanchor-label">Open Menu</span> </a>
+            <a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span
+                class="dn-menuanchor-label">Close Menu</span> </a>
+          </li>
+          <li class="dn-item dn-logo">
+            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+          </li>
+        </ul>
+      </div>
+      <div class="static-navbar">
+        <div class="sn-item sn-logo">
+          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+        </div>
+        <ul class="sn-list">
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/">Blog</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="https://masamichiueta.github.io/about.html">About</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//x.com/masamichiueta" target="_blank">X</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//github.com/masamichiueta" target="_blank">GitHub</a>
+          </li>
+          <li class="sn-item sn-item-menu">
+            <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" target="_blank">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  
+  <section class="hero background-image-none text-center">
+    <div class="overlay background-color-main"></div>
+    
+    <div class="d-flex align-items-center justify-content-between h-100 position-relative">
+      <div class="container">
+        <h1 itemprop="name headline">npmでミニマムに始めるSass</h1>
+        <p>
+          <time datetime="2015-12-27T00:00:00+09:00" itemprop="datePublished">2015/12/27</time>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="post-content py-5">
+    <div class="container small-container">
+      <div class="row justify-content-center">
+        <article itemscope itemtype="http://schema.org/BlogPosting">
+          <div class="article-body" itemprop="articleBody">
+            <div>
+              <blockquote>
+  <p>This post was originally posted in <a href="http://qiita.com/masamichiueta/items/0074f002d8f1663577a2">Qiita</a> at 12/27 2015.</p>
+</blockquote>
+
+<hr />
+
+<p><a href="https://github.com/masamichiueta">GitHub Pages</a>でいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。</p>
+
+<p>sassを使おうとして、調べるとgemでsassをインストールして始めるという記事が見つかります。</p>
+<ul>
+  <li><a href="http://qiita.com/ritukiii/items/67b3c50002b48c6186d6">CSSのメタ言語Sass(SCSS)、LESSの完全入門</a></li>
+</ul>
+
+<p>また、Compassというものも出てきたりします。</p>
+<ul>
+  <li><a href="http://liginc.co.jp/designer/archives/11623#a30">CSSの常識が変わる！「Compass」の基礎から応用まで！</a></li>
+</ul>
+
+<p>またフロントエンドの環境などについて知っていたりすると、gruntやgulpといったタスクランナーも使えるんじゃないかと思ったりして、それらでsassを使う方法も出てきたりします。</p>
+<ul>
+  <li><a href="http://qiita.com/yokoh9/items/0a69dd5f8753c1ea54f5">gulp インストール～基本設定の備忘録（windows）</a></li>
+</ul>
+
+<p>ふむふむ、といった感じで記事を読んだりするのですが、やらないといけないことやルール、覚えないといけないことが多くて、結局どうするのがいいのだろうと迷ってしまいました。</p>
+
+<p>gruntやgulpは確かに便利ですが、ミニマムに始めるにはちょっとやることが多い気がしたり、一週間後に見た時にどうやるか忘れてる自信もあります。
+ミニマムにやる方法を調べる中たどり着いたのが、npmのrun scriptを使うという方法です。</p>
+<ul>
+  <li><a href="http://t32k.me/mol/log/npm-run-script/">Grunt/Gulpで憔悴したおっさんの話</a></li>
+  <li><a href="https://medium.com/@brianhan/watch-compile-your-sass-with-npm-9ba2b878415b#.qcwi0gu2w">Watch &amp; Compile your Sass with npm.</a></li>
+</ul>
+
+<h1 id="npm">npm</h1>
+<p>npmについては以下の記事がわかりやすいです。</p>
+<ul>
+  <li><a href="http://qiita.com/megane42/items/2ab6ffd866c3f2fda066">npm とか bower とか一体何なんだよ！Javascript 界隈の文脈を理解しよう</a></li>
+</ul>
+
+<p>npmはnode.jsで書かれたツールのパッケージマネージャで、gruntやbowerもnpmでインストールします。<a href="http://t32k.me/mol/log/npm-run-script/">Grunt/Gulpで憔悴したおっさんの話</a>によると、”Node.js/npmに関する知識とかUNIXに関する知識は、数ヶ月で変わることもない＂ので、npmでやるのが簡単そうです。</p>
+
+<h1 id="始める">始める</h1>
+<p>先に大まかな流れを書くと以下のようになります。
+npmのみを使うので、シンプルです。</p>
+
+<ul>
+  <li>nodeをインストールする</li>
+  <li>npmでsassのコンパイルに必要なツール、ファイルの監視に必要なツールをインストールする</li>
+  <li>npm run scriptでsassをコンパイルする</li>
+</ul>
+
+<p>では、サンプルを用いて詳細を書きます。</p>
+
+<h2 id="環境">環境</h2>
+<p>使用している環境は以下です。</p>
+<ul>
+  <li>OS: OSX 10.11.2 El Capitan</li>
+  <li>パッケージマネージャ: homebrew 0.9.5</li>
+</ul>
+
+<h2 id="nodejsのインストール">node.jsのインストール</h2>
+
+<p>homebrewでnode.jsをインストールします。
+<code class="language-plaintext highlighter-rouge">$ brew install node</code></p>
+
+<h2 id="プロジェクトを作る">プロジェクトを作る</h2>
+<p>例として、Webサイト用のディレクトリをデスクトップに作成します。ここでは、mysiteというディレクトリにします。</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ mkdir ~/Desktop/mysite &amp;&amp; cd ~/Desktop/mysite</code></p>
+
+<p>npmの初期設定を行います。
+<code class="language-plaintext highlighter-rouge">$ npm init</code></p>
+
+<p>いろいろ聞かれますが、とりあえずエンター。</p>
+
+<p>sass用のディレクトリ scss 、sassをコンパイルした後にcssを出力する用のディレクトリ cssを作成します。
+<code class="language-plaintext highlighter-rouge">$ mkdir scss css</code></p>
+
+<p>ソースをgitで管理する場合に、npmを使用した際に作成されるnode_moduleは不必要なので、gitで管理しないように.gitignoreを作成します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ touch .gitignore
+</code></pre></div></div>
+
+<p>.gitignoreに関しては、GitHubによって公開されている<a href="https://github.com/github/gitignore/blob/master/Node.gitignore">.gitignoreリポジトリのNode.gitignore</a>を参考にするといいと思います。</p>
+
+<p>次にscssファイルを作成します。</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ touch style.scss</code></p>
+
+<p>以上でプロジェクトの構成は終了です。</p>
+
+<h2 id="npmでツールをインストールする">npmでツールをインストールする</h2>
+
+<p>sassのコンパイルに必要なツール node-sass と、ファイルの更新管理に使用するツール nodemon をnpmでインストールします。</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ npm install -D node-sass nodemon</code></p>
+
+<h2 id="sassをコンパイルする">sassをコンパイルする</h2>
+
+<p>npmを使用するとpackage.jsonというファイルができていますが、その中のscriptsの部分に、sassコンパイル用のscript, 監視用のscriptを記述します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+  "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
+  "watch-css": "nodemon -e scss -x \"npm run build-css\""
+}
+</code></pre></div></div>
+
+<p>build-css, watch-cssの部分を npm run の後に書くことで、コマンドを実行できます。</p>
+
+<p>npm run build-css コマンドを実行すると scss/style.scss が css/style.css にコンパイルされ、 npm run watch-css コマンドを実行するとscssの変更が監視されます。</p>
+
+<p>style.scssにコードを書いて、コンパイルします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$my-color: #3d3d3d;
+
+body {
+  color: $my-color;
+}
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">$ npm run build-css</code></p>
+
+<p>これで、css/style.css が作成され、以下のようなファイルができると思います。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>body {
+  color: #3d3d3d;
+}
+</code></pre></div></div>
+
+<h1 id="シンプルに">シンプルに</h1>
+
+<p>上記のように、nodeの使い方以外を知らなくても、sassを使用する環境を整えることができ、比較的シンプルなのではないかと思っています。
+sassライフが捗りそうです。</p>
+
+<h1 id="おまけ">おまけ</h1>
+<p>nodeを使えばローカルサーバーも簡単に立ち上げられます。</p>
+
+<p><a href="https://www.npmjs.com/package/local-web-server">local-web-server</a>を使用します。</p>
+
+<p><code class="language-plaintext highlighter-rouge">$ npm install -D local-web-server</code></p>
+
+<p>package.json</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"scripts": {
+  "build-css": "node-sass --include-path scss scss/style.scss css/style.css",
+  "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+  "ws": "ws"
+}
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">$ npm run ws</code></p>
+
+            </div>
+            
+            <p class="pt-5">
+              <a class="badge text-bg-light"
+                href="https://masamichiueta.github.io/category/engineering/index.html">エンジニアリング</a>
+              
+              <span class="badge text-bg-light">npm</span>
+              
+              <span class="badge text-bg-light">sass</span>
+              
+              <span class="badge text-bg-light">github pages</span>
+              
+            </p>
+            
+            <div>
+              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
+                data-show-count="false">Tweet</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </article>
+        <hr />
+        <div>
+          <h3>関連記事</h3>
+          <ul class="list-unstyled pb-5">
+            
+            
+            
+
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2024/03/24/try-swift-2024.html">
+                <small class="decoration-none text-muted">2024/3/24</small>
+                <h3 class="mt-0 text-body-emphasis">try! Swift Tokyo 2024</h3>
+                <p class="text-body">try! Swift Tokyo 2024の参加メモ</p>
+                
+                <div alt="try! Swift Tokyo 2024" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2024-03-24/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Swift</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/31/hide-tabbar-swiftui.html">
+                <small class="decoration-none text-muted">2023/1/31</small>
+                <h3 class="mt-0 text-body-emphasis">SwiftUIでTabBarを非表示にする</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">SwiftUI</span>
+                  
+                  <span class="badge text-bg-light">TabBar</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2023/01/14/bootstrap-dark-mode.html">
+                <small class="decoration-none text-muted">2023/1/14</small>
+                <h3 class="mt-0 text-body-emphasis">Bootstrap5.3で追加されたダークモードに対応してみました</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Bootstrap</span>
+                  
+                  <span class="badge text-bg-light">DarkMode</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2021/02/17/homebrew-macos11-error.html">
+                <small class="decoration-none text-muted">2021/2/17</small>
+                <h3 class="mt-0 text-body-emphasis">brew upgradeで Your CLT does not support macOS 11というエラーがでた</h3>
+                <p class="text-body"></p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">homebrew</span>
+                  
+                  <span class="badge text-bg-light">macOS Big Sur</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/12/01/m1-macbook-rbenv-setup.html">
+                <small class="decoration-none text-muted">2020/12/1</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載 MacBook Pro M1で Homebrewとrbenvをインストールする</h3>
+                <p class="text-body">先日購入したApple Silicon搭載 MacBook Pro M1にこのブログをビルドするためにHomebrewとrbenvをインストールしたのでメモ。</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">Homebrew</span>
+                  
+                  <span class="badge text-bg-light">rbenv</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/11/27/macbookpro-m1-apple-silicon-recovery.html">
+                <small class="decoration-none text-muted">2020/11/27</small>
+                <h3 class="mt-0 text-body-emphasis">Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録</h3>
+                <p class="text-body">Apple Silicon搭載のMacBook Pro 13インチを仕事用に購入したのですが、クリーンインストールしたところ文鎮化しかけたので記録しておきます。</p>
+                
+                <div alt="Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-11-27/cover.jpeg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">MacBook Pro</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">Apple Silicon</span>
+                  
+                  <span class="badge text-bg-light">M1</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-platform-state-of-the-union.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">Platform State of the Unionまとめ</h3>
+                <p class="text-body">Platform State of the Unioまとめ</p>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-keynote.html">
+                <small class="decoration-none text-muted">2020/6/23</small>
+                <h3 class="mt-0 text-body-emphasis">WWDC2020キーノートまとめ</h3>
+                <p class="text-body">WWDC2020 キーノートまとめ</p>
+                
+                <div alt="WWDC2020キーノートまとめ" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-06-23/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">WWDC2020</span>
+                  
+                  <span class="badge text-bg-light">Apple</span>
+                  
+                  <span class="badge text-bg-light">アップル</span>
+                  
+                  <span class="badge text-bg-light">iOS</span>
+                  
+                  <span class="badge text-bg-light">macOS</span>
+                  
+                  <span class="badge text-bg-light">watchOS</span>
+                  
+                  <span class="badge text-bg-light">tvOS</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/31/github-pages-blog-part4-original-theme.html">
+                <small class="decoration-none text-muted">2020/5/31</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る</h3>
+                <p class="text-body">Jekyllでは既存のテーマを使うこともできるのですが、さらに一歩踏み込んで、自分で既存のテーマをカスタマイズしたり、テーマを作ることもできます。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-31/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html">
+                <small class="decoration-none text-muted">2020/5/28</small>
+                <h3 class="mt-0 text-body-emphasis">GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする</h3>
+                <p class="text-body">前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。</p>
+                
+                <div alt="GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2020-05-28/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                  <span class="badge text-bg-light">GitHub Pages</span>
+                  
+                  <span class="badge text-bg-light">ブログ</span>
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+  <hr />
+</div>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <div class="py-4">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/">Blog</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://masamichiueta.github.io/about.html">About</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//x.com/masamichiueta">X</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//github.com/masamichiueta">GitHub</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/">LinkedIn</a>
+        </li>
+      </ul>
+      <p>© <script>document.write(new Date().getFullYear());</script> Masamichi Ueta</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="/js/site.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
