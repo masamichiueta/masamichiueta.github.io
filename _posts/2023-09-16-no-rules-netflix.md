@@ -3,13 +3,12 @@ layout: post
 title: "NO RULES: 世界一「自由」な会社、NETFLIX を読みました"
 description: ""
 date: 2023-09-16
-categories: hobby
+categories: reading
 image: /assets/posts/2023-09-16/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/AWOl7qqsffM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>の<a href="https://unsplash.com/ja/@thibaultpenin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Thibault Penin</a>が撮影した写真
 lang: ja_JP
 tags:
 - NETFLIX
-- 読書
 ---
 
 [NO RULES: 世界一「自由」な会社、NETFLIX](https://www.amazon.co.jp/NO-RULES-ノー・ルールズ-世界一「自由」な会社、NETFLIX-リード・ヘイスティングス/dp/4532323673)を読みました。

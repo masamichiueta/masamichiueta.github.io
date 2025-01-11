@@ -3,12 +3,12 @@ layout: post
 title:  "SWITCHCRAFT(スイッチクラフト) 切り替える力: すばやく変化に気づき、最適に対応するための人生戦略 を読みました"
 description: ""
 date: 2024-04-30
-categories: hobby
+categories: reading
 image: /assets/posts/2024-04-30/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%99%BD%E3%81%84%E5%A3%81%E3%81%AE%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81-ynfmVbvunQU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@izzyfisch_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Isabella Fischer</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- スイッチクラフト
 ---
 
 [SWITCHCRAFT(スイッチクラフト) 切り替える力: すばやく変化に気づき、最適に対応するための人生戦略](https://amzn.asia/d/5VMgA32) を読みました。

@@ -3,11 +3,10 @@ layout: post
 title: "サーバントリーダーシップを読みました"
 description: "年末に買っていたサーバントリーダーシップを読みました。"
 date: 2024-02-10
-categories: hobby
+categories: reading
 lang: ja_JP
 tags:
 - サーバントリーダーシップ
-- 読書
 ---
 
 年末に友人に教えてもらった[サーバントリーダーシップ](https://amzn.asia/d/ejIX1hH)を読みました。

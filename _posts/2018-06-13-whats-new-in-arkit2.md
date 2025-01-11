@@ -3,7 +3,7 @@ layout: post
 title:  "What's new in ARKit 2 ~ ARKit2の新機能"
 description: ""
 date: 2018-06-13
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - ARKit

@@ -3,7 +3,7 @@ layout: post
 title:  "SwiftUIでListの中でNavigationLinkを複数使うとうまく動かない"
 description: "SwiftUIでListの中でNavigationLinkを複数使うとうまく動かなかったのでメモです。"
 date: 2019-10-21
-categories: development
+categories: engineering
 image: /assets/posts/2019-10-21/cover.png
 lang: ja_JP
 tags:

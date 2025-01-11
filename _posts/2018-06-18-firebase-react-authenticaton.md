@@ -5,7 +5,7 @@ description: "現在FirebaseでWebアプリを作っています。アプリを�
 date: 2018-06-18
 image: /assets/posts/2018-06-18/cover.png
 hero-caption: firebase
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - Firebase

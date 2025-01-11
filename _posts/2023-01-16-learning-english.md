@@ -3,7 +3,7 @@ layout: post
 title: "英語を学んでいます"
 description: "これまで継続的に英語を学習してきてはいましたが、この半年ほどはさらに学習量を増やしています。"
 date: 2023-01-16
-categories: hobby
+categories: everyday
 image: /assets/posts/2023-01-16/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/WE_Kv_ZB1l0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>の<a href="https://unsplash.com/@timmossholder?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Tim Mossholder</a>が撮影した写真
 lang: ja_JP

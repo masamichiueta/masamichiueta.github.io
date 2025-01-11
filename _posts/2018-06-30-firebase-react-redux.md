@@ -3,7 +3,7 @@ layout: post
 title:  "FirebaseとReactとReduxで認証付きのWebアプリのサンプルを作りました"
 description: "先日書いた記事　FirebaseとReactで認証付きアプリのサンプルを実行するまでの続きで、この認証サンプルをReduxを使うように変更したサンプルを作ってみました。"
 date: 2018-06-30
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - Firebase

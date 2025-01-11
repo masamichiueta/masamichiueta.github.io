@@ -3,12 +3,12 @@ layout: post
 title:  "エレガントパズル　エンジニアのマネジメントという難問にあなたはどう立ち向かうのかを読みました"
 description: ""
 date: 2024-07-13
-categories: hobby
+categories: reading
 image: /assets/posts/2024-07-13/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E4%B8%8A%E3%81%AB%E7%A9%8D%E3%81%BE%E3%82%8C%E3%81%9F%E9%9D%92%E3%81%84%E3%83%91%E3%82%BA%E3%83%AB%E3%81%AE%E3%83%94%E3%83%BC%E3%82%B9-W0YSKWCKDS8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@pixelesse?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ksenia</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- マネジメント
 ---
 
 [エレガントパズル　エンジニアのマネジメントという難問にあなたはどう立ち向かうのか](https://amzn.asia/d/0b7jF4Jj)を読みました。

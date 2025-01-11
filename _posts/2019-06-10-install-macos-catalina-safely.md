@@ -3,7 +3,7 @@ layout: post
 title:  "macOS 10.15 Catalinaのベータバージョンを安全にインストールする方法"
 description: "WWDC2019でmacOS 10.15 Catalinaが発表され、Apple Beta Software Programに参加している場合はベータバージョンのCatalinaをインストールすることができます。"
 date: 2019-06-10
-categories: development
+categories: engineering
 image: /assets/posts/2019-06-10/cover.jpg
 lang: ja_JP
 tags:

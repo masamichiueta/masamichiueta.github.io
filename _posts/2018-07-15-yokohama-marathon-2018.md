@@ -3,7 +3,7 @@ layout: post
 title:  "横浜マラソン2018に当選したので参加します"
 description: "4月に横浜マラソンに申し込んで、一般枠で当選していました。連絡が6月に来ていて、参加料を振り込んだので横浜マラソンに参加します。"
 date: 2018-07-15
-categories: hobby
+categories: everyday
 lang: ja_JP
 tags:
 - 横浜マラソン

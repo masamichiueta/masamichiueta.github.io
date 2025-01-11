@@ -3,12 +3,12 @@ layout: post
 title:  "1兆ドルコーチ シリコンバレーのレジェンド ビル・キャンベルの成功の教えを読みました"
 description: ""
 date: 2025-01-11
-categories: hobby
+categories: reading
 image: /assets/posts/2025-01-11/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E9%BB%92%E3%81%A8%E8%8C%B6%E8%89%B2%E3%81%AE%E5%B8%82%E6%9D%BE%E6%A8%A1%E6%A7%98%E3%81%AE%E3%83%86%E3%82%AD%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB-GoXNygZlftg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@jannerboy62?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Nick Fewings</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- コーチング
 ---
 
 [1兆ドルコーチ シリコンバレーのレジェンド ビル・キャンベルの成功の教え](https://amzn.asia/d/5cUcn8x)を読みました。

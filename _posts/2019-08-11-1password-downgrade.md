@@ -3,7 +3,7 @@ layout: post
 title:  "1Passwordを6にダウングレードしました"
 description: "パスワード管理には昔から1Passwordを使っているのですが、最近1Passwordが7にアップグレードされました。AppStoreからインストールしていたので、確かそのままインストールしたはずですが、1Password7になると、月額のサブスクリプションに登録しないと、readonly と言う表示になり、既存のデータを更新できなくなってしまいました。"
 date: 2019-08-11
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - 1Password

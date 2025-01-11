@@ -1,6 +1,6 @@
 # Site settings
 title: Masamichi Ueta
-description: エンジニアリング・デザイン・日常
+description: エンジニアリング・読書・日常
 
 url: https://masamichiueta.github.io
 x_username: masamichiueta
@@ -18,9 +18,9 @@ highlighter: rouge
 github: [metadata]
 
 category_slugs:
-  development: "開発"
-  design: "デザイン"
-  hobby: "趣味"
+  engineering: "エンジニアリング"
+  reading: "読書"
+  everyday: "日常"
 
 plugins:
   - jekyll-gist

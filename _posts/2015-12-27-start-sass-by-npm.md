@@ -3,7 +3,7 @@ layout: post
 title:  "npmでミニマムに始めるSass"
 description: "GitHub Pagesでいくつか静的なWebページを作成しているのですが、生のcssではなく、sassでcssを作成することにしました。"
 date: 2015-12-27
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - npm

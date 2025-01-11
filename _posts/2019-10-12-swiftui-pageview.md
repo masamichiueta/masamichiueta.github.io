@@ -3,7 +3,7 @@ layout: post
 title:  "SwiftUIでUIPageViewControllerとSegmentedControlを使う方法"
 description: "SwiftUIでUIPageViewControllerとSegmentedControlを使う方法を紹介します。"
 date: 2019-10-12
-categories: development
+categories: engineering
 image: /assets/posts/2019-07-25/cover.png
 hero-caption: <a href="https://developer.apple.com/xcode/swiftui/">Appleサイト</a>よりスクリーンショット
 lang: ja_JP

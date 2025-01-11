@@ -3,7 +3,7 @@ layout: post
 title:  "ディズニーランド 世界最強のエンターテインメントが生まれるまで を読みました"
 description: ""
 date: 2024-01-03
-categories: hobby
+categories: reading
 image: /assets/posts/2024-01-03/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E3%83%8D%E3%82%BA%E3%83%9F%E3%81%AE%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E5%83%8F%E3%82%92%E6%8C%81%E3%81%A4%E7%94%B7-DUgYdLxVEPM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@travisgergen?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Travis Gergen</a>が撮影した写真
   

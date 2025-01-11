@@ -3,12 +3,11 @@ layout: post
 title:  "2024年5月に読んだ本"
 description: ""
 date: 2024-06-02
-categories: hobby
+categories: reading
 image: /assets/posts/2024-06-02/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E8%8C%B6%E8%89%B2%E3%81%AE%E6%9C%A8%E8%A3%BD%E6%A3%9A%E3%81%AE%E6%9C%AC-2JIvboGLeho?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@syinq?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Susan Q Yin</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
 ---
 
 2024年5月に読んだ本リスト。半沢直樹に続き、下町ロケットシリーズも全部読んで、溜まっていた本も消化中。

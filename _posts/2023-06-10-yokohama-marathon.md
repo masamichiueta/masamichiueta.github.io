@@ -3,7 +3,7 @@ layout: post
 title: "横浜マラソン2023に当選しました"
 description: ""
 date: 2023-06-10
-categories: hobby
+categories: everyday
 lang: ja_JP
 tags:
 - 横浜マラソン

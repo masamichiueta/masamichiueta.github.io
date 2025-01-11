@@ -3,12 +3,12 @@ layout: post
 title:  "Product Led Growthを読みました"
 description: ""
 date: 2024-07-07
-categories: hobby
+categories: reading
 image: /assets/posts/2024-07-07/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E5%9C%B0%E4%B8%8A%E3%81%AE%E6%A4%8D%E7%89%A9%E3%81%AE%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA%E3%82%A2%E3%83%83%E3%83%97%E5%86%99%E7%9C%9F-vGjGvtSfys4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@jeremybishop?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jeremy Bishop</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- Product Led Growth
 ---
 
 [Product Led Growth](https://amzn.asia/d/00U2Ow56)を読みました。

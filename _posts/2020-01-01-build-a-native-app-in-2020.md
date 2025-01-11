@@ -3,7 +3,7 @@ layout: post
 title:  "2020年にネイティブアプリを開発する方法"
 description: "去年2019年にネイティブアプリを開発する方法という記事を書きました。その中では1. ネイティブ言語、ネイティブプラットフォーム, 2. React Native, 3. Flutterの3つの方法を紹介していました。2020年はどういう感じになりそうか、という実感を書いておきたいと思います。"
 date: 2020-01-01
-categories: development
+categories: engineering
 image: /assets/posts/2020-01-01/cover.jpg
 hero-caption: Photo by <a href="https://unsplash.com/@joelfilip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Joel Filipe</a> on <a href="https://unsplash.com/s/photos/building?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 lang: ja_JP

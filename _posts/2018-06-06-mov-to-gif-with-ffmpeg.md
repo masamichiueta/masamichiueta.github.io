@@ -3,7 +3,7 @@ layout: post
 title: "ffmpegを使ってmovファイルをgifに変換する"
 description: "アプリの開発で、スクリーンを動画でキャプチャしてgifにして貼り付けるということをよく行うと思いますが、ffmpegを使用すると簡単にmovをgifに変更できました。"
 date: 2018-06-06
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - ffmpeg

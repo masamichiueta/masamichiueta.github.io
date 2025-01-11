@@ -3,7 +3,7 @@ layout: post
 title: "ASP.NET Coreでエラーメッセージを日本語にする方法"
 description: "SP.NET CoreでWebアプリを開発していますが、デフォルトのバリデーションの仕組みを使うとエラーメッセージが英語になってしまい困っていました。モデルクラスのプロパティに全部のパターンを日本語で書くとか途方もないことをしたくないと思っていたところ、解決する方法を見つけました。"
 date: 2018-06-05
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - ASP.NET Core

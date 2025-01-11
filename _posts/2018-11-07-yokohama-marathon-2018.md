@@ -3,7 +3,7 @@ layout: post
 title:  "横浜マラソン2018に参加しました"
 description: "2018年10月28日に横浜で開催された横浜マラソン2018に参加しました。人生で初めてのフルマラソンでした。"
 date: 2018-11-07
-categories: hobby
+categories: everyday
 image: /assets/posts/2018-11-07/cover.jpeg
 hero-caption: <a href="http://www.yokohamamarathon.jp/2018/">横浜マラソンWebサイト</a>よりスクリーンショット
 lang: ja_JP

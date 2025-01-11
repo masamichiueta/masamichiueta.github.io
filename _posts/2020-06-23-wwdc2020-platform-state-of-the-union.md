@@ -3,7 +3,7 @@ layout: post
 title: "Platform State of the Unionまとめ"
 description: "Platform State of the Unioまとめ"
 date: 2020-06-23
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - WWDC2020

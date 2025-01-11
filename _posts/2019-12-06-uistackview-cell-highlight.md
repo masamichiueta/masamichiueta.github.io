@@ -3,7 +3,7 @@ layout: post
 title:  "UIScrollViewとUIStackViewで、UITableViewのハイライトを作る"
 description: "UITableViewのようなレイアウトを作る際に、UIScrollViewとUIStackViewを使って作る場合もあるかと思います。UITableViewは選択されたセルをハイライトすることができますが、UIScrollViewとUIStackViewの場合はそのままではハイライトができません。今回はセルのハイライトを再現する方法を紹介します。"
 date: 2019-12-06
-categories: development
+categories: engineering
 image: /assets/posts/2019-12-06/storyboard.png
 lang: ja_JP
 tags:

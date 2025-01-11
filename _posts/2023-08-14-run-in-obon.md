@@ -3,7 +3,7 @@ layout: post
 title: "お盆に走る"
 description: ""
 date: 2023-08-14
-categories: hobby
+categories: everyday
 image: /assets/posts/2023-08-14/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/QVD3Xht9txA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>の<a href="https://unsplash.com/ja/@whatyouhide?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrea Leopardi</a>が撮影した写真
 lang: ja_JP

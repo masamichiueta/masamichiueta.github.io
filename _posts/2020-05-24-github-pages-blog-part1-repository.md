@@ -5,7 +5,7 @@ description: "以前、GitHub Pagesでブログを運用し始めてから4年�
 image: /assets/posts/2020-05-24/cover.png
 hero-caption: <a href="https://pages.github.com">GitHub Pagesのサイト</a>よりスクリーンショット
 date: 2020-05-24
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - GitHub Pages

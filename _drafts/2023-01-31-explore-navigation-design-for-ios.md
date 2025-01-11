@@ -3,7 +3,7 @@ layout: post
 title: "iOSのためのナビゲーションデザインを探求する"
 description: ""
 date: 2023-01-28
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - iOS

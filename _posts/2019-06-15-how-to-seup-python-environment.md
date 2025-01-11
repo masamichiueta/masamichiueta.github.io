@@ -4,7 +4,7 @@ title:  "macOSにPythonの環境を構築する方法"
 description: "Pythonは機械学習やデータ分析でもっとも人気のある言語だと思います。ここではmacOSにPythonの環境を作る方法を紹介します。"
 date: 2019-06-15
 hero-caption: Photo by <a href="https://unsplash.com/@hiteshchoudhary?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hitesh Choudhary</a> on <a href="https://unsplash.com/search/photos/python?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-categories: development
+categories: engineering
 image: /assets/posts/2019-06-15/cover.jpg
 lang: ja_JP
 tags:

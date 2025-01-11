@@ -3,7 +3,7 @@ layout: post
 title:  "横浜マラソン2023に参加しました サブ4達成"
 description: "2023年10月29日に横浜で開催された横浜マラソン2023に参加しました。"
 date: 2023-11-04
-categories: hobby
+categories: everyday
 image: /assets/posts/2023-11-04/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E9%83%BD%E5%B8%82%E3%82%92%E8%83%8C%E6%99%AF%E3%81%AB%E3%81%97%E3%81%9F%E5%A4%A7%E3%81%8D%E3%81%AA%E6%B0%B4%E5%9F%9F-Pnl7uHETWFM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@lifeandyouth?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Daesun Kim</a>が撮影した写真
 lang: ja_JP

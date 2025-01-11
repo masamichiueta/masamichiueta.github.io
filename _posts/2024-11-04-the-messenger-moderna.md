@@ -3,12 +3,12 @@ layout: post
 title:  "モデルナ: 万年赤字企業が、世界を変えるまでを読みました"
 description: ""
 date: 2024-11-04
-categories: hobby
+categories: reading
 image: /assets/posts/2024-11-04/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%99%BD%E3%81%84%E8%83%8C%E6%99%AF%E3%81%AB%E9%9D%92%E3%81%84%E9%B3%A5%E3%81%AE%E7%B5%B5-RoM79jrYOlU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@heijnsbroek_abstract_art?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Fons Heijnsbroek, abstract art</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- モデルナ
 ---
 [モデルナ: 万年赤字企業が、世界を変えるまで](https://amzn.asia/d/8PEHHqY)を読みました。
 

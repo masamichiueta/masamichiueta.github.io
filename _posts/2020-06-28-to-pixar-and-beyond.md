@@ -3,12 +3,11 @@ layout: post
 title: "PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話 を読んだ"
 description: "「PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話」がPrime Readingで利用可能になっていたので、読みました。"
 date: 2020-06-28
-categories: hobby
+categories: reading
 lang: ja_JP
 tags:
 - ピクサー
 - Apple
-- 本
 ---
 
 「PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話」がPrime Readingで利用可能になっていたので、読みました。

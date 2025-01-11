@@ -3,7 +3,7 @@ layout: post
 title: "フィットネスジムに通い始めました"
 description: "去年から体重を落とすために運動や筋トレをしていましたが、2023年はさらに安定させるべくフィットネスジムに通うことにしました"
 date: 2023-01-30
-categories: hobby
+categories: everyday
 image: /assets/posts/2023-01-30/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/c9wa9EWN_fw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>の<a href="https://unsplash.com/@craigology?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Craig Lovelidge</a>が撮影した写真
 lang: ja_JP

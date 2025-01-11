@@ -3,7 +3,7 @@ layout: post
 title:  "横浜マラソン2022に参加しました"
 description: "2022年10月30日に横浜で開催された横浜マラソン2022に参加しました。2019以来のオフライン参加でした。"
 date: 2022-10-30
-categories: hobby
+categories: everyday
 image: /assets/posts/2022-10-30/cover.jpeg
 lang: ja_JP
 tags:

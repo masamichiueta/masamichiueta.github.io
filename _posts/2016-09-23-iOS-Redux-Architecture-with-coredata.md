@@ -3,7 +3,7 @@ layout: post
 title: "iOS Redux Architecture with CoreData"
 description: "I started to lean Redux architecture recently.Redux is super simple and easy to understand."
 date: 2016-09-23
-categories: development
+categories: engineering
 lang: en_US
 tags:
 - iOS

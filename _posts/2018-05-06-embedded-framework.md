@@ -3,7 +3,7 @@ layout: post
 title: "Embedded Frameworkを使ってiOSアプリを適当なレイヤーごとに分割する"
 description: "開発しているiOSアプリのソースが割と増えてきたので、リファクタリングついでにEmbedded Frameworkd(Cocoa Touch Framework)に分割しました。"
 date: 2018-05-06
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - ios

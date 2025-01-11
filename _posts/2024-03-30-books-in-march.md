@@ -3,12 +3,11 @@ layout: post
 title:  "2024年3月に読んだ本"
 description: ""
 date: 2024-03-30
-categories: hobby
+categories: reading
 image: /assets/posts/2024-03-30/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E6%9C%AC%E3%81%AE%E6%B5%85%E3%81%84%E7%84%A6%E7%82%B9%E6%92%AE%E5%BD%B1-lUaaKCUANVI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@kimberlyfarmer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Kimberly Farmer</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
 ---
 
 2024年3月に読んだ本リスト。最近読んでいるのは企業小説が多かったです。

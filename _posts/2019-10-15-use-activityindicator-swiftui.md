@@ -3,7 +3,7 @@ layout: post
 title:  "SwiftUIでActivityIndicatorを使う方法"
 description: "SwiftUIでActivityIndicatorを使う方法を紹介します。"
 date: 2019-10-15
-categories: development
+categories: engineering
 image: /assets/posts/2019-10-15/cover.png
 lang: ja_JP
 tags:

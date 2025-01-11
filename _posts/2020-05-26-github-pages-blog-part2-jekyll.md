@@ -5,7 +5,7 @@ description: "JekyllはGitHub Pagesで使用することができる静的サイ
 image: /assets/posts/2020-05-26/cover.png
 hero-caption: <a href="https://jekyllrb.com">Jekyllのサイト</a>よりスクリーンショット
 date: 2020-05-26
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - GitHub Pages

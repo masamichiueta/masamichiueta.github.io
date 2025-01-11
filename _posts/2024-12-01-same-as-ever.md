@@ -3,12 +3,12 @@ layout: post
 title:  "SAME AS EVER この不確実な世界で成功する人生戦略の立て方: 人の「行動原理」が未来を決めるを読みました"
 description: ""
 date: 2024-12-01
-categories: hobby
+categories: reading
 image: /assets/posts/2024-12-01/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/earth-with-clouds-above-the-african-continent-vhSz50AaFAs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@nasa?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">NASA</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- 行動原理
 ---
 
 [SAME AS EVER この不確実な世界で成功する人生戦略の立て方: 人の「行動原理」が未来を決める](https://amzn.asia/d/gRKZaIr)を読みました。

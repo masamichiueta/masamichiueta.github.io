@@ -3,7 +3,7 @@ layout: post
 title:  "Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する"
 description: "Interface BuilderのUI要素にベースのカスタムクラスが適用されているか検出する方法について。"
 date: 2019-03-18
-categories: development
+categories: engineering
 image: /assets/posts/2019-03-18/cover.png
 lang: ja_JP
 tags:

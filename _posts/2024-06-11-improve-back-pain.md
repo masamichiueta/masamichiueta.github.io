@@ -3,7 +3,7 @@ layout: post
 title:  "腰痛を治すために取り組み始めたこと"
 description: ""
 date: 2024-06-11
-categories: hobby
+categories: everyday
 image: /assets/posts/2024-06-11/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%99%BD%E3%81%84%E5%B8%83%E5%9C%B0%E3%81%AB%E8%8C%B6%E8%89%B2%E3%81%AE%E9%95%B7%E8%A2%96%E3%82%B7%E3%83%A3%E3%83%84%E3%81%A8%E9%BB%92%E3%81%84%E3%82%BA%E3%83%9C%E3%83%B3%E3%82%92%E7%9D%80%E3%81%9F%E5%A5%B3%E6%80%A7-QiYZCKJQMck?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@hopefilmphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Надя Кисільова</a>が撮影した写真
 lang: ja_JP

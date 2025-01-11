@@ -3,12 +3,11 @@ layout: post
 title:  "2024年9月に読んだ本"
 description: ""
 date: 2024-10-06
-categories: hobby
+categories: reading
 image: /assets/posts/2024-10-06/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E8%8C%B6%E8%89%B2%E3%81%AE%E8%8D%89%E5%8E%9F%E3%81%A8%E6%9D%BE%E3%81%AE%E6%9C%A8-yiQQM4-GFYg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@clorisyy?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Cloris Ying</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
 ---
 
 2024年9月に読んだ本リスト。

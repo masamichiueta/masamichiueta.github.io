@@ -3,7 +3,7 @@ layout: post
 title:  "2018年最新版　GitHub Pagesでカスタムドメインを使用する"
 description: "のブログはGitHub Pagesとjekyllで運用していますが、カスタムドメインの設定をしたのでその方法を記載しておきます。"
 date: 2018-07-01
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - GitHub

@@ -3,7 +3,7 @@ layout: post
 title:  "横浜マラソン2019に参加しました"
 description: "2019年11月10日に横浜で開催された横浜マラソン2019に参加しました。去年に引き続き2回目の参加です。"
 date: 2019-11-26
-categories: hobby
+categories: everyday
 image: /assets/posts/2019-11-26/cover.jpeg
 lang: ja_JP
 tags:

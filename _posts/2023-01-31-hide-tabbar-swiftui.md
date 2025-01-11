@@ -3,7 +3,7 @@ layout: post
 title: "SwiftUIでTabBarを非表示にする"
 description: ""
 date: 2023-01-31
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - SwiftUI

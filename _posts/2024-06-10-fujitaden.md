@@ -3,12 +3,12 @@ layout: post
 title:  "藤田田さんの勝てば官軍、ユダヤの商法を読みました"
 description: ""
 date: 2024-06-10
-categories: hobby
+categories: reading
 image: /assets/posts/2024-06-10/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E6%98%BC%E9%96%93%E3%81%AE%E3%83%A4%E3%82%B7%E3%81%AE%E6%9C%A8%E3%81%AE%E8%BF%91%E3%81%8F%E3%81%AE%E8%B5%A4%E3%81%A8%E7%99%BD%E3%81%AE%E3%82%B3%E3%83%B3%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%88%E3%81%AE%E5%BB%BA%E7%89%A9-MRX9wQk4w7A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@boshoku?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Boshoku</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- 藤田田
 ---
 日本マクドナルドを設立した藤田田さんの書籍を2冊読みました。読んだのは勝てば官軍とユダヤの商法。
 

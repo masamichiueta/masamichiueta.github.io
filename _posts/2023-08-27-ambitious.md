@@ -3,12 +3,11 @@ layout: post
 title: "アンビシャス 北海道にボールパークを創った男たち を読みました"
 description: ""
 date: 2023-08-27
-categories: hobby
+categories: reading
 image: /assets/posts/2023-08-27/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/2mOZxZV51xk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>の<a href="https://unsplash.com/ja/@fhlcreative?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Phil Goodwin</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
 - アンビシャス
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title:  "no submodule mapping found in .gitmodulesを解決する"
 description: "no submodule mapping found in .gitmodulesを解決する"
 date: 2019-08-05
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - gitmodules

@@ -3,7 +3,7 @@ layout: post
 title:  "【メモ】Vue.jsアプリ構成の調査で参考になった記事一覧"
 description: "【メモ】Vue.jsアプリ構成の調査で参考になった記事一覧"
 date: 2018-02-07
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - vue

@@ -3,7 +3,7 @@ layout: post
 title: "英語がCEFR（セファール）B2レベルに到達しました"
 description: "学習量を増やしてきていた英語ですが、CEFR（セファール）B2レベルに到達しました。"
 date: 2023-07-02
-categories: hobby
+categories: everyday
 image: /assets/posts/2023-07-02/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/2enBTsIVhUU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>の<a href="https://unsplash.com/@esteejanssens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Estée Janssens</a>が撮影した写真
 lang: ja_JP

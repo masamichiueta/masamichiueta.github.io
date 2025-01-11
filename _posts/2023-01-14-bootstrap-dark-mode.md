@@ -3,7 +3,7 @@ layout: post
 title: "Bootstrap5.3で追加されたダークモードに対応してみました"
 description: ""
 date: 2023-01-14
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - Bootstrap

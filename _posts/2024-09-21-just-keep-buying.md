@@ -3,12 +3,12 @@ layout: post
 title:  "JUST KEEP BUYING 自動的に富が増え続ける「お金」と「時間」の法則を読みました"
 description: ""
 date: 2024-09-21
-categories: hobby
+categories: reading
 image: /assets/posts/2024-09-21/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%9F%B3%E3%81%AE%E4%B8%8A%E3%81%AE%E8%8C%B6%E8%89%B2%E3%81%A8%E9%9D%92%E3%81%AE%E7%A0%82%E6%99%82%E8%A8%88%E3%81%AE%E3%82%BB%E3%83%AC%E3%82%AF%E3%83%86%E3%82%A3%E3%83%96%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AB%E3%82%B9%E5%86%99%E7%9C%9F-BXOXnQ26B7o?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@aronvisuals?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Aron Visuals</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- JUST KEEP BUYING
 ---
 [JUST KEEP BUYING 自動的に富が増え続ける「お金」と「時間」の法則](https://amzn.asia/d/fOtqeK8)を読みました。
 

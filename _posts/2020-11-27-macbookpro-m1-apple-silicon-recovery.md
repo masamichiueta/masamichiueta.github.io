@@ -3,7 +3,7 @@ layout: post
 title: "Apple Silicon搭載のMacBook Pro M1が危うく文鎮化するところだったので記録"
 description: "Apple Silicon搭載のMacBook Pro 13インチを仕事用に購入したのですが、クリーンインストールしたところ文鎮化しかけたので記録しておきます。"
 date: 2020-11-27
-categories: development
+categories: engineering
 image: /assets/posts/2020-11-27/cover.jpeg
 lang: ja_JP
 tags:

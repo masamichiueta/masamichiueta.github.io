@@ -3,7 +3,7 @@ layout: post
 title:  "2019年にネイティブアプリを開発する方法"
 description: "AppleがAppStoreを開始してから10年が経ちました。たくさんの人々がアプリを使っていますし、2019年もこのアプリプラットフォーム上で多くのイノヴェイションが生まれると思います。これまで様々なプラットフォームで色々なフレームワークを使ってアプリを開発してきました。今はSwiftでiOSアプリを開発していますが、過去にはWindowsアプリを開発していたり、ReactやVueといったフレームワークでWebアプリを開発したり、ReactNativeやFlutterでマルチプラットフォーム向けのネイティブアプリを開発したりしました。過去数年の間に、色々なツールが出てきては消えていきましたが、2019年にアプリを開発するとしたら以下の3つかなと思っています。"
 date: 2019-01-05
-categories: development
+categories: engineering
 image: /assets/posts/2019-01-05/cover.jpg
 hero-caption: Photo by <a href="https://unsplash.com/photos/A6JxK37IlPo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bagus Hernawan</a> on <a href="https://unsplash.com/search/photos/app?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 lang: ja_JP

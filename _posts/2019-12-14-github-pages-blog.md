@@ -3,7 +3,7 @@ layout: post
 title:  "GitHub Pagesでブログを運用し始めてから4年くらいたった"
 description: "このサイトはGitHub Pagesで運用しています。運用を開始してから4年くらいたったので、GitHub Pages運用のTipsでも書いておこうかと思います。"
 date: 2019-12-14
-categories: development
+categories: engineering
 image: /assets/posts/2019-12-14/cover.png
 hero-caption: <a href="https://pages.github.com">GitHubサイト</a>よりスクリーンショット
 lang: ja_JP

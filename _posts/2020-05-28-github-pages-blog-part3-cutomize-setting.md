@@ -3,7 +3,7 @@ layout: post
 title:  "GitHub Pagesで無料ブログを作成する - Part3 Jekyllの設定をカスタマイズする"
 description: "前回の記事では、Jekyllのテーマを利用する方法と記事を追加する方法を紹介しました。今回はさらにJekyllをカスタマイズしていきますが、確認を簡単にするためにまずJekyllをローカル環境で実行する方法を紹介します。"
 date: 2020-05-28
-categories: development
+categories: engineering
 image: /assets/posts/2020-05-28/cover.jpg
 hero-caption: Photo by <a href="https://unsplash.com/@aahubs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aaron Huber</a> on <a href="https://unsplash.com/s/photos/custom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 lang: ja_JP

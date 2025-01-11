@@ -3,7 +3,7 @@ layout: post
 title:  "How is your today?"
 description: "I released an iOS app named Today - Score Everyday.What you do in this app is to input the score of Today at the end of the day."
 date: 2016-03-18
-categories: development
+categories: engineering
 lang: en_US
 tags:
 - iOS

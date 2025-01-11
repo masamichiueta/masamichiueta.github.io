@@ -3,12 +3,12 @@ layout: post
 title:  "ユーモアは最強の武器であるを読みました"
 description: ""
 date: 2024-11-17
-categories: hobby
+categories: reading
 image: /assets/posts/2024-11-17/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E3%83%94%E3%83%B3%E3%82%AF%E3%81%A8%E3%82%AA%E3%83%AC%E3%83%B3%E3%82%B8%E3%81%AE%E9%A2%A8%E8%88%B9%E3%81%AE%E3%83%AD%E3%83%BC%E3%82%A2%E3%83%B3%E3%82%B0%E3%83%AB%E5%86%99%E7%9C%9F-uGP_6CAD-14?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@artbyhybrid?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Madison Oren</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- ユーモア
 ---
 
 [ユーモアは最強の武器である](https://amzn.asia/d/5snJnI5)を読みました。

@@ -3,7 +3,7 @@ layout: post
 title:  "GitHub Pagesで無料ブログを作成する - Part4 自分のオリジナルのテーマを作る"
 description: "Jekyllでは既存のテーマを使うこともできるのですが、さらに一歩踏み込んで、自分で既存のテーマをカスタマイズしたり、テーマを作ることもできます。"
 date: 2020-05-31
-categories: development
+categories: engineering
 image: /assets/posts/2020-05-31/cover.jpg
 hero-caption: Photo by <a href="https://unsplash.com/@jessbailey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jess Bailey</a> on <a href="https://unsplash.com/s/photos/blog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 lang: ja_JP

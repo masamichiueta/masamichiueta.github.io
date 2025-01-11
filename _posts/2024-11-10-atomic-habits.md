@@ -3,12 +3,12 @@ layout: post
 title:  "ジェームズ・クリアー式 複利で伸びる1つの習慣を読みました"
 description: ""
 date: 2024-11-10
-categories: hobby
+categories: reading
 image: /assets/posts/2024-11-10/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%99%BD%E3%81%A8%E8%B5%A4%E3%81%AE%E3%83%A9%E3%83%99%E3%83%AB%E3%81%AE%E4%BB%98%E3%81%84%E3%81%9F%E7%AE%B13%E3%81%A4-OFZUaeYKP3k?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@lazizli?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Lala Azizli</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- 習慣
 ---
 
 [ジェームズ・クリアー式 複利で伸びる1つの習慣](https://amzn.asia/d/cVDZ2xw)を読みました。英語のタイトルは "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones"で、世界中で発売されている本のようです。

@@ -3,12 +3,12 @@ layout: post
 title:  "Immunity to Change: なぜ人と組織は変われないのか――ハーバード流 自己変革の理論と実践 を読みました"
 description: ""
 date: 2024-05-04
-categories: hobby
+categories: reading
 image: /assets/posts/2024-05-04/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E8%89%B2%E3%81%A8%E3%82%8A%E3%81%A9%E3%82%8A%E3%81%AE%E3%83%AA%E3%82%A2%E5%90%8A%E3%82%8A%E4%B8%8B%E3%81%92%E8%A3%85%E9%A3%BE-5IHz5WhosQE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@chrislawton?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Chris Lawton</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
+- 自己変革
 ---
 
 [なぜ人と組織は変われないのか――ハーバード流 自己変革の理論と実践](https://amzn.asia/d/5UQjcC3)を読みました。

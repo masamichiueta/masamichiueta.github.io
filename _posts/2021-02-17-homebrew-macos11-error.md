@@ -3,7 +3,7 @@ layout: post
 title: "brew upgradeで Your CLT does not support macOS 11というエラーがでた"
 description: ""
 date: 2021-02-17
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - homebrew

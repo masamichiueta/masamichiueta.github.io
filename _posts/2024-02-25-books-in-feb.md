@@ -3,10 +3,9 @@ layout: post
 title: "2024年2月に読んだ本"
 description: ""
 date: 2024-02-25
-categories: hobby
+categories: reading
 lang: ja_JP
 tags:
-- 読書
 ---
 
 2024年2月に読んだ本リスト。テーマは主にリーダーシップだったと思います。

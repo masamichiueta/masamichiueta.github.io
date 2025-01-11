@@ -3,7 +3,7 @@ layout: post
 title: "iOSの写真アプリのような画面遷移とインタラクションを実装する"
 description: "iOSの写真アプリの画面遷移は使いやすいなと思っています。写真一覧から写真をタップするとズームして、下に少し引っ張ると戻れるというやつです。この画面遷移とインタラクションをコピーして実装してみました。"
 date: 2018-05-13
-categories: development
+categories: engineering
 image: /assets/posts/2018-05-13/cover.png
 lang: ja_JP
 tags:

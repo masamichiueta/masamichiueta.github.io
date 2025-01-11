@@ -3,12 +3,11 @@ layout: post
 title:  "2024年6月に読んだ本"
 description: ""
 date: 2024-07-02
-categories: hobby
+categories: reading
 image: /assets/posts/2024-07-02/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E6%96%87%E7%AB%A0-k06emqjiB7M?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@glencarrie?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Glen Carrie</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
 ---
 
 2024年6月に読んだ本リスト。

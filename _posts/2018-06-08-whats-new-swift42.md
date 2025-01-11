@@ -3,7 +3,7 @@ layout: post
 title:  "Swift4.2ではEnumを一覧で取得できるようになった"
 description: "WWDC2018のWhat's new in SwiftでSwift4.2のアップデートが発表されていました。Swift4.2では、CaseIterableプロトコルをEnumに指定することで、allCasesというプロパティが使用できるようになり、Enumの一覧を取得できるようになったようです。"
 date: 2018-06-08
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - Swift

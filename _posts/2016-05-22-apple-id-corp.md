@@ -3,7 +3,7 @@ layout: post
 title: "How to register iOS Developer Program as a Corporation in Japan?"
 description: "The following list is what I need to register iOS Developer Program as a Corporation."
 date: 2016-05-22
-categories: development
+categories: engineering
 lang: en_US
 tags:
 - iOS

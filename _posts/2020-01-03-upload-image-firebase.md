@@ -3,7 +3,7 @@ layout: post
 title:  "FirebaseでCloud Storageに画像をアップロードする"
 description: "今FirebaseとReactでアプリを開発中で、画像をアップロードする部分を作ったのでメモ。"
 date: 2020-01-03
-categories: development
+categories: engineering
 image: /assets/posts/2020-01-03/cover.png
 lang: ja_JP
 tags:

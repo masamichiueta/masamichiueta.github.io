@@ -3,12 +3,11 @@ layout: post
 title: "マネジャーの最も大切な仕事 95%の人が見過ごす「小さな進捗」の力 を読みました"
 description: ""
 date: 2023-09-09
-categories: hobby
+categories: reading
 image: /assets/posts/2023-09-09/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/MAgPyHRO0AA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>の<a href="https://unsplash.com/ja/@helloimnik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nik</a>が撮影した写真
 lang: ja_JP
 tags:
-- 読書
 - マネジメント
 - The progress principle
 ---

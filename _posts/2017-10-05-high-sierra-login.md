@@ -3,7 +3,7 @@ layout: post
 title: "macOS 10.13 High Sierraのログイン画面で、Othersが表示されるのを直す方法"
 description: "High Sierraにアップグレード後、ログイン画面に自分のユーザー以外に「Others」という選択肢が表示されるようになりました。"
 date: 2017-10-05
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - Apple

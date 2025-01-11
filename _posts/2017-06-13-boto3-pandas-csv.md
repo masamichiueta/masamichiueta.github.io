@@ -3,7 +3,7 @@ layout: post
 title:  "【メモ】boto3でs3のcsvをpandasに読み込む"
 description: "【メモ】boto3でs3のcsvをpandasに読み込む"
 date: 2017-06-13
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - boto3

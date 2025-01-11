@@ -3,7 +3,7 @@ layout: post
 title:  "【書評】HELLO WORLD 「デザイン」が私たちに必要な理由"
 description: "UXデザインを志すものとして、読まなければならない本だと思い、購入。デザインに関して読んだ本の中で、最も印象に残る本だった。デザイン、デザイナーとは何かからはじまり、よいデザインとは何か、なぜ良いデザインが必要で、悪いデザインが多いのか。"
 date: 2016-01-15
-categories: design
+categories: reading
 lang: ja_JP
 tags:
 - design

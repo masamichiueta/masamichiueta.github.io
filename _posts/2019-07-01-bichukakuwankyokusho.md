@@ -3,7 +3,7 @@ layout: post
 title:  "鼻中隔湾曲症の手術をしたら世界が変わった話"
 description: "2019年2月に鼻中隔湾曲症の手術をしました。実際には鼻中隔湾曲症だけではなく副鼻腔炎という鼻炎の手術もしました。手術から4ヶ月ほどたちまして、通院の必要性もなくなったので、感想を書いておいきます。"
 date: 2019-07-01
-categories: hobby
+categories: everyday
 lang: ja_JP
 tags:
 - 鼻中隔湾曲症

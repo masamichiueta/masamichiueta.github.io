@@ -3,7 +3,7 @@ layout: post
 title:  "Flutterの始め方"
 description: "Dart言語を使ったクロスプラットフォーム(iOS, Android)のモバイルアプリ開発フレームワークであるFlutterを始めました。"
 date: 2018-07-23
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - Flutter

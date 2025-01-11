@@ -3,7 +3,7 @@ layout: post
 title:  "FlutterでiOS12のデバイスにアプリをインストールすると日本語が明朝体になる"
 description: "FlutterでiOS12のデバイスにアプリをインストールすると日本語が明朝体になる"
 date: 2018-10-15
-categories: development
+categories: engineering
 lang: ja_JP
 tags:
 - Flutter
