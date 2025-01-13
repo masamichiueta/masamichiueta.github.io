@@ -399,4 +399,12 @@ a {
   margin-bottom: 1.5rem;
 }
 
+.projects {
+  background-image: url("../assets/layouts/projects.jpg");
+}
+
+.not-found {
+  background-image: url("../assets/layouts/notfound.jpg");
+}
+
 /*# sourceMappingURL=main.css.map */
