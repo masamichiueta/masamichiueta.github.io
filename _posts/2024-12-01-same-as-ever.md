@@ -9,6 +9,7 @@ hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/earth-with-clo
 lang: ja_JP
 tags:
 - 行動原理
+- モーガン・ハウゼル
 ---
 
 [SAME AS EVER この不確実な世界で成功する人生戦略の立て方: 人の「行動原理」が未来を決める](https://amzn.asia/d/gRKZaIr)を読みました。
