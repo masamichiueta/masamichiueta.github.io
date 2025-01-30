@@ -12,7 +12,7 @@ tags:
 
 2019年11月10日に横浜で開催された横浜マラソン2019に参加しました。去年に引き続き2回目の参加です。
 
-去年の記事 [横浜マラソン2018に参加しました](https://masamichiueta.github.io/hobby/2018/11/07/yokohama-marathon-2018.html)
+去年の記事 [横浜マラソン2018に参加しました](https://masamichiueta.github.io/everyday/2018/11/07/yokohama-marathon-2018.html)
 
 今年のタイムは、
 

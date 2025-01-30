@@ -12,7 +12,7 @@ tags:
 
 2024年9月に読んだ本リスト。
 
-- [JUST KEEP BUYING 自動的に富が増え続ける「お金」と「時間」の法則](https://masamichiueta.github.io/hobby/2024/09/21/just-keep-buying.html)
-- [WHITE SPACE ホワイトスペース: 仕事も人生もうまくいく空白時間術](https://masamichiueta.github.io/hobby/2024/09/16/white-space.html)
+- [JUST KEEP BUYING 自動的に富が増え続ける「お金」と「時間」の法則](https://masamichiueta.github.io/reading/2024/09/21/just-keep-buying.html)
+- [WHITE SPACE ホワイトスペース: 仕事も人生もうまくいく空白時間術](https://masamichiueta.github.io/reading/2024/09/16/white-space.html)
 - [イーロン・ショック 元Twitterジャパン社長が見た「破壊と創造」の215日](https://amzn.asia/d/f7a9NuM)
 - [雑談の一流、二流、三流](https://amzn.asia/d/d8Hq49i)

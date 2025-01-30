@@ -12,7 +12,7 @@ tags:
 - JavaScript
 ---
 
-先日書いた記事　[FirebaseとReactで認証付きアプリのサンプルを実行するまで](https://masamichiueta.github.io/development/2018/06/18/firebase-react-authenticaton.html) の続きで、この認証サンプルをReduxを使うように変更したサンプルを作ってみました。
+先日書いた記事　[FirebaseとReactで認証付きアプリのサンプルを実行するまで](https://masamichiueta.github.io/engineering/2018/06/18/firebase-react-authenticaton.html) の続きで、この認証サンプルをReduxを使うように変更したサンプルを作ってみました。
 
 [masamichiueta/react-redux-firebase-auth](https://github.com/masamichiueta/react-redux-firebase-auth)
 

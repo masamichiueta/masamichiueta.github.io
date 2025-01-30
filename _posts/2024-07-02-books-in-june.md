@@ -12,9 +12,9 @@ tags:
 
 2024年6月に読んだ本リスト。
 
-- [ユニクロ](https://masamichiueta.github.io/hobby/2024/06/03/uniqlo.html)
-- [勝てば官軍](https://masamichiueta.github.io/hobby/2024/06/10/fujitaden.html)
-- [ユダヤの商法](https://masamichiueta.github.io/hobby/2024/06/10/fujitaden.html)
-- [崖っぷちだったアメリカ任天堂を復活させた男](https://masamichiueta.github.io/hobby/2024/06/23/disrupting-the-game.html)
+- [ユニクロ](https://masamichiueta.github.io/reading/2024/06/03/uniqlo.html)
+- [勝てば官軍](https://masamichiueta.github.io/reading/2024/06/10/fujitaden.html)
+- [ユダヤの商法](https://masamichiueta.github.io/reading/2024/06/10/fujitaden.html)
+- [崖っぷちだったアメリカ任天堂を復活させた男](https://masamichiueta.github.io/reading/2024/06/23/disrupting-the-game.html)
 
 7月は Growthとか戦略をテーマに本を読んでみようかと思います。

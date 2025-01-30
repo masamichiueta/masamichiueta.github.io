@@ -13,7 +13,7 @@ tags:
 
 ここ数年で継続的に学習量を増やしてきた英語ですが、6月に行なった社内のテストで中期の目標にしていたCEFR（セファール）B2レベルに到達することができました。前回2022年末に受けたテストでは、B1 highという結果でB2まであと少しという状況でした。
 
-- 前回の記事 [英語を学んでいます](https://masamichiueta.github.io/hobby/2023/01/16/learning-english.html)
+- 前回の記事 [英語を学んでいます](https://masamichiueta.github.io/everyday/2023/01/16/learning-english.html)
 
 [文部科学省のpdf](https://www.mext.go.jp/b_menu/shingi/chousa/koutou/091/gijiroku/__icsFiles/afieldfile/2018/07/27/1407616_003.pdf)から抜粋するとB2は以下の定義になっています。
 

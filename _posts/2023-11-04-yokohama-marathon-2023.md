@@ -13,7 +13,7 @@ tags:
 
 2023年10月29日に横浜で開催された横浜マラソン2023に参加しました。4回目のオフラインのフルマラソン参加でした。
 
-前回の記事 [横浜マラソン2022に参加しました](https://masamichiueta.github.io/hobby/2022/10/30/yokohama-marathon-2022.html)
+前回の記事 [横浜マラソン2022に参加しました](https://masamichiueta.github.io/everyday/2022/10/30/yokohama-marathon-2022.html)
 
 今年のタイムは、
 - グロスタイム 3:55:13
