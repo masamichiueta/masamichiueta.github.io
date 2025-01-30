@@ -23,7 +23,7 @@ tags:
 - [Part3 Jekyllの設定をカスタマイズする](https://masamichiueta.github.io/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html)
 - [Part4 自分のオリジナルのテーマを作る](https://masamichiueta.github.io/engineering/2020/05/31/github-pages-blog-part4-original-theme.html)
 
-## 1. GitHub Pagesについて知る
+## 1. GitHub Pagesについて知る
 
 GitHub PagesはGitHubにリポジトリを作りそこにサイト用のファイルを配置することで、Webサイトとして運用できる仕組みです。 GitHub Pagesのサイトには個人のユーザーであればユーザーサイトか、プロジェクトのサイトがあります。
 
