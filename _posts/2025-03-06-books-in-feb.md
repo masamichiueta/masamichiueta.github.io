@@ -12,5 +12,5 @@ tags:
 
 2025年2月に読んだ本リスト。
 
-- [insight(インサイト)――いまの自分を正しく知り、仕事と人生を劇的に変える自己認識の力](https://masamichiueta.github.io/reading/2025/02/08/insight.html)
+- [insight(インサイト)――いまの自分を正しく知り、仕事と人生を劇的に変える自己認識の力](/reading/2025/02/08/insight.html)
 - [これも修行のうち。 実践!あらゆる悩みに「反応しない」生活](https://amzn.asia/d/69a7QBU)

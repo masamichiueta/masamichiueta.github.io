@@ -17,8 +17,8 @@ tags:
 - [下町ロケット　ガウディ計画](https://amzn.asia/d/5b0up0A)
 - [下町ロケット　ゴースト](https://amzn.asia/d/fErRwYZ)
 - [下町ロケット　ヤタガラス](https://amzn.asia/d/4EFgBBX)
-- [なぜ人と組織は変われないのか――ハーバード流 自己変革の理論と実践](https://masamichiueta.github.io/reading/2024/05/04/immunity-to-change.html)
-- [人生を変える80対20の法則](https://masamichiueta.github.io/reading/2024/05/16/the-80-20-principle.html)
+- [なぜ人と組織は変われないのか――ハーバード流 自己変革の理論と実践](/reading/2024/05/04/immunity-to-change.html)
+- [人生を変える80対20の法則](/reading/2024/05/16/the-80-20-principle.html)
 - [「やりたいこと」も「やるべきこと」も全部できる！ 続ける思考](https://amzn.asia/d/fQWtbkk)
 
 6月は今読んでいる[ユニクロ](https://amzn.asia/d/dskHjen)や、世界史の本を読もうと思います。

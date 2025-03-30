@@ -12,8 +12,8 @@ tags:
 
 2024年7月8月に読んだ本リスト。
 
-- [Product Led Growth](https://masamichiueta.github.io/reading/2024/07/07/product-led-growth.html)
-- [エレガントパズル　エンジニアのマネジメントという難問にあなたはどう立ち向かうのか](https://masamichiueta.github.io/reading/2024/07/13/elegant-puzzle.html)
-- [スタッフエンジニア　マネジメントを超えるリーダーシップ](https://masamichiueta.github.io/reading/2024/07/20/staff-engineer.html)
-- [良い戦略、悪い戦略](https://masamichiueta.github.io/reading/2024/09/02/good-strategy-bad-strategy.html)
+- [Product Led Growth](/reading/2024/07/07/product-led-growth.html)
+- [エレガントパズル　エンジニアのマネジメントという難問にあなたはどう立ち向かうのか](/reading/2024/07/13/elegant-puzzle.html)
+- [スタッフエンジニア　マネジメントを超えるリーダーシップ](/reading/2024/07/20/staff-engineer.html)
+- [良い戦略、悪い戦略](/reading/2024/09/02/good-strategy-bad-strategy.html)
 - [傷つきやすい人のための 図太くなれる禅思考](https://amzn.asia/d/2CnvXMP)

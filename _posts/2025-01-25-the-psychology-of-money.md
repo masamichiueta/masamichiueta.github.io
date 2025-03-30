@@ -13,7 +13,7 @@ tags:
 
 [The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness](https://amzn.asia/d/c2XljLt)を読みました。日本語版では [サイコロジー・オブ・マネー 一生お金に困らない「富」のマインドセット](https://amzn.asia/d/1fJD9ck)というタイトルで出版されています。英語版の本をいただいたので英語版で読みました。
 
-著者は[SAME AS EVER この不確実な世界で成功する人生戦略の立て方: 人の「行動原理」が未来を決める](https://masamichiueta.github.io/reading/2024/12/01/same-as-ever.html)と同じモーガン・ハウゼルさんです。
+著者は[SAME AS EVER この不確実な世界で成功する人生戦略の立て方: 人の「行動原理」が未来を決める](/reading/2024/12/01/same-as-ever.html)と同じモーガン・ハウゼルさんです。
 
 The Psychology of Moneyが2020年発売でこちらの方が先に出版されています。
 

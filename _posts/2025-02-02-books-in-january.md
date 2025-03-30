@@ -12,6 +12,6 @@ tags:
 
 2025年1月に読んだ本リスト。
 
-- [1兆ドルコーチ シリコンバレーのレジェンド ビル・キャンベルの成功の教え](https://masamichiueta.github.io/reading/2025/01/11/trillion-dollar-coach.html)
-- [SHOE DOG(シュードッグ)](https://masamichiueta.github.io/reading/2025/01/12/shoe-dog.html)
-- [The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness](https://masamichiueta.github.io/reading/2025/01/25/the-psychology-of-money.html)
+- [1兆ドルコーチ シリコンバレーのレジェンド ビル・キャンベルの成功の教え](/reading/2025/01/11/trillion-dollar-coach.html)
+- [SHOE DOG(シュードッグ)](/reading/2025/01/12/shoe-dog.html)
+- [The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness](/reading/2025/01/25/the-psychology-of-money.html)

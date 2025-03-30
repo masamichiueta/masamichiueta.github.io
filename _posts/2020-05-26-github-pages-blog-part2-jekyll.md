@@ -16,10 +16,10 @@ tags:
 
 他の記事はこちら。
 
-- [Part1 GitHubにリポジトリを作ってサイトを公開する](https://masamichiueta.github.io/engineering/2020/05/24/github-pages-blog-part1-repository.html)
-- [Part2 Jekyllを使ってみる](https://masamichiueta.github.io/engineering/2020/05/26/github-pages-blog-part2-jekyll.html)
-- [Part3 Jekyllの設定をカスタマイズする](https://masamichiueta.github.io/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html)
-- [Part4 自分のオリジナルのテーマを作る](https://masamichiueta.github.io/engineering/2020/05/31/github-pages-blog-part4-original-theme.html)
+- [Part1 GitHubにリポジトリを作ってサイトを公開する](/engineering/2020/05/24/github-pages-blog-part1-repository.html)
+- [Part2 Jekyllを使ってみる](/engineering/2020/05/26/github-pages-blog-part2-jekyll.html)
+- [Part3 Jekyllの設定をカスタマイズする](/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html)
+- [Part4 自分のオリジナルのテーマを作る](/engineering/2020/05/31/github-pages-blog-part4-original-theme.html)
 
 ## Jekyllとは
 
@@ -84,4 +84,4 @@ First post
 {% endraw %}
 ```
 
-[次のPart3](https://masamichiueta.github.io/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html)ではJekyllの設定をカスタマイズする方法を書いていきます。
+[次のPart3](/engineering/2020/05/28/github-pages-blog-part3-cutomize-setting.html)ではJekyllの設定をカスタマイズする方法を書いていきます。

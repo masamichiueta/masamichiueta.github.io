@@ -18,7 +18,7 @@ tags:
 
 ---
 2020/01/01追記
-2020はこちら　[2020年にネイティブアプリを開発する方法](https://masamichiueta.github.io/engineering/2020/01/01/build-a-native-app-in-2020.html)
+2020はこちら　[2020年にネイティブアプリを開発する方法](/engineering/2020/01/01/build-a-native-app-in-2020.html)
 ---
 
 AppleがAppStoreを開始してから10年が経ちました。たくさんの人々がアプリを使っていますし、2019年もこのアプリプラットフォーム上で多くのイノヴェイションが生まれると思います。
