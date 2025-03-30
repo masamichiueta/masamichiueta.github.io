@@ -5,8 +5,8 @@
     <description>エンジニアリング・読書・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 30 Mar 2025 15:52:33 +0900</pubDate>
-    <lastBuildDate>Sun, 30 Mar 2025 15:52:33 +0900</lastBuildDate>
+    <pubDate>Sun, 30 Mar 2025 16:13:12 +0900</pubDate>
+    <lastBuildDate>Sun, 30 Mar 2025 16:13:12 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
@@ -30,6 +30,39 @@
         
         
         <category>reading</category>
+        
+      </item>
+    
+      <item>
+        <title>Macのストレージに空き容量があるのに、実際には空き容量がない状態になっているとき</title>
+        <description>&lt;p&gt;先日写真アプリを見ていると、容量が足りない的なメッセージが表示されていました。&lt;/p&gt;
+
+&lt;p&gt;データはiCloudに入れていてまだ余裕もあるのと、Mac側のストレージアプリで空き容量を確認しても200GBくらいは空き容量があり、おかしいなと思ってシステムレポートやディスクユーティリティを確認すると、確かに空き容量が数GBとほとんどありませんでした。&lt;/p&gt;
+
+&lt;p&gt;色々と調査した結果、ディスクユーティリティで確認できるパージ可能なデータがポイントでした。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/2025-03-28/disk-utility.png&quot; alt=&quot;ディスクユーティリティ&quot; title=&quot;ディスクユーティリティ&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;このパージ可能なデータは、おそらくローカルに保存しているがiCloudに保存されているデータで削除可能なデータだと思います。&lt;/p&gt;
+
+&lt;p&gt;このパージ可能なデータが、ストレージに表示されている空き容量とほぼ同じ容量を使用しているため、実際のストレージの空き容量としては残りわずかとなっていました。&lt;/p&gt;
+
+&lt;p&gt;実際にはMacがローカルストレージの残容量に対して最適化してパージ可能なデータを自動で削除してくれると思うのですが、写真アプリの表示が直らなかったので、強制的にストレージを圧迫することでパージ可能なデータを削除して、空き容量を確保してみました。&lt;/p&gt;
+
+&lt;p&gt;具体的には &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkfile&lt;/code&gt; コマンドで指定した容量のファイルを作成し、パージ可能なデータが削除されていることを確認しながら、ローカルストレージが確保されるまで繰り返しました。&lt;/p&gt;
+
+&lt;p&gt;ストレージに表示される空き容量がまだあるのに、なぜかストレージがないという警告がでた方は参考にしてみてください。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 28 Mar 2025 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/engineering/2025/03/28/mac-purgeable-storage.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/engineering/2025/03/28/mac-purgeable-storage.html</guid>
+        
+        <category>Mac</category>
+        
+        <category>Storage</category>
+        
+        
+        <category>engineering</category>
         
       </item>
     
@@ -449,78 +482,6 @@
         
         
         <category>everyday</category>
-        
-      </item>
-    
-      <item>
-        <title>SAME AS EVER この不確実な世界で成功する人生戦略の立て方: 人の「行動原理」が未来を決めるを読みました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/gRKZaIr&quot;&gt;SAME AS EVER この不確実な世界で成功する人生戦略の立て方: 人の「行動原理」が未来を決める&lt;/a&gt;を読みました。&lt;/p&gt;
-
-&lt;p&gt;変わりゆく世界の中で「決して変わることのないもの」を23章にわたり解説した本です。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;「決して変わることのないもの」が重要なのは、それを知ることで未来がどう形作られるか、確信が持てるからだ。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;1章この世界は「危うく脆い」もの、から非常に面白く、独立戦争やルシタニア号事件、ルーズベルト暗殺未遂など、ほんの些細な事が歴史を動かしているとしています。&lt;/p&gt;
-
-&lt;p&gt;3章「期待」と「現実」のギャップでは、人々が抱く期待値と幸福について述べられています。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;期待したものと現実とのあいだに大きなギャップがあるときに、人は感情を揺さぶられる&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;意識をして期待しすぎないことであきらめたり自分の可能性を狭めずに、期待値をうまく制御する必要があるようです。確かにビジネスマンでもよく相手に期待しすぎない、みたいなことはよく聞いたりします。&lt;/p&gt;
-
-&lt;p&gt;10章「革新」が生まれるとき&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;みんなが幸せで諸々が好調なときに、大きな変化や重要な技術革新は起こらない&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;革新というのは切羽詰まったとき、どうにもならない問題があるときにそれをなんとかしようとする大きな力によって実現されるようです。&lt;/p&gt;
-
-&lt;p&gt;後半ではいくつか長期的な視点に立つための洞察があり、とても参考になりました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;13章 意気揚々と絶望せよ&lt;/li&gt;
-  &lt;li&gt;15章 成功にはコストがかかる&lt;/li&gt;
-  &lt;li&gt;21章 「長期的な視野」に立つには&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;13章では合理的楽観主義者について説明されています。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;悲観主義者のように貯蓄し、楽観主義者のように投資する&lt;/li&gt;
-  &lt;li&gt;悲観主義者のように計画し、楽観主義者のように夢を抱く&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;短期的には困難や挫折を伴いつつ、楽観的な見方をやめない、というのは物事を進める上で大切な感性だと思います。&lt;/p&gt;
-
-&lt;p&gt;15章成功にはコストがかかるでは、どんなものにも嫌な部分があり、理不尽や厄介事をどれくらい我慢すればよいかを見極めるスキルの重要性が説明されています。
-何事もいい面はありつつ、全てがうまくいくときこそ危ないし、困難なことも受け入れていくことを意識したいと思います。&lt;/p&gt;
-
-&lt;p&gt;21章 「長期的な視野」に立つにはは非常に示唆に富む項目がありました。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;「長期的に考える」とは「短期間で起こる理不尽なことへの我慢」を重ねていくこと&lt;/li&gt;
-  &lt;li&gt;自分一人が長期的な視野に立つだけでは足りない。パートナー、同僚、配偶者、友人も足並みを揃える必要がある&lt;/li&gt;
-  &lt;li&gt;「忍耐強い」のではなく「頑固なだけ」の場合もある&lt;/li&gt;
-  &lt;li&gt;長期的な視野で考えるときには「時間軸」をどう取るかよりも「柔軟性」が大切になる&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;人間の行動原理に着目し「決して変わることのないもの」を説明している本書からは学びがとても多かったです。繰り返し読みたい本となりました。&lt;/p&gt;
-</description>
-        <pubDate>Sun, 01 Dec 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/reading/2024/12/01/same-as-ever.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2024/12/01/same-as-ever.html</guid>
-        
-        <category>行動原理</category>
-        
-        <category>モーガン・ハウゼル</category>
-        
-        
-        <category>reading</category>
         
       </item>
     
