@@ -4,6 +4,8 @@ title:  "【書評】HELLO WORLD 「デザイン」が私たちに必要な理�
 description: "UXデザインを志すものとして、読まなければならない本だと思い、購入。デザインに関して読んだ本の中で、最も印象に残る本だった。デザイン、デザイナーとは何かからはじまり、よいデザインとは何か、なぜ良いデザインが必要で、悪いデザインが多いのか。"
 date: 2016-01-15
 categories: reading
+image: /assets/posts/2016-01-15/cover.jpg
+hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E6%9C%A8%E8%A3%BD%E3%81%AE%E6%9C%BA%E3%81%AE%E4%B8%8A%E3%81%AB%E7%BD%AE%E3%81%8B%E3%82%8C%E3%81%9F%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF-uJS4gy_lgIg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@imkirk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Iewek Gnos</a>が撮影した写真
 lang: ja_JP
 tags:
 - design

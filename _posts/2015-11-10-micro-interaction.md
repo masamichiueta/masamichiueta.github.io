@@ -1,15 +1,16 @@
 ---
 layout: post
 title:  "【書評】マイクロインタラクション UI/UXデザインの神が宿る細部"
-description: "インタラクションデザインの教科書」の著者であるDan Suffer氏の著書である。サービスデザインやデザイン思考など、全体像を視野に入れて問題を解決するという観点に対し、それだけではなく”細部”のデザインにも注目しなければ、「許容範囲の製品」を超えた「こよなく愛する製品」になることはできないという主張を述べており、”細部”をデザインするためのノウハウが記載されている。"
+description: "インタラクションデザインの教科書」の著者であるDan Suffer氏の著書である。"
 date: 2015-11-10
 categories: reading
+image: /assets/posts/2015-11-04/cover.jpg
+hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E8%89%B2%E5%BD%A9%E8%B1%8A%E3%81%8B%E3%81%AA%E6%8A%BD%E8%B1%A1%E7%94%BB-tZc3vjPCk-Q?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@halacious?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Hal Gatewood</a>が撮影した写真
 lang: ja_JP
 tags:
 - UI
 - UX
 - マイクロインタラクション
-- 書評
 ---
 
 > This post was originally posted in [Medium](https://medium.com/@masamichiueta/書評-マイクロインタラクション-ui-uxデザインの神が宿る細部-619c42cf067e#.qsrvnqu1m) at 11/10 2015.

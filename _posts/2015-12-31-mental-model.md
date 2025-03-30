@@ -4,6 +4,8 @@ title:  "【書評】メンタルモデル ユーザーへの共感から生ま�
 description: "本書は、メンタルモデルを活用し、ユーザーのニーズや、ユーザーのタスクに合致するものを作る方法について述べている。メンタルモデル、メンタルモデルダイアグラムとは何か、メンタルモデルダイアグラムを活用した戦略の立て方といったところから始まり、実際にメンタルモデルダイアグラムを作成する手法を解説しており、後半はかなり具体的な作成方法で参考になった。"
 date: 2015-12-31
 categories: reading
+image: /assets/posts/2015-12-31/cover.jpg
+hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%99%BD%E3%81%A8%E9%BB%92%E3%81%AE%E3%82%B8%E3%82%B0%E3%82%BD%E3%83%BC%E3%83%91%E3%82%BA%E3%83%AB-aYPtEknQmXE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@markuswinkler?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Markus Winkler</a>が撮影した写真
 lang: ja_JP
 tags:
 - UI

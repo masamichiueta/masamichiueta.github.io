@@ -4,6 +4,9 @@ title: "PIXAR <ピクサー> 世界一のアニメーション企業の今まで
 description: "「PIXAR <ピクサー> 世界一のアニメーション企業の今まで語られなかったお金の話」がPrime Readingで利用可能になっていたので、読みました。"
 date: 2020-06-28
 categories: reading
+image: /assets/posts/2020-06-28/cover.jpg
+hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E8%8C%B6%E8%89%B2%E3%81%AE%E3%83%AC%E3%83%B3%E3%82%AC%E3%81%AE%E5%A3%81%E3%81%AB%E9%BB%92%E3%81%84%E9%87%91%E5%B1%9E%E3%81%AE%E5%8D%81%E5%AD%97%E6%9E%B6-bqp5dbkJP7g?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@pamchi?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Max Cortez</a>が撮影した写真
+      
 lang: ja_JP
 tags:
 - ピクサー
@@ -24,5 +27,3 @@ tags:
 こういった不可能に近い苦難を乗り越えて目標を達成できるというのは、素晴らしいなと思います。
 
 特に良かったのは、クリエイティブ面の責任を経営幹部ではなくジョン・ラセター率いるストーリーチームに任せたところでした。制作の予算の管理ができなくなる一方、クリエイティブの自由を優先したというところが、ピクサーという会社を象徴しているなと感じました。
-
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Prime reading で読める<br>面白かったー<br><br>PIXAR &lt;ピクサー&gt; 世界一のアニメーション企業の今まで語られなかったお金の話 ローレンス・レビー <a href="https://t.co/D9Be4xK0RF">https://t.co/D9Be4xK0RF</a> <a href="https://twitter.com/AmazonJP?ref_src=twsrc%5Etfw">@amazonJP</a>より</p>&mdash; Masamichi Ueta (@masamichiueta) <a href="https://twitter.com/masamichiueta/status/1277624066736701445?ref_src=twsrc%5Etfw">June 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
