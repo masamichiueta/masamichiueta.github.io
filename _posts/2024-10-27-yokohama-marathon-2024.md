@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "横浜マラソン2043に参加しました"
+title:  "横浜マラソン2024に参加しました"
 description: "2024年10月27日に横浜で開催された横浜マラソン2024に参加しました。"
 date: 2024-10-27
 categories: everyday
