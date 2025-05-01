@@ -5,9 +5,26 @@
     <description>エンジニアリング・読書・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Apr 2025 21:43:38 +0900</pubDate>
-    <lastBuildDate>Wed, 09 Apr 2025 21:43:38 +0900</lastBuildDate>
+    <pubDate>Thu, 01 May 2025 18:42:34 +0900</pubDate>
+    <lastBuildDate>Thu, 01 May 2025 18:42:34 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>2025年4月に読んだ本</title>
+        <description>&lt;p&gt;2025年4月に読んだ本リスト。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.asia/d/7tSGCDF&quot;&gt;欲望の見つけ方: お金・恋愛・キャリア&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 30 Apr 2025 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/reading/2025/04/30/books-in-april.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2025/04/30/books-in-april.html</guid>
+        
+        
+        <category>reading</category>
+        
+      </item>
     
       <item>
         <title>2025年3月に読んだ本</title>
@@ -382,106 +399,6 @@
         
         
         <category>reading</category>
-        
-      </item>
-    
-      <item>
-        <title>2024年振り返り</title>
-        <description>&lt;p&gt;2024年を振り替えろうと思いますがその前に、年末に家族でインフルエンザにかかってしまい、ようやく本日31日に平熱に戻りました。まだ頭がぼーっとする感じもありつつ、徐々に復活していきたいと思います。&lt;/p&gt;
-
-&lt;p&gt;体調を崩すと何も手につかなくなってしまうので、改めて健康でいることの大切さを実感しました。&lt;/p&gt;
-
-&lt;p&gt;さて、振り返りです。&lt;/p&gt;
-
-&lt;h2 id=&quot;目標&quot;&gt;目標&lt;/h2&gt;
-
-&lt;p&gt;今年の始めにざっくり立てた目標がこれです。&lt;a href=&quot;/everyday/2024/01/05/goals-for-2024.html&quot;&gt;2024年の目標&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;結果は&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;× 国内 or 海外のカンファレンスで発表する&lt;/li&gt;
-  &lt;li&gt;× 横浜マラソン当選 &amp;amp; サブ3.5達成する&lt;/li&gt;
-  &lt;li&gt;○ トレーニング週２~3を継続する&lt;/li&gt;
-  &lt;li&gt;○ 本を12冊以上読む&lt;/li&gt;
-  &lt;li&gt;△ 英語毎日学習を続ける&lt;/li&gt;
-  &lt;li&gt;× 登山始めてみたい&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ということで、半分くらい達成といった感じでした。&lt;/p&gt;
-
-&lt;h2 id=&quot;カンファレンス&quot;&gt;カンファレンス&lt;/h2&gt;
-
-&lt;p&gt;カンファレンスに関しては、国内、海外のカンファレンスにプロポーザルは提出してみたのもも採択されず、という結果でした。結果はどうあれ、チャレンジできたので良かったと思います。また公開できるような成果があれば挑戦してみたいと思います。&lt;/p&gt;
-
-&lt;p&gt;発表しようとしていた内容については年末に会社のブログに寄稿しました。&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://engineering.mercari.com/blog/entry/20241221-leading-a-project-to-migrate-hundreds-of-screens-to-swiftui-jetpack-compose-from-uikit-androidview-in-merpay/&quot;&gt;メルペイの数百画面をSwiftUI/Jetpack Composeに移行するプロジェクトを推進する&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://engineering.mercari.com/en/blog/entry/20241221-leading-a-project-to-migrate-hundreds-of-screens-to-swiftui-jetpack-compose-from-uikit-androidview-in-merpay/&quot;&gt;Leading a project to migrate hundreds of screens to SwiftUI/Jetpack Compose from UIKit / AndroidView in Merpay&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;マラソン&quot;&gt;マラソン&lt;/h2&gt;
-
-&lt;p&gt;横浜マラソンは、2024年も無事当選し完走することができました。
-そういえば参加のブログを書いていなかったことに今気づきましたが、結果は&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;グロスタイム 3:38:23&lt;/li&gt;
-  &lt;li&gt;ネットタイム 3:37:03&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ということで去年の記録&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;グロスタイム 3:55:13&lt;/li&gt;
-  &lt;li&gt;ネットタイム 3:43:38&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;と比較するとネットタイムで6分ほど短縮することができ新記録を達成することができました。&lt;/p&gt;
-
-&lt;p&gt;ただ惜しくも目標にしていたサブ3.5を達成することはできず。日常のトレーニングや体調も割と整えていたので、なかなかサブ3.5の壁は厚いなというのを実感しつつ、来年も再度チャレンジしたいと思います。&lt;/p&gt;
-
-&lt;p&gt;最近は、横浜マラソンで1年のリズムが作れている気がしています。&lt;/p&gt;
-
-&lt;h2 id=&quot;本&quot;&gt;本&lt;/h2&gt;
-
-&lt;p&gt;今年は意識的に本をたくさん読む時間を作れたのと、読んだ後のノートをログに残すことができたと思います。読んだ中で良かった本3つはこちらです。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/reading/2024/02/11/build.html&quot;&gt;BUILD 真に価値あるものをつくる型破りなガイドブック&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/reading/2024/11/04/the-messenger-moderna.html&quot;&gt;モデルナ: 万年赤字企業が、世界を変えるまで&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/reading/2024/12/01/same-as-ever.html&quot;&gt;SAME AS EVER この不確実な世界で成功する人生戦略の立て方: 人の「行動原理」が未来を決める&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;年末読みたい本が溜まっていてたくさん読もうと思っていたものの、インフルエンザで頭回らなくなってしまったので、ぼちぼち読み進めていきたいと思います。&lt;/p&gt;
-
-&lt;h2 id=&quot;2025年に向けて&quot;&gt;2025年に向けて&lt;/h2&gt;
-
-&lt;p&gt;2025年も仕事は全力でやり切りつつ、個人的には変わらず以下の目標は達成していきたいと思います。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;横浜マラソン当選 &amp;amp; サブ3.5達成する&lt;/li&gt;
-  &lt;li&gt;トレーニング週2~3を継続する&lt;/li&gt;
-  &lt;li&gt;本を12冊以上読む&lt;/li&gt;
-  &lt;li&gt;英語毎日学習を続ける&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;新しい目標&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ゴルフのスコアを伸ばす 120切れるくらい&lt;/li&gt;
-  &lt;li&gt;無病息災&lt;/li&gt;
-  &lt;li&gt;自分で簡単なサービス作る, AI Coding使って手軽にやる&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 31 Dec 2024 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/everyday/2024/12/31/look-back-2024.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/everyday/2024/12/31/look-back-2024.html</guid>
-        
-        <category>振り返り</category>
-        
-        
-        <category>everyday</category>
         
       </item>
     
