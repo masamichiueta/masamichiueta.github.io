@@ -2,9 +2,9 @@
 layout: post
 title: "Cursorでゴルフのスコアを入力するアプリを作ってみました"
 description: ""
-date: 2025-05-01
+date: 2025-05-02
 categories: engineering
-image: /assets/posts/2025-05-01/cover.jpg
+image: /assets/posts/2025-05-02/cover.jpg
 hero-caption: <a href="https://unsplash.com/ja/%E5%86%99%E7%9C%9F/%E7%B7%91%E3%81%AE%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AE%E4%B8%8A%E3%81%AB%E5%BA%A7%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%82%B4%E3%83%AB%E3%83%95%E3%83%9C%E3%83%BC%E3%83%AB-WHf1wtNMMLU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>の<a href="https://unsplash.com/ja/@mk__s?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">mk. s</a>が撮影した写真
 lang: ja_JP
 tags:
