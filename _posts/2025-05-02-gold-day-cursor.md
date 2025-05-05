@@ -13,9 +13,7 @@ tags:
 
 Vibe Codingの練習で、Cursorを使ってゴルフのスコアを入力するWebアプリを作ってみました。
 
-[Gold Day](https://gold-day.vercel.app)
-
-Golf DayをタイポでGold Dayにしてしまったのですが、そのままでいいかと思いそのまま採用しました。
+[Good Gold](https://good-golf.vercel.app/#)
 
 VercelとSupabaseを使っていて、その辺りの設定はこちらでする必要がありましたが、1行もコードを書かずにWebアプリを3時間くらいで作ることができました。
 
