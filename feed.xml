@@ -5,17 +5,15 @@
     <description>エンジニアリング・読書・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 May 2025 13:19:33 +0900</pubDate>
-    <lastBuildDate>Fri, 02 May 2025 13:19:33 +0900</lastBuildDate>
+    <pubDate>Mon, 05 May 2025 14:19:31 +0900</pubDate>
+    <lastBuildDate>Mon, 05 May 2025 14:19:31 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
         <title>Cursorでゴルフのスコアを入力するアプリを作ってみました</title>
         <description>&lt;p&gt;Vibe Codingの練習で、Cursorを使ってゴルフのスコアを入力するWebアプリを作ってみました。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://gold-day.vercel.app&quot;&gt;Gold Day&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Golf DayをタイポでGold Dayにしてしまったのですが、そのままでいいかと思いそのまま採用しました。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://good-golf.vercel.app/#&quot;&gt;Good Gold&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;VercelとSupabaseを使っていて、その辺りの設定はこちらでする必要がありましたが、1行もコードを書かずにWebアプリを3時間くらいで作ることができました。&lt;/p&gt;
 
