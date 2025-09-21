@@ -5,9 +5,37 @@
     <description>エンジニアリング・読書・日常</description>
     <link>https://masamichiueta.github.iohttps://masamichiueta.github.io/</link>
     <atom:link href="https://masamichiueta.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Sep 2025 08:13:07 +0900</pubDate>
-    <lastBuildDate>Mon, 22 Sep 2025 08:13:07 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Sep 2025 08:38:03 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Sep 2025 08:38:03 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>iOSDC Japan 2025に参加しました</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://iosdc.jp/2025/&quot;&gt;iOSDC Japan 2025&lt;/a&gt;に参加しました。&lt;/p&gt;
+
+&lt;p&gt;会社でスポンサーブースを出していたので、基本的にはその運営に入り、9月21日（日）は2つセッションを聞きました。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;「&lt;a href=&quot;https://fortee.jp/iosdc-japan-2025/proposal/92480fdb-0cae-4b75-8471-348b02924fa9&quot;&gt;iPhoneのマイナンバーカード」のすべて &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fortee.jp/iosdc-japan-2025/proposal/aa8ff73a-fe8c-49e0-97f1-53e588cd8a30e&quot;&gt;スマートフォン 来し方行く末 〜どこから来てどこへ往くのか〜&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;特に&lt;a href=&quot;https://fortee.jp/iosdc-japan-2025/proposal/aa8ff73a-fe8c-49e0-97f1-53e588cd8a30e&quot;&gt;スマートフォン 来し方行く末 〜どこから来てどこへ往くのか〜&lt;/a&gt;のセッションに関しては、ガラケーから始まり、初代iPhoneから最新のiPhone17までの歴史を振り返りつつ、どういった進化を遂げてきたのかを改めて思い出すことができ非常に面白いセッションでした。&lt;/p&gt;
+
+&lt;p&gt;@hakさんと@tomzohさんが会話しながら進んでいく形式も面白く、去年のGPUの歴史のセッションに引き続き楽しむことができました。&lt;/p&gt;
+
+&lt;p&gt;また来年も参加したい！&lt;/p&gt;
+</description>
+        <pubDate>Sun, 21 Sep 2025 00:00:00 +0900</pubDate>
+        <link>https://masamichiueta.github.io/engineering/2025/09/21/iosdc-japan-2025.html</link>
+        <guid isPermaLink="true">https://masamichiueta.github.io/engineering/2025/09/21/iosdc-japan-2025.html</guid>
+        
+        <category>iOS</category>
+        
+        
+        <category>engineering</category>
+        
+      </item>
     
       <item>
         <title>2025年4月に読んだ本</title>
@@ -327,75 +355,6 @@
         <guid isPermaLink="true">https://masamichiueta.github.io/reading/2025/01/12/shoe-dog.html</guid>
         
         <category>NIKE</category>
-        
-        
-        <category>reading</category>
-        
-      </item>
-    
-      <item>
-        <title>1兆ドルコーチ シリコンバレーのレジェンド ビル・キャンベルの成功の教えを読みました</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://amzn.asia/d/5cUcn8x&quot;&gt;1兆ドルコーチ シリコンバレーのレジェンド ビル・キャンベルの成功の教え&lt;/a&gt;を読みました。&lt;/p&gt;
-
-&lt;p&gt;AppleやGoogleなどシリコンバレー中の企業をコーチとして支えてきたビル・キャンベル氏のコーチングについて書かれた本です。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;すぐれたマネージャーでいるためには、すぐれたコーチでいる必要がある&lt;/li&gt;
-  &lt;li&gt;自分が成功するために他人を成功させることがますます必要になる&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;などなど、ビル・キャンベル氏の秘訣を学ぶことができました。&lt;/p&gt;
-
-&lt;p&gt;最初からテック業界にいたわけではなく、フットボールコーチとしてのキャリアを進んだ後、39歳で広告会社に就職し、その後コダック、Appleのセールス・マーケティング責任者になったとのこと。また、あの有名なAppleの1984のCMを仕掛けたというのを知りました。&lt;/p&gt;
-
-&lt;p&gt;全体を通して、ビジネス的な観点もさることながら、とても他人に思いやりがあり気前がいい大将、みたいな方だったのかなという印象を受けました。&lt;/p&gt;
-
-&lt;p&gt;ビルのメソッドの4つの側面が各章で紹介されています。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;人がすべて&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;どんな会社の成功を支えるのも、人だ。マネジャーのいちばん大事な仕事は、部下が仕事で実力を発揮し、成長し、発展できるように手を貸すことだ。われわれには成功を望み、大きなことを成し遂げる力を持ち、やる気に満ちて仕事に来る、とびきり優秀な人材がいる。優秀な人材は、持てるエネルギーを解放し、増幅できる環境でこそ成功する。マネジャーは支援・敬意・信頼を通じて、その環境を生み出すべきだ。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;議論すべきトップ5を挙げよ&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;1on1は部下が実力を発揮し成長できるよう手助けできる最良の手段だ。そこで話し合うことはじっくりと考え、時間をかけて準備せよ。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;円卓の背後に控える&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;マネジャーの仕事は、すべての意見を吸い上げ、全ての見解を検討するための意思決定プロセスを実行し、必要な場合にはみずから議論に決着をつけ、決定を下すことだ。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;信頼について&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;3章では信頼を築くことの重要性が述べられています。最近の言葉で言うと心理的安全性をいかに構築するか、信頼は常に最優先、最重要な価値観であったようです。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;信頼とは、約束を守ること、誠意、率直さ、思慮深さ&lt;/li&gt;
-  &lt;li&gt;信頼がビジネスの成功の基盤&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;チームファースト&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;4章チームファーストでは、チーム最優先でありメンバー全員がチームに忠実で、必要とあらば個人よりチームの目的を優先させなければいけない、チームを勝たせることが最優先事項でなければならないという指針が述べられています。&lt;/p&gt;
-
-&lt;p&gt;ペアで仕事に当たる、と言うところは面白く、ビル・キャンベル氏は同僚同士の関係を重視し、チーム内でペアを作ってプロジェクトや決定に取り組ませる機会を作っていたようです。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;パワーオブラブ&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;5章はパワーオブラブと言う章で、その通り愛について書かれています。存在を受け入れるだったり人を大切にするだったり。特に人を大切にするには人に関心を持たなくてはならないということで、結構これが難しかったりするなと思います。&lt;/p&gt;
-
-&lt;p&gt;全体を通して、ビル・キャンベル氏がいかに素晴らしい人間だったか、またそれを実践するためには人間的な価値を高めることが大切ということを学びました。&lt;/p&gt;
-</description>
-        <pubDate>Sat, 11 Jan 2025 00:00:00 +0900</pubDate>
-        <link>https://masamichiueta.github.io/reading/2025/01/11/trillion-dollar-coach.html</link>
-        <guid isPermaLink="true">https://masamichiueta.github.io/reading/2025/01/11/trillion-dollar-coach.html</guid>
-        
-        <category>コーチング</category>
         
         
         <category>reading</category>
