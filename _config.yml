@@ -16,6 +16,7 @@ markdown: kramdown
 future: true
 highlighter: rouge
 github: [metadata]
+exclude: [README.md,Makefile, CLAUDE.md]
 
 category_slugs:
   engineering: "エンジニアリング"
