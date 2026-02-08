@@ -48,59 +48,304 @@
 </head>
 
 <body>
-  <header>
-  <input type="checkbox" id="dn-menustate" class="dn-menustate" />
-  <nav id="nav">
-    <div class="container">
-      <div class="dynamic-navbar">
-        <ul class="dn-list">
-          <li class="dn-item dn-menuicon">
-            <label class="dn-menuicon-label" for="dn-menustate" aria-hidden="true">
-              <span class="dn-menuicon-bread dn-menuicon-bread-top">
-                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-top"></span>
-              </span>
-              <span class="dn-menuicon-bread dn-menuicon-bread-bottom">
-                <span class="dn-menuicon-bread-crust dn-menuicon-bread-crust-bottom"></span>
-              </span>
-            </label>
-            <a href="#dn-menustate" class="dn-menuanchor dn-menuanchor-open" id="dn-menuanchor-open"> <span
-                class="dn-menuanchor-label">Open Menu</span> </a>
-            <a href="#" class="dn-menuanchor dn-menuanchor-close" id="dn-menuanchor-close"> <span
-                class="dn-menuanchor-label">Close Menu</span> </a>
-          </li>
-          <li class="dn-item dn-logo">
-            <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
-          </li>
+  <style>
+  :root {
+    --nav-height: 48px;
+    --nav-bg: rgba(29, 29, 31, 0.72);
+    --nav-bg-solid: #1d1d1f;
+    --nav-text: #f5f5f7;
+    --nav-text-dim: rgba(245, 245, 247, 0.8);
+    --nav-hover: #fff;
+    --nav-font-size: 14px;
+    --transition-duration: 0.4s;
+    --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ===== Bootstrap overrides ===== */
+  .nav-wrapper ul.nav-list {
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .nav-wrapper ul.nav-list li { list-style: none; }
+
+  /* ===== NAV BAR ===== */
+  .nav-wrapper {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 9999;
+  }
+
+  nav.global-nav {
+    height: var(--nav-height);
+    background: var(--nav-bg);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    position: relative;
+    z-index: 10000;
+  }
+
+  .nav-content {
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    gap: 20px;
+  }
+
+  /* ===== LOGO (text) ===== */
+  .nav-logo {
+    color: var(--nav-text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+  }
+  .nav-logo:hover { color: var(--nav-hover); }
+
+  /* ===== DESKTOP NAV ===== */
+  .nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .nav-wrapper .nav-list li a {
+    font-size: var(--nav-font-size);
+    color: var(--nav-text-dim);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    padding: 0 12px;
+  }
+  .nav-wrapper .nav-list li a:hover { color: var(--nav-hover); }
+
+  /* ===== MOBILE MENU BAR ===== */
+  .nav-mobile-menu {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 0 4px 0 16px;
+  }
+
+  .mobile-logo {
+    color: var(--nav-text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-wrapper .hamburger {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 10001;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none;
+  }
+  .nav-wrapper .hamburger:focus,
+  .nav-wrapper .hamburger:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .hamburger-lines {
+    width: 17px;
+    height: 9px;
+    position: relative;
+  }
+
+  .hamburger-lines span {
+    display: block;
+    width: 17px;
+    height: 1px;
+    background: var(--nav-text-dim);
+    position: absolute;
+    left: 0;
+    transition: all var(--transition-duration) var(--transition-ease);
+    border-radius: 0.5px;
+  }
+  .hamburger-lines span:first-child { top: 0; }
+  .hamburger-lines span:last-child  { bottom: 0; }
+
+  /* 2-line → X animation */
+  .nav-open .hamburger-lines span:first-child {
+    top: 4px;
+    transform: rotate(45deg);
+  }
+  .nav-open .hamburger-lines span:last-child {
+    bottom: 4px;
+    transform: rotate(-45deg);
+  }
+
+  /* ===== MOBILE DROPDOWN ===== */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 9997;
+    pointer-events: none;
+    transition: background 0.5s var(--transition-ease);
+  }
+  .nav-open .mobile-nav-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+  }
+
+  .mobile-nav-dropdown {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--nav-bg-solid);
+    z-index: 9998;
+    overflow-y: auto;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.56s cubic-bezier(0.32, 0.08, 0.24, 1);
+  }
+  .nav-open .mobile-nav-dropdown {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .mobile-nav-content {
+    padding: calc(var(--nav-height) + 16px) 48px 48px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s;
+  }
+  .nav-open .mobile-nav-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+  }
+
+  .nav-wrapper .mobile-nav-link {
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--nav-text-dim);
+    text-decoration: none;
+    padding: 8px 0;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+  .nav-open .mobile-nav-link { opacity: 1; transform: translateY(0); }
+
+  .nav-open .mobile-nav-link:nth-child(1)  { transition-delay: 0.12s; }
+  .nav-open .mobile-nav-link:nth-child(2)  { transition-delay: 0.15s; }
+  .nav-open .mobile-nav-link:nth-child(3)  { transition-delay: 0.18s; }
+  .nav-open .mobile-nav-link:nth-child(4)  { transition-delay: 0.21s; }
+  .nav-open .mobile-nav-link:nth-child(5)  { transition-delay: 0.24s; }
+  .nav-open .mobile-nav-link:nth-child(6)  { transition-delay: 0.27s; }
+  .nav-open .mobile-nav-link:nth-child(7)  { transition-delay: 0.30s; }
+  .nav-open .mobile-nav-link:nth-child(8)  { transition-delay: 0.33s; }
+  .nav-open .mobile-nav-link:nth-child(9)  { transition-delay: 0.36s; }
+  .nav-open .mobile-nav-link:nth-child(10) { transition-delay: 0.39s; }
+
+  .nav-wrapper .mobile-nav-link:last-child { border-bottom: none; }
+  .nav-wrapper .mobile-nav-link:hover { color: var(--nav-hover); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 767px) {
+    .nav-list, .desktop-only { display: none; }
+    .nav-mobile-menu { display: flex; }
+    .nav-content { padding: 0; }
+  }
+
+  @media (min-width: 768px) {
+    .mobile-nav-dropdown,
+    .mobile-nav-overlay { display: none; }
+  }
+
+  body.nav-open { overflow: hidden; }
+</style>
+
+<header>
+  <div class="nav-wrapper" id="navWrapper">
+    <nav class="global-nav">
+      <div class="nav-content container-md">
+
+        <!-- Desktop -->
+        <a href="https://masamichiueta.github.io/" class="nav-logo desktop-only">Masamichi Ueta</a>
+        <ul class="nav-list">
+          <li><a href="https://masamichiueta.github.io/">Blog</a></li>
+          <li><a href="https://masamichiueta.github.io/about.html">About</a></li>
+          <li><a href="https://masamichiueta.github.io/projects/">Projects</a></li>
+          <li><a href="//x.com/masamichiueta" target="_blank">X</a></li>
+          <li><a href="//github.com/masamichiueta" target="_blank">GitHub</a></li>
+          <li><a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" target="_blank">LinkedIn</a></li>
         </ul>
-      </div>
-      <div class="static-navbar">
-        <div class="sn-item sn-logo">
-          <a href="https://masamichiueta.github.io/">MasamichiUeta</a>
+
+        <!-- Mobile: Logo left ・ Hamburger right -->
+        <div class="nav-mobile-menu">
+          <a href="#" class="mobile-logo">Masamichi Ueta</a>
+          <button class="hamburger" id="hamburgerBtn" aria-label="メニュー" aria-expanded="false">
+            <div class="hamburger-lines">
+              <span></span>
+              <span></span>
+            </div>
+          </button>
         </div>
-        <ul class="sn-list">
-          <li class="sn-item sn-item-menu">
-            <a href="https://masamichiueta.github.io/">Blog</a>
-          </li>
-          <li class="sn-item sn-item-menu">
-            <a href="https://masamichiueta.github.io/about.html">About</a>
-          </li>
-          <li class="sn-item sn-item-menu">
-            <a href="https://masamichiueta.github.io/projects/">Projects</a>
-          </li>
-          <li class="sn-item sn-item-menu">
-            <a href="//x.com/masamichiueta" target="_blank">X</a>
-          </li>
-          <li class="sn-item sn-item-menu">
-            <a href="//github.com/masamichiueta" target="_blank">GitHub</a>
-          </li>
-          <li class="sn-item sn-item-menu">
-            <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" target="_blank">LinkedIn</a>
-          </li>
-        </ul>
+
+      </div>
+    </nav>
+
+    <div class="mobile-nav-dropdown" id="mobileDropdown">
+      <div class="mobile-nav-content">
+        <a href="https://masamichiueta.github.io/" class="mobile-nav-link">Blog</a>
+        <a href="https://masamichiueta.github.io/about.html" class="mobile-nav-link">About</a>
+        <a href="https://masamichiueta.github.io/projects/" class="mobile-nav-link">Projects</a>
+        <a href="//x.com/masamichiueta" class="mobile-nav-link" target="_blank">X</a>
+        <a href="//github.com/masamichiueta" class="mobile-nav-link" target="_blank">GitHub</a>
+        <a href="//www.linkedin.com/in/masamichi-ueta-b1b88856/" class="mobile-nav-link"
+          target="_blank">LinkedIn</a>
       </div>
     </div>
-  </nav>
+
+    <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  </div>
 </header>
+
+<script>
+  const hamburger = document.getElementById('hamburgerBtn');
+  const navWrapper = document.getElementById('navWrapper');
+  const overlay = document.getElementById('mobileOverlay');
+  let isOpen = false;
+
+  function toggleMenu() {
+    isOpen = !isOpen;
+    navWrapper.classList.toggle('nav-open', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  }
+
+  function closeMenu() {
+    if (!isOpen) return;
+    isOpen = false;
+    navWrapper.classList.remove('nav-open');
+    document.body.classList.remove('nav-open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', closeMenu));
+  window.addEventListener('resize', () => { if (window.innerWidth > 767) closeMenu(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+</script>
 
   
 <section class="hero text-center" style="background-image: url(/assets/posts/2019-06-10/cover.jpg)">
