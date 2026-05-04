@@ -419,11 +419,83 @@
               
             </p>
             
-            <div>
-              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
-                data-show-count="false">Tweet</a>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
+            <style>
+    /* X公式風ボタン */
+    .btn-x {
+        --x-bg: #000;
+        --x-color: #fff;
+        --x-hover-bg: #0f0f0f;
+        --x-active-bg: #1a1a1a;
+        --x-focus-ring: rgba(29, 155, 240, 0.6);
+
+        background-color: var(--x-bg);
+        color: var(--x-color);
+        border: none;
+        border-radius: 9999px;
+
+        /* サイズ調整（公式寄せ） */
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 18px;
+        padding: 4px 12px;
+
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        transition: background-color 0.15s ease,
+            box-shadow 0.15s ease,
+            transform 0.05s ease;
+    }
+
+    /* アイコンサイズ */
+    .btn-x svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* hover */
+    .btn-x:hover {
+        background-color: var(--x-hover-bg);
+        color: var(--x-color);
+    }
+
+    /* active */
+    .btn-x:active {
+        background-color: var(--x-active-bg);
+        transform: scale(0.97);
+    }
+
+    /* focus */
+    .btn-x:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px var(--x-focus-ring);
+    }
+
+    /* ダークモード */
+    @media (prefers-color-scheme: dark) {
+        .btn-x {
+            --x-bg: #fff;
+            --x-color: #000;
+            --x-hover-bg: #e6e6e6;
+            --x-active-bg: #d9d9d9;
+        }
+    }
+</style>
+
+<div class="mb-3">
+    <a href="https://twitter.com/intent/tweet?text=%E6%A8%AA%E6%B5%9C%E3%83%9E%E3%83%A9%E3%82%BD%E3%83%B32019%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%20%7C%20Masamichi%20Ueta&url=https://masamichiueta.github.io/everyday/2019/11/26/yokohama-marathon-2019.html"
+        target="_blank" rel="noopener noreferrer" class="btn btn-x d-inline-flex align-items-center">
+
+        <!-- Xロゴ -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.47h2.04L6.486 3.266H4.297l13.314 17.356Z" />
+        </svg>
+
+        <span>Post</span>
+    </a>
+</div>
         </article>
         <hr />
         <div>
@@ -433,6 +505,12 @@
             
             
 
+            
+            
+
+            
+
+            
             
             
 

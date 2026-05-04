@@ -448,11 +448,83 @@
               
             </p>
             
-            <div>
-              <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
-                data-show-count="false">Tweet</a>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
+            <style>
+    /* X公式風ボタン */
+    .btn-x {
+        --x-bg: #000;
+        --x-color: #fff;
+        --x-hover-bg: #0f0f0f;
+        --x-active-bg: #1a1a1a;
+        --x-focus-ring: rgba(29, 155, 240, 0.6);
+
+        background-color: var(--x-bg);
+        color: var(--x-color);
+        border: none;
+        border-radius: 9999px;
+
+        /* サイズ調整（公式寄せ） */
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 18px;
+        padding: 4px 12px;
+
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        transition: background-color 0.15s ease,
+            box-shadow 0.15s ease,
+            transform 0.05s ease;
+    }
+
+    /* アイコンサイズ */
+    .btn-x svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* hover */
+    .btn-x:hover {
+        background-color: var(--x-hover-bg);
+        color: var(--x-color);
+    }
+
+    /* active */
+    .btn-x:active {
+        background-color: var(--x-active-bg);
+        transform: scale(0.97);
+    }
+
+    /* focus */
+    .btn-x:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px var(--x-focus-ring);
+    }
+
+    /* ダークモード */
+    @media (prefers-color-scheme: dark) {
+        .btn-x {
+            --x-bg: #fff;
+            --x-color: #000;
+            --x-hover-bg: #e6e6e6;
+            --x-active-bg: #d9d9d9;
+        }
+    }
+</style>
+
+<div class="mb-3">
+    <a href="https://twitter.com/intent/tweet?text=Firebase%E3%81%A7Cloud%20Storage%E3%81%AB%E7%94%BB%E5%83%8F%E3%82%92%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%20%7C%20Masamichi%20Ueta&url=https://masamichiueta.github.io/engineering/2020/01/03/upload-image-firebase.html"
+        target="_blank" rel="noopener noreferrer" class="btn btn-x d-inline-flex align-items-center">
+
+        <!-- Xロゴ -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933Zm-1.29 19.47h2.04L6.486 3.266H4.297l13.314 17.356Z" />
+        </svg>
+
+        <span>Post</span>
+    </a>
+</div>
         </article>
         <hr />
         <div>
@@ -462,6 +534,33 @@
             
             
 
+            
+            
+
+            
+
+            
+            <li class="pb-4 pt-4">
+              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2026/05/06/restart-app-development.html">
+                <small class="decoration-none text-muted">2026/5/6</small>
+                <h3 class="mt-0 text-body-emphasis">AIで個人アプリの開発を再開してみました</h3>
+                <p class="text-body"></p>
+                
+                <div alt="AIで個人アプリの開発を再開してみました" class="my-4 media-img rounded"
+                  style="background-image: url(/assets/posts/2026-05-06/cover.jpg)">
+                </div>
+                
+                
+                <p class="mb-0">
+                  
+                </p>
+                
+              </a>
+            </li>
+            <hr />
+            
+            
+            
             
             
 
@@ -1067,47 +1166,6 @@
                 <small class="decoration-none text-muted">2020/6/23</small>
                 <h3 class="mt-0 text-body-emphasis">Platform State of the Unionまとめ</h3>
                 <p class="text-body">Platform State of the Unioまとめ</p>
-                
-                
-                <p class="mb-0">
-                  
-                  <span class="badge text-bg-light">WWDC2020</span>
-                  
-                  <span class="badge text-bg-light">Apple</span>
-                  
-                  <span class="badge text-bg-light">アップル</span>
-                  
-                  <span class="badge text-bg-light">iOS</span>
-                  
-                  <span class="badge text-bg-light">macOS</span>
-                  
-                  <span class="badge text-bg-light">watchOS</span>
-                  
-                  <span class="badge text-bg-light">tvOS</span>
-                  
-                </p>
-                
-              </a>
-            </li>
-            <hr />
-            
-            
-            
-            
-            
-
-            
-
-            
-            <li class="pb-4 pt-4">
-              <a class="nounderline" href="https://masamichiueta.github.io/engineering/2020/06/23/wwdc2020-keynote.html">
-                <small class="decoration-none text-muted">2020/6/23</small>
-                <h3 class="mt-0 text-body-emphasis">WWDC2020キーノートまとめ</h3>
-                <p class="text-body">WWDC2020 キーノートまとめ</p>
-                
-                <div alt="WWDC2020キーノートまとめ" class="my-4 media-img rounded"
-                  style="background-image: url(/assets/posts/2020-06-23/cover.jpg)">
-                </div>
                 
                 
                 <p class="mb-0">
