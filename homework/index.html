@@ -1,0 +1,356 @@
+---
+layout: none
+permalink: /homework/
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homework — こどもがじぶんできろくするべんきょうタイマー</title>
+  <meta name="description" content="塾・公文・学校の宿題にかけた時間を、子どもが自分で記録できるiOSアプリ。ひらがな主体のやさしい画面で、ストリーク・レベル・グラフ・300種類のバッジで毎日のがんばりを見える化します。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/homework/assets/icon.png">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Homework — こどもがじぶんできろくするべんきょうタイマー">
+  <meta property="og:description" content="ひらがな主体のやさしい画面で、年長さんから小学生まで一人で使える学習タイマー。ストリーク・レベル・グラフ・300種類のバッジでがんばりを見える化。">
+  <meta property="og:url" content="https://masamichiueta.github.io/homework/">
+  <meta property="og:image" content="https://masamichiueta.github.io/homework/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #0066cc;
+      --accent: #4F8FF7;
+      --card: #f5f5f7;
+      --card-rule: #e5e5e7;
+      --hero: radial-gradient(120% 120% at 50% 0%, rgba(79,143,247,0.16) 0%, rgba(79,143,247,0) 60%);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1d1d1f;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #3a3a3c;
+        --link: #2997ff;
+        --accent: #4F8FF7;
+        --card: #2c2c2e;
+        --card-rule: #3a3a3c;
+        --hero: radial-gradient(120% 120% at 50% 0%, rgba(79,143,247,0.22) 0%, rgba(79,143,247,0) 60%);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 56px 0; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      background: var(--hero);
+      padding: 72px 0 56px;
+    }
+    .hero img.icon {
+      width: 112px; height: 112px;
+      border-radius: 24px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      margin: 20px 0 6px;
+      letter-spacing: -0.02em;
+    }
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: var(--fg);
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+    .hero .lead {
+      max-width: 600px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+    }
+    .badge-soon {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 10px 20px;
+      border-radius: 999px;
+    }
+    .chips {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      justify-content: center;
+    }
+    .chips li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 4px 12px;
+    }
+
+    /* Screenshots */
+    .shots {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 8px 4px 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .shot {
+      flex: 0 0 auto;
+      width: 210px;
+      scroll-snap-align: center;
+      text-align: center;
+    }
+    .shot img {
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--card-rule);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      display: block;
+    }
+    .shot span {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Section headings */
+    h2.section-title {
+      font-size: 1.7rem;
+      letter-spacing: -0.01em;
+      margin: 0 0 6px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 0 36px;
+    }
+
+    /* Features grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--card-rule);
+      border-radius: 16px;
+      padding: 22px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .feature:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
+    .feature .emoji { font-size: 1.7rem; line-height: 1; }
+    .feature h3 { font-size: 1.05rem; margin: 12px 0 6px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    /* Pricing */
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .plan {
+      border: 1px solid var(--card-rule);
+      border-radius: 18px;
+      padding: 28px;
+      background: var(--bg);
+    }
+    .plan.premium {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent) inset;
+    }
+    .plan h3 { margin: 0 0 4px; font-size: 1.25rem; }
+    .plan .price { color: var(--muted); margin: 0 0 16px; font-size: 0.95rem; }
+    .plan ul { margin: 0; padding-left: 1.2em; }
+    .plan li { margin-bottom: 8px; }
+    .plan .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      padding: 2px 10px;
+      margin-bottom: 12px;
+    }
+
+    /* Privacy callout */
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--card-rule);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .callout .emoji { font-size: 2.2rem; }
+    .callout h2 { font-size: 1.5rem; margin: 12px 0 10px; }
+    .callout p { color: var(--muted); margin: 0 auto 16px; max-width: 560px; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 36px 0 56px;
+      text-align: center;
+    }
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    footer .copy { color: var(--muted); font-size: 0.85rem; }
+
+    @media (max-width: 520px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero { padding: 56px 0 40px; }
+      section { padding: 44px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <img class="icon" src="/homework/assets/icon.png" alt="Homeworkアプリアイコン" width="112" height="112">
+      <h1>Homework</h1>
+      <p class="tagline">こどもがじぶんできろくするべんきょうタイマー</p>
+      <p class="lead">塾・公文・学校の宿題にかけた時間を、子どもが自分で記録。ひらがな主体のやさしい画面で、年長さんから小学生まで一人で使えます。ストリーク・レベル・グラフ・300種類のバッジで、毎日のがんばりが見える化されます。</p>
+      <span class="badge-soon">App Storeにて近日公開予定</span>
+      <ul class="chips">
+        <li>iOS 26.4以降</li>
+        <li>iPhone・iPad対応</li>
+        <li>日本語・英語</li>
+        <li>広告なし・トラッキングなし</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- SCREENSHOTS -->
+  <section>
+    <div class="wrap">
+      <div class="shots">
+        <figure class="shot"><img src="/homework/assets/shot-timer.png" alt="タイマー画面"><span>タイマー</span></figure>
+        <figure class="shot"><img src="/homework/assets/shot-home.png" alt="ホーム画面（レベル）"><span>ホーム・レベル</span></figure>
+        <figure class="shot"><img src="/homework/assets/shot-charts.png" alt="グラフとヒートマップ"><span>グラフ・ヒートマップ</span></figure>
+        <figure class="shot"><img src="/homework/assets/shot-badges.png" alt="バッジ一覧"><span>300種類のバッジ</span></figure>
+        <figure class="shot"><img src="/homework/assets/shot-certificate.png" alt="ひょうしょうじょう"><span>ひょうしょうじょう</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">できること</h2>
+      <p class="section-sub">記録する → 見える化する → がんばりが続く</p>
+      <div class="features">
+        <div class="feature"><div class="emoji">⏱️</div><h3>タイマー &amp; 手入力</h3><p>タップひとつで計測スタート。あとからまとめて入力する「てうちにゅうりょく」にも対応。</p></div>
+        <div class="feature"><div class="emoji">🔥</div><h3>ストリーク</h3><p>1日1分以上の記録で連続日数がカウントアップ。今日・連続・今週がひと目でわかります。</p></div>
+        <div class="feature"><div class="emoji">⭐</div><h3>レベル</h3><p>学習時間がたまるほどレベルアップ。「あと◯ふんでレベルアップ」で次の目標が見えます。</p></div>
+        <div class="feature"><div class="emoji">📊</div><h3>グラフ &amp; ヒートマップ</h3><p>週／月で切り替えられる積み上げ棒グラフと、13週間のヒートマップで長期の継続を確認。</p></div>
+        <div class="feature"><div class="emoji">🏅</div><h3>300種類のバッジ</h3><p>27カテゴリ全300種類。「つぎのバッジ」表示で達成までの残りもわかります。</p></div>
+        <div class="feature"><div class="emoji">📜</div><h3>ひょうしょうじょう</h3><p>月ごと・年ごとのがんばりをA4のPDFに。冷蔵庫に貼ったり塾の先生に見せたり。</p></div>
+        <div class="feature"><div class="emoji">🔔</div><h3>通知（この端末だけ）</h3><p>子どもごとにリマインド。設定は端末ローカルで、その日やっていれば自動でスキップ。</p></div>
+        <div class="feature"><div class="emoji">🔒</div><h3>親モード &amp; PIN</h3><p>編集や記録の管理を保護。4桁のPINはこの端末だけに保存され、他の端末には漏れません。</p></div>
+        <div class="feature"><div class="emoji">☁️</div><h3>iCloud同期</h3><p>同じApple IDなら自動で同期。家族の別Apple IDへはファイルでやり取りできます。</p></div>
+        <div class="feature"><div class="emoji">🛡️</div><h3>プライバシー</h3><p>広告SDKも解析SDKもなし。データは端末とあなた自身のiCloudにだけ保存されます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">料金</h2>
+      <p class="section-sub">本体は無料。プレミアムは買い切り（ファミリー共有対応）</p>
+      <div class="pricing">
+        <div class="plan">
+          <h3>無料</h3>
+          <p class="price">ずっと無料で使えます</p>
+          <ul>
+            <li>プロフィール1人ぶん</li>
+            <li>記録・タイマー・手入力</li>
+            <li>ストリーク・レベル・グラフ・ヒートマップ</li>
+            <li>30種類のバッジ</li>
+            <li>通知・親モード・PINロック</li>
+          </ul>
+        </div>
+        <div class="plan premium">
+          <span class="tag">Homeworkプレミアム</span>
+          <h3>買い切り</h3>
+          <p class="price">一度の購入でずっと・ファミリー共有対応</p>
+          <ul>
+            <li>2人目以降のプロフィール</li>
+            <li>全300種類のバッジ</li>
+            <li>ひょうしょうじょうのPDF出力</li>
+            <li><code>.homeworkbackup</code>でのファイルやり取り</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section>
+    <div class="wrap">
+      <div class="callout">
+        <div class="emoji">🛡️</div>
+        <h2>プライバシーファースト</h2>
+        <p>記録はすべて、お使いの端末とあなた自身のiCloudにだけ保存されます。開発者を含む第三者には一切送信しません。広告・トラッキング・解析SDKは一切ありません。</p>
+        <a href="/homework/privacy.html">プライバシーポリシーを読む →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="/homework/support.html">サポート</a>
+        <a href="/homework/privacy.html">プライバシーポリシー</a>
+        <a href="https://forms.gle/k9ykY8avJnAzr9Vu7">お問い合わせ</a>
+      </nav>
+      <p class="copy">© 2026 Masamichi Ueta</p>
+    </div>
+  </footer>
+
+</body>
+</html>
