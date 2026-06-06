@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Homework — A study timer kids run themselves</title>
-  <meta name="description" content="An iOS app that lets children record the time they spend on homework, cram school, or Kumon — all by themselves. A gentle, hiragana-first interface with streaks, levels, charts, and 300 badges to make every day's effort visible.">
+  <meta name="description" content="An iOS app that lets children record the time they spend on homework or cram school — all by themselves. A gentle, simple interface with streaks, levels, charts, and 300 badges to make every day's effort visible.">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/homework/assets/icon.png">
 
@@ -95,14 +95,20 @@
       margin: 0 auto 24px;
       color: var(--muted);
     }
-    .badge-soon {
+    .appstore-btn {
       display: inline-block;
       background: var(--accent);
       color: #fff;
       font-weight: 600;
       font-size: 0.95rem;
-      padding: 10px 20px;
+      padding: 12px 26px;
       border-radius: 999px;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .appstore-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      text-decoration: none;
     }
     .chips {
       list-style: none;
@@ -260,8 +266,8 @@
       <img class="icon" src="/homework/assets/icon.png" alt="Homework app icon" width="112" height="112">
       <h1>Homework</h1>
       <p class="tagline">A study timer kids run themselves</p>
-      <p class="lead">Children record the time they spend on homework, juku (cram school), or Kumon — all by themselves. A gentle, hiragana-first interface means even a five-year-old can use it. Streaks, levels, charts, and 300 badges make every day's effort visible.</p>
-      <span class="badge-soon">Coming soon to the App Store</span>
+      <p class="lead">Children record the time they spend on homework or juku (cram school) — all by themselves. A gentle, simple interface means a child can use it on their own. Streaks, levels, charts, and 300 badges make every day's effort visible.</p>
+      <a class="appstore-btn" href="https://apps.apple.com/jp/app/homework/id6768120022">Download on the App Store</a>
       <ul class="chips">
         <li>iOS 26.4+</li>
         <li>iPhone &amp; iPad</li>
