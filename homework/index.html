@@ -8,14 +8,14 @@ permalink: /homework/
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Homework — こどもがじぶんできろくするべんきょうタイマー</title>
-  <meta name="description" content="塾・公文・学校の宿題にかけた時間を、子どもが自分で記録できるiOSアプリ。ひらがな主体のやさしい画面で、ストリーク・レベル・グラフ・300種類のバッジで毎日のがんばりを見える化します。">
+  <meta name="description" content="塾・学校の宿題にかけた時間を、子どもが自分で記録できるiOSアプリ。ひらがな主体のやさしい画面で、ストリーク・レベル・グラフ・300種類のバッジで毎日のがんばりを見える化します。">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/homework/assets/icon.png">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Homework — こどもがじぶんできろくするべんきょうタイマー">
-  <meta property="og:description" content="ひらがな主体のやさしい画面で、年長さんから小学生まで一人で使える学習タイマー。ストリーク・レベル・グラフ・300種類のバッジでがんばりを見える化。">
+  <meta property="og:description" content="ひらがな主体のやさしい画面で、子どもが一人で使える学習タイマー。ストリーク・レベル・グラフ・300種類のバッジでがんばりを見える化。">
   <meta property="og:url" content="https://masamichiueta.github.io/homework/">
   <meta property="og:image" content="https://masamichiueta.github.io/homework/assets/icon.png">
   <meta name="twitter:card" content="summary">
@@ -99,14 +99,20 @@ permalink: /homework/
       margin: 0 auto 24px;
       color: var(--muted);
     }
-    .badge-soon {
+    .appstore-btn {
       display: inline-block;
       background: var(--accent);
       color: #fff;
       font-weight: 600;
       font-size: 0.95rem;
-      padding: 10px 20px;
+      padding: 12px 26px;
       border-radius: 999px;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .appstore-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      text-decoration: none;
     }
     .chips {
       list-style: none;
@@ -264,8 +270,8 @@ permalink: /homework/
       <img class="icon" src="/homework/assets/icon.png" alt="Homeworkアプリアイコン" width="112" height="112">
       <h1>Homework</h1>
       <p class="tagline">こどもがじぶんできろくするべんきょうタイマー</p>
-      <p class="lead">塾・公文・学校の宿題にかけた時間を、子どもが自分で記録。ひらがな主体のやさしい画面で、年長さんから小学生まで一人で使えます。ストリーク・レベル・グラフ・300種類のバッジで、毎日のがんばりが見える化されます。</p>
-      <span class="badge-soon">App Storeにて近日公開予定</span>
+      <p class="lead">塾・学校の宿題にかけた時間を、子どもが自分で記録。ひらがな主体のやさしい画面で、一人で使えます。ストリーク・レベル・グラフ・300種類のバッジで、毎日のがんばりが見える化されます。</p>
+      <a class="appstore-btn" href="https://apps.apple.com/jp/app/homework/id6768120022">App Storeでダウンロード</a>
       <ul class="chips">
         <li>iOS 26.4以降</li>
         <li>iPhone・iPad対応</li>
