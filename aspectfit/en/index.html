@@ -1,0 +1,354 @@
+---
+layout: none
+permalink: /aspectfit/en/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AspectFit — Extend photos to preset ratios</title>
+  <meta name="description" content="An iOS app that reshapes any photo to the exact aspect ratio you need — no cropping, no bars. It extends the background naturally for wallpapers and social posts. Fully on-device, no account, no ads.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/aspectfit/assets/icon.png">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AspectFit — Extend photos to preset ratios">
+  <meta property="og:description" content="Pick a photo, choose a target ratio. AspectFit fills the new space with a natural background — great for wallpapers and social posts. Fully on-device, no account, no ads.">
+  <meta property="og:url" content="https://masamichiueta.github.io/aspectfit/en/">
+  <meta property="og:image" content="https://masamichiueta.github.io/aspectfit/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #0066cc;
+      --accent: #8B5CF6;
+      --card: #f5f5f7;
+      --card-rule: #e5e5e7;
+      --hero: radial-gradient(120% 120% at 50% 0%, rgba(139,92,246,0.16) 0%, rgba(139,92,246,0) 60%);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1d1d1f;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #3a3a3c;
+        --link: #2997ff;
+        --accent: #A78BFA;
+        --card: #2c2c2e;
+        --card-rule: #3a3a3c;
+        --hero: radial-gradient(120% 120% at 50% 0%, rgba(139,92,246,0.26) 0%, rgba(139,92,246,0) 60%);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 56px 0; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      text-align: center;
+      background: var(--hero);
+      padding: 72px 0 56px;
+    }
+    .langswitch {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .langswitch a { color: var(--link); }
+    .langswitch .active { color: var(--fg); font-weight: 600; }
+    .langswitch .sep { margin: 0 6px; opacity: 0.5; }
+    .hero img.icon {
+      width: 112px; height: 112px;
+      border-radius: 24px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      margin: 20px 0 6px;
+      letter-spacing: -0.02em;
+    }
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: var(--fg);
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+    .hero .lead {
+      max-width: 600px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+    }
+    /* App Store button — swap the .coming-soon span for this <a> once live:
+       <a class="appstore-btn" href="https://apps.apple.com/app/aspectfit/idXXXXXXXXX">Download on the App Store</a> */
+    .appstore-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 26px;
+      border-radius: 999px;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .appstore-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+    .coming-soon {
+      display: inline-block;
+      background: var(--card);
+      color: var(--muted);
+      border: 1px solid var(--card-rule);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 26px;
+      border-radius: 999px;
+      cursor: default;
+    }
+    .chips {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      justify-content: center;
+    }
+    .chips li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 4px 12px;
+    }
+
+    /* Screenshots */
+    .shots {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 8px 4px 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      justify-content: center;
+    }
+    .shot {
+      flex: 0 0 auto;
+      width: 230px;
+      scroll-snap-align: center;
+      text-align: center;
+    }
+    .shot img {
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid var(--card-rule);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      display: block;
+    }
+    .shot span {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Section headings */
+    h2.section-title {
+      font-size: 1.7rem;
+      letter-spacing: -0.01em;
+      margin: 0 0 6px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 0 36px;
+    }
+
+    /* Features grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--card-rule);
+      border-radius: 16px;
+      padding: 22px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .feature:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
+    .feature .emoji { font-size: 1.7rem; line-height: 1; }
+    .feature h3 { font-size: 1.05rem; margin: 12px 0 6px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    /* How it works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .step { text-align: center; padding: 8px 12px; }
+    .step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px; height: 42px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+    .step h3 { font-size: 1.05rem; margin: 0 0 6px; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    /* Privacy callout */
+    .callout {
+      background: var(--card);
+      border: 1px solid var(--card-rule);
+      border-radius: 20px;
+      padding: 40px 32px;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .callout .emoji { font-size: 2.2rem; }
+    .callout h2 { font-size: 1.5rem; margin: 12px 0 10px; }
+    .callout p { color: var(--muted); margin: 0 auto 16px; max-width: 560px; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 36px 0 56px;
+      text-align: center;
+    }
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    footer .copy { color: var(--muted); font-size: 0.85rem; }
+
+    @media (max-width: 520px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero { padding: 56px 0 40px; }
+      section { padding: 44px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="langswitch"><a href="/aspectfit/">日本語</a><span class="sep">/</span><span class="active">English</span></div>
+    <div class="wrap">
+      <img class="icon" src="/aspectfit/assets/icon.png" alt="AspectFit app icon" width="112" height="112">
+      <h1>AspectFit</h1>
+      <p class="tagline">Extend photos to preset ratios</p>
+      <p class="lead">Reshape any photo to the exact aspect ratio you need — no awkward cropping, no ugly bars. AspectFit fills the new space with a background generated from your own image, so your photo fits wallpapers and social posts.</p>
+      <span class="coming-soon">Coming soon to the App Store</span>
+      <ul class="chips">
+        <li>iOS 18.0+</li>
+        <li>iPhone &amp; iPad</li>
+        <li>Japanese &amp; English</li>
+        <li>No ads · No tracking</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- SCREENSHOTS -->
+  <section>
+    <div class="wrap">
+      <div class="shots">
+        <figure class="shot"><img src="/aspectfit/assets/shot-home-en.png" alt="Home screen for picking a photo"><span>Pick a photo</span></figure>
+        <figure class="shot"><img src="/aspectfit/assets/shot-editor-en.png" alt="Editor screen for choosing ratio and background"><span>Choose ratio &amp; background</span></figure>
+        <figure class="shot"><img src="/aspectfit/assets/shot-result-en.png" alt="Result screen with naturally extended background"><span>Save &amp; share</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">What you get</h2>
+      <p class="section-sub">Change the ratio — no cropping, no ugly bars</p>
+      <div class="features">
+        <div class="feature"><div class="emoji">📐</div><h3>Ready-made ratios</h3><p>Presets for wallpapers (iPhone, iPad, Apple Watch) and social (Story/Reels, Square, Portrait, Widescreen).</p></div>
+        <div class="feature"><div class="emoji">🎨</div><h3>Six background styles</h3><p>Gradient, Multi Gradient, Blur, Stretch, Soft Stretch, and Solid color — generated from your own image to blend in naturally.</p></div>
+        <div class="feature"><div class="emoji">✋</div><h3>Drag to position</h3><p>Fine-tune your photo's position with a drag. One tap re-centers it whenever you want.</p></div>
+        <div class="feature"><div class="emoji">💾</div><h3>Save &amp; share</h3><p>Export the finished image to Photos, or send it anywhere with the share sheet.</p></div>
+        <div class="feature"><div class="emoji">🌓</div><h3>Light &amp; Dark</h3><p>Designed for Light and Dark Mode and Dynamic Type — clear and comfortable for everyone.</p></div>
+        <div class="feature"><div class="emoji">🔒</div><h3>Fully on-device</h3><p>All editing happens on your device. No account, no ads, nothing sent off your phone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">Three steps to the perfect aspect ratio</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Pick a photo</h3><p>Choose the photo you want to reshape from the iOS photo picker.</p></div>
+        <div class="step"><div class="num">2</div><h3>Choose ratio &amp; background</h3><p>Select a target aspect ratio and background style, then drag to position.</p></div>
+        <div class="step"><div class="num">3</div><h3>Save &amp; share</h3><p>Save the generated image to Photos, or share it straight from the share sheet.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section>
+    <div class="wrap">
+      <div class="callout">
+        <div class="emoji">🛡️</div>
+        <h2>Privacy first</h2>
+        <p>All photo editing happens entirely on your device. Images are never sent anywhere, and no account is required. No ads, no tracking, no analytics SDKs.</p>
+        <a href="/aspectfit/privacy.html">Read the privacy policy →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="/aspectfit/support.html">Support</a>
+        <a href="/aspectfit/privacy.html">Privacy Policy</a>
+        <a href="https://forms.gle/cx3UDSP6GrqoRQFCA">Contact</a>
+      </nav>
+      <p class="copy">© 2026 Masamichi Ueta</p>
+    </div>
+  </footer>
+
+</body>
+</html>
