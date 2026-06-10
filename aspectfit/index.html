@@ -95,8 +95,6 @@
       margin: 0 auto 24px;
       color: var(--muted);
     }
-    /* App Store button — swap the .coming-soon span for this <a> once live:
-       <a class="appstore-btn" href="https://apps.apple.com/jp/app/aspectfit/idXXXXXXXXX">App Storeでダウンロード</a> */
     .appstore-btn {
       display: inline-block;
       background: var(--accent);
@@ -111,17 +109,6 @@
       opacity: 0.92;
       transform: translateY(-1px);
       text-decoration: none;
-    }
-    .coming-soon {
-      display: inline-block;
-      background: var(--card);
-      color: var(--muted);
-      border: 1px solid var(--card-rule);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 12px 26px;
-      border-radius: 999px;
-      cursor: default;
     }
     .chips {
       list-style: none;
@@ -272,7 +259,7 @@
       <h1>AspectFit</h1>
       <p class="tagline">写真を選べる比率に自然拡張</p>
       <p class="lead">写真をトリミングや余白なしで、必要なアスペクト比にぴったり整えるアプリ。新しく広がった領域を、元画像から生成した背景で自然に埋めて、壁紙や SNS 投稿にフィットさせます。</p>
-      <span class="coming-soon">近日 App Store にて公開予定</span>
+      <a class="appstore-btn" href="https://apps.apple.com/jp/app/aspectfit/id6772523112">App Storeでダウンロード</a>
       <ul class="chips">
         <li>iOS 18.0以降</li>
         <li>iPhone・iPad対応</li>

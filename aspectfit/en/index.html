@@ -95,8 +95,6 @@
       margin: 0 auto 24px;
       color: var(--muted);
     }
-    /* App Store button — swap the .coming-soon span for this <a> once live:
-       <a class="appstore-btn" href="https://apps.apple.com/app/aspectfit/idXXXXXXXXX">Download on the App Store</a> */
     .appstore-btn {
       display: inline-block;
       background: var(--accent);
@@ -111,17 +109,6 @@
       opacity: 0.92;
       transform: translateY(-1px);
       text-decoration: none;
-    }
-    .coming-soon {
-      display: inline-block;
-      background: var(--card);
-      color: var(--muted);
-      border: 1px solid var(--card-rule);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 12px 26px;
-      border-radius: 999px;
-      cursor: default;
     }
     .chips {
       list-style: none;
@@ -272,7 +259,7 @@
       <h1>AspectFit</h1>
       <p class="tagline">Extend photos to preset ratios</p>
       <p class="lead">Reshape any photo to the exact aspect ratio you need — no awkward cropping, no ugly bars. AspectFit fills the new space with a background generated from your own image, so your photo fits wallpapers and social posts.</p>
-      <span class="coming-soon">Coming soon to the App Store</span>
+      <a class="appstore-btn" href="https://apps.apple.com/app/aspectfit/id6772523112">Download on the App Store</a>
       <ul class="chips">
         <li>iOS 18.0+</li>
         <li>iPhone &amp; iPad</li>
