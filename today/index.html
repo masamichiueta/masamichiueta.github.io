@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Today Score Everyday — 1日1回、今日を1〜10で記録</title>
+  <meta name="description" content="1日1回、その日の点数（1〜10）とひとことメモを記録するシンプルな振り返りアプリ。月別の履歴とカレンダー、平均・連続記録・推移グラフで自分の調子を振り返れます。広告なし・トラッキングなし、iCloud同期対応。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/today/assets/icon.png">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Today Score Everyday — 1日1回、今日を1〜10で記録">
+  <meta property="og:description" content="今日は何点？ 1〜10から選んでひとことメモを添えるだけ。履歴・カレンダー・統計で自分の調子をやさしく振り返れます。">
+  <meta property="og:url" content="https://masamichiueta.github.io/today/">
+  <meta property="og:image" content="https://masamichiueta.github.io/today/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --fg: #1c1c28;
+      --muted: #5c5e6e;
+      --link: #7b61ff;
+      --rule: rgba(120,110,170,0.18);
+      --chip-fg: #4a4c5e;
+      /* Liquid glass material */
+      --glass-bg: rgba(255,255,255,0.50);
+      --glass-brd: rgba(255,255,255,0.75);
+      --glass-shadow: 0 14px 40px rgba(46,33,96,0.12);
+      --glass-inset: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 0 0 0.5px rgba(255,255,255,0.4);
+      /* Brand gradient — echoes the logo smile (pink → periwinkle → mint) */
+      --brand: linear-gradient(115deg, #FF8CC6 0%, #9FA8FF 50%, #5FDDBA 100%);
+      --brand-soft: linear-gradient(115deg, #FFB6DD 0%, #C2C7FF 50%, #9DEBD3 100%);
+      /* Page mesh background */
+      --page-bg:
+        radial-gradient(48% 42% at 12% 6%, rgba(255,138,198,0.42), transparent 60%),
+        radial-gradient(46% 40% at 88% 4%, rgba(95,221,186,0.38), transparent 60%),
+        radial-gradient(60% 55% at 50% 104%, rgba(159,168,255,0.40), transparent 60%),
+        radial-gradient(40% 35% at 80% 70%, rgba(255,182,221,0.30), transparent 60%),
+        linear-gradient(180deg, #f6f5fc 0%, #eceaf7 100%);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #f3f3f8;
+        --muted: #a9abbb;
+        --link: #b6a9ff;
+        --rule: rgba(255,255,255,0.12);
+        --chip-fg: #c9cad8;
+        --glass-bg: rgba(40,40,52,0.42);
+        --glass-brd: rgba(255,255,255,0.14);
+        --glass-shadow: 0 16px 44px rgba(0,0,0,0.50);
+        --glass-inset: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 0.5px rgba(255,255,255,0.05);
+        --brand: linear-gradient(115deg, #FF8CC6 0%, #9FA8FF 50%, #5FDDBA 100%);
+        --brand-soft: linear-gradient(115deg, #FF8CC6 0%, #9FA8FF 50%, #5FDDBA 100%);
+        --page-bg:
+          radial-gradient(48% 42% at 12% 6%, rgba(255,110,185,0.30), transparent 60%),
+          radial-gradient(46% 40% at 88% 4%, rgba(60,205,170,0.26), transparent 60%),
+          radial-gradient(60% 55% at 50% 104%, rgba(140,150,255,0.30), transparent 62%),
+          radial-gradient(40% 35% at 80% 70%, rgba(220,120,190,0.20), transparent 60%),
+          linear-gradient(180deg, #0e0e14 0%, #14131c 100%);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #f6f5fc;
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: var(--page-bg);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 56px 0; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 76px 0 56px;
+    }
+    .langswitch {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .langswitch a { color: var(--link); }
+    .langswitch .active { color: var(--fg); font-weight: 600; }
+    .langswitch .sep { margin: 0 6px; opacity: 0.5; }
+    .icon-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .icon-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -22px;
+      border-radius: 50%;
+      background: var(--brand);
+      filter: blur(34px);
+      opacity: 0.55;
+      z-index: 0;
+    }
+    .hero img.icon {
+      position: relative;
+      z-index: 1;
+      width: 116px; height: 116px;
+      border-radius: 26px;
+      box-shadow: 0 18px 40px rgba(120,90,200,0.30), inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+    .hero h1 {
+      font-size: 2.9rem;
+      margin: 18px 0 6px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span {
+      background: var(--brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: var(--fg);
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+    .hero .lead {
+      max-width: 600px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+    }
+    .appstore-btn {
+      position: relative;
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.98rem;
+      padding: 13px 30px;
+      border-radius: 999px;
+      box-shadow: 0 12px 28px rgba(130,95,210,0.38), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 6px rgba(90,60,160,0.25);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+      overflow: hidden;
+    }
+    .appstore-btn::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+    .appstore-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(130,95,210,0.46), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(90,60,160,0.25);
+      text-decoration: none;
+    }
+    .chips {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      justify-content: center;
+    }
+    .chips li {
+      font-size: 0.85rem;
+      color: var(--chip-fg);
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      backdrop-filter: blur(14px) saturate(150%);
+      border: 1px solid var(--glass-brd);
+      border-radius: 999px;
+      padding: 5px 13px;
+      box-shadow: var(--glass-inset);
+    }
+
+    /* Screenshots */
+    .shots {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 8px 4px 18px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      justify-content: safe center;
+    }
+    .shot {
+      flex: 0 0 auto;
+      width: 220px;
+      scroll-snap-align: center;
+      text-align: center;
+    }
+    .shot img {
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      border: 1px solid var(--glass-brd);
+      box-shadow: 0 18px 44px rgba(46,33,96,0.20), inset 0 1px 0 rgba(255,255,255,0.5);
+      display: block;
+    }
+    .shot span {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Section headings */
+    h2.section-title {
+      font-size: 1.8rem;
+      letter-spacing: -0.01em;
+      margin: 0 0 6px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 0 38px;
+    }
+
+    /* Features grid — liquid glass cards */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .feature {
+      position: relative;
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(26px) saturate(165%);
+      backdrop-filter: blur(26px) saturate(165%);
+      border: 1px solid var(--glass-brd);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--glass-shadow), var(--glass-inset);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      overflow: hidden;
+    }
+    .feature::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+    }
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(46,33,96,0.18), var(--glass-inset);
+    }
+    .feature .emoji {
+      font-size: 1.5rem;
+      line-height: 1;
+      width: 50px; height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      background: var(--brand-soft);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 6px 16px rgba(120,90,200,0.18);
+    }
+    .feature h3 { font-size: 1.08rem; margin: 14px 0 6px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    /* How it works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .step { text-align: center; padding: 8px 12px; }
+    .step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px; height: 46px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 22px rgba(130,95,210,0.34), inset 0 1px 0 rgba(255,255,255,0.55);
+    }
+    .step h3 { font-size: 1.05rem; margin: 0 0 6px; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 36px 0 56px;
+      text-align: center;
+      margin-top: 12px;
+    }
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    footer .copy { color: var(--muted); font-size: 0.85rem; }
+
+    @media (max-width: 520px) {
+      .hero h1 { font-size: 2.3rem; }
+      .hero { padding: 60px 0 40px; }
+      section { padding: 44px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="langswitch"><span class="active">日本語</span><span class="sep">/</span><a href="/today/en/">English</a></div>
+    <div class="wrap">
+      <span class="icon-wrap"><img class="icon" src="/today/assets/icon.png" alt="Today アプリアイコン" width="116" height="116"></span>
+      <h1><span>Today Score Everyday</span></h1>
+      <p class="tagline">1日1回、今日を1〜10で記録</p>
+      <p class="lead">今日は何点？ 1〜10から選んで、ひとことメモを添えるだけ。数秒で終わるシンプルな振り返りアプリです。月別の履歴とカレンダー、平均・連続記録・推移グラフで、自分の調子をやさしく振り返れます。</p>
+      <a class="appstore-btn" href="https://apps.apple.com/jp/app/today-score-everyday/id6777611175">App Storeでダウンロード</a>
+      <ul class="chips">
+        <li>iOS 26.5以降</li>
+        <li>iPhone・iPad対応</li>
+        <li>日本語・英語</li>
+        <li>広告なし・トラッキングなし</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- SCREENSHOTS -->
+  <section>
+    <div class="wrap">
+      <div class="shots">
+        <figure class="shot"><img src="/today/assets/shot-today.png" alt="今日の点数を記録する画面"><span>今日を記録</span></figure>
+        <figure class="shot"><img src="/today/assets/shot-history.png" alt="月別の履歴リスト画面"><span>履歴を振り返る</span></figure>
+        <figure class="shot"><img src="/today/assets/shot-calendar.png" alt="カレンダー（ヒートマップ）画面"><span>カレンダーで見る</span></figure>
+        <figure class="shot"><img src="/today/assets/shot-stats.png" alt="統計とグラフの画面"><span>統計でつかむ</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">できること</h2>
+      <p class="section-sub">記録する → 振り返る → 自分の調子が見えてくる</p>
+      <div class="features">
+        <div class="feature"><div class="emoji">🔢</div><h3>数タップで記録</h3><p>1〜10から今日の点数を選ぶだけ。スコアに応じて色と絵文字（つらい〜最高）が変わり、その日の気分がひと目で。ひとことメモも残せます。</p></div>
+        <div class="feature"><div class="emoji">🗓️</div><h3>履歴を振り返る</h3><p>月ごとに色付きで一覧。リストとカレンダー（ヒートマップ）を切り替えて、タップで編集・スワイプで削除。あの日の自分を見返せます。</p></div>
+        <div class="feature"><div class="emoji">📊</div><h3>統計でリズムをつかむ</h3><p>平均スコア・連続記録日数・記録日数に加え、推移グラフと曜日別・月別の平均で、調子の波が見えてきます。</p></div>
+        <div class="feature"><div class="emoji">🔔</div><h3>毎日のリマインダー</h3><p>決まった時刻にやさしく通知。通知から直接その日の点数を記録できるので、記録のし忘れを防ぎます。</p></div>
+        <div class="feature"><div class="emoji">☁️</div><h3>iCloud同期</h3><p>同じApple アカウントの端末間で自動同期。機種変更でも、これまでの記録はそのまま引き継がれます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">使い方</h2>
+      <p class="section-sub">3ステップ、数秒で1日の記録</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>点数を選ぶ</h3><p>今日の気分を1〜10から選びます。</p></div>
+        <div class="step"><div class="num">2</div><h3>メモを添える</h3><p>ひとことだけ（任意）。あとは「記録する」をタップ。</p></div>
+        <div class="step"><div class="num">3</div><h3>振り返る</h3><p>履歴とカレンダー、統計で自分の調子を見える化。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="/today/support.html">サポート</a>
+        <a href="/today/privacy.html">プライバシーポリシー</a>
+        <a href="mailto:u_masamichi@icloud.com?subject=Today%20%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ</a>
+      </nav>
+      <p class="copy">© 2026 Masamichi Ueta</p>
+    </div>
+  </footer>
+
+</body>
+</html>
