@@ -29,6 +29,7 @@
       --link: #1f8f5f;
       --rule: rgba(90,140,110,0.20);
       --chip-fg: #43584a;
+      --pbadge-fg: #1c5c3f;
       /* Liquid glass material */
       --glass-bg: rgba(255,255,255,0.52);
       --glass-brd: rgba(255,255,255,0.75);
@@ -52,6 +53,7 @@
         --link: #58c996;
         --rule: rgba(255,255,255,0.12);
         --chip-fg: #c2d2c6;
+        --pbadge-fg: #ffffff;
         --glass-bg: rgba(34,44,38,0.44);
         --glass-brd: rgba(255,255,255,0.14);
         --glass-shadow: 0 16px 44px rgba(0,0,0,0.50);
@@ -282,6 +284,53 @@
     }
     .feature h3 { font-size: 1.08rem; margin: 14px 0 6px; }
     .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .pbadge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      vertical-align: 2px;
+      margin-left: 8px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--pbadge-fg, #1c5c3f);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+      white-space: nowrap;
+    }
+
+    /* Pricing plans */
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      max-width: 880px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .plan.premium { border-color: rgba(47,163,107,0.6); }
+    .plan .price {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 2px 0 4px;
+    }
+    .plan .price small { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-left: 6px; }
+    .plan .note { color: var(--muted); font-size: 0.85rem; margin: 0 0 4px; }
+    .plan ul { list-style: none; padding: 0; margin: 14px 0 0; }
+    .plan li {
+      position: relative;
+      padding-left: 24px;
+      margin: 0 0 9px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+    .plan li::before {
+      content: "✓";
+      position: absolute;
+      left: 2px;
+      color: var(--link);
+      font-weight: 700;
+    }
 
     /* How it works */
     .steps {
@@ -343,6 +392,7 @@
       <p class="lead">Enter scores hole by hole in seconds and record your playing partners in the same round. Stats and charts show your game improving — a score tracker built for golfers.</p>
       <a class="appstore-btn" href="https://apps.apple.com/app/teenote/idYOUR_APP_STORE_ID">Download on the App Store</a>
       <ul class="chips">
+        <li>Free, with a one-time Premium unlock</li>
         <li>iOS 26.5 or later</li>
         <li>iPhone &amp; iPad</li>
         <li>English &amp; Japanese</li>
@@ -370,13 +420,50 @@
       <p class="section-sub">From quick entry during the round to looking back afterwards</p>
       <div class="features">
         <div class="feature"><div class="emoji">⛳️</div><h3>Quick entry</h3><p>Record strokes, putts, and GIR per hole with steppers and a single tap. GIR is derived automatically from strokes and putts (with manual override).</p></div>
-        <div class="feature"><div class="emoji">👥</div><h3>Track your group</h3><p>Add yourself and any number of playing partners to one round — keep everyone's score in tournaments and rounds with friends.</p></div>
-        <div class="feature"><div class="emoji">🖼️</div><h3>Scorecard &amp; image sharing</h3><p>A player-by-hole grid with OUT/IN subtotals and totals. Export the scorecard as a PNG and share it straight to your group chat.</p></div>
-        <div class="feature"><div class="emoji">📊</div><h3>Stats &amp; charts</h3><p>Average score, score trend, average putts, GIR%, score distribution, and best/worst — filtered by period and player.</p></div>
-        <div class="feature"><div class="emoji">🗺️</div><h3>Course management</h3><p>Register par for 18 holes (or 9-hole courses). Set the location via search and check it on a map preview.</p></div>
-        <div class="feature"><div class="emoji">🎒</div><h3>My Clubs</h3><p>Record distance and loft per club and visualize gapping with a distance chart. Add a standard 14-club set in one tap.</p></div>
+        <div class="feature"><div class="emoji">👥</div><h3>Track your group<span class="pbadge">Premium</span></h3><p>Add yourself and any number of playing partners to one round — keep everyone's score in tournaments and rounds with friends.</p></div>
+        <div class="feature"><div class="emoji">🖼️</div><h3>Scorecard &amp; image sharing</h3><p>A player-by-hole grid with OUT/IN subtotals and totals. Export the scorecard as a PNG and share it straight to your group chat — watermark-free with Premium.</p></div>
+        <div class="feature"><div class="emoji">📊</div><h3>Stats &amp; charts</h3><p>Average score and the score trend are free. Premium unlocks average putts, GIR%, score distribution, best/worst, the all-time range, and per-player stats.</p></div>
+        <div class="feature"><div class="emoji">🗺️</div><h3>Course management</h3><p>Register par for 18 holes (or 9-hole courses). Set the location via search and check it on a map preview. The free plan holds 3 courses; Premium removes the limit.</p></div>
+        <div class="feature"><div class="emoji">🎒</div><h3>My Clubs<span class="pbadge">Premium</span></h3><p>Record distance and loft per club and visualize gapping with a distance chart. Add a standard 14-club set in one tap.</p></div>
         <div class="feature"><div class="emoji">🔟</div><h3>Starting hole</h3><p>Supports back-nine and shotgun starts. Score entry pages through holes in play order, with running totals to match.</p></div>
         <div class="feature"><div class="emoji">🔒</div><h3>iCloud sync &amp; privacy</h3><p>No account needed. Your data lives only on your device and in your own iCloud, syncing across devices. The developer can never access it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-sub">The app is free. Unlock everything with a single one-time purchase</p>
+      <div class="plans">
+        <div class="feature plan">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <p class="note">No account, no time limit.</p>
+          <ul>
+            <li>Record your own rounds — no limit on how many</li>
+            <li>Scorecard and round summaries</li>
+            <li>Open your latest 10 rounds (older rounds are never deleted)</li>
+            <li>Stats for your last 5 rounds: average score and trend</li>
+            <li>Up to 3 courses</li>
+            <li>Scorecard image sharing (with a watermark)</li>
+            <li>iCloud sync</li>
+          </ul>
+        </div>
+        <div class="feature plan premium">
+          <h3>TeeNote Premium<span class="pbadge">One-time</span></h3>
+          <p class="price">Buy once<small>local price on the App Store</small></p>
+          <p class="note">Not a subscription. Yours on every device signed in to the same Apple Account.</p>
+          <ul>
+            <li>Scoring for playing partners, with no player limit</li>
+            <li>Full statistics: average putts, GIR%, score breakdown, best/worst, all time, per player</li>
+            <li>Your entire round history</li>
+            <li>Unlimited courses</li>
+            <li>My Clubs and the distance chart</li>
+            <li>Watermark-free scorecard images</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
