@@ -33,6 +33,7 @@ permalink: /teenote/
       --link: #1f8f5f;
       --rule: rgba(90,140,110,0.20);
       --chip-fg: #43584a;
+      --pbadge-fg: #1c5c3f;
       /* Liquid glass material */
       --glass-bg: rgba(255,255,255,0.52);
       --glass-brd: rgba(255,255,255,0.75);
@@ -56,6 +57,7 @@ permalink: /teenote/
         --link: #58c996;
         --rule: rgba(255,255,255,0.12);
         --chip-fg: #c2d2c6;
+        --pbadge-fg: #ffffff;
         --glass-bg: rgba(34,44,38,0.44);
         --glass-brd: rgba(255,255,255,0.14);
         --glass-shadow: 0 16px 44px rgba(0,0,0,0.50);
@@ -286,6 +288,53 @@ permalink: /teenote/
     }
     .feature h3 { font-size: 1.08rem; margin: 14px 0 6px; }
     .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .pbadge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      vertical-align: 2px;
+      margin-left: 8px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--pbadge-fg, #1c5c3f);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+      white-space: nowrap;
+    }
+
+    /* Pricing plans */
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      max-width: 880px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .plan.premium { border-color: rgba(47,163,107,0.6); }
+    .plan .price {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 2px 0 4px;
+    }
+    .plan .price small { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-left: 6px; }
+    .plan .note { color: var(--muted); font-size: 0.85rem; margin: 0 0 4px; }
+    .plan ul { list-style: none; padding: 0; margin: 14px 0 0; }
+    .plan li {
+      position: relative;
+      padding-left: 24px;
+      margin: 0 0 9px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+    .plan li::before {
+      content: "✓";
+      position: absolute;
+      left: 2px;
+      color: var(--link);
+      font-weight: 700;
+    }
 
     /* How it works */
     .steps {
@@ -347,6 +396,7 @@ permalink: /teenote/
       <p class="lead">ホール単位でサッと入力、同伴者のスコアもまとめて記録。統計とチャートで上達が見える、ゴルファーのためのスコア管理アプリです。</p>
       <a class="appstore-btn" href="https://apps.apple.com/jp/app/teenote/idYOUR_APP_STORE_ID">App Storeでダウンロード</a>
       <ul class="chips">
+        <li>無料（買い切りのプレミアムあり）</li>
         <li>iOS 26.5以降</li>
         <li>iPhone・iPad対応</li>
         <li>日本語・英語</li>
@@ -374,13 +424,50 @@ permalink: /teenote/
       <p class="section-sub">プレー中の素早い入力から、ラウンド後の振り返りまで</p>
       <div class="features">
         <div class="feature"><div class="emoji">⛳️</div><h3>クイック入力</h3><p>ホールごとに打数・パット・パーオンをステッパーとワンタップで記録。パーオンは打数とパットから自動判定します（手動で上書きも可能）。</p></div>
-        <div class="feature"><div class="emoji">👥</div><h3>同伴者もまとめて記録</h3><p>ひとつのラウンドに自分＋同組メンバーを何人でも登録。コンペや友人とのラウンドでスコアを預かって入力できます。</p></div>
-        <div class="feature"><div class="emoji">🖼️</div><h3>スコアカードと画像共有</h3><p>プレーヤー×ホールのグリッドでOUT/IN小計と合計を一覧。スコアカードはPNG画像で書き出して、LINEなどにそのまま送れます。</p></div>
-        <div class="feature"><div class="emoji">📊</div><h3>統計とチャート</h3><p>平均スコア・スコア推移・平均パット・パーオン率・スコア構成・ベスト/ワーストを自動集計。期間やプレーヤーで絞り込めます。</p></div>
-        <div class="feature"><div class="emoji">🗺️</div><h3>コース管理</h3><p>18ホール（ハーフ9ホールも可）のパーを登録。場所は検索から設定でき、地図プレビューで確認できます。</p></div>
-        <div class="feature"><div class="emoji">🎒</div><h3>マイクラブ管理</h3><p>クラブごとの飛距離・ロフトを登録し、飛距離チャートで番手間の距離感を可視化。標準14本セットの一括追加にも対応。</p></div>
+        <div class="feature"><div class="emoji">👥</div><h3>同伴者もまとめて記録<span class="pbadge">プレミアム</span></h3><p>ひとつのラウンドに自分＋同組メンバーを何人でも登録。コンペや友人とのラウンドでスコアを預かって入力できます。</p></div>
+        <div class="feature"><div class="emoji">🖼️</div><h3>スコアカードと画像共有</h3><p>プレーヤー×ホールのグリッドでOUT/IN小計と合計を一覧。スコアカードはPNG画像で書き出して、LINEなどにそのまま送れます。プレミアムではウォーターマークなしで書き出せます。</p></div>
+        <div class="feature"><div class="emoji">📊</div><h3>統計とチャート</h3><p>平均スコアとスコア推移は無料で確認できます。平均パット・パーオン率・スコア構成・ベスト/ワースト・全期間の集計・プレーヤー切替はプレミアムで解放されます。</p></div>
+        <div class="feature"><div class="emoji">🗺️</div><h3>コース管理</h3><p>18ホール（ハーフ9ホールも可）のパーを登録。場所は検索から設定でき、地図プレビューで確認できます。無料プランは3コースまで、プレミアムで無制限です。</p></div>
+        <div class="feature"><div class="emoji">🎒</div><h3>マイクラブ管理<span class="pbadge">プレミアム</span></h3><p>クラブごとの飛距離・ロフトを登録し、飛距離チャートで番手間の距離感を可視化。標準14本セットの一括追加にも対応。</p></div>
         <div class="feature"><div class="emoji">🔟</div><h3>スタートホール選択</h3><p>10番（IN）スタートやショットガンスタートに対応。スコア入力はプレーする順にページングし、累計打数もプレー順で表示します。</p></div>
         <div class="feature"><div class="emoji">🔒</div><h3>iCloud同期とプライバシー</h3><p>アカウント登録は不要。データは端末とあなたのiCloudにのみ保存され、複数端末で自動同期。開発者がアクセスすることはありません。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">料金</h2>
+      <p class="section-sub">アプリは無料。もっと深く使いたくなったら、買い切りのプレミアムで全機能を解放</p>
+      <div class="plans">
+        <div class="feature plan">
+          <h3>無料</h3>
+          <p class="price">¥0</p>
+          <p class="note">アカウント登録は不要。期限もありません。</p>
+          <ul>
+            <li>自分のラウンド記録（作成数は無制限）</li>
+            <li>スコアカードとラウンドサマリー</li>
+            <li>ラウンド履歴は最新10件まで閲覧（それ以前も削除されません）</li>
+            <li>統計は直近5ラウンドの平均スコア・スコア推移</li>
+            <li>コース登録は3件まで</li>
+            <li>スコアカード画像の共有（ウォーターマーク付き）</li>
+            <li>iCloud同期</li>
+          </ul>
+        </div>
+        <div class="feature plan premium">
+          <h3>TeeNote プレミアム<span class="pbadge">買い切り</span></h3>
+          <p class="price">¥1,000<small>／1回だけ</small></p>
+          <p class="note">サブスクリプションではありません。同じApple Accountのすべての端末で使えます。</p>
+          <ul>
+            <li>同伴者のスコア記録（人数無制限）</li>
+            <li>統計をフル解放（平均パット・パーオン率・スコア構成・ベスト/ワースト・全期間・プレーヤー切替）</li>
+            <li>すべてのラウンド履歴</li>
+            <li>コース登録が無制限</li>
+            <li>マイクラブと飛距離チャート</li>
+            <li>ウォーターマークなしのスコアカード画像</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
