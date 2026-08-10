@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grillog — Support</title>
+  <meta name="description" content="Support page for the Grillog iOS app — how to use it, FAQ, and how to contact the developer.">
+  <meta name="robots" content="index, follow">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #0066cc;
+      --code-bg: #f5f5f7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1d1d1f;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #3a3a3c;
+        --link: #2997ff;
+        --code-bg: #2c2c2e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 48px 0 16px;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin: 28px 0 8px;
+    }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.4em; }
+    li { margin-bottom: 6px; }
+    a { color: var(--link); }
+    a:hover { text-decoration: underline; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 48px 0;
+    }
+    .updated {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+    .faq dt {
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    .faq dd {
+      margin: 4px 0 0;
+      padding: 0;
+      color: var(--fg);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Grillog — Support</h1>
+    <p class="updated">最終更新日 / Last updated: 2026-08-10</p>
+
+    <hr>
+
+    <h2>サポート (日本語)</h2>
+
+    <p>Grillog は、焼肉に行った記録を、食べた部位ひとつひとつの評価まで残せる iOS アプリです。写真中心のフィードで振り返り、統計で訪問回数や支出を確認できます。本ページでは、使い方・よくある質問・お問い合わせ先をまとめています。</p>
+
+    <h3>動作環境</h3>
+    <ul>
+      <li>iOS 26.5 以降</li>
+      <li>iPhone および iPad に対応</li>
+      <li>日本語 UI のみ</li>
+      <li>iCloud 同期の利用には iCloud へのサインインが必要です（サインインしていない場合も、すべての機能を端末内保存で利用できます）</li>
+    </ul>
+
+    <h3>料金</h3>
+    <p>アプリは無料です。広告はありません。記録の作成・編集、食べた部位や写真の登録、過去の記録の閲覧・検索、iCloud 同期は、件数の制限なく無料のままお使いいただけます。</p>
+    <p>App内課金「<strong>Grillog Premium</strong>」（¥600・買い切り）をご購入いただくと、今年の累計支出と月別支出グラフ、よく食べる部位 TOP10、よく行く店 TOP5、年別・全期間での集計の切り替え、店と部位名の統合、行きたい店リストの無制限化、ウォーターマークなしの記録カード画像が解放されます。サブスクリプションではありません。</p>
+
+    <h3>お問い合わせ</h3>
+    <!-- TODO: FORM_URL_HERE を Grillog 用のお問い合わせフォーム URL に置き換える -->
+    <ul>
+      <li>お問い合わせは<a href="FORM_URL_HERE">お問い合わせフォーム</a>からお願いします。</li>
+      <li>個人開発のため、お返事までに数日いただくことがあります。あらかじめご了承ください。</li>
+      <li>不具合のご連絡時は、端末モデル・iOS バージョン・アプリのバージョンを添えていただけると助かります。</li>
+    </ul>
+
+    <h3>はじめての使い方</h3>
+    <ol>
+      <li><strong>記録を作る</strong>: 「記録」タブの右上「＋」から新しい記録を作ります。</li>
+      <li><strong>写真を追加する</strong>: 一番上の「写真を追加」からその日の写真を選びます。写真の撮影日が、そのまま記録の日付の初期値になります。</li>
+      <li><strong>店を選ぶ</strong>: 店の欄から既存の店を検索するか、新しい店名を入力します。「行きたい店」に登録済みの店には♡が付いています。</li>
+      <li><strong>食べた部位を入れる</strong>: サジェストのチップをタップするか、自由入力で部位を追加します。各部位には任意で★とメモを付けられます。</li>
+      <li><strong>振り返る</strong>: 「統計」タブで訪問回数・支出・よく食べる部位や、よく行く店を確認できます。</li>
+    </ol>
+
+    <h3>よくある質問 (FAQ)</h3>
+    <dl class="faq">
+      <dt>Q. データはどこに保存されますか？</dt>
+      <dd>A. お使いの端末内と、iCloud にサインインしている場合はあなたの iCloud（プライベートデータベース）に保存されます。開発者のサーバーに送信されることはありません。詳しくは<a href="/grillog/privacy.html">プライバシーポリシー</a>をご覧ください。</dd>
+
+      <dt>Q. 機種変更のとき、データは引き継げますか？</dt>
+      <dd>A. 新しい端末で同じ Apple アカウント（iCloud）にサインインして Grillog をインストールすると、データが自動的に同期されます。移行前に、旧端末がネットワークに接続された状態でアプリを開き、最新のデータが同期されていることを確認するのがおすすめです。</dd>
+
+      <dt>Q. iCloud 同期がうまく動きません。</dt>
+      <dd>A. iOS の「設定 &gt; [ユーザー名] &gt; iCloud」で Grillog の iCloud 利用がオンになっているか、iCloud ストレージに空きがあるか、ネットワークに接続されているかをご確認ください。写真を含む記録は容量が大きいため、同期の反映に数分かかることがあります。</dd>
+
+      <dt>Q. 無料のままだと、記録できる件数に制限がありますか？</dt>
+      <dd>A. ありません。訪問記録も、食べた部位も、写真の枚数も無制限です。過去の記録が見られなくなることもありません。無料と Premium で違うのは、統計の深さ（支出・ランキング・期間の切り替え）と、店・部位名の統合、行きたい店リストの件数、記録カード画像のウォーターマークだけです。</dd>
+
+      <dt>Q. Grillog Premium では何ができますか？</dt>
+      <dd>A. 今年の累計支出と直近12か月の月別支出グラフ、よく食べる部位 TOP10（無料は TOP3）、よく行く店 TOP5、年別・全期間での集計の切り替え、店の統合と部位名の一括リネーム、行きたい店リストの無制限化、ウォーターマークなしの記録カード画像が解放されます。</dd>
+
+      <dt>Q. Premium はサブスクリプション（月額・年額）ですか？</dt>
+      <dd>A. いいえ、買い切りの1回払いです。一度ご購入いただければ追加の費用はかからず、同じ Apple Account でサインインしたすべての端末でご利用いただけます。</dd>
+
+      <dt>Q. 購入したのに Premium が解放されません／機種変更しました。</dt>
+      <dd>A. 「設定 &gt; Grillog Premium」を開き、「購入を復元」をタップしてください。購入時と同じ Apple Account でサインインしている必要があります。反映まで少し時間がかかることがあるため、復元しても解放されない場合は、しばらく待つか端末を再起動してからもう一度お試しください。それでも解決しない場合はお問い合わせフォームからご連絡ください。</dd>
+
+      <dt>Q. 記録の日付が、入力した日ではなく別の日になっています。</dt>
+      <dd>A. 仕様です。焼肉の記録は帰宅後や翌日に入力することが多いため、追加した写真の撮影日を日付の初期値にしています（複数枚ある場合は最も古いもの）。適用されたときは入力画面にその旨が表示されます。日付欄をタップすればいつでも変更でき、一度ご自分で日付を変更したあとは、写真を追加しても上書きされません。</dd>
+
+      <dt>Q. 部位はどうやって入力しますか？ 候補を増やせますか？</dt>
+      <dd>A. 入力欄の下に出るサジェストのチップをタップするだけで追加できます。候補にはタン・ハラミ・カルビ・ミスジ・ホルモンなど 25 種類が最初から入っており、よく食べる部位ほど上に出てきます。候補にない部位は自由入力でそのまま追加でき、「設定 &gt; 部位名の管理」の右上「＋」から、まだ食べていない部位を候補に登録しておくこともできます。</dd>
+
+      <dt>Q. 「上タン」と「上タン塩」で統計が分かれてしまいました。</dt>
+      <dd>A. 「記録」タブ左上の歯車から「設定 &gt; 部位名の管理」を開き、まとめたい部位名をタップして一括リネームしてください。リネーム先に既存の部位名を選ぶと、そのまま統合されます。過去の記録の部位名もまとめて書き換わります。</dd>
+
+      <dt>Q. 同じ店を違う名前で二重に登録してしまいました。</dt>
+      <dd>A. 「設定 &gt; 店の管理」で、統合したい店を左スワイプ（またはコンテキストメニュー）から「統合」を選んでください。統合元の訪問記録が統合先に移り、統合元は削除されます。エリア・URL・メモは、統合先が空欄のときだけ引き継がれます。</dd>
+
+      <dt>Q. 店を削除できません。</dt>
+      <dd>A. 訪問記録が 1 件でも残っている店は、記録を失わないように削除できないようにしています。記録ごと整理したい場合は「統合」をお使いください。訪問記録が 0 件の店は、そのまま削除できます。</dd>
+
+      <dt>Q. 「行きたい店」に入れた店が、リストから消えました。</dt>
+      <dd>A. その店の記録を作成すると、実際に行った店として自動的にリストから外れます。店の情報自体は残っているので、「設定 &gt; 店の管理」から確認でき、もう一度「行きたい店」に戻すこともできます。</dd>
+
+      <dt>Q. 写真は何枚まで登録できますか？</dt>
+      <dd>A. 枚数の制限は設けていません。ただし写真は iCloud 同期の対象になるため、枚数が多いと同期に時間がかかり、iCloud の保存容量も消費します。</dd>
+
+      <dt>Q. カードや詳細画面で写真の端が切れています。</dt>
+      <dd>A. 一覧のカードと詳細画面上部は、レイアウトの都合で写真を切り抜いて表示しています。写真をタップすると黒背景の全画面ビューアが開き、元の縦横比のまま全体を確認できます。ピンチやダブルタップで拡大もできます。</dd>
+
+      <dt>Q. 「金額」には何を入れればいいですか？</dt>
+      <dd>A. 任意の項目です。入力すると統計タブの「今年の支出」と月別支出グラフに集計されます。割り勘の場合はご自分が支払った分を入れておくと、支出の集計が実態に合います。</dd>
+
+      <dt>Q. 記録を探すには？</dt>
+      <dd>A. 「記録」タブの検索バーから、店名と部位名で絞り込めます。「ミスジ」で検索すれば、ミスジを食べた訪問だけが並びます。</dd>
+
+      <dt>Q. 統計には何が表示されますか？</dt>
+      <dd>A. 総訪問回数と今年・今月の回数、今年の累計支出、よく食べる部位 TOP10、直近 12 か月の月別支出グラフ、よく行く店 TOP5（平均★つき）です。</dd>
+
+      <dt>Q. 自宅焼肉や BBQ の記録にも使えますか？</dt>
+      <dd>A. お店の焼肉の記録に特化した設計になっており、自宅焼肉・BBQ は想定していません。店名の欄に「自宅」などと入れて使うことは可能ですが、店ごとの統計はお店を前提とした集計になります。</dd>
+
+      <dt>Q. データをすべて削除するには？</dt>
+      <dd>A. アプリを削除すると端末内のデータが削除されます。iCloud 上のデータは、iOS の「設定 &gt; [ユーザー名] &gt; iCloud &gt; 保存容量を管理」から削除できます。削除したデータは復元できませんのでご注意ください。</dd>
+    </dl>
+
+    <h3>プライバシー</h3>
+    <p>本アプリのデータの取り扱いについては、<a href="/grillog/privacy.html">プライバシーポリシー</a>をご覧ください。本アプリは開発者のサーバーへの情報送信を行いません。データは端末内と、あなた自身の iCloud にのみ保存されます。</p>
+
+    <h3>免責事項</h3>
+    <ul>
+      <li>本アプリは、現在ある機能のまま提供されます。お使いの目的に合うこと、記録や集計がつねに正確であること、いつでも問題なく使えることを、どんな形であっても保証するものではありません。</li>
+      <li>本アプリの利用または利用できなかったことによって生じたいかなる損害（記録やデータの消失、機器の不具合、逸失利益などを含みますが、これらに限りません）についても、開発者は法令で認められる範囲において一切の責任を負いません。</li>
+      <li>記録は端末内および iCloud に保存されますが、端末の故障・紛失、OS や本アプリのアップデート、iCloud の不具合、操作ミスなどにより失われる可能性があります。大切な記録のために、iCloud 同期を有効にしておくことをおすすめします。</li>
+      <li>iCloud 同期は Apple のサービスに依存します。同期の遅延・停止・障害や、それに伴うデータの不整合について、開発者は責任を負いません。</li>
+      <li>本アプリの機能・仕様・提供状況は、改善や諸般の事情により予告なく変更または中止する場合があります。</li>
+    </ul>
+
+    <hr>
+
+    <h2>Support (English)</h2>
+
+    <p>Grillog is an iOS app for logging your yakiniku (Japanese BBQ) outings — down to each cut of meat you ate, with its own rating and notes. Look back through a photo-first feed, and check your visit count and spending in the stats. This page summarizes how to use the app, common questions, and how to reach the developer. Please note that the app's interface is available in Japanese only.</p>
+
+    <h3>Requirements</h3>
+    <ul>
+      <li>iOS 26.5 or later</li>
+      <li>Runs on iPhone and iPad</li>
+      <li>Japanese-language interface only</li>
+      <li>iCloud sync requires being signed in to iCloud (without it, every feature still works with on-device storage)</li>
+    </ul>
+
+    <h3>Pricing</h3>
+    <p>The app is free and contains no ads. Creating and editing records, adding cuts and photos, browsing and searching your whole history, and iCloud sync all stay free, with no limit on how much you record.</p>
+    <p>A single one-time in-app purchase, <strong>Grillog Premium</strong>, unlocks spending totals and the monthly spending chart, the top 10 cuts, the top 5 restaurants, switching the aggregation period by year or all-time, merging restaurants and cut names, an unlimited wishlist, and watermark-free record card images. It is not a subscription — the local price is shown on the App Store.</p>
+
+    <h3>Contact</h3>
+    <!-- TODO: replace FORM_URL_HERE with the Grillog contact form URL -->
+    <ul>
+      <li>Please reach out via the <a href="FORM_URL_HERE">contact form</a>.</li>
+      <li>This is an indie project, so replies may take a few days. Thank you for your patience.</li>
+      <li>When reporting an issue, please include your device model, iOS version, and app version.</li>
+    </ul>
+
+    <h3>Getting Started</h3>
+    <ol>
+      <li><strong>Create a record</strong>: Tap "+" at the top right of the Records tab.</li>
+      <li><strong>Add photos</strong>: Use "Add photo" at the top. The capture date of the photo becomes the default date of the record.</li>
+      <li><strong>Pick a restaurant</strong>: Search your existing restaurants or type a new name. Places already on your wishlist are marked with a heart.</li>
+      <li><strong>Add the cuts you ate</strong>: Tap a suggestion chip or type freely. Each cut can carry its own star rating and note.</li>
+      <li><strong>Look back</strong>: The Stats tab shows your visit counts, spending, most-eaten cuts, and most-visited restaurants.</li>
+    </ol>
+
+    <h3>FAQ</h3>
+    <dl class="faq">
+      <dt>Q. Where is my data stored?</dt>
+      <dd>A. On your device, and — if you are signed in to iCloud — in your own private iCloud database. Nothing is ever sent to the developer's servers. See the <a href="/grillog/privacy.html">Privacy Policy</a> for details.</dd>
+
+      <dt>Q. Will my data carry over when I switch devices?</dt>
+      <dd>A. Yes. Sign in to the same Apple Account (iCloud) on the new device and install Grillog, and your data syncs automatically. Before switching, open the app on the old device while online to make sure the latest data has synced.</dd>
+
+      <dt>Q. iCloud sync isn't working.</dt>
+      <dd>A. Make sure Grillog is allowed to use iCloud under iOS Settings &gt; [your name] &gt; iCloud, that you have free iCloud storage, and that you are online. Records with photos are large, so sync can take a few minutes.</dd>
+
+      <dt>Q. Does the free plan limit how much I can record?</dt>
+      <dd>A. No. Visits, cuts, and photos are all unlimited, and older records never become unavailable. The only differences are the depth of the statistics (spending, rankings, period switching), merging restaurants and cut names, the wishlist size, and the watermark on record card images.</dd>
+
+      <dt>Q. What does Grillog Premium include?</dt>
+      <dd>A. Spending totals for the year and the 12-month spending chart, the top 10 cuts (the free plan shows the top 3), the top 5 restaurants, switching the aggregation period by year or all-time, merging restaurants and renaming cut names in bulk, an unlimited wishlist, and watermark-free record card images.</dd>
+
+      <dt>Q. Is Premium a subscription?</dt>
+      <dd>A. No — it's a single one-time purchase. Once bought, there is nothing more to pay, and it works on every device signed in to the same Apple Account.</dd>
+
+      <dt>Q. I purchased Premium but it isn't unlocked / I switched devices.</dt>
+      <dd>A. Open Settings &gt; Grillog Premium and tap "Restore Purchase". You need to be signed in with the same Apple Account you purchased with. Syncing can take a moment, so if it doesn't unlock right away, wait a little or restart your device and try again. If it still doesn't work, please reach out via the contact form.</dd>
+
+      <dt>Q. The date on my record isn't the day I entered it.</dt>
+      <dd>A. That's intentional. Since these records are usually entered after getting home or the next day, the app uses the capture date of the photos you added as the default date (the oldest one if there are several). You can change the date at any time, and once you've set it yourself, adding more photos won't overwrite it.</dd>
+
+      <dt>Q. How do I enter cuts of meat, and can I add my own?</dt>
+      <dd>A. Tap the suggestion chips below the input field. The app ships with 25 common cuts, and the ones you eat most often rise to the top. Anything not in the list can be typed in directly, and you can register cuts you haven't tried yet from Settings &gt; Manage cut names.</dd>
+
+      <dt>Q. The same cut is being counted twice under slightly different names.</dt>
+      <dd>A. Open Settings from the gear icon at the top left of the Records tab, go to "Manage cut names," and tap the name you want to merge. Renaming it to an existing name merges the two, and past records are updated as well.</dd>
+
+      <dt>Q. I registered the same restaurant twice.</dt>
+      <dd>A. In Settings &gt; Manage restaurants, swipe left on the duplicate (or use the context menu) and choose "Merge." Its visits move to the target restaurant and the duplicate is removed. Area, URL, and notes carry over only when the target's fields are empty.</dd>
+
+      <dt>Q. I can't delete a restaurant.</dt>
+      <dd>A. Restaurants with at least one visit can't be deleted, so you don't lose records by accident. Use "Merge" instead. Restaurants with no visits can be deleted directly.</dd>
+
+      <dt>Q. A place disappeared from my wishlist.</dt>
+      <dd>A. Once you create a record for it, it counts as visited and leaves the wishlist automatically. The restaurant itself is still there under Settings &gt; Manage restaurants, and you can put it back on the wishlist if you want.</dd>
+
+      <dt>Q. How many photos can I attach?</dt>
+      <dd>A. There's no set limit. Keep in mind that photos sync via iCloud, so a large number will slow syncing and use up iCloud storage.</dd>
+
+      <dt>Q. My photos look cropped.</dt>
+      <dd>A. The feed cards and the top of the detail screen crop photos to fit the layout. Tap a photo to open the full-screen viewer, which shows the whole image at its original aspect ratio on a black background. Pinch or double-tap to zoom.</dd>
+
+      <dt>Q. What should I put in the amount field?</dt>
+      <dd>A. It's optional. Whatever you enter is totaled into "spending this year" and the monthly spending chart on the Stats tab. When splitting the bill, entering your own share keeps the totals meaningful.</dd>
+
+      <dt>Q. How do I find an old record?</dt>
+      <dd>A. Use the search bar on the Records tab — it matches both restaurant names and cut names, so searching for a cut shows only the visits where you ate it.</dd>
+
+      <dt>Q. Can I use it for BBQ at home?</dt>
+      <dd>A. The app is built specifically around eating out at yakiniku restaurants, so cooking at home isn't really covered. You can enter something like "home" as the restaurant name, but the per-restaurant stats assume actual restaurants.</dd>
+
+      <dt>Q. How do I delete all my data?</dt>
+      <dd>A. Deleting the app removes the data on the device. Data in iCloud can be deleted from iOS Settings &gt; [your name] &gt; iCloud &gt; Manage Storage. Deleted data cannot be recovered.</dd>
+    </dl>
+
+    <h3>Privacy</h3>
+    <p>For details on how data is handled, please see the <a href="/grillog/privacy.html">Privacy Policy</a>. Grillog does not send any information to the developer's servers. Your data is stored only on your device and in your own iCloud.</p>
+
+    <h3>Disclaimer</h3>
+    <ul>
+      <li>The app is provided "as is," without warranty of any kind, whether express or implied, including but not limited to fitness for a particular purpose, accuracy, or continued availability.</li>
+      <li>To the extent permitted by law, the developer is not liable for any damages arising from the use of, or inability to use, the app — including but not limited to loss of records or data, device malfunction, or lost profits.</li>
+      <li>Records are stored on your device and in iCloud, but they may be lost due to device failure or loss, OS or app updates, iCloud issues, or user error. We recommend keeping iCloud sync enabled to help protect your records.</li>
+      <li>iCloud sync relies on Apple's services. The developer is not responsible for sync delays, interruptions, outages, or any resulting data inconsistencies.</li>
+      <li>Features, specifications, and availability may change or be discontinued without notice.</li>
+    </ul>
+  </main>
+</body>
+</html>
