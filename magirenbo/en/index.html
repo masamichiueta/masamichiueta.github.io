@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magirenbo — Spot the odd emoji out</title>
+  <meta name="description" content="An iOS puzzle game about finding the one emoji in the wall that isn't like the others. The last tier is a wall of 900. Daily challenge, shareable puzzles, Game Center. No account, offline, no ads.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/magirenbo/assets/icon.png">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Magirenbo — Spot the odd emoji out">
+  <meta property="og:description" content="Find the one that doesn't fit and tap it. Every stage adds more emoji and makes the difference smaller. The last tier is a wall of 900.">
+  <meta property="og:url" content="https://masamichiueta.github.io/magirenbo/en/">
+  <meta property="og:image" content="https://masamichiueta.github.io/magirenbo/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --fg: #221b3d;
+      --muted: #635a80;
+      --link: #5b44e0;
+      --rule: rgba(90,70,190,0.20);
+      --chip-fg: #4a4170;
+      --pbadge-fg: #3a26b4;
+      /* Liquid glass material */
+      --glass-bg: rgba(255,255,255,0.56);
+      --glass-brd: rgba(255,255,255,0.75);
+      --glass-shadow: 0 14px 40px rgba(48,30,120,0.13);
+      --glass-inset: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 0 0 0.5px rgba(255,255,255,0.4);
+      /* Brand gradient — the icon's indigo, top to bottom */
+      --brand: linear-gradient(115deg, #8B7BFF 0%, #6A55F0 52%, #4B34C8 100%);
+      --brand-soft: linear-gradient(115deg, #CFC6FF 0%, #BBADFF 52%, #B7A6F5 100%);
+      /* Page mesh background — the icon's purple, the home screen's cream */
+      --page-bg:
+        radial-gradient(48% 42% at 12% 6%, rgba(122,104,255,0.36), transparent 60%),
+        radial-gradient(46% 40% at 88% 4%, rgba(255,201,60,0.26), transparent 60%),
+        radial-gradient(60% 55% at 50% 104%, rgba(150,120,255,0.30), transparent 62%),
+        radial-gradient(40% 35% at 82% 68%, rgba(255,170,190,0.22), transparent 60%),
+        linear-gradient(180deg, #f7f4ff 0%, #f1ecfb 100%);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #eeeaff;
+        --muted: #a79ec4;
+        --link: #a99bff;
+        --rule: rgba(255,255,255,0.12);
+        --chip-fg: #c8c1e4;
+        --pbadge-fg: #ffffff;
+        --glass-bg: rgba(38,32,60,0.46);
+        --glass-brd: rgba(255,255,255,0.14);
+        --glass-shadow: 0 16px 44px rgba(0,0,0,0.50);
+        --glass-inset: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 0.5px rgba(255,255,255,0.05);
+        --brand: linear-gradient(115deg, #8B7BFF 0%, #6A55F0 52%, #4B34C8 100%);
+        --brand-soft: linear-gradient(115deg, #6E5CF0 0%, #5A45D8 52%, #4B34C8 100%);
+        --page-bg:
+          radial-gradient(48% 42% at 12% 6%, rgba(110,92,240,0.30), transparent 60%),
+          radial-gradient(46% 40% at 88% 4%, rgba(255,201,60,0.13), transparent 60%),
+          radial-gradient(60% 55% at 50% 104%, rgba(90,69,216,0.28), transparent 62%),
+          radial-gradient(40% 35% at 82% 68%, rgba(200,90,140,0.14), transparent 60%),
+          linear-gradient(180deg, #100c1e 0%, #16112a 100%);
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: #f7f4ff;
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: var(--page-bg);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 56px 0; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 76px 0 56px;
+    }
+    .langswitch {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .langswitch a { color: var(--link); }
+    .langswitch .active { color: var(--fg); font-weight: 600; }
+    .langswitch .sep { margin: 0 6px; opacity: 0.5; }
+    .icon-wrap {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .icon-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -22px;
+      border-radius: 50%;
+      background: var(--brand);
+      filter: blur(34px);
+      opacity: 0.55;
+      z-index: 0;
+    }
+    .hero img.icon {
+      position: relative;
+      z-index: 1;
+      width: 116px; height: 116px;
+      border-radius: 26px;
+      box-shadow: 0 18px 40px rgba(58,38,180,0.32), inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+    .hero h1 {
+      font-size: 2.9rem;
+      margin: 18px 0 6px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 span {
+      background: var(--brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: var(--fg);
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+    .hero .lead {
+      max-width: 620px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+    }
+    .appstore-btn {
+      position: relative;
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.98rem;
+      padding: 13px 30px;
+      border-radius: 999px;
+      box-shadow: 0 12px 28px rgba(75,52,200,0.38), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 6px rgba(40,24,120,0.25);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+      overflow: hidden;
+    }
+    .appstore-btn::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+    .appstore-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(75,52,200,0.46), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(40,24,120,0.25);
+      text-decoration: none;
+    }
+    /* Placeholder for the App Store button until the app is on sale.
+       Swap the whole .soon element for:
+       <a class="appstore-btn" href="https://apps.apple.com/app/…">Download on the App Store</a> */
+    .soon {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.98rem;
+      padding: 13px 30px;
+      border-radius: 999px;
+      color: var(--chip-fg);
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      backdrop-filter: blur(14px) saturate(150%);
+      border: 1px solid var(--glass-brd);
+      box-shadow: var(--glass-inset);
+    }
+    .chips {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+      justify-content: center;
+    }
+    .chips li {
+      font-size: 0.85rem;
+      color: var(--chip-fg);
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      backdrop-filter: blur(14px) saturate(150%);
+      border: 1px solid var(--glass-brd);
+      border-radius: 999px;
+      padding: 5px 13px;
+      box-shadow: var(--glass-inset);
+    }
+
+    /* Screenshots */
+    .shots {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 8px 4px 18px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      justify-content: safe center;
+    }
+    .shot {
+      flex: 0 0 auto;
+      width: 220px;
+      margin: 0;
+      scroll-snap-align: center;
+      text-align: center;
+    }
+    .shot img {
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+      border: 1px solid var(--glass-brd);
+      box-shadow: 0 18px 44px rgba(48,30,120,0.22), inset 0 1px 0 rgba(255,255,255,0.5);
+      display: block;
+    }
+    .shot figcaption {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Section headings */
+    h2.section-title {
+      font-size: 1.8rem;
+      letter-spacing: -0.01em;
+      margin: 0 0 6px;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 0 38px;
+    }
+
+    /* Features grid — liquid glass cards */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .feature {
+      position: relative;
+      background: var(--glass-bg);
+      -webkit-backdrop-filter: blur(26px) saturate(165%);
+      backdrop-filter: blur(26px) saturate(165%);
+      border: 1px solid var(--glass-brd);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--glass-shadow), var(--glass-inset);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      overflow: hidden;
+    }
+    .feature::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+    }
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(48,30,120,0.20), var(--glass-inset);
+    }
+    .feature .emoji {
+      font-size: 1.5rem;
+      line-height: 1;
+      width: 50px; height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      background: var(--brand-soft);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 6px 16px rgba(75,52,200,0.20);
+    }
+    .feature h3 { font-size: 1.08rem; margin: 14px 0 6px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .pbadge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      vertical-align: 2px;
+      margin-left: 8px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--pbadge-fg);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+      white-space: nowrap;
+    }
+
+    /* Tier ladder */
+    .tiers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      max-width: 940px;
+      margin: 0 auto;
+    }
+    .tier {
+      text-align: center;
+      padding: 20px 14px;
+    }
+    .tier .name {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+    }
+    .tier.t1 .name { background: #34b27b; }
+    .tier.t2 .name { background: #3a86d6; }
+    .tier.t3 .name { background: #6a55f0; }
+    .tier.t4 .name { background: #d1683c; }
+    .tier.t5 .name { background: #d63b4a; }
+    .tier .count { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; display: block; font-variant-numeric: tabular-nums; }
+    .tier .label { color: var(--muted); font-size: 0.85rem; }
+
+    /* Pricing plans */
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      max-width: 880px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .plan.premium { border-color: rgba(106,85,240,0.6); }
+    .plan .price {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 2px 0 4px;
+    }
+    .plan .price small { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-left: 6px; }
+    .plan .note { color: var(--muted); font-size: 0.85rem; margin: 0 0 4px; }
+    .plan ul { list-style: none; padding: 0; margin: 14px 0 0; }
+    .plan li {
+      position: relative;
+      padding-left: 24px;
+      margin: 0 0 9px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+    .plan li::before {
+      content: "✓";
+      position: absolute;
+      left: 2px;
+      color: var(--link);
+      font-weight: 700;
+    }
+
+    /* How it works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .step { text-align: center; padding: 8px 12px; }
+    .step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px; height: 46px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 22px rgba(75,52,200,0.34), inset 0 1px 0 rgba(255,255,255,0.55);
+    }
+    .step h3 { font-size: 1.05rem; margin: 0 0 6px; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 36px 0 56px;
+      text-align: center;
+      margin-top: 12px;
+    }
+    footer nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    footer .copy { color: var(--muted); font-size: 0.85rem; }
+
+    @media (max-width: 520px) {
+      .hero h1 { font-size: 2.3rem; }
+      .hero { padding: 60px 0 40px; }
+      section { padding: 44px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="langswitch"><a href="/magirenbo/">日本語</a><span class="sep">/</span><span class="active">English</span></div>
+    <div class="wrap">
+      <span class="icon-wrap"><img class="icon" src="/magirenbo/assets/icon.png" alt="Magirenbo app icon" width="116" height="116"></span>
+      <h1><span>Magirenbo</span></h1>
+      <p class="tagline">Spot the odd emoji out</p>
+      <p class="lead">There's one emoji in that wall that isn't like the others. Find it and tap it — that's the whole rule. Every stage adds more emoji and makes the difference smaller.</p>
+      <span class="soon">Coming soon to the App Store</span>
+      <ul class="chips">
+        <li>Free, with a one-time Premium unlock</li>
+        <li>iOS 26.0 or later</li>
+        <li>iPhone and iPad</li>
+        <li>English and Japanese</li>
+        <li>No account, works offline</li>
+        <li>No ads, no tracking</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- SCREENSHOTS -->
+  <section>
+    <div class="wrap">
+      <div class="shots">
+        <figure class="shot"><img src="/magirenbo/assets/shot-home-en.png" alt="Home screen with the best score and furthest stage, and buttons for Play, Solve a puzzle, Daily, Practice, and Records" loading="lazy" decoding="async"><figcaption>Home</figcaption></figure>
+        <figure class="shot"><img src="/magirenbo/assets/shot-hard-en.png" alt="Stage 18, Tricky: a wall of 200 fist emoji with a single handshake hidden among them" loading="lazy" decoding="async"><figcaption>Stage 18, Tricky — a wall of 200</figcaption></figure>
+        <figure class="shot"><img src="/magirenbo/assets/shot-nightmare-en.png" alt="Stage 40, Impossible: a wall of 540 restroom signs with one different sign hidden among them" loading="lazy" decoding="async"><figcaption>Stage 40, Impossible — a wall of 540</figcaption></figure>
+        <figure class="shot"><img src="/magirenbo/assets/shot-result-en.png" alt="Results screen with a personal best badge, the score, the stage reached, and the number of misses" loading="lazy" decoding="async"><figcaption>Results, and sharing</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">What's in it</h2>
+      <p class="section-sub">One rule, and a few different ways to play it</p>
+      <div class="features">
+        <div class="feature"><div class="emoji">🔍</div><h3>Find the one</h3><p>A wall of emoji fills the screen and one of them is different. Nothing to learn, nothing to wait for.</p></div>
+        <div class="feature"><div class="emoji">⏳</div><h3>One clock for the whole run</h3><p>Time is a single pool shared by every stage, not a countdown that resets. Bank seconds on the easy stages, spend them on the brutal ones. That trade is the game.</p></div>
+        <div class="feature"><div class="emoji">🪜</div><h3>Five tiers</h3><p>Easy, Normal, Tricky, Brutal, Impossible. Stage 1 is 36 emoji. The last tier is a wall of 900, with exactly one of them wrong.</p></div>
+        <div class="feature"><div class="emoji">💬</div><h3>Send one to a friend</h3><p>Any puzzle you play can be passed on as a plain message. No link, no install, nothing needed at the other end — the text carries the whole puzzle. Paste one in and it becomes a puzzle you can play.</p></div>
+        <div class="feature"><div class="emoji">📅</div><h3>One puzzle a day</h3><p>Everyone gets the same daily challenge, and the daily leaderboard resets every night. Play it as many times as you like — only your best score stands.</p></div>
+        <div class="feature"><div class="emoji">🏆</div><h3>Game Center</h3><p>Leaderboards for best score, furthest stage, and the daily, plus eleven achievements. Signing in is optional; the whole game works without it.</p></div>
+        <div class="feature"><div class="emoji">📈</div><h3>Records and statistics<span class="pbadge">Premium</span></h3><p>How your scores move, how you do per tier, and the emoji that beat you most. Practice mode gives you any tier you like, no clock, as many walls as you want.</p></div>
+        <div class="feature"><div class="emoji">🎯</div><h3>Difficulty that means something</h3><p>Every emoji pair is actually rendered and measured for visual similarity. Pairs you have already seen stay out of your next run, and you can leave out pairs that differ only in colour.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">The wall keeps growing</h2>
+      <p class="section-sub">Each stage adds emoji and shrinks the difference</p>
+      <div class="tiers">
+        <div class="feature tier t1"><span class="name">Easy</span><span class="count">36–60</span><span class="label">Stages 1–5</span></div>
+        <div class="feature tier t2"><span class="name">Normal</span><span class="count">72–120</span><span class="label">Stages 6–12</span></div>
+        <div class="feature tier t3"><span class="name">Tricky</span><span class="count">140–240</span><span class="label">Stages 13–22</span></div>
+        <div class="feature tier t4"><span class="name">Brutal</span><span class="count">260–420</span><span class="label">Stages 23–35</span></div>
+        <div class="feature tier t5"><span class="name">Impossible</span><span class="count">450–900</span><span class="label">Stages 36–66</span></div>
+      </div>
+      <p class="section-sub" style="margin: 30px 0 0;">The wall reaches 900 at stage 66 and stops growing there. The stages themselves have no ceiling.</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-sub">The game is free. No puzzles and no difficulty are for sale</p>
+      <div class="plans">
+        <div class="feature plan">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <p class="note">No account, and nothing expires.</p>
+          <ul>
+            <li>The endless run, across all five tiers</li>
+            <li>Today's daily challenge</li>
+            <li>Sending and importing puzzles</li>
+            <li>Game Center leaderboards and achievements</li>
+            <li>Your best score synced over iCloud</li>
+          </ul>
+        </div>
+        <div class="feature plan premium">
+          <h3>Magirenbo Premium<span class="pbadge">One-time</span></h3>
+          <p class="price">Buy once<small>local price on the App Store</small></p>
+          <p class="note">Not a subscription. Yours on every device signed in to the same Apple Account.</p>
+          <ul>
+            <li>Records and statistics — how your scores move, how you do per tier, and the emoji that beat you most</li>
+            <li>Practice mode — any tier you like, no clock, as many walls as you want</li>
+            <li>The daily archive — go back and play the last 14 days</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="wrap">
+      <h2 class="section-title">How to play</h2>
+      <p class="section-sub">This is about as much explaining as it needs</p>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Look</h3><p>Find the emoji in the wall that isn't like the rest.</p></div>
+        <div class="step"><div class="num">2</div><h3>Tap it</h3><p>Clear a stage quickly for bonus points. A miss costs 5 seconds, a hint costs 8.</p></div>
+        <div class="step"><div class="num">3</div><h3>See how deep you get</h3><p>The run ends when the clock does. You get three hints per run.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="/magirenbo/support.html">Support</a>
+        <a href="/magirenbo/privacy.html">Privacy Policy</a>
+        <!-- TODO: replace CONTACT_FORM_URL with the Magirenbo Google Form before publishing -->
+        <a href="CONTACT_FORM_URL">Contact</a>
+        <a href="/magirenbo/">日本語</a>
+      </nav>
+      <p class="copy">© 2026 Masamichi Ueta</p>
+    </div>
+  </footer>
+
+</body>
+</html>
