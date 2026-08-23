@@ -20,7 +20,7 @@ GEM
       net-http (~> 0.5)
     ffi (1.17.4)
     forwardable-extended (2.6.0)
-    google-protobuf (4.35.1)
+    google-protobuf (4.36.0)
       bigdecimal
       rake (~> 13.3)
     http_parser.rb (0.8.1)
@@ -91,7 +91,7 @@ GEM
     rexml (3.4.4)
     rouge (4.7.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.102.0)
+    sass-embedded (1.103.1)
       google-protobuf (~> 4.31)
       rake (>= 13)
     sawyer (0.9.3)
