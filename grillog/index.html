@@ -137,7 +137,8 @@
       margin: 0 auto 26px;
       color: var(--muted);
     }
-    .comingsoon {
+    .appstore-btn {
+      position: relative;
       display: inline-block;
       background: var(--brand);
       color: #fff;
@@ -146,12 +147,21 @@
       padding: 13px 30px;
       border-radius: 999px;
       box-shadow: 0 12px 28px rgba(200,110,30,0.36), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 6px rgba(150,70,10,0.25);
-      opacity: 0.92;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+      overflow: hidden;
     }
-    .comingsoon-note {
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 0.88rem;
+    .appstore-btn::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+    .appstore-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(200,110,30,0.46), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(150,70,10,0.25);
+      text-decoration: none;
     }
     .chips {
       list-style: none;
@@ -403,8 +413,7 @@
       <h1><span>Grillog</span></h1>
       <p class="tagline">食べた部位まで残す、焼肉の記録</p>
       <p class="lead">「あの店の上ハラミが良かった」——後から思い出したいのは、店名と日付だけではありません。Grillog は訪問ごとに、食べた部位ひとつひとつへ星とメモを残せる、焼肉のための記録アプリです。</p>
-      <span class="comingsoon">App Store で近日公開</span>
-      <p class="comingsoon-note">現在 v1.0 を準備中です。</p>
+      <a class="appstore-btn" href="https://apps.apple.com/jp/app/id6794827666">App Storeでダウンロード</a>
       <ul class="chips">
         <li>無料（買い切りのPremiumあり）</li>
         <li>iOS 26.5以降</li>
@@ -533,6 +542,7 @@
       <nav>
         <a href="/grillog/support.html">サポート</a>
         <a href="/grillog/privacy.html">プライバシーポリシー</a>
+        <a href="https://forms.gle/p9XqtE8NToXNWp6LA">お問い合わせ</a>
       </nav>
       <p class="copy">© 2026 Masamichi Ueta</p>
     </div>
