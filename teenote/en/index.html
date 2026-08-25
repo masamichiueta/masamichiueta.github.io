@@ -8,14 +8,13 @@ permalink: /teenote/en/
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TeeNote — Golf score tracking, made simple</title>
-  <meta name="description" content="A golf score tracking app for iOS. Enter scores hole by hole in seconds, record your playing partners too, and watch your game improve with stats and charts. No ads, no tracking, with iCloud sync.">
+  <meta name="description" content="Enter golf scores hole by hole in seconds, keep score for your whole group, and watch your game improve with clear stats and charts. No ads, no tracking, iCloud sync.">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/teenote/assets/icon.png">
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="TeeNote — Golf score tracking, made simple">
-  <meta property="og:description" content="Enter scores hole by hole in seconds, record your playing partners too, and watch your game improve with stats and charts.">
+  <meta property="og:description" content="Track every hole in seconds, keep score for your whole group, and watch your game improve with clear stats and charts.">
   <meta property="og:url" content="https://masamichiueta.github.io/teenote/en/">
   <meta property="og:image" content="https://masamichiueta.github.io/teenote/assets/icon.png">
   <meta name="twitter:card" content="summary">
@@ -23,474 +22,594 @@ permalink: /teenote/en/
   <style>
     :root {
       color-scheme: light dark;
-      --fg: #17231b;
-      --muted: #5a6a5f;
-      --link: #1f8f5f;
-      --rule: rgba(90,140,110,0.20);
-      --chip-fg: #43584a;
-      --pbadge-fg: #1c5c3f;
-      /* Liquid glass material */
-      --glass-bg: rgba(255,255,255,0.52);
-      --glass-brd: rgba(255,255,255,0.75);
-      --glass-shadow: 0 14px 40px rgba(28,74,48,0.12);
-      --glass-inset: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 0 0 0.5px rgba(255,255,255,0.4);
-      /* Brand gradient — fairway green → teal */
-      --brand: linear-gradient(115deg, #5FC46C 0%, #2FA36B 50%, #2BB3A3 100%);
-      --brand-soft: linear-gradient(115deg, #A6E3AC 0%, #8ED4B4 50%, #96DFD6 100%);
-      /* Page mesh background — fairway, sky, and a touch of sand */
-      --page-bg:
-        radial-gradient(48% 42% at 12% 6%, rgba(95,196,108,0.40), transparent 60%),
-        radial-gradient(46% 40% at 88% 4%, rgba(43,179,163,0.34), transparent 60%),
-        radial-gradient(60% 55% at 50% 104%, rgba(140,196,255,0.34), transparent 60%),
-        radial-gradient(40% 35% at 80% 70%, rgba(236,214,150,0.28), transparent 60%),
-        linear-gradient(180deg, #f3f8f4 0%, #e9f2ec 100%);
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      /* TeeNote のアクセント。フェアウェイの緑を軸に振り分ける */
+      --c-entry:  #34C759;
+      --c-card:   #2BB3A3;
+      --c-stats:  #0A84FF;
+      --c-clubs:  #FF9F0A;
+      --c-people: #5E5CE6;
+      --c-course: #30D158;
+      --c-cloud:  #32ADE6;
+
+      --brand-1: #5FC46C;
+      --brand-2: #1F8F5F;
+      --link: #1F8F5F;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --fg: #eef5ef;
-        --muted: #a3b3a8;
-        --link: #58c996;
-        --rule: rgba(255,255,255,0.12);
-        --chip-fg: #c2d2c6;
-        --pbadge-fg: #ffffff;
-        --glass-bg: rgba(34,44,38,0.44);
-        --glass-brd: rgba(255,255,255,0.14);
-        --glass-shadow: 0 16px 44px rgba(0,0,0,0.50);
-        --glass-inset: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 0.5px rgba(255,255,255,0.05);
-        --brand: linear-gradient(115deg, #5FC46C 0%, #2FA36B 50%, #2BB3A3 100%);
-        --brand-soft: linear-gradient(115deg, #5FC46C 0%, #2FA36B 50%, #2BB3A3 100%);
-        --page-bg:
-          radial-gradient(48% 42% at 12% 6%, rgba(70,170,90,0.28), transparent 60%),
-          radial-gradient(46% 40% at 88% 4%, rgba(35,150,138,0.24), transparent 60%),
-          radial-gradient(60% 55% at 50% 104%, rgba(90,150,220,0.24), transparent 62%),
-          radial-gradient(40% 35% at 80% 70%, rgba(190,170,110,0.16), transparent 60%),
-          linear-gradient(180deg, #0e130f 0%, #131a15 100%);
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #58C996;
       }
     }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      background: #f3f8f4;
+      margin: 0;
+      background: var(--bg);
       color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      position: relative;
+      font-size: 17px;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background: var(--page-bg);
-    }
+    img { max-width: 100%; display: block; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 56px 0; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      text-align: center;
-      padding: 76px 0 56px;
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    /* ---------- ナビ ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .langswitch {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
+    .nav .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
     }
-    .langswitch a { color: var(--link); }
-    .langswitch .active { color: var(--fg); font-weight: 600; }
-    .langswitch .sep { margin: 0 6px; opacity: 0.5; }
-    .icon-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-    .icon-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -22px;
-      border-radius: 50%;
-      background: var(--brand);
-      filter: blur(34px);
-      opacity: 0.55;
-      z-index: 0;
-    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    /* ---------- ヒーロー ---------- */
+    .hero { text-align: center; padding: 88px 0 24px; }
     .hero img.icon {
-      position: relative;
-      z-index: 1;
-      width: 116px; height: 116px;
+      width: 116px; height: 116px; margin: 0 auto 28px;
       border-radius: 26px;
-      box-shadow: 0 18px 40px rgba(30,100,60,0.30), inset 0 1px 0 rgba(255,255,255,0.7);
+      box-shadow: 0 12px 40px rgba(31,143,95,0.28);
     }
     .hero h1 {
-      font-size: 2.9rem;
-      margin: 18px 0 6px;
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24;
       letter-spacing: -0.02em;
+      font-weight: 700;
+      margin: 0 0 20px;
+      text-wrap: balance;
     }
-    .hero h1 span {
-      background: var(--brand);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero .tagline {
-      font-size: 1.2rem;
-      color: var(--fg);
-      margin: 0 0 16px;
-      font-weight: 600;
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
     }
     .hero .lead {
-      max-width: 600px;
-      margin: 0 auto 26px;
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
       color: var(--muted);
+      max-width: 620px; margin: 0 auto;
+      text-wrap: pretty;
     }
-    .appstore-btn {
-      position: relative;
+    .cta { margin-top: 34px; }
+    .pill {
       display: inline-block;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.98rem;
-      padding: 13px 30px;
+      padding: 11px 24px;
       border-radius: 999px;
-      box-shadow: 0 12px 28px rgba(40,140,90,0.38), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 6px rgba(20,90,60,0.25);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-      overflow: hidden;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(31,143,95,0.3);
     }
-    .appstore-btn::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 50%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
-      pointer-events: none;
-    }
-    .appstore-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(40,140,90,0.46), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(20,90,60,0.25);
-      text-decoration: none;
-    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
+
     .chips {
-      list-style: none;
-      padding: 0;
-      margin: 26px 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 10px;
-      justify-content: center;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; margin: 52px auto 0; max-width: 900px;
     }
-    .chips li {
-      font-size: 0.85rem;
-      color: var(--chip-fg);
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(14px) saturate(150%);
-      backdrop-filter: blur(14px) saturate(150%);
-      border: 1px solid var(--glass-brd);
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px;
       border-radius: 999px;
-      padding: 5px 13px;
-      box-shadow: var(--glass-inset);
+      background: var(--bg-soft);
+      font-size: 0.88rem; font-weight: 500;
+      color: var(--fg);
     }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
 
-    /* Screenshots */
-    .shots {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      padding: 8px 4px 18px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      justify-content: safe center;
+    /* ---------- 前提を伝えるひとこと ---------- */
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
     }
-    .shot {
-      flex: 0 0 auto;
-      width: 220px;
-      scroll-snap-align: center;
-      text-align: center;
-    }
-    .shot img {
-      width: 100%;
-      height: auto;
-      border-radius: 22px;
-      border: 1px solid var(--glass-brd);
-      box-shadow: 0 18px 44px rgba(28,74,48,0.20), inset 0 1px 0 rgba(255,255,255,0.5);
-      display: block;
-    }
-    .shot span {
-      display: block;
-      margin-top: 12px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
 
-    /* Section headings */
-    h2.section-title {
-      font-size: 1.8rem;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px;
-      text-align: center;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      margin: 0 0 38px;
-    }
-
-    /* Features grid — liquid glass cards */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
+    /* ---------- 機能セクション ---------- */
+    .features { padding: 0 0 40px; }
     .feature {
-      position: relative;
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(26px) saturate(165%);
-      backdrop-filter: blur(26px) saturate(165%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: var(--glass-shadow), var(--glass-inset);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 56px 0;
+    }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph {
+      width: 60px; height: 60px; border-radius: 17px;
+      display: grid; place-items: center;
+      margin-bottom: 22px;
+    }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
+    .shot {
+      width: 100%; max-width: 300px;
+      border-radius: 30px;
       overflow: hidden;
-    }
-    .feature::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
-    }
-    .feature:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 50px rgba(28,74,48,0.18), var(--glass-inset);
-    }
-    .feature .emoji {
-      font-size: 1.5rem;
-      line-height: 1;
-      width: 50px; height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      background: var(--brand-soft);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 6px 16px rgba(40,140,90,0.18);
-    }
-    .feature h3 { font-size: 1.08rem; margin: 14px 0 6px; }
-    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-    .pbadge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      vertical-align: 2px;
-      margin-left: 8px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: var(--brand-soft);
-      color: var(--pbadge-fg, #1c5c3f);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
-      white-space: nowrap;
+      border: 1px solid var(--rule);
+      box-shadow: var(--card-shadow);
+      background: var(--card);
     }
 
-    /* Pricing plans */
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      max-width: 880px;
-      margin: 0 auto;
-      align-items: start;
+    /* ---------- そのほかの機能（スクリーンショットなし） ---------- */
+    .more { padding: 40px 0 8px; }
+    .more h2 {
+      font-size: clamp(1.5rem, 3.6vw, 2rem);
+      letter-spacing: -0.02em; font-weight: 700; margin: 0 0 32px; text-align: center;
     }
-    .plan.premium { border-color: rgba(47,163,107,0.6); }
-    .plan .price {
-      font-size: 1.9rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin: 2px 0 4px;
+    .more .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;
     }
-    .plan .price small { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-left: 6px; }
-    .plan .note { color: var(--muted); font-size: 0.85rem; margin: 0 0 4px; }
-    .plan ul { list-style: none; padding: 0; margin: 14px 0 0; }
-    .plan li {
-      position: relative;
-      padding-left: 24px;
-      margin: 0 0 9px;
-      color: var(--muted);
-      font-size: 0.93rem;
+    .more .box {
+      background: var(--bg-soft); border-radius: 20px; padding: 26px 24px;
     }
-    .plan li::before {
-      content: "✓";
-      position: absolute;
-      left: 2px;
-      color: var(--link);
-      font-weight: 700;
-    }
+    .more .box .glyph { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; }
+    .more .box h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; }
+    .more .box p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
 
-    /* How it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      max-width: 880px;
-      margin: 0 auto;
+    /* ---------- 料金 ---------- */
+    .pricing { padding: 96px 0 8px; }
+    .pricing h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center;
     }
-    .step { text-align: center; padding: 8px 12px; }
+    .pricing .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; max-width: 620px; }
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .plan {
+      border: 1px solid var(--rule); border-radius: 22px; padding: 30px 28px;
+      background: var(--card);
+    }
+    .plan.premium { border-color: color-mix(in srgb, var(--brand-2) 40%, var(--rule)); }
+    .plan h3 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 3px 9px; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-1) 22%, transparent);
+      color: var(--brand-2);
+    }
+    @media (prefers-color-scheme: dark) { .badge { color: #8FE3B4; } }
+    .plan .price { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em; margin: 8px 0 4px; }
+    .plan .price small { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .plan .note { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
+    .plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: 0.93rem; }
+    .plan li { margin-bottom: 7px; }
+
+    /* ---------- 使い方 ---------- */
+    .steps-sec { padding: 96px 0 8px; }
+    .steps-sec h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center;
+    }
+    .steps-sec .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .step { }
     .step .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px; height: 46px;
-      border-radius: 999px;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 14px;
-      box-shadow: 0 10px 22px rgba(40,140,90,0.34), inset 0 1px 0 rgba(255,255,255,0.55);
+      width: 34px; height: 34px; border-radius: 999px;
+      display: grid; place-items: center;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;
     }
-    .step h3 { font-size: 1.05rem; margin: 0 0 6px; }
-    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .step h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 650; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 36px 0 56px;
-      text-align: center;
-      margin-top: 12px;
+    /* ---------- プライバシー ---------- */
+    .privacy {
+      background: #000; color: #f5f5f7;
+      padding: 108px 0; margin-top: 96px;
     }
-    footer nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      justify-content: center;
-      margin-bottom: 16px;
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem);
+      line-height: 1.16; letter-spacing: -0.025em; font-weight: 700;
+      margin: 0 0 24px; text-align: center; text-wrap: balance;
     }
-    footer .copy { color: var(--muted); font-size: 0.85rem; }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px;
+    }
+    .privacy .box { background: #1c1c1e; border-radius: 20px; padding: 26px 24px; }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #58C996; }
 
-    @media (max-width: 520px) {
-      .hero h1 { font-size: 2.3rem; }
-      .hero { padding: 60px 0 40px; }
-      section { padding: 44px 0; }
+    /* ---------- 動作環境 ---------- */
+    .specs { padding: 92px 0; }
+    .specs h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px;
+    }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd { padding: 14px 0; border-top: 1px solid var(--rule); margin: 0; }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .plans { grid-template-columns: 1fr; }
+      .privacy { padding: 80px 0; margin-top: 72px; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="langswitch"><a href="/teenote/">日本語</a><span class="sep">/</span><span class="active">English</span></div>
-    <div class="wrap">
-      <span class="icon-wrap"><img class="icon" src="/teenote/assets/icon.png" alt="TeeNote app icon" width="116" height="116"></span>
-      <h1><span>TeeNote</span></h1>
-      <p class="tagline">Golf score tracking, made simple</p>
-      <p class="lead">Enter scores hole by hole in seconds and record your playing partners in the same round. Stats and charts show your game improving — a score tracker built for golfers.</p>
-      <a class="appstore-btn" href="https://apps.apple.com/app/teenote/id6787110028">Download on the App Store</a>
-      <ul class="chips">
-        <li>Free, with a one-time Premium unlock</li>
-        <li>iOS 26.5 or later</li>
-        <li>iPhone &amp; iPad</li>
-        <li>English &amp; Japanese</li>
-        <li>No ads, no tracking</li>
-      </ul>
-    </div>
-  </header>
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/teenote/en/"><img src="/teenote/assets/icon.png" alt="">TeeNote</a>
+    <ul>
+      <li><a href="/teenote/support.html#english">Support</a></li>
+      <li><a href="/teenote/privacy.html#english">Privacy</a></li>
+      <li><a href="/teenote/">日本語</a></li>
+    </ul>
+  </div>
+</div>
 
-  <!-- SCREENSHOTS -->
-  <section>
-    <div class="wrap">
-      <div class="shots">
-        <figure class="shot"><img src="/teenote/assets/shot-entry-en.png" alt="Score entry screen with steppers for strokes, putts, and GIR"><span>Quick one-handed entry</span></figure>
-        <figure class="shot"><img src="/teenote/assets/shot-detail-en.png" alt="Round detail screen with totals, score to par, and the scorecard grid"><span>Scorecard &amp; summary</span></figure>
-        <figure class="shot"><img src="/teenote/assets/shot-stats-en.png" alt="Statistics screen with average score and a score trend chart"><span>Stats that show progress</span></figure>
-        <figure class="shot"><img src="/teenote/assets/shot-clubs-en.png" alt="My Clubs screen with a distance chart per club"><span>Distances by club</span></figure>
-      </div>
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/teenote/assets/icon.png" alt="The TeeNote app icon" width="116" height="116">
+    <h1>Golf score tracking,<br><span class="grad">made simple.</span></h1>
+    <p class="lead">
+      Enter scores hole by hole in seconds and record your playing partners in the same round.
+      Stats and charts show your game improving — a score tracker built for golfers.
+    </p>
+    <div class="cta">
+      <a class="pill" href="https://apps.apple.com/app/teenote/id6787110028">Download on the App Store</a>
     </div>
-  </section>
 
-  <!-- FEATURES -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">Features</h2>
-      <p class="section-sub">From quick entry during the round to looking back afterwards</p>
-      <div class="features">
-        <div class="feature"><div class="emoji">⛳️</div><h3>Quick entry</h3><p>Record strokes, putts, and GIR per hole with steppers and a single tap. GIR is derived automatically from strokes and putts (with manual override).</p></div>
-        <div class="feature"><div class="emoji">👥</div><h3>Track your group<span class="pbadge">Premium</span></h3><p>Add yourself and any number of playing partners to one round — keep everyone's score in tournaments and rounds with friends.</p></div>
-        <div class="feature"><div class="emoji">🖼️</div><h3>Scorecard &amp; image sharing</h3><p>A player-by-hole grid with OUT/IN subtotals and totals. Export the scorecard as a PNG and share it straight to your group chat — watermark-free with Premium.</p></div>
-        <div class="feature"><div class="emoji">📊</div><h3>Stats &amp; charts</h3><p>Average score and the score trend are free. Premium unlocks average putts, GIR%, score distribution, best/worst, the all-time range, and per-player stats.</p></div>
-        <div class="feature"><div class="emoji">🗺️</div><h3>Course management</h3><p>Register par for 18 holes (or 9-hole courses). Set the location via search and check it on a map preview. The free plan holds 3 courses; Premium removes the limit.</p></div>
-        <div class="feature"><div class="emoji">🎒</div><h3>My Clubs<span class="pbadge">Premium</span></h3><p>Record distance and loft per club and visualize gapping with a distance chart. Add a standard 14-club set in one tap.</p></div>
-        <div class="feature"><div class="emoji">🔟</div><h3>Starting hole</h3><p>Supports back-nine and shotgun starts. Score entry pages through holes in play order, with running totals to match.</p></div>
-        <div class="feature"><div class="emoji">🔒</div><h3>iCloud sync &amp; privacy</h3><p>No account needed. Your data lives only on your device and in your own iCloud, syncing across devices. The developer can never access it.</p></div>
-      </div>
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-entry)"></span>Quick entry</span>
+      <span class="chip"><span class="dot" style="background:var(--c-card)"></span>Scorecard</span>
+      <span class="chip"><span class="dot" style="background:var(--c-stats)"></span>Stats</span>
+      <span class="chip"><span class="dot" style="background:var(--c-clubs)"></span>My Clubs</span>
+      <span class="chip"><span class="dot" style="background:var(--c-people)"></span>Your group</span>
+      <span class="chip"><span class="dot" style="background:var(--c-course)"></span>Courses</span>
+      <span class="chip"><span class="dot" style="background:var(--c-cloud)"></span>iCloud sync</span>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- PRICING -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">Pricing</h2>
-      <p class="section-sub">The app is free. Unlock everything with a single one-time purchase</p>
-      <div class="plans">
-        <div class="feature plan">
-          <h3>Free</h3>
-          <p class="price">$0</p>
-          <p class="note">No account, no time limit.</p>
-          <ul>
-            <li>Record your own rounds — no limit on how many</li>
-            <li>Scorecard and round summaries</li>
-            <li>Open your latest 10 rounds (older rounds are never deleted)</li>
-            <li>Stats for your last 5 rounds: average score and trend</li>
-            <li>Up to 3 courses</li>
-            <li>Scorecard image sharing (with a watermark)</li>
-            <li>iCloud sync</li>
-          </ul>
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>One-handed on the course.<br>In depth afterwards.</h2>
+    <p>
+      A few taps for strokes and putts is all it takes — the scorecard and your stats take care of themselves.
+      TeeNote stays out of your way during the round so there is something worth reading when it ends.
+    </p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#6BE08A,#34C759)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M15 5v20M5 15h20" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          </svg>
         </div>
-        <div class="feature plan premium">
-          <h3>TeeNote Premium<span class="pbadge">One-time</span></h3>
-          <p class="price">Buy once<small>local price on the App Store</small></p>
-          <p class="note">Not a subscription. Yours on every device signed in to the same Apple Account.</p>
-          <ul>
-            <li>Scoring for playing partners, with no player limit</li>
-            <li>Full statistics: average putts, GIR%, score breakdown, best/worst, all time, per player</li>
-            <li>Your entire round history</li>
-            <li>Unlimited courses</li>
-            <li>My Clubs and the distance chart</li>
-            <li>Watermark-free scorecard images</li>
-          </ul>
+        <h3>A few taps per hole</h3>
+        <p>
+          Record strokes, putts, and GIR with steppers and a single tap. GIR is derived automatically
+          from strokes and putts, so entry takes seconds (manual override available).
+        </p>
+        <ul>
+          <li>Supports back-nine and shotgun starts</li>
+          <li>Score entry pages through holes in play order, with running totals to match</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/teenote/assets/shot-entry-en.png" alt="The score entry screen with steppers for strokes, putts, and GIR">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5FD6C9,#2BB3A3)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="4" y="5" width="22" height="20" rx="3" stroke="#fff" stroke-width="2.4" fill="none"/>
+            <path d="M4 12h22M11 12v13M18 12v13" stroke="#fff" stroke-width="2.4"/>
+          </svg>
         </div>
+        <h3>A scorecard you can just send</h3>
+        <p>
+          A player-by-hole grid with OUT/IN subtotals and totals. Tap any cell to fix it on the spot.
+        </p>
+        <ul>
+          <li>Export the scorecard as a PNG and share it straight to your group chat</li>
+          <li>Premium exports without the watermark</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/teenote/assets/shot-detail-en.png" alt="The round detail screen with the summary and scorecard grid">
       </div>
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">How it works</h2>
-      <p class="section-sub">Three steps from teeing off to looking back</p>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><h3>Create a round</h3><p>Pick the course, your group, and the starting hole.</p></div>
-        <div class="step"><div class="num">2</div><h3>Enter hole by hole</h3><p>Record strokes and putts with steppers — for everyone at once.</p></div>
-        <div class="step"><div class="num">3</div><h3>Look back</h3><p>Check your progress with the scorecard and stats, and share as an image.</p></div>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5AB0FF,#0A84FF)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="4"  y="17" width="4.6" height="9"  rx="2.3" fill="#fff" opacity=".55"/>
+            <rect x="12.7" y="11" width="4.6" height="15" rx="2.3" fill="#fff"/>
+            <rect x="21.4" y="5"  width="4.6" height="21" rx="2.3" fill="#fff" opacity=".8"/>
+          </svg>
+        </div>
+        <h3>See whether you are improving</h3>
+        <p>
+          Average score and the score trend are free. Premium unlocks average putts, GIR%,
+          score distribution, best/worst, the all-time range, and per-player stats.
+        </p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/teenote/assets/shot-stats-en.png" alt="The statistics screen with average score and the score trend chart">
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <nav>
-        <a href="/teenote/support.html">Support</a>
-        <a href="/teenote/privacy.html">Privacy Policy</a>
-        <a href="https://forms.gle/GdTVsnWws8pK93rQA">Contact</a>
-      </nav>
-      <p class="copy">© 2026 Masamichi Ueta</p>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFBE4D,#FF9F0A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M8 25L20 6" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M20 6l4 3-3.2 4.4z" fill="#fff"/>
+            <path d="M5 25h9" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>How far does that club actually go?</h3>
+        <p>
+          Record distance and loft per club, and visualize your gapping with a distance chart.
+          Add a standard 14-club set in one tap.
+        </p>
+        <ul>
+          <li>My Clubs and the distance chart are Premium features</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/teenote/assets/shot-clubs-en.png" alt="The My Clubs screen with a distance chart per club">
+      </div>
     </div>
-  </footer>
+
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <h2>Also included</h2>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#8B89F0,#5E5CE6)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="9" cy="8" r="3.4" stroke="#fff" stroke-width="2" fill="none"/>
+            <circle cx="17" cy="9" r="2.6" stroke="#fff" stroke-width="2" fill="none" opacity=".7"/>
+            <path d="M3 20c0-3.3 2.7-5.4 6-5.4s6 2.1 6 5.4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <h3>Track your group</h3>
+        <p>Add yourself and any number of playing partners to one round — keep everyone's score in tournaments and rounds with friends. (Premium)</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#5EE47F,#30D158)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z" stroke="#fff" stroke-width="2" fill="none"/>
+            <circle cx="12" cy="10" r="2.4" fill="#fff"/>
+          </svg>
+        </div>
+        <h3>Course management</h3>
+        <p>Register par for 18 holes (or 9-hole courses). Set the location via search and check it on a map preview. The free plan holds 3 courses; Premium removes the limit.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#6FD3F5,#32ADE6)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6.5 18.5A4.5 4.5 0 016 9.6a6 6 0 0111.6-1.4A4 4 0 0118 18.5H6.5z" stroke="#fff" stroke-width="2" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <h3>iCloud sync</h3>
+        <p>No account needed. Your data lives only on your device and in your own iCloud, syncing across every device signed in to the same Apple Account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="sub">The app is free. Unlock everything with a single one-time purchase.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <p class="price">$0</p>
+        <p class="note">No account, no time limit.</p>
+        <ul>
+          <li>Record your own rounds — no limit on how many</li>
+          <li>Scorecard and round summaries</li>
+          <li>Open your latest 10 rounds (older rounds are never deleted)</li>
+          <li>Stats for your last 5 rounds: average score and trend</li>
+          <li>Up to 3 courses</li>
+          <li>Scorecard image sharing (with a watermark)</li>
+          <li>iCloud sync</li>
+        </ul>
+      </div>
+      <div class="plan premium">
+        <h3>TeeNote Premium<span class="badge">One-time</span></h3>
+        <p class="price">Buy once<small>local price on the App Store</small></p>
+        <p class="note">Not a subscription. Yours on every device signed in to the same Apple Account.</p>
+        <ul>
+          <li>Scoring for playing partners, with no player limit</li>
+          <li>Full statistics: average putts, GIR%, score breakdown, best/worst, all time, per player</li>
+          <li>Your entire round history</li>
+          <li>Unlimited courses</li>
+          <li>My Clubs and the distance chart</li>
+          <li>Watermark-free scorecard images</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Three steps from teeing off to looking back.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Create a round</h3>
+        <p>Pick the course, your group, and the starting hole.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Enter hole by hole</h3>
+        <p>Record strokes and putts with steppers — for everyone at once.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Look back</h3>
+        <p>Check your progress with the scorecard and stats, and share as an image.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>Your scores are<br>yours alone.</h2>
+    <p class="sub">
+      Your data lives on your device and in your own iCloud. The developer cannot see it.
+    </p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>No account</h4>
+        <p>Nothing to sign up for, nothing to log in to. We never even ask for an email address.</p>
+      </div>
+      <div class="box">
+        <h4>No developer server</h4>
+        <p>Everything is stored in your own private iCloud database, which the developer cannot read.</p>
+      </div>
+      <div class="box">
+        <h4>No ads, no tracking</h4>
+        <p>No analytics SDK, no advertising SDK, anywhere in the app.</p>
+      </div>
+      <div class="box">
+        <h4>Works without iCloud</h4>
+        <p>Not signed in to iCloud? Every feature still works with on-device storage.</p>
+      </div>
+      <div class="box">
+        <h4>Location is optional</h4>
+        <p>Asked for only if you set a course's location from where you are. Declining affects nothing else.</p>
+      </div>
+      <div class="box">
+        <h4>Sharing is your call</h4>
+        <p>Scorecard images go through the standard iOS share sheet. You pick the destination.</p>
+      </div>
+    </div>
+
+    <p class="note">
+      Read the full <a href="/teenote/privacy.html#english">privacy policy</a>.
+    </p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>Requirements</h2>
+    <dl>
+      <dt>OS</dt>
+      <dd>iOS 26.5 or later</dd>
+      <dt>Devices</dt>
+      <dd>iPhone and iPad</dd>
+      <dt>Languages</dt>
+      <dd>English and Japanese</dd>
+      <dt>Price</dt>
+      <dd>Free, with a one-time "TeeNote Premium" unlock</dd>
+      <dt>Ads</dt>
+      <dd>None. No tracking either</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/teenote/support.html#english">Support</a>
+      <a href="/teenote/privacy.html#english">Privacy Policy</a>
+      <a href="https://forms.gle/GdTVsnWws8pK93rQA">Contact</a>
+      <a href="/teenote/">日本語</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -14,79 +14,105 @@ permalink: /teenote/support.html
     :root {
       color-scheme: light dark;
       --bg: #ffffff;
+      --bg-soft: #f5f5f7;
       --fg: #1d1d1f;
       --muted: #6e6e73;
       --rule: #e5e5e7;
-      --link: #0066cc;
-      --code-bg: #f5f5f7;
+      --link: #1F8F5F;
+      --accent: #2FA36B;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1d1d1f;
+        --bg: #000000;
+        --bg-soft: #161617;
         --fg: #f5f5f7;
         --muted: #a1a1a6;
-        --rule: #3a3a3c;
-        --link: #2997ff;
-        --code-bg: #2c2c2e;
+        --rule: #2a2a2c;
+        --link: #58C996;
       }
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.72; font-size: 17px; -webkit-font-smoothing: antialiased;
     }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 96px;
-    }
-    h1 {
-      font-size: 2rem;
-      margin: 0 0 8px;
-      letter-spacing: -0.01em;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin: 48px 0 16px;
-      letter-spacing: -0.01em;
-    }
-    h3 {
-      font-size: 1.1rem;
-      margin: 28px 0 8px;
-    }
-    p, ul, ol { margin: 0 0 16px; }
-    ul, ol { padding-left: 1.4em; }
-    li { margin-bottom: 6px; }
-    a { color: var(--link); }
+    a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    hr {
-      border: 0;
-      border-top: 1px solid var(--rule);
-      margin: 48px 0;
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .updated {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0;
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
     }
-    .faq dt {
-      font-weight: 600;
-      margin-top: 20px;
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; text-wrap: balance; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+      text-wrap: balance;
     }
-    .faq dd {
-      margin: 4px 0 0;
-      padding: 0;
-      color: var(--fg);
+    h3 { font-size: 1.12rem; font-weight: 650; margin: 40px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+    hr { display: none; }
+
+    dl.faq { margin: 0; }
+    dl.faq dt { font-weight: 650; margin: 30px 0 6px; font-size: 1.02rem; letter-spacing: -0.01em; }
+    dl.faq dd { margin: 0; color: var(--muted); }
+    dl.faq dd p { margin: 0 0 10px; }
+    dl.faq dd ul { margin: 8px 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
-  <main>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/teenote/"><img src="/teenote/assets/icon.png" alt="">TeeNote</a>
+    <ul>
+      <li><a href="/teenote/">トップ</a></li>
+      <li><a href="/teenote/privacy.html">プライバシー</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
     <h1>TeeNote — Support</h1>
     <p class="updated">最終更新日 / Last updated: 2026-07-26</p>
 
@@ -128,7 +154,7 @@ permalink: /teenote/support.html
       <dd>A. お使いの端末内と、iCloud にサインインしている場合はあなたの iCloud（プライベートデータベース）に保存されます。開発者のサーバーに送信されることはありません。詳しくは<a href="/teenote/privacy.html">プライバシーポリシー</a>をご覧ください。</dd>
 
       <dt>Q. 機種変更のとき、データは引き継げますか？</dt>
-      <dd>A. 新しい端末で同じ Apple アカウント（iCloud）にサインインして TeeNote をインストールすると、データが自動的に同期されます。移行前に、旧端末がネットワークに接続された状態でアプリを開き、最新のデータが同期されていることを確認するのがおすすめです。</dd>
+      <dd>A. 新しい端末で同じ Apple Account（iCloud）にサインインして TeeNote をインストールすると、データが自動的に同期されます。移行前に、旧端末がネットワークに接続された状態でアプリを開き、最新のデータが同期されていることを確認するのがおすすめです。</dd>
 
       <dt>Q. iCloud 同期がうまく動きません。</dt>
       <dd>A. 設定タブの同期ステータスをご確認ください。あわせて、iOS の「設定 &gt; [ユーザー名] &gt; iCloud」で TeeNote の iCloud 利用がオンになっているか、iCloud ストレージに空きがあるか、ネットワークに接続されているかをご確認ください。同期の反映には数分かかることがあります。</dd>
@@ -178,7 +204,7 @@ permalink: /teenote/support.html
 
     <hr>
 
-    <h2>Support (English)</h2>
+    <h2 id="english">Support (English)</h2>
 
     <p>TeeNote is a golf score tracking app for iOS. Enter scores hole by hole in seconds, record your playing partners in the same round, and look back on your game with stats and charts. You can also share your scorecard as an image. This page summarizes how to use the app, common questions, and how to reach the developer.</p>
 
@@ -261,6 +287,15 @@ permalink: /teenote/support.html
       <li>iCloud sync relies on Apple's services. The developer is not responsible for sync delays, interruptions, outages, or any resulting data inconsistencies.</li>
       <li>Features, specifications, and availability may change or be discontinued without notice.</li>
     </ul>
+  <footer>
+    <nav>
+      <a href="/teenote/">トップ / Home</a>
+      <a href="/teenote/privacy.html">プライバシー / Privacy</a>
+      <a href="https://forms.gle/GdTVsnWws8pK93rQA">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
   </main>
 </body>
 </html>

@@ -15,71 +15,105 @@ permalink: /magirenbo/privacy.html
     :root {
       color-scheme: light dark;
       --bg: #ffffff;
+      --bg-soft: #f5f5f7;
       --fg: #1d1d1f;
       --muted: #6e6e73;
       --rule: #e5e5e7;
-      --link: #5b44e0;
+      --link: #5B44E0;
+      --accent: #6A55F0;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1d1d1f;
+        --bg: #000000;
+        --bg-soft: #161617;
         --fg: #f5f5f7;
         --muted: #a1a1a6;
-        --rule: #3a3a3c;
-        --link: #a99bff;
+        --rule: #2a2a2c;
+        --link: #A99BFF;
       }
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.72; font-size: 17px; -webkit-font-smoothing: antialiased;
     }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 96px;
-    }
-    h1 {
-      font-size: 2rem;
-      margin: 0 0 8px;
-      letter-spacing: -0.01em;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin: 48px 0 16px;
-      letter-spacing: -0.01em;
-    }
-    h3 {
-      font-size: 1.1rem;
-      margin: 28px 0 8px;
-    }
-    p, ul, ol { margin: 0 0 16px; }
-    ul, ol { padding-left: 1.4em; }
-    li { margin-bottom: 6px; }
-    a { color: var(--link); }
+    a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    hr {
-      border: 0;
-      border-top: 1px solid var(--rule);
-      margin: 48px 0;
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .updated {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0;
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
     }
-    table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 0.93rem; }
-    th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
-    th { font-weight: 600; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; text-wrap: balance; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+      text-wrap: balance;
+    }
+    h3 { font-size: 1.12rem; font-weight: 650; margin: 40px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+    hr { display: none; }
+
+    dl.faq { margin: 0; }
+    dl.faq dt { font-weight: 650; margin: 30px 0 6px; font-size: 1.02rem; letter-spacing: -0.01em; }
+    dl.faq dd { margin: 0; color: var(--muted); }
+    dl.faq dd p { margin: 0 0 10px; }
+    dl.faq dd ul { margin: 8px 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
   </style>
 </head>
 <body>
-  <main>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/magirenbo/"><img src="/magirenbo/assets/icon.png" alt="">まぎれんぼ</a>
+    <ul>
+      <li><a href="/magirenbo/">トップ</a></li>
+      <li><a href="/magirenbo/support.html">サポート</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
     <h1>まぎれんぼ — Privacy Policy</h1>
     <p class="updated">最終更新日 / Last updated: 2026-08-17</p>
 
@@ -163,7 +197,7 @@ permalink: /magirenbo/privacy.html
 
     <hr>
 
-    <h2>Privacy Policy (English)</h2>
+    <h2 id="english">Privacy Policy (English)</h2>
 
     <p>Magirenbo (the "App") is a puzzle game for iOS provided by Masamichi Ueta (the "Developer"). <strong>The App does not collect any personal information.</strong> The Developer cannot see, obtain, or share your data with anyone.</p>
 
@@ -238,6 +272,15 @@ permalink: /magirenbo/privacy.html
 
     <h3>12. Contact</h3>
     <p>If you have questions about this policy, please reach out via the <a href="https://forms.gle/5WDNH21Z24vhr1Np7" target="_blank" rel="noopener">contact form</a>. The form is provided by Google Forms and is subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. Anything you submit is used only to respond to your inquiry.</p>
+  <footer>
+    <nav>
+      <a href="/magirenbo/">トップ / Home</a>
+      <a href="/magirenbo/support.html">サポート / Support</a>
+      <a href="https://forms.gle/5WDNH21Z24vhr1Np7">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
   </main>
 </body>
 </html>

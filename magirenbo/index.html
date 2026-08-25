@@ -8,14 +8,13 @@ permalink: /magirenbo/
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>まぎれんぼ — 絵文字さがしパズル</title>
-  <meta name="description" content="ずらりと並んだ絵文字の中から、1つだけ違うものをさがすiOSゲーム。最後は900個の壁。デイリーチャレンジ、問題の送受信、Game Center対応。アカウント不要・オフライン・広告なし。">
+  <meta name="description" content="ずらりと並んだ絵文字の中に、たった1つだけ違うものがまぎれています。見つけてタップするだけ。ステージが進むほど絵文字は増え、違いはどんどん小さくなります。アカウント不要・オフライン対応・広告なし。">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/magirenbo/assets/icon.png">
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="まぎれんぼ — 絵文字さがしパズル">
-  <meta property="og:description" content="1つだけ違う絵文字を見つけてタップするだけ。ステージが進むほど絵文字は増え、違いは小さくなります。最後は900個の壁。">
+  <meta property="og:description" content="並んだ絵文字の中から、1 つだけ違うものを見つける。最後は 900 個の壁の中に、たった 1 つ。">
   <meta property="og:url" content="https://masamichiueta.github.io/magirenbo/">
   <meta property="og:image" content="https://masamichiueta.github.io/magirenbo/assets/icon.png">
   <meta name="twitter:card" content="summary">
@@ -23,518 +22,470 @@ permalink: /magirenbo/
   <style>
     :root {
       color-scheme: light dark;
-      --fg: #221b3d;
-      --muted: #635a80;
-      --link: #5b44e0;
-      --rule: rgba(90,70,190,0.20);
-      --chip-fg: #4a4170;
-      --pbadge-fg: #3a26b4;
-      /* Liquid glass material */
-      --glass-bg: rgba(255,255,255,0.56);
-      --glass-brd: rgba(255,255,255,0.75);
-      --glass-shadow: 0 14px 40px rgba(48,30,120,0.13);
-      --glass-inset: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 0 0 0.5px rgba(255,255,255,0.4);
-      /* Brand gradient — the icon's indigo, top to bottom */
-      --brand: linear-gradient(115deg, #8B7BFF 0%, #6A55F0 52%, #4B34C8 100%);
-      --brand-soft: linear-gradient(115deg, #CFC6FF 0%, #BBADFF 52%, #B7A6F5 100%);
-      /* Page mesh background — the icon's purple, the home screen's cream */
-      --page-bg:
-        radial-gradient(48% 42% at 12% 6%, rgba(122,104,255,0.36), transparent 60%),
-        radial-gradient(46% 40% at 88% 4%, rgba(255,201,60,0.26), transparent 60%),
-        radial-gradient(60% 55% at 50% 104%, rgba(150,120,255,0.30), transparent 62%),
-        radial-gradient(40% 35% at 82% 68%, rgba(255,170,190,0.22), transparent 60%),
-        linear-gradient(180deg, #f7f4ff 0%, #f1ecfb 100%);
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      --c-find: #6A55F0;
+      --c-time: #FF9F0A;
+      --c-tier: #0A84FF;
+      --c-send: #30D158;
+      --c-daily: #FF3B30;
+      --c-gc: #FFD60A;
+      --c-stats: #BF5AF2;
+
+      --brand-1: #8B7BFF;
+      --brand-2: #4B34C8;
+      --link: #5B44E0;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --fg: #eeeaff;
-        --muted: #a79ec4;
-        --link: #a99bff;
-        --rule: rgba(255,255,255,0.12);
-        --chip-fg: #c8c1e4;
-        --pbadge-fg: #ffffff;
-        --glass-bg: rgba(38,32,60,0.46);
-        --glass-brd: rgba(255,255,255,0.14);
-        --glass-shadow: 0 16px 44px rgba(0,0,0,0.50);
-        --glass-inset: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 0.5px rgba(255,255,255,0.05);
-        --brand: linear-gradient(115deg, #8B7BFF 0%, #6A55F0 52%, #4B34C8 100%);
-        --brand-soft: linear-gradient(115deg, #6E5CF0 0%, #5A45D8 52%, #4B34C8 100%);
-        --page-bg:
-          radial-gradient(48% 42% at 12% 6%, rgba(110,92,240,0.30), transparent 60%),
-          radial-gradient(46% 40% at 88% 4%, rgba(255,201,60,0.13), transparent 60%),
-          radial-gradient(60% 55% at 50% 104%, rgba(90,69,216,0.28), transparent 62%),
-          radial-gradient(40% 35% at 82% 68%, rgba(200,90,140,0.14), transparent 60%),
-          linear-gradient(180deg, #100c1e 0%, #16112a 100%);
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #A99BFF;
       }
     }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      background: #f7f4ff;
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      position: relative;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 17px;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background: var(--page-bg);
-    }
+    img { max-width: 100%; display: block; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 56px 0; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      text-align: center;
-      padding: 76px 0 56px;
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .langswitch {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    .langswitch a { color: var(--link); }
-    .langswitch .active { color: var(--fg); font-weight: 600; }
-    .langswitch .sep { margin: 0 6px; opacity: 0.5; }
-    .icon-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-    .icon-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -22px;
-      border-radius: 50%;
-      background: var(--brand);
-      filter: blur(34px);
-      opacity: 0.55;
-      z-index: 0;
-    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    .hero { text-align: center; padding: 88px 0 24px; }
     .hero img.icon {
-      position: relative;
-      z-index: 1;
-      width: 116px; height: 116px;
-      border-radius: 26px;
-      box-shadow: 0 18px 40px rgba(58,38,180,0.32), inset 0 1px 0 rgba(255,255,255,0.7);
+      width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(75,52,200,0.28);
     }
     .hero h1 {
-      font-size: 2.9rem;
-      margin: 18px 0 6px;
-      letter-spacing: -0.02em;
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 20px; text-wrap: balance;
     }
-    .hero h1 span {
-      background: var(--brand);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero .tagline {
-      font-size: 1.2rem;
-      color: var(--fg);
-      margin: 0 0 16px;
-      font-weight: 600;
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
     }
     .hero .lead {
-      max-width: 620px;
-      margin: 0 auto 26px;
-      color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted);
+      max-width: 620px; margin: 0 auto; text-wrap: pretty;
     }
-    .appstore-btn {
-      position: relative;
-      display: inline-block;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.98rem;
-      padding: 13px 30px;
-      border-radius: 999px;
-      box-shadow: 0 12px 28px rgba(75,52,200,0.38), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 6px rgba(40,24,120,0.25);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-      overflow: hidden;
+    .cta { margin-top: 34px; }
+    .pill {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(75,52,200,0.3);
     }
-    .appstore-btn::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 50%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
-      pointer-events: none;
-    }
-    .appstore-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(75,52,200,0.46), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(40,24,120,0.25);
-      text-decoration: none;
-    }
-    .chips {
-      list-style: none;
-      padding: 0;
-      margin: 26px 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 10px;
-      justify-content: center;
-    }
-    .chips li {
-      font-size: 0.85rem;
-      color: var(--chip-fg);
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(14px) saturate(150%);
-      backdrop-filter: blur(14px) saturate(150%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 999px;
-      padding: 5px 13px;
-      box-shadow: var(--glass-inset);
-    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
 
-    /* Screenshots */
-    .shots {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      padding: 8px 4px 18px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      justify-content: safe center;
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 52px auto 0; max-width: 900px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px; border-radius: 999px;
+      background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; color: var(--fg);
     }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+    .features { padding: 0 0 40px; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph { width: 60px; height: 60px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 22px; }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
     .shot {
-      flex: 0 0 auto;
-      width: 220px;
-      margin: 0;
-      scroll-snap-align: center;
-      text-align: center;
-    }
-    .shot img {
-      width: 100%;
-      height: auto;
-      border-radius: 22px;
-      border: 1px solid var(--glass-brd);
-      box-shadow: 0 18px 44px rgba(48,30,120,0.22), inset 0 1px 0 rgba(255,255,255,0.5);
-      display: block;
-    }
-    .shot figcaption {
-      display: block;
-      margin-top: 12px;
-      font-size: 0.85rem;
-      color: var(--muted);
+      width: 100%; max-width: 300px; border-radius: 30px; overflow: hidden;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow); background: var(--card);
     }
 
-    /* Section headings */
-    h2.section-title {
-      font-size: 1.8rem;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px;
-      text-align: center;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      margin: 0 0 38px;
-    }
+    .more { padding: 40px 0 8px; }
+    .more h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 32px; text-align: center; }
+    .more .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .more .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .more .box .glyph { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; }
+    .more .box h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; }
+    .more .box p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
 
-    /* Features grid — liquid glass cards */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+    .pricing { padding: 96px 0 8px; }
+    .pricing h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .pricing .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; max-width: 620px; }
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .plan { border: 1px solid var(--rule); border-radius: 22px; padding: 30px 28px; background: var(--card); }
+    .plan.premium { border-color: color-mix(in srgb, var(--brand-2) 40%, var(--rule)); }
+    .plan h3 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 3px 9px; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-1) 22%, transparent); color: var(--brand-2);
     }
-    .feature {
-      position: relative;
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(26px) saturate(165%);
-      backdrop-filter: blur(26px) saturate(165%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: var(--glass-shadow), var(--glass-inset);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      overflow: hidden;
-    }
-    .feature::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
-    }
-    .feature:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 50px rgba(48,30,120,0.20), var(--glass-inset);
-    }
-    .feature .emoji {
-      font-size: 1.5rem;
-      line-height: 1;
-      width: 50px; height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      background: var(--brand-soft);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 6px 16px rgba(75,52,200,0.20);
-    }
-    .feature h3 { font-size: 1.08rem; margin: 14px 0 6px; }
-    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-    .pbadge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      vertical-align: 2px;
-      margin-left: 8px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: var(--brand-soft);
-      color: var(--pbadge-fg);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
-      white-space: nowrap;
-    }
+    @media (prefers-color-scheme: dark) { .badge { color: #A99BFF; } }
+    .plan .price { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em; margin: 8px 0 4px; }
+    .plan .price small { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .plan .note { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
+    .plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: 0.93rem; }
+    .plan li { margin-bottom: 7px; }
 
-    /* Tier ladder */
-    .tiers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
-      max-width: 940px;
-      margin: 0 auto;
-    }
-    .tier {
-      text-align: center;
-      padding: 20px 14px;
-    }
-    .tier .name {
-      display: inline-block;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #fff;
-      padding: 4px 14px;
-      border-radius: 999px;
-      margin-bottom: 10px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
-    }
-    .tier.t1 .name { background: #34b27b; }
-    .tier.t2 .name { background: #3a86d6; }
-    .tier.t3 .name { background: #6a55f0; }
-    .tier.t4 .name { background: #d1683c; }
-    .tier.t5 .name { background: #d63b4a; }
-    .tier .count { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; display: block; font-variant-numeric: tabular-nums; }
-    .tier .label { color: var(--muted); font-size: 0.85rem; }
-
-    /* Pricing plans */
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      max-width: 880px;
-      margin: 0 auto;
-      align-items: start;
-    }
-    .plan.premium { border-color: rgba(106,85,240,0.6); }
-    .plan .price {
-      font-size: 1.9rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin: 2px 0 4px;
-    }
-    .plan .price small { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-left: 6px; }
-    .plan .note { color: var(--muted); font-size: 0.85rem; margin: 0 0 4px; }
-    .plan ul { list-style: none; padding: 0; margin: 14px 0 0; }
-    .plan li {
-      position: relative;
-      padding-left: 24px;
-      margin: 0 0 9px;
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-    .plan li::before {
-      content: "✓";
-      position: absolute;
-      left: 2px;
-      color: var(--link);
-      font-weight: 700;
-    }
-
-    /* How it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    .step { text-align: center; padding: 8px 12px; }
+    .steps-sec { padding: 96px 0 8px; }
+    .steps-sec h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .steps-sec .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
     .step .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px; height: 46px;
-      border-radius: 999px;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 14px;
-      box-shadow: 0 10px 22px rgba(75,52,200,0.34), inset 0 1px 0 rgba(255,255,255,0.55);
+      width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;
     }
-    .step h3 { font-size: 1.05rem; margin: 0 0 6px; }
-    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .step h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 650; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 36px 0 56px;
-      text-align: center;
-      margin-top: 12px;
+    .privacy { background: #000; color: #f5f5f7; padding: 108px 0; margin-top: 96px; }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem); line-height: 1.16; letter-spacing: -0.025em;
+      font-weight: 700; margin: 0 0 24px; text-align: center; text-wrap: balance;
     }
-    footer nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    footer .copy { color: var(--muted); font-size: 0.85rem; }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; }
+    .privacy .box { background: #1c1c1e; border-radius: 20px; padding: 26px 24px; }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #A99BFF; }
 
-    @media (max-width: 520px) {
-      .hero h1 { font-size: 2.3rem; }
-      .hero { padding: 60px 0 40px; }
-      section { padding: 44px 0; }
+    .specs { padding: 92px 0; }
+    .specs h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px; }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd { padding: 14px 0; border-top: 1px solid var(--rule); margin: 0; }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .plans { grid-template-columns: 1fr; }
+      .privacy { padding: 80px 0; margin-top: 72px; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="langswitch"><span class="active">日本語</span><span class="sep">/</span><a href="/magirenbo/en/">English</a></div>
-    <div class="wrap">
-      <span class="icon-wrap"><img class="icon" src="/magirenbo/assets/icon.png" alt="まぎれんぼ アプリアイコン" width="116" height="116"></span>
-      <h1><span>まぎれんぼ</span></h1>
-      <p class="tagline">絵文字さがしパズル</p>
-      <p class="lead">ずらりと並んだ絵文字の中に、たった1つだけ違うものがまぎれています。見つけてタップするだけ。ステージが進むほど絵文字は増え、違いはどんどん小さくなっていきます。</p>
-      <a class="appstore-btn" href="https://apps.apple.com/jp/app/id6798993976">App Storeでダウンロード</a>
-      <ul class="chips">
-        <li>無料（買い切りのPremiumあり）</li>
-        <li>iOS 26.0以降</li>
-        <li>iPhone・iPad対応</li>
-        <li>日本語・英語</li>
-        <li>アカウント不要・オフライン対応</li>
-        <li>広告なし・トラッキングなし</li>
-      </ul>
-    </div>
-  </header>
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/magirenbo/"><img src="/magirenbo/assets/icon.png" alt="">まぎれんぼ</a>
+    <ul>
+      <li><a href="/magirenbo/support.html">サポート</a></li>
+      <li><a href="/magirenbo/privacy.html">プライバシー</a></li>
+      <li><a href="/magirenbo/en/">English</a></li>
+    </ul>
+  </div>
+</div>
 
-  <!-- SCREENSHOTS -->
-  <section>
-    <div class="wrap">
-      <div class="shots">
-        <figure class="shot"><img src="/magirenbo/assets/shot-home.png" alt="ホーム画面。ハイスコアと到達ステージのバッジ、あそぶ・もらった問題を解く・デイリー・練習・記録のボタン" loading="lazy" decoding="async"><figcaption>ホーム画面</figcaption></figure>
-        <figure class="shot"><img src="/magirenbo/assets/shot-hard.png" alt="ステージ18「むずい」。200個のがま口財布の中に、1つだけ結婚式場の絵文字がまぎれている" loading="lazy" decoding="async"><figcaption>ステージ18「むずい」— 200個の壁</figcaption></figure>
-        <figure class="shot"><img src="/magirenbo/assets/shot-nightmare.png" alt="ステージ40「鬼むず」。540個の疲れた顔の中に1つだけ違う顔がまぎれている" loading="lazy" decoding="async"><figcaption>ステージ40「鬼むず」— 540個の壁</figcaption></figure>
-        <figure class="shot"><img src="/magirenbo/assets/shot-result.png" alt="リザルト画面。自己ベストのバッジ、スコア、到達ステージとミス回数" loading="lazy" decoding="async"><figcaption>リザルトとシェア</figcaption></figure>
-      </div>
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/magirenbo/assets/icon.png" alt="まぎれんぼ のアプリアイコン" width="116" height="116">
+    <h1><span class="line">この中に 1 つだけ、</span><br>
+    <span class="line grad">違うものがいる。</span></h1>
+    <p class="lead">ずらりと並んだ絵文字の中に、たった 1 つだけ違うものがまぎれています。見つけてタップするだけ。ステージが進むほど絵文字は増え、違いはどんどん小さくなっていきます。</p>
+    <div class="cta">
+      <a class="pill" href="https://apps.apple.com/jp/app/id6798993976">App Store でダウンロード</a>
     </div>
-  </section>
 
-  <!-- FEATURES -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">できること</h2>
-      <p class="section-sub">ルールはひとつだけ。そのうえに、遊び方をいくつか</p>
-      <div class="features">
-        <div class="feature"><div class="emoji">🔍</div><h3>違うものを、ひとつ</h3><p>画面いっぱいの絵文字の中から、1つだけ違うものを見つけてタップします。覚えることも、待つこともありません。</p></div>
-        <div class="feature"><div class="emoji">⏳</div><h3>時間はひとつのプール</h3><p>制限時間はステージごとにリセットされません。全ステージ共通のひとつの持ち時間です。やさしいステージで稼いだ秒数を、むずかしいステージで使う——その駆け引きがこのゲームの心臓部です。</p></div>
-        <div class="feature"><div class="emoji">🪜</div><h3>5つの難易度</h3><p>やさしい・ふつう・むずい・激むず・鬼むず。ステージ1は36個から始まり、最後は900個の壁の中に、たった1つのまぎれもの。</p></div>
-        <div class="feature"><div class="emoji">💬</div><h3>友だちに送れる</h3><p>遊んだ問題は、そのままメッセージとして送れます。リンクも相手のインストールも不要。テキストだけで問題がまるごと伝わります。もらったメッセージを貼り付ければ、そのまま問題になります。</p></div>
-        <div class="feature"><div class="emoji">📅</div><h3>毎日の1問</h3><p>デイリーチャレンジは、その日は全員がまったく同じ問題に挑みます。ランキングは毎日リセット。何度でも挑戦できて、残るのはベストスコアです。</p></div>
-        <div class="feature"><div class="emoji">🏆</div><h3>Game Center 対応</h3><p>ハイスコア・到達ステージ・デイリーの3つのランキングと、11個の実績。サインインは任意で、しなくても全部遊べます。</p></div>
-        <div class="feature"><div class="emoji">📈</div><h3>記録と統計<span class="pbadge">Premium</span></h3><p>スコアの推移、ティア別の成績、そしていちばんあなたを止めた絵文字。練習モードでは、好きな難易度を時計なしで何問でも解けます。</p></div>
-        <div class="feature"><div class="emoji">🎯</div><h3>難易度に、根拠がある</h3><p>数千通りの絵文字ペアを実際に画面に描画し、「見た目の近さ」を測定しています。一度出た問題は次のランではしばらく出ず、色の違いだけのペアを除外する設定もあります。</p></div>
-      </div>
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-find)"></span>さがす</span>
+      <span class="chip"><span class="dot" style="background:var(--c-time)"></span>持ち時間はひとつ</span>
+      <span class="chip"><span class="dot" style="background:var(--c-tier)"></span>5 つの難易度</span>
+      <span class="chip"><span class="dot" style="background:var(--c-send)"></span>問題を送れる</span>
+      <span class="chip"><span class="dot" style="background:var(--c-daily)"></span>デイリー</span>
+      <span class="chip"><span class="dot" style="background:var(--c-gc)"></span>Game Center</span>
+      <span class="chip"><span class="dot" style="background:var(--c-stats)"></span>記録と統計</span>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- TIERS -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">壁は、どこまでも大きくなる</h2>
-      <p class="section-sub">ステージが進むと絵文字の数は増え、違いは小さくなります</p>
-      <div class="tiers">
-        <div class="feature tier t1"><span class="name">やさしい</span><span class="count">36–60</span><span class="label">ステージ 1〜5</span></div>
-        <div class="feature tier t2"><span class="name">ふつう</span><span class="count">72–120</span><span class="label">ステージ 6〜12</span></div>
-        <div class="feature tier t3"><span class="name">むずい</span><span class="count">140–240</span><span class="label">ステージ 13〜22</span></div>
-        <div class="feature tier t4"><span class="name">激むず</span><span class="count">260–420</span><span class="label">ステージ 23〜35</span></div>
-        <div class="feature tier t5"><span class="name">鬼むず</span><span class="count">450–900</span><span class="label">ステージ 36〜66</span></div>
-      </div>
-      <p class="section-sub" style="margin: 30px 0 0;">壁はステージ66で900個に達し、そこで頭打ちになります。ステージ数に上限はありません。</p>
-    </div>
-  </section>
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>覚えることも、<br>待つこともない。</h2>
+    <p>ルールはひとつだけです。並んだ絵文字の中から、1 つだけ違うものを見つけてタップする。チュートリアルも、スタミナも、ガチャもありません。難しくなるのは絵文字の数と、違いの小ささだけです。</p>
+  </div>
+</section>
 
-  <!-- PRICING -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">料金</h2>
-      <p class="section-sub">ゲームは無料。問題も難易度も売りません</p>
-      <div class="plans">
-        <div class="feature plan">
-          <h3>無料</h3>
-          <p class="price">¥0</p>
-          <p class="note">アカウント登録は不要。期限もありません。</p>
-          <ul>
-            <li>エンドレスのラン（5つの難易度すべて）</li>
-            <li>その日のデイリーチャレンジ</li>
-            <li>問題の送信と読み込み</li>
-            <li>Game Center のランキングと実績</li>
-            <li>ハイスコアの iCloud 同期</li>
-          </ul>
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#A79BFF,#6A55F0)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="8" stroke="#fff" stroke-width="2.6" fill="none"/><path d="M19 19l6.5 6.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg>
         </div>
-        <div class="feature plan premium">
-          <h3>まぎれんぼ Premium<span class="pbadge">買い切り</span></h3>
-          <p class="price">¥800<small>／1回だけ</small></p>
-          <p class="note">サブスクリプションではありません。同じ Apple Account のすべての端末で使えます。</p>
-          <ul>
-            <li>記録と統計 — スコアの推移、ティア別の成績、いちばんあなたを止めた絵文字</li>
-            <li>練習モード — 好きな難易度を、時計なしで何問でも</li>
-            <li>デイリーの過去問 — 過去14日ぶんをさかのぼって解けます</li>
-          </ul>
+        <h3>違うものを、ひとつ</h3>
+        <p>画面いっぱいの絵文字の中から、1 つだけ違うものを見つけてタップします。それだけです。</p>
+        <ul>
+          <li>アカウント不要。オフラインでも遊べます</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/magirenbo/assets/shot-home.png" alt="まぎれんぼのホーム画面">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFBE4D,#FF9F0A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M8 4h14M8 26h14" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M9.5 4c0 6 5.5 8 5.5 11s-5.5 5-5.5 11M20.5 4c0 6-5.5 8-5.5 11s5.5 5 5.5 11" stroke="#fff" stroke-width="2.4" fill="none"/></svg>
         </div>
+        <h3>持ち時間は、全ステージで 1 つ</h3>
+        <p>制限時間はステージごとにリセットされません。やさしいステージで稼いだ秒数を、むずかしいステージで使う。その駆け引きがこのゲームの心臓部です。</p>
+        <ul>
+          <li>ミスは 5 秒、ヒントは 8 秒のマイナス</li>
+          <li>ヒントは 1 回のランに 3 つだけ</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/magirenbo/assets/shot-hard.png" alt="ステージ18「むずい」196 個の絵文字">
       </div>
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">遊びかた</h2>
-      <p class="section-sub">説明が要るのは、たぶんここまでです</p>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><h3>さがす</h3><p>並んだ絵文字の中から、1つだけ違うものを見つけます。</p></div>
-        <div class="step"><div class="num">2</div><h3>タップする</h3><p>早くクリアするほどボーナス点。ミスは5秒、ヒントは8秒のマイナスです。</p></div>
-        <div class="step"><div class="num">3</div><h3>どこまで潜れるか</h3><p>時間が尽きたらそこまで。ヒントは1回のランに3つだけです。</p></div>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5AB0FF,#0A84FF)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M4 25h6v-6h6v-6h6V7h4" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <h3>36 個から、900 個まで</h3>
+        <p>やさしい・ふつう・むずい・激むず・鬼むず。ステージ 1 は 36 個から始まり、最後は 900 個の壁の中に、たった 1 つのまぎれもの。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/magirenbo/assets/shot-nightmare.png" alt="ステージ40「鬼むず」510 個の絵文字">
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <nav>
-        <a href="/magirenbo/support.html">サポート</a>
-        <a href="/magirenbo/privacy.html">プライバシーポリシー</a>
-        <a href="https://forms.gle/5WDNH21Z24vhr1Np7">お問い合わせ</a>
-        <a href="/magirenbo/en/">English</a>
-      </nav>
-      <p class="copy">© 2026 Masamichi Ueta</p>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5EE47F,#30D158)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M25 17c0 1.9-1.6 3.5-3.5 3.5H13l-6 4.5v-4.5h-.5A3.5 3.5 0 013 17V9a3.5 3.5 0 013.5-3.5h15A3.5 3.5 0 0125 9z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>遊んだ問題を、そのまま送れる</h3>
+        <p>リンクも相手のインストールも不要。テキストだけで問題がまるごと伝わります。もらったメッセージを貼り付ければ、そのまま問題になります。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/magirenbo/assets/shot-result.png" alt="リザルト画面と共有">
+      </div>
     </div>
-  </footer>
+
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <h2>そのほかにできること</h2>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FF7B72,#FF3B30)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="7" width="22" height="19" rx="3" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M4 13h22M10 4v5M20 4v5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>毎日の 1 問</h3>
+        <p>デイリーチャレンジは、その日は全員がまったく同じ問題に挑みます。ランキングは毎日リセット。何度でも挑戦できて、残るのはベストスコアです。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FFE066,#F0B90A)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M10 4h10v8a5 5 0 01-10 0z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/><path d="M10 6.5H6.5V9a4 4 0 003.5 4M20 6.5h3.5V9a4 4 0 01-3.5 4M15 17v4M11 26h8" stroke="#fff" stroke-width="2.3" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <h3>Game Center 対応</h3>
+        <p>ハイスコア・到達ステージ・デイリーの 3 つのランキングと、11 個の実績。サインインは任意で、しなくても全部遊べます。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#D68CFF,#BF5AF2)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="10.5" stroke="#fff" stroke-width="2.4" fill="none"/><circle cx="15" cy="15" r="5" stroke="#fff" stroke-width="2.4" fill="none" opacity=".7"/><circle cx="15" cy="15" r="1.8" fill="#fff"/></svg>
+        </div>
+        <h3>難易度に、根拠がある</h3>
+        <p>数千通りの絵文字ペアを実際に画面に描画し、見た目の近さを測定しています。一度出た問題はしばらく出ず、色の違いだけのペアを除く設定もあります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <h2>料金</h2>
+    <p class="sub">ゲームは無料。問題も難易度も売りません。</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>無料</h3>
+        <p class="price">¥0</p>
+        <p class="note">アカウント登録は不要。期限もありません。</p>
+        <ul>
+          <li>エンドレスのラン（5 つの難易度すべて）</li>
+          <li>その日のデイリーチャレンジ</li>
+          <li>問題の送信と読み込み</li>
+          <li>Game Center のランキングと実績</li>
+          <li>ハイスコアの iCloud 同期</li>
+        </ul>
+      </div>
+      <div class="plan premium">
+        <h3>まぎれんぼ Premium<span class="badge">買い切り</span></h3>
+        <p class="price">¥800<small>／1 回だけ</small></p>
+        <p class="note">サブスクリプションではありません。同じ Apple Account のすべての端末で使えます。</p>
+        <ul>
+          <li>記録と統計 — スコアの推移、ティア別の成績、いちばんあなたを止めた絵文字</li>
+          <li>練習モード — 好きな難易度を、時計なしで何問でも</li>
+          <li>デイリーの過去問 — 過去 14 日ぶんをさかのぼって解けます</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>遊びかた</h2>
+    <p class="sub">説明が要るのは、たぶんここまでです。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>さがす</h3>
+        <p>並んだ絵文字の中から、1 つだけ違うものを見つけます。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>タップする</h3>
+        <p>早くクリアするほどボーナス点。ミスは 5 秒、ヒントは 8 秒のマイナスです。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>どこまで潜れるか</h3>
+        <p>時間が尽きたらそこまで。ヒントは 1 回のランに 3 つだけです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>遊んだ記録は、<br>あなたのものだけ。</h2>
+    <p class="sub">スコアは端末と、あなた自身の iCloud にのみ保存されます。開発者が中身を見ることはできません。</p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>アカウントがない</h4>
+        <p>登録もログインも不要です。メールアドレスすら聞きません。</p>
+      </div>
+      <div class="box">
+        <h4>開発者のサーバーがない</h4>
+        <p>保存先はあなた自身の iCloud プライベートデータベース。開発者からは見えません。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は一切入っていません。</p>
+      </div>
+      <div class="box">
+        <h4>オフラインで遊べる</h4>
+        <p>通信が要るのは iCloud 同期と Game Center だけ。どちらも使わずに全部遊べます。</p>
+      </div>
+      <div class="box">
+        <h4>Game Center は任意</h4>
+        <p>サインインしなければ何も送信されません。しなくても全機能を遊べます。</p>
+      </div>
+      <div class="box">
+        <h4>問題の共有は端末の中で</h4>
+        <p>送信は iOS 標準の共有シート経由。貼り付けたテキストも端末内で解析するだけです。</p>
+      </div>
+    </div>
+
+    <p class="note">詳しくは<a href="/magirenbo/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 26.0 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone・iPad</dd>
+      <dt>言語</dt>
+      <dd>日本語・英語</dd>
+      <dt>料金</dt>
+      <dd>無料。買い切りの「まぎれんぼ Premium」（¥800）あり</dd>
+      <dt>ネットワーク</dt>
+      <dd>オフラインで遊べます。通信は iCloud 同期と Game Center のときだけ</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/magirenbo/support.html">サポート</a>
+      <a href="/magirenbo/privacy.html">プライバシーポリシー</a>
+      <a href="https://forms.gle/5WDNH21Z24vhr1Np7">お問い合わせ</a>
+      <a href="/magirenbo/en/">English</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
 
 </body>
 </html>

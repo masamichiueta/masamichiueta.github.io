@@ -1,0 +1,439 @@
+---
+layout: none
+permalink: /runrunrun/support.html
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Runrunrun — サポート / Support</title>
+  <meta name="description" content="Runrunrun のサポートページ。ヘルスケア連携、心拍ゾーン、シューズ管理、iCloud 同期などのよくある質問と問い合わせ先。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/runrunrun/assets/icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #0A6CF0;
+      --accent: #0A84FF;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --link: #6DB0FF;
+        --accent: #0A84FF;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.72; font-size: 17px; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    h3 { font-size: 1.12rem; font-weight: 650; margin: 40px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+
+    .callout {
+      background: var(--bg-soft);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 24px 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout .label {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.04em; color: var(--accent); margin-bottom: 6px;
+    }
+
+    dl.faq { margin: 0; }
+    dl.faq dt {
+      font-weight: 650; margin: 30px 0 6px; font-size: 1.02rem;
+      letter-spacing: -0.01em;
+    }
+    dl.faq dd { margin: 0; color: var(--muted); }
+    dl.faq dd p { margin: 0 0 10px; }
+    dl.faq dd ul { margin: 8px 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/runrunrun/"><img src="/runrunrun/assets/icon.png" alt="">Runrunrun</a>
+    <ul>
+      <li><a href="/runrunrun/">トップ</a></li>
+      <li><a href="/runrunrun/privacy.html">プライバシー</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+
+  <h1>Runrunrun — サポート</h1>
+  <p class="updated">最終更新日 / Last updated: 2026-08-24</p>
+
+  <div class="callout">
+    <span class="label">お問い合わせ</span>
+    <p>
+      ご質問・不具合のご報告は<a href="CONTACT_FORM_URL" target="_blank" rel="noopener">お問い合わせフォーム</a>からお願いします。
+      端末の機種と iOS のバージョン、アプリのバージョン（設定画面の最下部に表示されます）を添えていただけると、
+      原因を特定しやすくなります。
+    </p>
+  </div>
+
+  <h2>はじめに知っておいていただきたいこと</h2>
+
+  <div class="callout">
+    <span class="label">重要</span>
+    <p>
+      <strong>Runrunrun はワークアウトを記録しません。</strong>
+      開始・停止ボタンもタイマーもありません。計測は今までどおり Apple Watch のワークアウト App で行い、
+      このアプリはヘルスケアに保存された記録を読み込んで見返すことだけを担当します。
+    </p>
+    <p>
+      そのため、<strong>ヘルスケアにランの記録が 1 件も無い状態では、画面は空のままになります。</strong>
+      これは不具合ではありません。
+    </p>
+  </div>
+
+  <h3>動作環境</h3>
+  <table>
+    <tr><th>対応 OS</th><td>iOS 26.0 以降</td></tr>
+    <tr><th>対応デバイス</th><td>iPhone のみ。iPad には対応していません</td></tr>
+    <tr><th>言語</th><td>日本語・英語</td></tr>
+    <tr><th>料金</th><td>無料。App 内課金はありません</td></tr>
+    <tr><th>ネットワーク</th><td>オフラインで全機能が動作します。通信するのは iCloud 同期のときだけです</td></tr>
+  </table>
+
+  <h2>よくある質問</h2>
+
+  <dl class="faq">
+
+    <dt>アプリを開いても何も表示されません</dt>
+    <dd>
+      <p>次のどちらかです。ヘルスケアの仕様上、アプリ側からはどちらなのかを判別できないため、両方をご確認ください。</p>
+      <ul>
+        <li><strong>ヘルスケアの読み取りが許可されていない</strong> — iPhone の「設定」App →「アプリ」→「Runrunrun」→「ヘルスケア」を開き、項目がオンになっているか確認してください。ホーム画面の案内にある「設定を開く」からも移動できます</li>
+        <li><strong>ヘルスケアにランの記録がまだ無い</strong> — Apple Watch でランを 1 本記録すると、次にアプリを開いたときに読み込まれます</li>
+      </ul>
+      <p>ヘルスケアはプライバシー保護のため、読み取りを拒否されたことをアプリに伝えません。「許可済みだがデータが 0 件」と「拒否されている」を区別できないのはそのためです。</p>
+    </dd>
+
+    <dt>Apple Watch を持っていなくても使えますか</dt>
+    <dd>
+      <p>ヘルスケアにランニングのワークアウトが入っていれば使えます。iPhone だけで記録したワークアウトや、他のアプリがヘルスケアに書き込んだワークアウトも読み込みます。</p>
+      <p>ただし、GPS ルートや心拍のデータが含まれていないワークアウトでは、ルートマップと心拍のセクションは表示されません。</p>
+    </dd>
+
+    <dt>ランを記録する機能は追加されますか</dt>
+    <dd>
+      <p>追加しません。記録は Apple Watch のワークアウト App で十分にできるため、このアプリは読み解く側に専念する方針です。watchOS 版のアプリも作りません。</p>
+    </dd>
+
+    <dt>心拍ゾーンが自分の感覚と合いません</dt>
+    <dd>
+      <p>設定画面から調整できます。</p>
+      <ul>
+        <li><strong>計算方式</strong> — 最大心拍法と予備心拍法（カルボーネン法）から選べます</li>
+        <li><strong>最大心拍</strong> — ヘルスケアの生年月日から 220 − 年齢で推定しています。手で入力すると、以後は自動で上書きされません</li>
+        <li><strong>各ゾーンの境界</strong> — 個別に動かせます</li>
+      </ul>
+      <p>設定を変えても、過去のデータを作り直す必要はありません。ゾーンへの振り分けは表示のたびに計算しているので、変更はすぐ反映されます。</p>
+    </dd>
+
+    <dt>距離を km ではなく mile で見たい</dt>
+    <dd>
+      <p>設定画面の単位系から切り替えられます。距離・ペース・標高のすべてに反映されます。スプリットの刻み（1km / 1mile / 自動）は別の項目として用意しています。</p>
+    </dd>
+
+    <dt>自己ベストの数字が、大会の記録と違います</dt>
+    <dd>
+      <p>Runrunrun の自己ベストは<strong>ランの中でいちばん速かった区間</strong>です。ゴールタイムではありません。</p>
+      <p>「5km のベストタイム」はヘルスケアの標準の項目ではないため、距離のデータから、その距離でいちばん速かった区間を計算して出しています。10km のランの中に含まれる最速の 5km 区間も対象になるので、大会の公式記録より速く出ることがあります。</p>
+    </dd>
+
+    <dt>iCloud 同期がうまくいきません</dt>
+    <dd>
+      <p>まず、同期の対象を確認してください。<strong>ヘルスケアから読んだデータは同期しません。</strong>iCloud に保存されるのは、あなたが入力したもの（メモ・きつさ・体調・シューズ・目標・レース・計画）だけです。ワークアウト自体は、それぞれの端末がヘルスケアから読み込みます。</p>
+      <p>それでも同期しない場合は、次をご確認ください。</p>
+      <ul>
+        <li>両方の端末が同じ Apple Account でサインインしているか</li>
+        <li>「設定」→ ご自身の名前 →「iCloud」で iCloud Drive がオンになっているか</li>
+        <li>アプリの設定で iCloud 同期がオンになっているか</li>
+      </ul>
+      <p>同期の設定を切り替えたときは、<strong>次回の起動から反映されます。</strong>アプリを一度終了して開き直してください。</p>
+    </dd>
+
+    <dt>シューズの走行距離が実際より少ないです</dt>
+    <dd>
+      <p>シューズの距離は、そのシューズを紐付けたランだけを合計しています。アプリを入れる前に履いていたぶんは、シューズの編集画面にある「初期距離」に手で入力してください。</p>
+      <p>過去のランにさかのぼって紐付けることもできます。ワークアウトの詳細画面から振り返りを開き、シューズを選んでください。</p>
+    </dd>
+
+    <dt>シューズの寿命通知が届きません</dt>
+    <dd>
+      <p>通知の許可が必要です。「設定」App →「アプリ」→「Runrunrun」→「通知」で許可されているか確認してください。シューズ画面で寿命を設定したときに許可を求めます。</p>
+      <p>通知は、走行距離が設定した寿命に達したときに一度だけ届きます。</p>
+    </dd>
+
+    <dt>きつさ（RPE）をヘルスケアに書き戻したい</dt>
+    <dd>
+      <p>設定画面のトグルをオンにすると、振り返りを閉じたときに、入力したきつさがワークアウト強度としてヘルスケアに保存され、該当のワークアウトに紐付きます。純正のフィットネス App にも反映されます。</p>
+      <p>既定はオフです。オンにしたときにヘルスケアへの書き込み許可を求め、断られた場合はトグルが戻ります。<strong>このアプリがヘルスケアに書き込むのは、この値だけです。</strong></p>
+    </dd>
+
+    <dt>記録を書き出したい</dt>
+    <dd>
+      <p>設定画面から JSON と CSV で書き出せます。書き出し先は iOS 標準の共有シートで選びます。</p>
+    </dd>
+
+    <dt>データを削除したい</dt>
+    <dd>
+      <p>アプリを端末から削除すると、端末内のデータは消去されます。iCloud に同期されたぶんは、「設定」→ ご自身の名前 →「iCloud」→「アカウントのストレージを管理」から Runrunrun のデータを削除してください。</p>
+      <p><strong>ヘルスケアのワークアウトは削除されません。</strong>このアプリはヘルスケアのデータを読むだけで、消す操作は行いません。ヘルスケア側の記録は、ヘルスケア App から管理してください。</p>
+    </dd>
+
+    <dt>ウィジェットや watchOS アプリはありますか</dt>
+    <dd>
+      <p>1.0 の時点ではありません。将来の候補としては考えていますが、時期はお約束できません。</p>
+    </dd>
+
+    <dt>iPad で使えますか</dt>
+    <dd>
+      <p>対応していません。iPhone 専用です。</p>
+    </dd>
+
+    <dt>Strava や Garmin と連携できますか</dt>
+    <dd>
+      <p>連携しません。このアプリが読む先はヘルスケアだけです。これらのサービス側でヘルスケアへの書き込みを有効にしていれば、そのワークアウトは読み込まれます。</p>
+    </dd>
+
+  </dl>
+
+  <h2>免責事項</h2>
+  <p>
+    本アプリが表示する数値は、ヘルスケアに保存されたデータをもとにした参考情報です。
+    医療上の診断・治療・助言を目的としたものではありません。体調に不安がある場合は医療機関にご相談ください。
+  </p>
+
+  <!-- ================= English ================= -->
+
+  <h2 id="english">Support (English)</h2>
+
+  <div class="callout">
+    <span class="label">CONTACT</span>
+    <p>
+      For questions or bug reports, please use the <a href="CONTACT_FORM_URL" target="_blank" rel="noopener">contact form</a>.
+      Including your device model, iOS version, and the app version (shown at the bottom of Settings) helps a lot.
+    </p>
+  </div>
+
+  <h3>Before anything else</h3>
+
+  <div class="callout">
+    <span class="label">IMPORTANT</span>
+    <p>
+      <strong>Runrunrun does not record workouts.</strong> There is no start/stop button and no timer.
+      You record the way you already do, with the Workout app on your Apple Watch. This app reads what is
+      already stored in Health and gives you somewhere to look back on it.
+    </p>
+    <p>
+      That means <strong>the screens stay empty on a device with no running workouts in Health.</strong>
+      This is by design, not a bug.
+    </p>
+  </div>
+
+  <h3>Requirements</h3>
+  <table>
+    <tr><th>OS</th><td>iOS 26.0 or later</td></tr>
+    <tr><th>Devices</th><td>iPhone only. iPad is not supported</td></tr>
+    <tr><th>Languages</th><td>Japanese and English</td></tr>
+    <tr><th>Price</th><td>Free. No in-app purchases</td></tr>
+    <tr><th>Network</th><td>Everything works offline. The only network use is iCloud sync</td></tr>
+  </table>
+
+  <h3>FAQ</h3>
+
+  <dl class="faq">
+
+    <dt>I opened the app and nothing is there</dt>
+    <dd>
+      <p>It is one of two things. Health does not let an app tell them apart, so please check both.</p>
+      <ul>
+        <li><strong>Health reading isn't allowed</strong> — open Settings → Apps → Runrunrun → Health and check that the categories are on. The card on the Home tab has an "Open Settings" button that takes you there</li>
+        <li><strong>There are no runs in Health yet</strong> — record one run on your Apple Watch and it appears the next time you open the app</li>
+      </ul>
+      <p>For privacy reasons, HealthKit never tells an app that a read permission was denied. That is why "allowed but empty" and "denied" cannot be distinguished.</p>
+    </dd>
+
+    <dt>Can I use it without an Apple Watch?</dt>
+    <dd>
+      <p>Yes, as long as running workouts exist in Health. Workouts recorded by iPhone alone, or written to Health by another app, are read too.</p>
+      <p>Workouts without GPS route or heart rate samples simply hide those sections.</p>
+    </dd>
+
+    <dt>Will you add workout recording?</dt>
+    <dd>
+      <p>No. The Workout app on Apple Watch already does that well, so this app stays on the reading side. There is no watchOS app planned either.</p>
+    </dd>
+
+    <dt>The heart rate zones don't match how the run felt</dt>
+    <dd>
+      <p>You can adjust them in Settings.</p>
+      <ul>
+        <li><strong>Method</strong> — max heart rate or heart rate reserve (Karvonen)</li>
+        <li><strong>Max heart rate</strong> — estimated as 220 − age from your date of birth in Health. Once you enter it yourself, it is never overwritten</li>
+        <li><strong>Zone boundaries</strong> — each one can be moved</li>
+      </ul>
+      <p>Changing this does not rebuild anything. Zones are computed at display time, so the change shows up immediately.</p>
+    </dd>
+
+    <dt>I want miles instead of kilometres</dt>
+    <dd>
+      <p>Switch the unit system in Settings. It applies to distance, pace, and elevation. The split interval (1km / 1mile / automatic) is a separate setting.</p>
+    </dd>
+
+    <dt>My personal best doesn't match my race result</dt>
+    <dd>
+      <p>A personal best here is <strong>the fastest stretch inside a run</strong>, not a finish time.</p>
+      <p>"My best 5K" isn't one of Health's standard types, so Runrunrun finds the fastest continuous stretch of that distance within your distance data. The fastest 5K inside a 10K run counts, which can beat your official race time.</p>
+    </dd>
+
+    <dt>iCloud sync isn't working</dt>
+    <dd>
+      <p>First, check what actually syncs. <strong>Data read from Health is never synced.</strong> Only what you wrote — notes, effort, condition, shoes, goals, races, plans — goes to iCloud. Each device reads the workouts from Health itself.</p>
+      <p>If that still isn't syncing:</p>
+      <ul>
+        <li>Both devices signed in to the same Apple Account</li>
+        <li>iCloud Drive on, under Settings → your name → iCloud</li>
+        <li>iCloud sync switched on in the app's settings</li>
+      </ul>
+      <p>Toggling sync <strong>takes effect on the next launch.</strong> Quit the app and open it again.</p>
+    </dd>
+
+    <dt>My shoe mileage is lower than it should be</dt>
+    <dd>
+      <p>Shoe mileage adds up only the runs you attached that pair to. For miles from before you installed the app, enter a starting distance in the shoe's edit screen.</p>
+      <p>You can attach shoes to past runs too — open a run, open its reflection, and pick the pair.</p>
+    </dd>
+
+    <dt>I'm not getting the shoe lifespan notification</dt>
+    <dd>
+      <p>Notifications need permission. Check Settings → Apps → Runrunrun → Notifications. The app asks for it when you set a lifespan on the Shoes screen.</p>
+      <p>The notification fires once, when the mileage reaches the limit you set.</p>
+    </dd>
+
+    <dt>I want my effort (RPE) written back to Health</dt>
+    <dd>
+      <p>Turn on the toggle in Settings. When you close a reflection, the effort you entered is saved to Health as Workout Effort and related to that workout, so the Fitness app sees it too.</p>
+      <p>It is off by default. Turning it on requests Health write permission, and the toggle reverts if you decline. <strong>That single value is the only thing this app ever writes to Health.</strong></p>
+    </dd>
+
+    <dt>I want to export my data</dt>
+    <dd>
+      <p>Settings can export everything as JSON or CSV. You pick the destination through the standard iOS share sheet.</p>
+    </dd>
+
+    <dt>I want to delete my data</dt>
+    <dd>
+      <p>Deleting the app removes everything stored on the device. For the synced copy, go to Settings → your name → iCloud → Manage Account Storage and delete Runrunrun's data.</p>
+      <p><strong>Your Health workouts are not deleted.</strong> This app only reads from Health and never removes anything there. Manage those in the Health app.</p>
+    </dd>
+
+    <dt>Is there a widget or a watchOS app?</dt>
+    <dd>
+      <p>Not in 1.0. Both are on the list of things to consider, with no promised timing.</p>
+    </dd>
+
+    <dt>Does it work on iPad?</dt>
+    <dd>
+      <p>No. iPhone only.</p>
+    </dd>
+
+    <dt>Can it connect to Strava or Garmin?</dt>
+    <dd>
+      <p>There is no integration. Health is the only source this app reads. If those services are set up to write workouts into Health, those workouts are picked up.</p>
+    </dd>
+
+  </dl>
+
+  <h3>Disclaimer</h3>
+  <p>
+    The figures this app shows are derived from data stored in Health and are for reference only.
+    They are not intended for medical diagnosis, treatment, or advice. If you have concerns about your health,
+    please consult a medical professional.
+  </p>
+
+  <footer>
+    <nav>
+      <a href="/runrunrun/">トップ / Home</a>
+      <a href="/runrunrun/privacy.html">プライバシーポリシー / Privacy</a>
+      <a href="CONTACT_FORM_URL">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

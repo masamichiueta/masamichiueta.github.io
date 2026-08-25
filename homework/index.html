@@ -8,14 +8,13 @@ permalink: /homework/
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Homework — こどもがじぶんできろくするべんきょうタイマー</title>
-  <meta name="description" content="塾・学校の宿題にかけた時間を、子どもが自分で記録できるiOSアプリ。ひらがな主体のやさしい画面で、ストリーク・レベル・グラフ・300種類のバッジで毎日のがんばりを見える化します。">
+  <meta name="description" content="塾・学校の宿題にかけた時間を、子どもが自分で記録できる勉強タイマー。ひらがな主体のやさしい画面で一人で使えます。ストリーク・レベル・グラフ・300種類のバッジでがんばりが見える化。広告なし・トラッキングなし。">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/homework/assets/icon.png">
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Homework — こどもがじぶんできろくするべんきょうタイマー">
-  <meta property="og:description" content="ひらがな主体のやさしい画面で、子どもが一人で使える学習タイマー。ストリーク・レベル・グラフ・300種類のバッジでがんばりを見える化。">
+  <meta property="og:description" content="子どもが自分で記録する勉強タイマー。ストリークとレベルと 300 種類のバッジで、毎日のがんばりが積み上がります。">
   <meta property="og:url" content="https://masamichiueta.github.io/homework/">
   <meta property="og:image" content="https://masamichiueta.github.io/homework/assets/icon.png">
   <meta name="twitter:card" content="summary">
@@ -23,326 +22,486 @@ permalink: /homework/
   <style>
     :root {
       color-scheme: light dark;
+
       --bg: #ffffff;
+      --bg-soft: #f5f5f7;
       --fg: #1d1d1f;
       --muted: #6e6e73;
       --rule: #e5e5e7;
-      --link: #0066cc;
-      --accent: #4F8FF7;
-      --card: #f5f5f7;
-      --card-rule: #e5e5e7;
-      --hero: radial-gradient(120% 120% at 50% 0%, rgba(79,143,247,0.16) 0%, rgba(79,143,247,0) 60%);
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      --c-timer: #4F8FF7;
+      --c-streak: #FF9F0A;
+      --c-level: #FFD60A;
+      --c-chart: #30D158;
+      --c-badge: #BF5AF2;
+      --c-cert: #FF3B30;
+      --c-cloud: #32ADE6;
+
+      --brand-1: #7BAFFF;
+      --brand-2: #2C6FDB;
+      --link: #2C6FDB;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1d1d1f;
+        --bg: #000000;
+        --bg-soft: #161617;
         --fg: #f5f5f7;
         --muted: #a1a1a6;
-        --rule: #3a3a3c;
-        --link: #2997ff;
-        --accent: #4F8FF7;
-        --card: #2c2c2e;
-        --card-rule: #3a3a3c;
-        --hero: radial-gradient(120% 120% at 50% 0%, rgba(79,143,247,0.22) 0%, rgba(79,143,247,0) 60%);
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #8FB8FF;
       }
     }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 17px;
     }
+    img { max-width: 100%; display: block; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 56px 0; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      text-align: center;
-      background: var(--hero);
-      padding: 72px 0 56px;
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .langswitch {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    .langswitch a { color: var(--link); }
-    .langswitch .active { color: var(--fg); font-weight: 600; }
-    .langswitch .sep { margin: 0 6px; opacity: 0.5; }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    .hero { text-align: center; padding: 88px 0 24px; }
     .hero img.icon {
-      width: 112px; height: 112px;
-      border-radius: 24px;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+      width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(44,111,219,0.28);
     }
     .hero h1 {
-      font-size: 2.6rem;
-      margin: 20px 0 6px;
-      letter-spacing: -0.02em;
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 20px; text-wrap: balance;
     }
-    .hero .tagline {
-      font-size: 1.2rem;
-      color: var(--fg);
-      margin: 0 0 16px;
-      font-weight: 600;
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
     }
     .hero .lead {
-      max-width: 600px;
-      margin: 0 auto 24px;
-      color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted);
+      max-width: 620px; margin: 0 auto; text-wrap: pretty;
     }
-    .appstore-btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 12px 26px;
-      border-radius: 999px;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+    .cta { margin-top: 34px; }
+    .pill {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(44,111,219,0.3);
     }
-    .appstore-btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-    .chips {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 10px;
-      justify-content: center;
-    }
-    .chips li {
-      font-size: 0.85rem;
-      color: var(--muted);
-      border: 1px solid var(--rule);
-      border-radius: 999px;
-      padding: 4px 12px;
-    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
 
-    /* Screenshots */
-    .shots {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      padding: 8px 4px 16px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 52px auto 0; max-width: 900px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px; border-radius: 999px;
+      background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; color: var(--fg);
     }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+    .features { padding: 0 0 40px; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph { width: 60px; height: 60px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 22px; }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
     .shot {
-      flex: 0 0 auto;
-      width: 210px;
-      scroll-snap-align: center;
-      text-align: center;
-    }
-    .shot img {
-      width: 100%;
-      height: auto;
-      border-radius: 18px;
-      border: 1px solid var(--card-rule);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-      display: block;
-    }
-    .shot span {
-      display: block;
-      margin-top: 10px;
-      font-size: 0.85rem;
-      color: var(--muted);
+      width: 100%; max-width: 300px; border-radius: 30px; overflow: hidden;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow); background: var(--card);
     }
 
-    /* Section headings */
-    h2.section-title {
-      font-size: 1.7rem;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px;
-      text-align: center;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      margin: 0 0 36px;
-    }
+    .more { padding: 40px 0 8px; }
+    .more h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 32px; text-align: center; }
+    .more .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .more .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .more .box .glyph { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; }
+    .more .box h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; }
+    .more .box p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
 
-    /* Features grid */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+    .pricing { padding: 96px 0 8px; }
+    .pricing h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .pricing .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; max-width: 620px; }
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .plan { border: 1px solid var(--rule); border-radius: 22px; padding: 30px 28px; background: var(--card); }
+    .plan.premium { border-color: color-mix(in srgb, var(--brand-2) 40%, var(--rule)); }
+    .plan h3 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 3px 9px; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-1) 22%, transparent); color: var(--brand-2);
     }
-    .feature {
-      background: var(--card);
-      border: 1px solid var(--card-rule);
-      border-radius: 16px;
-      padding: 22px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .feature:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
-    .feature .emoji { font-size: 1.7rem; line-height: 1; }
-    .feature h3 { font-size: 1.05rem; margin: 12px 0 6px; }
-    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    @media (prefers-color-scheme: dark) { .badge { color: #8FB8FF; } }
+    .plan .price { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em; margin: 8px 0 4px; }
+    .plan .price small { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .plan .note { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
+    .plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: 0.93rem; }
+    .plan li { margin-bottom: 7px; }
 
-    /* Pricing */
-    .pricing {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      max-width: 760px;
-      margin: 0 auto;
+    .steps-sec { padding: 96px 0 8px; }
+    .steps-sec h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .steps-sec .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .step .num {
+      width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;
     }
-    .plan {
-      border: 1px solid var(--card-rule);
-      border-radius: 18px;
-      padding: 28px;
-      background: var(--bg);
-    }
-    .plan.premium {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px var(--accent) inset;
-    }
-    .plan h3 { margin: 0 0 4px; font-size: 1.25rem; }
-    .plan .price { color: var(--muted); margin: 0 0 16px; font-size: 0.95rem; }
-    .plan ul { margin: 0; padding-left: 1.2em; }
-    .plan li { margin-bottom: 8px; }
-    .plan .tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      padding: 2px 10px;
-      margin-bottom: 12px;
-    }
+    .step h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 650; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 36px 0 56px;
-      text-align: center;
+    .privacy { background: #000; color: #f5f5f7; padding: 108px 0; margin-top: 96px; }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem); line-height: 1.16; letter-spacing: -0.025em;
+      font-weight: 700; margin: 0 0 24px; text-align: center; text-wrap: balance;
     }
-    footer nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    footer .copy { color: var(--muted); font-size: 0.85rem; }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; }
+    .privacy .box { background: #1c1c1e; border-radius: 20px; padding: 26px 24px; }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #8FB8FF; }
 
-    @media (max-width: 520px) {
-      .hero h1 { font-size: 2.1rem; }
-      .hero { padding: 56px 0 40px; }
-      section { padding: 44px 0; }
+    .specs { padding: 92px 0; }
+    .specs h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px; }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd { padding: 14px 0; border-top: 1px solid var(--rule); margin: 0; }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .plans { grid-template-columns: 1fr; }
+      .privacy { padding: 80px 0; margin-top: 72px; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="langswitch"><span class="active">日本語</span><span class="sep">/</span><a href="/homework/en/">English</a></div>
-    <div class="wrap">
-      <img class="icon" src="/homework/assets/icon.png" alt="Homeworkアプリアイコン" width="112" height="112">
-      <h1>Homework</h1>
-      <p class="tagline">こどもがじぶんできろくするべんきょうタイマー</p>
-      <p class="lead">塾・学校の宿題にかけた時間を、子どもが自分で記録。ひらがな主体のやさしい画面で、一人で使えます。ストリーク・レベル・グラフ・300種類のバッジで、毎日のがんばりが見える化されます。</p>
-      <a class="appstore-btn" href="https://apps.apple.com/jp/app/homework/id6768120022">App Storeでダウンロード</a>
-      <ul class="chips">
-        <li>iOS 26.4以降</li>
-        <li>iPhone・iPad対応</li>
-        <li>日本語・英語</li>
-        <li>広告なし・トラッキングなし</li>
-      </ul>
-    </div>
-  </header>
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/homework/"><img src="/homework/assets/icon.png" alt="">Homework</a>
+    <ul>
+      <li><a href="/homework/support.html">サポート</a></li>
+      <li><a href="/homework/privacy.html">プライバシー</a></li>
+      <li><a href="/homework/en/">English</a></li>
+    </ul>
+  </div>
+</div>
 
-  <!-- SCREENSHOTS -->
-  <section>
-    <div class="wrap">
-      <div class="shots">
-        <figure class="shot"><img src="/homework/assets/shot-timer.png" alt="タイマー画面"><span>タイマー</span></figure>
-        <figure class="shot"><img src="/homework/assets/shot-home.png" alt="ホーム画面（レベル）"><span>ホーム・レベル</span></figure>
-        <figure class="shot"><img src="/homework/assets/shot-charts.png" alt="グラフとヒートマップ"><span>グラフ・ヒートマップ</span></figure>
-        <figure class="shot"><img src="/homework/assets/shot-badges.png" alt="バッジ一覧"><span>300種類のバッジ</span></figure>
-        <figure class="shot"><img src="/homework/assets/shot-certificate.png" alt="ひょうしょうじょう"><span>ひょうしょうじょう</span></figure>
-      </div>
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/homework/assets/icon.png" alt="Homework のアプリアイコン" width="116" height="116">
+    <h1><span class="line">やったぶんだけ、</span><br>
+    <span class="line grad">ちゃんと積み上がる。</span></h1>
+    <p class="lead">塾・学校の宿題にかけた時間を、子どもが自分で記録。ひらがな主体のやさしい画面で、一人で使えます。ストリーク・レベル・グラフ・300 種類のバッジで、毎日のがんばりが見える化されます。</p>
+    <div class="cta">
+      <a class="pill" href="https://apps.apple.com/jp/app/homework/id6768120022">App Store でダウンロード</a>
     </div>
-  </section>
 
-  <!-- FEATURES -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">できること</h2>
-      <p class="section-sub">記録する → 見える化する → がんばりが続く</p>
-      <div class="features">
-        <div class="feature"><div class="emoji">⏱️</div><h3>タイマー &amp; 手入力</h3><p>タップひとつで計測スタート。あとからまとめて入力する「てうちにゅうりょく」にも対応。</p></div>
-        <div class="feature"><div class="emoji">🔥</div><h3>ストリーク</h3><p>1日1分以上の記録で連続日数がカウントアップ。今日・連続・今週がひと目でわかります。</p></div>
-        <div class="feature"><div class="emoji">⭐</div><h3>レベル</h3><p>学習時間がたまるほどレベルアップ。「あと◯ふんでレベルアップ」で次の目標が見えます。</p></div>
-        <div class="feature"><div class="emoji">📊</div><h3>グラフ &amp; ヒートマップ</h3><p>週／月で切り替えられる積み上げ棒グラフと、13週間のヒートマップで長期の継続を確認。</p></div>
-        <div class="feature"><div class="emoji">🏅</div><h3>300種類のバッジ</h3><p>27カテゴリ全300種類。「つぎのバッジ」表示で達成までの残りもわかります。</p></div>
-        <div class="feature"><div class="emoji">📜</div><h3>ひょうしょうじょう</h3><p>月ごと・年ごとのがんばりをA4のPDFに。冷蔵庫に貼ったり塾の先生に見せたり。</p></div>
-        <div class="feature"><div class="emoji">🔔</div><h3>通知（この端末だけ）</h3><p>子どもごとにリマインド。設定は端末ローカルで、その日やっていれば自動でスキップ。</p></div>
-        <div class="feature"><div class="emoji">🔒</div><h3>親モード &amp; PIN</h3><p>編集や記録の管理を保護。4桁のPINはこの端末だけに保存され、他の端末には漏れません。</p></div>
-        <div class="feature"><div class="emoji">☁️</div><h3>iCloud同期</h3><p>同じApple IDなら自動で同期。家族の別Apple IDへはファイルでやり取りできます。</p></div>
-        <div class="feature"><div class="emoji">🛡️</div><h3>プライバシー</h3><p>広告SDKも解析SDKもなし。データは端末とあなた自身のiCloudにだけ保存されます。</p></div>
-      </div>
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-timer)"></span>タイマー</span>
+      <span class="chip"><span class="dot" style="background:var(--c-streak)"></span>ストリーク</span>
+      <span class="chip"><span class="dot" style="background:var(--c-level)"></span>レベル</span>
+      <span class="chip"><span class="dot" style="background:var(--c-chart)"></span>グラフ</span>
+      <span class="chip"><span class="dot" style="background:var(--c-badge)"></span>300 種類のバッジ</span>
+      <span class="chip"><span class="dot" style="background:var(--c-cert)"></span>ひょうしょうじょう</span>
+      <span class="chip"><span class="dot" style="background:var(--c-cloud)"></span>iCloud 同期</span>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- PRICING -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">料金</h2>
-      <p class="section-sub">本体は無料。プレミアムは買い切り（ファミリー共有対応）</p>
-      <div class="pricing">
-        <div class="plan">
-          <h3>無料</h3>
-          <p class="price">ずっと無料で使えます</p>
-          <ul>
-            <li>プロフィール1人ぶん</li>
-            <li>記録・タイマー・手入力</li>
-            <li>ストリーク・レベル・グラフ・ヒートマップ</li>
-            <li>30種類のバッジ</li>
-            <li>通知・親モード・PINロック</li>
-          </ul>
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>ほめるより先に、<br>見えるようにする。</h2>
+    <p>毎日の勉強は、やっている本人にもどれだけ積み上がったか見えません。時間を測って残しておくだけで、続けた日数も、増えたレベルも、集めたバッジも、子ども自身の目に見えるようになります。</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#7BAFFF,#4F8FF7)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="10.5" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M15 9v6l4 3" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="plan premium">
-          <span class="tag">Homeworkプレミアム</span>
-          <h3>買い切り</h3>
-          <p class="price">一度の購入でずっと・ファミリー共有対応</p>
-          <ul>
-            <li>2人目以降のプロフィール</li>
-            <li>全300種類のバッジ</li>
-            <li>ひょうしょうじょうのPDF出力</li>
-            <li><code>.homeworkbackup</code>でのファイルやり取り</li>
-          </ul>
-        </div>
+        <h3>タップひとつで、はかりはじめる</h3>
+        <p>タップひとつで計測スタート。あとからまとめて入れたいときのために「てうちにゅうりょく」も用意しています。</p>
+        <ul>
+          <li>ひらがな主体のやさしい画面で、一人でも使えます</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/homework/assets/shot-timer.png" alt="べんきょうタイマーの計測画面">
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <nav>
-        <a href="/homework/support.html">サポート</a>
-        <a href="/homework/privacy.html">プライバシーポリシー</a>
-        <a href="https://forms.gle/k9ykY8avJnAzr9Vu7">お問い合わせ</a>
-      </nav>
-      <p class="copy">© 2026 Masamichi Ueta</p>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFBE4D,#FF9F0A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 3.5s6.5 6 6.5 12.5a6.5 6.5 0 11-13 0C8.5 9.5 15 3.5 15 3.5z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/><path d="M15 13.5s2.6 2.5 2.6 5a2.6 2.6 0 11-5.2 0c0-2.5 2.6-5 2.6-5z" fill="#fff"/></svg>
+        </div>
+        <h3>つづけた日と、あがったレベル</h3>
+        <p>1 日 1 分以上の記録で連続日数がカウントアップ。今日・連続・今週がひと目で分かります。学習時間がたまるほどレベルが上がり、「あと◯ふんでレベルアップ」で次の目標が見えます。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/homework/assets/shot-home.png" alt="ホーム画面のストリークとレベル表示">
+      </div>
     </div>
-  </footer>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5EE47F,#30D158)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="17" width="4.6" height="9" rx="2.3" fill="#fff" opacity=".55"/><rect x="12.7" y="11" width="4.6" height="15" rx="2.3" fill="#fff"/><rect x="21.4" y="5" width="4.6" height="21" rx="2.3" fill="#fff" opacity=".8"/></svg>
+        </div>
+        <h3>1 週間と、13 週間</h3>
+        <p>週／月で切り替えられる積み上げ棒グラフと、13 週間のヒートマップ。短い波と長い継続を、別々に確かめられます。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/homework/assets/shot-charts.png" alt="積み上げ棒グラフとヒートマップ">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#D68CFF,#BF5AF2)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="18.5" r="7" stroke="#fff" stroke-width="2.3" fill="none"/><path d="M10 12L7 3.5h16L20 12" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>27 カテゴリ、全 300 種類</h3>
+        <p>集めたバッジが並びます。「つぎのバッジ」の表示で、達成までの残りも分かります。</p>
+        <ul>
+          <li>無料でも 30 種類。プレミアムで全 300 種類になります</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/homework/assets/shot-badges.png" alt="バッジの一覧画面">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FF7B72,#FF3B30)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M8 3.5h9l6 6v17a1.5 1.5 0 01-1.5 1.5h-13A1.5 1.5 0 017 26.5v-21A1.5 1.5 0 018.5 4z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/><path d="M17 3.5v6h6M11.5 17h7M11.5 21.5h7" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>ひょうしょうじょうにして、貼る</h3>
+        <p>月ごと・年ごとのがんばりを A4 の PDF に。冷蔵庫に貼ったり、塾の先生に見せたり。</p>
+        <ul>
+          <li>PDF 出力はプレミアムの機能です</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/homework/assets/shot-certificate.png" alt="ひょうしょうじょうの PDF">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <h2>そのほかにできること</h2>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#7BAFFF,#4F8FF7)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4a7 7 0 00-7 7c0 6-2.5 7.5-2.5 7.5h19S22 17 22 11a7 7 0 00-7-7z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/><path d="M12.8 23a2.4 2.4 0 004.4 0" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>通知（この端末だけ）</h3>
+        <p>子どもごとにリマインドを設定できます。設定は端末ローカルで、その日やっていれば自動でスキップします。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#8B89F0,#5E5CE6)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="6.5" y="13" width="17" height="13" rx="3" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M10 13V9.5a5 5 0 0110 0V13" stroke="#fff" stroke-width="2.4" fill="none"/></svg>
+        </div>
+        <h3>親モードと PIN</h3>
+        <p>編集や記録の管理を保護します。4 桁の PIN はこの端末だけに保存され、他の端末には渡りません。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#6FD3F5,#32ADE6)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M8 23.5A5.5 5.5 0 017.4 12.6 7.4 7.4 0 0121.6 11 5 5 0 0122 23.5H8z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <h3>iCloud 同期</h3>
+        <p>同じ Apple Account なら自動で同期。家族の別 Apple Account へはファイルでやり取りできます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <h2>料金</h2>
+    <p class="sub">本体は無料。プレミアムは買い切りで、ファミリー共有に対応しています。</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>無料</h3>
+        <p class="price">¥0</p>
+        <p class="note">ずっと無料で使えます。</p>
+        <ul>
+          <li>プロフィール 1 人ぶん</li>
+          <li>記録・タイマー・手入力</li>
+          <li>ストリーク・レベル・グラフ・ヒートマップ</li>
+          <li>30 種類のバッジ</li>
+          <li>通知・親モード・PIN ロック</li>
+        </ul>
+      </div>
+      <div class="plan premium">
+        <h3>Homework プレミアム<span class="badge">買い切り</span></h3>
+        <p class="price">¥1,000<small>／1 回だけ</small></p>
+        <p class="note">一度の購入でずっと使えます。ファミリー共有に対応。</p>
+        <ul>
+          <li>2 人目以降のプロフィール</li>
+          <li>全 300 種類のバッジ</li>
+          <li>ひょうしょうじょうの PDF 出力</li>
+          <li><code>.homeworkbackup</code> でのファイルやり取り</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>使い方</h2>
+    <p class="sub">測って、残して、あとから見る。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>はかる</h3>
+        <p>タップひとつでタイマーを開始します。あとから手で入れることもできます。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>たまる</h3>
+        <p>記録した時間がストリークとレベルに積み上がっていきます。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>みえる</h3>
+        <p>グラフとバッジ、ひょうしょうじょうで、がんばりが形になります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>子どもの記録は、<br>家の外に出ません。</h2>
+    <p class="sub">データは端末と、あなた自身の iCloud にのみ保存されます。開発者が中身を見ることはできません。</p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>アカウントがない</h4>
+        <p>登録もログインも不要です。子どもの名前もメールアドレスも、開発者には届きません。</p>
+      </div>
+      <div class="box">
+        <h4>開発者のサーバーがない</h4>
+        <p>保存先はあなた自身の iCloud プライベートデータベース。開発者からは見えません。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は一切入っていません。子ども向けアプリなので、ここは特に厳密にしています。</p>
+      </div>
+      <div class="box">
+        <h4>PIN は端末の中だけ</h4>
+        <p>4 桁の PIN はこの端末にだけ保存され、iCloud にも他の端末にも渡りません。</p>
+      </div>
+      <div class="box">
+        <h4>通知は端末の中で</h4>
+        <p>リマインダーは端末内で生成されるローカル通知です。プッシュ通知サーバーを介しません。</p>
+      </div>
+      <div class="box">
+        <h4>持ち出しも自由</h4>
+        <p>記録はファイルに書き出せます。別の Apple Account の端末へも、ファイルで渡せます。</p>
+      </div>
+    </div>
+
+    <p class="note">詳しくは<a href="/homework/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 26.4 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone・iPad</dd>
+      <dt>言語</dt>
+      <dd>日本語・英語</dd>
+      <dt>料金</dt>
+      <dd>無料。買い切りの「Homework プレミアム」（¥1,000・ファミリー共有対応）あり</dd>
+      <dt>広告</dt>
+      <dd>なし。トラッキングもありません</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/homework/support.html">サポート</a>
+      <a href="/homework/privacy.html">プライバシーポリシー</a>
+      <a href="https://forms.gle/k9ykY8avJnAzr9Vu7">お問い合わせ</a>
+      <a href="/homework/en/">English</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
 
 </body>
 </html>

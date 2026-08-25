@@ -14,77 +14,105 @@ permalink: /homework/privacy.html
     :root {
       color-scheme: light dark;
       --bg: #ffffff;
+      --bg-soft: #f5f5f7;
       --fg: #1d1d1f;
       --muted: #6e6e73;
       --rule: #e5e5e7;
-      --link: #0066cc;
-      --code-bg: #f5f5f7;
+      --link: #2C6FDB;
+      --accent: #4F8FF7;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1d1d1f;
+        --bg: #000000;
+        --bg-soft: #161617;
         --fg: #f5f5f7;
         --muted: #a1a1a6;
-        --rule: #3a3a3c;
-        --link: #2997ff;
-        --code-bg: #2c2c2e;
+        --rule: #2a2a2c;
+        --link: #8FB8FF;
       }
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.72; font-size: 17px; -webkit-font-smoothing: antialiased;
     }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 96px;
-    }
-    h1 {
-      font-size: 2rem;
-      margin: 0 0 8px;
-      letter-spacing: -0.01em;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin: 48px 0 16px;
-      letter-spacing: -0.01em;
-    }
-    h3 {
-      font-size: 1.1rem;
-      margin: 28px 0 8px;
-    }
-    p, ul { margin: 0 0 16px; }
-    ul { padding-left: 1.4em; }
-    li { margin-bottom: 6px; }
-    a { color: var(--link); }
+    a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    hr {
-      border: 0;
-      border-top: 1px solid var(--rule);
-      margin: 48px 0;
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .updated {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0;
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
     }
-    code {
-      background: var(--code-bg);
-      padding: 1px 6px;
-      border-radius: 4px;
-      font-size: 0.9em;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; text-wrap: balance; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+      text-wrap: balance;
+    }
+    h3 { font-size: 1.12rem; font-weight: 650; margin: 40px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+    hr { display: none; }
+
+    dl.faq { margin: 0; }
+    dl.faq dt { font-weight: 650; margin: 30px 0 6px; font-size: 1.02rem; letter-spacing: -0.01em; }
+    dl.faq dd { margin: 0; color: var(--muted); }
+    dl.faq dd p { margin: 0 0 10px; }
+    dl.faq dd ul { margin: 8px 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
-  <main>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/homework/"><img src="/homework/assets/icon.png" alt="">Homework</a>
+    <ul>
+      <li><a href="/homework/">トップ</a></li>
+      <li><a href="/homework/support.html">サポート</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
     <h1>Homework — Privacy Policy</h1>
     <p class="updated">最終更新日 / Last updated: 2026-06-02</p>
 
@@ -95,7 +123,7 @@ permalink: /homework/privacy.html
     <p>Homework（以下「本アプリ」）は、子どもが家庭学習の時間を自分で記録できる iOS アプリです。本アプリは、開発者個人 (Masamichi Ueta) が運営しています。本アプリでは、ユーザーのプライバシーを最優先に考え、以下のとおりデータを取り扱います。</p>
 
     <h3>1. 収集する情報</h3>
-    <p>本アプリは、開発者のサーバーや第三者サービスへ情報を送信しません。以下の情報はすべて、お使いの端末内（および任意で同一 Apple ID の iCloud）に保存されます。</p>
+    <p>本アプリは、開発者のサーバーや第三者サービスへ情報を送信しません。以下の情報はすべて、お使いの端末内（および任意で同一 Apple Account の iCloud）に保存されます。</p>
     <ul>
       <li>子どものプロフィール: ニックネーム（本名の入力は不要）、アバター絵文字、テーマカラー</li>
       <li>学習記録: 開始/終了時刻、学習時間（秒数）、教科、メモ</li>
@@ -110,7 +138,7 @@ permalink: /homework/privacy.html
     <h3>3. データの保存場所</h3>
     <ul>
       <li>すべてのデータは Apple の SwiftData フレームワークにより、ご利用の端末内にローカル保存されます。</li>
-      <li>iCloud 同期が有効な場合、同一 Apple ID にサインインしている端末間で、Apple の CloudKit プライベートデータベースを通じて同期されます。同期されたデータは Apple のプライバシーポリシーのもとで保護され、開発者はアクセスできません。</li>
+      <li>iCloud 同期が有効な場合、同一 Apple Account にサインインしている端末間で、Apple の CloudKit プライベートデータベースを通じて同期されます。同期されたデータは Apple のプライバシーポリシーのもとで保護され、開発者はアクセスできません。</li>
       <li>家族間でのデータ共有は、ユーザー自身が <code>.homeworkbackup</code> ファイル（JSON 形式）を AirDrop・メッセージ・メール等で送ることでのみ行われます。本アプリが自動で外部に送信することはありません。</li>
       <li>通知（リマインダー）の設定（ON/OFF と時刻）と親モードの PIN は、その端末内のみに保存され、CloudKit や第三者には同期・送信されません。すべての通知は端末上で生成され、外部サーバーは使用しません。</li>
     </ul>
@@ -128,7 +156,7 @@ permalink: /homework/privacy.html
     <p>本アプリは家庭内での利用を想定しています。子どもの個人情報を収集することはなく、保護者が端末上で管理することを前提としています。13 歳未満のお子さまが利用される場合は、必ず保護者の同意と監督のもとでご利用ください。</p>
 
     <h3>6. データの削除</h3>
-    <p>記録・プロフィール・バッジ等は、アプリ内の親モードから個別に削除できます。アプリ自体を端末からアンインストールすると、端末内のデータは削除されます。iCloud に同期したデータは、iOS の「設定 &gt; Apple ID &gt; iCloud &gt; アプリを使用中のアプリ」から削除できます。</p>
+    <p>記録・プロフィール・バッジ等は、アプリ内の親モードから個別に削除できます。アプリ自体を端末からアンインストールすると、端末内のデータは削除されます。iCloud に同期したデータは、iOS の「設定 &gt; Apple Account &gt; iCloud &gt; アプリを使用中のアプリ」から削除できます。</p>
 
     <h3>7. ポリシーの変更</h3>
     <p>本ポリシーは、機能追加や法令改正等に応じて更新する場合があります。重要な変更があった場合は、本ページ上で告知します。</p>
@@ -142,7 +170,7 @@ permalink: /homework/privacy.html
 
     <hr>
 
-    <h2>Privacy Policy (English)</h2>
+    <h2 id="english">Privacy Policy (English)</h2>
 
     <p>Homework (the "App") is an iOS application that lets children record the time they spend on study at home. The App is developed and maintained by an individual developer (Masamichi Ueta). We respect your privacy and handle data as described below.</p>
 
@@ -162,8 +190,8 @@ permalink: /homework/privacy.html
     <h3>3. Where Your Data Is Stored</h3>
     <ul>
       <li>All data is stored locally on your device using Apple's SwiftData framework.</li>
-      <li>If iCloud sync is enabled, data is synchronized across devices signed into the same Apple ID through Apple's CloudKit private database. Such data is protected under Apple's privacy policy, and the developer has no access to it.</li>
-      <li>Sharing with family members across different Apple IDs is only performed when you explicitly export a <code>.homeworkbackup</code> file (JSON) and send it via AirDrop, Messages, email, etc. The App never uploads or transmits data on its own.</li>
+      <li>If iCloud sync is enabled, data is synchronized across devices signed into the same Apple Account through Apple's CloudKit private database. Such data is protected under Apple's privacy policy, and the developer has no access to it.</li>
+      <li>Sharing with family members across different Apple Accounts is only performed when you explicitly export a <code>.homeworkbackup</code> file (JSON) and send it via AirDrop, Messages, email, etc. The App never uploads or transmits data on its own.</li>
       <li>Local reminder (notification) settings — on/off and time — and the parent-mode PIN are stored only on that device; they are never synced via CloudKit or sent to any third party. All notifications are generated on-device, with no server involved.</li>
     </ul>
 
@@ -180,7 +208,7 @@ permalink: /homework/privacy.html
     <p>The App is intended for in-home use by families. It does not collect personal information from children and assumes that data is managed by a parent or guardian on the device. Children under 13 should use the App only with parental consent and supervision.</p>
 
     <h3>6. Data Deletion</h3>
-    <p>Records, profiles, and badges can be deleted individually from Parent Mode in the App. Uninstalling the App removes local data from your device. iCloud-synced data can be removed from iOS Settings &gt; Apple ID &gt; iCloud &gt; Apps Using iCloud.</p>
+    <p>Records, profiles, and badges can be deleted individually from Parent Mode in the App. Uninstalling the App removes local data from your device. iCloud-synced data can be removed from iOS Settings &gt; Apple Account &gt; iCloud &gt; Apps Using iCloud.</p>
 
     <h3>7. Changes to This Policy</h3>
     <p>This policy may be updated to reflect new features or legal requirements. Material changes will be announced on this page.</p>
@@ -191,6 +219,15 @@ permalink: /homework/privacy.html
       <li>Developer: Masamichi Ueta</li>
       <li>Contact form: <a href="https://forms.gle/k9ykY8avJnAzr9Vu7">here</a></li>
     </ul>
+  <footer>
+    <nav>
+      <a href="/homework/">トップ / Home</a>
+      <a href="/homework/support.html">サポート / Support</a>
+      <a href="https://forms.gle/k9ykY8avJnAzr9Vu7">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
   </main>
 </body>
 </html>

@@ -8,14 +8,13 @@ permalink: /aspectfit/
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AspectFit — 写真を選べる比率に自然拡張</title>
-  <meta name="description" content="写真をトリミングや余白なしで、必要なアスペクト比にぴったり整える iOS アプリ。背景を自然に拡張し、壁紙や SNS 投稿にフィット。すべて端末内で処理、アカウント不要・広告なし。">
+  <meta name="description" content="写真をトリミングや余白なしで必要なアスペクト比にぴったり整える iOS アプリ。広がった領域は元画像から生成した背景で自然に埋まります。端末内で完結、広告なし・トラッキングなし。">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/aspectfit/assets/icon.png">
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AspectFit — 写真を選べる比率に自然拡張">
-  <meta property="og:description" content="写真を選び、目的の比率を選ぶだけ。背景を自然に拡張して壁紙や SNS 投稿にフィット。すべて端末内で処理し、アカウント不要・広告なし。">
+  <meta property="og:description" content="トリミングも、ぶかっこうな余白もなしで比率を変える。壁紙や SNS 投稿にぴったり合わせられます。">
   <meta property="og:url" content="https://masamichiueta.github.io/aspectfit/">
   <meta property="og:image" content="https://masamichiueta.github.io/aspectfit/assets/icon.png">
   <meta name="twitter:card" content="summary">
@@ -23,307 +22,424 @@ permalink: /aspectfit/
   <style>
     :root {
       color-scheme: light dark;
+
       --bg: #ffffff;
+      --bg-soft: #f5f5f7;
       --fg: #1d1d1f;
       --muted: #6e6e73;
       --rule: #e5e5e7;
-      --link: #0066cc;
-      --accent: #8B5CF6;
-      --card: #f5f5f7;
-      --card-rule: #e5e5e7;
-      --hero: radial-gradient(120% 120% at 50% 0%, rgba(139,92,246,0.16) 0%, rgba(139,92,246,0) 60%);
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      --c-ratio: #0A84FF;
+      --c-bg: #BF5AF2;
+      --c-drag: #FF9F0A;
+      --c-save: #30D158;
+      --c-theme: #5E5CE6;
+      --c-local: #FF3B30;
+
+      --brand-1: #4DA3FF;
+      --brand-2: #0A6CF0;
+      --link: #0A6CF0;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1d1d1f;
+        --bg: #000000;
+        --bg-soft: #161617;
         --fg: #f5f5f7;
         --muted: #a1a1a6;
-        --rule: #3a3a3c;
-        --link: #2997ff;
-        --accent: #A78BFA;
-        --card: #2c2c2e;
-        --card-rule: #3a3a3c;
-        --hero: radial-gradient(120% 120% at 50% 0%, rgba(139,92,246,0.26) 0%, rgba(139,92,246,0) 60%);
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #6DB0FF;
       }
     }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 17px;
     }
+    img { max-width: 100%; display: block; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 56px 0; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      text-align: center;
-      background: var(--hero);
-      padding: 72px 0 56px;
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .langswitch {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    .langswitch a { color: var(--link); }
-    .langswitch .active { color: var(--fg); font-weight: 600; }
-    .langswitch .sep { margin: 0 6px; opacity: 0.5; }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    .hero { text-align: center; padding: 88px 0 24px; }
     .hero img.icon {
-      width: 112px; height: 112px;
-      border-radius: 24px;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+      width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(10,108,240,0.28);
     }
     .hero h1 {
-      font-size: 2.6rem;
-      margin: 20px 0 6px;
-      letter-spacing: -0.02em;
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 20px; text-wrap: balance;
     }
-    .hero .tagline {
-      font-size: 1.2rem;
-      color: var(--fg);
-      margin: 0 0 16px;
-      font-weight: 600;
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
     }
     .hero .lead {
-      max-width: 600px;
-      margin: 0 auto 24px;
-      color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted);
+      max-width: 620px; margin: 0 auto; text-wrap: pretty;
     }
-    .appstore-btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 12px 26px;
-      border-radius: 999px;
-      transition: transform 0.15s ease, opacity 0.15s ease;
+    .cta { margin-top: 34px; }
+    .pill {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(10,108,240,0.3);
     }
-    .appstore-btn:hover {
-      opacity: 0.92;
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-    .chips {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 10px;
-      justify-content: center;
-    }
-    .chips li {
-      font-size: 0.85rem;
-      color: var(--muted);
-      border: 1px solid var(--rule);
-      border-radius: 999px;
-      padding: 4px 12px;
-    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
 
-    /* Screenshots */
-    .shots {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      padding: 8px 4px 16px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      justify-content: center;
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 52px auto 0; max-width: 900px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px; border-radius: 999px;
+      background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; color: var(--fg);
     }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+    .features { padding: 0 0 40px; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph { width: 60px; height: 60px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 22px; }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
     .shot {
-      flex: 0 0 auto;
-      width: 230px;
-      scroll-snap-align: center;
-      text-align: center;
-    }
-    .shot img {
-      width: 100%;
-      height: auto;
-      border-radius: 18px;
-      border: 1px solid var(--card-rule);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-      display: block;
-    }
-    .shot span {
-      display: block;
-      margin-top: 10px;
-      font-size: 0.85rem;
-      color: var(--muted);
+      width: 100%; max-width: 300px; border-radius: 30px; overflow: hidden;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow); background: var(--card);
     }
 
-    /* Section headings */
-    h2.section-title {
-      font-size: 1.7rem;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px;
-      text-align: center;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      margin: 0 0 36px;
-    }
+    .more { padding: 40px 0 8px; }
+    .more h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 32px; text-align: center; }
+    .more .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .more .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .more .box .glyph { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; }
+    .more .box h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; }
+    .more .box p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
 
-    /* Features grid */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+    .pricing { padding: 96px 0 8px; }
+    .pricing h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .pricing .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; max-width: 620px; }
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .plan { border: 1px solid var(--rule); border-radius: 22px; padding: 30px 28px; background: var(--card); }
+    .plan.premium { border-color: color-mix(in srgb, var(--brand-2) 40%, var(--rule)); }
+    .plan h3 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 3px 9px; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-1) 22%, transparent); color: var(--brand-2);
     }
-    .feature {
-      background: var(--card);
-      border: 1px solid var(--card-rule);
-      border-radius: 16px;
-      padding: 22px;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .feature:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
-    .feature .emoji { font-size: 1.7rem; line-height: 1; }
-    .feature h3 { font-size: 1.05rem; margin: 12px 0 6px; }
-    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    @media (prefers-color-scheme: dark) { .badge { color: #6DB0FF; } }
+    .plan .price { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em; margin: 8px 0 4px; }
+    .plan .price small { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .plan .note { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
+    .plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: 0.93rem; }
+    .plan li { margin-bottom: 7px; }
 
-    /* How it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    .step { text-align: center; padding: 8px 12px; }
+    .steps-sec { padding: 96px 0 8px; }
+    .steps-sec h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .steps-sec .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
     .step .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px; height: 42px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 14px;
+      width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;
     }
-    .step h3 { font-size: 1.05rem; margin: 0 0 6px; }
-    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .step h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 650; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
 
-    /* Privacy callout */
-    .callout {
-      background: var(--card);
-      border: 1px solid var(--card-rule);
-      border-radius: 20px;
-      padding: 40px 32px;
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto;
+    .privacy { background: #000; color: #f5f5f7; padding: 108px 0; margin-top: 96px; }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem); line-height: 1.16; letter-spacing: -0.025em;
+      font-weight: 700; margin: 0 0 24px; text-align: center; text-wrap: balance;
     }
-    .callout .emoji { font-size: 2.2rem; }
-    .callout h2 { font-size: 1.5rem; margin: 12px 0 10px; }
-    .callout p { color: var(--muted); margin: 0 auto 16px; max-width: 560px; }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; }
+    .privacy .box { background: #1c1c1e; border-radius: 20px; padding: 26px 24px; }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #6DB0FF; }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 36px 0 56px;
-      text-align: center;
-    }
-    footer nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    footer .copy { color: var(--muted); font-size: 0.85rem; }
+    .specs { padding: 92px 0; }
+    .specs h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px; }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd { padding: 14px 0; border-top: 1px solid var(--rule); margin: 0; }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
 
-    @media (max-width: 520px) {
-      .hero h1 { font-size: 2.1rem; }
-      .hero { padding: 56px 0 40px; }
-      section { padding: 44px 0; }
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .plans { grid-template-columns: 1fr; }
+      .privacy { padding: 80px 0; margin-top: 72px; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="langswitch"><span class="active">日本語</span><span class="sep">/</span><a href="/aspectfit/en/">English</a></div>
-    <div class="wrap">
-      <img class="icon" src="/aspectfit/assets/icon.png" alt="AspectFit アプリアイコン" width="112" height="112">
-      <h1>AspectFit</h1>
-      <p class="tagline">写真を選べる比率に自然拡張</p>
-      <p class="lead">写真をトリミングや余白なしで、必要なアスペクト比にぴったり整えるアプリ。新しく広がった領域を、元画像から生成した背景で自然に埋めて、壁紙や SNS 投稿にフィットさせます。</p>
-      <a class="appstore-btn" href="https://apps.apple.com/jp/app/aspectfit/id6772523112">App Storeでダウンロード</a>
-      <ul class="chips">
-        <li>iOS 18.0以降</li>
-        <li>iPhone・iPad対応</li>
-        <li>日本語・英語</li>
-        <li>広告なし・トラッキングなし</li>
-      </ul>
-    </div>
-  </header>
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/aspectfit/"><img src="/aspectfit/assets/icon.png" alt="">AspectFit</a>
+    <ul>
+      <li><a href="/aspectfit/support.html">サポート</a></li>
+      <li><a href="/aspectfit/privacy.html">プライバシー</a></li>
+      <li><a href="/aspectfit/en/">English</a></li>
+    </ul>
+  </div>
+</div>
 
-  <!-- SCREENSHOTS -->
-  <section>
-    <div class="wrap">
-      <div class="shots">
-        <figure class="shot"><img src="/aspectfit/assets/shot-home.png" alt="写真を選ぶホーム画面"><span>写真を選ぶ</span></figure>
-        <figure class="shot"><img src="/aspectfit/assets/shot-editor.png" alt="比率と背景を選ぶエディタ画面"><span>比率と背景を選ぶ</span></figure>
-        <figure class="shot"><img src="/aspectfit/assets/shot-result.png" alt="自然に拡張された結果画面"><span>保存・共有</span></figure>
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/aspectfit/assets/icon.png" alt="AspectFit のアプリアイコン" width="116" height="116">
+    <h1><span class="line">切らずに、余白も出さずに。</span><br>
+    <span class="line grad">比率だけを変える。</span></h1>
+    <p class="lead">写真をトリミングや余白なしで、必要なアスペクト比にぴったり整えるアプリ。新しく広がった領域を、元画像から生成した背景で自然に埋めて、壁紙や SNS 投稿にフィットさせます。</p>
+    <div class="cta">
+      <a class="pill" href="https://apps.apple.com/jp/app/aspectfit/id6772523112">App Store でダウンロード</a>
+    </div>
+
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-ratio)"></span>比率プリセット</span>
+      <span class="chip"><span class="dot" style="background:var(--c-bg)"></span>6 種類の背景</span>
+      <span class="chip"><span class="dot" style="background:var(--c-drag)"></span>位置調整</span>
+      <span class="chip"><span class="dot" style="background:var(--c-save)"></span>保存・共有</span>
+      <span class="chip"><span class="dot" style="background:var(--c-theme)"></span>ライト／ダーク</span>
+      <span class="chip"><span class="dot" style="background:var(--c-local)"></span>端末内で完結</span>
+    </div>
+  </div>
+</header>
+
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>足りないのは、<br>写真の外側だけ。</h2>
+    <p>比率が合わないとき、普通は端を切るか、黒い帯を足すことになります。AspectFit は代わりに、元の写真から作った背景で外側を延長します。写真そのものには一切手を触れません。</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#7DBBFF,#0A84FF)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="3.5" y="7" width="23" height="16" rx="2.6" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M9 7V3.5M21 27v-3.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>使う場所に、比率を合わせる</h3>
+        <p>壁紙（iPhone / iPad / Apple Watch）と SNS（ストーリー／リール、正方形、縦投稿、ワイド）の比率をすぐに選べます。</p>
+        <ul>
+          <li>用途から選ぶだけで、数値を覚える必要はありません</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/aspectfit/assets/shot-home.png" alt="比率プリセットの選択画面">
       </div>
     </div>
-  </section>
 
-  <!-- FEATURES -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">できること</h2>
-      <p class="section-sub">トリミングも、ぶかっこうな余白もなしで比率を変える</p>
-      <div class="features">
-        <div class="feature"><div class="emoji">📐</div><h3>比率プリセット</h3><p>壁紙（iPhone / iPad / Apple Watch）と SNS（ストーリー/リール、正方形、縦投稿、ワイド）の比率をすぐに選べます。</p></div>
-        <div class="feature"><div class="emoji">🎨</div><h3>6種類の背景スタイル</h3><p>グラデ／マルチグラデ／ぼかし／引き伸ばし／ぼかし伸ばし／単色。元画像から背景を生成して自然になじませます。</p></div>
-        <div class="feature"><div class="emoji">✋</div><h3>ドラッグで位置調整</h3><p>写真の位置を指先で微調整。気に入らなければワンタップで中央にリセットできます。</p></div>
-        <div class="feature"><div class="emoji">💾</div><h3>保存・共有</h3><p>仕上げた画像は写真に保存。共有シートからどこへでも送れます。</p></div>
-        <div class="feature"><div class="emoji">🌓</div><h3>ライト/ダーク対応</h3><p>ライト・ダークモードとダイナミックタイプに対応。見やすく、誰にでも使いやすい画面。</p></div>
-        <div class="feature"><div class="emoji">🔒</div><h3>端末内で完結</h3><p>加工はすべてお使いの端末内で処理。アカウント不要、広告なし、外部送信なし。</p></div>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#D68CFF,#BF5AF2)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4c6.1 0 11 4.4 11 9.8 0 3.4-2.6 5.3-5.6 5.3h-2c-1.4 0-2.5 1.1-2.5 2.5 0 .6.2 1.1.5 1.6.3.5.5 1 .5 1.5 0 .8-.7 1.3-1.9 1.3C8.6 26 4 21 4 15S8.9 4 15 4z" stroke="#fff" stroke-width="2.2" fill="none"/><circle cx="10" cy="12" r="1.7" fill="#fff"/><circle cx="15" cy="9" r="1.7" fill="#fff"/><circle cx="20" cy="12" r="1.7" fill="#fff"/></svg>
+        </div>
+        <h3>6 種類の背景から選ぶ</h3>
+        <p>グラデ／マルチグラデ／ぼかし／引き伸ばし／ぼかし伸ばし／単色。いずれも元画像から生成するので、継ぎ目が目立ちません。</p>
+        <ul>
+          <li>写真の位置は指先でドラッグして微調整</li>
+          <li>気に入らなければ、プレビューをダブルタップして中央にリセット</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/aspectfit/assets/shot-editor.png" alt="背景スタイルを選ぶ編集画面">
       </div>
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">使い方</h2>
-      <p class="section-sub">3ステップで、写真がぴったりの比率に</p>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><h3>写真を選ぶ</h3><p>iOS の写真ピッカーから、加工したい1枚を選びます。</p></div>
-        <div class="step"><div class="num">2</div><h3>比率と背景を選ぶ</h3><p>目的のアスペクト比と背景スタイルを選び、ドラッグで位置を調整。</p></div>
-        <div class="step"><div class="num">3</div><h3>保存・共有</h3><p>生成した画像を写真に保存するか、共有シートでそのままシェア。</p></div>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5EE47F,#30D158)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 20V5M15 5l-5 5M15 5l5 5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 17v6.5c0 1.4 1.1 2.5 2.5 2.5h13c1.4 0 2.5-1.1 2.5-2.5V17" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <h3>そのまま保存して、そのまま送る</h3>
+        <p>仕上げた画像は写真に保存できます。共有シートからどこへでも送れるので、加工してすぐ投稿できます。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/aspectfit/assets/shot-result.png" alt="仕上がりを確認して保存・共有する画面">
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <nav>
-        <a href="/aspectfit/support.html">サポート</a>
-        <a href="/aspectfit/privacy.html">プライバシーポリシー</a>
-        <a href="https://forms.gle/cx3UDSP6GrqoRQFCA">お問い合わせ</a>
-      </nav>
-      <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <h2>そのほかにできること</h2>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#8B89F0,#5E5CE6)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M20.5 18.5A9 9 0 0111.5 6a9.2 9.2 0 00-.5 3 9 9 0 009 9c.5 0 1 0 1.5-.1z" stroke="#fff" stroke-width="2.2" fill="none" stroke-linejoin="round"/><circle cx="15" cy="15" r="11" stroke="#fff" stroke-width="2.2" fill="none" opacity=".45"/></svg>
+        </div>
+        <h3>ライト／ダーク対応</h3>
+        <p>ライト・ダークモードとダイナミックタイプに対応。文字を大きくしても崩れません。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FF7B72,#FF3B30)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="6.5" y="13" width="17" height="13" rx="3" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M10 13V9.5a5 5 0 0110 0V13" stroke="#fff" stroke-width="2.4" fill="none"/></svg>
+        </div>
+        <h3>端末内で完結</h3>
+        <p>加工はすべてお使いの端末内で処理します。アカウント不要、広告なし、外部送信なし。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FFBE4D,#FF9F0A)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4v22M4 15h22" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M15 4l-3 3M15 4l3 3M15 26l-3-3M15 26l3-3M4 15l3-3M4 15l3 3M26 15l-3-3M26 15l-3 3" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>ドラッグで位置調整</h3>
+        <p>どこを主役にするかは自分で決められます。中央固定ではありません。</p>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>使い方</h2>
+    <p class="sub">3 ステップで、写真がぴったりの比率に。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>写真を選ぶ</h3>
+        <p>iOS の写真ピッカーから、加工したい 1 枚を選びます。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>比率と背景を選ぶ</h3>
+        <p>目的のアスペクト比と背景スタイルを選び、ドラッグで位置を調整します。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>保存・共有</h3>
+        <p>生成した画像を写真に保存するか、共有シートでそのままシェア。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>写真は、<br>端末から出ません。</h2>
+    <p class="sub">加工はすべてお使いの端末内で完結します。通信する先がそもそもありません。</p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>端末の中だけで加工する</h4>
+        <p>画像処理はすべてお使いの端末内で行われます。写真がどこかへ送られることはありません。</p>
+      </div>
+      <div class="box">
+        <h4>アカウントがない</h4>
+        <p>登録もログインも不要。メールアドレスすら聞きません。</p>
+      </div>
+      <div class="box">
+        <h4>開発者のサーバーがない</h4>
+        <p>そもそも通信先がありません。オフラインでも全機能が動きます。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は一切入っていません。</p>
+      </div>
+      <div class="box">
+        <h4>写真へのアクセスは最小限</h4>
+        <p>選んだ 1 枚を読み込むだけです。ライブラリ全体を見に行くことはありません。</p>
+      </div>
+      <div class="box">
+        <h4>保存先はあなたが選ぶ</h4>
+        <p>写真に保存するか、共有シートで送るか。決めるのはあなたです。</p>
+      </div>
+    </div>
+
+    <p class="note">詳しくは<a href="/aspectfit/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 18.0 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone・iPad</dd>
+      <dt>言語</dt>
+      <dd>日本語・英語</dd>
+      <dt>料金</dt>
+      <dd>¥300 の買い切り。App 内課金はありません</dd>
+      <dt>広告</dt>
+      <dd>なし。トラッキングもありません</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/aspectfit/support.html">サポート</a>
+      <a href="/aspectfit/privacy.html">プライバシーポリシー</a>
+      <a href="https://forms.gle/cx3UDSP6GrqoRQFCA">お問い合わせ</a>
+      <a href="/aspectfit/en/">English</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
 
 </body>
 </html>
