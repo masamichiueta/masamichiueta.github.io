@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Runrunrun — プライバシーポリシー / Privacy Policy</title>
+  <meta name="description" content="Runrunrun のプライバシーポリシー。ヘルスケアから読み取ったデータは端末内にのみ保存し、iCloud にも同期しません。開発者はいかなるデータも取得しません。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/runrunrun/assets/icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #0A6CF0;
+      --accent: #30D158;
+      --accent-soft: rgba(48,209,88,0.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --link: #6DB0FF;
+        --accent-soft: rgba(48,209,88,0.14);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    h3 { font-size: 1.1rem; font-weight: 650; margin: 38px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+
+    .summary {
+      background: var(--accent-soft);
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin: 28px 0 8px;
+    }
+    .summary p:last-child { margin-bottom: 0; }
+    .summary .label {
+      display: inline-block; font-size: 0.74rem; font-weight: 700;
+      letter-spacing: 0.05em; color: var(--accent); margin-bottom: 8px;
+    }
+    .summary ul { margin: 10px 0 0; }
+
+    .callout {
+      background: var(--bg-soft);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 24px 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/runrunrun/"><img src="/runrunrun/assets/icon.png" alt="">Runrunrun</a>
+    <ul>
+      <li><a href="/runrunrun/">トップ</a></li>
+      <li><a href="/runrunrun/support.html">サポート</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+
+  <h1>Runrunrun — プライバシーポリシー</h1>
+  <p class="updated">最終更新日 / Last updated: 2026-08-24</p>
+
+  <div class="summary">
+    <span class="label">要点</span>
+    <ul>
+      <li><strong>ヘルスケアから読み取った健康データは、端末の外に出ません。</strong>iCloud にも同期しません</li>
+      <li>iCloud に保存されるのは、あなたが入力したものだけです。保存先はあなた自身のプライベートデータベースで、開発者は閲覧できません</li>
+      <li>アカウント登録は不要です。開発者が運用するサーバーは存在しません</li>
+      <li>広告・トラッキング・解析 SDK は一切ありません</li>
+    </ul>
+  </div>
+
+  <h2>プライバシーポリシー（日本語）</h2>
+
+  <p>
+    Runrunrun（以下「本App」）は、Masamichi Ueta（以下「開発者」）が提供する iOS 向けのランニング振り返りアプリです。
+    <strong>本Appは利用者のいかなる個人情報も収集しません。</strong>
+    開発者が利用者のデータを閲覧・取得・第三者へ提供することは一切ありません。
+  </p>
+
+  <h3>1. ヘルスケア（HealthKit）から読み取るデータ</h3>
+
+  <p>
+    本Appの中心的な機能は、ヘルスケアに保存されたワークアウトを読み取って表示することです。
+    読み取りは、利用者が許可した場合に限って行われます。読み取る主な項目は次のとおりです。
+  </p>
+
+  <table>
+    <tr><th>読み取る内容</th><th>用途</th></tr>
+    <tr><td>ワークアウト（種目・日時・時間・距離・消費エネルギー）</td><td>一覧と詳細の表示、期間の集計</td></tr>
+    <tr><td>心拍数</td><td>心拍の推移とゾーン別滞在時間の算出</td></tr>
+    <tr><td>距離の時系列データ</td><td>スプリットとペース推移、自己ベストの算出</td></tr>
+    <tr><td>ワークアウトのルート（GPS 座標）</td><td>ルートマップの描画</td></tr>
+    <tr><td>ランニングフォーム（ピッチ・ストライド長・上下動・接地時間・パワー）</td><td>フォーム指標の表示</td></tr>
+    <tr><td>安静時心拍、生年月日</td><td>心拍ゾーンの推定</td></tr>
+  </table>
+
+  <div class="callout">
+    <p>
+      <strong>これらのデータは、本Appを入れた端末の中にのみ保存されます。</strong>
+      開発者のサーバーへ送信されることはなく、<strong>iCloud にも同期されません。</strong>
+      本Appはヘルスケアから読み取ったデータを、広告・マーケティング・データマイニングを含むいかなる目的にも利用せず、
+      第三者へ提供することもありません。
+    </p>
+  </div>
+
+  <p>
+    ヘルスケアへのアクセスは、初回起動時に利用者が許可した範囲でのみ行われます。
+    許可は iPhone の「設定」App →「アプリ」→「Runrunrun」→「ヘルスケア」からいつでも変更・取り消しができます。
+    許可しない場合でも本Appは起動し、目標・レース・計画・シューズの管理はご利用いただけます。
+  </p>
+
+  <h3>2. ヘルスケアへ書き込むデータ</h3>
+
+  <p>
+    本Appがヘルスケアに書き込むのは、<strong>利用者が自分で入力した「きつさ（RPE）」を、ワークアウト強度として保存する場合のみ</strong>です。
+  </p>
+  <ul>
+    <li>この機能は<strong>既定ではオフ</strong>で、設定画面で利用者がオンにしたときにだけ動作します</li>
+    <li>オンにしたときにヘルスケアへの書き込み許可を求め、許可されなかった場合は設定が元に戻ります</li>
+    <li>書き込むのはこの値だけです。実測値（距離・心拍・ルートなど）を作成・改変することはありません</li>
+    <li>入力を取り消すと、本Appが書き込んだ値も削除されます。削除の対象は本Appが書き込んだものに限られます</li>
+  </ul>
+
+  <h3>3. 端末内に保存される情報</h3>
+
+  <p>本Appは、次の情報を利用者の端末内に保存します。</p>
+
+  <table>
+    <tr><th>情報</th><th>保存場所</th><th>iCloud 同期</th></tr>
+    <tr><td>ワークアウトの要約（一覧表示用のキャッシュ）</td><td>端末内のデータベース</td><td><strong>しない</strong></td></tr>
+    <tr><td>解析結果（自己ベスト、心拍のヒストグラム、ルートのサムネイル）</td><td>端末内のデータベース</td><td><strong>しない</strong></td></tr>
+    <tr><td>メモ、きつさ、体調、タグ</td><td>端末内のデータベース</td><td>する</td></tr>
+    <tr><td>シューズ、目標、レース、トレーニング計画</td><td>端末内のデータベース</td><td>する</td></tr>
+    <tr><td>設定（単位系、心拍ゾーン、スプリットの刻み、同期範囲）</td><td>端末内の設定領域</td><td>しない</td></tr>
+  </table>
+
+  <p>
+    ヘルスケア由来のデータをローカル専用の保存領域に分けているのは、健康データを開発者のiCloudコンテナに複製しないための設計です。
+    本Appを端末から削除すると、これらは端末から消去されます。
+  </p>
+
+  <h3>4. iCloud による同期について</h3>
+
+  <p>
+    利用者が iCloud にサインインしている場合、上の表で「する」と記した情報が Apple の CloudKit を通じて
+    <strong>利用者自身のプライベートiCloudデータベース</strong>に同期され、同じ Apple Account の他の端末でも引き継がれます。
+  </p>
+  <ul>
+    <li>この領域は Apple のアカウント保護のもとにあり、<strong>開発者は内容を閲覧できません。</strong></li>
+    <li><strong>同期されるのは利用者が入力したものだけです。</strong>ヘルスケアから読み取った健康データは含まれません</li>
+    <li>iCloud にサインインしていない場合も、本Appは端末内だけで問題なく動作します</li>
+    <li>同期は設定画面でオフにできます（次回の起動から反映されます）</li>
+  </ul>
+
+  <h3>5. 位置情報について</h3>
+
+  <p>
+    本Appは<strong>位置情報の利用許可を求めません。</strong>本Appに位置情報を取得するコードはありません。
+    ルートマップに表示される座標は、Apple Watch が記録してヘルスケアに保存したワークアウトのルートを読み取ったものです。
+  </p>
+
+  <h3>6. 通知について</h3>
+
+  <p>
+    シューズの走行距離が設定した寿命に達したときにお知らせする通知があります。この通知は端末内で生成されるローカル通知で、
+    プッシュ通知サーバーを介しません。通知の許可は利用者が任意で行い、断っても他の機能に影響はありません。
+  </p>
+
+  <h3>7. 収集しない情報</h3>
+
+  <p>本Appは、以下をはじめとするいかなる情報も収集・送信しません。</p>
+  <ul>
+    <li>氏名、メールアドレス、電話番号などの連絡先情報</li>
+    <li>連絡先、写真、カレンダーなど端末内の他のデータ</li>
+    <li>利用状況の解析データ、クラッシュログ、行動履歴</li>
+    <li>広告識別子（IDFA）その他の識別子</li>
+  </ul>
+  <p>
+    本Appには解析ツール・広告ネットワーク・サードパーティ製SDKが一切組み込まれておらず、
+    <strong>開発者が管理するサーバーも存在しません。</strong>アカウント登録も不要です。
+  </p>
+
+  <h3>8. ネットワーク通信</h3>
+
+  <p>
+    本Appには、開発者が書いたネットワーク通信のコードが一切ありません。
+    端末の外に出る通信は、上記の iCloud 同期にあたって Apple のフレームワーク（CloudKit）が Apple との間で行うものだけです。
+    iCloud 同期を使わない場合、本Appは完全にオフラインで動作します。
+  </p>
+
+  <h3>9. Apple から提供される統計情報</h3>
+
+  <p>
+    利用者が iOS の設定で解析データの共有（「デベロッパと共有」）を有効にしている場合、
+    Apple から匿名化されたクラッシュレポートや利用統計が開発者に提供されることがあります。
+    これらの情報から開発者が個人を特定することはできません。
+  </p>
+
+  <h3>10. お子様のプライバシー</h3>
+
+  <p>本Appは全年齢を対象としており（レーティング 4+）、年齢を問わず一切の個人情報を収集しません。</p>
+
+  <h3>11. データの持ち出しと削除</h3>
+
+  <p>
+    設定画面から、保存された記録を JSON および CSV で書き出せます。
+    本Appを端末から削除すると、端末内のデータは消去されます。
+    iCloud に同期されたデータは、「設定」→ ご自身の名前 →「iCloud」→「アカウントのストレージを管理」から削除できます。
+  </p>
+  <p>
+    <strong>ヘルスケアに保存されているワークアウト自体は、上記の操作では削除されません。</strong>
+    本Appはヘルスケアのデータを読み取るだけで、削除は行いません。ヘルスケア App から管理してください。
+  </p>
+
+  <h3>12. 本ポリシーの変更</h3>
+
+  <p>本ポリシーを変更する場合は、このページを更新し、上部の最終更新日を改めます。</p>
+
+  <h3>13. お問い合わせ</h3>
+
+  <p>
+    本ポリシーに関するご質問は、<a href="CONTACT_FORM_URL" target="_blank" rel="noopener">お問い合わせフォーム</a>からご連絡ください。
+    フォームの送信には Google フォームを使用しており、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google のプライバシーポリシー</a>が適用されます。
+    お送りいただいた内容は、お問い合わせへの対応のみに使用します。
+  </p>
+
+  <!-- ================= English ================= -->
+
+  <h2 id="english">Privacy Policy (English)</h2>
+
+  <div class="summary">
+    <span class="label">IN SHORT</span>
+    <ul>
+      <li><strong>Health data read from Apple Health never leaves your device.</strong> It is not synced to iCloud either</li>
+      <li>Only what you wrote is stored in iCloud, in your own private database that the developer cannot read</li>
+      <li>No account is required. There is no developer-operated server</li>
+      <li>No ads, no tracking, no analytics SDKs</li>
+    </ul>
+  </div>
+
+  <p>
+    Runrunrun (the "App") is an iOS app for reviewing your runs, provided by Masamichi Ueta (the "Developer").
+    <strong>The App does not collect any personal information.</strong>
+    The Developer cannot see, obtain, or share your data with anyone.
+  </p>
+
+  <h3>1. Data read from Apple Health (HealthKit)</h3>
+
+  <p>
+    The core function of the App is to read workouts stored in Apple Health and present them, and it does so
+    only with your permission. The main types read are:
+  </p>
+
+  <table>
+    <tr><th>What is read</th><th>What it is used for</th></tr>
+    <tr><td>Workouts (type, date, duration, distance, active energy)</td><td>The list and detail views, and period summaries</td></tr>
+    <tr><td>Heart rate</td><td>The heart rate curve and time in each zone</td></tr>
+    <tr><td>Distance series</td><td>Splits, pace over time, and personal bests</td></tr>
+    <tr><td>Workout routes (GPS coordinates)</td><td>Drawing the route map</td></tr>
+    <tr><td>Running form (cadence, stride length, vertical oscillation, ground contact time, power)</td><td>The form metrics section</td></tr>
+    <tr><td>Resting heart rate, date of birth</td><td>Estimating your heart rate zones</td></tr>
+  </table>
+
+  <div class="callout">
+    <p>
+      <strong>This data is stored only on the device where the App is installed.</strong>
+      It is never sent to a developer server, and <strong>it is never synced to iCloud.</strong>
+      Data read from Health is never used for advertising, marketing, or data mining, and is never shared with third parties.
+    </p>
+  </div>
+
+  <p>
+    Health is accessed only within the scope you allow on first launch. You can change or revoke it at any time in
+    Settings → Apps → Runrunrun → Health. If you decline, the App still opens, and goals, races, training plans,
+    and shoe management remain fully usable.
+  </p>
+
+  <h3>2. Data written to Apple Health</h3>
+
+  <p>
+    The only thing the App writes to Health is <strong>the effort rating (RPE) you type in yourself, saved as Workout Effort.</strong>
+  </p>
+  <ul>
+    <li>This is <strong>off by default</strong> and runs only when you turn it on in Settings</li>
+    <li>Turning it on requests Health write permission; if you decline, the setting reverts</li>
+    <li>That single value is all that is written. The App never creates or alters measured data such as distance, heart rate, or route</li>
+    <li>Clearing your input also deletes the value the App wrote. Only samples written by this App are removed</li>
+  </ul>
+
+  <h3>3. What is stored on your device</h3>
+
+  <table>
+    <tr><th>Information</th><th>Where it is stored</th><th>Synced to iCloud</th></tr>
+    <tr><td>Workout summaries (a cache for the list view)</td><td>A database on your device</td><td><strong>No</strong></td></tr>
+    <tr><td>Analysis results (personal bests, heart rate histogram, route thumbnails)</td><td>A database on your device</td><td><strong>No</strong></td></tr>
+    <tr><td>Notes, effort, condition, tags</td><td>A database on your device</td><td>Yes</td></tr>
+    <tr><td>Shoes, goals, races, training plans</td><td>A database on your device</td><td>Yes</td></tr>
+    <tr><td>Settings (units, heart rate zones, split interval, sync range)</td><td>Your device's settings store</td><td>No</td></tr>
+  </table>
+
+  <p>
+    Health-derived data is deliberately kept in a local-only store so that health data is never copied into the
+    developer's iCloud container. Deleting the App removes all of this from your device.
+  </p>
+
+  <h3>4. iCloud sync</h3>
+
+  <p>
+    If you are signed in to iCloud, the rows marked "Yes" above sync through Apple's CloudKit to
+    <strong>your own private iCloud database</strong>, so they follow you to your other devices signed in with the same Apple Account.
+  </p>
+  <ul>
+    <li>That storage is protected by your Apple Account. <strong>The Developer cannot read it.</strong></li>
+    <li><strong>Only what you wrote is synced.</strong> Health data is not included</li>
+    <li>If you are not signed in to iCloud, the App works normally using local storage only</li>
+    <li>Sync can be turned off in Settings (it takes effect on the next launch)</li>
+  </ul>
+
+  <h3>5. Location</h3>
+
+  <p>
+    The App <strong>never asks for location permission.</strong> It contains no code that acquires your location.
+    The coordinates drawn on the route map come from the workout route your Apple Watch recorded into Health.
+  </p>
+
+  <h3>6. Notifications</h3>
+
+  <p>
+    The App can notify you when a registered pair of shoes reaches the mileage limit you set. This is a local
+    notification generated on your device; no push notification server is involved. Granting notification
+    permission is optional, and declining it does not affect anything else.
+  </p>
+
+  <h3>7. What the App does not collect</h3>
+
+  <p>The App does not collect or transmit any of the following:</p>
+  <ul>
+    <li>Contact information such as name, email address, or phone number</li>
+    <li>Contacts, photos, calendars, or any other data on your device</li>
+    <li>Usage analytics, crash logs, or behavioural history</li>
+    <li>Advertising identifiers (IDFA) or any other identifier</li>
+  </ul>
+  <p>
+    The App contains no analytics tools, no advertising networks, and no third-party SDKs.
+    <strong>There is no developer-operated server of any kind</strong>, and no account is required.
+  </p>
+
+  <h3>8. Network use</h3>
+
+  <p>
+    The App contains no networking code written by the Developer. The only traffic that leaves your device is
+    what Apple's CloudKit framework exchanges with Apple for the iCloud sync described above.
+    Without iCloud sync, the App runs entirely offline.
+  </p>
+
+  <h3>9. Statistics provided by Apple</h3>
+
+  <p>
+    If you have enabled sharing analytics with developers in iOS settings, Apple may provide the Developer with
+    anonymised crash reports and usage statistics. The Developer cannot identify individuals from this information.
+  </p>
+
+  <h3>10. Children's privacy</h3>
+
+  <p>The App is rated 4+ and collects no personal information from anyone, regardless of age.</p>
+
+  <h3>11. Exporting and deleting your data</h3>
+
+  <p>
+    Settings can export your records as JSON and CSV. Deleting the App removes everything stored on the device.
+    Data synced to iCloud can be removed from Settings → your name → iCloud → Manage Account Storage.
+  </p>
+  <p>
+    <strong>The workouts stored in Apple Health are not deleted by any of this.</strong>
+    The App only reads from Health and never deletes anything there. Manage those in the Health app.
+  </p>
+
+  <h3>12. Changes to this policy</h3>
+
+  <p>If this policy changes, this page is updated and the "Last updated" date at the top is revised.</p>
+
+  <h3>13. Contact</h3>
+
+  <p>
+    For questions about this policy, please use the <a href="CONTACT_FORM_URL" target="_blank" rel="noopener">contact form</a>.
+    The form is a Google Form, so <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a> applies.
+    What you send is used only to respond to your enquiry.
+  </p>
+
+  <footer>
+    <nav>
+      <a href="/runrunrun/">トップ / Home</a>
+      <a href="/runrunrun/support.html">サポート / Support</a>
+      <a href="CONTACT_FORM_URL">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

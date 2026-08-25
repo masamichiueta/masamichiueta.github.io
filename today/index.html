@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Today Score Everyday — 1日1回、今日を1〜10で記録</title>
-  <meta name="description" content="1日1回、その日の点数（1〜10）とひとことメモを記録するシンプルな振り返りアプリ。月別の履歴とカレンダー、平均・連続記録・推移グラフで自分の調子を振り返れます。広告なし・トラッキングなし、iCloud同期対応。">
+  <meta name="description" content="今日は何点？ 1〜10から選んでひとことメモを添えるだけ。数秒で終わるシンプルな振り返りアプリ。履歴・カレンダー・統計で自分の調子をやさしく振り返れます。広告なし・トラッキングなし。">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/today/assets/icon.png">
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Today Score Everyday — 1日1回、今日を1〜10で記録">
-  <meta property="og:description" content="今日は何点？ 1〜10から選んでひとことメモを添えるだけ。履歴・カレンダー・統計で自分の調子をやさしく振り返れます。">
+  <meta property="og:description" content="1日1回、今日を1〜10で。数秒で終わる振り返りが、あとから自分のリズムを見せてくれます。">
   <meta property="og:url" content="https://masamichiueta.github.io/today/">
   <meta property="og:image" content="https://masamichiueta.github.io/today/assets/icon.png">
   <meta name="twitter:card" content="summary">
@@ -19,384 +18,423 @@
   <style>
     :root {
       color-scheme: light dark;
-      --fg: #1c1c28;
-      --muted: #5c5e6e;
-      --link: #7b61ff;
-      --rule: rgba(120,110,170,0.18);
-      --chip-fg: #4a4c5e;
-      /* Liquid glass material */
-      --glass-bg: rgba(255,255,255,0.50);
-      --glass-brd: rgba(255,255,255,0.75);
-      --glass-shadow: 0 14px 40px rgba(46,33,96,0.12);
-      --glass-inset: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 0 0 0.5px rgba(255,255,255,0.4);
-      /* Brand gradient — echoes the logo smile (pink → periwinkle → mint) */
-      --brand: linear-gradient(115deg, #FF8CC6 0%, #9FA8FF 50%, #5FDDBA 100%);
-      --brand-soft: linear-gradient(115deg, #FFB6DD 0%, #C2C7FF 50%, #9DEBD3 100%);
-      /* Page mesh background */
-      --page-bg:
-        radial-gradient(48% 42% at 12% 6%, rgba(255,138,198,0.42), transparent 60%),
-        radial-gradient(46% 40% at 88% 4%, rgba(95,221,186,0.38), transparent 60%),
-        radial-gradient(60% 55% at 50% 104%, rgba(159,168,255,0.40), transparent 60%),
-        radial-gradient(40% 35% at 80% 70%, rgba(255,182,221,0.30), transparent 60%),
-        linear-gradient(180deg, #f6f5fc 0%, #eceaf7 100%);
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      --c-score: #FF8CC6;
+      --c-hist: #9FA8FF;
+      --c-cal: #5FDDBA;
+      --c-stats: #0A84FF;
+      --c-bell: #FF9F0A;
+      --c-cloud: #32ADE6;
+
+      --brand-1: #FF8CC6;
+      --brand-2: #7B86F5;
+      --link: #5B62D6;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --fg: #f3f3f8;
-        --muted: #a9abbb;
-        --link: #b6a9ff;
-        --rule: rgba(255,255,255,0.12);
-        --chip-fg: #c9cad8;
-        --glass-bg: rgba(40,40,52,0.42);
-        --glass-brd: rgba(255,255,255,0.14);
-        --glass-shadow: 0 16px 44px rgba(0,0,0,0.50);
-        --glass-inset: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 0.5px rgba(255,255,255,0.05);
-        --brand: linear-gradient(115deg, #FF8CC6 0%, #9FA8FF 50%, #5FDDBA 100%);
-        --brand-soft: linear-gradient(115deg, #FF8CC6 0%, #9FA8FF 50%, #5FDDBA 100%);
-        --page-bg:
-          radial-gradient(48% 42% at 12% 6%, rgba(255,110,185,0.30), transparent 60%),
-          radial-gradient(46% 40% at 88% 4%, rgba(60,205,170,0.26), transparent 60%),
-          radial-gradient(60% 55% at 50% 104%, rgba(140,150,255,0.30), transparent 62%),
-          radial-gradient(40% 35% at 80% 70%, rgba(220,120,190,0.20), transparent 60%),
-          linear-gradient(180deg, #0e0e14 0%, #14131c 100%);
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #B9C0FF;
       }
     }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      background: #f6f5fc;
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      position: relative;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 17px;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background: var(--page-bg);
-    }
+    img { max-width: 100%; display: block; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 56px 0; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      text-align: center;
-      padding: 76px 0 56px;
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .langswitch {
-      position: absolute;
-      top: 16px;
-      right: 20px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    .langswitch a { color: var(--link); }
-    .langswitch .active { color: var(--fg); font-weight: 600; }
-    .langswitch .sep { margin: 0 6px; opacity: 0.5; }
-    .icon-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-    .icon-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -22px;
-      border-radius: 50%;
-      background: var(--brand);
-      filter: blur(34px);
-      opacity: 0.55;
-      z-index: 0;
-    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    .hero { text-align: center; padding: 88px 0 24px; }
     .hero img.icon {
-      position: relative;
-      z-index: 1;
-      width: 116px; height: 116px;
-      border-radius: 26px;
-      box-shadow: 0 18px 40px rgba(120,90,200,0.30), inset 0 1px 0 rgba(255,255,255,0.7);
+      width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(125,134,245,0.28);
     }
     .hero h1 {
-      font-size: 2.9rem;
-      margin: 18px 0 6px;
-      letter-spacing: -0.02em;
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 20px; text-wrap: balance;
     }
-    .hero h1 span {
-      background: var(--brand);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero .tagline {
-      font-size: 1.2rem;
-      color: var(--fg);
-      margin: 0 0 16px;
-      font-weight: 600;
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
     }
     .hero .lead {
-      max-width: 600px;
-      margin: 0 auto 26px;
-      color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted);
+      max-width: 620px; margin: 0 auto; text-wrap: pretty;
     }
-    .appstore-btn {
-      position: relative;
-      display: inline-block;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.98rem;
-      padding: 13px 30px;
-      border-radius: 999px;
-      box-shadow: 0 12px 28px rgba(130,95,210,0.38), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 6px rgba(90,60,160,0.25);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-      overflow: hidden;
+    .cta { margin-top: 34px; }
+    .pill {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(125,134,245,0.3);
     }
-    .appstore-btn::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 50%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
-      pointer-events: none;
-    }
-    .appstore-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(130,95,210,0.46), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(90,60,160,0.25);
-      text-decoration: none;
-    }
-    .chips {
-      list-style: none;
-      padding: 0;
-      margin: 26px 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 10px;
-      justify-content: center;
-    }
-    .chips li {
-      font-size: 0.85rem;
-      color: var(--chip-fg);
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(14px) saturate(150%);
-      backdrop-filter: blur(14px) saturate(150%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 999px;
-      padding: 5px 13px;
-      box-shadow: var(--glass-inset);
-    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
 
-    /* Screenshots */
-    .shots {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      padding: 8px 4px 18px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      justify-content: safe center;
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 52px auto 0; max-width: 900px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px; border-radius: 999px;
+      background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; color: var(--fg);
     }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+    .features { padding: 0 0 40px; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph { width: 60px; height: 60px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 22px; }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
     .shot {
-      flex: 0 0 auto;
-      width: 220px;
-      scroll-snap-align: center;
-      text-align: center;
-    }
-    .shot img {
-      width: 100%;
-      height: auto;
-      border-radius: 22px;
-      border: 1px solid var(--glass-brd);
-      box-shadow: 0 18px 44px rgba(46,33,96,0.20), inset 0 1px 0 rgba(255,255,255,0.5);
-      display: block;
-    }
-    .shot span {
-      display: block;
-      margin-top: 12px;
-      font-size: 0.85rem;
-      color: var(--muted);
+      width: 100%; max-width: 300px; border-radius: 30px; overflow: hidden;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow); background: var(--card);
     }
 
-    /* Section headings */
-    h2.section-title {
-      font-size: 1.8rem;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px;
-      text-align: center;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      margin: 0 0 38px;
-    }
+    .more { padding: 40px 0 8px; }
+    .more h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 32px; text-align: center; }
+    .more .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .more .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .more .box .glyph { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; }
+    .more .box h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; }
+    .more .box p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
 
-    /* Features grid — liquid glass cards */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+    .pricing { padding: 96px 0 8px; }
+    .pricing h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .pricing .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; max-width: 620px; }
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .plan { border: 1px solid var(--rule); border-radius: 22px; padding: 30px 28px; background: var(--card); }
+    .plan.premium { border-color: color-mix(in srgb, var(--brand-2) 40%, var(--rule)); }
+    .plan h3 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 3px 9px; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-1) 22%, transparent); color: var(--brand-2);
     }
-    .feature {
-      position: relative;
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(26px) saturate(165%);
-      backdrop-filter: blur(26px) saturate(165%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: var(--glass-shadow), var(--glass-inset);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      overflow: hidden;
-    }
-    .feature::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
-    }
-    .feature:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 50px rgba(46,33,96,0.18), var(--glass-inset);
-    }
-    .feature .emoji {
-      font-size: 1.5rem;
-      line-height: 1;
-      width: 50px; height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      background: var(--brand-soft);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 6px 16px rgba(120,90,200,0.18);
-    }
-    .feature h3 { font-size: 1.08rem; margin: 14px 0 6px; }
-    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    @media (prefers-color-scheme: dark) { .badge { color: #B9C0FF; } }
+    .plan .price { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em; margin: 8px 0 4px; }
+    .plan .price small { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .plan .note { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
+    .plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: 0.93rem; }
+    .plan li { margin-bottom: 7px; }
 
-    /* How it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    .step { text-align: center; padding: 8px 12px; }
+    .steps-sec { padding: 96px 0 8px; }
+    .steps-sec h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .steps-sec .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
     .step .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px; height: 46px;
-      border-radius: 999px;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 14px;
-      box-shadow: 0 10px 22px rgba(130,95,210,0.34), inset 0 1px 0 rgba(255,255,255,0.55);
+      width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;
     }
-    .step h3 { font-size: 1.05rem; margin: 0 0 6px; }
-    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .step h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 650; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 36px 0 56px;
-      text-align: center;
-      margin-top: 12px;
+    .privacy { background: #000; color: #f5f5f7; padding: 108px 0; margin-top: 96px; }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem); line-height: 1.16; letter-spacing: -0.025em;
+      font-weight: 700; margin: 0 0 24px; text-align: center; text-wrap: balance;
     }
-    footer nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    footer .copy { color: var(--muted); font-size: 0.85rem; }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; }
+    .privacy .box { background: #1c1c1e; border-radius: 20px; padding: 26px 24px; }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #B9C0FF; }
 
-    @media (max-width: 520px) {
-      .hero h1 { font-size: 2.3rem; }
-      .hero { padding: 60px 0 40px; }
-      section { padding: 44px 0; }
+    .specs { padding: 92px 0; }
+    .specs h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px; }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd { padding: 14px 0; border-top: 1px solid var(--rule); margin: 0; }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .plans { grid-template-columns: 1fr; }
+      .privacy { padding: 80px 0; margin-top: 72px; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="langswitch"><span class="active">日本語</span><span class="sep">/</span><a href="/today/en/">English</a></div>
-    <div class="wrap">
-      <span class="icon-wrap"><img class="icon" src="/today/assets/icon.png" alt="Today アプリアイコン" width="116" height="116"></span>
-      <h1><span>Today Score Everyday</span></h1>
-      <p class="tagline">1日1回、今日を1〜10で記録</p>
-      <p class="lead">今日は何点？ 1〜10から選んで、ひとことメモを添えるだけ。数秒で終わるシンプルな振り返りアプリです。月別の履歴とカレンダー、平均・連続記録・推移グラフで、自分の調子をやさしく振り返れます。</p>
-      <a class="appstore-btn" href="https://apps.apple.com/jp/app/today-score-everyday/id6777611175">App Storeでダウンロード</a>
-      <ul class="chips">
-        <li>iOS 26.5以降</li>
-        <li>iPhone・iPad対応</li>
-        <li>日本語・英語</li>
-        <li>広告なし・トラッキングなし</li>
-      </ul>
-    </div>
-  </header>
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/today/"><img src="/today/assets/icon.png" alt="">Today</a>
+    <ul>
+      <li><a href="/today/support.html">サポート</a></li>
+      <li><a href="/today/privacy.html">プライバシー</a></li>
+      <li><a href="/today/en/">English</a></li>
+    </ul>
+  </div>
+</div>
 
-  <!-- SCREENSHOTS -->
-  <section>
-    <div class="wrap">
-      <div class="shots">
-        <figure class="shot"><img src="/today/assets/shot-today.png" alt="今日の点数を記録する画面"><span>今日を記録</span></figure>
-        <figure class="shot"><img src="/today/assets/shot-history.png" alt="月別の履歴リスト画面"><span>履歴を振り返る</span></figure>
-        <figure class="shot"><img src="/today/assets/shot-calendar.png" alt="カレンダー（ヒートマップ）画面"><span>カレンダーで見る</span></figure>
-        <figure class="shot"><img src="/today/assets/shot-stats.png" alt="統計とグラフの画面"><span>統計でつかむ</span></figure>
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/today/assets/icon.png" alt="Today Score Everyday のアプリアイコン" width="116" height="116">
+    <h1><span class="line">今日は、何点だった？</span><br>
+    <span class="line grad">答えるのは、数秒。</span></h1>
+    <p class="lead">1〜10 から選んで、ひとことメモを添えるだけ。月別の履歴とカレンダー、平均・連続記録・推移グラフで、自分の調子をやさしく振り返れます。</p>
+    <div class="cta">
+      <a class="pill" href="https://apps.apple.com/jp/app/today-score-everyday/id6777611175">App Store でダウンロード</a>
+    </div>
+
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-score)"></span>数タップで記録</span>
+      <span class="chip"><span class="dot" style="background:var(--c-hist)"></span>履歴</span>
+      <span class="chip"><span class="dot" style="background:var(--c-cal)"></span>カレンダー</span>
+      <span class="chip"><span class="dot" style="background:var(--c-stats)"></span>統計</span>
+      <span class="chip"><span class="dot" style="background:var(--c-bell)"></span>リマインダー</span>
+      <span class="chip"><span class="dot" style="background:var(--c-cloud)"></span>iCloud 同期</span>
+    </div>
+  </div>
+</header>
+
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>続かないのは、<br>書くことが多すぎるから。</h2>
+    <p>日記が続かない理由の多くは、書く量にあります。Today が聞くのは点数ひとつだけ。それでも 1 か月ぶん並べば、自分の波はちゃんと見えてきます。</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFAED8,#FF8CC6)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="10.5" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M15 9v6l4 3" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>1 から 10 を、ひとつ選ぶ</h3>
+        <p>スコアに応じて色と絵文字（つらい〜最高）が変わるので、その日の気分がひと目で分かります。ひとことメモも残せます。</p>
+        <ul>
+          <li>入力は数タップ。数秒で終わります</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/today/assets/shot-today.png" alt="今日の点数を 1〜10 から選ぶ画面">
       </div>
     </div>
-  </section>
 
-  <!-- FEATURES -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">できること</h2>
-      <p class="section-sub">記録する → 振り返る → 自分の調子が見えてくる</p>
-      <div class="features">
-        <div class="feature"><div class="emoji">🔢</div><h3>数タップで記録</h3><p>1〜10から今日の点数を選ぶだけ。スコアに応じて色と絵文字（つらい〜最高）が変わり、その日の気分がひと目で。ひとことメモも残せます。</p></div>
-        <div class="feature"><div class="emoji">🗓️</div><h3>履歴を振り返る</h3><p>月ごとに色付きで一覧。リストとカレンダー（ヒートマップ）を切り替えて、タップで編集・スワイプで削除。あの日の自分を見返せます。</p></div>
-        <div class="feature"><div class="emoji">📊</div><h3>統計でリズムをつかむ</h3><p>平均スコア・連続記録日数・記録日数に加え、推移グラフと曜日別・月別の平均で、調子の波が見えてきます。</p></div>
-        <div class="feature"><div class="emoji">🔔</div><h3>毎日のリマインダー</h3><p>決まった時刻にやさしく通知。通知から直接その日の点数を記録できるので、記録のし忘れを防ぎます。</p></div>
-        <div class="feature"><div class="emoji">☁️</div><h3>iCloud同期</h3><p>同じApple アカウントの端末間で自動同期。機種変更でも、これまでの記録はそのまま引き継がれます。</p></div>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#8FE6D2,#5FDDBA)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="7" width="22" height="19" rx="3" stroke="#fff" stroke-width="2.4" fill="none"/><path d="M4 13h22M10 4v5M20 4v5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>1 か月が、色で見える</h3>
+        <p>月ごとに色付きで一覧できます。リストとカレンダー（ヒートマップ）を切り替えられ、タップで編集、スワイプで削除。</p>
+        <ul>
+          <li>あの日の自分を、あとから見返せます</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/today/assets/shot-calendar.png" alt="カレンダー表示のヒートマップ">
       </div>
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">使い方</h2>
-      <p class="section-sub">3ステップ、数秒で1日の記録</p>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><h3>点数を選ぶ</h3><p>今日の気分を1〜10から選びます。</p></div>
-        <div class="step"><div class="num">2</div><h3>メモを添える</h3><p>ひとことだけ（任意）。あとは「記録する」をタップ。</p></div>
-        <div class="step"><div class="num">3</div><h3>振り返る</h3><p>履歴とカレンダー、統計で自分の調子を見える化。</p></div>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5AB0FF,#0A84FF)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="17" width="4.6" height="9" rx="2.3" fill="#fff" opacity=".55"/><rect x="12.7" y="11" width="4.6" height="15" rx="2.3" fill="#fff"/><rect x="21.4" y="5" width="4.6" height="21" rx="2.3" fill="#fff" opacity=".8"/></svg>
+        </div>
+        <h3>自分のリズムをつかむ</h3>
+        <p>平均スコア・連続記録日数・記録日数に加えて、推移グラフと曜日別・月別の平均。調子の波が数字で見えてきます。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/today/assets/shot-stats.png" alt="平均スコアと推移グラフの統計画面">
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <nav>
-        <a href="/today/support.html">サポート</a>
-        <a href="/today/privacy.html">プライバシーポリシー</a>
-        <a href="https://forms.gle/rUpCGVaGNhoB1wHo6">お問い合わせ</a>
-      </nav>
-      <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <h2>そのほかにできること</h2>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FFBE4D,#FF9F0A)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4a7 7 0 00-7 7c0 6-2.5 7.5-2.5 7.5h19S22 17 22 11a7 7 0 00-7-7z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/><path d="M12.8 23a2.4 2.4 0 004.4 0" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>毎日のリマインダー</h3>
+        <p>決まった時刻にやさしく通知します。通知から直接その日の点数を記録できるので、つけ忘れを防げます。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#6FD3F5,#32ADE6)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M8 23.5A5.5 5.5 0 017.4 12.6 7.4 7.4 0 0121.6 11 5 5 0 0122 23.5H8z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <h3>iCloud 同期</h3>
+        <p>同じ Apple Account の端末間で自動同期。機種変更でも、これまでの記録はそのまま引き継がれます。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#B9C0FF,#7B86F5)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M20.5 18.5A9 9 0 0111.5 6a9.2 9.2 0 00-.5 3 9 9 0 009 9c.5 0 1 0 1.5-.1z" stroke="#fff" stroke-width="2.2" fill="none" stroke-linejoin="round"/><circle cx="15" cy="15" r="11" stroke="#fff" stroke-width="2.2" fill="none" opacity=".45"/></svg>
+        </div>
+        <h3>ライト／ダーク対応</h3>
+        <p>ライト・ダークモードとダイナミックタイプに対応。文字を大きくしても崩れません。</p>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>使い方</h2>
+    <p class="sub">3 ステップ、数秒で 1 日の記録。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>点数を選ぶ</h3>
+        <p>今日の気分を 1〜10 から選びます。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>メモを添える</h3>
+        <p>ひとことだけ（任意）。あとは「記録する」をタップ。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>振り返る</h3>
+        <p>履歴とカレンダー、統計で自分の調子を見える化。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>つけた点数は、<br>あなたのものだけ。</h2>
+    <p class="sub">データは端末と、あなた自身の iCloud にのみ保存されます。開発者が中身を見ることはできません。</p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>アカウントがない</h4>
+        <p>登録もログインも不要です。メールアドレスすら聞きません。</p>
+      </div>
+      <div class="box">
+        <h4>開発者のサーバーがない</h4>
+        <p>保存先はあなた自身の iCloud プライベートデータベース。開発者からは見えません。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は一切入っていません。</p>
+      </div>
+      <div class="box">
+        <h4>iCloud なしでも動く</h4>
+        <p>iCloud にサインインしていなくても、すべての機能を端末内保存で使えます。</p>
+      </div>
+      <div class="box">
+        <h4>通知は端末の中で</h4>
+        <p>リマインダーは端末内で生成されるローカル通知です。プッシュ通知サーバーを介しません。</p>
+      </div>
+      <div class="box">
+        <h4>いつでもやめられる</h4>
+        <p>アプリを削除すれば端末内のデータは消えます。引き止める仕組みはありません。</p>
+      </div>
+    </div>
+
+    <p class="note">詳しくは<a href="/today/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 26.5 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone・iPad</dd>
+      <dt>言語</dt>
+      <dd>日本語・英語</dd>
+      <dt>料金</dt>
+      <dd>無料。App 内課金はありません</dd>
+      <dt>広告</dt>
+      <dd>なし。トラッキングもありません</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/today/support.html">サポート</a>
+      <a href="/today/privacy.html">プライバシーポリシー</a>
+      <a href="https://forms.gle/rUpCGVaGNhoB1wHo6">お問い合わせ</a>
+      <a href="/today/en/">English</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
 
 </body>
 </html>

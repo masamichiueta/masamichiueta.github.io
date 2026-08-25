@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Grillog — 食べた部位まで残す、焼肉の記録</title>
-  <meta name="description" content="焼肉に行った記録を、食べた部位ひとつひとつの評価まで残せるiOSアプリ。写真中心のフィード、部位ランキングや月別支出の統計、行きたい店リスト。広告なし・トラッキングなし、iCloud同期対応。">
+  <meta name="description" content="焼肉に行った記録を、食べた部位ひとつひとつまで残せる iOS アプリ。部位ごとに星とメモ、写真中心のフィード、統計で振り返り。広告なし・トラッキングなし、iCloud 同期対応。">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/grillog/assets/icon.png">
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Grillog — 食べた部位まで残す、焼肉の記録">
-  <meta property="og:description" content="店名と日付だけでは思い出せない「あの店のあの部位」を残す。焼肉のための記録アプリです。">
+  <meta property="og:description" content="店名と日付だけでは思い出せない「あの店のあの部位」を残すために作りました。">
   <meta property="og:url" content="https://masamichiueta.github.io/grillog/">
   <meta property="og:image" content="https://masamichiueta.github.io/grillog/assets/icon.png">
   <meta name="twitter:card" content="summary">
@@ -19,534 +18,508 @@
   <style>
     :root {
       color-scheme: light dark;
-      --fg: #2b1a11;
-      --muted: #7b5c46;
-      --link: #b4530a;
-      --rule: rgba(160,110,60,0.22);
-      --chip-fg: #6b4a32;
-      --pbadge-fg: #8a3d06;
-      /* Liquid glass material */
-      --glass-bg: rgba(255,255,255,0.56);
-      --glass-brd: rgba(255,255,255,0.78);
-      --glass-shadow: 0 14px 40px rgba(120,60,20,0.14);
-      --glass-inset: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 0 0 0.5px rgba(255,255,255,0.4);
-      /* Brand gradient — sampled from the app icon */
-      --brand: linear-gradient(115deg, #FEB648 0%, #FA9A30 50%, #F47C16 100%);
-      --brand-soft: linear-gradient(115deg, #FFDFA8 0%, #FFCB8B 50%, #FFB779 100%);
-      --char: linear-gradient(160deg, #6B3A22 0%, #3D2216 100%);
-      /* Page mesh background — charcoal warmth, cream, a touch of meat pink */
-      --page-bg:
-        radial-gradient(48% 42% at 12% 6%, rgba(254,182,72,0.42), transparent 60%),
-        radial-gradient(46% 40% at 88% 4%, rgba(244,124,22,0.30), transparent 60%),
-        radial-gradient(60% 55% at 50% 104%, rgba(255,138,110,0.26), transparent 60%),
-        radial-gradient(40% 35% at 82% 68%, rgba(255,222,180,0.40), transparent 60%),
-        linear-gradient(180deg, #fdf7ef 0%, #f8ece0 100%);
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      --c-cuts: #FF3B30;
+      --c-photo: #FF9F0A;
+      --c-date: #30D158;
+      --c-sug: #0A84FF;
+      --c-stats: #BF5AF2;
+      --c-wish: #FF2D55;
+      --c-merge: #32ADE6;
+
+      --brand-1: #FEB648;
+      --brand-2: #E06A0A;
+      --link: #C96A05;
     }
+
     @media (prefers-color-scheme: dark) {
       :root {
-        --fg: #f7ede3;
-        --muted: #b6a093;
-        --link: #ffa94d;
-        --rule: rgba(255,255,255,0.12);
-        --chip-fg: #d8c6b7;
-        --pbadge-fg: #ffffff;
-        --glass-bg: rgba(48,36,29,0.46);
-        --glass-brd: rgba(255,255,255,0.14);
-        --glass-shadow: 0 16px 44px rgba(0,0,0,0.52);
-        --glass-inset: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 0.5px rgba(255,255,255,0.05);
-        --brand: linear-gradient(115deg, #FEB648 0%, #FA9A30 50%, #F47C16 100%);
-        --brand-soft: linear-gradient(115deg, #C97F2A 0%, #B86A22 50%, #A85718 100%);
-        --page-bg:
-          radial-gradient(48% 42% at 12% 6%, rgba(200,130,40,0.26), transparent 60%),
-          radial-gradient(46% 40% at 88% 4%, rgba(180,80,20,0.22), transparent 60%),
-          radial-gradient(60% 55% at 50% 104%, rgba(170,80,60,0.20), transparent 62%),
-          radial-gradient(40% 35% at 82% 68%, rgba(140,100,60,0.16), transparent 60%),
-          linear-gradient(180deg, #16100c 0%, #1d1611 100%);
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #FFB65C;
       }
     }
+
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      background: #fdf7ef;
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      position: relative;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 17px;
     }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      background: var(--page-bg);
-    }
+    img { max-width: 100%; display: block; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 56px 0; }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      text-align: center;
-      padding: 76px 0 48px;
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .icon-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-    .icon-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -22px;
-      border-radius: 50%;
-      background: var(--brand);
-      filter: blur(34px);
-      opacity: 0.55;
-      z-index: 0;
-    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    .hero { text-align: center; padding: 88px 0 24px; }
     .hero img.icon {
-      position: relative;
-      z-index: 1;
-      width: 116px; height: 116px;
-      border-radius: 26px;
-      box-shadow: 0 18px 40px rgba(150,80,20,0.32), inset 0 1px 0 rgba(255,255,255,0.7);
+      width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(224,106,10,0.28);
     }
     .hero h1 {
-      font-size: 2.9rem;
-      margin: 18px 0 6px;
-      letter-spacing: -0.02em;
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 20px; text-wrap: balance;
     }
-    .hero h1 span {
-      background: var(--brand);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero .tagline {
-      font-size: 1.2rem;
-      color: var(--fg);
-      margin: 0 0 16px;
-      font-weight: 600;
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
     }
     .hero .lead {
-      max-width: 620px;
-      margin: 0 auto 26px;
-      color: var(--muted);
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted);
+      max-width: 620px; margin: 0 auto; text-wrap: pretty;
     }
-    .appstore-btn {
-      position: relative;
-      display: inline-block;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.98rem;
-      padding: 13px 30px;
-      border-radius: 999px;
-      box-shadow: 0 12px 28px rgba(200,110,30,0.36), inset 0 1px 0 rgba(255,255,255,0.55), inset 0 -2px 6px rgba(150,70,10,0.25);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-      overflow: hidden;
+    .cta { margin-top: 34px; }
+    .pill {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(224,106,10,0.3);
     }
-    .appstore-btn::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 50%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
-      pointer-events: none;
+    .pill:hover { text-decoration: none; opacity: 0.92; }
+
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 52px auto 0; max-width: 900px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px; border-radius: 999px;
+      background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; color: var(--fg);
     }
-    .appstore-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(200,110,30,0.46), inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 6px rgba(150,70,10,0.25);
-      text-decoration: none;
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
     }
-    .chips {
-      list-style: none;
-      padding: 0;
-      margin: 26px 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 10px;
-      justify-content: center;
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+    .features { padding: 0 0 40px; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph { width: 60px; height: 60px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 22px; }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
     }
-    .chips li {
-      font-size: 0.85rem;
-      color: var(--chip-fg);
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(14px) saturate(150%);
-      backdrop-filter: blur(14px) saturate(150%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 999px;
-      padding: 5px 13px;
-      box-shadow: var(--glass-inset);
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
+    .shot {
+      width: 100%; max-width: 300px; border-radius: 30px; overflow: hidden;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow); background: var(--card);
     }
 
-    /* Sample record — a stylized illustration of what a record looks like */
-    .sample {
-      max-width: 380px;
-      margin: 0 auto;
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(26px) saturate(165%);
-      backdrop-filter: blur(26px) saturate(165%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 24px;
-      box-shadow: var(--glass-shadow), var(--glass-inset);
-      overflow: hidden;
-    }
-    .sample .hero-img {
-      position: relative;
-      height: 190px;
-      background: var(--char);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .sample .hero-img .flame { font-size: 2.6rem; opacity: 0.9; }
-    .sample .hero-img .overlay {
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      padding: 30px 18px 14px;
-      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.72));
-      color: #fff;
-      text-align: left;
-    }
-    .sample .hero-img .shop { font-weight: 700; font-size: 1.05rem; }
-    .sample .hero-img .meta { font-size: 0.82rem; opacity: 0.9; }
-    .sample .cuts { padding: 14px 18px 18px; text-align: left; }
-    .sample .cut {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 7px 0;
-      border-bottom: 1px solid var(--rule);
-      font-size: 0.94rem;
-    }
-    .sample .cut:last-child { border-bottom: 0; }
-    .sample .cut .note { color: var(--muted); font-size: 0.8rem; display: block; font-weight: 400; }
-    .sample .cut .name { font-weight: 600; }
-    .sample .stars { color: #F29A2E; white-space: nowrap; font-size: 0.86rem; letter-spacing: 0.05em; }
-    .sample-cap {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin: 16px auto 0;
-      max-width: 480px;
-    }
+    .more { padding: 40px 0 8px; }
+    .more h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 32px; text-align: center; }
+    .more .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .more .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .more .box .glyph { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; }
+    .more .box h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; }
+    .more .box p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
 
-    /* Section headings */
-    h2.section-title {
-      font-size: 1.8rem;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px;
-      text-align: center;
+    .pricing { padding: 96px 0 8px; }
+    .pricing h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .pricing .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; max-width: 620px; }
+    .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .plan { border: 1px solid var(--rule); border-radius: 22px; padding: 30px 28px; background: var(--card); }
+    .plan.premium { border-color: color-mix(in srgb, var(--brand-2) 40%, var(--rule)); }
+    .plan h3 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 3px 9px; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-1) 22%, transparent); color: var(--brand-2);
     }
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      margin: 0 0 38px;
-    }
+    @media (prefers-color-scheme: dark) { .badge { color: #FFB65C; } }
+    .plan .price { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em; margin: 8px 0 4px; }
+    .plan .price small { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .plan .note { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
+    .plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: 0.93rem; }
+    .plan li { margin-bottom: 7px; }
 
-    /* Features grid — liquid glass cards */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-    .feature {
-      position: relative;
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(26px) saturate(165%);
-      backdrop-filter: blur(26px) saturate(165%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: var(--glass-shadow), var(--glass-inset);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-      overflow: hidden;
-    }
-    .feature::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
-    }
-    .feature:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 50px rgba(120,60,20,0.20), var(--glass-inset);
-    }
-    .feature .emoji {
-      font-size: 1.5rem;
-      line-height: 1;
-      width: 50px; height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      background: var(--brand-soft);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 6px 16px rgba(200,110,30,0.20);
-    }
-    .feature h3 { font-size: 1.08rem; margin: 14px 0 6px; }
-    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-    .pbadge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      vertical-align: 2px;
-      margin-left: 8px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: var(--brand-soft);
-      color: var(--pbadge-fg);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
-      white-space: nowrap;
-    }
-
-    /* Pricing plans */
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      max-width: 880px;
-      margin: 0 auto;
-      align-items: start;
-    }
-    .plan.premium { border-color: rgba(244,124,22,0.55); }
-    .plan .price {
-      font-size: 1.9rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin: 2px 0 4px;
-    }
-    .plan .price small { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin-left: 6px; }
-    .plan .note { color: var(--muted); font-size: 0.85rem; margin: 0 0 4px; }
-    .plan ul { list-style: none; padding: 0; margin: 14px 0 0; }
-    .plan li {
-      position: relative;
-      padding-left: 24px;
-      margin: 0 0 9px;
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-    .plan li::before {
-      content: "✓";
-      position: absolute;
-      left: 2px;
-      color: var(--link);
-      font-weight: 700;
-    }
-
-    /* How it works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    .step { text-align: center; padding: 8px 12px; }
+    .steps-sec { padding: 96px 0 8px; }
+    .steps-sec h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .steps-sec .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
     .step .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px; height: 46px;
-      border-radius: 999px;
-      background: var(--brand);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 14px;
-      box-shadow: 0 10px 22px rgba(200,110,30,0.34), inset 0 1px 0 rgba(255,255,255,0.55);
+      width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;
     }
-    .step h3 { font-size: 1.05rem; margin: 0 0 6px; }
-    .step p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .step h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 650; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
 
-    /* Privacy strip */
-    .privacy-note {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
-      background: var(--glass-bg);
-      -webkit-backdrop-filter: blur(26px) saturate(165%);
-      backdrop-filter: blur(26px) saturate(165%);
-      border: 1px solid var(--glass-brd);
-      border-radius: 20px;
-      padding: 30px 26px;
-      box-shadow: var(--glass-shadow), var(--glass-inset);
+    .privacy { background: #000; color: #f5f5f7; padding: 108px 0; margin-top: 96px; }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem); line-height: 1.16; letter-spacing: -0.025em;
+      font-weight: 700; margin: 0 0 24px; text-align: center; text-wrap: balance;
     }
-    .privacy-note h2 { font-size: 1.4rem; margin: 0 0 10px; }
-    .privacy-note p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; }
+    .privacy .box { background: #1c1c1e; border-radius: 20px; padding: 26px 24px; }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #FFB65C; }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 36px 0 56px;
-      text-align: center;
-      margin-top: 12px;
-    }
-    footer nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-    footer .copy { color: var(--muted); font-size: 0.85rem; }
+    .specs { padding: 92px 0; }
+    .specs h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px; }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd { padding: 14px 0; border-top: 1px solid var(--rule); margin: 0; }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
 
-    @media (max-width: 520px) {
-      .hero h1 { font-size: 2.3rem; }
-      .hero { padding: 60px 0 40px; }
-      section { padding: 44px 0; }
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .plans { grid-template-columns: 1fr; }
+      .privacy { padding: 80px 0; margin-top: 72px; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="wrap">
-      <span class="icon-wrap"><img class="icon" src="/grillog/assets/icon.png" alt="Grillog アプリアイコン" width="116" height="116"></span>
-      <h1><span>Grillog</span></h1>
-      <p class="tagline">食べた部位まで残す、焼肉の記録</p>
-      <p class="lead">「あの店の上ハラミが良かった」——後から思い出したいのは、店名と日付だけではありません。Grillog は訪問ごとに、食べた部位ひとつひとつへ星とメモを残せる、焼肉のための記録アプリです。</p>
-      <a class="appstore-btn" href="https://apps.apple.com/jp/app/id6794827666">App Storeでダウンロード</a>
-      <ul class="chips">
-        <li>無料（買い切りのPremiumあり）</li>
-        <li>iOS 26.5以降</li>
-        <li>iPhone・iPad対応</li>
-        <li>日本語</li>
-        <li>広告なし・トラッキングなし</li>
-        <li>iCloud同期</li>
-      </ul>
-    </div>
-  </header>
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/grillog/"><img src="/grillog/assets/icon.png" alt="">Grillog</a>
+    <ul>
+      <li><a href="/grillog/support.html">サポート</a></li>
+      <li><a href="/grillog/privacy.html">プライバシー</a></li>
+    </ul>
+  </div>
+</div>
 
-  <!-- SAMPLE RECORD -->
-  <section style="padding-top: 8px;">
-    <div class="wrap">
-      <div class="sample">
-        <div class="hero-img">
-          <span class="flame">🔥</span>
-          <div class="overlay">
-            <div class="shop">焼肉 大将</div>
-            <div class="meta">2026年7月18日 ・ ★★★★☆</div>
-          </div>
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/grillog/assets/icon.png" alt="Grillog のアプリアイコン" width="116" height="116">
+    <h1><span class="line">あの店の、</span><br>
+    <span class="line grad">あの部位がよかった。</span></h1>
+    <p class="lead">後から思い出したいのは、店名と日付だけではありません。Grillog は訪問ごとに、食べた部位ひとつひとつへ星とメモを残せる、焼肉のための記録アプリです。</p>
+    <div class="cta">
+      <a class="pill" href="https://apps.apple.com/jp/app/id6794827666">App Store でダウンロード</a>
+    </div>
+
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-cuts)"></span>部位ごとの評価</span>
+      <span class="chip"><span class="dot" style="background:var(--c-photo)"></span>写真フィード</span>
+      <span class="chip"><span class="dot" style="background:var(--c-date)"></span>撮影日を採用</span>
+      <span class="chip"><span class="dot" style="background:var(--c-sug)"></span>部位サジェスト</span>
+      <span class="chip"><span class="dot" style="background:var(--c-stats)"></span>統計</span>
+      <span class="chip"><span class="dot" style="background:var(--c-wish)"></span>行きたい店</span>
+      <span class="chip"><span class="dot" style="background:var(--c-merge)"></span>名前の統合</span>
+    </div>
+  </div>
+</header>
+
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>記録は「訪問」と<br>「食べた部位」の二段構え。</h2>
+    <p>お店の記録だけなら、メモアプリでも足ります。Grillog が持っているのは、その下にもう一段——タン、ハラミ、ミスジ、ひとつひとつに星とメモが付く層です。次に行ったとき、何を頼むか迷いません。</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FF7B72,#FF3B30)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 3.5s6.5 6 6.5 12.5a6.5 6.5 0 11-13 0C8.5 9.5 15 3.5 15 3.5z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/><path d="M15 13.5s2.6 2.5 2.6 5a2.6 2.6 0 11-5.2 0c0-2.5 2.6-5 2.6-5z" fill="#fff"/></svg>
         </div>
-        <div class="cuts">
-          <div class="cut">
-            <span class="name">上タン塩<span class="note">厚切り。レモンで</span></span>
-            <span class="stars">★★★★★</span>
-          </div>
-          <div class="cut">
-            <span class="name">ハラミ<span class="note">タレが甘め</span></span>
-            <span class="stars">★★★★☆</span>
-          </div>
-          <div class="cut">
-            <span class="name">ミスジ<span class="note">今日いちばん</span></span>
-            <span class="stars">★★★★★</span>
-          </div>
+        <h3>部位ひとつひとつに、星とメモ</h3>
+        <p>タン、ハラミ、カルビ、ミスジ、ホルモン。訪問の中に食べた部位を並べて、ひとつひとつに星とメモを付けられます。</p>
+        <ul>
+          <li>店・日付・総合評価・金額は 1 枚のカードに</li>
+          <li>訪問全体のメモも別に残せます</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/grillog/assets/shot-cuts.png" alt="記録の詳細画面。食べた部位ごとに星が並ぶ">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFBE4D,#FF9F0A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="3.5" y="8" width="23" height="17" rx="3" stroke="#fff" stroke-width="2.3" fill="none"/><circle cx="15" cy="16.5" r="5" stroke="#fff" stroke-width="2.3" fill="none"/><path d="M11 8l1.8-3.5h4.4L19 8" stroke="#fff" stroke-width="2.3" stroke-linejoin="round" fill="none"/></svg>
         </div>
+        <h3>撮った写真が、そのままカードになる</h3>
+        <p>写真は全幅のカードになり、月ごとに時系列で振り返れます。カードの下には食べた部位がチップで並ぶので、開かなくても中身が分かります。</p>
+        <ul>
+          <li>写真をタップすると黒背景の全画面ビューアでピンチ拡大</li>
+          <li>店名でも部位でも検索できます</li>
+        </ul>
       </div>
-      <p class="sample-cap">記録は「訪問」と「食べた部位」の二段構え。部位ごとに星とメモが残るので、次に行ったとき何を頼むか迷いません。</p>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">できること</h2>
-      <p class="section-sub">入力は数タップ。振り返りは写真と統計で</p>
-      <div class="features">
-        <div class="feature"><div class="emoji">🥩</div><h3>部位ごとの評価</h3><p>タン、ハラミ、カルビ、ミスジ、ホルモン。訪問の中に食べた部位を並べて、ひとつひとつに星とメモを付けられます。</p></div>
-        <div class="feature"><div class="emoji">📸</div><h3>写真中心のフィード</h3><p>撮った写真がそのまま全幅のカードになり、月ごとに時系列で振り返れます。写真をタップすれば黒背景の全画面ビューアでピンチ拡大。</p></div>
-        <div class="feature"><div class="emoji">🗓️</div><h3>写真の撮影日が日付になる</h3><p>追加した写真の撮影日が日付の初期値になります。帰宅後や翌日にまとめて入力しても、日付を直す手間がありません。</p></div>
-        <div class="feature"><div class="emoji">⚡️</div><h3>部位サジェスト</h3><p>25種類の部位候補を最初から用意。よく食べる部位ほど候補の上に出てくるので、入力はチップをタップするだけ。候補は自分で追加・リネームもできます。</p></div>
-        <div class="feature"><div class="emoji">📊</div><h3>統計で振り返る<span class="pbadge">一部 Premium</span></h3><p>総訪問回数と今年・今月の回数は無料。今年の累計支出、よく食べる部位 TOP10、直近12か月の月別支出グラフ、よく行く店 TOP5（平均★つき）、年別・全期間の切り替えは Premium で解放されます。</p></div>
-        <div class="feature"><div class="emoji">❤️</div><h3>行きたい店リスト</h3><p>気になった店を先に登録しておけます。実際に行って記録を作ると、自動でリストから外れます。無料は5件まで、Premium で無制限です。</p></div>
-        <div class="feature"><div class="emoji">🔤</div><h3>表記ゆれをまとめる<span class="pbadge">Premium</span></h3><p>「上タン」と「上タン塩」で統計が分かれてしまっても、後からまとめられます。店名の統合にも対応しています。</p></div>
-        <div class="feature"><div class="emoji">🖼️</div><h3>記録カードを画像で共有</h3><p>写真・店名・★と食べた部位を1枚にまとめた記録カードを PNG で書き出せます。Premium ではウォーターマークなしで書き出せます。</p></div>
-        <div class="feature"><div class="emoji">🔒</div><h3>iCloud同期とプライバシー</h3><p>アカウント登録は不要。データは端末とあなた自身のiCloudにのみ保存され、同じApple Accountの端末間で同期されます。開発者がアクセスすることはありません。</p></div>
+      <div class="shot-col">
+        <img class="shot" src="/grillog/assets/shot-feed.png" alt="記録タブ。写真カードのフィードと部位チップ">
       </div>
     </div>
-  </section>
 
-  <!-- PRICING -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">料金</h2>
-      <p class="section-sub">記録することはずっと無料。振り返りを深めたくなったら、買い切りの Premium で全部開きます</p>
-      <div class="plans">
-        <div class="feature plan">
-          <h3>無料</h3>
-          <p class="price">¥0</p>
-          <p class="note">アカウント登録は不要。期限もありません。</p>
-          <ul>
-            <li>記録の作成・編集は無制限</li>
-            <li>食べた部位・★・メモも無制限</li>
-            <li>写真の枚数は無制限</li>
-            <li>過去の記録はすべて閲覧・検索できます</li>
-            <li>統計は総訪問・今年・今月の回数と、よく食べる部位 TOP3</li>
-            <li>行きたい店リストは5件まで</li>
-            <li>記録カード画像の共有（ウォーターマーク付き）</li>
-            <li>iCloud同期</li>
-          </ul>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5AB0FF,#0A84FF)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M6 8h18M6 15h18M6 22h18" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="11" cy="8" r="2.8" fill="#fff"/><circle cx="19" cy="15" r="2.8" fill="#fff"/><circle cx="13" cy="22" r="2.8" fill="#fff"/></svg>
         </div>
-        <div class="feature plan premium">
-          <h3>Grillog Premium<span class="pbadge">買い切り</span></h3>
-          <p class="price">¥600<small>／1回だけ</small></p>
-          <p class="note">サブスクリプションではありません。同じApple Accountのすべての端末で使えます。</p>
-          <ul>
-            <li>今年の累計支出と、直近12か月の月別支出グラフ</li>
-            <li>よく食べる部位 TOP10</li>
-            <li>よく行く店 TOP5（平均★つき）</li>
-            <li>年別・全期間での集計の切り替え</li>
-            <li>店の統合と、部位名の一括リネーム</li>
-            <li>行きたい店リストが無制限</li>
-            <li>ウォーターマークなしの記録カード画像</li>
-          </ul>
+        <h3>入力は、チップをタップするだけ</h3>
+        <p>25 種類の部位候補を最初から用意しています。よく食べる部位ほど候補の上に出てくるので、入力は数タップで終わります。</p>
+        <ul>
+          <li>候補は自分で追加・リネームもできます</li>
+          <li>写真の撮影日が、記録の日付の初期値になります</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/grillog/assets/shot-editor.png" alt="記録の作成画面。部位サジェストのチップ">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#D68CFF,#BF5AF2)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="17" width="4.6" height="9" rx="2.3" fill="#fff" opacity=".55"/><rect x="12.7" y="11" width="4.6" height="15" rx="2.3" fill="#fff"/><rect x="21.4" y="5" width="4.6" height="21" rx="2.3" fill="#fff" opacity=".8"/></svg>
         </div>
+        <h3>いくら使って、どこに通ったか</h3>
+        <p>今年の累計支出と直近 12 か月の月別グラフ、よく行く店 TOP5（平均★つき）。年別・全期間の切り替えもできます。</p>
+        <ul>
+          <li>支出の集計と店ランキングは Premium の機能です</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/grillog/assets/shot-spending.png" alt="統計タブ。月別支出グラフとよく行く店ランキング">
       </div>
     </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section>
-    <div class="wrap">
-      <h2 class="section-title">使い方</h2>
-      <p class="section-sub">3ステップで、その日の焼肉が記録になる</p>
-      <div class="steps">
-        <div class="step"><div class="num">1</div><h3>写真を選ぶ</h3><p>その日撮った写真を追加すると、撮影日が記録の日付になります。</p></div>
-        <div class="step"><div class="num">2</div><h3>店と部位を入れる</h3><p>店を選び、食べた部位をサジェストからタップ。星とメモはお好みで。</p></div>
-        <div class="step"><div class="num">3</div><h3>振り返る</h3><p>写真フィードで思い出し、統計で「今年何回行ったか」を確かめます。</p></div>
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FF6B9D,#FF2D55)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 25s-10-6.2-10-12.5A5.8 5.8 0 0115 9a5.8 5.8 0 0110 3.5C25 18.8 15 25 15 25z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>行きたい店を、先に置いておく</h3>
+        <p>気になった店を先に登録しておけます。実際に行って記録を作ると、自動でリストから外れます。</p>
+        <ul>
+          <li>無料は 5 件まで、Premium で無制限</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/grillog/assets/shot-wishlist.png" alt="行きたい店タブ">
       </div>
     </div>
-  </section>
 
-  <!-- PRIVACY -->
-  <section>
-    <div class="wrap">
-      <div class="privacy-note">
-        <h2>記録は、あなたの手元だけに</h2>
-        <p>Grillog に開発者のサーバーはありません。広告もトラッキングも解析SDKも入っていません。記録した内容が開発者に送られることはなく、写真もあなたが選んだものだけをアプリが受け取ります（写真ライブラリへのアクセス許可は求めません）。詳しくは<a href="/grillog/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <h2>そのほかにできること</h2>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#C79BFF,#9B5AE0)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="4" y="17" width="4.6" height="9" rx="2.3" fill="#fff" opacity=".55"/><rect x="12.7" y="11" width="4.6" height="15" rx="2.3" fill="#fff"/><rect x="21.4" y="5" width="4.6" height="21" rx="2.3" fill="#fff" opacity=".8"/></svg>
+        </div>
+        <h3>部位ランキング</h3>
+        <p>よく食べた部位が順位で出ます。無料は TOP3、Premium は TOP10 まで。総訪問回数と今年・今月の回数は無料で見られます。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#6FD3F5,#32ADE6)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M4 14.5V6a2 2 0 012-2h8.5l11 11-10.5 10.5z" stroke="#fff" stroke-width="2.3" fill="none" stroke-linejoin="round"/><circle cx="10" cy="10" r="2.2" fill="#fff"/></svg>
+        </div>
+        <h3>表記ゆれをまとめる</h3>
+        <p>「上タン」と「上タン塩」で統計が分かれてしまっても、後からまとめられます。店名の統合にも対応しています。（Premium）</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FFA94D,#E06A0A)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 20V5M15 5l-5 5M15 5l5 5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 17v6.5c0 1.4 1.1 2.5 2.5 2.5h13c1.4 0 2.5-1.1 2.5-2.5V17" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <h3>記録カードを画像で共有</h3>
+        <p>写真・店名・評価・食べた部位を 1 枚にまとめた記録カードを PNG 画像で書き出せます。Premium ではウォーターマークなし。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#8B89F0,#5E5CE6)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M8 23.5A5.5 5.5 0 017.4 12.6 7.4 7.4 0 0121.6 11 5 5 0 0122 23.5H8z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <h3>iCloud 同期</h3>
+        <p>アカウント登録は不要。記録はあなた自身の iCloud に保存され、同じ Apple Account の端末で同期されます。</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-      <nav>
-        <a href="/grillog/support.html">サポート</a>
-        <a href="/grillog/privacy.html">プライバシーポリシー</a>
-        <a href="https://forms.gle/p9XqtE8NToXNWp6LA">お問い合わせ</a>
-      </nav>
-      <p class="copy">© 2026 Masamichi Ueta</p>
+<section class="pricing">
+  <div class="wrap">
+    <h2>料金</h2>
+    <p class="sub">記録することはずっと無料。振り返りを深めたくなったら、買い切りの Premium で全部開きます。</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>無料</h3>
+        <p class="price">¥0</p>
+        <p class="note">アカウント登録は不要。期限もありません。</p>
+        <ul>
+          <li>記録の作成・編集は無制限</li>
+          <li>食べた部位・★・メモも無制限</li>
+          <li>写真の枚数は無制限</li>
+          <li>過去の記録はすべて閲覧・検索できます</li>
+          <li>統計は総訪問・今年・今月の回数と、よく食べる部位 TOP3</li>
+          <li>行きたい店リストは 5 件まで</li>
+          <li>記録カード画像の共有（ウォーターマーク付き）</li>
+          <li>iCloud 同期</li>
+        </ul>
+      </div>
+      <div class="plan premium">
+        <h3>Grillog Premium<span class="badge">買い切り</span></h3>
+        <p class="price">¥600<small>／1 回だけ</small></p>
+        <p class="note">サブスクリプションではありません。同じ Apple Account のすべての端末で使えます。</p>
+        <ul>
+          <li>今年の累計支出と、直近 12 か月の月別支出グラフ</li>
+          <li>よく食べる部位 TOP10</li>
+          <li>よく行く店 TOP5（平均★つき）</li>
+          <li>年別・全期間での集計の切り替え</li>
+          <li>店の統合と、部位名の一括リネーム</li>
+          <li>行きたい店リストが無制限</li>
+          <li>ウォーターマークなしの記録カード画像</li>
+        </ul>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>使い方</h2>
+    <p class="sub">3 ステップで、その日の焼肉が記録になる。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>写真を選ぶ</h3>
+        <p>その日撮った写真を追加すると、撮影日が記録の日付になります。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>部位を足す</h3>
+        <p>候補のチップをタップして、食べた部位を並べます。星とメモはその場で。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>振り返る</h3>
+        <p>フィードで時系列に、統計で傾向に。次に頼むものが決まります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>食べた記録は、<br>あなたのものだけ。</h2>
+    <p class="sub">データは端末と、あなた自身の iCloud にのみ保存されます。開発者が中身を見ることはできません。</p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>アカウントがない</h4>
+        <p>登録もログインも不要です。メールアドレスすら聞きません。</p>
+      </div>
+      <div class="box">
+        <h4>開発者のサーバーがない</h4>
+        <p>保存先はあなた自身の iCloud プライベートデータベース。開発者からは見えません。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は一切入っていません。</p>
+      </div>
+      <div class="box">
+        <h4>写真も端末の中</h4>
+        <p>記録に付けた写真は端末とあなたの iCloud にだけ置かれます。どこかへ送られることはありません。</p>
+      </div>
+      <div class="box">
+        <h4>SNS 連携もない</h4>
+        <p>他のユーザーとアカウントでつながる機能はありません。ひとりのための記録アプリです。</p>
+      </div>
+      <div class="box">
+        <h4>共有はあなたが選ぶ</h4>
+        <p>記録カード画像は iOS 標準の共有シート経由。送り先を決めるのはあなたです。</p>
+      </div>
+    </div>
+
+    <p class="note">詳しくは<a href="/grillog/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 26.5 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone・iPad</dd>
+      <dt>言語</dt>
+      <dd>日本語</dd>
+      <dt>料金</dt>
+      <dd>無料。買い切りの「Grillog Premium」（¥600）あり</dd>
+      <dt>広告</dt>
+      <dd>なし。トラッキングもありません</dd>
+      <dt>想定する使い方</dt>
+      <dd>お店の焼肉の記録に特化しています。自宅焼肉・BBQ は想定していません</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/grillog/support.html">サポート</a>
+      <a href="/grillog/privacy.html">プライバシーポリシー</a>
+      <a href="https://forms.gle/p9XqtE8NToXNWp6LA">お問い合わせ</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
 
 </body>
 </html>

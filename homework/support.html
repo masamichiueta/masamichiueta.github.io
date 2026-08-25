@@ -10,86 +10,105 @@
     :root {
       color-scheme: light dark;
       --bg: #ffffff;
+      --bg-soft: #f5f5f7;
       --fg: #1d1d1f;
       --muted: #6e6e73;
       --rule: #e5e5e7;
-      --link: #0066cc;
-      --code-bg: #f5f5f7;
+      --link: #2C6FDB;
+      --accent: #4F8FF7;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #1d1d1f;
+        --bg: #000000;
+        --bg-soft: #161617;
         --fg: #f5f5f7;
         --muted: #a1a1a6;
-        --rule: #3a3a3c;
-        --link: #2997ff;
-        --code-bg: #2c2c2e;
+        --rule: #2a2a2c;
+        --link: #8FB8FF;
       }
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.7;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.72; font-size: 17px; -webkit-font-smoothing: antialiased;
     }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 96px;
-    }
-    h1 {
-      font-size: 2rem;
-      margin: 0 0 8px;
-      letter-spacing: -0.01em;
-    }
-    h2 {
-      font-size: 1.5rem;
-      margin: 48px 0 16px;
-      letter-spacing: -0.01em;
-    }
-    h3 {
-      font-size: 1.1rem;
-      margin: 28px 0 8px;
-    }
-    p, ul { margin: 0 0 16px; }
-    ul { padding-left: 1.4em; }
-    li { margin-bottom: 6px; }
-    a { color: var(--link); }
+    a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    hr {
-      border: 0;
-      border-top: 1px solid var(--rule);
-      margin: 48px 0;
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
     }
-    .updated {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0;
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
     }
-    code {
-      background: var(--code-bg);
-      padding: 1px 6px;
-      border-radius: 4px;
-      font-size: 0.9em;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; text-wrap: balance; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+      text-wrap: balance;
     }
-    .faq dt {
-      font-weight: 600;
-      margin-top: 20px;
-    }
-    .faq dd {
-      margin: 4px 0 0;
-      padding: 0;
-      color: var(--fg);
+    h3 { font-size: 1.12rem; font-weight: 650; margin: 40px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+    hr { display: none; }
+
+    dl.faq { margin: 0; }
+    dl.faq dt { font-weight: 650; margin: 30px 0 6px; font-size: 1.02rem; letter-spacing: -0.01em; }
+    dl.faq dd { margin: 0; color: var(--muted); }
+    dl.faq dd p { margin: 0 0 10px; }
+    dl.faq dd ul { margin: 8px 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   </style>
 </head>
 <body>
-  <main>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/homework/"><img src="/homework/assets/icon.png" alt="">Homework</a>
+    <ul>
+      <li><a href="/homework/">トップ</a></li>
+      <li><a href="/homework/privacy.html">プライバシー</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
     <h1>Homework — Support</h1>
     <p class="updated">最終更新日 / Last updated: 2026-06-02</p>
 
@@ -134,14 +153,14 @@
       <li>アプリ本体は<strong>無料</strong>です。無料のままで、プロフィール 1 人分・記録・タイマー・手入力・ストリーク・レベル・グラフ・13 週ヒートマップ・30 種類のバッジ・通知・親モード・PIN ロックなど、毎日の利用に必要な機能をすべてお使いいただけます。</li>
       <li>買い切りの「<strong>Homework プレミアム</strong>」を購入すると、次の機能が開放されます: (1) 2 人目以降のプロフィール作成、(2) 残り 270 種類 (あわせて全 300 種類) のバッジ、(3) ひょうしょうじょうの PDF 出力、(4) <code>.homeworkbackup</code> ファイルでのやり取り。</li>
       <li>一度の購入でずっと使えます (サブスクリプションではありません)。<strong>ファミリー共有</strong>に対応しているので、ご家族のひとりが購入すれば、同じファミリー共有グループの端末でも利用できます。</li>
-      <li>購入の入口は、対象の機能を使おうとしたときや、親モードの案内から開けます。機種変更・再インストール後にプレミアムが反映されないときは、ペイウォール下部の「<strong>購入をふっかつ</strong>」をタップしてください (購入時と同じ Apple ID / ファミリー共有が必要です)。</li>
+      <li>購入の入口は、対象の機能を使おうとしたときや、親モードの案内から開けます。機種変更・再インストール後にプレミアムが反映されないときは、ペイウォール下部の「<strong>購入をふっかつ</strong>」をタップしてください (購入時と同じ Apple Account / ファミリー共有が必要です)。</li>
     </ul>
 
     <h3>iCloud 同期について</h3>
     <ul>
-      <li>同じ Apple ID にサインインしている iPhone / iPad の間では、自動的に同期されます (Apple の CloudKit プライベートデータベースを使用)。</li>
-      <li>iCloud 同期の有効/無効は、iOS の「設定 &gt; Apple ID &gt; iCloud &gt; iCloud を使用中のアプリ」から Homework のスイッチで切り替えられます。</li>
-      <li>家族の別 Apple ID とは自動同期されません。家族でデータをやり取りしたい場合は、後述の「ファイルでのやり取り」をご利用ください。</li>
+      <li>同じ Apple Account にサインインしている iPhone / iPad の間では、自動的に同期されます (Apple の CloudKit プライベートデータベースを使用)。</li>
+      <li>iCloud 同期の有効/無効は、iOS の「設定 &gt; Apple Account &gt; iCloud &gt; iCloud を使用中のアプリ」から Homework のスイッチで切り替えられます。</li>
+      <li>家族の別 Apple Account とは自動同期されません。家族でデータをやり取りしたい場合は、後述の「ファイルでのやり取り」をご利用ください。</li>
     </ul>
 
     <h3>ファイルでのやり取り (家族間)</h3>
@@ -177,7 +196,7 @@
       <dd>A. バッジの判定はアプリ起動時とセッション保存時に行われます。新しい記録を保存してもバッジが表示されない場合は、一度アプリを完全に終了して再起動してください。300 種類のバッジには、特定の日付・時間帯・連続日数など、満たすのが難しい条件のものもあります。</dd>
 
       <dt>Q. 別の端末で記録が表示されません。</dt>
-      <dd>A. まず、両方の端末が同じ Apple ID で iCloud にサインインしているかご確認ください。次に、両端末で「設定 &gt; Apple ID &gt; iCloud &gt; iCloud を使用中のアプリ」から Homework が ON になっているかご確認ください。同期には数分かかる場合があります。家族の別 Apple ID とのやり取りには「ファイルで やり取り」をご利用ください。</dd>
+      <dd>A. まず、両方の端末が同じ Apple Account で iCloud にサインインしているかご確認ください。次に、両端末で「設定 &gt; Apple Account &gt; iCloud &gt; iCloud を使用中のアプリ」から Homework が ON になっているかご確認ください。同期には数分かかる場合があります。家族の別 Apple Account とのやり取りには「ファイルで やり取り」をご利用ください。</dd>
 
       <dt>Q. 通知が来ません。</dt>
       <dd>A. (1) 親モード &gt; 「通知を かんり」で対象の子どもの通知が ON になっているか、(2) iOS の「設定 &gt; 通知 &gt; Homework」で通知が許可されているか、(3) その日にすでに 60 秒以上の記録があると当日の通知は抑制される仕様、の 3 点をご確認ください。</dd>
@@ -186,13 +205,13 @@
       <dd>A. 親モード &gt; 「きろくを みる/けす」から、子どもごとの記録一覧を開き、不要な記録を削除できます。時間の手動修正は現状サポートしていないため、いったん削除して手入力で記録し直してください。なお、カテゴリー (教科) だけを変えたい場合は、その記録をタップして付け替えられます。</dd>
 
       <dt>Q. アプリを削除するとどうなりますか？</dt>
-      <dd>A. 端末内のデータは削除されますが、iCloud に同期されたデータは残ります。再インストール後、同じ Apple ID で iCloud 同期を有効にすると記録が戻ってきます。iCloud 上のデータも含めて完全に削除したい場合は、iOS の「設定 &gt; Apple ID &gt; iCloud &gt; iCloud を使用中のアプリ &gt; Homework」から削除してください。</dd>
+      <dd>A. 端末内のデータは削除されますが、iCloud に同期されたデータは残ります。再インストール後、同じ Apple Account で iCloud 同期を有効にすると記録が戻ってきます。iCloud 上のデータも含めて完全に削除したい場合は、iOS の「設定 &gt; Apple Account &gt; iCloud &gt; iCloud を使用中のアプリ &gt; Homework」から削除してください。</dd>
 
       <dt>Q. 兄妹間で記録が混ざってしまいました。</dt>
       <dd>A. 親モード &gt; 「きろくを みる/けす」から、子どもごとに記録を確認し、誤った子に紐付いた記録を削除してください。記録を別の子どもへ付け替える機能は現状ありません (カテゴリー〈教科〉の付け替えは可能です)。</dd>
 
       <dt>Q. Homework プレミアムを買ったのに、別の端末で機能が開放されません。</dt>
-      <dd>A. ペイウォール下部の「購入をふっかつ」をタップしてください。購入時と同じ Apple ID でサインインしているか、同じファミリー共有グループに入っているかもご確認ください。プレミアムの状態は App Store と同期され、アプリ内には保存していないため、復元すると最新の状態に揃います。</dd>
+      <dd>A. ペイウォール下部の「購入をふっかつ」をタップしてください。購入時と同じ Apple Account でサインインしているか、同じファミリー共有グループに入っているかもご確認ください。プレミアムの状態は App Store と同期され、アプリ内には保存していないため、復元すると最新の状態に揃います。</dd>
 
       <dt>Q. プレミアムで獲得したバッジは、あとで失われますか？</dt>
       <dd>A. いいえ。一度獲得したバッジは、ファミリー共有の変更などでプレミアムが無効になっても消えません。プレミアムを再び有効にすると、無効だった間に条件を満たしていたぶんもまとめて授与されます。</dd>
@@ -212,7 +231,7 @@
 
     <hr>
 
-    <h2>Support (English)</h2>
+    <h2 id="english">Support (English)</h2>
 
     <p>Homework is an iOS app that lets children record the time they spend on study at home. With a timer or manual entry, daily sessions are saved and visualized through streaks, charts, and badges. This page summarizes how to use the app, common questions, and how to reach the developer.</p>
 
@@ -251,17 +270,17 @@
       <li>The app itself is <strong>free</strong>. For free, you get one profile plus all the everyday essentials: records, timer, manual entry, streaks, levels, charts, the 13-week heatmap, 30 badges, notifications, Parent Mode, and the PIN lock.</li>
       <li>A one-time "<strong>Homework Premium</strong>" purchase unlocks: (1) additional profiles beyond the first, (2) the remaining 270 badges (300 in total), (3) certificate PDF export, and (4) sharing via <code>.homeworkbackup</code> files.</li>
       <li>It is a one-time purchase, not a subscription, and it supports <strong>Family Sharing</strong> — if one family member buys it, everyone in the same Family Sharing group can use it.</li>
-      <li>You can reach the purchase screen when you try to use a Premium feature or from the Parent Mode banner. If Premium doesn't show up after switching devices or reinstalling, tap "<strong>Restore Purchases</strong>" at the bottom of the paywall (requires the same Apple ID / Family Sharing used for the purchase).</li>
+      <li>You can reach the purchase screen when you try to use a Premium feature or from the Parent Mode banner. If Premium doesn't show up after switching devices or reinstalling, tap "<strong>Restore Purchases</strong>" at the bottom of the paywall (requires the same Apple Account / Family Sharing used for the purchase).</li>
     </ul>
 
     <h3>iCloud Sync</h3>
     <ul>
-      <li>Data is automatically synced across iPhones and iPads signed into the same Apple ID, using Apple's CloudKit private database.</li>
-      <li>You can toggle iCloud sync from iOS Settings &gt; Apple ID &gt; iCloud &gt; Apps Using iCloud &gt; Homework.</li>
-      <li>iCloud sync does not cross Apple IDs. To share with family members on different Apple IDs, use file-based transfer (described below).</li>
+      <li>Data is automatically synced across iPhones and iPads signed into the same Apple Account, using Apple's CloudKit private database.</li>
+      <li>You can toggle iCloud sync from iOS Settings &gt; Apple Account &gt; iCloud &gt; Apps Using iCloud &gt; Homework.</li>
+      <li>iCloud sync does not cross Apple Accounts. To share with family members on different Apple Accounts, use file-based transfer (described below).</li>
     </ul>
 
-    <h3>File-Based Transfer (between Apple IDs)</h3>
+    <h3>File-Based Transfer (between Apple Accounts)</h3>
     <ul>
       <li>In Parent Mode, choose "ファイルで やり取り" to export all records as a <code>.homeworkbackup</code> file (JSON). Send it via AirDrop, Messages, or email to family members.</li>
       <li>Each profile screen has a share icon to export a single child's data.</li>
@@ -294,7 +313,7 @@
       <dd>A. Badges are evaluated at app launch and when sessions are saved. If a badge doesn't appear after saving a new record, fully quit and relaunch the app. Some of the 300 badges have very specific conditions (specific dates, time-of-day, long streaks) that may take time to satisfy.</dd>
 
       <dt>Q. Records don't appear on my other device.</dt>
-      <dd>A. First, make sure both devices are signed into the same Apple ID. Second, check that Homework is turned on under iOS Settings &gt; Apple ID &gt; iCloud &gt; Apps Using iCloud on both devices. Sync may take a few minutes. To share with family members on a different Apple ID, use the file-based transfer described above.</dd>
+      <dd>A. First, make sure both devices are signed into the same Apple Account. Second, check that Homework is turned on under iOS Settings &gt; Apple Account &gt; iCloud &gt; Apps Using iCloud on both devices. Sync may take a few minutes. To share with family members on a different Apple Account, use the file-based transfer described above.</dd>
 
       <dt>Q. I'm not getting notifications.</dt>
       <dd>A. Please check: (1) the notification toggle for that child is on under Parent Mode &gt; "通知を かんり"; (2) notifications are allowed for Homework under iOS Settings &gt; Notifications &gt; Homework; (3) the reminder for the day is automatically suppressed if 60 seconds or more have already been logged that day.</dd>
@@ -303,13 +322,13 @@
       <dd>A. From Parent Mode &gt; "きろくを みる/けす", open the records for a child and delete the incorrect entry. Editing the duration directly isn't supported yet — please delete and re-enter manually. If you only need to change the category (subject), tap the record to re-assign it.</dd>
 
       <dt>Q. What happens if I uninstall the app?</dt>
-      <dd>A. Local data on the device is removed, but data already synced to iCloud is preserved. After reinstalling and re-enabling iCloud sync with the same Apple ID, your records will return. To remove iCloud data as well, go to iOS Settings &gt; Apple ID &gt; iCloud &gt; Apps Using iCloud &gt; Homework and delete from there.</dd>
+      <dd>A. Local data on the device is removed, but data already synced to iCloud is preserved. After reinstalling and re-enabling iCloud sync with the same Apple Account, your records will return. To remove iCloud data as well, go to iOS Settings &gt; Apple Account &gt; iCloud &gt; Apps Using iCloud &gt; Homework and delete from there.</dd>
 
       <dt>Q. Records got mixed up between siblings.</dt>
       <dd>A. From Parent Mode &gt; "きろくを みる/けす", review records per child and delete any that are attributed to the wrong child. Re-assigning a record to a different child isn't supported yet (though you can change its category/subject).</dd>
 
       <dt>Q. I bought Homework Premium, but features aren't unlocked on another device.</dt>
-      <dd>A. Tap "Restore Purchases" at the bottom of the paywall. Also make sure you're signed in with the same Apple ID used for the purchase, or are part of the same Family Sharing group. Premium status syncs with the App Store and is never cached inside the app, so restoring brings it up to date.</dd>
+      <dd>A. Tap "Restore Purchases" at the bottom of the paywall. Also make sure you're signed in with the same Apple Account used for the purchase, or are part of the same Family Sharing group. Premium status syncs with the App Store and is never cached inside the app, so restoring brings it up to date.</dd>
 
       <dt>Q. Will badges I earned with Premium be lost later?</dt>
       <dd>A. No. Once earned, a badge stays even if Premium later becomes unavailable (for example, due to Family Sharing changes). When Premium is active again, any badges you qualified for in the meantime are granted together.</dd>
@@ -326,6 +345,15 @@
       <li>iCloud sync relies on Apple's services. The developer is not responsible for sync delays, interruptions, outages, or any resulting data inconsistencies.</li>
       <li>Features, specifications, pricing, and availability may change or be discontinued without notice.</li>
     </ul>
+  <footer>
+    <nav>
+      <a href="/homework/">トップ / Home</a>
+      <a href="/homework/privacy.html">プライバシー / Privacy</a>
+      <a href="https://forms.gle/k9ykY8avJnAzr9Vu7">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
   </main>
 </body>
 </html>

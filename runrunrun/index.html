@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Runrunrun — Apple Watch のランを読み解く</title>
+  <meta name="description" content="走るのは Apple Watch のまま。Runrunrun はヘルスケアに残ったランを読み解くアプリです。スプリット、心拍ゾーン、ルート、自己ベスト。健康データは端末の外に出ません。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/runrunrun/assets/icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Runrunrun — Apple Watch のランを読み解く">
+  <meta property="og:description" content="走るのは Apple Watch のまま。Runrunrun は記録を読み解く側に専念します。スプリット、心拍ゾーン、ルート、自己ベスト。">
+  <meta property="og:url" content="https://masamichiueta.github.io/runrunrun/">
+  <meta property="og:image" content="https://masamichiueta.github.io/runrunrun/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      /* アプリのチャートで使っている色に合わせる */
+      --c-split: #0A84FF;
+      --c-pace:  #5E5CE6;
+      --c-heart: #FF3B30;
+      --c-route: #30D158;
+      --c-trend: #FF9F0A;
+      --c-note:  #BF5AF2;
+      --c-train: #32ADE6;
+
+      --brand-1: #2E8BFF;
+      --brand-2: #0B57D0;
+      --link: #0A6CF0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #6DB0FF;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-size: 17px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    /* ---------- ナビ ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    /* ---------- ヒーロー ---------- */
+    .hero { text-align: center; padding: 88px 0 24px; }
+    .hero img.icon {
+      width: 116px; height: 116px; margin: 0 auto 28px;
+      border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(11,87,208,0.28);
+    }
+    .hero h1 {
+      /* 日本語は語中で改行されるので、desktop では 1 行に収まる上限に抑える。
+         「Apple Watch のまま。」が「ま|ま。」で割れるのを防ぐため。 */
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .hero .lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      color: var(--muted);
+      max-width: 620px; margin: 0 auto;
+      text-wrap: pretty;
+    }
+    .cta { margin-top: 34px; }
+    .pill {
+      display: inline-block;
+      padding: 11px 24px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(11,87,208,0.3);
+    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
+    .pill.soon {
+      background: none;
+      color: var(--muted);
+      border: 1px solid var(--rule);
+      box-shadow: none;
+      font-weight: 500;
+    }
+
+    /* ヒーロー下の指標チップ列（Apple Health のアイコン列にあたるもの） */
+    .chips {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; margin: 52px auto 0; max-width: 900px;
+    }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      font-size: 0.88rem; font-weight: 500;
+      color: var(--fg);
+    }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+    /* ---------- 前提を伝えるひとこと ---------- */
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+    /* ---------- 機能セクション ---------- */
+    .features { padding: 0 0 40px; }
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 56px 0;
+    }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph {
+      width: 60px; height: 60px; border-radius: 17px;
+      display: grid; place-items: center;
+      margin-bottom: 22px;
+    }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
+    .shot {
+      width: 100%; max-width: 300px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      box-shadow: var(--card-shadow);
+      background: var(--card);
+    }
+
+    /* ---------- プライバシー（Apple Health にならって独立させる） ---------- */
+    .privacy {
+      background: #000;
+      color: #f5f5f7;
+      padding: 108px 0;
+      margin-top: 56px;
+    }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem);
+      line-height: 1.16; letter-spacing: -0.025em; font-weight: 700;
+      margin: 0 0 24px; text-align: center; text-wrap: balance;
+    }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+      gap: 18px;
+    }
+    .privacy .box {
+      background: #1c1c1e;
+      border-radius: 20px;
+      padding: 26px 24px;
+    }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #6DB0FF; }
+
+    /* ---------- 動作環境 ---------- */
+    .specs { padding: 92px 0; }
+    .specs h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px;
+    }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd {
+      padding: 14px 0; border-top: 1px solid var(--rule); margin: 0;
+    }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    /* ---------- フッター ---------- */
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .privacy { padding: 80px 0; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/runrunrun/"><img src="/runrunrun/assets/icon.png" alt="">Runrunrun</a>
+    <ul>
+      <li><a href="/runrunrun/support.html">サポート</a></li>
+      <li><a href="/runrunrun/privacy.html">プライバシー</a></li>
+      <li><a href="/runrunrun/en/">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/runrunrun/assets/icon.png" alt="Runrunrun のアプリアイコン">
+    <h1><span class="line">走るのは、Apple Watch のまま。</span><br>
+    <span class="line grad">読み解くのは、ここで。</span></h1>
+    <p class="lead">
+      Runrunrun にワークアウトの開始ボタンはありません。計測は今までどおり Apple Watch にまかせたまま、
+      このアプリはヘルスケアに残った記録を見返すことだけを担当します。
+    </p>
+    <div class="cta">
+      <!-- 公開後: <a class="pill" href="https://apps.apple.com/jp/app/idAPP_STORE_ID">App Store でダウンロード</a> に差し替える -->
+      <span class="pill soon">App Store 審査中</span>
+    </div>
+
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-split)"></span>スプリット</span>
+      <span class="chip"><span class="dot" style="background:var(--c-pace)"></span>ペース推移</span>
+      <span class="chip"><span class="dot" style="background:var(--c-heart)"></span>心拍ゾーン</span>
+      <span class="chip"><span class="dot" style="background:var(--c-route)"></span>ルートマップ</span>
+      <span class="chip"><span class="dot" style="background:var(--c-trend)"></span>自己ベスト</span>
+      <span class="chip"><span class="dot" style="background:var(--c-note)"></span>振り返り</span>
+      <span class="chip"><span class="dot" style="background:var(--c-train)"></span>目標とレース</span>
+    </div>
+  </div>
+</header>
+
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>ヘルスケアに残ったものを、<br>ランナーの目線で組み直す。</h2>
+    <p>
+      1km ごとのラップ、ゾーンごとの滞在時間、走った道のり。ヘルスケアは、そのすべてを正確に記録しています。
+      Runrunrun はその同じデータを、ランニング専用の切り口で組み立て直します。
+    </p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5AB0FF,#0A84FF)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="4" y="6"  width="13" height="3.4" rx="1.7" fill="#fff" opacity=".55"/>
+            <rect x="4" y="13" width="22" height="3.4" rx="1.7" fill="#fff"/>
+            <rect x="4" y="20" width="17" height="3.4" rx="1.7" fill="#fff" opacity=".55"/>
+          </svg>
+        </div>
+        <h3>1km ごとに、何が起きていたか</h3>
+        <p>
+          ラップタイム、ペース、平均心拍、標高差を並べたスプリット表。最速ラップは太字で目立たせ、
+          ペースは横棒で相対的に見せます。前半で突っ込んだ日は、表を見ただけで分かります。
+        </p>
+        <ul>
+          <li>刻みは 1km / 1mile / 自動から選択</li>
+          <li>端数の最終ラップは区別して表示</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/runrunrun/assets/shot-splits.png" alt="スプリット表とペース推移グラフを表示した画面">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FF6B62,#FF3B30)">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M3 17h5l3-8 4.5 15L20 12l2.5 5H29" stroke="#fff" stroke-width="2.6"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Z2 で走れた日か、追い込んだ日か</h3>
+        <p>
+          心拍の推移と、ゾーンごとの滞在時間。Z1 から Z5 のどのゾーンで走った一本だったのかを、
+          時間と割合で見られます。ゾーンの境界はあなたに合わせて動かせます。
+        </p>
+        <ul>
+          <li>最大心拍法と予備心拍法（カルボーネン法）</li>
+          <li>最大心拍はヘルスケアの生年月日から推定。一度手で入力すると、以後は自動で上書きしません</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/runrunrun/assets/shot-zones.png" alt="心拍の推移とゾーン別滞在時間を表示した画面">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#5EE47F,#30D158)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M15 4c6 0 10 3.6 10 8.2 0 5-4.4 7.3-9 9.4-3.6 1.7-6 2.8-6 4.4"
+                  stroke="#fff" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+            <circle cx="15" cy="4" r="3" fill="#fff"/>
+          </svg>
+        </div>
+        <h3>あのコース、どこを走ったんだっけ</h3>
+        <p>
+          GPS ルートを地図に描き、ペースまたは標高で色分けします。スプリット地点にはマーカーが付き、
+          タップで全画面に広がります。屋内ランではルートマップを表示しません。
+        </p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/runrunrun/assets/shot-route.png" alt="ペースで色分けしたルートマップを表示した画面">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFBE4D,#FF9F0A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="4"  y="17" width="4.6" height="9"  rx="2.3" fill="#fff" opacity=".55"/>
+            <rect x="12.7" y="11" width="4.6" height="15" rx="2.3" fill="#fff"/>
+            <rect x="21.4" y="5"  width="4.6" height="21" rx="2.3" fill="#fff" opacity=".8"/>
+          </svg>
+        </div>
+        <h3>積み上がりと、いちばん速い区間</h3>
+        <p>
+          週・月・年で切り替わるトレンド。走行距離の棒グラフには前年同期を薄く重ね、
+          平均ペースは距離帯ごとに分けて見られます。
+        </p>
+        <ul>
+          <li>自己ベストは 1km / 5km / 10km / ハーフ / フル</li>
+          <li>これはヘルスケアの標準の項目ではないため、距離のデータから最速区間をアプリ側で計算しています</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/runrunrun/assets/shot-records.png" alt="心拍ゾーン分布の推移と自己ベストを表示した画面">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#D68CFF,#BF5AF2)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M20.5 4.6l4.9 4.9-13 13-6.1 1.2 1.2-6.1 13-13z"
+                  stroke="#fff" stroke-width="2.4" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <h3>数字だけでは、理由が分からない</h3>
+        <p>
+          ランごとにメモ、きつさ（RPE）、体調、タグを残せます。設定でオンにすれば、
+          きつさをワークアウト強度としてヘルスケアに書き戻すこともできます。
+        </p>
+        <ul>
+          <li>シューズを登録すると走行距離が積み上がり、寿命に達すると通知でお知らせします</li>
+          <li>アプリを入れる前に履いていたぶんは、初期距離として手で足せます</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/runrunrun/assets/shot-trends.png" alt="週ごとの走行距離と平均ペースの推移を表示した画面">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#6FD3F5,#32ADE6)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <circle cx="15" cy="15" r="10.5" stroke="#fff" stroke-width="2.4" fill="none"/>
+            <circle cx="15" cy="15" r="5"    stroke="#fff" stroke-width="2.4" fill="none" opacity=".7"/>
+            <circle cx="15" cy="15" r="1.8"  fill="#fff"/>
+          </svg>
+        </div>
+        <h3>次のレースまで、あと何日</h3>
+        <p>
+          週または月の目標を距離・時間・回数で立て、進捗をホームで追えます。
+          レースを登録すると、残り日数がホームにずっと表示されます。終わったあとは実際のランを紐付けて、目標との差を見返せます。
+        </p>
+        <ul>
+          <li>週単位の計画と、実際に走ったランの突き合わせ</li>
+          <li>アプリが勝手に確定させず候補として出すだけなので、1 日に 2 本走った日でも取り違えません</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/runrunrun/assets/shot-home.png" alt="今週の進捗と次のレースを表示したホーム画面">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>健康データは、<br>端末から出ません。</h2>
+    <p class="sub">
+      ヘルスケアから読んだデータは、この端末の中だけに保存します。iCloud にも同期しません。
+    </p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>読んだものは、持ち出さない</h4>
+        <p>ワークアウト、心拍、ルートはすべて端末の中にだけ保存します。開発者のサーバーへ送る仕組みがありません。</p>
+      </div>
+      <div class="box">
+        <h4>同期するのは、書いたものだけ</h4>
+        <p>メモ・きつさ・体調・シューズ・目標・レース・計画だけが、あなた自身の iCloud プライベートデータベースに保存されます。開発者からは見えません。</p>
+      </div>
+      <div class="box">
+        <h4>アカウントも、サーバーもない</h4>
+        <p>登録は不要です。開発者が運用するサーバーは存在しません。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は一切入っていません。ネットワーク通信のコードそのものがありません。</p>
+      </div>
+      <div class="box">
+        <h4>書き込むのは、ひとつだけ</h4>
+        <p>ヘルスケアへ書き戻すのは、あなたが自分で入力したきつさ（ワークアウト強度）だけです。既定はオフで、設定でオンにしたときにだけ書き込みます。</p>
+      </div>
+      <div class="box">
+        <h4>いつでも持ち出せる</h4>
+        <p>記録は JSON と CSV で書き出せます。やめるのも、移るのも自由です。</p>
+      </div>
+    </div>
+
+    <p class="note">
+      詳しくは<a href="/runrunrun/privacy.html">プライバシーポリシー</a>をご覧ください。
+    </p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 26.0 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone（iPad には対応していません）</dd>
+      <dt>必要なもの</dt>
+      <dd>ヘルスケアにランニングの記録があること。Apple Watch はもちろん、iPhone だけで記録したものや、他のアプリがヘルスケアに書き込んだものも読み込みます</dd>
+      <dt>単位</dt>
+      <dd>km / mile を設定で切り替えられます</dd>
+      <dt>言語</dt>
+      <dd>日本語・英語</dd>
+      <dt>料金</dt>
+      <dd>無料。App 内課金はありません</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/runrunrun/support.html">サポート</a>
+      <a href="/runrunrun/privacy.html">プライバシーポリシー</a>
+      <a href="CONTACT_FORM_URL">お問い合わせ</a>
+      <a href="/runrunrun/en/">English</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
+
+</body>
+</html>
