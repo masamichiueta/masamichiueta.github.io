@@ -20,7 +20,7 @@ GEM
       net-http (~> 0.5)
     ffi (1.17.4)
     forwardable-extended (2.6.0)
-    google-protobuf (4.36.0)
+    google-protobuf (4.36.1)
       bigdecimal
       rake (~> 13.3)
     http_parser.rb (0.8.1)
