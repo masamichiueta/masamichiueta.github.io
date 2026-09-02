@@ -28,8 +28,8 @@
 <meta property="og:title" content="Apps" />
 <meta name="author" content="Masamichi Ueta" />
 <meta property="og:locale" content="ja_JP" />
-<meta name="description" content="個人で開発・公開している iOS アプリの一覧。Grillog・TeeNote・Today Score Everyday・AspectFit・Homework。" />
-<meta name="twitter:description" property="og:description" content="個人で開発・公開している iOS アプリの一覧。Grillog・TeeNote・Today Score Everyday・AspectFit・Homework。" />
+<meta name="description" content="個人で開発・公開している iOS アプリの一覧。Runrunrun・まぎれんぼ・Grillog・TeeNote・Today Score Everyday・AspectFit・Homework。" />
+<meta name="twitter:description" property="og:description" content="個人で開発・公開している iOS アプリの一覧。Runrunrun・まぎれんぼ・Grillog・TeeNote・Today Score Everyday・AspectFit・Homework。" />
 <link rel="canonical" href="https://masamichiueta.github.io/apps/" />
 <meta property="og:url" content="https://masamichiueta.github.io/apps/" />
 <meta property="og:site_name" content="Masamichi Ueta" />
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Apps" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Masamichi Ueta"},"description":"個人で開発・公開している iOS アプリの一覧。Grillog・TeeNote・Today Score Everyday・AspectFit・Homework。","headline":"Apps","url":"https://masamichiueta.github.io/apps/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Masamichi Ueta"},"description":"個人で開発・公開している iOS アプリの一覧。Runrunrun・まぎれんぼ・Grillog・TeeNote・Today Score Everyday・AspectFit・Homework。","headline":"Apps","url":"https://masamichiueta.github.io/apps/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -359,183 +359,411 @@
     </div>
   </div>
 </section>
-<section class="py-5">
-  <div class="container small-container">
 
-    <header class="mb-5">
-      <p class="mb-1">個人で開発・公開している iOS アプリの一覧です。</p>
-      <p class="text-body-secondary mb-0" lang="en">iOS apps I design and build on my own.</p>
+<style>
+  .apps-section {
+    --apps-fg: #1d1d1f;
+    --apps-body: #3c3c41;
+    --apps-muted: #6e6e73;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                 "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+    color: var(--apps-fg);
+  }
+
+  .apps-section .apps-container { max-width: 980px; }
+
+  /* ---------- 導入 ---------- */
+  .apps-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 16px 0 56px;
+  }
+  .apps-intro h2 {
+    font-size: clamp(1.6rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  /* 日本語は語中で改行されるので、文節のかたまりで折り返す */
+  .apps-intro h2 .line { display: inline-block; }
+  .apps-intro p {
+    color: var(--apps-muted);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0;
+  }
+
+  /* ---------- アプリのタイル ---------- */
+  .app-list {
+    display: grid;
+    gap: 24px;
+    margin: 0 0 64px;
+    padding: 0;
+  }
+
+  .app-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    padding: 56px 56px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 272px;
+    column-gap: 48px;
+    align-items: center;
+    /* 背景色に向かって溶けるよう、地の色は --bs-body-bg から混ぜる。
+       1行目は color-mix 非対応ブラウザ向けのフォールバック */
+    background: #f5f5f7;
+    background:
+      linear-gradient(155deg,
+        color-mix(in srgb, var(--b1) 22%, var(--bs-body-bg)) 0%,
+        color-mix(in srgb, var(--b2) 11%, var(--bs-body-bg)) 58%,
+        color-mix(in srgb, var(--b2) 5%, var(--bs-body-bg)) 100%);
+  }
+  .app-tile:nth-child(even) { grid-template-columns: 272px minmax(0, 1fr); }
+  .app-tile:nth-child(even) .app-tile-body { order: 2; }
+  .app-tile:nth-child(even) .app-shot { order: 1; }
+
+  .app-tile-body { padding-bottom: 56px; }
+
+  .app-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+    display: block;
+    margin: 0 0 22px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .16);
+    /* 白いアイコンが淡い背景に溶けないよう、ヘアラインを重ねる */
+    outline: 1px solid rgba(0, 0, 0, .07);
+    outline-offset: -1px;
+  }
+
+  .app-name {
+    font-size: clamp(1.5rem, 3vw, 2.05rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin: 0 0 10px;
+  }
+  .app-name .app-name-en {
+    font-size: .55em;
+    font-weight: 400;
+    color: var(--apps-muted);
+    letter-spacing: 0;
+    margin-left: .35em;
+  }
+
+  .app-tagline {
+    font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.4;
+    margin: 0 0 5px;
+    text-wrap: balance;
+    word-break: auto-phrase; /* 対応ブラウザでは文節で折り返す */
+  }
+  .app-tagline-en {
+    color: var(--apps-muted);
+    font-size: .95rem;
+    margin: 0 0 20px;
+  }
+
+  .app-desc {
+    color: var(--apps-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 0 10px;
+  }
+  .app-desc-en {
+    color: var(--apps-muted);
+    font-size: .875rem;
+    line-height: 1.65;
+    margin: 0 0 28px;
+  }
+
+  .app-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 22px;
+  }
+  .app-cta {
+    display: inline-block;
+    padding: 11px 24px;
+    border-radius: 999px;
+    background: var(--bk);
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .16);
+    transition: opacity .2s ease;
+  }
+  .app-cta:hover, .app-cta:focus { color: #fff; opacity: .9; text-decoration: none; }
+  .app-sublink {
+    font-size: .9rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--bk);
+    white-space: nowrap;
+  }
+  .app-sublink::after { content: "\00A0\203A"; }
+  .app-sublink:hover { text-decoration: underline; }
+
+  /* ---------- スクリーンショット ---------- */
+  .app-shot {
+    align-self: end;
+    justify-self: center;
+    width: 100%;
+    max-width: 272px;
+    margin-bottom: -136px;
+  }
+  .app-shot .app-shot-frame {
+    padding: 6px;
+    border-radius: 34px;
+    background: linear-gradient(165deg, #4a4a4e, #1d1d1f);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, .26);
+  }
+  .app-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 28px;
+    background: #fff;
+  }
+
+  /* ---------- 補足 ---------- */
+  .apps-note {
+    text-align: center;
+    color: var(--apps-muted);
+    font-size: .92rem;
+    line-height: 1.9;
+    margin: 0;
+  }
+
+  /* ---------- ダークモード（サイト全体の data-bs-theme に追従） ---------- */
+  [data-bs-theme="dark"] .apps-section {
+    --apps-fg: #f5f5f7;
+    --apps-body: #d2d2d7;
+    --apps-muted: #a1a1a6;
+  }
+  [data-bs-theme="dark"] .app-tile {
+    background: #2a2a2e;
+    background:
+      linear-gradient(155deg,
+        color-mix(in srgb, var(--b1) 30%, var(--bs-body-bg)) 0%,
+        color-mix(in srgb, var(--b2) 17%, var(--bs-body-bg)) 58%,
+        color-mix(in srgb, var(--b2) 8%, var(--bs-body-bg)) 100%);
+  }
+  [data-bs-theme="dark"] .app-icon {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .5);
+    outline-color: rgba(255, 255, 255, .1);
+  }
+  [data-bs-theme="dark"] .app-sublink { color: color-mix(in srgb, var(--bk) 45%, #fff); }
+  [data-bs-theme="dark"] .app-shot .app-shot-frame {
+    background: linear-gradient(165deg, #5c5c60, #2a2a2c);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, .5);
+  }
+
+  @media (max-width: 860px) {
+    .apps-intro { padding: 8px 0 40px; }
+    .app-list { gap: 20px; }
+    .app-tile,
+    .app-tile:nth-child(even) {
+      grid-template-columns: minmax(0, 1fr);
+      padding: 44px 28px 0;
+      row-gap: 8px;
+    }
+    .app-tile:nth-child(even) .app-tile-body { order: 0; }
+    .app-tile:nth-child(even) .app-shot { order: 0; }
+    .app-tile-body { padding-bottom: 32px; }
+    .app-icon { width: 60px; height: 60px; border-radius: 14px; margin-bottom: 18px; }
+    .app-shot { max-width: 228px; margin-bottom: -110px; }
+  }
+</style>
+
+<section class="apps-section py-5">
+  <div class="container apps-container">
+
+    <header class="apps-intro">
+      <h2><span class="line">個人で開発・公開している</span> <span class="line">iOS アプリの一覧です。</span></h2>
+      <p lang="en">iOS apps I design and build on my own.</p>
     </header>
 
-    <ul class="list-unstyled mb-5">
+    <ul class="app-list list-unstyled">
 
-      <li class="card rounded-4 mb-3">
-        <div class="card-body p-4">
-          <div class="d-flex align-items-start">
-            <img class="rounded-4 shadow-sm flex-shrink-0" src="https://masamichiueta.github.io/runrunrun/assets/icon.png"
-              alt="Runrunrun アプリアイコン" width="72" height="72" loading="lazy">
-            <div class="ms-3 ms-md-4">
-              <h3 class="h4 mb-1 text-body-emphasis">Runrunrun</h3>
-              <p class="fw-semibold text-body-emphasis mb-0">ヘルスケアに残ったランを読み解く</p>
-              <p class="small text-body-secondary mb-3" lang="en">Read your runs from Health</p>
-              <p class="mb-2">ワークアウトの開始ボタンはありません。計測は今までどおりのやり方にまかせて、ヘルスケアに残ったランをスプリット・ペース・心拍ゾーン・ルートで振り返るアプリ。</p>
-              <p class="small text-body-secondary mb-3" lang="en">There is no start button. Keep recording the way you
-                always have — this app reads the runs Health already holds and gives you splits, pace, heart rate
-                zones, and routes to look back on.</p>
-              <div class="d-flex flex-wrap align-items-center gap-3">
-                <a class="btn btn-primary btn-sm rounded-pill px-3"
-                  href="https://apps.apple.com/jp/app/id6803870878">App Store で見る</a>
-                <a class="small" href="https://masamichiueta.github.io/runrunrun/">アプリサイト</a>
-                <a class="small" href="https://masamichiueta.github.io/runrunrun/en/" lang="en">English</a>
-              </div>
-            </div>
+      <li class="app-tile" style="--b1:#2E8BFF; --b2:#0B57D0; --bk:#0B57D0;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="https://masamichiueta.github.io/runrunrun/assets/icon.png" alt="Runrunrun アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">Runrunrun</h3>
+          <p class="app-tagline">ヘルスケアに残ったランを読み解く</p>
+          <p class="app-tagline-en" lang="en">Read your runs from Health</p>
+          <p class="app-desc">ワークアウトの開始ボタンはありません。計測は今までどおりのやり方にまかせて、ヘルスケアに残ったランをスプリット・ペース・心拍ゾーン・ルートで振り返るアプリ。</p>
+          <p class="app-desc-en" lang="en">There is no start button. Keep recording the way you always have — this app
+            reads the runs Health already holds and gives you splits, pace, heart rate zones, and routes to look back
+            on.</p>
+          <div class="app-actions">
+            <a class="app-cta" href="https://apps.apple.com/jp/app/id6803870878">App Store で見る</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/runrunrun/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/runrunrun/en/" lang="en">English</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="https://masamichiueta.github.io/runrunrun/assets/shot-home.png"
+              alt="Runrunrun のホーム画面。今週の走行距離と次のレースまでの残り日数" width="405" height="880" loading="lazy">
           </div>
         </div>
       </li>
 
-      <li class="card rounded-4 mb-3">
-        <div class="card-body p-4">
-          <div class="d-flex align-items-start">
-            <img class="rounded-4 shadow-sm flex-shrink-0" src="https://masamichiueta.github.io/magirenbo/assets/icon.png"
-              alt="まぎれんぼ アプリアイコン" width="72" height="72" loading="lazy">
-            <div class="ms-3 ms-md-4">
-              <h3 class="h4 mb-1 text-body-emphasis">
-                まぎれんぼ <span class="fs-6 fw-normal text-body-tertiary">Magirenbo</span>
-              </h3>
-              <p class="fw-semibold text-body-emphasis mb-0">絵文字さがしパズル</p>
-              <p class="small text-body-secondary mb-3" lang="en">Spot the odd emoji out</p>
-              <p class="mb-2">ずらりと並んだ絵文字の中から、たった1つだけ違うものをさがすパズル。ステージが進むほど絵文字は増え、最後は900個の壁。</p>
-              <p class="small text-body-secondary mb-3" lang="en">Find the one emoji in the wall that isn't like the
-                others. Every stage adds more emoji — the last tier is a wall of 900.</p>
-              <div class="d-flex flex-wrap align-items-center gap-3">
-                <a class="btn btn-primary btn-sm rounded-pill px-3"
-                  href="https://apps.apple.com/jp/app/id6798993976">App Store で見る</a>
-                <a class="small" href="https://masamichiueta.github.io/magirenbo/">アプリサイト</a>
-                <a class="small" href="https://masamichiueta.github.io/magirenbo/en/" lang="en">English</a>
-              </div>
-            </div>
+      <li class="app-tile" style="--b1:#8B7BFF; --b2:#4B34C8; --bk:#4B34C8;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="https://masamichiueta.github.io/magirenbo/assets/icon.png" alt="まぎれんぼ アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">まぎれんぼ<span class="app-name-en" lang="en">Magirenbo</span></h3>
+          <p class="app-tagline">絵文字さがしパズル</p>
+          <p class="app-tagline-en" lang="en">Spot the odd emoji out</p>
+          <p class="app-desc">ずらりと並んだ絵文字の中から、たった1つだけ違うものをさがすパズル。ステージが進むほど絵文字は増え、最後は900個の壁。</p>
+          <p class="app-desc-en" lang="en">Find the one emoji in the wall that isn't like the others. Every stage adds
+            more emoji — the last tier is a wall of 900.</p>
+          <div class="app-actions">
+            <a class="app-cta" href="https://apps.apple.com/jp/app/id6798993976">App Store で見る</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/magirenbo/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/magirenbo/en/" lang="en">English</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="https://masamichiueta.github.io/magirenbo/assets/shot-hard.png"
+              alt="まぎれんぼのプレイ画面。同じ絵文字が並ぶ中に1つだけ違う絵文字がまぎれている" width="540" height="1173" loading="lazy">
           </div>
         </div>
       </li>
 
-      <li class="card rounded-4 mb-3">
-        <div class="card-body p-4">
-          <div class="d-flex align-items-start">
-            <img class="rounded-4 shadow-sm flex-shrink-0" src="https://masamichiueta.github.io/grillog/assets/icon.png"
-              alt="Grillog アプリアイコン" width="72" height="72" loading="lazy">
-            <div class="ms-3 ms-md-4">
-              <h3 class="h4 mb-1 text-body-emphasis">Grillog</h3>
-              <p class="fw-semibold text-body-emphasis mb-0">食べた部位まで残す、焼肉の記録</p>
-              <p class="small text-body-secondary mb-3" lang="en">A yakiniku log, down to every cut</p>
-              <p class="mb-2">訪問ごとに、食べた部位ひとつひとつへ星とメモを。写真中心のフィードと、部位ランキング・月別支出の統計。</p>
-              <p class="small text-body-secondary mb-3" lang="en">Rate and note every cut you ate, visit by visit. A
-                photo-first feed, cut rankings, and monthly spending stats.</p>
-              <div class="d-flex flex-wrap align-items-center gap-3">
-                <a class="btn btn-primary btn-sm rounded-pill px-3"
-                  href="https://apps.apple.com/jp/app/id6794827666">App Store で見る</a>
-                <a class="small" href="https://masamichiueta.github.io/grillog/">アプリサイト</a>
-              </div>
-            </div>
+      <li class="app-tile" style="--b1:#FEB648; --b2:#E06A0A; --bk:#B85C05;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="https://masamichiueta.github.io/grillog/assets/icon.png" alt="Grillog アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">Grillog</h3>
+          <p class="app-tagline">食べた部位まで残す、焼肉の記録</p>
+          <p class="app-tagline-en" lang="en">A yakiniku log, down to every cut</p>
+          <p class="app-desc">訪問ごとに、食べた部位ひとつひとつへ星とメモを。写真中心のフィードと、部位ランキング・月別支出の統計。</p>
+          <p class="app-desc-en" lang="en">Rate and note every cut you ate, visit by visit. A photo-first feed, cut
+            rankings, and monthly spending stats.</p>
+          <div class="app-actions">
+            <a class="app-cta" href="https://apps.apple.com/jp/app/id6794827666">App Store で見る</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/grillog/">アプリサイト</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="https://masamichiueta.github.io/grillog/assets/shot-feed.png"
+              alt="Grillog のフィード画面。訪問した焼肉店の記録が写真付きで並ぶ" width="405" height="880" loading="lazy">
           </div>
         </div>
       </li>
 
-      <li class="card rounded-4 mb-3">
-        <div class="card-body p-4">
-          <div class="d-flex align-items-start">
-            <img class="rounded-4 shadow-sm flex-shrink-0" src="https://masamichiueta.github.io/teenote/assets/icon.png"
-              alt="TeeNote アプリアイコン" width="72" height="72" loading="lazy">
-            <div class="ms-3 ms-md-4">
-              <h3 class="h4 mb-1 text-body-emphasis">TeeNote</h3>
-              <p class="fw-semibold text-body-emphasis mb-0">ゴルフのスコアを、シンプルに記録</p>
-              <p class="small text-body-secondary mb-3" lang="en">Golf score tracking, made simple</p>
-              <p class="mb-2">ホール単位でサッと入力、同伴者のスコアもまとめて記録。統計とチャートで上達が見える、ゴルファーのためのスコア管理アプリ。</p>
-              <p class="small text-body-secondary mb-3" lang="en">Enter scores hole by hole in seconds and record your
-                playing partners in the same round. Stats and charts show your game improving.</p>
-              <div class="d-flex flex-wrap align-items-center gap-3">
-                <a class="btn btn-primary btn-sm rounded-pill px-3"
-                  href="https://apps.apple.com/jp/app/teenote/id6787110028">App Store で見る</a>
-                <a class="small" href="https://masamichiueta.github.io/teenote/">アプリサイト</a>
-                <a class="small" href="https://masamichiueta.github.io/teenote/en/" lang="en">English</a>
-              </div>
-            </div>
+      <li class="app-tile" style="--b1:#5FC46C; --b2:#1F8F5F; --bk:#1A7A50;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="https://masamichiueta.github.io/teenote/assets/icon.png" alt="TeeNote アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">TeeNote</h3>
+          <p class="app-tagline">ゴルフのスコアを、シンプルに記録</p>
+          <p class="app-tagline-en" lang="en">Golf score tracking, made simple</p>
+          <p class="app-desc">ホール単位でサッと入力、同伴者のスコアもまとめて記録。統計とチャートで上達が見える、ゴルファーのためのスコア管理アプリ。</p>
+          <p class="app-desc-en" lang="en">Enter scores hole by hole in seconds and record your playing partners in the
+            same round. Stats and charts show your game improving.</p>
+          <div class="app-actions">
+            <a class="app-cta" href="https://apps.apple.com/jp/app/teenote/id6787110028">App Store で見る</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/teenote/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/teenote/en/" lang="en">English</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="https://masamichiueta.github.io/teenote/assets/shot-detail.png"
+              alt="TeeNote のラウンド詳細画面。合計スコア・パット数・スコアカードが並ぶ" width="640" height="1390" loading="lazy">
           </div>
         </div>
       </li>
 
-      <li class="card rounded-4 mb-3">
-        <div class="card-body p-4">
-          <div class="d-flex align-items-start">
-            <img class="rounded-4 shadow-sm flex-shrink-0" src="https://masamichiueta.github.io/today/assets/icon.png"
-              alt="Today Score Everyday アプリアイコン" width="72" height="72" loading="lazy">
-            <div class="ms-3 ms-md-4">
-              <h3 class="h4 mb-1 text-body-emphasis">Today Score Everyday</h3>
-              <p class="fw-semibold text-body-emphasis mb-0">1日1回、今日を1〜10で記録</p>
-              <p class="small text-body-secondary mb-3" lang="en">Rate your day from 1 to 10</p>
-              <p class="mb-2">今日は何点？ 1〜10から選んで、ひとことメモを添えるだけ。月別の履歴とカレンダー、平均・連続記録・推移グラフでやさしく振り返れます。</p>
-              <p class="small text-body-secondary mb-3" lang="en">How was today? Pick a number from 1 to 10, add a quick
-                note, and you're done. Look back with monthly history, a calendar, and stats.</p>
-              <div class="d-flex flex-wrap align-items-center gap-3">
-                <a class="btn btn-primary btn-sm rounded-pill px-3"
-                  href="https://apps.apple.com/jp/app/today-score-everyday/id6777611175">App Store で見る</a>
-                <a class="small" href="https://masamichiueta.github.io/today/">アプリサイト</a>
-                <a class="small" href="https://masamichiueta.github.io/today/en/" lang="en">English</a>
-              </div>
-            </div>
+      <li class="app-tile" style="--b1:#FF8CC6; --b2:#7B86F5; --bk:#5B62D6;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="https://masamichiueta.github.io/today/assets/icon.png" alt="Today Score Everyday アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">Today Score Everyday</h3>
+          <p class="app-tagline">1日1回、今日を1〜10で記録</p>
+          <p class="app-tagline-en" lang="en">Rate your day from 1 to 10</p>
+          <p class="app-desc">今日は何点？ 1〜10から選んで、ひとことメモを添えるだけ。月別の履歴とカレンダー、平均・連続記録・推移グラフでやさしく振り返れます。</p>
+          <p class="app-desc-en" lang="en">How was today? Pick a number from 1 to 10, add a quick note, and you're done.
+            Look back with monthly history, a calendar, and stats.</p>
+          <div class="app-actions">
+            <a class="app-cta" href="https://apps.apple.com/jp/app/today-score-everyday/id6777611175">App Store で見る</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/today/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/today/en/" lang="en">English</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="https://masamichiueta.github.io/today/assets/shot-today.png"
+              alt="Today Score Everyday の記録画面。今日の点数を1〜10から選ぶ" width="1206" height="2622" loading="lazy">
           </div>
         </div>
       </li>
 
-      <li class="card rounded-4 mb-3">
-        <div class="card-body p-4">
-          <div class="d-flex align-items-start">
-            <img class="rounded-4 shadow-sm flex-shrink-0" src="https://masamichiueta.github.io/aspectfit/assets/icon.png"
-              alt="AspectFit アプリアイコン" width="72" height="72" loading="lazy">
-            <div class="ms-3 ms-md-4">
-              <h3 class="h4 mb-1 text-body-emphasis">AspectFit</h3>
-              <p class="fw-semibold text-body-emphasis mb-0">写真を選べる比率に自然拡張</p>
-              <p class="small text-body-secondary mb-3" lang="en">Extend photos to preset ratios</p>
-              <p class="mb-2">トリミングも余白もなしで、写真を必要なアスペクト比に。新しく広がった領域を、元画像から生成した背景で自然に埋めます。</p>
-              <p class="small text-body-secondary mb-3" lang="en">Reshape any photo to the exact aspect ratio you need —
-                no cropping, no bars. The new space is filled with a background generated from your own image.</p>
-              <div class="d-flex flex-wrap align-items-center gap-3">
-                <a class="btn btn-primary btn-sm rounded-pill px-3"
-                  href="https://apps.apple.com/jp/app/aspectfit/id6772523112">App Store で見る</a>
-                <a class="small" href="https://masamichiueta.github.io/aspectfit/">アプリサイト</a>
-                <a class="small" href="https://masamichiueta.github.io/aspectfit/en/" lang="en">English</a>
-              </div>
-            </div>
+      <li class="app-tile" style="--b1:#4DA3FF; --b2:#0A6CF0; --bk:#0A6CF0;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="https://masamichiueta.github.io/aspectfit/assets/icon.png" alt="AspectFit アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">AspectFit</h3>
+          <p class="app-tagline">写真を選べる比率に自然拡張</p>
+          <p class="app-tagline-en" lang="en">Extend photos to preset ratios</p>
+          <p class="app-desc">トリミングも余白もなしで、写真を必要なアスペクト比に。新しく広がった領域を、元画像から生成した背景で自然に埋めます。</p>
+          <p class="app-desc-en" lang="en">Reshape any photo to the exact aspect ratio you need — no cropping, no bars.
+            The new space is filled with a background generated from your own image.</p>
+          <div class="app-actions">
+            <a class="app-cta" href="https://apps.apple.com/jp/app/aspectfit/id6772523112">App Store で見る</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/aspectfit/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/aspectfit/en/" lang="en">English</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="https://masamichiueta.github.io/aspectfit/assets/shot-result.png"
+              alt="AspectFit の生成結果画面。写真が指定した比率まで自然に広げられている" width="425" height="923" loading="lazy">
           </div>
         </div>
       </li>
 
-      <li class="card rounded-4 mb-3">
-        <div class="card-body p-4">
-          <div class="d-flex align-items-start">
-            <img class="rounded-4 shadow-sm flex-shrink-0" src="https://masamichiueta.github.io/homework/assets/icon.png"
-              alt="Homework アプリアイコン" width="72" height="72" loading="lazy">
-            <div class="ms-3 ms-md-4">
-              <h3 class="h4 mb-1 text-body-emphasis">Homework</h3>
-              <p class="fw-semibold text-body-emphasis mb-0">こどもがじぶんできろくするべんきょうタイマー</p>
-              <p class="small text-body-secondary mb-3" lang="en">A study timer kids run themselves</p>
-              <p class="mb-2">塾・学校の宿題にかけた時間を、子どもが自分で記録。ひらがな主体のやさしい画面と、ストリーク・レベル・グラフ・300種類のバッジ。</p>
-              <p class="small text-body-secondary mb-3" lang="en">Children record the time they spend on homework or
-                cram school, all by themselves. Streaks, levels, charts, and 300 badges make every day's effort visible.
-              </p>
-              <div class="d-flex flex-wrap align-items-center gap-3">
-                <a class="btn btn-primary btn-sm rounded-pill px-3"
-                  href="https://apps.apple.com/jp/app/homework/id6768120022">App Store で見る</a>
-                <a class="small" href="https://masamichiueta.github.io/homework/">アプリサイト</a>
-                <a class="small" href="https://masamichiueta.github.io/homework/en/" lang="en">English</a>
-              </div>
-            </div>
+      <li class="app-tile" style="--b1:#7BAFFF; --b2:#2C6FDB; --bk:#2C6FDB;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="https://masamichiueta.github.io/homework/assets/icon.png" alt="Homework アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">Homework</h3>
+          <p class="app-tagline">こどもがじぶんできろくするべんきょうタイマー</p>
+          <p class="app-tagline-en" lang="en">A study timer kids run themselves</p>
+          <p class="app-desc">塾・学校の宿題にかけた時間を、子どもが自分で記録。ひらがな主体のやさしい画面と、ストリーク・レベル・グラフ・300種類のバッジ。</p>
+          <p class="app-desc-en" lang="en">Children record the time they spend on homework or cram school, all by
+            themselves. Streaks, levels, charts, and 300 badges make every day's effort visible.</p>
+          <div class="app-actions">
+            <a class="app-cta" href="https://apps.apple.com/jp/app/homework/id6768120022">App Store で見る</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/homework/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/homework/en/" lang="en">English</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="https://masamichiueta.github.io/homework/assets/shot-home.png"
+              alt="Homework のホーム画面。レベル・きょうの勉強時間・連続記録が並ぶ" width="425" height="920" loading="lazy">
           </div>
         </div>
       </li>
 
     </ul>
 
-    <p class="text-body-secondary">
+    <p class="apps-note">
       不具合のご報告・ご要望は、各アプリのサポートページからどうぞ。<br>
       <span lang="en">For bug reports and feature requests, see the support page on each app's site.</span>
     </p>
