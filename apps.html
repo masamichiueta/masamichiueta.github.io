@@ -5,8 +5,48 @@ description: 個人で開発・公開している iOS アプリの一覧。Runru
 permalink: /apps/
 ---
 
-<section class="hero text-center" style="background-image: url({{ site.url }}/assets/layouts/apps.jpg)">
-  <div class="overlay" style="opacity: .5"></div>
+{%- comment -%}
+  ヒーローに敷き詰めるアイコンは assets/apps-hero/ の中身をそのまま使う。
+  アプリを追加したら `make hero-icons` を一度流すだけでここに並ぶので、
+  このファイルを触る必要はない。
+{%- endcomment -%}
+{%- assign ah_icons = site.static_files
+      | where_exp: "f", "f.path contains '/assets/apps-hero/'"
+      | where_exp: "f", "f.extname == '.png'"
+      | sort: "path" -%}
+{%- assign ah_count = ah_icons | size -%}
+{%- assign ah_shifts = "0.53,0.12,0.73,0.29,0.00,0.60,0.19,0.80,0.39,0.07,0.66,0.26,0.49,0.02,0.77,0.34,0.56,0.15,0.63,0.23,0.70,0.09,0.44" | split: "," -%}
+{%- assign ah_scales = "1,0.86,1,1,0.78,0.92" | split: "," -%}
+
+<section class="hero apps-hero text-center">
+  {%- comment -%}
+    App Store のヒーローに倣ったアイコンの敷き詰め。
+    列ごとに縦位置をずらし、セル単位で大きさを変えたり抜いたりして、
+    整列しすぎない見た目にしている。装飾なので aria-hidden。
+  {%- endcomment -%}
+  <div class="apps-hero-wall" aria-hidden="true">
+    {%- if ah_count > 0 -%}
+    {%- for c in (0..22) -%}
+      {%- assign c3 = c | times: 3 -%}
+      {%- assign c5 = c | times: 5 -%}
+    <div class="ah-col" style="--ah-shift: {{ ah_shifts[c] }}">
+      {%- for r in (0..8) -%}
+        {%- assign hole = r | times: 4 | plus: c5 | modulo: 13 -%}
+        {%- if hole == 0 -%}
+      <div class="ah-cell"></div>
+        {%- else -%}
+          {%- assign icon = r | times: 5 | plus: c3 | modulo: ah_count -%}
+          {%- assign scale = r | times: 7 | plus: c5 | modulo: 6 -%}
+      <div class="ah-cell"><img class="ah-icon" style="--ah-scale: {{ ah_scales[scale] }}"
+          src="{{ ah_icons[icon].path | prepend: site.url }}" alt="" width="256" height="256"
+          decoding="async"></div>
+        {%- endif -%}
+      {%- endfor %}
+    </div>
+    {%- endfor -%}
+    {%- endif %}
+  </div>
+  <div class="apps-hero-veil" aria-hidden="true"></div>
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
       <h1>Apps</h1>
@@ -15,6 +55,114 @@ permalink: /apps/
 </section>
 
 <style>
+  /* ---------- ヒーロー：アプリアイコンの敷き詰め ---------- */
+  .hero.apps-hero {
+    /* アイコン1辺。列ピッチ＝アイコン＋間隔で、行数・列数はこれを基準に決めている */
+    --ah-size: clamp(68px, 6vw, 120px);
+    --ah-gap: calc(var(--ah-size) * 0.26);
+    --ah-pitch: calc(var(--ah-size) + var(--ah-gap));
+    --ah-bg: var(--bs-body-bg);
+    --ah-fg: #1d1d1f;
+    /* 中央を抜く楕円の大きさ。狭い画面では横に広がりすぎるので後段で絞る */
+    --ah-veil-x: 54%;
+    --ah-veil-y: 56%;
+
+    background-image: none;
+    background-color: var(--ah-bg);
+    color: var(--ah-fg);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                 "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+  }
+
+  .apps-hero-wall {
+    position: absolute;
+    /* 上端でアイコンが切れるように、1行分まるごと上へ出しておく。
+       --ah-shift は 0〜0.8 ピッチなので、いちばん下がった列でも上端は隠れる */
+    top: calc(var(--ah-pitch) * -1);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--ah-gap);
+    pointer-events: none;
+  }
+
+  .ah-col {
+    flex: 0 0 var(--ah-size);
+    display: flex;
+    flex-direction: column;
+    gap: var(--ah-gap);
+    /* 列ごとの縦ずらし。0〜0.8 ピッチ（下方向のみ）に収めてある */
+    transform: translateY(calc(var(--ah-shift, 0) * var(--ah-pitch)));
+  }
+
+  /* セルは常に同じ大きさ。アイコンを縮めても列の高さが変わらないようにする */
+  .ah-cell {
+    flex: 0 0 auto;
+    width: var(--ah-size);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ah-icon {
+    width: calc(var(--ah-size) * var(--ah-scale, 1));
+    height: auto;
+    aspect-ratio: 1;
+    /* 角丸が焼き込まれていないアイコンもあるので、CSS 側でそろえる */
+    border-radius: 22.5%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .07), 0 10px 24px rgba(0, 0, 0, .06);
+    /* 白いアイコンが地の色に溶けないよう、ヘアラインを重ねる（.app-icon と同じ） */
+    outline: 1px solid rgba(0, 0, 0, .07);
+    outline-offset: -1px;
+  }
+
+  /* 中央を地の色で抜いてタイトルを読ませ、下端はページ本体へ溶かす */
+  .apps-hero-veil {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse var(--ah-veil-x) var(--ah-veil-y) at 50% 50%, var(--ah-bg) 30%, transparent 80%),
+      linear-gradient(to bottom, transparent 56%, var(--ah-bg) 100%);
+    background:
+      radial-gradient(ellipse var(--ah-veil-x) var(--ah-veil-y) at 50% 50%,
+        var(--ah-bg) 0%,
+        var(--ah-bg) 30%,
+        color-mix(in srgb, var(--ah-bg) 80%, transparent) 52%,
+        color-mix(in srgb, var(--ah-bg) 40%, transparent) 68%,
+        transparent 84%),
+      linear-gradient(to bottom, transparent 56%, var(--ah-bg) 100%);
+  }
+
+  .apps-hero h1 {
+    font-size: clamp(2.75rem, 9vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    margin: 0;
+  }
+
+  [data-bs-theme="dark"] .hero.apps-hero { --ah-fg: #f5f5f7; }
+  [data-bs-theme="dark"] .ah-icon {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .5), 0 12px 28px rgba(0, 0, 0, .38);
+    outline-color: rgba(255, 255, 255, .1);
+  }
+
+  /* 画面が狭いほど楕円は相対的に大きく効いてしまうので、段階的に絞る */
+  @media (max-width: 991.98px) {
+    .hero.apps-hero { --ah-veil-x: 50%; --ah-veil-y: 42%; }
+  }
+
+  @media (max-width: 767.98px) {
+    .hero.apps-hero {
+      height: 460px;
+      min-height: 460px;
+      --ah-veil-x: 46%;
+      --ah-veil-y: 32%;
+    }
+  }
+
+
   .apps-section {
     --apps-fg: #1d1d1f;
     --apps-body: #3c3c41;
