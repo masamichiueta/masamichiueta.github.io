@@ -755,7 +755,7 @@
           src="https://masamichiueta.github.io/assets/apps-hero/grillog.png" alt="" width="256" height="256"
           decoding="async"></div>
     </div>
-  </div>
+  </div><div class="overlay" style="opacity: .5"></div>
   <div class="apps-hero-veil" aria-hidden="true"></div>
   <div class="d-flex align-items-center justify-content-between h-100 position-relative">
     <div class="container">
@@ -772,14 +772,9 @@
     --ah-gap: calc(var(--ah-size) * 0.26);
     --ah-pitch: calc(var(--ah-size) + var(--ah-gap));
     --ah-bg: var(--bs-body-bg);
-    --ah-fg: #1d1d1f;
-    /* 中央を抜く楕円の大きさ。狭い画面では横に広がりすぎるので後段で絞る */
-    --ah-veil-x: 54%;
-    --ah-veil-y: 56%;
 
     background-image: none;
     background-color: var(--ah-bg);
-    color: var(--ah-fg);
     overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
                  "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
@@ -828,50 +823,17 @@
     outline-offset: -1px;
   }
 
-  /* 中央を地の色で抜いてタイトルを読ませ、下端はページ本体へ溶かす */
+  /* 下端だけページ本体へ溶かす */
   .apps-hero-veil {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse var(--ah-veil-x) var(--ah-veil-y) at 50% 50%, var(--ah-bg) 30%, transparent 80%),
-      linear-gradient(to bottom, transparent 56%, var(--ah-bg) 100%);
-    background:
-      radial-gradient(ellipse var(--ah-veil-x) var(--ah-veil-y) at 50% 50%,
-        var(--ah-bg) 0%,
-        var(--ah-bg) 30%,
-        color-mix(in srgb, var(--ah-bg) 80%, transparent) 52%,
-        color-mix(in srgb, var(--ah-bg) 40%, transparent) 68%,
-        transparent 84%),
-      linear-gradient(to bottom, transparent 56%, var(--ah-bg) 100%);
+    background: linear-gradient(to bottom, transparent 56%, var(--ah-bg) 100%);
   }
 
-  .apps-hero h1 {
-    font-size: clamp(2.75rem, 9vw, 5rem);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    margin: 0;
-  }
-
-  [data-bs-theme="dark"] .hero.apps-hero { --ah-fg: #f5f5f7; }
   [data-bs-theme="dark"] .ah-icon {
     box-shadow: 0 2px 8px rgba(0, 0, 0, .5), 0 12px 28px rgba(0, 0, 0, .38);
     outline-color: rgba(255, 255, 255, .1);
   }
-
-  /* 画面が狭いほど楕円は相対的に大きく効いてしまうので、段階的に絞る */
-  @media (max-width: 991.98px) {
-    .hero.apps-hero { --ah-veil-x: 50%; --ah-veil-y: 42%; }
-  }
-
-  @media (max-width: 767.98px) {
-    .hero.apps-hero {
-      height: 460px;
-      min-height: 460px;
-      --ah-veil-x: 46%;
-      --ah-veil-y: 32%;
-    }
-  }
-
 
   .apps-section {
     --apps-fg: #1d1d1f;
