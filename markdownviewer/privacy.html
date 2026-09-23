@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown Viewer &amp; Editor — Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for the Markdown Viewer &amp; Editor iOS app. The app collects no data, has no developer-operated server, and goes online only to fetch an image a document points at by URL or to open a link you tap.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/markdownviewer/assets/icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #0A6CF0;
+      --accent: #7B4FE0;
+      --accent-soft: rgba(123,79,224,0.10);
+      --code-bg: rgba(116,116,128,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --link: #6DB0FF;
+        --accent: #A99BFF;
+        --accent-soft: rgba(169,155,255,0.14);
+        --code-bg: rgba(118,118,128,0.24);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.75; font-size: 17px; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.88em; background: var(--code-bg);
+      padding: 1px 5px; border-radius: 5px;
+    }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); white-space: nowrap; }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; text-wrap: balance; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+      text-wrap: balance;
+    }
+    h3 { font-size: 1.1rem; font-weight: 650; margin: 38px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+    hr { display: none; }
+
+    .summary {
+      background: var(--accent-soft);
+      border-radius: 18px;
+      padding: 24px 26px;
+      margin: 28px 0 8px;
+    }
+    .summary p:last-child { margin-bottom: 0; }
+    .summary .label {
+      display: inline-block; font-size: 0.74rem; font-weight: 700;
+      letter-spacing: 0.05em; color: var(--accent); margin-bottom: 8px;
+    }
+    .summary ul { margin: 10px 0 0; }
+
+    .callout {
+      background: var(--bg-soft);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 24px 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav .inner { gap: 12px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+    /* ストア名は長いので、狭い画面ではホーム画面の名前（Markdown Viewer）までにし、
+       それも入らない幅ではアイコンだけにする */
+    @media (max-width: 560px) {
+      .nav .brand .rest { display: none; }
+    }
+    @media (max-width: 400px) {
+      .nav .brand .name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/markdownviewer/" aria-label="Markdown Viewer &amp; Editor"><img src="/markdownviewer/assets/icon.png" alt=""><span class="name">Markdown Viewer<span class="rest"> &amp; Editor</span></span></a>
+    <ul>
+      <li><a href="/markdownviewer/">トップ</a></li>
+      <li><a href="/markdownviewer/support.html">サポート</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+
+  <h1>Markdown Viewer &amp; Editor — プライバシーポリシー</h1>
+  <p class="updated">最終更新日 / Last updated: 2026-09-23</p>
+
+  <div class="summary">
+    <span class="label">要点</span>
+    <ul>
+      <li><strong>開発者はあなたのファイルを見られません。</strong>本Appはファイルを置いてある場所で読み書きするだけで、開発者が運用するサーバーは存在しません</li>
+      <li>アカウント登録は不要です。広告・トラッキング・解析 SDK は一切ありません</li>
+      <li><strong>本Appが通信するのは 2 つの場合だけです。</strong>文書が URL で指している画像を取りに行くときと、あなたがリンクを開いたときです</li>
+    </ul>
+  </div>
+
+  <h2>プライバシーポリシー（日本語）</h2>
+
+  <p>
+    Markdown Viewer &amp; Editor（以下「本App」）は、Masamichi Ueta（以下「開発者」）が提供する、
+    iPhone・iPad 向けの Markdown ビューア兼エディタです。
+    <strong>本Appは利用者のいかなる個人情報も収集しません。</strong>
+    開発者が利用者のファイルやその内容を閲覧・取得・第三者へ提供することは一切ありません。
+  </p>
+
+  <h3>1. 収集する情報</h3>
+
+  <p>
+    本Appは、利用者に関するいかなる情報も収集しません。アカウント登録は不要で、開発者が運用するサーバーは存在しません。
+    利用状況の解析、クラッシュログの独自収集、広告識別子（IDFA）の利用も行いません。
+    App Store の「App のプライバシー」欄では<strong>データを収集しないと申告</strong>しており、
+    本Appに同梱しているプライバシーマニフェストの内容と一致します。
+  </p>
+
+  <h3>2. 本Appが扱うファイル</h3>
+
+  <p>
+    本Appは、利用者が開いた Markdown ファイル（<code>.md</code> など）を、
+    <strong>そのファイルが置いてある場所のまま</strong>読み書きします。
+    ファイルを本Appの中に取り込んだり、複製を保管したりすることはありません。本App独自のデータベースもありません。
+  </p>
+  <ul>
+    <li>ファイルの保存先は、利用者が選んだ場所（iCloud Drive、この iPhone 内、その他のファイル提供元）です。
+      その場所での保管や同期は、それぞれの提供元（Apple の iCloud など）の規約とプライバシーポリシーに従います</li>
+    <li><strong>ファイルの内容が開発者に届くことはありません。</strong>開発者に送信する仕組み自体がありません</li>
+    <li>本Appが触れるのは、利用者が自分で開いたファイルと、利用者が許可したフォルダの中だけです（→ 6）</li>
+  </ul>
+
+  <h3>3. iCloud Drive のアプリのフォルダ</h3>
+
+  <p>
+    本Appは、iCloud Drive に「Markdown Viewer」という名前のアプリ専用のフォルダを持ちます。
+    iCloud にサインインしている端末では、初回起動時に、使い方を説明した見本の書類（<code>はじめに.md</code> /
+    <code>Getting Started.md</code>）をこのフォルダへ 1 つ置きます。
+  </p>
+  <ul>
+    <li>このフォルダは<strong>利用者自身の iCloud Drive の中</strong>にあり、Apple のアカウント保護のもとで同期されます。
+      <strong>開発者は内容を閲覧できません</strong></li>
+    <li>同期は iOS の iCloud Drive の仕組みによるものです。本Appは CloudKit などの独自のクラウド保存を使いません</li>
+    <li>見本の書類は、利用者が自由に削除できます</li>
+  </ul>
+
+  <h3>4. ネットワーク通信</h3>
+
+  <p>本Appが端末の外と通信するのは、次の 2 つの場合だけです。</p>
+
+  <table>
+    <tr><th>場面</th><th>通信の相手と内容</th></tr>
+    <tr>
+      <td>表示している文書に、URL で指定された画像（<code>![](https://…)</code>）が書かれているとき</td>
+      <td>文書に書かれた URL のサーバーへ、その画像を要求します。相手のサーバーには、ウェブページの閲覧と同様に、
+        IP アドレスや要求した URL などが伝わります。<strong>開発者には何も届きません</strong></td>
+    </tr>
+    <tr>
+      <td>利用者が文書の中のリンクをタップしたとき</td>
+      <td>iOS の Safari の画面（<code>SFSafariViewController</code>）でそのページを開きます。そこでの通信と閲覧内容は
+        Safari が扱うもので、本Appからは見えません</td>
+    </tr>
+  </table>
+
+  <p>
+    取得した画像は、表示のために iOS の標準の仕組みで端末内に一時的に保存（キャッシュ）されることがあります。
+    これら以外に、本Appが自ら通信することはありません。解析・広告のための通信もありません。
+    なお、iCloud Drive の同期は iOS が行うもので、本Appによる通信ではありません。
+  </p>
+
+  <h3>5. 写真の挿入</h3>
+
+  <p>
+    編集中に画像を挿入する機能では、iOS 標準の写真選択画面を使います。
+    <strong>本Appはフォトライブラリの読み取り権限を要求しません。</strong>本Appに渡るのは、利用者が選んだ写真だけです。
+  </p>
+  <ul>
+    <li>選んだ写真は、<strong>編集中の書類と同じフォルダ</strong>に画像ファイルとして保存されます。
+      開発者へ送信されることはなく、外部へアップロードもされません</li>
+    <li>JPEG・PNG・GIF・WebP は元のデータのまま保存するため、<strong>撮影日時や位置情報などの付帯情報が
+      画像ファイルに残る場合があります</strong>（HEIC は JPEG に変換して保存するため、付帯情報は引き継がれません）。
+      書類と画像を他の人に渡すときは、この点にご注意ください</li>
+  </ul>
+
+  <h3>6. フォルダの許可</h3>
+
+  <p>
+    iOS は、アプリが利用者の開いていないファイルに触れないよう、開いた書類 1 つぶんの権限をアプリに渡します。
+    そのため本Appは、書類の隣にある画像を表示したり保存したりするために、
+    利用者に<strong>そのフォルダを選んでもらう</strong>ことがあります。
+  </p>
+  <ul>
+    <li>許可されたフォルダへの参照（ブックマーク）は、<strong>端末内</strong>に保存されます。外部へ送信されることはありません</li>
+    <li>参照できるのは、利用者が明示的に選んだフォルダとその中身だけです</li>
+    <li>本Appを端末から削除すると、この参照も消えます</li>
+  </ul>
+
+  <h3>7. 端末内に保存される情報</h3>
+
+  <table>
+    <tr><th>情報</th><th>保存場所</th></tr>
+    <tr><td>表示設定（書体・文字の大きさ・行間・1 行の最大幅・テーマ）</td><td>端末内の設定領域</td></tr>
+    <tr><td>フォルダの許可（→ 6）</td><td>端末内の設定領域</td></tr>
+    <tr><td>見本の書類を置いたかどうかの記録（→ 3）</td><td>端末内の設定領域</td></tr>
+  </table>
+
+  <p>
+    いずれも本Appの中だけで読み書きするもので、開発者や第三者へ送信されることはありません。
+    本Appを端末から削除すると、これらも削除されます。
+  </p>
+
+  <h3>8. 収集しない情報</h3>
+
+  <p>本Appは、以下をはじめとするいかなる情報も収集・送信しません。</p>
+  <ul>
+    <li>氏名、メールアドレス、電話番号などの連絡先情報</li>
+    <li>開いた文書の内容、ファイル名、フォルダの構成</li>
+    <li>連絡先、写真、カレンダーなど端末内の他のデータ</li>
+    <li>位置情報（本Appは位置情報サービスを使用しません）</li>
+    <li>利用状況の解析データ、行動履歴</li>
+    <li>広告識別子（IDFA）その他の識別子</li>
+  </ul>
+  <p>
+    本Appには解析ツール・広告ネットワーク・トラッキング用の SDK が一切組み込まれておらず、
+    App Tracking Transparency の対象となる処理も行いません。
+  </p>
+
+  <h3>9. 第三者のコード</h3>
+
+  <p>
+    本Appが利用している外部のコードは、Apple が公開している
+    <a href="https://github.com/apple/swift-markdown" target="_blank" rel="noopener">swift-markdown</a> と、
+    それが使う <a href="https://github.com/swiftlang/swift-cmark" target="_blank" rel="noopener">swift-cmark</a> の 2 件だけです。
+    どちらも Markdown を解析するためのライブラリで、通信もデータ収集も行いません。
+    これらのライセンス本文は、アプリ内の「表示設定」→「オープンソースライセンス」から読めます。
+  </p>
+
+  <h3>10. Apple から提供される統計情報</h3>
+
+  <p>
+    利用者が iOS の設定で解析データの共有（「デベロッパと共有」）を有効にしている場合、
+    Apple から匿名化されたクラッシュレポートや利用統計が開発者に提供されることがあります。
+    これらの情報から開発者が個人を特定することはできません。
+  </p>
+
+  <h3>11. お子様のプライバシー</h3>
+
+  <p>本Appは全年齢を対象としており（レーティング 4+）、年齢を問わず一切の個人情報を収集しません。</p>
+
+  <h3>12. データの持ち出しと削除</h3>
+
+  <p>
+    利用者のファイルは、はじめから利用者自身の場所にあります。本Appを使うのをやめても、ファイルはそのまま残り、
+    書き出しや移行の手続きは要りません。開発者の手元には、削除すべきデータが存在しません。
+  </p>
+  <p>
+    本Appを端末から削除すると、端末内に保存された設定とフォルダの許可も削除されます。
+    <strong>「この iPhone 内」（iPad では「この iPad 内」）の「Markdown Viewer」フォルダに置いたファイルは、
+    アプリと一緒に削除されます。</strong>iCloud Drive やほかの場所に置いたファイルは残り、ファイル App から管理・削除できます。
+  </p>
+
+  <h3>13. 本ポリシーの変更</h3>
+
+  <p>本ポリシーを変更する場合は、このページを更新し、上部の最終更新日を改めます。</p>
+
+  <h3>14. お問い合わせ</h3>
+
+  <p>
+    本ポリシーに関するご質問は、<a href="https://forms.gle/G4W6ramMaw5tPYiv6" target="_blank" rel="noopener">お問い合わせフォーム</a>からご連絡ください。
+    フォームの送信には Google フォームを使用しており、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google のプライバシーポリシー</a>が適用されます。
+    お送りいただいた内容は、お問い合わせへの対応のみに使用します。
+  </p>
+
+  <!-- ================= English ================= -->
+
+  <h2 id="english">Privacy Policy (English)</h2>
+
+  <div class="summary">
+    <span class="label">IN SHORT</span>
+    <ul>
+      <li><strong>The developer cannot see your files.</strong> The app reads and writes them where they live, and there is no developer-operated server</li>
+      <li>No account is required. No ads, no tracking, no analytics SDKs</li>
+      <li><strong>The app goes online in two cases only:</strong> to fetch an image a document points at by URL, and to open a link you tap</li>
+    </ul>
+  </div>
+
+  <p>
+    Markdown Viewer &amp; Editor (the “App”) is a Markdown reader and light editor for iPhone and iPad,
+    provided by Masamichi Ueta (the “Developer”).
+    <strong>The App does not collect any personal information.</strong>
+    The Developer cannot see, obtain, or share your files or their contents with anyone.
+  </p>
+
+  <h3>1. Information collected</h3>
+
+  <p>
+    The App collects no information about you. No account is required, and there is no server run by the Developer.
+    There is no usage analytics, no crash reporting of its own, and no use of the advertising identifier (IDFA).
+    The App's App Store privacy entry declares <strong>that no data is collected</strong>, matching the privacy
+    manifest bundled with the App.
+  </p>
+
+  <h3>2. The files the App works with</h3>
+
+  <p>
+    The App reads and writes the Markdown files you open (<code>.md</code> and related extensions)
+    <strong>where they already live</strong>. It never imports them, keeps no copy, and has no database of its own.
+  </p>
+  <ul>
+    <li>Your files stay wherever you keep them — iCloud Drive, On My iPhone, or any other file provider. How they are
+      stored and synced there is governed by that provider's terms and privacy policy (Apple's iCloud, for example)</li>
+    <li><strong>The contents of your files never reach the Developer.</strong> There is no mechanism that would send them</li>
+    <li>The App touches only the file you opened and the folders you granted it (see 6)</li>
+  </ul>
+
+  <h3>3. The app's folder in iCloud Drive</h3>
+
+  <p>
+    The App has a folder of its own in iCloud Drive, named “Markdown Viewer”. On a device signed in to iCloud, the
+    first launch places one sample document there (<code>Getting Started.md</code>, or <code>はじめに.md</code> in Japanese)
+    explaining how the app works.
+  </p>
+  <ul>
+    <li>That folder is <strong>inside your own iCloud Drive</strong> and syncs under your Apple Account's protection.
+      <strong>The Developer cannot read it</strong></li>
+    <li>Syncing is done by iOS and iCloud Drive. The App uses no cloud storage of its own, and no CloudKit</li>
+    <li>The sample document is yours to delete</li>
+  </ul>
+
+  <h3>4. Network use</h3>
+
+  <p>Traffic leaves your device in two cases only.</p>
+
+  <table>
+    <tr><th>When</th><th>What is sent, and to whom</th></tr>
+    <tr>
+      <td>The document on screen refers to an image by URL (<code>![](https://…)</code>)</td>
+      <td>The App requests that image from the server written in the document. As with any web page, that server sees
+        things like your IP address and the URL requested. <strong>Nothing reaches the Developer</strong></td>
+    </tr>
+    <tr>
+      <td>You tap a link in a document</td>
+      <td>The page opens in a Safari view (<code>SFSafariViewController</code>). What happens there is handled by
+        Safari, and the App cannot see it</td>
+    </tr>
+  </table>
+
+  <p>
+    A fetched image may be cached temporarily on your device by the standard iOS mechanism. Apart from the two cases
+    above, the App initiates no network traffic of any kind, for analytics, advertising, or anything else. iCloud Drive
+    syncing is performed by iOS, not by the App.
+  </p>
+
+  <h3>5. Inserting a photo</h3>
+
+  <p>
+    Inserting an image while editing goes through the standard iOS photo picker.
+    <strong>The App never requests read access to your photo library</strong>, and receives only the photo you pick.
+  </p>
+  <ul>
+    <li>The photo is saved as a file <strong>in the same folder as the document</strong> you are editing.
+      It is never sent to the Developer or uploaded anywhere</li>
+    <li>JPEG, PNG, GIF, and WebP are saved as they are, so <strong>metadata such as capture date and location may
+      remain in the saved file</strong> (HEIC is converted to JPEG, which drops that metadata).
+      Keep this in mind when you pass a document and its images to someone else</li>
+  </ul>
+
+  <h3>6. Folder access</h3>
+
+  <p>
+    So that apps cannot reach files you have not opened, iOS hands over permission for that one document and nothing
+    else in the folder. To show or save an image next to your document, the App may therefore ask you to
+    <strong>pick that folder</strong> yourself.
+  </p>
+  <ul>
+    <li>The reference to a granted folder (a bookmark) is stored <strong>on your device</strong> and never transmitted</li>
+    <li>It covers only the folder you chose and its contents</li>
+    <li>Deleting the App removes those references</li>
+  </ul>
+
+  <h3>7. What is stored on your device</h3>
+
+  <table>
+    <tr><th>Information</th><th>Where it is stored</th></tr>
+    <tr><td>Display settings (typeface, text size, line spacing, maximum line width, theme)</td><td>Your device's settings store</td></tr>
+    <tr><td>Folder grants (see 6)</td><td>Your device's settings store</td></tr>
+    <tr><td>Whether the sample document has been placed (see 3)</td><td>Your device's settings store</td></tr>
+  </table>
+
+  <p>
+    All of this is read and written by the App alone and never sent to the Developer or anyone else.
+    Deleting the App removes it.
+  </p>
+
+  <h3>8. What the App does not collect</h3>
+
+  <p>The App does not collect or transmit any of the following:</p>
+  <ul>
+    <li>Contact information such as name, email address, or phone number</li>
+    <li>The contents of your documents, their file names, or your folder structure</li>
+    <li>Contacts, photos, calendars, or any other data on your device</li>
+    <li>Location (the App does not use location services)</li>
+    <li>Usage analytics or behavioural history</li>
+    <li>Advertising identifiers (IDFA) or any other identifier</li>
+  </ul>
+  <p>
+    The App contains no analytics tools, no advertising networks, and no tracking SDKs, and performs nothing that
+    falls under App Tracking Transparency.
+  </p>
+
+  <h3>9. Third-party code</h3>
+
+  <p>
+    The only third-party code in the App is
+    <a href="https://github.com/apple/swift-markdown" target="_blank" rel="noopener">swift-markdown</a>, published by
+    Apple, and <a href="https://github.com/swiftlang/swift-cmark" target="_blank" rel="noopener">swift-cmark</a>, which
+    it depends on. Both are Markdown parsers; neither performs network requests nor collects data.
+    Their licenses can be read in the app under Display → Open Source Licenses.
+  </p>
+
+  <h3>10. Statistics provided by Apple</h3>
+
+  <p>
+    If you have enabled sharing analytics with developers in iOS settings, Apple may provide the Developer with
+    anonymised crash reports and usage statistics. The Developer cannot identify individuals from this information.
+  </p>
+
+  <h3>11. Children's privacy</h3>
+
+  <p>The App is rated 4+ and collects no personal information from anyone, regardless of age.</p>
+
+  <h3>12. Taking your data with you, and deleting it</h3>
+
+  <p>
+    Your files are already in your own storage. Stop using the App and they stay exactly where they are — there is
+    nothing to export and no migration to perform. The Developer holds no data of yours to delete.
+  </p>
+  <p>
+    Deleting the App removes the settings and folder grants stored on your device.
+    <strong>Files kept in the “Markdown Viewer” folder under On My iPhone (or On My iPad) are deleted along with the
+    App.</strong> Files in iCloud Drive and elsewhere remain, and can be managed or deleted in the Files app.
+  </p>
+
+  <h3>13. Changes to this policy</h3>
+
+  <p>If this policy changes, this page is updated and the “Last updated” date at the top is revised.</p>
+
+  <h3>14. Contact</h3>
+
+  <p>
+    For questions about this policy, please use the <a href="https://forms.gle/G4W6ramMaw5tPYiv6" target="_blank" rel="noopener">contact form</a>.
+    The form is a Google Form, so <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a> applies.
+    What you send is used only to respond to your enquiry.
+  </p>
+
+  <footer>
+    <nav>
+      <a href="/markdownviewer/">トップ / Home</a>
+      <a href="/markdownviewer/support.html">サポート / Support</a>
+      <a href="https://forms.gle/G4W6ramMaw5tPYiv6">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

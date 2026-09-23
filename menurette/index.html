@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menurette — 献立ルーレット</title>
+  <meta name="description" content="家族みんなでルーレットを回して、今日の晩ごはんを決めるアプリ。回すのは今日の当番の子。最近食べたものは出にくく、家族の好物は出やすく。広告・課金・アカウント登録なし。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/menurette/assets/icon.png">
+  <link rel="alternate" hreflang="ja" href="https://masamichiueta.github.io/menurette/">
+  <link rel="alternate" hreflang="en" href="https://masamichiueta.github.io/menurette/en/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Menurette — 献立ルーレット">
+  <meta property="og:description" content="今日の晩ごはん、何にする？ 迷ったら家族でルーレット。">
+  <meta property="og:url" content="https://masamichiueta.github.io/menurette/">
+  <meta property="og:image" content="https://masamichiueta.github.io/menurette/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      --c-spin: #FF7A2F;
+      --c-turn: #FF9F0A;
+      --c-no: #FF453A;
+      --c-fair: #30D158;
+      --c-filter: #0A84FF;
+      --c-menu: #BF5AF2;
+      --c-ipad: #64D2FF;
+
+      --brand-1: #FFB547;
+      --brand-2: #F2621C;
+      --link: #C2410C;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #FFB067;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 17px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    .hero { text-align: center; padding: 88px 0 24px; }
+    .hero img.icon {
+      width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(242,98,28,0.30);
+    }
+    .hero h1 {
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 20px; text-wrap: balance;
+    }
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .hero .lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted);
+      max-width: 620px; margin: 0 auto; text-wrap: pretty;
+    }
+    .cta { margin-top: 34px; }
+    /* Placeholder for the App Store button until the app is on sale.
+       Swap the whole .soon element for:
+       <a class="pill" href="https://apps.apple.com/…">…</a> */
+    .soon {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: var(--bg-soft); color: var(--fg); font-weight: 600; font-size: 0.98rem;
+      border: 1px solid var(--rule);
+    }
+    .pill {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(242,98,28,0.3);
+    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
+
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 52px auto 0; max-width: 900px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px; border-radius: 999px;
+      background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; color: var(--fg);
+    }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+    .features { padding: 0 0 40px; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph { width: 60px; height: 60px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 22px; }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
+    .shot {
+      width: 100%; max-width: 300px; border-radius: 30px; overflow: hidden;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow); background: var(--card);
+    }
+
+    .ipad { padding: 48px 0 24px; text-align: center; }
+    .ipad h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 12px; }
+    .ipad p { color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+    .ipad img {
+      width: 100%; max-width: 860px; margin: 0 auto; border-radius: 22px;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow);
+    }
+
+    .more { padding: 72px 0 8px; }
+    .more h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 32px; text-align: center; }
+    .more .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .more .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .more .box .glyph { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; }
+    .more .box h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; }
+    .more .box p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
+
+    .pricing { padding: 96px 0 8px; }
+    .pricing h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .pricing .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; max-width: 620px; }
+    .plan { max-width: 520px; margin: 0 auto; border: 1px solid color-mix(in srgb, var(--brand-2) 40%, var(--rule)); border-radius: 22px; padding: 30px 28px; background: var(--card); }
+    .plan h3 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 3px 9px; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-1) 26%, transparent); color: var(--link);
+    }
+    .plan .price { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em; margin: 8px 0 4px; }
+    .plan .price small { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .plan .note { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
+    .plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: 0.93rem; }
+    .plan li { margin-bottom: 7px; }
+
+    .steps-sec { padding: 96px 0 8px; }
+    .steps-sec h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .steps-sec .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .step .num {
+      width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;
+    }
+    .step h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 650; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+
+    .privacy { background: #000; color: #f5f5f7; padding: 108px 0; margin-top: 96px; }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem); line-height: 1.16; letter-spacing: -0.025em;
+      font-weight: 700; margin: 0 0 24px; text-align: center; text-wrap: balance;
+    }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; }
+    .privacy .box { background: #1c1c1e; border-radius: 20px; padding: 26px 24px; }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #FFB067; }
+
+    .specs { padding: 92px 0; }
+    .specs h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px; }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd { padding: 14px 0; border-top: 1px solid var(--rule); margin: 0; }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .privacy { padding: 80px 0; margin-top: 72px; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/menurette/"><img src="/menurette/assets/icon.png" alt="">Menurette</a>
+    <ul>
+      <li><a href="/menurette/support.html">サポート</a></li>
+      <li><a href="/menurette/privacy.html">プライバシー</a></li>
+      <li><a href="/menurette/en/">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/menurette/assets/icon.png" alt="Menurette のアプリアイコン" width="116" height="116">
+    <h1><span class="line">今日の晩ごはん、</span><br>
+    <span class="line grad">ルーレットで決めよう。</span></h1>
+    <p class="lead">「何食べたい？」「なんでもいい」を、家族のイベントに。回すのは今日の当番の子。指でホイールを弾くと、カチカチと音を立てて回り、止まったところが今日の献立です。</p>
+    <div class="cta">
+      <span class="soon">App Storeで近日公開</span>
+    </div>
+
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-spin)"></span>指で弾いて回す</span>
+      <span class="chip"><span class="dot" style="background:var(--c-turn)"></span>回す人は日替わり</span>
+      <span class="chip"><span class="dot" style="background:var(--c-no)"></span>やだ!カード</span>
+      <span class="chip"><span class="dot" style="background:var(--c-fair)"></span>賢い候補選び</span>
+      <span class="chip"><span class="dot" style="background:var(--c-filter)"></span>条件でしぼる</span>
+      <span class="chip"><span class="dot" style="background:var(--c-menu)"></span>はじめから24品</span>
+      <span class="chip"><span class="dot" style="background:var(--c-ipad)"></span>iPad対応</span>
+    </div>
+  </div>
+</header>
+
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>決めるのは、<br>子どもの番。</h2>
+    <p>献立を考えるのは毎日のこと。Menurette は「決める」ところだけを、家族みんなの楽しみに変えます。候補は裏側で賢く選び、ルーレットの上ではみんな同じ大きさ。止まったところが結果なので、子どもにも公平です。</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFC873,#FF7A2F)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="16" r="10.5" stroke="#fff" stroke-width="2.4"/><path d="M15 5.5v21M4.5 16h21M7.6 8.6l14.8 14.8M22.4 8.6L7.6 23.4" stroke="#fff" stroke-width="1.6" opacity=".7"/><path d="M11.5 2.5h7L15 7z" fill="#fff"/></svg>
+        </div>
+        <h3>指で弾いて、回す</h3>
+        <p>弾いた勢いのまま回って、摩擦でゆっくり止まるホイール。区切りを通るたびに「カチッ」という音と手ごたえがあります。「まわす!」ボタンでも回せます。</p>
+        <ul>
+          <li>回す人は家族の並び順で交代</li>
+          <li>今日だけ別の人に回してもらうこともできます</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/menurette/assets/shot-home.png" alt="ホーム画面。家族の料理が並んだルーレットと「まわす!」ボタン" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFD60A,#FF9F0A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4l3 7 7.5.6-5.7 4.9 1.8 7.4L15 20l-6.6 3.9 1.8-7.4-5.7-4.9L12 11z" stroke="#fff" stroke-width="2.3" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>止まったところが、今日の献立</h3>
+        <p>大きな絵文字と料理名、紙吹雪とファンファーレでお祝い。「これにする!」で決まると履歴に残り、次の人の番になります。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/menurette/assets/shot-result.png" alt="結果画面。紙吹雪の中に今日の献立が大きく表示されている" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FF8A80,#FF453A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M9 15V7.5a2 2 0 014 0V14m0-7.5V5a2 2 0 014 0v9m0-7a2 2 0 014 0v8m0-3.5a2 2 0 014 0V19c0 4.4-3.6 8-8 8h-2c-3 0-5-1.6-6.5-4L6 18.5a2 2 0 013.3-2.2L11 18" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>揉めない「やだ!」カード</h3>
+        <p>どうしても嫌なときは「やだ!」カードで回し直し。使える枚数は一人につき週に決まった数だけ（はじめは週1枚、月曜日に戻ります）。断った料理は、その日のルーレットから外れます。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/menurette/assets/shot-nothanks.png" alt="「だれが やだ?」の画面。家族それぞれの残りのカードが表示されている" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#7EE8A1,#30D158)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="10.5" stroke="#fff" stroke-width="2.4"/><path d="M15 9v6.5l4 2.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>決めた献立は、履歴に</h3>
+        <p>日付・料理・回した人を記録します。履歴は候補選びにも使われ、最近食べたものほど出にくくなります。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/menurette/assets/shot-history.png" alt="履歴画面。日付ごとに決めた料理と回した人が並んでいる" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ipad">
+  <div class="wrap">
+    <h2>iPad では、横に並べて</h2>
+    <p>iPad を横向きにすると、ルーレットを左に、回す人と今日の候補の一覧を右に並べて表示します。食卓に置いて、家族で囲んで。</p>
+    <img src="/menurette/assets/shot-ipad.png" alt="iPad の横向き画面。左にルーレット、右に今日の候補の一覧" width="1376" height="1032" loading="lazy">
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <h2>そのほかにできること</h2>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#7EE8A1,#30D158)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4v22M8 26h14M5 9h20" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M5 9l-3 8a3.5 3.5 0 006 0zM25 9l-3 8a3.5 3.5 0 006 0z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>賢くて、公平な候補選び</h3>
+        <p>最近食べたもの、前日と同じジャンル・食材は出にくく、家族の「すき」が多い料理は出やすく。重みをかけるのは候補を選ぶときだけで、ルーレットの上はみんな同じ大きさです。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#5AB0FF,#0A84FF)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M4 7h22l-8.5 10v7l-5 2.5V17z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>条件をしぼって回す</h3>
+        <p>和食・洋食・中華などのジャンル、肉・魚などの主な食材、時短メニューだけ。条件は回す前にかけられます。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#D68CFF,#BF5AF2)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M4 14h22a11 11 0 01-22 0zM11 25h8" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M11 10c0-2 2-2 2-4M16 10c0-2 2-2 2-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>はじめから24品</h3>
+        <p>カレーライス、ハンバーグ、から揚げ、生姜焼き、餃子、手巻き寿司など、定番の家庭料理を用意。追加・編集・削除も自由です。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FF8FB1,#FF375F)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 25S4 18.5 4 11a5.5 5.5 0 0111-1.5A5.5 5.5 0 0126 11c0 7.5-11 14-11 14z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>家族の「すき」</h3>
+        <p>料理ごとに、だれの好物かを選べます。「すき」が多い料理ほど、ルーレットに載りやすくなります。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#9E9EA6,#636366)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="6" y="13" width="18" height="13" rx="3" stroke="#fff" stroke-width="2.4"/><path d="M10 13V9.5a5 5 0 0110 0V13" stroke="#fff" stroke-width="2.4"/></svg>
+        </div>
+        <h3>大人向けの設定は計算問題でガード</h3>
+        <p>メニューや家族の編集、設定の変更は、かんたんな足し算に答えないと開けません。子どもがうっかり消してしまう心配がありません。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FFC873,#FF7A2F)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M5 12h5l7-6v18l-7-6H5z" stroke="#fff" stroke-width="2.3" stroke-linejoin="round"/><path d="M21 11a6 6 0 010 8M24.5 8a10 10 0 010 14" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>マナーモードでは静かに</h3>
+        <p>マナーモードのときは効果音が鳴りません。効果音とハプティクスは設定でオフにもできます。「視差効果を減らす」にも対応しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <h2>料金</h2>
+    <p class="sub">買い切りです。課金も広告もありません。</p>
+    <div class="plan">
+      <h3>Menurette<span class="badge">買い切り</span></h3>
+      <p class="price">¥300<small>／1 回だけ</small></p>
+      <p class="note">サブスクリプションではありません。同じ Apple Account の iPhone と iPad で使えます。</p>
+      <ul>
+          <li>すべての機能</li>
+          <li>App内課金なし・広告なし</li>
+          <li>アカウント登録なし</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>使いかた</h2>
+    <p class="sub">はじめの設定は、1 分ほどです。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>家族を登録する</h3>
+        <p>名前・アバター・テーマカラーで、家族一人ひとりを登録します。並び順が回す順番です。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>回す</h3>
+        <p>今日の当番がルーレットを弾きます。止まったところが今日の晩ごはん。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>決める</h3>
+        <p>「これにする!」で決定。どうしても嫌なら「やだ!」カードで回し直し。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>家族のことは、<br>端末の中だけに。</h2>
+    <p class="sub">メニューも家族の名前も履歴も、端末の中にだけ保存されます。開発者が中身を見ることはできません。</p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>アカウントがない</h4>
+        <p>登録もログインも不要です。メールアドレスすら聞きません。</p>
+      </div>
+      <div class="box">
+        <h4>通信しない</h4>
+        <p>通信を行うコードそのものが入っていません。機内モードでもすべて使えます。</p>
+      </div>
+      <div class="box">
+        <h4>iCloud にも送らない</h4>
+        <p>データは端末の中だけ。同期もしません。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は一切入っていません。</p>
+      </div>
+      <div class="box">
+        <h4>許可を求めない</h4>
+        <p>カメラ・写真・位置情報・通知などへのアクセスは一切求めません。</p>
+      </div>
+      <div class="box">
+        <h4>外へのリンクがない</h4>
+        <p>子どもが触っても、アプリの外へ出ていくことはありません。</p>
+      </div>
+    </div>
+
+    <p class="note">詳しくは<a href="/menurette/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 27.0 / iPadOS 27.0 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone・iPad</dd>
+      <dt>言語</dt>
+      <dd>日本語・英語</dd>
+      <dt>料金</dt>
+      <dd>¥300（買い切り）。App内課金・広告なし</dd>
+      <dt>ネットワーク</dt>
+      <dd>不要。すべての機能がオフラインで使えます</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/menurette/support.html">サポート</a>
+      <a href="/menurette/privacy.html">プライバシーポリシー</a>
+      <a href="CONTACT_FORM_URL">お問い合わせ</a>
+      <a href="/menurette/en/">English</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
+
+</body>
+</html>
