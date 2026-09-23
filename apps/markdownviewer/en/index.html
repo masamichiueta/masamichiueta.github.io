@@ -1,0 +1,799 @@
+---
+layout: none
+permalink: /apps/markdownviewer/en/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown Viewer &amp; Editor — Open .md files, ready to read</title>
+  <meta name="description" content="Markdown files on iPhone and iPad, readable the moment you open them. Tables, task lists, code coloring, contents, and find. Nothing is imported: files open where they live, and you can fix them on the spot. No account, no ads.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/apps/markdownviewer/assets/icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Markdown Viewer &amp; Editor — Open .md files, ready to read">
+  <meta property="og:description" content="Markdown files, readable the moment they open. Nothing is imported: files open where they live, and you can fix them on the spot.">
+  <meta property="og:url" content="https://masamichiueta.github.io/apps/markdownviewer/en/">
+  <meta property="og:image" content="https://masamichiueta.github.io/apps/markdownviewer/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      /* The icon's indigo → violet (the light pair in Tools/IconGen.swift). */
+      --brand-1: #6B7BFF;
+      --brand-2: #8B37D8;
+      --link: #0A6CF0;
+
+      /* Colours for the sample document. As in the app's editor, only the Markdown syntax is dimmed. */
+      --mark: #aeaeb2;
+      --code-bg: rgba(116,116,128,0.12);
+      --check: #007AFF;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+
+        /* The light pair sinks into black, so use the icon's dark pair. */
+        --brand-1: #8A98FF;
+        --brand-2: #B05CFF;
+        --link: #6DB0FF;
+
+        --mark: #636366;
+        --code-bg: rgba(118,118,128,0.24);
+        --check: #0A84FF;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro JP",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-size: 17px;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code, pre, .mono {
+      font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); white-space: nowrap; }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    /* ---------- Hero ---------- */
+    .hero { text-align: center; padding: 88px 0 24px; }
+    .hero img.icon {
+      width: 116px; height: 116px; margin: 0 auto 28px;
+      border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(107,55,216,0.30);
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 4.8vw, 3.2rem);
+      line-height: 1.22;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .hero .lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      color: var(--muted);
+      max-width: 640px; margin: 0 auto;
+      text-wrap: pretty;
+    }
+    .cta { margin-top: 34px; }
+    .pill {
+      display: inline-block;
+      padding: 11px 24px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #6B7BFF, #8B37D8);
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(107,55,216,0.32);
+    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
+    .pill.soon {
+      background: none;
+      color: var(--muted);
+      border: 1px solid var(--rule);
+      box-shadow: none;
+      font-weight: 500;
+    }
+
+    /* Syntax chips under the hero, coloured the way the app's editor colours them:
+       syntax dimmed, checkboxes blue. */
+    .chips {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; margin: 52px auto 0; max-width: 932px;
+    }
+    .chip {
+      display: inline-flex; align-items: center;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      font-size: 0.86rem; font-weight: 500;
+      color: var(--fg);
+      white-space: pre;
+    }
+    .chip .mk { color: var(--mark); }
+    .chip .ck { color: var(--check); font-weight: 700; }
+
+    /* ---------- Premise ---------- */
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.24; letter-spacing: -0.025em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise .narrow p { color: var(--muted); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
+
+    /* The same source, as plain text and as the app renders it. */
+    .compare {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+      max-width: 880px;
+      margin: 56px auto 0;
+      text-align: left;
+    }
+    .pane {
+      margin: 0;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .pane figcaption {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+      color: var(--muted);
+      padding: 11px 18px;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--rule);
+    }
+    .pane pre {
+      margin: 0; padding: 18px 20px 22px;
+      font-size: 0.84rem; line-height: 1.7;
+      white-space: pre-wrap; word-break: break-all;
+      color: var(--fg);
+    }
+    .pane .doc { padding: 16px 22px 22px; font-size: 0.95rem; line-height: 1.65; }
+    .doc .h {
+      font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.3;
+      margin: 0 0 12px; padding-bottom: 7px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .doc p { margin: 0 0 12px; }
+    .doc code {
+      font-size: 0.86em;
+      background: var(--code-bg);
+      padding: 1px 5px; border-radius: 5px;
+    }
+    .doc .tasks { list-style: none; margin: 0 0 14px; padding: 0; }
+    .doc .tasks li { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .doc .box {
+      flex: none; width: 17px; height: 17px; border-radius: 4px;
+      border: 1.5px solid var(--mark);
+      display: grid; place-items: center;
+    }
+    .doc .done .box { background: var(--check); border-color: var(--check); }
+    .doc table {
+      border-collapse: separate; border-spacing: 0;
+      border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+      font-size: 0.86rem;
+    }
+    .doc th, .doc td { text-align: left; padding: 6px 14px; border-top: 1px solid var(--rule); }
+    .doc th { background: var(--bg-soft); border-top: 0; font-weight: 600; }
+    .compare .arrow { align-self: center; color: var(--muted); display: grid; place-items: center; }
+
+    /* ---------- Features ---------- */
+    .features { padding: 0 0 40px; }
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 56px 0;
+    }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .glyph {
+      width: 60px; height: 60px; border-radius: 17px;
+      display: grid; place-items: center;
+      margin-bottom: 22px;
+      background: linear-gradient(140deg, #6B7BFF, #8B37D8);
+      color: #fff;
+    }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .feature code, .card code { font-size: 0.88em; background: var(--code-bg); padding: 1px 5px; border-radius: 5px; }
+    kbd {
+      font-family: inherit; font-size: 0.86em;
+      padding: 1px 6px; border-radius: 6px;
+      border: 1px solid var(--rule); background: var(--bg-soft); color: var(--fg);
+    }
+    .shot-col { display: flex; justify-content: center; }
+    .shot {
+      width: 100%; max-width: 300px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      box-shadow: var(--card-shadow);
+      background: var(--card);
+    }
+    .shot.ipad { max-width: 420px; border-radius: 20px; }
+
+    /* ---------- Principles ---------- */
+    .principles { padding: 64px 0 40px; }
+    .principles .head { text-align: center; margin-bottom: 44px; }
+    .principles .head h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      letter-spacing: -0.025em; font-weight: 700; margin: 0 0 14px; text-wrap: balance;
+    }
+    .principles .head p { color: var(--muted); max-width: 620px; margin: 0 auto; }
+    .principles .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 22px;
+      padding: 26px 24px 28px;
+      box-shadow: var(--card-shadow);
+    }
+    .card .glyph { width: 54px; height: 54px; border-radius: 15px; margin-bottom: 20px; }
+    .card h3 {
+      font-size: 1.18rem;
+      line-height: 1.3; letter-spacing: -0.015em; font-weight: 700;
+      margin: 0 0 12px; text-wrap: balance;
+    }
+    .card p { color: var(--muted); margin: 0 0 12px; font-size: 0.95rem; }
+    .card ul { color: var(--muted); margin: 0; padding-left: 1.15em; font-size: 0.95rem; }
+    .card li { margin-bottom: 5px; }
+
+    /* ---------- Privacy ---------- */
+    .privacy {
+      background: #000;
+      color: #f5f5f7;
+      padding: 108px 0;
+      margin-top: 56px;
+    }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem);
+      line-height: 1.16; letter-spacing: -0.03em; font-weight: 700;
+      margin: 0 0 24px; text-align: center; text-wrap: balance;
+    }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+      gap: 18px;
+    }
+    .privacy .box {
+      background: #1c1c1e;
+      border-radius: 20px;
+      padding: 26px 24px;
+    }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #6DB0FF; }
+
+    /* ---------- Requirements ---------- */
+    .specs { padding: 92px 0; }
+    .specs h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.025em; font-weight: 700; margin: 0 0 28px;
+    }
+    .specs dl { display: grid; grid-template-columns: 170px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd {
+      padding: 14px 0; border-top: 1px solid var(--rule); margin: 0;
+    }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    /* ---------- Footer ---------- */
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .premise { padding: 76px 0 64px; }
+      .compare { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 40px; }
+      .compare .arrow svg { transform: rotate(90deg); }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .shot.ipad { max-width: 340px; }
+      .principles { padding: 40px 0 24px; }
+      .principles .grid { grid-template-columns: 1fr; }
+      .privacy { padding: 80px 0; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav .wrap { gap: 12px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+    /* The store name is long: narrow screens show the Home Screen name (Markdown Viewer),
+       and the narrowest show the icon alone. */
+    @media (max-width: 560px) {
+      .nav .brand .rest { display: none; }
+    }
+    @media (max-width: 400px) {
+      .nav .brand .name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/apps/markdownviewer/en/" aria-label="Markdown Viewer &amp; Editor"><img src="/apps/markdownviewer/assets/icon.png" alt=""><span class="name">Markdown Viewer<span class="rest"> &amp; Editor</span></span></a>
+    <ul>
+      <li><a href="/apps/markdownviewer/support.html#english">Support</a></li>
+      <li><a href="/apps/markdownviewer/privacy.html#english">Privacy</a></li>
+      <li><a href="/apps/markdownviewer/">日本語</a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/apps/markdownviewer/assets/icon.png" alt="The Markdown Viewer &amp; Editor app icon">
+    <h1>Markdown files,<br>
+    <span class="grad">readable the moment they open.</span></h1>
+    <p class="lead">
+      A .md file usually opens as plain text, punctuation and all.
+      Markdown Viewer &amp; Editor shows it as a document — headings, tables, checkboxes and all —
+      with a light editor for when something needs fixing.
+    </p>
+    <div class="cta">
+      <!-- After release: swap for <a class="pill" href="https://apps.apple.com/app/idAPP_STORE_ID">Download on the App Store</a> -->
+      <span class="pill soon">In App Store review</span>
+    </div>
+
+    <div class="chips">
+      <span class="chip mono"><span class="mk"># </span>Heading</span>
+      <span class="chip mono"><span class="mk">**</span>Bold<span class="mk">**</span></span>
+      <span class="chip mono"><span class="mk">- </span><span class="ck">[x]</span> Task</span>
+      <span class="chip mono"><span class="mk">| </span>Table<span class="mk"> |</span></span>
+      <span class="chip mono"><span class="mk">``` </span>Code</span>
+      <span class="chip mono"><span class="mk">&gt; </span>Quote</span>
+      <span class="chip mono"><span class="mk">[</span>Link<span class="mk">](…)</span></span>
+      <span class="chip mono"><span class="mk">![</span>Image<span class="mk">](…)</span></span>
+    </div>
+  </div>
+</header>
+
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>The file is right there.<br>You still can’t read it.</h2>
+    <p>
+      READMEs, design notes, meeting notes, anything you had a model write for you.
+      The file is on your phone, and what comes up is the raw text.
+      That is what Markdown Viewer &amp; Editor is for.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="compare">
+      <figure class="pane">
+        <figcaption>As plain text</figcaption>
+<pre># Release checklist
+
+**Never ship on a Friday.**
+The rest is in `make release`.
+
+- [x] Update the CHANGELOG
+- [ ] Tag the release
+
+| Env | Status |
+| --- | --- |
+| staging | OK |
+| production | waiting |</pre>
+      </figure>
+
+      <div class="arrow" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M5 13h15m0 0l-5.5-5.5M20 13l-5.5 5.5" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <figure class="pane">
+        <figcaption>In Markdown Viewer &amp; Editor</figcaption>
+        <div class="doc">
+          <p class="h">Release checklist</p>
+          <p><strong>Never ship on a Friday.</strong> The rest is in <code>make release</code>.</p>
+          <ul class="tasks">
+            <li class="done"><span class="box"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Update the CHANGELOG</li>
+            <li><span class="box"></span>Tag the release</li>
+          </ul>
+          <table>
+            <tr><th>Env</th><th>Status</th></tr>
+            <tr><td>staging</td><td>OK</td></tr>
+            <tr><td>production</td><td>waiting</td></tr>
+          </table>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="6" y="3.5" width="18" height="23" rx="3" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M10.5 10h9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M10.5 15.5h9M10.5 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>A document the moment it opens</h3>
+        <p>
+          Headings, lists, checkboxes, tables, code. GitHub Flavored Markdown, laid out as soon as
+          the file opens. No import step, no conversion to wait for.
+        </p>
+        <ul>
+          <li>Files open where they already live, in iCloud Drive or any third-party file provider</li>
+          <li>Raw HTML is shown as text, never executed</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-preview-en.png" width="600" height="1304" loading="lazy"
+             alt="The sample document “Getting Started” open in the app, with headings, a bulleted list, and checkboxes">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="4.5" y="4.5" width="21" height="21" rx="5" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M9.5 15.3l3.8 3.8 7.4-8" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Check it off with a tap</h3>
+        <p>
+          Task lists toggle on tap, without entering edit mode. The toggle rewrites exactly one
+          character in the source, turning <code>[ ]</code> into <code>[x]</code> and back.
+        </p>
+        <ul>
+          <li>Tables scroll sideways and keep their column alignment</li>
+          <li>Code blocks carry a language label and a copy button, with syntax coloring for Swift, Python, JavaScript, and more</li>
+          <li>Images written as URLs are shown. Tap one to open it full screen, and pinch to zoom</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-tasks-en.png" width="600" height="1304" loading="lazy"
+             alt="Two checkboxes ticked, with a table, a quote, and a Swift code block below">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M19.8 5.2l5 5L12 23l-6.2 1.2L7 18 19.8 5.2z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/>
+            <path d="M16.8 8.2l5 5" stroke="currentColor" stroke-width="2" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>Fix it where it is</h3>
+        <p>
+          Tap the pencil, or long-press a paragraph to start editing at its beginning.
+          What you edit is the plain Markdown.
+        </p>
+        <ul>
+          <li>Monospaced, with headings, emphasis, code, links, and list markers colored</li>
+          <li>A bar above the keyboard: headings, bold, italic, link, image, code, list, task, quote, indent, undo, redo</li>
+          <li>Return on a list line continues the list. Return on an empty item ends it</li>
+          <li>Saving is automatic, and going back to reading keeps your place</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-edit-en.png" width="600" height="1304" loading="lazy"
+             alt="Edit mode: plain Markdown with syntax coloring, and a formatting bar above the keyboard">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <circle cx="13" cy="13" r="7.5" stroke="currentColor" stroke-width="2.4"/>
+            <path d="M18.6 18.6l6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Long documents, without getting lost</h3>
+        <p>
+          A table of contents is built from your headings; tap one to jump there. Find in document
+          ignores case, character width, and Japanese voiced marks.
+        </p>
+        <ul>
+          <li>Every match is highlighted, and the current one is darker</li>
+          <li>Large files are parsed in the background, so the app keeps responding while it works</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-search-en.png" width="600" height="1304" loading="lazy"
+             alt="Find in document: every match for “file” is highlighted, with the fourth of eight selected">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="32" height="30" viewBox="0 0 32 30" fill="none" aria-hidden="true">
+            <path d="M3.5 24L11 5.5 18.5 24M6.3 17.5h9.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M28.5 13.5v10.5M28.5 18.8a4.6 4.6 0 11-9.2 0 4.6 4.6 0 019.2 0z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>Make it fit your eyes</h3>
+        <p>
+          Serif or sans. Text size and line spacing are yours to set, applied on top of your
+          system text size.
+        </p>
+        <ul>
+          <li>Four themes: system, light, dark, and sepia</li>
+          <li>PDF export uses your typeface, text size, and line spacing</li>
+          <li>Share the Markdown source exactly as it is</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-sepia-en.png" width="600" height="1304" loading="lazy"
+             alt="A document shown in the sepia theme with a serif typeface">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="4" y="5" width="22" height="20" rx="3" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M15 5v20" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M7.5 10h4.5M7.5 14h4.5M18 10h4.5M18 14h4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>Side by side on iPad</h3>
+        <p>
+          Open several documents at once in Stage Manager or Split View. On a wide screen, lines
+          stop at a comfortable width instead of running edge to edge.
+        </p>
+        <ul>
+          <li>With a hardware keyboard, <kbd>⌘⇧P</kbd> switches between reading and editing, <kbd>⌘F</kbd> finds, and <kbd>⌘⇧T</kbd> opens the contents</li>
+          <li>While editing, <kbd>⌘B</kbd> for bold, <kbd>⌘I</kbd> for italic, <kbd>⌘K</kbd> for a link</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot ipad" src="/apps/markdownviewer/assets/shot-ipad-en.png" width="840" height="1120" loading="lazy"
+             alt="The sample document on iPad, set at a comfortable line length">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="principles">
+  <div class="wrap">
+    <div class="head">
+      <h2>What it promises</h2>
+      <p>Before any feature, it was settled what the app must never do to your files.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="glyph">
+          <svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M4 9.5a2.5 2.5 0 012.5-2.5h5.2l2.6 3h9.2A2.5 2.5 0 0126 12.5v9A2.5 2.5 0 0123.5 24h-17A2.5 2.5 0 014 21.5v-12z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Your files stay your files</h3>
+        <p>
+          Nothing is imported. The app opens a file where it lives, lets you change it, and hands it back.
+        </p>
+        <ul>
+          <li>There is no database inside the app, so there is no import step, no proprietary sync, and nothing kept in two places</li>
+          <li>Stop using it, and your files are exactly where you left them</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="glyph">
+          <svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M6 11h18M6 19h18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>It saves what you wrote</h3>
+        <p>
+          Read a file and save it again, and every line you did not touch is byte-for-byte identical.
+        </p>
+        <ul>
+          <li>Line endings are not converted, trailing spaces are not stripped, list markers are not normalized. Well-meant reformatting pollutes Git diffs and breaks the peace with whatever else edits these files</li>
+          <li>Smart quotes and dash substitution are off for the same reason</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="glyph">
+          <svg width="30" height="28" viewBox="0 0 32 30" fill="none" aria-hidden="true">
+            <path d="M10.5 8L4 15l6.5 7M21.5 8L28 15l-6.5 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 6.5l-4 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>The same rules as GitHub</h3>
+        <p>
+          Parsing is done by Apple’s swift-markdown, built on cmark-gfm, GitHub’s own fork of the
+          CommonMark reference parser.
+        </p>
+        <ul>
+          <li>Emphasis, tables, and task lists follow the CommonMark and GFM rules as written, the way GitHub renders them</li>
+          <li>One deliberate difference: raw HTML is shown as text and never executed</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="glyph">
+          <svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="3.5" y="6" width="11" height="15" rx="2.2" stroke="currentColor" stroke-width="2.1"/>
+            <rect x="15.5" y="9" width="11" height="15" rx="2.2" stroke="currentColor" stroke-width="2.1" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>When two devices disagree, you choose</h3>
+        <p>
+          If the same file is changed on another device or in another app at the same time, you pick
+          which version to keep.
+        </p>
+        <ul>
+          <li>Each version shows the device that saved it, when, and how it starts, so you can compare before deciding</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>Your files never<br>reach the developer.</h2>
+    <p class="sub">
+      No account, no server, no analytics. The app goes online only to fetch an image a document
+      points at, or to open a link you tap.
+    </p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>No account, no server</h4>
+        <p>Nothing to sign up for. There is no server run by the developer.</p>
+      </div>
+      <div class="box">
+        <h4>Nothing held on to</h4>
+        <p>Files are read and written where they live. No copy is made inside the app, and none is sent to the developer.</p>
+      </div>
+      <div class="box">
+        <h4>Images come from the URL written</h4>
+        <p>Only when a document points at an image by URL does the app fetch it, from the address written in the document. Never from the developer.</p>
+      </div>
+      <div class="box">
+        <h4>Links open in a Safari view</h4>
+        <p>A link you tap opens in a Safari view inside the app. The app cannot see what the page contains.</p>
+      </div>
+      <div class="box">
+        <h4>Your photo library stays closed</h4>
+        <p>Inserting an image goes through the system photo picker, so the app never asks to read your library. It receives only the photo you pick.</p>
+      </div>
+      <div class="box">
+        <h4>No ads, no tracking</h4>
+        <p>No analytics or advertising SDKs. The App Store privacy label declares that no data is collected.</p>
+      </div>
+    </div>
+
+    <p class="note">
+      For details, see the <a href="/apps/markdownviewer/privacy.html#english">Privacy Policy</a>.
+    </p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>Requirements</h2>
+    <dl>
+      <dt>OS</dt>
+      <dd>iOS 26.5 / iPadOS 26.5 or later</dd>
+      <dt>Devices</dt>
+      <dd>iPhone and iPad</dd>
+      <dt>Files</dt>
+      <dd>.md, .markdown, .mdown, .mkd, and .mdtext, encoded as UTF-8</dd>
+      <dt>Syntax</dt>
+      <dd>GitHub Flavored Markdown (tables, task lists, strikethrough, autolinks). Math and Mermaid are not supported</dd>
+      <dt>Where files live</dt>
+      <dd>iCloud Drive, On My iPhone, and third-party file providers. Files are opened in place, never imported</dd>
+      <dt>Export</dt>
+      <dd>PDF. The Markdown source can be shared as it is</dd>
+      <dt>Home Screen name</dt>
+      <dd>Markdown Viewer (the iCloud Drive folder has the same name)</dd>
+      <dt>Network</dt>
+      <dd>Not needed to read or edit. Used only to show images written as URLs, and to open links</dd>
+      <dt>Languages</dt>
+      <dd>English and Japanese</dd>
+      <dt>Price</dt>
+      <dd>A one-time purchase. No in-app purchases</dd><!-- 換算後の現地価格が確定したら金額を入れる -->
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/apps/markdownviewer/support.html#english">Support</a>
+      <a href="/apps/markdownviewer/privacy.html#english">Privacy Policy</a>
+      <a href="https://forms.gle/G4W6ramMaw5tPYiv6">Contact</a>
+      <a href="/apps/markdownviewer/">日本語</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
+
+</body>
+</html>

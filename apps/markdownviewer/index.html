@@ -1,0 +1,790 @@
+---
+layout: none
+permalink: /apps/markdownviewer/
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown Viewer &amp; Editor — 開いた瞬間から読める Markdown</title>
+  <meta name="description" content="iPhone と iPad で、Markdown ファイルを開いた瞬間から読める形に。表、タスクリスト、コードの色付け、目次、検索。ファイルは取り込まず、置いてある場所のまま開いて、その場で直せます。アカウントなし、広告なし。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/apps/markdownviewer/assets/icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Markdown Viewer &amp; Editor — 開いた瞬間から読める Markdown">
+  <meta property="og:description" content="Markdown ファイルを、開いた瞬間から読める形に。ファイルは取り込まず、置いてある場所のまま開いて、その場で直せます。">
+  <meta property="og:url" content="https://masamichiueta.github.io/apps/markdownviewer/">
+  <meta property="og:image" content="https://masamichiueta.github.io/apps/markdownviewer/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      /* アイコンの indigo → violet（Tools/IconGen.swift の light の組）に合わせる */
+      --brand-1: #6B7BFF;
+      --brand-2: #8B37D8;
+      --link: #0A6CF0;
+
+      /* 見本の文書の色。アプリの編集画面と同じく、Markdown の記号だけを薄くする */
+      --mark: #aeaeb2;
+      --code-bg: rgba(116,116,128,0.12);
+      --check: #007AFF;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+
+        /* 黒地では light の組が沈むので、アイコンの dark の組にする */
+        --brand-1: #8A98FF;
+        --brand-2: #B05CFF;
+        --link: #6DB0FF;
+
+        --mark: #636366;
+        --code-bg: rgba(118,118,128,0.24);
+        --check: #0A84FF;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      font-size: 17px;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code, pre, .mono {
+      font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    /* ---------- ナビ ---------- */
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); white-space: nowrap; }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    /* ---------- ヒーロー ---------- */
+    .hero { text-align: center; padding: 88px 0 24px; }
+    .hero img.icon {
+      width: 116px; height: 116px; margin: 0 auto 28px;
+      border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(107,55,216,0.30);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5.2vw, 3.4rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .hero .lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      color: var(--muted);
+      max-width: 640px; margin: 0 auto;
+      text-wrap: pretty;
+    }
+    .cta { margin-top: 34px; }
+    .pill {
+      display: inline-block;
+      padding: 11px 24px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #6B7BFF, #8B37D8);
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(107,55,216,0.32);
+    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
+    .pill.soon {
+      background: none;
+      color: var(--muted);
+      border: 1px solid var(--rule);
+      box-shadow: none;
+      font-weight: 500;
+    }
+
+    /* ヒーロー下の記法チップ列。アプリの編集画面と同じく、記号を薄く・チェックを青く塗る */
+    .chips {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; margin: 52px auto 0; max-width: 932px;
+    }
+    .chip {
+      display: inline-flex; align-items: center;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      font-size: 0.86rem; font-weight: 500;
+      color: var(--fg);
+      white-space: pre;
+    }
+    .chip .mk { color: var(--mark); }
+    .chip .ck { color: var(--check); font-weight: 700; }
+
+    /* ---------- 前提を伝えるひとこと ---------- */
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise h2 .line { display: inline-block; }
+    .premise .narrow p { color: var(--muted); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
+
+    /* 同じ原文を、テキストのまま見たときと、アプリで開いたときとで並べる */
+    .compare {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+      max-width: 880px;
+      margin: 56px auto 0;
+      text-align: left;
+    }
+    .pane {
+      margin: 0;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 20px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .pane figcaption {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+      color: var(--muted);
+      padding: 11px 18px;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--rule);
+    }
+    .pane pre {
+      margin: 0; padding: 18px 20px 22px;
+      font-size: 0.84rem; line-height: 1.7;
+      white-space: pre-wrap; word-break: break-all;
+      color: var(--fg);
+    }
+    .pane .doc { padding: 16px 22px 22px; font-size: 0.95rem; line-height: 1.65; }
+    .doc .h {
+      font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.3;
+      margin: 0 0 12px; padding-bottom: 7px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .doc p { margin: 0 0 12px; }
+    .doc code {
+      font-size: 0.86em;
+      background: var(--code-bg);
+      padding: 1px 5px; border-radius: 5px;
+    }
+    .doc .tasks { list-style: none; margin: 0 0 14px; padding: 0; }
+    .doc .tasks li { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+    .doc .box {
+      flex: none; width: 17px; height: 17px; border-radius: 4px;
+      border: 1.5px solid var(--mark);
+      display: grid; place-items: center;
+    }
+    .doc .done .box { background: var(--check); border-color: var(--check); }
+    .doc table {
+      border-collapse: separate; border-spacing: 0;
+      border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+      font-size: 0.86rem;
+    }
+    .doc th, .doc td { text-align: left; padding: 6px 14px; border-top: 1px solid var(--rule); }
+    .doc th { background: var(--bg-soft); border-top: 0; font-weight: 600; }
+    .compare .arrow { align-self: center; color: var(--muted); display: grid; place-items: center; }
+
+    /* ---------- 機能セクション ---------- */
+    .features { padding: 0 0 40px; }
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      padding: 56px 0;
+    }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .glyph {
+      width: 60px; height: 60px; border-radius: 17px;
+      display: grid; place-items: center;
+      margin-bottom: 22px;
+      background: linear-gradient(140deg, #6B7BFF, #8B37D8);
+      color: #fff;
+    }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .feature code, .card code { font-size: 0.88em; background: var(--code-bg); padding: 1px 5px; border-radius: 5px; }
+    kbd {
+      font-family: inherit; font-size: 0.86em;
+      padding: 1px 6px; border-radius: 6px;
+      border: 1px solid var(--rule); background: var(--bg-soft); color: var(--fg);
+    }
+    .shot-col { display: flex; justify-content: center; }
+    .shot {
+      width: 100%; max-width: 300px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      box-shadow: var(--card-shadow);
+      background: var(--card);
+    }
+    .shot.ipad { max-width: 420px; border-radius: 20px; }
+
+    /* ---------- 守っていること ---------- */
+    .principles { padding: 64px 0 40px; }
+    .principles .head { text-align: center; margin-bottom: 44px; }
+    .principles .head h2 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      letter-spacing: -0.02em; font-weight: 700; margin: 0 0 14px; text-wrap: balance;
+    }
+    .principles .head p { color: var(--muted); max-width: 620px; margin: 0 auto; }
+    .principles .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 22px;
+      padding: 26px 24px 28px;
+      box-shadow: var(--card-shadow);
+    }
+    .card .glyph { width: 54px; height: 54px; border-radius: 15px; margin-bottom: 20px; }
+    .card h3 {
+      font-size: 1.18rem;
+      line-height: 1.3; letter-spacing: -0.015em; font-weight: 700;
+      margin: 0 0 12px; text-wrap: balance;
+    }
+    .card p { color: var(--muted); margin: 0 0 12px; font-size: 0.95rem; }
+    .card ul { color: var(--muted); margin: 0; padding-left: 1.15em; font-size: 0.95rem; }
+    .card li { margin-bottom: 5px; }
+
+    /* ---------- プライバシー ---------- */
+    .privacy {
+      background: #000;
+      color: #f5f5f7;
+      padding: 108px 0;
+      margin-top: 56px;
+    }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem);
+      line-height: 1.16; letter-spacing: -0.025em; font-weight: 700;
+      margin: 0 0 24px; text-align: center; text-wrap: balance;
+    }
+    .privacy h2 .line { display: inline-block; }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+      gap: 18px;
+    }
+    .privacy .box {
+      background: #1c1c1e;
+      border-radius: 20px;
+      padding: 26px 24px;
+    }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #6DB0FF; }
+
+    /* ---------- 動作環境 ---------- */
+    .specs { padding: 92px 0; }
+    .specs h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px;
+    }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd {
+      padding: 14px 0; border-top: 1px solid var(--rule); margin: 0;
+    }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    /* ---------- フッター ---------- */
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .premise { padding: 76px 0 64px; }
+      .compare { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 40px; }
+      .compare .arrow svg { transform: rotate(90deg); }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .shot.ipad { max-width: 340px; }
+      .principles { padding: 40px 0 24px; }
+      .principles .grid { grid-template-columns: 1fr; }
+      .privacy { padding: 80px 0; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav .wrap { gap: 12px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+    /* ストア名は長いので、狭い画面ではホーム画面の名前（Markdown Viewer）までにし、
+       それも入らない幅ではアイコンだけにする */
+    @media (max-width: 560px) {
+      .nav .brand .rest { display: none; }
+    }
+    @media (max-width: 400px) {
+      .nav .brand .name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/apps/markdownviewer/" aria-label="Markdown Viewer &amp; Editor"><img src="/apps/markdownviewer/assets/icon.png" alt=""><span class="name">Markdown Viewer<span class="rest"> &amp; Editor</span></span></a>
+    <ul>
+      <li><a href="/apps/markdownviewer/support.html">サポート</a></li>
+      <li><a href="/apps/markdownviewer/privacy.html">プライバシー</a></li>
+      <li><a href="/apps/markdownviewer/en/">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/apps/markdownviewer/assets/icon.png" alt="Markdown Viewer &amp; Editor のアプリアイコン">
+    <h1><span class="line">開いた瞬間から、</span><br>
+    <span class="line grad">読める Markdown。</span></h1>
+    <p class="lead">
+      <!-- 日本語は改行が半角スペースとして描画されるので、文の途中で改行しない -->
+      Markdown ファイルは、そのまま開くと記号の混じったテキストのままです。Markdown Viewer &amp; Editor は、それを見出しや表の整った文書として表示します。直したいところは、その場で手早く直せます。
+    </p>
+    <div class="cta">
+      <!-- 公開後: <a class="pill" href="https://apps.apple.com/jp/app/idAPP_STORE_ID">App Store でダウンロード</a> に差し替える -->
+      <span class="pill soon">App Store 審査中</span>
+    </div>
+
+    <div class="chips">
+      <span class="chip mono"><span class="mk"># </span>見出し</span>
+      <span class="chip mono"><span class="mk">**</span>太字<span class="mk">**</span></span>
+      <span class="chip mono"><span class="mk">- </span><span class="ck">[x]</span> タスク</span>
+      <span class="chip mono"><span class="mk">| </span>表<span class="mk"> |</span></span>
+      <span class="chip mono"><span class="mk">``` </span>コード</span>
+      <span class="chip mono"><span class="mk">&gt; </span>引用</span>
+      <span class="chip mono"><span class="mk">[</span>リンク<span class="mk">](…)</span></span>
+      <span class="chip mono"><span class="mk">![</span>画像<span class="mk">](…)</span></span>
+    </div>
+  </div>
+</header>
+
+<section class="premise">
+  <div class="wrap narrow">
+    <h2><span class="line">手元にあるのに、</span><span class="line">読めない。</span></h2>
+    <p>
+      README、設計メモ、日報、AI に書かせた .md。ファイルはそこにあるのに、開くと記号の並んだテキストが出てくるだけ。Markdown Viewer &amp; Editor は、この状態を解くために作りました。
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="compare">
+      <figure class="pane">
+        <figcaption>テキストのまま</figcaption>
+<pre># リリース手順
+
+**金曜の夕方は出さない**。
+手順は `make release` にまとめてある。
+
+- [x] CHANGELOG を更新
+- [ ] タグを打つ
+
+| 環境 | 状態 |
+| --- | --- |
+| staging | OK |
+| production | 待ち |</pre>
+      </figure>
+
+      <div class="arrow" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M5 13h15m0 0l-5.5-5.5M20 13l-5.5 5.5" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <figure class="pane">
+        <figcaption>Markdown Viewer &amp; Editor で</figcaption>
+        <div class="doc">
+          <p class="h">リリース手順</p>
+          <!-- 原文の折り返し（「。」と「手」の間）は、前後がどちらも日本語なので空白を入れずにつなぐ。アプリと同じ -->
+          <p><strong>金曜の夕方は出さない</strong>。手順は <code>make release</code> にまとめてある。</p>
+          <ul class="tasks">
+            <li class="done"><span class="box"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CHANGELOG を更新</li>
+            <li><span class="box"></span>タグを打つ</li>
+          </ul>
+          <table>
+            <tr><th>環境</th><th>状態</th></tr>
+            <tr><td>staging</td><td>OK</td></tr>
+            <tr><td>production</td><td>待ち</td></tr>
+          </table>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="6" y="3.5" width="18" height="23" rx="3" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M10.5 10h9" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M10.5 15.5h9M10.5 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>開いたその場で、文書として</h3>
+        <p>
+          見出し、リスト、チェックボックス、表、コード。GitHub Flavored Markdown を、ファイルを開いたその場で組み上げて表示します。取り込みの手順も、変換の待ち時間もありません。
+        </p>
+        <ul>
+          <li>iCloud Drive でも、ほかのファイル提供元でも、置いてある場所のまま開きます</li>
+          <li>生の HTML は実行せず、書いてあるとおりの文字として出します</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-preview.png" width="600" height="1304" loading="lazy"
+             alt="見本の書類「はじめに」を開いた画面。見出し、箇条書き、チェックボックスが並ぶ">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="4.5" y="4.5" width="21" height="21" rx="5" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M9.5 15.3l3.8 3.8 7.4-8" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>チェックは、タップひとつで</h3>
+        <p>
+          タスクリストは、編集に入らなくてもタップで切り替わります。書き換わるのは、原文の <code>[ ]</code> と <code>[x]</code> の 1 文字だけです。
+        </p>
+        <ul>
+          <li>表は横にスクロールし、列ごとの寄せも再現します</li>
+          <li>コードブロックには言語のラベルとコピーのボタンが付き、Swift や Python、JavaScript などに色を付けます</li>
+          <li>URL で書かれた画像を表示します。タップで画面いっぱいに開き、ピンチで寄れます</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-tasks.png" width="600" height="1304" loading="lazy"
+             alt="チェックを 2 つ入れた状態。表、引用、Swift のコードブロックも見える">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M19.8 5.2l5 5L12 23l-6.2 1.2L7 18 19.8 5.2z" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/>
+            <path d="M16.8 8.2l5 5" stroke="currentColor" stroke-width="2" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>直すのは、その場で</h3>
+        <p>
+          鉛筆のボタンか、本文の長押しで編集に入ります。長押しなら、押した段落の頭にカーソルが立ちます。直すのは素の Markdown です。
+        </p>
+        <ul>
+          <li>等幅で表示し、見出し・強調・コード・リンク・リスト記号に色を付けます</li>
+          <li>キーボードの上に、見出し・太字・斜体・リンク・画像・コード・リスト・タスク・引用・字下げ・取り消しとやり直しのボタン</li>
+          <li>リストの行で改行すると次の記号が入り、空の項目で改行すると外れます</li>
+          <li>保存は自動です。プレビューに戻っても、見ていた場所のままです</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-edit.png" width="600" height="1304" loading="lazy"
+             alt="編集モード。素の Markdown が色分けされ、キーボードの上に書式のボタンが並ぶ">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <circle cx="13" cy="13" r="7.5" stroke="currentColor" stroke-width="2.4"/>
+            <path d="M18.6 18.6l6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>長い文書でも、迷わない</h3>
+        <p>
+          見出しから目次を自動で作り、タップでその場所へ飛べます。文書内の検索は、大文字小文字・濁点・全角半角の違いを無視して探します。
+        </p>
+        <ul>
+          <li>一致した箇所すべてに色が付き、いま選んでいる 1 件だけが濃くなります</li>
+          <li>大きな文書でも、解析は裏で進むので操作が止まりません</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-search.png" width="600" height="1304" loading="lazy"
+             alt="文書内検索。「Markdown」に一致した箇所に色が付き、4 件中 3 件目が選ばれている">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="32" height="30" viewBox="0 0 32 30" fill="none" aria-hidden="true">
+            <path d="M3.5 24L11 5.5 18.5 24M6.3 17.5h9.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M28.5 13.5v10.5M28.5 18.8a4.6 4.6 0 11-9.2 0 4.6 4.6 0 019.2 0z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>自分の目に合わせる</h3>
+        <p>
+          書体はゴシックと明朝から。文字の大きさと行間を変えられ、端末の文字サイズ設定にもかけ合わさります。
+        </p>
+        <ul>
+          <li>テーマはシステムに合わせる・ライト・ダーク・セピアの 4 つ</li>
+          <li>PDF に書き出すときも、書体・文字の大きさ・行間はこの設定のとおりです</li>
+          <li>Markdown の原文は、そのまま共有できます</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/markdownviewer/assets/shot-sepia.png" width="600" height="1304" loading="lazy"
+             alt="セピアのテーマと明朝体で表示した文書">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="4" y="5" width="22" height="20" rx="3" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M15 5v20" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M7.5 10h4.5M7.5 14h4.5M18 10h4.5M18 14h4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>iPad では、並べて読む</h3>
+        <p>
+          ステージマネージャや Split View で、複数の文書を並べて開けます。画面が広くても、1 行が長くなりすぎないよう読みやすい幅で折り返します。
+        </p>
+        <ul>
+          <li>外付けキーボードでは <kbd>⌘⇧P</kbd> でプレビューと編集の切り替え、<kbd>⌘F</kbd> で検索、<kbd>⌘⇧T</kbd> で目次</li>
+          <li>編集中は <kbd>⌘B</kbd> で太字、<kbd>⌘I</kbd> で斜体、<kbd>⌘K</kbd> でリンク</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot ipad" src="/apps/markdownviewer/assets/shot-ipad.png" width="840" height="1120" loading="lazy"
+             alt="iPad で見本の書類を開いた画面。本文が読みやすい幅に収まっている">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="principles">
+  <div class="wrap">
+    <div class="head">
+      <h2>このアプリが守っていること</h2>
+      <p>凝った機能より先に、ファイルを壊さないことを決めました。</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="glyph">
+          <svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M4 9.5a2.5 2.5 0 012.5-2.5h5.2l2.6 3h9.2A2.5 2.5 0 0126 12.5v9A2.5 2.5 0 0123.5 24h-17A2.5 2.5 0 014 21.5v-12z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>ファイルは借り物として扱います</h3>
+        <p>
+          ファイルを取り込みません。置いてある場所のまま開いて、直して、返します。
+        </p>
+        <ul>
+          <li>アプリの中に独自のデータベースを持たないので、インポートも、独自のクラウド同期も、二重管理もありません</li>
+          <li>使うのをやめても、ファイルはそこに残ります</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="glyph">
+          <svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <path d="M6 11h18M6 19h18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>書いた通りに保存します</h3>
+        <p>
+          読み込んで保存し直しても、触っていない行はバイト単位で変わりません。
+        </p>
+        <ul>
+          <li>改行コードの変換も、行末の空白の除去も、リスト記号の統一もしません。よかれと思った整形は、Git の差分を汚し、ほかのアプリとの共存を壊すためです</li>
+          <li>引用符やハイフンの自動変換も切ってあります</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="glyph">
+          <svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <text x="15" y="21.5" text-anchor="middle" font-size="18" font-weight="700" fill="currentColor"
+                  font-family="-apple-system, 'Hiragino Sans', sans-serif">あ</text>
+          </svg>
+        </div>
+        <h3>日本語の文書のために</h3>
+        <p>
+          日本語の文書で効く判断を 2 つ入れています。
+        </p>
+        <ul>
+          <li>折り返して書いた行をつなぐとき、語間に空白を入れません。前後がどちらも日本語のときだけ詰めます</li>
+          <li>小さな図版を画面幅まで引き伸ばしません。原寸を上限にするので、アイコンや小さな図がぼやけません</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="glyph">
+          <svg width="28" height="28" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+            <rect x="3.5" y="6" width="11" height="15" rx="2.2" stroke="currentColor" stroke-width="2.1"/>
+            <rect x="15.5" y="9" width="11" height="15" rx="2.2" stroke="currentColor" stroke-width="2.1" opacity=".6"/>
+          </svg>
+        </div>
+        <h3>食い違ったら、選べます</h3>
+        <p>
+          同じファイルがほかの端末やほかのアプリで同時に変更されると、どちらを残すかを選ぶ画面が出ます。
+        </p>
+        <ul>
+          <li>保存した端末の名前、更新時刻、中身の冒頭が並ぶので、見比べてから決められます</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2><span class="line">あなたのファイルは、</span><br><span class="line">開発者に届きません。</span></h2>
+    <p class="sub">
+      アカウントも、サーバーも、解析もありません。ネットワークを使うのは、文書の中の画像を表示するときと、あなたがリンクを開いたときだけです。
+    </p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>アカウントも、サーバーもない</h4>
+        <p>登録もログインもありません。開発者が運用するサーバーは存在しません。</p>
+      </div>
+      <div class="box">
+        <h4>ファイルを預からない</h4>
+        <p>開いたファイルは、置いてある場所で読み書きするだけです。アプリの中にも、開発者の手元にも、コピーは作りません。</p>
+      </div>
+      <div class="box">
+        <h4>画像は、書かれた URL から</h4>
+        <p>文書が URL で画像を指しているときだけ、その画像を取りに行きます。取りに行く先は文書に書かれた場所で、開発者ではありません。</p>
+      </div>
+      <div class="box">
+        <h4>リンクは、Safari の画面で</h4>
+        <p>タップしたリンクは、アプリの中に開く Safari の画面で表示します。そのページの中身を、アプリは見られません。</p>
+      </div>
+      <div class="box">
+        <h4>写真ライブラリを読まない</h4>
+        <p>画像を入れるときは iOS の写真選択画面を使うので、ライブラリの読み取り許可を求めません。渡るのは、選んだ写真だけです。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は入っていません。App Store の「App のプライバシー」でも、データを収集しないと申告しています。</p>
+      </div>
+    </div>
+
+    <p class="note">
+      詳しくは<a href="/apps/markdownviewer/privacy.html">プライバシーポリシー</a>をご覧ください。
+    </p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 26.5 / iPadOS 26.5 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone / iPad</dd>
+      <dt>開けるファイル</dt>
+      <dd>.md、.markdown、.mdown、.mkd、.mdtext。文字コードは UTF-8 です</dd>
+      <dt>記法</dt>
+      <dd>GitHub Flavored Markdown（表・タスクリスト・打ち消し線・自動リンク）。数式と Mermaid には対応していません</dd>
+      <dt>ファイルの場所</dt>
+      <dd>iCloud Drive、この iPhone 内、ほかのファイル提供元。取り込まずに、その場所のまま開きます</dd>
+      <dt>書き出し</dt>
+      <dd>PDF。Markdown の原文はそのまま共有できます</dd>
+      <dt>ホーム画面の名前</dt>
+      <dd>Markdown Viewer（iCloud Drive のフォルダも同じ名前です）</dd>
+      <dt>ネットワーク</dt>
+      <dd>読む・直すだけなら不要です。URL で書かれた画像を表示するときと、リンクを開くときに通信します</dd>
+      <dt>言語</dt>
+      <dd>日本語・英語</dd>
+      <dt>料金</dt>
+      <dd>¥1,000 の買い切りです。App 内課金はありません</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/apps/markdownviewer/support.html">サポート</a>
+      <a href="/apps/markdownviewer/privacy.html">プライバシーポリシー</a>
+      <a href="https://forms.gle/G4W6ramMaw5tPYiv6">お問い合わせ</a>
+      <a href="/apps/markdownviewer/en/">English</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
+
+</body>
+</html>

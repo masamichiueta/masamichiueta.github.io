@@ -1,0 +1,463 @@
+---
+layout: none
+permalink: /apps/monoqulo/support.html
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monoqulo — サポート / Support</title>
+  <meta name="description" content="Monoqulo のサポートページ。書き出し形式、写真アプリでの日付、スタイルとスライダー、写真の権限などのよくある質問と問い合わせ先。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/apps/monoqulo/assets/icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #0A6CF0;
+      --accent: #48484d;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --link: #6DB0FF;
+        --accent: #b0b0b6;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.72; font-size: 17px; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+    }
+    h3 { font-size: 1.12rem; font-weight: 650; margin: 40px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+
+    .callout {
+      background: var(--bg-soft);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 24px 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout .label {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.04em; color: var(--accent); margin-bottom: 6px;
+    }
+
+    dl.faq { margin: 0; }
+    dl.faq dt {
+      font-weight: 650; margin: 30px 0 6px; font-size: 1.02rem;
+      letter-spacing: -0.01em;
+    }
+    dl.faq dd { margin: 0; color: var(--muted); }
+    dl.faq dd p { margin: 0 0 10px; }
+    dl.faq dd ul { margin: 8px 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/apps/monoqulo/"><img src="/apps/monoqulo/assets/icon.png" alt="">Monoqulo</a>
+    <ul>
+      <li><a href="/apps/monoqulo/">トップ</a></li>
+      <li><a href="/apps/monoqulo/privacy.html">プライバシー</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+
+  <h1>Monoqulo — サポート</h1>
+  <p class="updated">最終更新日 / Last updated: 2026-09-12</p>
+
+  <div class="callout">
+    <span class="label">お問い合わせ</span>
+    <p>
+      ご質問・不具合のご報告は<a href="https://forms.gle/DHL8bGN8JjUAX1Vr8" target="_blank" rel="noopener">お問い合わせフォーム</a>からお願いします。
+      端末の機種と iOS のバージョン、どのスタイルで起きたかを添えていただけると、原因を特定しやすくなります。
+      アプリのバージョンは「設定」App →「一般」→「iPhone ストレージ」→「Monoqulo」で確認できます。
+    </p>
+  </div>
+
+  <h2>はじめに知っておいていただきたいこと</h2>
+
+  <div class="callout">
+    <span class="label">重要</span>
+    <p>
+      <strong>Monoqulo は写真を保管しません。</strong>
+      履歴もライブラリもなく、編集の途中の状態を覚えておく仕組みもありません。
+      1 枚選んで、スタイルを選んで、書き出す。それで 1 回が終わります。
+    </p>
+    <p>
+      そのため、<strong>書き出す前にアプリを閉じると、その編集内容は残りません。</strong>
+      これは不具合ではありません。
+    </p>
+  </div>
+
+  <h3>動作環境</h3>
+  <table>
+    <tr><th>対応 OS</th><td>iOS 26.0 / iPadOS 26.0 以降</td></tr>
+    <tr><th>対応デバイス</th><td>iPhone / iPad</td></tr>
+    <tr><th>言語</th><td>日本語・英語</td></tr>
+    <tr><th>料金</th><td>¥500 の買い切りです。App 内課金はありません</td></tr>
+    <tr><th>ネットワーク</th><td>通信を一切行いません。機内モードでも全機能が動作します</td></tr>
+  </table>
+
+  <h2>よくある質問</h2>
+
+  <dl class="faq">
+
+    <dt>書き出した写真が見つかりません</dt>
+    <dd>
+      <p>写真アプリの「最近の項目」の<strong>先頭</strong>にあります。撮影日ではなく、保存した日時で並びます。</p>
+      <p>これは意図した動作です。指定しないと写真アプリは書き出したファイルの撮影日時を読むので、5 年前の写真から作ったものは写真アプリの中でも 5 年前の位置に入ってしまい、元写真の日付を覚えていないと探し出せません。</p>
+      <p><strong>ファイルの中の撮影日時は元のまま残します。</strong>共有したファイルにも、写真アプリから取り出したファイルにも、元の撮影日時・カメラ・レンズが入っています。並べ替えに使う値だけを変えています。</p>
+    </dd>
+
+    <dt>写真へのアクセスを求められません</dt>
+    <dd>
+      <p>フォトライブラリの読み取り権限は要求しない設計です。写真の選択は iOS 標準の写真選択画面にまかせているため、アプリに渡るのは<strong>あなたが選んだ 1 枚だけ</strong>です。</p>
+      <p>権限を求めるのは、書き出した写真を保存するときの「写真への追加」だけです。</p>
+    </dd>
+
+    <dt>網点やディザのスタイルだけ PNG で書き出されます</dt>
+    <dd>
+      <p>意図した動作です。網点や 1bit の模様を JPEG / HEIC で圧縮すると、点の周りにモスキートノイズが出て模様が濁ります。細かい点を保つために、これらのスタイルは PNG で書き出しています。</p>
+      <p>ファイルサイズを抑えたい場合は、アプリの設定（エディタ右上の歯車）にある<strong>「常に JPEG で書き出す」</strong>をオンにしてください。模様が濁ることを承知のうえの選択として、PNG の判断より優先します。</p>
+    </dd>
+
+    <dt>スタイルを切り替えると、動かしたスライダーが戻ります</dt>
+    <dd>
+      <p>戻るものと残るものを分けています。</p>
+      <ul>
+        <li><strong>残る</strong> — 露出、コントラスト、粒状、ハイライト、シャドウ、周辺光量</li>
+        <li><strong>スタイルの既定値に戻る</strong> — 効果の強さ、スタイル固有のつまみ</li>
+      </ul>
+      <p>効果の強さとスタイル固有のつまみは、そのスタイルにとって意味のある値が最初から入っているほうが早いためです。露出やコントラストは写真そのものへの調整なので、スタイルを変えても引き継ぎます。</p>
+    </dd>
+
+    <dt>スライダーを既定値に戻したい</dt>
+    <dd>
+      <p>スライダーの<strong>ラベルをダブルタップ</strong>してください。そのつまみだけが既定値に戻ります。</p>
+    </dd>
+
+    <dt>元の写真と見比べたい</dt>
+    <dd>
+      <p><strong>プレビューを長押し</strong>してください。押している間だけ元の写真に切り替わります。指を離すと戻ります。</p>
+    </dd>
+
+    <dt>グラフィック系で粒状のつまみが効きません</dt>
+    <dd>
+      <p>網点やディザのスタイルでは粒状を無効にしています。白か黒しかない画像に粒を乗せても、模様を乱すだけで質感にならないためです。</p>
+      <p>グラフィック系で手ざわりを変えたいときは、スタイル固有のつまみ（網点の大きさ、ドットの粗さ、線の間隔など）を動かしてください。</p>
+    </dd>
+
+    <dt>線画で線がほとんど描かれません</dt>
+    <dd>
+      <p>霧や逆光のように縁がぼけた写真では線が出にくいことがあります。「線の太さ」を動かすと拾う線が変わるので、まずはここを試してください。</p>
+      <p>また、線画系は輪郭の<strong>山の筋</strong>を追う方式にしてあるので、縁がぼけていても線を引けるようになっています。それでも線がまったく出ない場合は、その写真を添えてお問い合わせください。</p>
+    </dd>
+
+    <dt>アトキンソンなど一部のスタイルで、スライダーの反応が少し遅れます</dt>
+    <dd>
+      <p>誤差拡散ディザ（アトキンソン）は、1 画素ずつ順番に誤差を配っていく処理で、他のスタイルのように並列化できません。プレビューの更新に間に合わないことがあります。</p>
+      <p>その間は<strong>前のフレームを表示したまま</strong>、別スレッドで次の絵を組み立てています。操作そのものが止まることはありません。指を止めれば最新の状態に追いつきます。</p>
+    </dd>
+
+    <dt>書き出しに数秒かかります</dt>
+    <dd>
+      <p>原寸のまま処理するため、写真の大きさによって 1〜3 秒ほどかかります。進捗を表示している間はアプリを閉じないでください。</p>
+      <p>縮小して速くする選択肢は用意していません。元の解像度で書き出すことを優先しています。</p>
+    </dd>
+
+    <dt>プレビューと書き出した写真で、網点の大きさが違いませんか</dt>
+    <dd>
+      <p>違わないように作ってあります。網点やディザ、粒状の大きさを元画像の画素数で決めると、プレビュー（縮小表示）と書き出し（原寸）で見えが変わってしまいます。</p>
+      <p>Monoqulo はこれらを解像度に依らない設計にしているので、4000px の写真でも 1000px の写真でも、画面で見えていた手ざわりのまま書き出されます。</p>
+    </dd>
+
+    <dt>位置情報を残したくありません</dt>
+    <dd>
+      <p>アプリの設定（エディタ右上の歯車）にある「位置情報を引き継ぐ」をオフにしてください。書き出す前に GPS の情報を取り除きます。</p>
+      <p>既定ではオンで、元の写真の位置情報を引き継ぎます。撮影日時・カメラ・レンズの情報は、この設定とは別に常に引き継ぎます。</p>
+    </dd>
+
+    <dt>編集をやり直したい / 履歴を見たい</dt>
+    <dd>
+      <p>履歴と再編集の機能はありません。1 枚に集中するアプリとして、意図して持たせていません。</p>
+      <p>書き出した写真をもう一度読み込んで重ねがけすることはできますが、元の写真に戻ることはできません。元の写真は写真アプリにそのまま残っています。</p>
+    </dd>
+
+    <dt>複数枚をまとめて変換したい</dt>
+    <dd>
+      <p>一括変換には対応していません。1 回につき 1 枚です。</p>
+    </dd>
+
+    <dt>クロップや回転はできますか</dt>
+    <dd>
+      <p>できません。トリミング・回転・傾き補正は、写真アプリなど既存の編集機能で十分にできるため、このアプリには入れていません。先に写真アプリで整えてから読み込んでください。</p>
+    </dd>
+
+    <dt>自分の設定をプリセットとして保存したい</dt>
+    <dd>
+      <p>ユーザー定義プリセットの保存には対応していません。将来の候補としては考えていますが、時期はお約束できません。</p>
+    </dd>
+
+    <dt>Live Photo や動画は扱えますか</dt>
+    <dd>
+      <p>扱えません。静止画 1 枚のみです。Live Photo を選んだ場合は、その静止画の部分を処理します。</p>
+    </dd>
+
+    <dt>iPad で使えますか</dt>
+    <dd>
+      <p>使えます。iPhone と iPad の両方に対応しています。</p>
+      <p>横幅に余裕がある向き（iPad の横画面や iPhone の横画面）では、写真とつまみを左右に並べます。縦に長い向きでは上下に積みます。画面の向きに応じて自動で切り替わります。</p>
+    </dd>
+
+    <dt>データを削除したい</dt>
+    <dd>
+      <p>削除すべきデータがありません。このアプリは写真もユーザーデータも保管せず、処理は端末の中で一時的に行うだけです。アカウントもサーバーもありません。</p>
+      <p>アプリを端末から削除すると、書き出し設定（常に JPEG で書き出す / 位置情報を引き継ぐ）も消えます。すでに保存した写真は、写真アプリからご自身で管理・削除してください。</p>
+    </dd>
+
+    <dt>ウィジェットやショートカットに対応していますか</dt>
+    <dd>
+      <p>1.0 の時点では対応していません。将来の候補としては考えていますが、時期はお約束できません。</p>
+    </dd>
+
+  </dl>
+
+  <!-- ================= English ================= -->
+
+  <h2 id="english">Support (English)</h2>
+
+  <div class="callout">
+    <span class="label">CONTACT</span>
+    <p>
+      For questions or bug reports, please use the <a href="https://forms.gle/DHL8bGN8JjUAX1Vr8" target="_blank" rel="noopener">contact form</a>.
+      Including your device model, iOS version, and which style it happened on helps a lot.
+      You can find the app version under Settings → General → iPhone Storage → Monoqulo.
+    </p>
+  </div>
+
+  <h3>Before anything else</h3>
+
+  <div class="callout">
+    <span class="label">IMPORTANT</span>
+    <p>
+      <strong>Monoqulo does not keep your photos.</strong> There is no history, no library, and
+      nothing that remembers an edit in progress. Pick one photo, pick a style, export. That is one session.
+    </p>
+    <p>
+      So <strong>closing the app before you export loses that edit.</strong> This is by design, not a bug.
+    </p>
+  </div>
+
+  <h3>Requirements</h3>
+  <table>
+    <tr><th>OS</th><td>iOS 26.0 / iPadOS 26.0 or later</td></tr>
+    <tr><th>Devices</th><td>iPhone and iPad</td></tr>
+    <tr><th>Languages</th><td>English and Japanese</td></tr>
+    <tr><th>Price</th><td>One-time purchase. No in-app purchases</td></tr><!-- 換算後の現地価格が確定したら金額を入れる -->
+    <tr><th>Network</th><td>No communication at all. Everything works in airplane mode</td></tr>
+  </table>
+
+  <h3>FAQ</h3>
+
+  <dl class="faq">
+
+    <dt>I can't find the photo I exported</dt>
+    <dd>
+      <p>It is at the <strong>top of Recents</strong> in Photos. It sorts by when you saved it, not by when the original was taken.</p>
+      <p>This is deliberate. Left alone, Photos reads the capture date out of the file, so something made from a five-year-old photo lands five years back in your library — impossible to find unless you remember the original's date.</p>
+      <p><strong>The capture date inside the file is left untouched.</strong> Any file you share, or pull back out of Photos, still carries the original date, camera and lens. Only the value Photos sorts by is changed.</p>
+    </dd>
+
+    <dt>The app never asks for photo access</dt>
+    <dd>
+      <p>It is built not to need read access to your library. Picking a photo is left to the standard iOS picker, so the only thing handed to the app is <strong>the single photo you chose</strong>.</p>
+      <p>The one permission it does ask for is adding the exported photo to your library.</p>
+    </dd>
+
+    <dt>Halftone and dithered styles export as PNG</dt>
+    <dd>
+      <p>That is intended. Compressing a dot pattern or a 1-bit image as JPEG or HEIC leaves mosquito noise around the dots and muddies the pattern. These styles export as PNG to keep the fine dots intact.</p>
+      <p>If you would rather have the smaller file, turn on <strong>"Always Export JPEG"</strong> in the app's settings (the gear in the editor's toolbar). That is treated as a deliberate choice and takes priority over the PNG decision.</p>
+    </dd>
+
+    <dt>Switching styles resets sliders I had moved</dt>
+    <dd>
+      <p>Some carry over and some do not.</p>
+      <ul>
+        <li><strong>Carried over</strong> — Exposure, Contrast, Grain, Highlights, Shadows, Vignette</li>
+        <li><strong>Reset to the style's default</strong> — Intensity, and the style-specific slider</li>
+      </ul>
+      <p>Intensity and the style-specific slider are faster to work with when they start at a value that means something for that style. Exposure and contrast are adjustments to the photo itself, so they follow you across styles.</p>
+    </dd>
+
+    <dt>I want a slider back at its default</dt>
+    <dd>
+      <p><strong>Double tap the slider's label.</strong> That one slider returns to its default.</p>
+    </dd>
+
+    <dt>I want to compare with the original</dt>
+    <dd>
+      <p><strong>Press and hold the preview.</strong> It shows the original while you hold, and goes back when you let go.</p>
+    </dd>
+
+    <dt>The Grain slider does nothing on graphic styles</dt>
+    <dd>
+      <p>Grain is disabled for halftone and dithered styles. Adding grain to an image that is only black and white disturbs the pattern without reading as texture.</p>
+      <p>To change the feel of a graphic style, use its own slider instead — dot size, dot coarseness, line spacing, and so on.</p>
+    </dd>
+
+    <dt>Line Art draws almost no lines</dt>
+    <dd>
+      <p>Photos with soft edges — fog, backlight — can come out sparse. Moving <strong>Line Weight</strong> changes which lines are picked up, so try that first.</p>
+      <p>The sketch styles follow the <strong>ridges</strong> of an edge rather than thresholding its steepness, which is what lets them draw on soft edges at all. If a photo still produces nothing, please send it along with your report.</p>
+    </dd>
+
+    <dt>Sliders lag slightly on Atkinson and some other styles</dt>
+    <dd>
+      <p>Error diffusion dithering (Atkinson) passes the error from one pixel to the next in order, so unlike the other styles it cannot be parallelised, and it sometimes misses the preview's frame budget.</p>
+      <p>While that happens the app <strong>keeps showing the previous frame</strong> and builds the next one on another thread. The controls never block. Stop moving and it catches up.</p>
+    </dd>
+
+    <dt>Exporting takes a few seconds</dt>
+    <dd>
+      <p>Everything is processed at full resolution, so depending on the photo it takes one to three seconds. Please leave the app open while the progress is showing.</p>
+      <p>There is no option to speed this up by downscaling. Exporting at the original resolution comes first.</p>
+    </dd>
+
+    <dt>Do the dots come out the size I see in the preview?</dt>
+    <dd>
+      <p>Yes, by design. If the size of a halftone, dither or grain pattern were tied to the source pixel count, the preview (downscaled) and the export (full size) would not match.</p>
+      <p>Monoqulo makes these resolution independent, so a 4000px photo and a 1000px photo both export with the texture you saw on screen.</p>
+    </dd>
+
+    <dt>I don't want to keep location data</dt>
+    <dd>
+      <p>Turn off "Keep Location" in the app's settings (the gear in the editor's toolbar) and the GPS data is stripped before the file is written.</p>
+      <p>It is on by default and carries the original photo's location over. Capture date, camera and lens are always kept, independently of this setting.</p>
+    </dd>
+
+    <dt>I want to redo an edit, or see my history</dt>
+    <dd>
+      <p>There is no history and no re-editing. That is a deliberate omission for an app meant to handle one photo at a time.</p>
+      <p>You can load an exported photo back in and stack another style on it, but you cannot get back to the original from there. The original is still sitting in Photos, untouched.</p>
+    </dd>
+
+    <dt>Can I convert several photos at once?</dt>
+    <dd>
+      <p>No. Batch conversion is not supported — one photo per session.</p>
+    </dd>
+
+    <dt>Can I crop or rotate?</dt>
+    <dd>
+      <p>No. Cropping, rotation and straightening are already well handled by Photos and other editors, so they are not in this app. Fix the framing first, then bring the photo in.</p>
+    </dd>
+
+    <dt>Can I save my own settings as a preset?</dt>
+    <dd>
+      <p>User-defined presets are not supported. It is on the list of things to consider, with no promised timing.</p>
+    </dd>
+
+    <dt>Does it handle Live Photos or video?</dt>
+    <dd>
+      <p>No — still images only. If you pick a Live Photo, its still frame is what gets processed.</p>
+    </dd>
+
+    <dt>Does it work on iPad?</dt>
+    <dd>
+      <p>Yes. Both iPhone and iPad are supported.</p>
+      <p>When there is width to spare — iPad in landscape, or iPhone in landscape — the photo and the sliders sit side by side. In taller orientations they stack. It switches automatically with the orientation.</p>
+    </dd>
+
+    <dt>I want to delete my data</dt>
+    <dd>
+      <p>There is nothing to delete. The app stores neither photos nor user data; processing happens temporarily on your device. There is no account and no server.</p>
+      <p>Deleting the app also removes your export settings (Always Export JPEG / Keep Location). Photos you already saved are yours to manage and delete in the Photos app.</p>
+    </dd>
+
+    <dt>Is there a widget, or Shortcuts support?</dt>
+    <dd>
+      <p>Not in 1.0. Both are on the list of things to consider, with no promised timing.</p>
+    </dd>
+
+  </dl>
+
+  <footer>
+    <nav>
+      <a href="/apps/monoqulo/">トップ / Home</a>
+      <a href="/apps/monoqulo/privacy.html">プライバシーポリシー / Privacy</a>
+      <a href="https://forms.gle/DHL8bGN8JjUAX1Vr8">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

@@ -17,8 +17,9 @@ update:
 .PHONY: hero-icons
 hero-icons:
 	@mkdir -p assets/apps-hero
-	@for src in */assets/icon.png; do \
-		app=$${src%%/*}; \
+	@for src in apps/*/assets/icon.png; do \
+		app=$${src#apps/}; \
+		app=$${app%%/*}; \
 		sips -s format png -Z 256 "$$src" --out "assets/apps-hero/$$app.png" > /dev/null; \
 		echo "  assets/apps-hero/$$app.png"; \
 	done

@@ -1,0 +1,517 @@
+---
+layout: none
+permalink: /apps/menurette/en/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menurette — Dinner Roulette</title>
+  <meta name="description" content="A dinner roulette for the whole family. The kids take turns to spin, recent meals come up less often, and family favourites more often. No ads, no in-app purchases, no account.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/apps/menurette/assets/icon.png">
+  <link rel="alternate" hreflang="ja" href="https://masamichiueta.github.io/apps/menurette/">
+  <link rel="alternate" hreflang="en" href="https://masamichiueta.github.io/apps/menurette/en/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Menurette — Dinner Roulette">
+  <meta property="og:description" content="Can't decide what's for dinner? Spin for it, together.">
+  <meta property="og:url" content="https://masamichiueta.github.io/apps/menurette/en/">
+  <meta property="og:image" content="https://masamichiueta.github.io/apps/menurette/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --card: #ffffff;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+
+      --c-spin: #FF7A2F;
+      --c-turn: #FF9F0A;
+      --c-no: #FF453A;
+      --c-fair: #30D158;
+      --c-filter: #0A84FF;
+      --c-menu: #BF5AF2;
+      --c-ipad: #64D2FF;
+
+      --brand-1: #FFB547;
+      --brand-2: #F2621C;
+      --link: #C2410C;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --card: #1c1c1e;
+        --card-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        --link: #FFB067;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 17px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .narrow { max-width: 720px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    .hero { text-align: center; padding: 88px 0 24px; }
+    .hero img.icon {
+      width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px;
+      box-shadow: 0 12px 40px rgba(242,98,28,0.30);
+    }
+    .hero h1 {
+      font-size: clamp(1.85rem, 4.6vw, 3.1rem);
+      line-height: 1.24; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 20px; text-wrap: balance;
+    }
+    .hero h1 .line { display: inline-block; }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .hero .lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted);
+      max-width: 620px; margin: 0 auto; text-wrap: pretty;
+    }
+    .cta { margin-top: 34px; }
+    /* Placeholder for the App Store button until the app is on sale.
+       Swap the whole .soon element for:
+       <a class="pill" href="https://apps.apple.com/…">…</a> */
+    .soon {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: var(--bg-soft); color: var(--fg); font-weight: 600; font-size: 0.98rem;
+      border: 1px solid var(--rule);
+    }
+    .pill {
+      display: inline-block; padding: 11px 24px; border-radius: 999px;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 600; font-size: 0.98rem;
+      box-shadow: 0 6px 20px rgba(242,98,28,0.3);
+    }
+    .pill:hover { text-decoration: none; opacity: 0.92; }
+
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 52px auto 0; max-width: 900px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px 8px 12px; border-radius: 999px;
+      background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; color: var(--fg);
+    }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+
+    .premise { padding: 104px 0 96px; text-align: center; }
+    .premise h2 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      line-height: 1.28; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 22px; text-wrap: balance;
+    }
+    .premise p { color: var(--muted); max-width: 620px; margin: 0 auto; font-size: 1.05rem; }
+
+    .features { padding: 0 0 40px; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; }
+    .feature:nth-child(even) .shot-col { order: -1; }
+    .feature .glyph { width: 60px; height: 60px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 22px; }
+    .feature h3 {
+      font-size: clamp(1.25rem, 2.75vw, 1.7rem);
+      line-height: 1.3; letter-spacing: -0.02em; font-weight: 700;
+      margin: 0 0 14px; text-wrap: balance;
+    }
+    .feature p { color: var(--muted); margin: 0 0 14px; }
+    .feature ul { color: var(--muted); margin: 0; padding-left: 1.15em; }
+    .feature li { margin-bottom: 5px; }
+    .shot-col { display: flex; justify-content: center; }
+    .shot {
+      width: 100%; max-width: 300px; border-radius: 30px; overflow: hidden;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow); background: var(--card);
+    }
+
+    .ipad { padding: 48px 0 24px; text-align: center; }
+    .ipad h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 12px; }
+    .ipad p { color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+    .ipad img {
+      width: 100%; max-width: 860px; margin: 0 auto; border-radius: 22px;
+      border: 1px solid var(--rule); box-shadow: var(--card-shadow);
+    }
+
+    .more { padding: 72px 0 8px; }
+    .more h2 { font-size: clamp(1.5rem, 3.6vw, 2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 32px; text-align: center; }
+    .more .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .more .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .more .box .glyph { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px; }
+    .more .box h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.01em; }
+    .more .box p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
+
+    .pricing { padding: 96px 0 8px; }
+    .pricing h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .pricing .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; max-width: 620px; }
+    .plan { max-width: 520px; margin: 0 auto; border: 1px solid color-mix(in srgb, var(--brand-2) 40%, var(--rule)); border-radius: 22px; padding: 30px 28px; background: var(--card); }
+    .plan h3 { margin: 0 0 6px; font-size: 1.1rem; font-weight: 650; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 3px 9px; border-radius: 999px;
+      background: color-mix(in srgb, var(--brand-1) 26%, transparent); color: var(--link);
+    }
+    .plan .price { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.03em; margin: 8px 0 4px; }
+    .plan .price small { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 6px; letter-spacing: 0; }
+    .plan .note { color: var(--muted); font-size: 0.88rem; margin: 0 0 18px; }
+    .plan ul { margin: 0; padding-left: 1.15em; color: var(--muted); font-size: 0.93rem; }
+    .plan li { margin-bottom: 7px; }
+
+    .steps-sec { padding: 96px 0 8px; }
+    .steps-sec h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px; text-align: center; }
+    .steps-sec .sub { color: var(--muted); text-align: center; margin: 0 auto 44px; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .step .num {
+      width: 34px; height: 34px; border-radius: 999px; display: grid; place-items: center;
+      background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+      color: #fff; font-weight: 700; font-size: 0.95rem; margin-bottom: 14px;
+    }
+    .step h3 { margin: 0 0 6px; font-size: 1.02rem; font-weight: 650; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+
+    .privacy { background: #000; color: #f5f5f7; padding: 108px 0; margin-top: 96px; }
+    .privacy h2 {
+      font-size: clamp(2rem, 5.4vw, 3.2rem); line-height: 1.16; letter-spacing: -0.025em;
+      font-weight: 700; margin: 0 0 24px; text-align: center; text-wrap: balance;
+    }
+    .privacy .sub { color: #a1a1a6; text-align: center; max-width: 660px; margin: 0 auto 56px; }
+    .privacy .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; }
+    .privacy .box { background: #1c1c1e; border-radius: 20px; padding: 26px 24px; }
+    .privacy .box h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 600; }
+    .privacy .box p { margin: 0; color: #a1a1a6; font-size: 0.92rem; line-height: 1.6; }
+    .privacy .note { margin: 44px auto 0; text-align: center; color: #6e6e73; font-size: 0.87rem; max-width: 640px; }
+    .privacy .note a { color: #FFB067; }
+
+    .specs { padding: 92px 0; }
+    .specs h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; font-weight: 700; margin: 0 0 28px; }
+    .specs dl { display: grid; grid-template-columns: 150px 1fr; gap: 0; margin: 0; }
+    .specs dt, .specs dd { padding: 14px 0; border-top: 1px solid var(--rule); margin: 0; }
+    .specs dt { font-weight: 600; font-size: 0.92rem; }
+    .specs dd { color: var(--muted); font-size: 0.95rem; }
+
+    footer { border-top: 1px solid var(--rule); padding: 40px 0 64px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 18px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 760px) {
+      .hero { padding: 56px 0 16px; }
+      .feature { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; }
+      .feature:nth-child(even) .shot-col { order: 0; }
+      .shot { max-width: 260px; }
+      .premise { padding: 76px 0 64px; }
+      .privacy { padding: 80px 0; margin-top: 72px; }
+      .specs { padding: 68px 0; }
+      .specs dl { grid-template-columns: 1fr; }
+      .specs dt { border-top: 1px solid var(--rule); padding-bottom: 0; }
+      .specs dd { border-top: 0; padding-top: 4px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap">
+    <a class="brand" href="/apps/menurette/en/"><img src="/apps/menurette/assets/icon.png" alt="">Menurette</a>
+    <ul>
+      <li><a href="/apps/menurette/support.html#english">Support</a></li>
+      <li><a href="/apps/menurette/privacy.html#english">Privacy</a></li>
+      <li><a href="/apps/menurette/">日本語</a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="/apps/menurette/assets/icon.png" alt="The Menurette app icon" width="116" height="116">
+    <h1><span class="line">What's for dinner?</span><br>
+    <span class="line grad">Spin for it.</span></h1>
+    <p class="lead">Turn the nightly question into a family event. Tonight it's a child's turn: flick the wheel with a finger, hear it click round, and wherever it stops is dinner.</p>
+    <div class="cta">
+      <span class="soon">Coming soon to the App Store</span>
+    </div>
+
+    <div class="chips">
+      <span class="chip"><span class="dot" style="background:var(--c-spin)"></span>Flick to spin</span>
+      <span class="chip"><span class="dot" style="background:var(--c-turn)"></span>Take turns</span>
+      <span class="chip"><span class="dot" style="background:var(--c-no)"></span>No thanks! cards</span>
+      <span class="chip"><span class="dot" style="background:var(--c-fair)"></span>A fair draw</span>
+      <span class="chip"><span class="dot" style="background:var(--c-filter)"></span>Filters</span>
+      <span class="chip"><span class="dot" style="background:var(--c-menu)"></span>24 starter dishes</span>
+      <span class="chip"><span class="dot" style="background:var(--c-ipad)"></span>iPad too</span>
+    </div>
+  </div>
+</header>
+
+<section class="premise">
+  <div class="wrap narrow">
+    <h2>The kids<br>get to decide.</h2>
+    <p>Planning dinner never stops. Menurette turns just the deciding part into something the family looks forward to. The candidates are picked cleverly behind the scenes, and on the wheel every slice is the same size — where it stops is what you get, so it's fair to the kids too.</p>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFC873,#FF7A2F)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="16" r="10.5" stroke="#fff" stroke-width="2.4"/><path d="M15 5.5v21M4.5 16h21M7.6 8.6l14.8 14.8M22.4 8.6L7.6 23.4" stroke="#fff" stroke-width="1.6" opacity=".7"/><path d="M11.5 2.5h7L15 7z" fill="#fff"/></svg>
+        </div>
+        <h3>Flick it and watch it go</h3>
+        <p>The wheel spins as hard as you flick it and slows to a stop, with a click and a tap for every slice it passes. The Spin! button works too.</p>
+        <ul>
+          <li>The turn passes through the family in order</li>
+          <li>Someone else can take a turn just for today</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/menurette/assets/shot-home-en.png" alt="The home screen: a wheel of the family's dishes and the Spin! button" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FFD60A,#FF9F0A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4l3 7 7.5.6-5.7 4.9 1.8 7.4L15 20l-6.6 3.9 1.8-7.4-5.7-4.9L12 11z" stroke="#fff" stroke-width="2.3" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Where it stops is dinner</h3>
+        <p>A big emoji and the dish's name, with confetti and a fanfare. Tap Let's have this! and it goes into History and the turn moves on.</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/menurette/assets/shot-result-en.png" alt="The result screen: tonight's dinner under a burst of confetti" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#FF8A80,#FF453A)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M9 15V7.5a2 2 0 014 0V14m0-7.5V5a2 2 0 014 0v9m0-7a2 2 0 014 0v8m0-3.5a2 2 0 014 0V19c0 4.4-3.6 8-8 8h-2c-3 0-5-1.6-6.5-4L6 18.5a2 2 0 013.3-2.2L11 18" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>No thanks! cards keep the peace</h3>
+        <p>Really don't fancy it? Play a No thanks! card and spin again. Everyone gets a few a week (one to start with, back every Monday), and the dish turned down stays off the wheel for the rest of the day.</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/menurette/assets/shot-nothanks-en.png" alt="The Who says no? screen, showing each family member's cards left" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#7EE8A1,#30D158)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="10.5" stroke="#fff" stroke-width="2.4"/><path d="M15 9v6.5l4 2.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Every dinner, remembered</h3>
+        <p>History keeps the date, the dish and who spun. It also feeds the draw, so what you had recently comes up less often.</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/menurette/assets/shot-history-en.png" alt="The History screen: each day's dinner and who spun" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="ipad">
+  <div class="wrap">
+    <h2>Side by side on iPad</h2>
+    <p>Turn the iPad sideways and the wheel sits on the left, with whose turn it is and tonight's candidates on the right. Stand it on the table and gather round.</p>
+    <img src="/apps/menurette/assets/shot-ipad-en.png" alt="The iPad in landscape: the wheel on the left, tonight's candidates on the right" width="1376" height="1032" loading="lazy">
+  </div>
+</section>
+
+<section class="more">
+  <div class="wrap">
+    <h2>There's more</h2>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#7EE8A1,#30D158)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4v22M8 26h14M5 9h20" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M5 9l-3 8a3.5 3.5 0 006 0zM25 9l-3 8a3.5 3.5 0 006 0z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>A smart, fair draw</h3>
+        <p>Recent dinners, and dishes sharing yesterday's cuisine or main ingredient, come up less often; family favourites come up more. The weighting only decides what goes on the wheel — on the wheel, every slice is the same size.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#5AB0FF,#0A84FF)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M4 7h22l-8.5 10v7l-5 2.5V17z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Filters</h3>
+        <p>Spin only Japanese, Western or Chinese dishes, only meat or fish, or only quick meals. Set it before you spin.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#D68CFF,#BF5AF2)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M4 14h22a11 11 0 01-22 0zM11 25h8" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M11 10c0-2 2-2 2-4M16 10c0-2 2-2 2-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>24 dishes to start with</h3>
+        <p>Curry rice, hamburg steak, fried chicken, gyoza, hand-rolled sushi and more staples of Japanese home cooking. Add, edit or remove whatever you like.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FF8FB1,#FF375F)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 25S4 18.5 4 11a5.5 5.5 0 0111-1.5A5.5 5.5 0 0126 11c0 7.5-11 14-11 14z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Family favourites</h3>
+        <p>Mark whose favourite each dish is. The more fans a dish has, the more likely it lands on the wheel.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#9E9EA6,#636366)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="6" y="13" width="18" height="13" rx="3" stroke="#fff" stroke-width="2.4"/><path d="M10 13V9.5a5 5 0 0110 0V13" stroke="#fff" stroke-width="2.4"/></svg>
+        </div>
+        <h3>Grown-up settings behind a sum</h3>
+        <p>Editing dishes and family members, and changing settings, takes the answer to a simple addition — so little fingers can't delete anything by accident.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FFC873,#FF7A2F)">
+          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M5 12h5l7-6v18l-7-6H5z" stroke="#fff" stroke-width="2.3" stroke-linejoin="round"/><path d="M21 11a6 6 0 010 8M24.5 8a10 10 0 010 14" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Quiet on silent</h3>
+        <p>The sound effects stay quiet when your phone is on silent, and sounds and haptics can be turned off. Reduce Motion is supported too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="sub">One purchase. No in-app purchases, no ads.</p>
+    <div class="plan">
+      <h3>Menurette<span class="badge">One-time</span></h3>
+      <p class="price">Pay once<small>the App Store shows your local price</small></p>
+      <p class="note">Not a subscription. Works on the iPhones and iPads signed in to the same Apple Account.</p>
+      <ul>
+          <li>Every feature</li>
+          <li>No in-app purchases, no ads</li>
+          <li>No account</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Setting up takes about a minute.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Add your family</h3>
+        <p>A name, an avatar and a colour for everyone. Their order is the turn order.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Spin</h3>
+        <p>Whoever's turn it is flicks the wheel. Where it stops is dinner.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Decide</h3>
+        <p>Let's have this! makes it official. Or play a No thanks! card and spin again.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="wrap">
+    <h2>Your family stays<br>on your device.</h2>
+    <p class="sub">Dishes, names and history are stored on the device and nowhere else. The developer can't see any of it.</p>
+
+    <div class="grid">
+      <div class="box">
+        <h4>No account</h4>
+        <p>Nothing to sign up for or sign in to. We don't even ask for an email address.</p>
+      </div>
+      <div class="box">
+        <h4>No network</h4>
+        <p>There is no networking code in the app at all. Everything works in airplane mode.</p>
+      </div>
+      <div class="box">
+        <h4>Not even iCloud</h4>
+        <p>Your data stays on the device, and nothing syncs.</p>
+      </div>
+      <div class="box">
+        <h4>No ads, no tracking</h4>
+        <p>No analytics SDKs and no advertising SDKs, of any kind.</p>
+      </div>
+      <div class="box">
+        <h4>No permissions</h4>
+        <p>No access to the camera, photos, location, notifications or anything else.</p>
+      </div>
+      <div class="box">
+        <h4>No links out</h4>
+        <p>However the kids tap, the app never sends them anywhere else.</p>
+      </div>
+    </div>
+
+    <p class="note">See the <a href="/apps/menurette/privacy.html#english">privacy policy</a> for details.</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>Requirements</h2>
+    <dl>
+      <dt>Operating system</dt>
+      <dd>iOS 27.0 / iPadOS 27.0 or later</dd>
+      <dt>Devices</dt>
+      <dd>iPhone and iPad</dd>
+      <dt>Languages</dt>
+      <dd>English and Japanese</dd>
+      <dt>Price</dt>
+      <dd>Paid once. No in-app purchases, no ads</dd>
+      <dt>Network</dt>
+      <dd>Not needed. Everything works offline</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/apps/menurette/support.html#english">Support</a>
+      <a href="/apps/menurette/privacy.html#english">Privacy Policy</a>
+      <a href="CONTACT_FORM_URL">Contact</a>
+      <a href="/apps/menurette/">日本語</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
+
+</body>
+</html>
