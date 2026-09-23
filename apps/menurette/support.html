@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menurette — Support</title>
+  <meta name="description" content="Support page for Menurette, the family dinner roulette for iPhone and iPad — how to use it, FAQ, and how to contact the developer.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/apps/menurette/assets/icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #C2410C;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --link: #FFB067;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.72; font-size: 17px; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; text-wrap: balance; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+      text-wrap: balance;
+    }
+    h3 { font-size: 1.12rem; font-weight: 650; margin: 40px 0 10px; letter-spacing: -0.01em; }
+    h4 { font-size: 1rem; font-weight: 650; margin: 26px 0 8px; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+    hr { display: none; }
+
+    dl.faq { margin: 0; }
+    dl.faq dt { font-weight: 650; margin: 30px 0 6px; font-size: 1.02rem; letter-spacing: -0.01em; }
+    dl.faq dd { margin: 0; color: var(--muted); }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/apps/menurette/"><img src="/apps/menurette/assets/icon.png" alt="">Menurette</a>
+    <ul>
+      <li><a href="/apps/menurette/">トップ</a></li>
+      <li><a href="/apps/menurette/privacy.html">プライバシー</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+    <h1>Menurette — Support</h1>
+    <p class="updated">最終更新日 / Last updated: 2026-09-23</p>
+
+    <hr>
+
+    <h2>サポート (日本語)</h2>
+
+    <p>Menurette（献立ルーレット）は、家族みんなでルーレットを回して晩ごはんを決める iPhone・iPad アプリです。本ページでは、使いかた・よくある質問・お問い合わせ先をまとめています。<a href="/apps/menurette/">紹介ページ</a>もあります。</p>
+
+    <h3>動作環境</h3>
+    <ul>
+      <li>iOS 27.0 / iPadOS 27.0 以降</li>
+      <li>iPhone および iPad に対応</li>
+      <li>アカウント登録は不要です。インターネット接続がなくても、すべての機能を使えます</li>
+    </ul>
+
+    <h3>料金</h3>
+    <p>買い切りの有料アプリです（日本では ¥300）。App内課金、広告、サブスクリプションはありません。一度ご購入いただければ、同じ Apple Account でサインインしている iPhone と iPad で使えます。</p>
+
+    <h3>お問い合わせ</h3>
+    <ul>
+      <li>お問い合わせは<a href="CONTACT_FORM_URL">お問い合わせフォーム</a>からお願いします。</li>
+      <li>個人開発のため、お返事までに数日いただくことがあります。あらかじめご了承ください。</li>
+      <li>不具合のご連絡時は、端末モデル（例：iPhone 17 Pro）・iOS のバージョン・アプリのバージョンを添えていただけると助かります。</li>
+    </ul>
+
+    <h3>使いかた</h3>
+
+    <h4>はじめに</h4>
+    <p>最初に起動すると、家族のメンバー（1人以上）を登録し、はじめから入っている24品のメニューから使わないものを外します。そのあとはすぐにルーレットを回せます。</p>
+
+    <h4>回す</h4>
+    <p>ホーム画面のルーレットを指で弾くと、弾いた勢いで回って止まります。「まわす!」ボタンでも回せます。止まったところが今日の晩ごはんです。画面の上に、今日回す人が出ています。</p>
+
+    <h4>決める・「やだ!」</h4>
+    <ul>
+      <li><strong>これにする!</strong> — 今日の献立に決まり、履歴に残ります。次は、家族の並び順で次の人が回す番になります。</li>
+      <li><strong>やだ!</strong> — 「やだ!」カードが残っている人なら、回した人でなくても使えます。同じ人がもう一度回し、断った料理はその日のルーレットから外れます。カードは一人につき週に決まった枚数（はじめは1枚）で、毎週月曜日に戻ります。</li>
+    </ul>
+
+    <h4>条件をしぼる</h4>
+    <p>ホーム画面の右上のボタンから、ジャンル（和食・洋食・中華・麺・ごはんもの・その他）、主な食材、時短メニューだけ、といった条件をかけて回せます。</p>
+
+    <h4>候補の選ばれ方</h4>
+    <p>ルーレットに載る料理は、最近食べたものほど出にくく、前日と同じジャンル・同じ食材も出にくく、家族の「すき」が多いほど出やすくなるように、裏側で選んでいます。ルーレットの上では同じ大きさに並ぶので、止まった場所がそのまま結果になります。</p>
+
+    <h4>メニュー・家族・設定（おとな向け）</h4>
+    <p>「設定」タブは、かんたんな足し算に答えると開きます。お子さまがうっかりメニューを消してしまわないためのものです。</p>
+    <ul>
+      <li><strong>メニュー</strong> — 追加・編集・削除。左から右へスワイプすると「おやすみ」にでき、おやすみ中の料理はルーレットに載りません。料理ごとに、家族のだれの「すき」かを選べます。</li>
+      <li><strong>家族</strong> — 追加・編集・削除・並べ替え。並び順が、回す順番です。</li>
+      <li><strong>ルーレット</strong> — セグメント数（6〜12、はじめは10）、かぶり防止の日数（3〜14日、はじめは7日）。</li>
+      <li><strong>やだ!カード</strong> — 一人あたり週0〜3枚（はじめは1枚）。</li>
+      <li><strong>効果音・ハプティクス</strong> — それぞれオン／オフ。</li>
+    </ul>
+
+    <h3>よくある質問 (FAQ)</h3>
+    <dl class="faq">
+      <dt>Q. 今日だけ、別の人に回してもらいたい</dt>
+      <dd>A. ホーム画面の上に出ている「きょう まわす人」をタップすると、回す人を選び直せます。選び直しは次に献立を決めるまで有効で、そのあとは家族の並び順に戻ります。</dd>
+
+      <dt>Q. 回す順番を変えたい</dt>
+      <dd>A.「設定」→「家族」で「編集」をタップし、並べ替えてください。並び順がそのまま回す順番になります。</dd>
+
+      <dt>Q. 最近食べた料理がなかなか出ません</dt>
+      <dd>A. かぶりを防ぐため、決めてから日が浅い料理ほど出にくくしています。「設定」→「かぶり防止の日数」を短くすると、早く出やすくなります。</dd>
+
+      <dt>Q.「ルーレットが からっぽ」と出て回せません</dt>
+      <dd>A. ルーレットには2品以上が必要です。条件をしぼっている場合は「じょうけんをクリア」を、その日の「やだ!」で全部外れた場合は「もう一度出す」をタップしてください。それ以外の場合は、「設定」→「メニュー」で、おやすみ中の料理を戻すか、料理を追加してください。</dd>
+
+      <dt>Q.「やだ!」が押せません</dt>
+      <dd>A. 家族全員が、その週の「やだ!」カードを使い切っています。カードは毎週月曜日に戻ります。枚数は「設定」→「やだ!カード」で変えられ、0枚にすると「やだ!」は使えなくなります。</dd>
+
+      <dt>Q. 同じ日に2回決めたらどうなりますか？</dt>
+      <dd>A. 履歴は1日1件です。すでに決まっている日にもう一度決めようとすると、上書きしてよいかを確認します。</dd>
+
+      <dt>Q. 履歴を消したい</dt>
+      <dd>A.「履歴」タブで、消したい日を左へスワイプするか、「編集」から削除できます。履歴は候補の選び方（最近食べたもの）にも使っているので、消した料理はまた出やすくなります。</dd>
+
+      <dt>Q. 音が鳴りません</dt>
+      <dd>A. 端末がマナーモードのときは効果音が鳴りません。また、「設定」→「効果音」がオンになっているかをご確認ください。音楽を聴いている場合、その音楽は止まりません。</dd>
+
+      <dt>Q. 家族の iPhone や iPad とデータを共有できますか？</dt>
+      <dd>A. 現在のバージョンでは、データはそれぞれの端末の中だけに保存され、端末どうしで同期はしません。1台の iPhone か iPad を、家族で囲んで使うことを想定しています。</dd>
+
+      <dt>Q. 機種変更したら、メニューや履歴はどうなりますか？</dt>
+      <dd>A. iCloud バックアップや Mac へのバックアップから新しい端末を復元すると、アプリのデータも引き継がれます。バックアップを使わずに新しく入れ直した場合は、最初からの状態になります。</dd>
+
+      <dt>Q. iPad でも使えますか？</dt>
+      <dd>A. 使えます。iPad を横向きにすると、ルーレットを左に、回す人と今日の候補の一覧を右に並べて表示します。</dd>
+
+      <dt>Q. データをすべて消したい</dt>
+      <dd>A. アプリを端末から削除すると、保存されていたメニュー・家族・履歴・設定がすべて消えます。元に戻すことはできません。</dd>
+    </dl>
+
+    <h3>プライバシー</h3>
+    <p>このAppは個人情報を一切収集しません。データはすべて端末の中に保存され、外部に送信されることはありません。詳しくは<a href="/apps/menurette/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+
+    <h3>免責事項</h3>
+    <ul>
+      <li>本アプリは、現在ある機能のまま提供されます。お使いの目的に合うこと、いつでも問題なく使えることを、どんな形であっても保証するものではありません。</li>
+      <li>本アプリの利用または利用できなかったことによって生じたいかなる損害（データの消失、機器の不具合などを含みますが、これらに限りません）についても、開発者は法令で認められる範囲において一切の責任を負いません。</li>
+      <li>データは端末内に保存されますが、端末の故障・紛失、OS や本アプリのアップデート、操作ミスなどにより失われる可能性があります。</li>
+      <li>食物アレルギーや食事制限については、ご家庭でご判断ください。本アプリの料理の候補は、健康や栄養について助言するものではありません。</li>
+      <li>本アプリの機能・仕様・提供状況は、改善や諸般の事情により予告なく変更または中止する場合があります。</li>
+    </ul>
+
+    <hr>
+
+    <h2 id="english">Support (English)</h2>
+
+    <p>Menurette is a dinner roulette for iPhone and iPad: the family spins a wheel together to decide what's for dinner. This page covers how to use it, common questions, and how to reach the developer. There is also an <a href="/apps/menurette/en/">overview page</a>.</p>
+
+    <h3>Requirements</h3>
+    <ul>
+      <li>iOS 27.0 / iPadOS 27.0 or later</li>
+      <li>Runs on iPhone and iPad</li>
+      <li>No account is needed. Everything works without an internet connection</li>
+    </ul>
+
+    <h3>Pricing</h3>
+    <p>Menurette is a one-time purchase; the App Store shows the price in your currency. There are no in-app purchases, no ads and no subscription. Once bought, it works on the iPhones and iPads signed in to the same Apple Account.</p>
+
+    <h3>Contact</h3>
+    <ul>
+      <li>Please reach out via the <a href="CONTACT_FORM_URL">contact form</a>.</li>
+      <li>This is an indie project, so replies may take a few days. Thank you for your patience.</li>
+      <li>When reporting an issue, please include your device model (e.g. iPhone 17 Pro), your iOS version, and the app version.</li>
+    </ul>
+
+    <h3>How to use it</h3>
+
+    <h4>Getting started</h4>
+    <p>On first launch you add your family (at least one person) and drop any of the 24 starter dishes you don't want. After that the wheel is ready to spin.</p>
+
+    <h4>Spinning</h4>
+    <p>Flick the wheel on the home screen and it spins as hard as you flicked it, then slows to a stop. The "Spin!" button works too. Wherever it stops is tonight's dinner. Whose turn it is shows at the top of the screen.</p>
+
+    <h4>Deciding, or "No thanks!"</h4>
+    <ul>
+      <li><strong>Let's have this!</strong> — makes it tonight's dinner and records it in History. The turn then passes to the next person in the family's order.</li>
+      <li><strong>No thanks!</strong> — anyone with a card left can play one, not only whoever spun. The same person spins again, and the dish that was turned down stays off the wheel for the rest of the day. Everyone gets a set number of cards a week (one to start with), and they come back every Monday.</li>
+    </ul>
+
+    <h4>Filters</h4>
+    <p>The button at the top right of the home screen narrows the wheel by cuisine (Japanese, Western, Chinese, noodles, rice dishes, other), by main ingredient, or to quick meals only.</p>
+
+    <h4>How the wheel is filled</h4>
+    <p>Behind the scenes, dishes you had recently come up less often, so do dishes from the same cuisine or with the same main ingredient as yesterday, and family favourites come up more often. On the wheel itself every slice is the same size, so where it stops is what you get.</p>
+
+    <h4>Dishes, family and settings (for grown-ups)</h4>
+    <p>The Settings tab opens after a simple addition question. It's there so young children can't delete dishes by accident.</p>
+    <ul>
+      <li><strong>Dishes</strong> — add, edit and delete. Swipe right on a dish to pause it; paused dishes never land on the wheel. Each dish can be marked as a favourite of anyone in the family.</li>
+      <li><strong>Family</strong> — add, edit, delete and reorder. The order is the turn order.</li>
+      <li><strong>Wheel</strong> — slices on the wheel (6 to 12, 10 to start with) and repeat-free days (3 to 14, 7 to start with).</li>
+      <li><strong>No-thanks cards</strong> — 0 to 3 per person per week (1 to start with).</li>
+      <li><strong>Sound effects and haptics</strong> — each on or off.</li>
+    </ul>
+
+    <h3>FAQ</h3>
+    <dl class="faq">
+      <dt>Q. Can someone else spin just for today?</dt>
+      <dd>A. Tap "Today's turn" at the top of the home screen and pick someone. The change lasts until the next dinner is decided; after that the family's order takes over again.</dd>
+
+      <dt>Q. How do I change the turn order?</dt>
+      <dd>A. Go to Settings → Family, tap Edit, and drag people into the order you want. That order is the turn order.</dd>
+
+      <dt>Q. A dish we had recently hardly ever comes up</dt>
+      <dd>A. That's on purpose: the more recently a dish was decided, the less likely it is. Shorten Settings → Repeat-free days to let dishes come back sooner.</dd>
+
+      <dt>Q. It says "The wheel is empty" and won't spin</dt>
+      <dd>A. The wheel needs at least two dishes. If a filter is on, tap "Clear filter"; if today's "No thanks!" cards took everything off, tap "Bring them back". Otherwise, resume a paused dish or add one under Settings → Dishes.</dd>
+
+      <dt>Q. I can't press "No thanks!"</dt>
+      <dd>A. Everyone in the family has used this week's cards. They come back every Monday. You can change how many there are under Settings → No-thanks cards; set it to 0 to turn "No thanks!" off.</dd>
+
+      <dt>Q. What if we decide twice on the same day?</dt>
+      <dd>A. History keeps one dinner per day. Deciding again on a day that's already decided asks whether to replace it.</dd>
+
+      <dt>Q. How do I delete something from History?</dt>
+      <dd>A. In the History tab, swipe left on the day, or use Edit. History also feeds the draw (recent dinners come up less often), so a deleted dish becomes more likely again.</dd>
+
+      <dt>Q. There's no sound</dt>
+      <dd>A. The sound effects stay quiet when your phone is on silent. Also check that Settings → Sound effects is on. Music you're already listening to is never interrupted.</dd>
+
+      <dt>Q. Can we share the data between our iPhones and iPads?</dt>
+      <dd>A. Not in the current version. Everything stays on the device it was entered on, and devices don't sync with each other. Menurette is made for one iPhone or iPad that the family gathers around.</dd>
+
+      <dt>Q. What happens to our dishes and history when I switch devices?</dt>
+      <dd>A. Restoring the new device from an iCloud Backup or a backup on your Mac brings the app's data across. If you install it fresh without a backup, it starts from scratch.</dd>
+
+      <dt>Q. Does it work on iPad?</dt>
+      <dd>A. Yes. Turn the iPad sideways and the wheel sits on the left, with whose turn it is and tonight's candidates on the right.</dd>
+
+      <dt>Q. How do I delete all our data?</dt>
+      <dd>A. Deleting the app removes every dish, family member, history entry and setting it stored. This can't be undone.</dd>
+    </dl>
+
+    <h3>Privacy</h3>
+    <p>This app collects no personal information. Everything stays on your device and is never sent anywhere. See the <a href="/apps/menurette/privacy.html">privacy policy</a> for details.</p>
+
+    <h3>Disclaimer</h3>
+    <ul>
+      <li>The app is provided "as is," without warranty of any kind, whether express or implied, including but not limited to fitness for a particular purpose or continued availability.</li>
+      <li>To the extent permitted by law, the developer is not liable for any damages arising from the use of, or inability to use, the app — including but not limited to loss of data or device malfunction.</li>
+      <li>Data is stored on your device, but it may be lost due to device failure or loss, OS or app updates, or user error.</li>
+      <li>Food allergies and dietary needs are for your family to judge. The dishes the app suggests are not health or nutrition advice.</li>
+      <li>Features, specifications, and availability may change or be discontinued without notice.</li>
+    </ul>
+  <footer>
+    <nav>
+      <a href="/apps/menurette/">トップ / Home</a>
+      <a href="/apps/menurette/privacy.html">プライバシー / Privacy</a>
+      <a href="CONTACT_FORM_URL">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
+  </main>
+</body>
+</html>

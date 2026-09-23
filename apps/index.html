@@ -975,6 +975,14 @@
     transition: opacity .2s ease;
   }
   .app-cta:hover, .app-cta:focus { color: #fff; opacity: .9; text-decoration: none; }
+  .app-cta.soon {
+    background: none;
+    color: var(--apps-muted);
+    border: 1px solid color-mix(in srgb, var(--apps-muted) 35%, transparent);
+    box-shadow: none;
+    font-weight: 500;
+    opacity: 1;
+  }
   .app-sublink {
     font-size: .9rem;
     font-weight: 500;
@@ -1067,9 +1075,34 @@
 
     <ul class="app-list list-unstyled">
 
+      <li class="app-tile" style="--b1:#6B7BFF; --b2:#8B37D8; --bk:#8B37D8;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/markdownviewer/assets/icon.png" alt="Markdown Viewer &amp; Editor アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">Markdown Viewer &amp; Editor</h3>
+          <p class="app-tagline">開いた瞬間から読める Markdown</p>
+          <p class="app-tagline-en" lang="en">Open .md files, ready to read</p>
+          <p class="app-desc">README や設計メモ、AI が書いた .md を開くと、見出し・表・タスクリストの整った文書として表示。チェックはタップひとつ、直したい所はその場で編集し、置いてある場所にそのまま保存できます。</p>
+          <p class="app-desc-en" lang="en">Open a README, a design note, or an .md an AI just wrote, and it renders as a
+            document — headings, tables, and tappable task lists — instead of raw symbols. Fix what needs fixing right
+            there, and it saves back to wherever the file already lives.</p>
+          <div class="app-actions">
+            <span class="app-cta soon">App Store 審査中</span>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/markdownviewer/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/markdownviewer/en/" lang="en">English</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="https://masamichiueta.github.io/apps/markdownviewer/assets/shot-preview.png"
+              alt="Markdown Viewer &amp; Editor のプレビュー画面。「はじめに」文書が見出し・箇条書き・チェックボックス付きで表示されている" width="600" height="1304" loading="lazy">
+          </div>
+        </div>
+      </li>
+
       <li class="app-tile" style="--b1:#8E8E93; --b2:#48484D; --bk:#1d1d1f;">
         <div class="app-tile-body">
-          <img class="app-icon" src="https://masamichiueta.github.io/monoqulo/assets/icon.png" alt="Monoqulo アプリアイコン"
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/monoqulo/assets/icon.png" alt="Monoqulo アプリアイコン"
             width="68" height="68" loading="lazy">
           <h3 class="app-name">Monoqulo</h3>
           <p class="app-tagline">写真をモノクロにする 23 の方法</p>
@@ -1079,13 +1112,13 @@
             halftone, pencil sketch — 23 monochrome styles across four families, exported at full resolution.</p>
           <div class="app-actions">
             <a class="app-cta" href="https://apps.apple.com/jp/app/id6810276531">App Store で見る</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/monoqulo/">アプリサイト</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/monoqulo/en/" lang="en">English</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/monoqulo/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/monoqulo/en/" lang="en">English</a>
           </div>
         </div>
         <div class="app-shot">
           <div class="app-shot-frame">
-            <img src="https://masamichiueta.github.io/monoqulo/assets/shot-film.png"
+            <img src="https://masamichiueta.github.io/apps/monoqulo/assets/shot-film.png"
               alt="Monoqulo のエディタ画面。桜の写真をクラシック 400 のフィルム調にしたところ" width="405" height="880" loading="lazy">
           </div>
         </div>
@@ -1093,7 +1126,7 @@
 
       <li class="app-tile" style="--b1:#2E8BFF; --b2:#0B57D0; --bk:#0B57D0;">
         <div class="app-tile-body">
-          <img class="app-icon" src="https://masamichiueta.github.io/runrunrun/assets/icon.png" alt="Runrunrun アプリアイコン"
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/runrunrun/assets/icon.png" alt="Runrunrun アプリアイコン"
             width="68" height="68" loading="lazy">
           <h3 class="app-name">Runrunrun</h3>
           <p class="app-tagline">ヘルスケアに残ったランを読み解く</p>
@@ -1104,13 +1137,13 @@
             on.</p>
           <div class="app-actions">
             <a class="app-cta" href="https://apps.apple.com/jp/app/id6803870878">App Store で見る</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/runrunrun/">アプリサイト</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/runrunrun/en/" lang="en">English</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/runrunrun/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/runrunrun/en/" lang="en">English</a>
           </div>
         </div>
         <div class="app-shot">
           <div class="app-shot-frame">
-            <img src="https://masamichiueta.github.io/runrunrun/assets/shot-home.png"
+            <img src="https://masamichiueta.github.io/apps/runrunrun/assets/shot-home.png"
               alt="Runrunrun のホーム画面。今週の走行距離と次のレースまでの残り日数" width="405" height="880" loading="lazy">
           </div>
         </div>
@@ -1118,7 +1151,7 @@
 
       <li class="app-tile" style="--b1:#8B7BFF; --b2:#4B34C8; --bk:#4B34C8;">
         <div class="app-tile-body">
-          <img class="app-icon" src="https://masamichiueta.github.io/magirenbo/assets/icon.png" alt="まぎれんぼ アプリアイコン"
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/magirenbo/assets/icon.png" alt="まぎれんぼ アプリアイコン"
             width="68" height="68" loading="lazy">
           <h3 class="app-name">まぎれんぼ<span class="app-name-en" lang="en">Magirenbo</span></h3>
           <p class="app-tagline">絵文字さがしパズル</p>
@@ -1128,13 +1161,13 @@
             more emoji — the last tier is a wall of 900.</p>
           <div class="app-actions">
             <a class="app-cta" href="https://apps.apple.com/jp/app/id6798993976">App Store で見る</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/magirenbo/">アプリサイト</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/magirenbo/en/" lang="en">English</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/magirenbo/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/magirenbo/en/" lang="en">English</a>
           </div>
         </div>
         <div class="app-shot">
           <div class="app-shot-frame">
-            <img src="https://masamichiueta.github.io/magirenbo/assets/shot-hard.png"
+            <img src="https://masamichiueta.github.io/apps/magirenbo/assets/shot-hard.png"
               alt="まぎれんぼのプレイ画面。同じ絵文字が並ぶ中に1つだけ違う絵文字がまぎれている" width="540" height="1173" loading="lazy">
           </div>
         </div>
@@ -1142,7 +1175,7 @@
 
       <li class="app-tile" style="--b1:#FEB648; --b2:#E06A0A; --bk:#B85C05;">
         <div class="app-tile-body">
-          <img class="app-icon" src="https://masamichiueta.github.io/grillog/assets/icon.png" alt="Grillog アプリアイコン"
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/grillog/assets/icon.png" alt="Grillog アプリアイコン"
             width="68" height="68" loading="lazy">
           <h3 class="app-name">Grillog</h3>
           <p class="app-tagline">食べた部位まで残す、焼肉の記録</p>
@@ -1152,12 +1185,12 @@
             rankings, and monthly spending stats.</p>
           <div class="app-actions">
             <a class="app-cta" href="https://apps.apple.com/jp/app/id6794827666">App Store で見る</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/grillog/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/grillog/">アプリサイト</a>
           </div>
         </div>
         <div class="app-shot">
           <div class="app-shot-frame">
-            <img src="https://masamichiueta.github.io/grillog/assets/shot-feed.png"
+            <img src="https://masamichiueta.github.io/apps/grillog/assets/shot-feed.png"
               alt="Grillog のフィード画面。訪問した焼肉店の記録が写真付きで並ぶ" width="405" height="880" loading="lazy">
           </div>
         </div>
@@ -1165,7 +1198,7 @@
 
       <li class="app-tile" style="--b1:#5FC46C; --b2:#1F8F5F; --bk:#1A7A50;">
         <div class="app-tile-body">
-          <img class="app-icon" src="https://masamichiueta.github.io/teenote/assets/icon.png" alt="TeeNote アプリアイコン"
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/teenote/assets/icon.png" alt="TeeNote アプリアイコン"
             width="68" height="68" loading="lazy">
           <h3 class="app-name">TeeNote</h3>
           <p class="app-tagline">ゴルフのスコアを、シンプルに記録</p>
@@ -1175,13 +1208,13 @@
             same round. Stats and charts show your game improving.</p>
           <div class="app-actions">
             <a class="app-cta" href="https://apps.apple.com/jp/app/teenote/id6787110028">App Store で見る</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/teenote/">アプリサイト</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/teenote/en/" lang="en">English</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/teenote/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/teenote/en/" lang="en">English</a>
           </div>
         </div>
         <div class="app-shot">
           <div class="app-shot-frame">
-            <img src="https://masamichiueta.github.io/teenote/assets/shot-detail.png"
+            <img src="https://masamichiueta.github.io/apps/teenote/assets/shot-detail.png"
               alt="TeeNote のラウンド詳細画面。合計スコア・パット数・スコアカードが並ぶ" width="640" height="1390" loading="lazy">
           </div>
         </div>
@@ -1189,7 +1222,7 @@
 
       <li class="app-tile" style="--b1:#FF8CC6; --b2:#7B86F5; --bk:#5B62D6;">
         <div class="app-tile-body">
-          <img class="app-icon" src="https://masamichiueta.github.io/today/assets/icon.png" alt="Today Score Everyday アプリアイコン"
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/today/assets/icon.png" alt="Today Score Everyday アプリアイコン"
             width="68" height="68" loading="lazy">
           <h3 class="app-name">Today Score Everyday</h3>
           <p class="app-tagline">1日1回、今日を1〜10で記録</p>
@@ -1199,13 +1232,13 @@
             Look back with monthly history, a calendar, and stats.</p>
           <div class="app-actions">
             <a class="app-cta" href="https://apps.apple.com/jp/app/today-score-everyday/id6777611175">App Store で見る</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/today/">アプリサイト</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/today/en/" lang="en">English</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/today/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/today/en/" lang="en">English</a>
           </div>
         </div>
         <div class="app-shot">
           <div class="app-shot-frame">
-            <img src="https://masamichiueta.github.io/today/assets/shot-today.png"
+            <img src="https://masamichiueta.github.io/apps/today/assets/shot-today.png"
               alt="Today Score Everyday の記録画面。今日の点数を1〜10から選ぶ" width="1206" height="2622" loading="lazy">
           </div>
         </div>
@@ -1213,7 +1246,7 @@
 
       <li class="app-tile" style="--b1:#4DA3FF; --b2:#0A6CF0; --bk:#0A6CF0;">
         <div class="app-tile-body">
-          <img class="app-icon" src="https://masamichiueta.github.io/aspectfit/assets/icon.png" alt="AspectFit アプリアイコン"
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/aspectfit/assets/icon.png" alt="AspectFit アプリアイコン"
             width="68" height="68" loading="lazy">
           <h3 class="app-name">AspectFit</h3>
           <p class="app-tagline">写真を選べる比率に自然拡張</p>
@@ -1223,13 +1256,13 @@
             The new space is filled with a background generated from your own image.</p>
           <div class="app-actions">
             <a class="app-cta" href="https://apps.apple.com/jp/app/aspectfit/id6772523112">App Store で見る</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/aspectfit/">アプリサイト</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/aspectfit/en/" lang="en">English</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/aspectfit/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/aspectfit/en/" lang="en">English</a>
           </div>
         </div>
         <div class="app-shot">
           <div class="app-shot-frame">
-            <img src="https://masamichiueta.github.io/aspectfit/assets/shot-result.png"
+            <img src="https://masamichiueta.github.io/apps/aspectfit/assets/shot-result.png"
               alt="AspectFit の生成結果画面。写真が指定した比率まで自然に広げられている" width="425" height="923" loading="lazy">
           </div>
         </div>
@@ -1237,7 +1270,7 @@
 
       <li class="app-tile" style="--b1:#7BAFFF; --b2:#2C6FDB; --bk:#2C6FDB;">
         <div class="app-tile-body">
-          <img class="app-icon" src="https://masamichiueta.github.io/homework/assets/icon.png" alt="Homework アプリアイコン"
+          <img class="app-icon" src="https://masamichiueta.github.io/apps/homework/assets/icon.png" alt="Homework アプリアイコン"
             width="68" height="68" loading="lazy">
           <h3 class="app-name">Homework</h3>
           <p class="app-tagline">こどもがじぶんできろくするべんきょうタイマー</p>
@@ -1247,13 +1280,13 @@
             themselves. Streaks, levels, charts, and 300 badges make every day's effort visible.</p>
           <div class="app-actions">
             <a class="app-cta" href="https://apps.apple.com/jp/app/homework/id6768120022">App Store で見る</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/homework/">アプリサイト</a>
-            <a class="app-sublink" href="https://masamichiueta.github.io/homework/en/" lang="en">English</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/homework/">アプリサイト</a>
+            <a class="app-sublink" href="https://masamichiueta.github.io/apps/homework/en/" lang="en">English</a>
           </div>
         </div>
         <div class="app-shot">
           <div class="app-shot-frame">
-            <img src="https://masamichiueta.github.io/homework/assets/shot-home.png"
+            <img src="https://masamichiueta.github.io/apps/homework/assets/shot-home.png"
               alt="Homework のホーム画面。レベル・きょうの勉強時間・連続記録が並ぶ" width="425" height="920" loading="lazy">
           </div>
         </div>
