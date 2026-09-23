@@ -267,6 +267,14 @@ permalink: /apps/
     transition: opacity .2s ease;
   }
   .app-cta:hover, .app-cta:focus { color: #fff; opacity: .9; text-decoration: none; }
+  .app-cta.soon {
+    background: none;
+    color: var(--apps-muted);
+    border: 1px solid color-mix(in srgb, var(--apps-muted) 35%, transparent);
+    box-shadow: none;
+    font-weight: 500;
+    opacity: 1;
+  }
   .app-sublink {
     font-size: .9rem;
     font-weight: 500;
@@ -358,6 +366,31 @@ permalink: /apps/
     </header>
 
     <ul class="app-list list-unstyled">
+
+      <li class="app-tile" style="--b1:#6B7BFF; --b2:#8B37D8; --bk:#8B37D8;">
+        <div class="app-tile-body">
+          <img class="app-icon" src="{{ site.url }}/apps/markdownviewer/assets/icon.png" alt="Markdown Viewer &amp; Editor アプリアイコン"
+            width="68" height="68" loading="lazy">
+          <h3 class="app-name">Markdown Viewer &amp; Editor</h3>
+          <p class="app-tagline">開いた瞬間から読める Markdown</p>
+          <p class="app-tagline-en" lang="en">Open .md files, ready to read</p>
+          <p class="app-desc">README や設計メモ、AI が書いた .md を開くと、見出し・表・タスクリストの整った文書として表示。チェックはタップひとつ、直したい所はその場で編集し、置いてある場所にそのまま保存できます。</p>
+          <p class="app-desc-en" lang="en">Open a README, a design note, or an .md an AI just wrote, and it renders as a
+            document — headings, tables, and tappable task lists — instead of raw symbols. Fix what needs fixing right
+            there, and it saves back to wherever the file already lives.</p>
+          <div class="app-actions">
+            <span class="app-cta soon">App Store 審査中</span>
+            <a class="app-sublink" href="{{ site.url }}/apps/markdownviewer/">アプリサイト</a>
+            <a class="app-sublink" href="{{ site.url }}/apps/markdownviewer/en/" lang="en">English</a>
+          </div>
+        </div>
+        <div class="app-shot">
+          <div class="app-shot-frame">
+            <img src="{{ site.url }}/apps/markdownviewer/assets/shot-preview.png"
+              alt="Markdown Viewer &amp; Editor のプレビュー画面。「はじめに」文書が見出し・箇条書き・チェックボックス付きで表示されている" width="600" height="1304" loading="lazy">
+          </div>
+        </div>
+      </li>
 
       <li class="app-tile" style="--b1:#8E8E93; --b2:#48484D; --bk:#1d1d1f;">
         <div class="app-tile-body">
