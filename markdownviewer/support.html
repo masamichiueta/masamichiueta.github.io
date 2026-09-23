@@ -1,0 +1,648 @@
+---
+layout: none
+permalink: /markdownviewer/support.html
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown Viewer &amp; Editor — サポート / Support</title>
+  <meta name="description" content="Markdown Viewer &amp; Editor のサポートページ。ファイルの開き方、.txt と文字コード、書類の隣の画像、編集と保存、iCloud Drive のフォルダなど、よくある質問と問い合わせ先。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/markdownviewer/assets/icon.png">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --fg: #1d1d1f;
+      --muted: #6e6e73;
+      --rule: #e5e5e7;
+      --link: #0A6CF0;
+      --accent: #7B4FE0;
+      --code-bg: rgba(116,116,128,0.12);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --bg-soft: #161617;
+        --fg: #f5f5f7;
+        --muted: #a1a1a6;
+        --rule: #2a2a2c;
+        --link: #6DB0FF;
+        --accent: #A99BFF;
+        --code-bg: rgba(118,118,128,0.24);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display",
+                   "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.72; font-size: 17px; -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.88em; background: var(--code-bg);
+      padding: 1px 5px; border-radius: 5px;
+    }
+    kbd {
+      font-family: inherit; font-size: 0.9em;
+      padding: 1px 6px; border-radius: 6px;
+      border: 1px solid var(--rule); background: var(--bg-soft); color: var(--fg);
+      white-space: nowrap;
+    }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .inner {
+      max-width: 760px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 48px; gap: 16px;
+    }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); white-space: nowrap; }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+
+    main { max-width: 760px; margin: 0 auto; padding: 56px 24px 104px; }
+
+    h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.025em; font-weight: 700; margin: 0 0 10px; line-height: 1.16; text-wrap: balance; }
+    .updated { color: var(--muted); font-size: 0.88rem; margin: 0 0 8px; }
+
+    h2 {
+      font-size: 1.55rem; letter-spacing: -0.02em; font-weight: 700;
+      margin: 72px 0 8px; padding-top: 40px; border-top: 1px solid var(--rule);
+      text-wrap: balance;
+    }
+    h3 { font-size: 1.12rem; font-weight: 650; margin: 44px 0 10px; letter-spacing: -0.01em; }
+    p, ul, ol { margin: 0 0 16px; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin-bottom: 6px; }
+    strong { font-weight: 650; }
+
+    .callout {
+      background: var(--bg-soft);
+      border-radius: 16px;
+      padding: 20px 22px;
+      margin: 24px 0;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout .label {
+      display: inline-block; font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.04em; color: var(--accent); margin-bottom: 6px;
+    }
+
+    dl.faq { margin: 0; }
+    dl.faq dt {
+      font-weight: 650; margin: 30px 0 6px; font-size: 1.02rem;
+      letter-spacing: -0.01em;
+    }
+    dl.faq dd { margin: 0; color: var(--muted); }
+    dl.faq dd p { margin: 0 0 10px; }
+    dl.faq dd ul { margin: 8px 0; }
+
+    table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.93rem; }
+    th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-weight: 650; }
+
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0; }
+
+    @media (max-width: 600px) {
+      main { padding: 40px 20px 80px; }
+      .nav .inner { gap: 12px; }
+      .nav ul { gap: 13px; font-size: 0.78rem; }
+      .nav .brand { font-size: 0.85rem; gap: 7px; }
+    }
+    /* ストア名は長いので、狭い画面ではホーム画面の名前（Markdown Viewer）までにし、
+       それも入らない幅ではアイコンだけにする */
+    @media (max-width: 560px) {
+      .nav .brand .rest { display: none; }
+    }
+    @media (max-width: 400px) {
+      .nav .brand .name { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/markdownviewer/" aria-label="Markdown Viewer &amp; Editor"><img src="/markdownviewer/assets/icon.png" alt=""><span class="name">Markdown Viewer<span class="rest"> &amp; Editor</span></span></a>
+    <ul>
+      <li><a href="/markdownviewer/">トップ</a></li>
+      <li><a href="/markdownviewer/privacy.html">プライバシー</a></li>
+      <li><a href="#english">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+
+  <h1>Markdown Viewer &amp; Editor — サポート</h1>
+  <p class="updated">最終更新日 / Last updated: 2026-09-23</p>
+
+  <div class="callout">
+    <span class="label">お問い合わせ</span>
+    <p>
+      ご質問・不具合のご報告は<a href="https://forms.gle/G4W6ramMaw5tPYiv6" target="_blank" rel="noopener">お問い合わせフォーム</a>からお願いします。
+      端末の機種と iOS のバージョン、アプリのバージョンを添えていただけると、原因を特定しやすくなります。
+      アプリのバージョンは、書類を開いて右上の「…」→「表示設定」の最下部に「1.0.0 (1)」の形で表示されます。
+    </p>
+    <p>
+      <strong>表示が崩れるときは、崩れた部分の Markdown をそのまま貼ってください。</strong>
+      原文さえあれば手元で再現できるので、スクリーンショットより早く原因にたどり着けます。
+    </p>
+  </div>
+
+  <h2>はじめに知っておいていただきたいこと</h2>
+
+  <div class="callout">
+    <span class="label">重要</span>
+    <p>
+      <strong>Markdown Viewer &amp; Editor はファイルを取り込みません。</strong>
+      アプリの中にライブラリも、独自のデータベースもありません。開いたファイルを、置いてある場所のまま読み書きします。
+    </p>
+    <p>
+      そのため、<strong>起動して最初に出るのは iOS 標準のドキュメントブラウザ（ファイル App と同じ画面）</strong>で、
+      <code>.md</code> ファイルが 1 つも無い端末では空のままになります。これは不具合ではありません。
+    </p>
+  </div>
+
+  <div class="callout">
+    <span class="label">ご注意</span>
+    <p>
+      「この iPhone 内」（iPad では「この iPad 内」）の<strong>「Markdown Viewer」フォルダに置いたファイルは、
+      アプリを削除すると一緒に消えます。</strong>iCloud Drive やほかの場所に置いたファイルは残ります。
+    </p>
+  </div>
+
+  <h3>動作環境</h3>
+  <table>
+    <tr><th>対応 OS</th><td>iOS 26.5 / iPadOS 26.5 以降</td></tr>
+    <tr><th>対応デバイス</th><td>iPhone / iPad</td></tr>
+    <tr><th>開けるファイル</th><td>.md、.markdown、.mdown、.mkd、.mdtext（文字コードは UTF-8）</td></tr>
+    <tr><th>記法</th><td>GitHub Flavored Markdown。数式と Mermaid には対応していません</td></tr>
+    <tr><th>言語</th><td>日本語・英語</td></tr>
+    <tr><th>料金</th><td>¥1,000 の買い切りです。App 内課金はありません</td></tr>
+    <tr><th>ネットワーク</th><td>読む・直すだけなら不要です。URL で書かれた画像の表示と、リンクを開くときに通信します</td></tr>
+  </table>
+
+  <h2>よくある質問</h2>
+
+  <h3>ファイルを開く</h3>
+
+  <dl class="faq">
+
+    <dt>起動すると、空の画面しか出ません</dt>
+    <dd>
+      <p>最初に出るのは iOS 標準のドキュメントブラウザです。このアプリはファイルを取り込まないので、アプリの中に独自の一覧を持っていません。ここから開きたいファイルを選びます。</p>
+      <ul>
+        <li><strong>見本を開く</strong> — iCloud にサインインしている端末では、初回起動時に iCloud Drive の「Markdown Viewer」フォルダへ見本の書類（<code>はじめに.md</code>）が 1 つ置かれます。表示されるまで少し時間がかかることがあります</li>
+        <li><strong>新しく書く</strong> — 「書類を作成」を押すと、空の書類ができます。右上の鉛筆のボタンから書き始められます</li>
+        <li><strong>手元のファイルを開く</strong> — ドキュメントブラウザの「ブラウズ」から、iCloud Drive やこの iPhone 内、ほかのファイル提供元をたどって選びます</li>
+      </ul>
+    </dd>
+
+    <dt>ファイル App でタップすると、記号が混じったテキストのまま表示されます</dt>
+    <dd>
+      <p>ファイル App のタップで開くのは Quick Look というプレビューで、Markdown はテキストのまま表示されます。この画面はシステムが用意しているもので、アプリ側から見た目を差し替えることはできません。</p>
+      <p>Markdown Viewer &amp; Editor で読むには、アプリを起動してドキュメントブラウザから開くか、ファイル App でそのファイルを長押しして「共有」から「Markdown Viewer」を選んでください。</p>
+    </dd>
+
+    <dt><code>.txt</code> のファイルが開けません</dt>
+    <dd>
+      <p>意図して対応していません。<code>.txt</code> を開けるようにするには「テキストファイル全般を扱うアプリ」として登録することになり、そうすると <code>.swift</code> や <code>.json</code>、<code>.csv</code> といったあらゆるテキストファイルまで Markdown Viewer で開ける状態になってしまいます。それらを Markdown として描くと、段落に潰れてかえって読みにくくなります。</p>
+      <p>Markdown で書いたメモを <code>.txt</code> で持っている場合は、拡張子を <code>.md</code> に変えてください。開けるのは <code>.md</code>、<code>.markdown</code>、<code>.mdown</code>、<code>.mkd</code>、<code>.mdtext</code> です。</p>
+    </dd>
+
+    <dt>「このファイルは UTF-8 として読み取れませんでした。」と出ます</dt>
+    <dd>
+      <p>文字コードは UTF-8 にだけ対応しています。Shift_JIS などで保存された古いファイルは、文字化けした状態で表示するのではなく、このメッセージを出して止まります。</p>
+      <p>パソコンのテキストエディタなどで UTF-8 に変換して保存し直すと開けます。BOM の付いた UTF-8 も開けます（BOM はそのまま保ちます）。</p>
+    </dd>
+
+  </dl>
+
+  <h3>表示</h3>
+
+  <dl class="faq">
+
+    <dt>書類と同じフォルダに置いた画像が表示されません</dt>
+    <dd>
+      <p>iOS は、アプリが利用者の開いていないファイルに触れないよう、<strong>開いた書類 1 つぶんの権限</strong>をアプリに渡します。プライバシーを守るための仕組みで、そのままでは同じフォルダの画像も読み取れません。画像の代わりに「このフォルダの読み取りが、まだ許可されていません。」と表示されます。</p>
+      <p>表示するには、次のどれかの方法があります。</p>
+      <ul>
+        <li><strong>アプリのフォルダに置く</strong> — iCloud Drive または「この iPhone 内」の「Markdown Viewer」フォルダにある書類は、そのまま同じフォルダの画像を表示できます</li>
+        <li><strong>フォルダを許可する</strong> — 画像の下に出る「このフォルダを許可」を押し、<strong>その書類が入っているフォルダ（またはその親）</strong>を選びます。書類が入っていないフォルダでは有効になりません</li>
+        <li><strong>URL で指す</strong> — <code>![](https://…)</code> の形で書かれた画像は、どこにある書類からでも表示できます（通信が必要です）</li>
+      </ul>
+      <p>同じフォルダのほかの <code>.md</code> へのリンク（相対リンク）も、同じ仕組みによるものです。</p>
+    </dd>
+
+    <dt>「まだこの端末に読み込まれていません」と出ます</dt>
+    <dd>
+      <p>書類が参照している画像などが iCloud Drive にあり、まだこの端末にダウンロードされていない状態です。ファイル App でそのファイルをタップするとダウンロードが始まります。済んでから書類を開き直してください。</p>
+    </dd>
+
+    <dt><code>**強調。**続き</code> が太字になりません</dt>
+    <dd>
+      <p>Markdown の標準仕様（CommonMark）の規則によるもので、<strong>GitHub でも同じ表示になります。</strong>閉じる <code>**</code> が句読点（「。」「、」など）の直後にあり、さらにその直後に文字が続くと、強調の終わりとして扱われません。日本語で自然に書くと踏みやすい規則です。</p>
+      <p><code>**強調**。続き</code> のように句読点を <code>**</code> の外に出すと、太字になります。同じファイルが GitHub と違って見えることのないよう、規則はそのままにしています。</p>
+    </dd>
+
+    <dt>数式（LaTeX）や Mermaid の図は表示できますか</dt>
+    <dd>
+      <p>対応していません。記法は GitHub Flavored Markdown の標準の範囲（表・タスクリスト・打ち消し線・自動リンク）です。数式や Mermaid は、書いてあるとおりの文字やコードブロックとして表示されます。将来の候補としては考えていますが、時期はお約束できません。</p>
+    </dd>
+
+    <dt>HTML のタグが、そのまま文字で表示されます</dt>
+    <dd>
+      <p>意図した動作です。Markdown の中に書かれた HTML は実行せず、書いてあるとおりの文字として表示します。見知らぬファイルを開いたときに、中のスクリプトなどが動かないようにするためです。</p>
+    </dd>
+
+    <dt>コードの色付けに対応している言語は</dt>
+    <dd>
+      <p>コードブロックの言語名（<code>```swift</code> など）を見て、次の言語に色を付けます。</p>
+      <p>Swift、Objective-C、C、C++、C#、Java、Kotlin、Go、Rust、JavaScript、TypeScript、Python、Ruby、PHP、シェル、SQL、JSON、YAML、TOML、CSS、diff</p>
+      <p><code>js</code>、<code>ts</code>、<code>py</code>、<code>rb</code>、<code>sh</code>、<code>bash</code>、<code>yml</code> といった略称も通ります。ほかの言語は、色を付けずに等幅で表示します。言語に関わらず、コードブロックの右上のボタンで中身を丸ごとコピーできます。</p>
+    </dd>
+
+    <dt>リンクをタップするとどうなりますか</dt>
+    <dd>
+      <p><code>https://</code> のリンクは、アプリの中に開く Safari の画面で表示します。閉じると元の文書に戻ります。</p>
+      <p>同じフォルダのほかの <code>.md</code> へのリンク（相対リンク）は、読むための画面で開きます。そこでは編集できないので、直したいときはドキュメントブラウザから開き直してください。</p>
+    </dd>
+
+  </dl>
+
+  <h3>編集と保存</h3>
+
+  <dl class="faq">
+
+    <dt>編集モードに入るには / プレビューに戻るには</dt>
+    <dd>
+      <p>右上の鉛筆のボタンを押すか、本文を長押しします。長押しなら、押した段落の頭にカーソルが立ちます。</p>
+      <p>編集中は、鉛筆のボタンが青い「完了」に変わります。押すとプレビューに戻ります。外付けキーボードでは <kbd>⌘⇧P</kbd> でも切り替えられます。どちらへ切り替えても、見ていた場所はそのままです。</p>
+    </dd>
+
+    <dt>プレビューで文字を選択してコピーできません</dt>
+    <dd>
+      <p>プレビューでの長押しは「そこから編集する」操作に割り当てているため、文字の選択には使えません。文字を選んでコピーしたいときは、編集モードに入ってください。素の Markdown をそのまま選べます。</p>
+      <p>コードブロックだけはプレビューのままでも選択でき、右上のボタンで丸ごとコピーもできます。</p>
+    </dd>
+
+    <dt>保存ボタンがありません</dt>
+    <dd>
+      <p>保存は自動です。保存の操作はありません。プレビューに戻ったときや、アプリを離れるときにも、元のファイルへ確実に書き込みます。</p>
+    </dd>
+
+    <dt>保存すると、改行コードや空白が変わってしまいませんか</dt>
+    <dd>
+      <p>変わりません。<strong>触っていない行は、バイト単位でそのまま保存します。</strong>改行コードの変換、行末の空白の除去、リスト記号の統一、引用符やハイフンの自動変換は、いずれも行いません。</p>
+      <p>チェックボックスをタップしたときも、書き換わるのは <code>[ ]</code> と <code>[x]</code> の 1 文字だけです。Git で管理しているファイルでも、差分が汚れません。</p>
+    </dd>
+
+    <dt>画像を入れるには</dt>
+    <dd>
+      <p>編集モードで、キーボードの上のバーにある画像のボタンを押し、写真を選びます。写真は<strong>書類と同じフォルダに画像ファイルとして保存され</strong>、本文には <code>![](image-20260923-094100.jpg)</code> のような行が入ります。</p>
+      <ul>
+        <li>書類のあるフォルダに書き込めるときは、そのまま入ります。書き込めないときは、書類が入っているフォルダを選ぶよう求められます</li>
+        <li>読み取り専用のフォルダなど、そもそも書き込めない場所には入れられません</li>
+        <li>JPEG・PNG・GIF・WebP はそのままの形式で保存し、HEIC は JPEG に変換して保存します（ほかのアプリでも開けるようにするためです）</li>
+        <li>写真を選ぶ画面は iOS 標準のものなので、写真ライブラリへのアクセス許可は求めません。アプリに渡るのは、選んだ写真だけです</li>
+      </ul>
+    </dd>
+
+    <dt>「変更が競合しています」と出ました</dt>
+    <dd>
+      <p>同じファイルが、ほかの端末やほかのアプリでも同時に変更されたときに出ます。それぞれの版について、<strong>保存した端末の名前・更新時刻・中身の冒頭</strong>が並ぶので、見比べて残す版を選んでください。選ばなかった版は破棄されます。</p>
+    </dd>
+
+  </dl>
+
+  <h3>iCloud Drive とファイルの置き場所</h3>
+
+  <dl class="faq">
+
+    <dt>iCloud Drive の「Markdown Viewer」フォルダは何ですか</dt>
+    <dd>
+      <p>アプリのために用意された置き場所です。ここに入れたファイルは、同じ Apple アカウントでサインインしているほかの端末からも開けます。この中の書類は、<strong>同じフォルダの画像を許可なしで表示できます。</strong></p>
+      <p>見本の書類（<code>はじめに.md</code>）は、初回起動時にここへ 1 つ置かれます。読み終えたら消して構いません。消しても、起動のたびに作り直されることはありません（別の端末で初めて起動したときなどに、その端末のぶんが置かれることはあります）。</p>
+    </dd>
+
+    <dt>アプリを削除すると、ファイルはどうなりますか</dt>
+    <dd>
+      <p>iCloud Drive やほかの場所に置いたファイルは、そのまま残ります。アプリはファイルを取り込んでいないので、置いた場所から消えることはありません。</p>
+      <p><strong>ただし、「この iPhone 内」（iPad では「この iPad 内」）の「Markdown Viewer」フォルダに置いたファイルは、アプリと一緒に削除されます。</strong>残したいファイルは、削除する前にほかの場所へ移してください。表示設定やフォルダの許可も、あわせて削除されます。</p>
+    </dd>
+
+  </dl>
+
+  <h3>そのほか</h3>
+
+  <dl class="faq">
+
+    <dt>PDF はどのように書き出されますか</dt>
+    <dd>
+      <p>書類を開いて、右上の「…」→「PDF として書き出す」を選びます。書体・文字の大きさ・行間は、表示設定のとおりに反映されます。行の幅は紙の幅に合わせます。</p>
+      <p>テーマがダークのときは、紙に合わせて明るい配色で書き出します（セピアのときは、紙の色もセピアのままです）。PDF に入るのは書類の隣にある画像で、URL で指定した画像は入りません。</p>
+    </dd>
+
+    <dt>外付けキーボードのショートカットは</dt>
+    <dd>
+      <table>
+        <tr><th><kbd>⌘⇧P</kbd></th><td>プレビューと編集の切り替え</td></tr>
+        <tr><th><kbd>⌘F</kbd></th><td>文書内を検索</td></tr>
+        <tr><th><kbd>⌘⇧T</kbd></th><td>目次</td></tr>
+        <tr><th><kbd>⌘B</kbd></th><td>太字（編集中）</td></tr>
+        <tr><th><kbd>⌘I</kbd></th><td>斜体（編集中）</td></tr>
+        <tr><th><kbd>⌘K</kbd></th><td>リンク（編集中）</td></tr>
+      </table>
+      <p>iPad では、ステージマネージャや Split View で複数の書類を並べて開けます。</p>
+    </dd>
+
+    <dt>アプリのバージョンを確認したい</dt>
+    <dd>
+      <p>書類を開き、右上の「…」→「表示設定」を開くと、いちばん下に「バージョン 1.0.0 (1)」の形で表示されます。同じ画面から、使用しているオープンソースのライセンスも読めます。</p>
+    </dd>
+
+    <dt>お住まいの国の App Store に見当たりません</dt>
+    <dd>
+      <p>ヨーロッパ（EU 加盟国のほか、英国・スイス・ノルウェーなど）と中国本土の App Store では配信していません。</p>
+    </dd>
+
+    <dt>データを削除したい</dt>
+    <dd>
+      <p>開発者の手元に、削除すべきデータはありません。アカウントもサーバーもなく、ファイルは利用者の端末と iCloud の中にだけあります。</p>
+      <p>アプリを端末から削除すると、表示設定とフォルダの許可も消えます。ファイルの扱いは、ひとつ上の項目をご覧ください。</p>
+    </dd>
+
+  </dl>
+
+  <!-- ================= English ================= -->
+
+  <h2 id="english">Support (English)</h2>
+
+  <div class="callout">
+    <span class="label">CONTACT</span>
+    <p>
+      For questions or bug reports, please use the <a href="https://forms.gle/G4W6ramMaw5tPYiv6" target="_blank" rel="noopener">contact form</a>.
+      Including your device model, your iOS version, and the app version helps a lot.
+      You will find the app version at the bottom of Display: open a document, tap More (…) at the top right, then Display.
+    </p>
+    <p>
+      <strong>If something renders wrong, paste the Markdown itself.</strong>
+      With the source, it can be reproduced here — that gets to the cause faster than a screenshot.
+    </p>
+  </div>
+
+  <h3>Before anything else</h3>
+
+  <div class="callout">
+    <span class="label">IMPORTANT</span>
+    <p>
+      <strong>Markdown Viewer &amp; Editor never imports your files.</strong>
+      There is no library and no database inside the app. It reads and writes the file where it already lives.
+    </p>
+    <p>
+      That is why <strong>the first screen is the system document browser</strong> (the same view as the Files app),
+      and why it is empty on a device with no <code>.md</code> files on it. This is by design, not a failure to load.
+    </p>
+  </div>
+
+  <div class="callout">
+    <span class="label">PLEASE NOTE</span>
+    <p>
+      Files kept in the <strong>“Markdown Viewer” folder under On My iPhone (or On My iPad) are deleted along with
+      the app.</strong> Files in iCloud Drive and everywhere else stay where they are.
+    </p>
+  </div>
+
+  <h3>Requirements</h3>
+  <table>
+    <tr><th>OS</th><td>iOS 26.5 / iPadOS 26.5 or later</td></tr>
+    <tr><th>Devices</th><td>iPhone and iPad</td></tr>
+    <tr><th>Files</th><td>.md, .markdown, .mdown, .mkd, .mdtext (UTF-8 only)</td></tr>
+    <tr><th>Syntax</th><td>GitHub Flavored Markdown. Math and Mermaid are not supported</td></tr>
+    <tr><th>Languages</th><td>English and Japanese</td></tr>
+    <tr><th>Price</th><td>A one-time purchase. No in-app purchases</td></tr>
+    <tr><th>Network</th><td>Not needed to read or edit. Used to show images written as URLs and to open links</td></tr>
+  </table>
+
+  <h3>Opening files</h3>
+
+  <dl class="faq">
+
+    <dt>The app opens to an empty screen</dt>
+    <dd>
+      <p>The first screen is the system document browser. The app imports nothing, so it keeps no list of its own — you pick the file to open from here.</p>
+      <ul>
+        <li><strong>Open the sample</strong> — on a device signed in to iCloud, the first launch places a sample document (<code>Getting Started.md</code>) in the “Markdown Viewer” folder in iCloud Drive. It can take a moment to appear</li>
+        <li><strong>Start something new</strong> — tap “Create Document” for an empty document, then the pencil button at the top right to start writing</li>
+        <li><strong>Open a file you have</strong> — use Browse in the document browser to reach iCloud Drive, On My iPhone, or any other file provider</li>
+      </ul>
+    </dd>
+
+    <dt>Tapping a file in the Files app shows it as plain text</dt>
+    <dd>
+      <p>Tapping a file in Files opens Quick Look, the system preview, where Markdown is shown as plain text. That preview comes from the system, so how it looks is not something an app can change.</p>
+      <p>To read the file here, open it from the document browser inside the app, or long-press it in Files and choose Share → Markdown Viewer.</p>
+    </dd>
+
+    <dt><code>.txt</code> files will not open</dt>
+    <dd>
+      <p>That is deliberate. Accepting <code>.txt</code> means registering as an app that handles plain text in general, which would put <code>.swift</code>, <code>.json</code>, <code>.csv</code> and every other text file in reach of this app — and rendering those as Markdown collapses them into paragraphs, which is worse than leaving them alone.</p>
+      <p>If you keep Markdown notes in <code>.txt</code> files, rename them to <code>.md</code>. The app opens <code>.md</code>, <code>.markdown</code>, <code>.mdown</code>, <code>.mkd</code>, and <code>.mdtext</code>.</p>
+    </dd>
+
+    <dt>“This file couldn't be read as UTF-8.”</dt>
+    <dd>
+      <p>UTF-8 is the only encoding supported. A file saved in another encoding is not displayed as garbled text; the app stops and says so instead.</p>
+      <p>Re-save the file as UTF-8 in a text editor and it will open. UTF-8 with a BOM is fine too, and the BOM is preserved.</p>
+    </dd>
+
+  </dl>
+
+  <h3>Reading</h3>
+
+  <dl class="faq">
+
+    <dt>An image sitting next to the document does not show</dt>
+    <dd>
+      <p>So that apps cannot reach files you have not opened, iOS hands over <strong>permission for that one document</strong> and nothing else in the folder. It is there to protect your privacy, and it means an image sitting next to the document cannot be read until you say otherwise. In place of the image you see “The app hasn’t been given access to this folder yet.”</p>
+      <p>There are three ways to show it:</p>
+      <ul>
+        <li><strong>Keep the document in the app's own folder</strong> — documents in “Markdown Viewer” in iCloud Drive or under On My iPhone show images next to them straight away</li>
+        <li><strong>Grant the folder</strong> — tap “Allow This Folder” under the image and choose <strong>the folder the document lives in, or one of its parents</strong>. A folder that does not contain the document will not cover it</li>
+        <li><strong>Point at the image by URL</strong> — an image written as <code>![](https://…)</code> shows from any document (this one needs a network connection)</li>
+      </ul>
+      <p>A relative link to another <code>.md</code> in the same folder works the same way.</p>
+    </dd>
+
+    <dt>“Not downloaded to this device yet.”</dt>
+    <dd>
+      <p>An image (or another file) the document refers to is in iCloud Drive but has not been downloaded to this device. Tap that file in the Files app to download it, then reopen the document.</p>
+    </dd>
+
+    <dt>Emphasis right before a full stop does not render</dt>
+    <dd>
+      <p>This follows the CommonMark rules, and <strong>GitHub renders it the same way.</strong> A closing <code>**</code> that sits right after punctuation and right before a letter does not close the emphasis. It is easy to hit when writing Japanese, where a sentence ends inside the emphasis.</p>
+      <p>Move the punctuation outside the markers and it works. The rule is left as written so that a file does not look different here than it does on GitHub.</p>
+    </dd>
+
+    <dt>Can it show math (LaTeX) or Mermaid diagrams?</dt>
+    <dd>
+      <p>No. The supported syntax is standard GitHub Flavored Markdown (tables, task lists, strikethrough, autolinks). Math and Mermaid appear as the text or code block they are written as. Both are on the list of things to consider, with no promised timing.</p>
+    </dd>
+
+    <dt>HTML tags show up as text</dt>
+    <dd>
+      <p>That is intended. HTML written inside a Markdown file is shown as text and never executed, so that opening a file from someone else cannot run anything.</p>
+    </dd>
+
+    <dt>Which languages get syntax coloring?</dt>
+    <dd>
+      <p>The language written on the code fence (<code>```swift</code> and so on) selects the colors:</p>
+      <p>Swift, Objective-C, C, C++, C#, Java, Kotlin, Go, Rust, JavaScript, TypeScript, Python, Ruby, PHP, shell, SQL, JSON, YAML, TOML, CSS, and diff.</p>
+      <p>Short names such as <code>js</code>, <code>ts</code>, <code>py</code>, <code>rb</code>, <code>sh</code>, <code>bash</code>, and <code>yml</code> work too. Any other language is shown monospaced without coloring. Whatever the language, the button at the top right of a code block copies the whole block.</p>
+    </dd>
+
+    <dt>What happens when I tap a link?</dt>
+    <dd>
+      <p>An <code>https://</code> link opens in a Safari view inside the app. Close it and you are back in the document.</p>
+      <p>A relative link to another <code>.md</code> in the same folder opens in a reading-only view. To edit that file, open it from the document browser instead.</p>
+    </dd>
+
+  </dl>
+
+  <h3>Editing and saving</h3>
+
+  <dl class="faq">
+
+    <dt>How do I start editing, and how do I get back?</dt>
+    <dd>
+      <p>Tap the pencil button at the top right, or long-press the text. A long press puts the cursor at the start of the paragraph you pressed.</p>
+      <p>While editing, the pencil becomes a blue Done button; tap it to go back to reading. With a hardware keyboard, <kbd>⌘⇧P</kbd> switches either way. Your place in the document is kept across the switch.</p>
+    </dd>
+
+    <dt>I can't select text while reading</dt>
+    <dd>
+      <p>A long press while reading is used to start editing, so it is not available for selecting text. To select and copy, switch to edit mode, where the plain Markdown can be selected as usual.</p>
+      <p>Code blocks are the exception: they stay selectable while reading, and the button at the top right copies the whole block.</p>
+    </dd>
+
+    <dt>There is no save button</dt>
+    <dd>
+      <p>Saving is automatic; there is nothing to press. The file is written back when you return to reading and when you leave the app.</p>
+    </dd>
+
+    <dt>Will saving change my line endings or whitespace?</dt>
+    <dd>
+      <p>No. <strong>Every line you did not touch is saved byte-for-byte.</strong> Line endings are not converted, trailing spaces are not stripped, list markers are not normalized, and smart quotes and dash substitution are off.</p>
+      <p>Toggling a checkbox rewrites exactly one character, between <code>[ ]</code> and <code>[x]</code>. Files under Git keep clean diffs.</p>
+    </dd>
+
+    <dt>How do I insert an image?</dt>
+    <dd>
+      <p>In edit mode, tap the image button in the bar above the keyboard and pick a photo. The photo is saved <strong>as a file in the same folder as the document</strong>, and a line such as <code>![](image-20260923-094100.jpg)</code> is inserted.</p>
+      <ul>
+        <li>If the document's folder can be written to, the image goes straight in. If not, you are asked to choose the folder the document lives in</li>
+        <li>Folders that cannot be written to at all, such as read-only ones, will not take an image</li>
+        <li>JPEG, PNG, GIF, and WebP are saved as they are; HEIC is converted to JPEG so other apps can open it</li>
+        <li>Picking a photo goes through the standard iOS picker, so the app never asks to read your photo library. It receives only the photo you picked</li>
+      </ul>
+    </dd>
+
+    <dt>“Conflicting Changes”</dt>
+    <dd>
+      <p>The same file was changed somewhere else at the same time — on another device, or in another app. Each version is listed with <strong>the device that saved it, when, and how it starts</strong>, so you can compare before choosing. The versions you do not keep are discarded.</p>
+    </dd>
+
+  </dl>
+
+  <h3>iCloud Drive and where files live</h3>
+
+  <dl class="faq">
+
+    <dt>What is the “Markdown Viewer” folder in iCloud Drive?</dt>
+    <dd>
+      <p>It is a place set aside for the app. Files you put there are available on your other devices signed in to the same Apple Account, and documents in it <strong>can show images next to them without asking for permission.</strong></p>
+      <p>The sample document (<code>Getting Started.md</code>) is placed there once, on first launch. Delete it whenever you like; it is not recreated each time the app launches (a device launching the app for the first time places its own copy).</p>
+    </dd>
+
+    <dt>What happens to my files if I delete the app?</dt>
+    <dd>
+      <p>Files in iCloud Drive and anywhere else stay exactly where they are. The app never imported them, so nothing disappears from where you put it.</p>
+      <p><strong>Files in the “Markdown Viewer” folder under On My iPhone (or On My iPad) are deleted with the app.</strong> Move anything you want to keep somewhere else first. Your display settings and folder grants are removed as well.</p>
+    </dd>
+
+  </dl>
+
+  <h3>Anything else</h3>
+
+  <dl class="faq">
+
+    <dt>How does PDF export work?</dt>
+    <dd>
+      <p>Open a document, tap More (…) at the top right, then Export as PDF. Your typeface, text size, and line spacing carry over, and the measure is set to the width of the page.</p>
+      <p>A dark theme is printed in light colors to suit paper (sepia keeps its paper color). Images next to the document are included; images written as URLs are not.</p>
+    </dd>
+
+    <dt>Hardware keyboard shortcuts</dt>
+    <dd>
+      <table>
+        <tr><th><kbd>⌘⇧P</kbd></th><td>Switch between reading and editing</td></tr>
+        <tr><th><kbd>⌘F</kbd></th><td>Find in document</td></tr>
+        <tr><th><kbd>⌘⇧T</kbd></th><td>Contents</td></tr>
+        <tr><th><kbd>⌘B</kbd></th><td>Bold (while editing)</td></tr>
+        <tr><th><kbd>⌘I</kbd></th><td>Italic (while editing)</td></tr>
+        <tr><th><kbd>⌘K</kbd></th><td>Link (while editing)</td></tr>
+      </table>
+      <p>On iPad, several documents can be open side by side in Stage Manager or Split View.</p>
+    </dd>
+
+    <dt>Where do I find the app version?</dt>
+    <dd>
+      <p>Open a document, tap More (…) at the top right, then Display. The version is at the bottom, shown as “1.0.0 (1)”. The same screen lists the open source licenses the app uses.</p>
+    </dd>
+
+    <dt>I can't find it on the App Store in my country</dt>
+    <dd>
+      <p>The app is not distributed on the App Store in Europe (the EU, and also the UK, Switzerland, Norway and others) or in mainland China.</p>
+    </dd>
+
+    <dt>I want my data deleted</dt>
+    <dd>
+      <p>There is nothing held by the developer to delete. There is no account and no server; your files live on your device and in your iCloud.</p>
+      <p>Deleting the app removes your display settings and folder grants. For what happens to files, see the question above.</p>
+    </dd>
+
+  </dl>
+
+  <footer>
+    <nav>
+      <a href="/markdownviewer/">トップ / Home</a>
+      <a href="/markdownviewer/privacy.html">プライバシーポリシー / Privacy</a>
+      <a href="https://forms.gle/G4W6ramMaw5tPYiv6">お問い合わせ / Contact</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
