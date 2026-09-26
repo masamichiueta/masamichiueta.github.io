@@ -225,7 +225,7 @@ permalink: /apps/markdownviewer/support.html
 
     <dt><code>.txt</code> のファイルが開けません</dt>
     <dd>
-      <p>意図して対応していません。<code>.txt</code> を開けるようにするには「テキストファイル全般を扱うアプリ」として登録することになり、そうすると <code>.swift</code> や <code>.json</code>、<code>.csv</code> といったあらゆるテキストファイルまで Markdown Viewer で開ける状態になってしまいます。それらを Markdown として描くと、段落に潰れてかえって読みにくくなります。</p>
+      <p>意図して対応していません。<code>.txt</code> を開けるようにするには「テキストファイル全般を扱うアプリ」として登録することになり、そうすると <code>.swift</code> や <code>.json</code>、<code>.csv</code> といったあらゆるテキストファイルまで Markdown Viewer で開ける状態になってしまいます。それらを Markdown として表示すると、段落がつぶれてかえって読みにくくなります。</p>
       <p>Markdown で書いたメモを <code>.txt</code> で持っている場合は、拡張子を <code>.md</code> に変えてください。開けるのは <code>.md</code>、<code>.markdown</code>、<code>.mdown</code>、<code>.mkd</code>、<code>.mdtext</code> です。</p>
     </dd>
 
@@ -260,7 +260,7 @@ permalink: /apps/markdownviewer/support.html
 
     <dt><code>**強調。**続き</code> が太字になりません</dt>
     <dd>
-      <p>Markdown の標準仕様（CommonMark）の規則によるもので、<strong>GitHub でも同じ表示になります。</strong>閉じる <code>**</code> が句読点（「。」「、」など）の直後にあり、さらにその直後に文字が続くと、強調の終わりとして扱われません。日本語で自然に書くと踏みやすい規則です。</p>
+      <p>Markdown の標準仕様（CommonMark）の規則によるもので、<strong>GitHub でも同じ表示になります。</strong>閉じる <code>**</code> が句読点（「。」「、」など）の直後にあり、さらにその直後に文字が続くと、強調の終わりとして扱われません。日本語で自然に書くと、つまずきやすい規則です。</p>
       <p><code>**強調**。続き</code> のように句読点を <code>**</code> の外に出すと、太字になります。同じファイルが GitHub と違って見えることのないよう、規則はそのままにしています。</p>
     </dd>
 
@@ -307,7 +307,7 @@ permalink: /apps/markdownviewer/support.html
 
     <dt>保存ボタンがありません</dt>
     <dd>
-      <p>保存は自動です。保存の操作はありません。プレビューに戻ったときや、アプリを離れるときにも、元のファイルへ確実に書き込みます。</p>
+      <p>保存は自動で行われます。プレビューに戻ったときやアプリを離れるときにも、元のファイルへ確実に書き込みます。</p>
     </dd>
 
     <dt>保存すると、改行コードや空白が変わってしまいませんか</dt>
