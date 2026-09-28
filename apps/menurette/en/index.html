@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Menurette — Dinner Roulette</title>
-  <meta name="description" content="A dinner roulette for the whole family. The kids take turns to spin, recent meals come up less often, and family favourites more often. No ads, no in-app purchases, no account.">
+  <meta name="description" content="A dinner roulette for the whole family. The kids take turns to spin, it can start from what is in your fridge, recent meals come up less often, and family favourites more often. No ads, no in-app purchases, no account.">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/apps/menurette/assets/icon.png">
   <link rel="alternate" hreflang="ja" href="https://masamichiueta.github.io/apps/menurette/">
@@ -63,7 +63,7 @@
                    "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
       line-height: 1.6; -webkit-font-smoothing: antialiased; font-size: 17px;
     }
-    img { max-width: 100%; display: block; }
+    img { max-width: 100%; height: auto; display: block; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
@@ -304,6 +304,23 @@
 
     <div class="feature">
       <div>
+        <div class="glyph" style="background:linear-gradient(140deg,#64D2FF,#32ADE6)">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="8" y="3.5" width="14" height="23" rx="3" stroke="#fff" stroke-width="2.4"/><path d="M8 13h14M12 8v2.5M12 16.5v3" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Cook from your fridge</h3>
+        <p>Tap what's in the fridge and the dishes that use it come up more often. It nudges the draw rather than filtering it, so a dish with a missing ingredient stays in.</p>
+        <ul>
+          <li>The result screen shows what you have and what you need</li>
+          <li>Your picks are not saved and reset once dinner is decided</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/menurette/assets/shot-fridge-en.png" alt="The Fridge screen with pork, egg, onion, carrot and potato selected" width="540" height="1173" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
         <div class="glyph" style="background:linear-gradient(140deg,#FFD60A,#FF9F0A)">
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true"><path d="M15 4l3 7 7.5.6-5.7 4.9 1.8 7.4L15 20l-6.6 3.9 1.8-7.4-5.7-4.9L12 11z" stroke="#fff" stroke-width="2.3" stroke-linejoin="round"/></svg>
         </div>
@@ -383,13 +400,6 @@
         </div>
         <h3>Family favourites</h3>
         <p>Mark whose favourite each dish is. The more fans a dish has, the more likely it lands on the wheel.</p>
-      </div>
-      <div class="box">
-        <div class="glyph" style="background:linear-gradient(140deg,#9E9EA6,#636366)">
-          <svg width="22" height="22" viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect x="6" y="13" width="18" height="13" rx="3" stroke="#fff" stroke-width="2.4"/><path d="M10 13V9.5a5 5 0 0110 0V13" stroke="#fff" stroke-width="2.4"/></svg>
-        </div>
-        <h3>Grown-up settings behind a sum</h3>
-        <p>Editing dishes and family members, and changing settings, takes the answer to a simple addition — so little fingers can't delete anything by accident.</p>
       </div>
       <div class="box">
         <div class="glyph" style="background:linear-gradient(140deg,#FFC873,#FF7A2F)">
@@ -502,7 +512,7 @@
     <nav>
       <a href="/apps/menurette/support.html#english">Support</a>
       <a href="/apps/menurette/privacy.html#english">Privacy Policy</a>
-      <a href="CONTACT_FORM_URL">Contact</a>
+      <a href="https://forms.gle/24M1LF1hoBcCB94p7">Contact</a>
       <a href="/apps/menurette/">日本語</a>
     </nav>
     <p class="copy">© 2026 Masamichi Ueta</p>
