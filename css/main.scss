@@ -64,6 +64,14 @@ blockquote p {
 	}
 }
 
+@media (max-width: 767.98px) {
+  .hero {
+    height: 300px;
+    min-height: 300px;
+    padding-top: 48px;
+  }
+}
+
 .works-icon {
   border-radius: 5px;
   height: 60px;
