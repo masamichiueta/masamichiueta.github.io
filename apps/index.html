@@ -869,6 +869,51 @@
     margin: 0;
   }
 
+
+  /* ---------- アイコン目次 ---------- */
+  html { scroll-behavior: smooth; }
+  .app-tile { scroll-margin-top: 72px; }
+  .app-index { margin: 0 0 48px; }
+  .app-index ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    gap: 20px 12px;
+    margin: 0;
+    padding: 0;
+  }
+  .app-index a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--apps-fg);
+    text-decoration: none;
+    text-align: center;
+    font-size: .78rem;
+    line-height: 1.35;
+    word-break: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    font-weight: 500;
+  }
+  .app-index a:hover, .app-index a:focus-visible { color: var(--apps-fg); text-decoration: none; }
+  .app-index img {
+    width: 64px;
+    height: 64px;
+    border-radius: 22.5%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08), 0 8px 18px rgba(0, 0, 0, .07);
+    outline: 1px solid rgba(0, 0, 0, .07);
+    outline-offset: -1px;
+    transition: transform .2s ease;
+  }
+  .app-index a:hover img, .app-index a:focus-visible img { transform: translateY(-3px) scale(1.04); }
+  [data-bs-theme="dark"] .app-index a { color: var(--bs-body-color); }
+  [data-bs-theme="dark"] .app-index img { outline-color: rgba(255, 255, 255, .1); box-shadow: 0 6px 16px rgba(0, 0, 0, .5); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .app-index img { transition: none; }
+  }
+
   /* ---------- アプリのタイル ---------- */
   .app-list {
     display: grid;
@@ -1049,7 +1094,9 @@
   }
 
   @media (max-width: 860px) {
-    .apps-intro { padding: 8px 0 40px; }
+    .apps-intro { padding: 8px 0 32px; }
+    .app-index { margin-bottom: 32px; }
+    .app-index ul { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); gap: 16px 8px; }
     .app-list { gap: 20px; }
     .app-tile,
     .app-tile:nth-child(even) {
@@ -1073,9 +1120,44 @@
       <p lang="en">iOS apps I design and build on my own.</p>
     </header>
 
+    <nav class="app-index" aria-label="アプリ一覧">
+      <ul class="list-unstyled">
+        <li><a href="#menurette">
+          <img src="https://masamichiueta.github.io/apps/menurette/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>Menurette</span></a></li>
+        <li><a href="#markdownviewer">
+          <img src="https://masamichiueta.github.io/apps/markdownviewer/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>Markdown Viewer &amp; Editor</span></a></li>
+        <li><a href="#monoqulo">
+          <img src="https://masamichiueta.github.io/apps/monoqulo/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>Monoqulo</span></a></li>
+        <li><a href="#runrunrun">
+          <img src="https://masamichiueta.github.io/apps/runrunrun/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>Runrunrun</span></a></li>
+        <li><a href="#magirenbo">
+          <img src="https://masamichiueta.github.io/apps/magirenbo/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>まぎれんぼ</span></a></li>
+        <li><a href="#grillog">
+          <img src="https://masamichiueta.github.io/apps/grillog/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>Grillog</span></a></li>
+        <li><a href="#teenote">
+          <img src="https://masamichiueta.github.io/apps/teenote/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>TeeNote</span></a></li>
+        <li><a href="#today">
+          <img src="https://masamichiueta.github.io/apps/today/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>Today Score Everyday</span></a></li>
+        <li><a href="#aspectfit">
+          <img src="https://masamichiueta.github.io/apps/aspectfit/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>AspectFit</span></a></li>
+        <li><a href="#homework">
+          <img src="https://masamichiueta.github.io/apps/homework/assets/icon.png" alt="" width="64" height="64" loading="lazy">
+          <span>Homework</span></a></li>
+      </ul>
+    </nav>
+
     <ul class="app-list list-unstyled">
 
-      <li class="app-tile" style="--b1:#FFB547; --b2:#F2621C; --bk:#F2621C;">
+      <li class="app-tile" id="menurette" style="--b1:#FFB547; --b2:#F2621C; --bk:#F2621C;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/menurette/assets/icon.png" alt="Menurette アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1099,7 +1181,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#6B7BFF; --b2:#8B37D8; --bk:#8B37D8;">
+      <li class="app-tile" id="markdownviewer" style="--b1:#6B7BFF; --b2:#8B37D8; --bk:#8B37D8;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/markdownviewer/assets/icon.png" alt="Markdown Viewer &amp; Editor アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1124,7 +1206,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#8E8E93; --b2:#48484D; --bk:#1d1d1f;">
+      <li class="app-tile" id="monoqulo" style="--b1:#8E8E93; --b2:#48484D; --bk:#1d1d1f;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/monoqulo/assets/icon.png" alt="Monoqulo アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1148,7 +1230,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#2E8BFF; --b2:#0B57D0; --bk:#0B57D0;">
+      <li class="app-tile" id="runrunrun" style="--b1:#2E8BFF; --b2:#0B57D0; --bk:#0B57D0;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/runrunrun/assets/icon.png" alt="Runrunrun アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1173,7 +1255,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#8B7BFF; --b2:#4B34C8; --bk:#4B34C8;">
+      <li class="app-tile" id="magirenbo" style="--b1:#8B7BFF; --b2:#4B34C8; --bk:#4B34C8;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/magirenbo/assets/icon.png" alt="まぎれんぼ アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1197,7 +1279,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#FEB648; --b2:#E06A0A; --bk:#B85C05;">
+      <li class="app-tile" id="grillog" style="--b1:#FEB648; --b2:#E06A0A; --bk:#B85C05;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/grillog/assets/icon.png" alt="Grillog アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1220,7 +1302,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#5FC46C; --b2:#1F8F5F; --bk:#1A7A50;">
+      <li class="app-tile" id="teenote" style="--b1:#5FC46C; --b2:#1F8F5F; --bk:#1A7A50;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/teenote/assets/icon.png" alt="TeeNote アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1244,7 +1326,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#FF8CC6; --b2:#7B86F5; --bk:#5B62D6;">
+      <li class="app-tile" id="today" style="--b1:#FF8CC6; --b2:#7B86F5; --bk:#5B62D6;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/today/assets/icon.png" alt="Today Score Everyday アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1268,7 +1350,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#4DA3FF; --b2:#0A6CF0; --bk:#0A6CF0;">
+      <li class="app-tile" id="aspectfit" style="--b1:#4DA3FF; --b2:#0A6CF0; --bk:#0A6CF0;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/aspectfit/assets/icon.png" alt="AspectFit アプリアイコン"
             width="68" height="68" loading="lazy">
@@ -1292,7 +1374,7 @@
         </div>
       </li>
 
-      <li class="app-tile" style="--b1:#7BAFFF; --b2:#2C6FDB; --bk:#2C6FDB;">
+      <li class="app-tile" id="homework" style="--b1:#7BAFFF; --b2:#2C6FDB; --bk:#2C6FDB;">
         <div class="app-tile-body">
           <img class="app-icon" src="https://masamichiueta.github.io/apps/homework/assets/icon.png" alt="Homework アプリアイコン"
             width="68" height="68" loading="lazy">
