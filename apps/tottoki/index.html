@@ -1,0 +1,238 @@
+---
+layout: none
+permalink: /apps/tottoki/
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tottoki — こどもの作品アルバム</title>
+  <meta name="description" content="子供の絵・工作・習字・粘土を写真で残して、アルバムにする iOS アプリ。年齢つきのタイムライン、スキャン補正、iCloud でパートナーと共有。広告なし・トラッキングなし。">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/apps/tottoki/assets/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tottoki — こどもの作品アルバム">
+  <meta property="og:description" content="子供の絵・工作・習字・粘土を写真で残して、アルバムにする iOS アプリ。年齢つきのタイムライン、スキャン補正、iCloud でパートナーと共有。広告なし・トラッキングなし。">
+  <meta property="og:url" content="https://masamichiueta.github.io/apps/tottoki/">
+  <meta property="og:image" content="https://masamichiueta.github.io/apps/tottoki/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff; --bg-soft: #f6f3ef; --fg: #1d1d1f; --muted: #6e6e73; --rule: #e8e4df;
+      --card: #ffffff; --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      --brand-1: #FFB36B; --brand-2: #F07F2D; --link: #B84D0B;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000; --bg-soft: #181615; --fg: #f5f5f7; --muted: #a1a1a6; --rule: #2a2827;
+        --card: #1c1b1a; --card-shadow: 0 4px 24px rgba(0,0,0,0.5); --link: #FFA566;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display", "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.65; -webkit-font-smoothing: antialiased; font-size: 17px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .inner { max-width: 980px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0 0 40px; }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .hero { text-align: center; padding: 88px 0 24px; }
+    .hero img.icon { width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px; box-shadow: 0 12px 40px rgba(240,127,45,0.30); }
+    .hero h1 { font-size: clamp(1.85rem, 4.6vw, 3.1rem); line-height: 1.24; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 20px; text-wrap: balance; }
+    .hero h1 .grad { background: linear-gradient(120deg, var(--brand-1), var(--brand-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .hero .lead { font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted); max-width: 620px; margin: 0 auto; text-wrap: pretty; }
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 44px auto 0; max-width: 900px; }
+    .chip { display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px 8px 12px; border-radius: 999px; background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+    section h2 { font-size: clamp(1.5rem, 3.6vw, 2.2rem); letter-spacing: -0.02em; line-height: 1.28; margin: 0 0 12px; text-align: center; text-wrap: balance; }
+    section .sub { color: var(--muted); text-align: center; max-width: 620px; margin: 0 auto 40px; text-wrap: pretty; }
+    .features, .privacy, .steps-sec, .specs { padding: 88px 0 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .box h3, .box h4 { margin: 14px 0 6px; font-size: 1.08rem; letter-spacing: -0.01em; }
+    .box p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+    .glyph { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; color: #fff; font-size: 1.35rem; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .step { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .step .num { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(120deg, var(--brand-1), var(--brand-2)); color: #fff; font-weight: 700; display: grid; place-items: center; }
+    .step h3 { margin: 14px 0 6px; font-size: 1.08rem; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+    .note { text-align: center; margin-top: 28px; color: var(--muted); }
+    .specs .narrow { max-width: 720px; margin: 0 auto; }
+    dl { margin: 0; } dt { font-weight: 650; margin-top: 18px; } dd { margin: 2px 0 0; color: var(--muted); }
+    @media (max-width: 600px) { .nav ul { gap: 13px; font-size: 0.78rem; } .hero { padding-top: 56px; } }
+  </style>
+</head>
+<body>
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/apps/tottoki/"><img src="/apps/tottoki/assets/icon.png" alt="">Tottoki</a>
+    <ul>
+      <li><a href="#features">できること</a></li>
+      <li><a href="#privacy">プライバシー</a></li>
+      <li><a href="/apps/tottoki/support.html">サポート</a></li>
+      <li><a href="/apps/tottoki/en/">English</a></li>
+    </ul>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="icon" src="/apps/tottoki/assets/icon.png" alt="Tottoki" width="116" height="116">
+    <h1>撮って、残して、<br><span class="grad">一緒に見返そう。</span></h1>
+    <p class="lead">増え続ける子供の作品を、写真で残して、とっておきをアルバムに。パートナーとも iCloud で共有できます。</p>
+    <div class="chips"><span class="chip"><span class="dot" style="background:#F07F2D"></span>絵</span><span class="chip"><span class="dot" style="background:#2BA89A"></span>工作</span><span class="chip"><span class="dot" style="background:#5E5CE6"></span>習字</span><span class="chip"><span class="dot" style="background:#FF4D6D"></span>粘土</span><span class="chip"><span class="dot" style="background:#30D158"></span>タイムライン</span><span class="chip"><span class="dot" style="background:#2C6FDB"></span>アルバム</span><span class="chip"><span class="dot" style="background:#F07F2D"></span>iCloud 共有</span></div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <h2>できること</h2>
+    <p class="sub">撮って、残して、見返すための機能がそろっています。</p>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FFB36B,#F07F2D)" aria-hidden="true">📷</div>
+        <h3>1つの作品に、何枚でも</h3>
+        <p>絵・工作・習字・粘土などを撮影。立体の作品も、角度を変えて複数枚まとめて残せます。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#6FD3C5,#2BA89A)" aria-hidden="true">✨</div>
+        <h3>ゆがみを直してスキャン</h3>
+        <p>紙の作品はスキャナで台形補正。暗い写真は明るさを補正できます。登録したあとも写真を差し替え・補正できます。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#8B89F0,#5E5CE6)" aria-hidden="true">🎂</div>
+        <h3>そのときの年齢つき</h3>
+        <p>「3歳2か月」のように、作った日の子供の年齢を表示。写真を選ぶと、撮影日から「作った日」が自動で入ります。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FF8FA3,#FF4D6D)" aria-hidden="true">🗂</div>
+        <h3>月ごとのタイムラインと検索</h3>
+        <p>月ごとに並べて見返せます。子供での絞り込みや、タイトル・メモ・種類の検索にも対応。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#5EE47F,#30D158)" aria-hidden="true">📚</div>
+        <h3>アルバムと自動アルバム</h3>
+        <p>好きな作品でアルバムを作って並べ替え。お気に入り・子供別・年度別のアルバムは自動で作られます。</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#7BAFFF,#2C6FDB)" aria-hidden="true">👪</div>
+        <h3>パートナーと iCloud で共有</h3>
+        <p>ひとつのライブラリを二人で。どちらも見る・追加ができます。共有をやめても、手元のデータは残ります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>使い方</h2>
+    <p class="sub">3 ステップで、作品が思い出になります。</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>作品を撮る・選ぶ</h3>
+        <p>「＋」から、写真を選ぶか、カメラで撮影・スキャンします。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>タイトルと子供を入れる</h3>
+        <p>タイトル・メモ・種類・作った日・子供を入力。あとから何度でも直せます。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>見返す・共有する</h3>
+        <p>タイムラインやアルバムで見返したり、パートナーと共有したりできます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy" id="privacy">
+  <div class="wrap">
+    <h2>写真は、<br>手元から出ません。</h2>
+    <p class="sub">開発者がデータを集めることはありません。</p>
+    <div class="grid">
+      <div class="box">
+        <h4>開発者のサーバーがない</h4>
+        <p>開発者がデータを集めるサーバーはありません。写真は端末と、あなた自身の iCloud にだけ保存されます。</p>
+      </div>
+      <div class="box">
+        <h4>アカウントがない</h4>
+        <p>登録もログインも不要です。共有する場合も、お使いの Apple アカウントの iCloud を使います。</p>
+      </div>
+      <div class="box">
+        <h4>広告も、トラッキングもない</h4>
+        <p>解析 SDK・広告 SDK は一切入っていません。</p>
+      </div>
+      <div class="box">
+        <h4>写真へのアクセスは最小限</h4>
+        <p>写真は選んだものだけを読み込みます。ライブラリ全体を見に行くことはありません。</p>
+      </div>
+      <div class="box">
+        <h4>共有は、あなたが決める</h4>
+        <p>パートナーへの共有は、招待を送って相手が承認したときだけ。やめれば、いつでも止められます。</p>
+      </div>
+      <div class="box">
+        <h4>バックアップも自分の手で</h4>
+        <p>すべての写真と情報を zip で書き出せます。保存先は、あなたが選びます。</p>
+      </div>
+    </div>
+    <p class="note">詳しくは<a href="/apps/tottoki/privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>動作環境</h2>
+    <dl>
+      <dt>対応 OS</dt>
+      <dd>iOS 27.0 以降</dd>
+      <dt>対応デバイス</dt>
+      <dd>iPhone・iPad</dd>
+      <dt>言語</dt>
+      <dd>日本語・英語</dd>
+      <dt>料金</dt>
+      <dd>買い切り。App 内課金はありません</dd>
+      <dt>広告</dt>
+      <dd>なし。トラッキングもありません</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/apps/tottoki/support.html">サポート</a>
+      <a href="/apps/tottoki/privacy.html">プライバシーポリシー</a>
+      <a href="https://forms.gle/HmRedzaVsj2xFL3X6">お問い合わせ</a>
+      <a href="/apps/tottoki/en/">English</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
+
+</body>
+</html>
