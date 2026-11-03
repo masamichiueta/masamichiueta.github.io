@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tottoki — A keepsake album for kids' art</title>
+  <meta name="description" content="An iOS app that keeps your child's drawings, crafts, calligraphy, and clay as photos — in a timeline with their age, scan correction, and iCloud sharing with your partner. No ads, no tracking.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/apps/tottoki/assets/icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tottoki — A keepsake album for kids' art">
+  <meta property="og:description" content="An iOS app that keeps your child's drawings, crafts, calligraphy, and clay as photos — in a timeline with their age, scan correction, and iCloud sharing with your partner. No ads, no tracking.">
+  <meta property="og:url" content="https://masamichiueta.github.io/apps/tottoki/en/">
+  <meta property="og:image" content="https://masamichiueta.github.io/apps/tottoki/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff; --bg-soft: #f6f3ef; --fg: #1d1d1f; --muted: #6e6e73; --rule: #e8e4df;
+      --card: #ffffff; --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      --brand-1: #FFB36B; --brand-2: #F07F2D; --link: #B84D0B;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000; --bg-soft: #181615; --fg: #f5f5f7; --muted: #a1a1a6; --rule: #2a2827;
+        --card: #1c1b1a; --card-shadow: 0 4px 24px rgba(0,0,0,0.5); --link: #FFA566;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro JP", "SF Pro Display", "Helvetica Neue", "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.65; -webkit-font-smoothing: antialiased; font-size: 17px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav .inner { max-width: 980px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 48px; gap: 16px; }
+    .nav .brand { display: flex; align-items: center; gap: 9px; font-weight: 600; font-size: 0.95rem; color: var(--fg); }
+    .nav .brand img { width: 22px; height: 22px; border-radius: 5px; }
+    .nav .brand:hover { text-decoration: none; }
+    .nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; font-size: 0.85rem; }
+    .nav ul a { color: var(--muted); white-space: nowrap; }
+    footer { border-top: 1px solid var(--rule); padding: 36px 0 0; margin-top: 72px; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 16px; }
+    footer nav a { font-size: 0.88rem; color: var(--muted); }
+    footer .copy { color: var(--muted); font-size: 0.82rem; margin: 0 0 40px; }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    .hero { text-align: center; padding: 88px 0 24px; }
+    .hero img.icon { width: 116px; height: 116px; margin: 0 auto 28px; border-radius: 26px; box-shadow: 0 12px 40px rgba(240,127,45,0.30); }
+    .hero h1 { font-size: clamp(1.85rem, 4.6vw, 3.1rem); line-height: 1.24; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 20px; text-wrap: balance; }
+    .hero h1 .grad { background: linear-gradient(120deg, var(--brand-1), var(--brand-2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .hero .lead { font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted); max-width: 620px; margin: 0 auto; text-wrap: pretty; }
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 44px auto 0; max-width: 900px; }
+    .chip { display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px 8px 12px; border-radius: 999px; background: var(--bg-soft); font-size: 0.88rem; font-weight: 500; }
+    .chip .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+    section h2 { font-size: clamp(1.5rem, 3.6vw, 2.2rem); letter-spacing: -0.02em; line-height: 1.28; margin: 0 0 12px; text-align: center; text-wrap: balance; }
+    section .sub { color: var(--muted); text-align: center; max-width: 620px; margin: 0 auto 40px; text-wrap: pretty; }
+    .features, .privacy, .steps-sec, .specs { padding: 88px 0 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .box { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .box h3, .box h4 { margin: 14px 0 6px; font-size: 1.08rem; letter-spacing: -0.01em; }
+    .box p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+    .glyph { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; color: #fff; font-size: 1.35rem; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .step { background: var(--bg-soft); border-radius: 20px; padding: 26px 24px; }
+    .step .num { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(120deg, var(--brand-1), var(--brand-2)); color: #fff; font-weight: 700; display: grid; place-items: center; }
+    .step h3 { margin: 14px 0 6px; font-size: 1.08rem; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+    .note { text-align: center; margin-top: 28px; color: var(--muted); }
+    .specs .narrow { max-width: 720px; margin: 0 auto; }
+    dl { margin: 0; } dt { font-weight: 650; margin-top: 18px; } dd { margin: 2px 0 0; color: var(--muted); }
+    @media (max-width: 600px) { .nav ul { gap: 13px; font-size: 0.78rem; } .hero { padding-top: 56px; } }
+  </style>
+</head>
+<body>
+<div class="nav">
+  <div class="inner">
+    <a class="brand" href="/apps/tottoki/"><img src="/apps/tottoki/assets/icon.png" alt="">Tottoki</a>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="/apps/tottoki/support.html#english">Support</a></li>
+      <li><a href="/apps/tottoki/">日本語</a></li>
+    </ul>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="icon" src="/apps/tottoki/assets/icon.png" alt="Tottoki" width="116" height="116">
+    <h1>Snap it, save it,<br><span class="grad">look back together.</span></h1>
+    <p class="lead">Keep the best of your child's growing pile of artwork as photos, build albums, and share them with your partner through iCloud.</p>
+    <div class="chips"><span class="chip"><span class="dot" style="background:#F07F2D"></span>Drawings</span><span class="chip"><span class="dot" style="background:#2BA89A"></span>Crafts</span><span class="chip"><span class="dot" style="background:#5E5CE6"></span>Calligraphy</span><span class="chip"><span class="dot" style="background:#FF4D6D"></span>Clay</span><span class="chip"><span class="dot" style="background:#30D158"></span>Timeline</span><span class="chip"><span class="dot" style="background:#2C6FDB"></span>Albums</span><span class="chip"><span class="dot" style="background:#F07F2D"></span>iCloud sharing</span></div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <p class="sub">Everything you need to capture, keep, and look back.</p>
+    <div class="grid">
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FFB36B,#F07F2D)" aria-hidden="true">📷</div>
+        <h3>One artwork, as many photos as you like</h3>
+        <p>Photograph drawings, crafts, calligraphy, and clay. Keep a 3D piece from several angles in a single artwork.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#6FD3C5,#2BA89A)" aria-hidden="true">✨</div>
+        <h3>Scan flat pieces cleanly</h3>
+        <p>Scan paper artwork with perspective correction and brighten dim photos. You can adjust or swap photos after saving, too.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#8B89F0,#5E5CE6)" aria-hidden="true">🎂</div>
+        <h3>Their age at the time</h3>
+        <p>See your child's age on the day it was made, like "3 yr 2 mo." Pick a photo and the made-on date fills in from when it was taken.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#FF8FA3,#FF4D6D)" aria-hidden="true">🗂</div>
+        <h3>A timeline by month, with search</h3>
+        <p>Browse by month, filter by child, and search titles, memos, and types.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#5EE47F,#30D158)" aria-hidden="true">📚</div>
+        <h3>Albums, plus automatic ones</h3>
+        <p>Build your own albums and reorder them. Favorites, by-child, and by-school-year albums are made for you.</p>
+      </div>
+      <div class="box">
+        <div class="glyph" style="background:linear-gradient(140deg,#7BAFFF,#2C6FDB)" aria-hidden="true">👪</div>
+        <h3>Share with your partner</h3>
+        <p>One library for two of you, both able to view and add. If you stop sharing, your data stays with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-sec">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Three steps from artwork to memory.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Take or choose photos</h3>
+        <p>Tap “+”, then choose photos or shoot and scan with the camera.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Add a title and a child</h3>
+        <p>Fill in the title, memo, type, date, and child. You can edit them any time.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Look back and share</h3>
+        <p>Browse the timeline and albums, or share the library with your partner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy" id="privacy">
+  <div class="wrap">
+    <h2>Your photos<br>stay yours.</h2>
+    <p class="sub">The developer never collects your data.</p>
+    <div class="grid">
+      <div class="box">
+        <h4>No developer servers</h4>
+        <p>There is no server that collects your data. Your photos stay on your device and in your own iCloud.</p>
+      </div>
+      <div class="box">
+        <h4>No account to make</h4>
+        <p>No sign-up or log-in. Sharing uses the iCloud of your own Apple account.</p>
+      </div>
+      <div class="box">
+        <h4>No ads, no tracking</h4>
+        <p>No analytics or advertising SDKs are included.</p>
+      </div>
+      <div class="box">
+        <h4>Minimal photo access</h4>
+        <p>Only the photos you pick are read. The app never browses your whole library.</p>
+      </div>
+      <div class="box">
+        <h4>Sharing is your call</h4>
+        <p>Sharing starts only when your partner accepts your invitation, and you can stop any time.</p>
+      </div>
+      <div class="box">
+        <h4>Back up on your terms</h4>
+        <p>Export every photo and its details as one zip, and keep it wherever you like.</p>
+      </div>
+    </div>
+    <p class="note">See the <a href="/apps/tottoki/privacy.html#english">Privacy Policy</a> for details.</p>
+  </div>
+</section>
+
+<section class="specs">
+  <div class="wrap narrow">
+    <h2>Requirements</h2>
+    <dl>
+      <dt>Requires</dt>
+      <dd>iOS 27.0 or later</dd>
+      <dt>Devices</dt>
+      <dd>iPhone and iPad</dd>
+      <dt>Languages</dt>
+      <dd>English and Japanese</dd>
+      <dt>Price</dt>
+      <dd>One-time purchase. No in-app purchases</dd>
+      <dt>Ads</dt>
+      <dd>None. No tracking either</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="/apps/tottoki/support.html#english">Support</a>
+      <a href="/apps/tottoki/privacy.html#english">Privacy Policy</a>
+      <a href="https://forms.gle/HmRedzaVsj2xFL3X6">Contact</a>
+      <a href="/apps/tottoki/">日本語</a>
+    </nav>
+    <p class="copy">© 2026 Masamichi Ueta</p>
+  </div>
+</footer>
+
+</body>
+</html>
