@@ -1,0 +1,2 @@
+{%- comment -%}共通お問い合わせフォームのURL。app にアプリ名を渡すと「アプリ名」欄が事前入力される。{%- endcomment -%}
+{{ site.contact_form_url }}?usp=pp_url&amp;{{ site.contact_form_app_entry }}={{ include.app | url_encode }}

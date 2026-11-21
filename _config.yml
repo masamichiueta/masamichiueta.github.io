@@ -9,6 +9,10 @@ linkedin_username: masamichi-ueta-b1b88856
 author: Masamichi Ueta
 lang: ja_JP
 
+# 共通お問い合わせフォーム (Google Forms)
+contact_form_url: https://docs.google.com/forms/d/e/1FAIpQLSeLAlSySG2mkLcxJrQLw4bqerWft4fdp7JAmXtLkGhMBJxfhw/viewform
+contact_form_app_entry: entry.344034030
+
 paginate: 10
 
 # Build settings
