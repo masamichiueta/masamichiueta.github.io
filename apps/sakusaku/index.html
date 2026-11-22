@@ -222,6 +222,10 @@
       .nav .brand { font-size: 0.85rem; gap: 7px; }
     }
   
+
+    .shot { height: auto; }
+    .fiction { text-align: center; color: var(--muted); font-size: 0.85rem; margin: 8px 0 0; }
+
     .simple { padding: 72px 0 24px; }
     .list { max-width: 720px; margin: 56px auto 0; }
     .list .item { padding: 22px 0; border-top: 1px solid var(--rule); }
@@ -252,13 +256,53 @@
   </div>
 </header>
 
+<section class="features">
+  <div class="wrap">
+    <div class="feature">
+      <div>
+        <h3>次にやることが、ひと目で</h3>
+        <p>すべての学校の予定を日付順に表示。「あと◯日」で、次に何をすべきかが分かります。</p>
+        <ul>
+          <li>完了した予定はスワイプで済みに</li>
+          <li>説明会・出願・入金・試験・発表・手続きの8種類</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/sakusaku/assets/shot-deadlines.png" alt="締切を日付順に並べた一覧画面" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <h3>1〜2月を、全校まとめて見渡す</h3>
+        <p>入試本番の1〜2月を、全校の入試回を横並びで表示。どの日にどの学校の何があるかを、重なりも含めて確認できます。</p>
+        <ul>
+          <li>全体表示と、1月・2月の拡大表示を切り替え</li>
+          <li>縦にスクロールしても日付は上に残ります</li>
+        </ul>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/sakusaku/assets/shot-timeline.png" alt="2月の入試日程を学校ごとに横並びで見るタイムライン画面" loading="lazy">
+      </div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <h3>学校ごと、入試回ごとに整理</h3>
+        <p>学校に志望度やメモを記録し、入試回（2/1午前、2/2午後など）ごとに予定を登録します。受験しない入試回は、一覧や通知から外れます。</p>
+      </div>
+      <div class="shot-col">
+        <img class="shot" src="/apps/sakusaku/assets/shot-events.png" alt="入試回ごとの予定を種類別の色で並べた画面" loading="lazy">
+      </div>
+    </div>
+    <p class="fiction">画面に表示している学校名・予定は、すべて架空のものです。</p>
+  </div>
+</section>
+
 <section class="simple">
   <div class="wrap">
     <div class="list">
-      <div class="item"><h3>締切順のリスト</h3><p>すべての学校の予定を日付順に表示。「あと◯日」で、次に何をすべきかがひと目でわかります。完了した予定はスワイプで済みにできます。</p></div>
-      <div class="item"><h3>1〜2月のタイムライン</h3><p>入試本番の1〜2月を、全校の入試回を横並びで一覧。どの日にどの学校の何があるかを、重なりも含めて確認できます。</p></div>
       <div class="item"><h3>締切の通知</h3><p>締切の前日と当日に、ローカル通知でお知らせ。通知の時刻は設定画面で変えられます。完了にした予定や受験しない入試回は通知されません。</p></div>
-      <div class="item"><h3>学校・入試回・予定の管理</h3><p>学校ごとに志望度やメモを記録し、入試回（2/1午前、2/2午後など）ごとに予定を登録。説明会、出願、入金、試験、合格発表、入学手続きの8種類に対応します。</p></div>
       <div class="item"><h3>一覧の印刷</h3><p>全スケジュールを日付順の表にして印刷（PDF 保存）できます。家族で紙に貼って共有したいときに便利です。</p></div>
     </div>
   </div>
